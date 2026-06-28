@@ -1,14 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  useCallback,
-  useEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import { visibleProducts as products, type Product } from "@/lib/products";
 
@@ -53,9 +47,7 @@ function ArrowIcon() {
 const MAX_RESULTS = 5;
 
 function searchHaystack(p: Product) {
-  return [p.name, p.tagline, ...p.formats.map((f) => f.label)]
-    .join(" ")
-    .toLowerCase();
+  return [p.name, p.tagline, ...p.formats.map((f) => f.label)].join(" ").toLowerCase();
 }
 
 export function HeroSearch() {
@@ -69,28 +61,58 @@ export function HeroSearch() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Dropdown renderuje się przez portal do <body>, bo sekcja hero ma
+  // `overflow-hidden` (clipuje animację CardSwap) — bez portalu ucinałaby też
+  // tę listę. Portal wymaga klienta + pozycji zakotwiczenia pod inputem.
+  const [mounted, setMounted] = useState(false);
+  const [anchorRect, setAnchorRect] = useState<{
+    left: number;
+    top: number;
+    width: number;
+  } | null>(null);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return products.slice(0, MAX_RESULTS);
-    return products
-      .filter((p) => searchHaystack(p).includes(q))
-      .slice(0, MAX_RESULTS);
+    return products.filter((p) => searchHaystack(p).includes(q)).slice(0, MAX_RESULTS);
   }, [query]);
 
   useEffect(() => {
     if (!open) return;
     function onClickOutside(event: MouseEvent) {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
+      const target = event.target as Node;
+      // Portal stawia dropdown poza containerRef — klik w niego też liczy się
+      // jako "wewnątrz", inaczej mousedown zamknąłby listę przed wyborem opcji.
+      if (containerRef.current?.contains(target)) return;
+      if (dropdownRef.current?.contains(target)) return;
+      setOpen(false);
     }
     document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, [open]);
+
+  useEffect(() => setMounted(true), []);
+
+  const updateAnchor = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    setAnchorRect({ left: r.left, top: r.bottom, width: r.width });
+  }, []);
+
+  // Pozycję liczymy przy otwarciu i utrzymujemy przy scrollu/resize.
+  useEffect(() => {
+    if (!open) return;
+    updateAnchor();
+    window.addEventListener("resize", updateAnchor);
+    window.addEventListener("scroll", updateAnchor, true);
+    return () => {
+      window.removeEventListener("resize", updateAnchor);
+      window.removeEventListener("scroll", updateAnchor, true);
+    };
+  }, [open, updateAnchor]);
 
   const navigateTo = useCallback(
     (slug: string) => {
@@ -136,11 +158,7 @@ export function HeroSearch() {
   const trimmedQuery = query.trim();
 
   return (
-    <form
-      role="search"
-      className="relative w-full max-w-3xl"
-      onSubmit={onSubmit}
-    >
+    <form role="search" className="relative w-full max-w-3xl" onSubmit={onSubmit}>
       <div ref={containerRef} className="relative">
         <label htmlFor={inputId} className="sr-only">
           Który produkt chcesz wydrukować?
@@ -165,9 +183,7 @@ export function HeroSearch() {
             aria-controls={listboxVisible ? listboxId : undefined}
             aria-autocomplete="list"
             aria-activedescendant={
-              listboxVisible
-                ? `${listboxId}-${results[activeIndex]?.slug}`
-                : undefined
+              listboxVisible ? `${listboxId}-${results[activeIndex]?.slug}` : undefined
             }
             placeholder="Który produkt chcesz wydrukować?"
             className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/80 focus:outline-none sm:px-4 sm:py-3 sm:text-lg"
@@ -183,96 +199,98 @@ export function HeroSearch() {
           </button>
         </div>
 
-        {showDropdown && (
-          <div
-            className="absolute left-0 right-0 top-[calc(100%+10px)] z-30 overflow-hidden rounded-2xl border border-border bg-card text-foreground shadow-2xl"
-          >
-            <div className="border-b border-border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-              {trimmedQuery
-                ? `Wyniki dla „${trimmedQuery}"`
-                : "Popularne kategorie"}
-            </div>
+        {mounted &&
+          showDropdown &&
+          anchorRect &&
+          createPortal(
+            <div
+              ref={dropdownRef}
+              style={{
+                left: anchorRect.left,
+                top: anchorRect.top + 10,
+                width: anchorRect.width,
+              }}
+              className="fixed z-50 overflow-hidden rounded-2xl border border-border bg-card text-foreground shadow-2xl"
+            >
+              <div className="border-b border-border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                {trimmedQuery ? `Wyniki dla „${trimmedQuery}"` : "Popularne kategorie"}
+              </div>
 
-            {hasResults ? (
-              <ul id={listboxId} role="listbox" className="py-1">
-                {results.map((product, index) => {
-                  const isActive = index === activeIndex;
-                  return (
-                    <li
-                      key={product.slug}
-                      id={`${listboxId}-${product.slug}`}
-                      role="option"
-                      aria-selected={isActive}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => navigateTo(product.slug)}
-                        onMouseEnter={() => setActiveIndex(index)}
-                        className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
-                          isActive ? "bg-secondary" : "hover:bg-muted"
-                        }`}
+              {hasResults ? (
+                <ul id={listboxId} role="listbox" className="py-1">
+                  {results.map((product, index) => {
+                    const isActive = index === activeIndex;
+                    return (
+                      <li
+                        key={product.slug}
+                        id={`${listboxId}-${product.slug}`}
+                        role="option"
+                        aria-selected={isActive}
                       >
-                        <span className="grid size-12 shrink-0 place-items-center rounded-lg border border-border bg-background">
-                          <ProductMockup
-                            variant={product.variant}
-                            className="h-10 w-10"
-                          />
-                        </span>
-                        <span className="min-w-0 flex-1">
-                          <span className="block truncate text-base font-medium text-foreground">
-                            {product.name}
-                          </span>
-                          <span className="block truncate text-sm text-muted-foreground">
-                            {product.tagline}
-                          </span>
-                        </span>
-                        <span
-                          aria-hidden
-                          className={`grid size-8 shrink-0 place-items-center rounded-full text-primary transition-colors ${
-                            isActive
-                              ? "bg-primary text-primary-foreground"
-                              : "bg-muted"
+                        <button
+                          type="button"
+                          onClick={() => navigateTo(product.slug)}
+                          onMouseEnter={() => setActiveIndex(index)}
+                          className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
+                            isActive ? "bg-secondary" : "hover:bg-muted"
                           }`}
                         >
-                          <ArrowIcon />
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              <div className="px-4 py-6 text-center text-sm text-muted-foreground">
-                Brak wyników dla „{trimmedQuery}”. Spróbuj „ulotki”,{" "}
-                „wizytówki” albo „plakaty”.
-              </div>
-            )}
+                          <span className="grid size-12 shrink-0 place-items-center rounded-lg border border-border bg-background">
+                            <ProductMockup variant={product.variant} className="h-10 w-10" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-base font-medium text-foreground">
+                              {product.name}
+                            </span>
+                            <span className="block truncate text-sm text-muted-foreground">
+                              {product.tagline}
+                            </span>
+                          </span>
+                          <span
+                            aria-hidden
+                            className={`grid size-8 shrink-0 place-items-center rounded-full text-primary transition-colors ${
+                              isActive ? "bg-primary text-primary-foreground" : "bg-muted"
+                            }`}
+                          >
+                            <ArrowIcon />
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <div className="px-4 py-6 text-center text-sm text-muted-foreground">
+                  Brak wyników dla „{trimmedQuery}”. Spróbuj „ulotki”, „wizytówki” albo „plakaty”.
+                </div>
+              )}
 
-            <div className="flex items-center justify-between gap-3 border-t border-border bg-muted/50 px-4 py-2 text-[11px] text-muted-foreground">
-              <span>
-                <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
-                  ↑
-                </kbd>{" "}
-                <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
-                  ↓
-                </kbd>{" "}
-                nawigacja
-              </span>
-              <span>
-                <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
-                  Enter
-                </kbd>{" "}
-                otwórz
-              </span>
-              <span>
-                <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
-                  Esc
-                </kbd>{" "}
-                zamknij
-              </span>
-            </div>
-          </div>
-        )}
+              <div className="flex items-center justify-between gap-3 border-t border-border bg-muted/50 px-4 py-2 text-[11px] text-muted-foreground">
+                <span>
+                  <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
+                    ↑
+                  </kbd>{" "}
+                  <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
+                    ↓
+                  </kbd>{" "}
+                  nawigacja
+                </span>
+                <span>
+                  <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
+                    Enter
+                  </kbd>{" "}
+                  otwórz
+                </span>
+                <span>
+                  <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
+                    Esc
+                  </kbd>{" "}
+                  zamknij
+                </span>
+              </div>
+            </div>,
+            document.body,
+          )}
       </div>
     </form>
   );
