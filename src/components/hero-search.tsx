@@ -106,8 +106,8 @@ export function HeroSearch() {
   useEffect(() => {
     if (!open) return;
     updateAnchor();
-    window.addEventListener("resize", updateAnchor);
-    window.addEventListener("scroll", updateAnchor, true);
+    window.addEventListener("resize", updateAnchor, { passive: true });
+    window.addEventListener("scroll", updateAnchor, { passive: true, capture: true });
     return () => {
       window.removeEventListener("resize", updateAnchor);
       window.removeEventListener("scroll", updateAnchor, true);

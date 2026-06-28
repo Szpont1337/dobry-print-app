@@ -1,13 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 import { visibleProducts } from "@/lib/products";
 import { Eyebrow } from "@/components/ui";
 
-import { HeroCardSwap } from "./hero-card-swap";
 import { HeroSearch } from "./hero-search";
+
+// Deferred (bundle-dynamic-imports): pulls in gsap, only used in the lg+
+// 2-column layout. Keep it out of the initial home bundle / SSR.
+const HeroCardSwap = dynamic(
+  () => import("./hero-card-swap").then((m) => m.HeroCardSwap),
+  { ssr: false },
+);
 
 const POPULAR_SLUGS = ["ulotki", "wizytowki", "plakaty", "naklejki"];
 
