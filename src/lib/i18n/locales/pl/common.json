@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Rejestracja",
+    "login": "Logowanie",
+    "logout": "Wyloguj",
+    "account": "Konto",
+    "admin": "Panel admina",
+    "cart": "Wróć do zamówienia"
+  },
+  "lang": {
+    "picker": "Wybierz język"
+  },
+  "auth": {
+    "titleLogin": "Zaloguj się",
+    "titleRegister": "Załóż konto",
+    "emailLabel": "Adres e-mail",
+    "nameLabel": "Imię i nazwisko",
+    "nameHint": "Opcjonalnie — pokażemy je w panelu zamówień",
+    "sendCode": "Wyślij kod",
+    "sending": "Wysyłanie…",
+    "codeSent": "Wysłaliśmy 6-cyfrowy kod. Sprawdź skrzynkę.",
+    "codeLabel": "Kod z e-maila",
+    "codeHint": "Kod jest ważny 10 minut.",
+    "verify": "Potwierdź i zaloguj",
+    "verifying": "Sprawdzanie…",
+    "back": "Wstecz",
+    "resend": "Wyślij kod ponownie",
+    "close": "Zamknij",
+    "switchToLogin": "Masz już konto? Zaloguj się.",
+    "switchToRegister": "Nie masz konta? Załóż w 30 sekund.",
+    "shieldLabel": "DobrePrinty",
+    "errSendCode": "Nie udało się wysłać kodu. Spróbuj ponownie.",
+    "errInvalidCode": "Nieprawidłowy kod. Spróbuj jeszcze raz."
+  },
+  "common": {
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "loading": "Wczytywanie…",
+    "tryAgain": "Spróbuj ponownie"
+  }
+}

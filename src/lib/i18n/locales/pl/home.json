@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "videoLabel": "Kwiaty w świetle wiosennego słońca",
+    "playLabel": "Włącz wideo w tle",
+    "pauseLabel": "Wstrzymaj wideo w tle",
+    "welcome": "welcome",
+    "to": "to",
+    "print": "print",
+    "tagline": "Wybierz produkt, dopasuj projekt i wydrukuj w kilka minut. DobrePrinty dostarcza w całej Polsce.",
+    "eyebrow": "Druk online · wysyłka w 24 h",
+    "title": "Dobry druk. Bez kompromisów i bez wychodzenia z biura.",
+    "lead": "Wizytówki, ulotki, plakaty, banery, naklejki i koszulki w jakości drukarni offsetowej. Konfiguruj, wyceniaj na żywo i zamawiaj online.",
+    "popular": "Popularne:",
+    "stat1": "do wysyłki",
+    "stat2": "zadowolonych klientów",
+    "stat3": "średnia ocen",
+    "cardLabel": "Podgląd na żywo",
+    "cardPrice": "od 0,18 zł / szt.",
+    "cardCta": "Konfiguruj",
+    "cardBadge": "Druk za 24 h"
+  },
+  "faq": {
+    "eyebrow": "Najczęstsze pytania",
+    "headlinePart1": "Masz pytanie?",
+    "headlinePart2": "Mamy odpowiedź",
+    "sub": "Najczęstsze wątpliwości naszych klientów, zebrane w jednym miejscu. Czegoś brakuje? Napisz do nas.",
+    "helpHeadline": "Nie znalazłeś odpowiedzi?",
+    "helpSub": "Biuro obsługi odpowiada w 2 godziny robocze. Bez czat-botów.",
+    "helpCta": "Napisz do nas",
+    "items": [
+      {
+        "question": "Czy mogę zamówić tylko 1 sztukę?",
+        "answer": "Tak. Każdy produkt w DobrePrinty można zamówić już od jednej sztuki, bez kosztów minimalnych i bez ukrytych opłat za małe nakłady. Cena pokazywana w konfiguratorze jest finalna (poza VAT-em)."
+      },
+      {
+        "question": "Jak długo trwa realizacja zamówienia?",
+        "answer": "Standardowy czas produkcji to 2–5 dni roboczych w zależności od produktu i nakładu. Czas widać w konfiguratorze po wyborze formatu, a wysyłka kurierem trwa kolejne 24 godziny po nadaniu."
+      },
+      {
+        "question": "Ile kosztuje wysyłka?",
+        "answer": "Wysyłka kosztuje 10 zł brutto, a od 50 zł wartości zamówienia jest darmowa — niezależnie od tego, czy wybierzesz kuriera, czy paczkomat. Koszt wysyłki widać w konfiguratorze i w podsumowaniu zamówienia przed płatnością."
+      },
+      {
+        "question": "Jak przygotować plik do druku?",
+        "answer": "Najlepiej PDF/X-1a w CMYK, ze spadami 3 mm i osadzonymi czcionkami. Do każdego produktu udostępniamy gotowy szablon (ZIP) oraz instrukcję PDF. Linki znajdziesz na stronie produktu, pod konfiguratorem."
+      },
+      {
+        "question": "Czy oferujecie sprawdzenie i przygotowanie pliku do druku?",
+        "answer": "Tak — i to w cenie każdego zamówienia. Przygotowanie pliku do druku oraz kontrola techniczna (rozmiar, tryb kolorów, spady, rozdzielczość) są bezpłatne. Jeśli wykryjemy problem, nanosimy drobne poprawki techniczne, a gdy potrzebna jest Twoja decyzja — wstrzymujemy druk i kontaktujemy się przed rozpoczęciem produkcji. Nie dopłacasz za przygotowanie do druku."
+      },
+      {
+        "question": "Jakie metody płatności akceptujecie?",
+        "answer": "BLIK, karta (Visa/Mastercard), Przelewy24, Apple Pay i Google Pay. Dla klientów biznesowych dostępna jest faktura proforma z odroczonym terminem 14 dni po zweryfikowaniu firmy."
+      },
+      {
+        "question": "Co jeśli kolory nie odpowiadają tym z monitora?",
+        "answer": "Drukujemy w profilu FOGRA39 / ISO Coated v2, czyli standardzie branżowym dla druku offsetowego i cyfrowego. Monitor pokazuje RGB, druk to CMYK, więc różnice są naturalne. Jeśli zależy Ci na precyzji, zamów próbny wydruk (proof) za 19 zł."
+      },
+      {
+        "question": "Czy dostanę fakturę VAT?",
+        "answer": "Tak. Po finalizacji zamówienia faktura VAT jest wystawiana automatycznie i trafia na maila w PDF, bez dopisków typu „proszę o fakturę”."
+      },
+      {
+        "question": "Czy mogę anulować lub zwrócić zamówienie?",
+        "answer": "Wydruki są personalizowane, więc nie podlegają standardowemu zwrotowi w ramach 14-dniowego prawa odstąpienia. Możesz natomiast anulować zamówienie bezpłatnie do momentu wgrania danych do druku. Wystarczy mail do biura obsługi."
+      }
+    ]
+  },
+  "footer": {
+    "intro": "DobrePrinty jest pośrednikiem druku.",
+    "tagline": "Twoje zamówienie realizuje sieć 28 zweryfikowanych drukarni partnerskich, audytowanych raz na kwartał pod kątem jakości druku i terminowości.",
+    "navLabel": "Linki w stopce",
+    "products": "Produkty",
+    "blog": "Blog",
+    "localPrintshops": "Drukarnie lokalne",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "backToTop": "wróć na górę ↑",
+    "copyright": "© {{year}} DobrePrinty",
+    "logoLabel": "DobrePrinty"
+  },
+  "testimonials": {
+    "eyebrow": "Opinie z Trustpilot",
+    "headlinePart1": "Prawdziwe opinie klientów,",
+    "headlinePart2": "zweryfikowane na Trustpilot",
+    "sub": "Każda opinia poniżej pochodzi z Trustpilot i dotyczy prawdziwego zamówienia. Bez ustawek i ukrytych komentarzy.",
+    "starsLabel": "Ocena 5 na 5 w serwisie Trustpilot",
+    "marqueeLabel": "Karuzela opinii klientów z Trustpilot",
+    "logoAlt": "Trustpilot",
+    "verifiedLabel": "Zweryfikowana opinia",
+    "ctaLabel": "Zobacz wszystkie opinie na Trustpilot",
+    "statOrders": "zamówień / miesiąc",
+    "statRetention": "klientów wraca",
+    "items": [
+      {
+        "title": "Szybkie wykonanie polecam",
+        "quote": "",
+        "name": "barbara Botin",
+        "date": "17 czerwca 2026"
+      },
+      {
+        "title": "1000 wizytówek ekspresowo",
+        "quote": "Zamówiłem 1000 wizytówek. Nie dość, że chłopaki poprawili mi format za darmo, to jeszcze ekspresowo dostałem moje zamówienie. Super mega polecam z całego serducha!",
+        "name": "Gett Nacjs",
+        "date": "15 czerwca 2026"
+      },
+      {
+        "title": "Wszystko super",
+        "quote": "",
+        "name": "Kitts Nevis",
+        "date": "14 czerwca 2026"
+      },
+      {
+        "title": "Wszystko super",
+        "quote": "Wszystko super",
+        "name": "Teresa",
+        "date": "14 czerwca 2026"
+      },
+      {
+        "title": "Profesjonalnie i szybko",
+        "quote": "Profesjonalnie i szybko. Mimo że format wysłanego pliku był inny od tego zamówionego to chłopaki bez problemu go dostosowali, polecam!!!",
+        "name": "Pessi Ronaldo",
+        "date": "12 czerwca 2026"
+      },
+      {
+        "title": "Świetna obsługa",
+        "quote": "Świetna obsługa, dotrzymali terminu. Pełen profesjonalizm.",
+        "name": "Cezary Jakub Prusak",
+        "date": "11 czerwca 2026"
+      }
+    ]
+  }
+}

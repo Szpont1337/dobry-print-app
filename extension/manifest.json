@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "dobreprinty Allegro Fulfillment",
+  "version": "0.1.0",
+  "description": "Prefilluje checkout Allegro danymi dostawy z panelu dobreprinty (paczkomat, uwagi, ilość).",
+  "permissions": ["clipboardWrite"],
+  "host_permissions": [
+    "https://allegro.pl/*",
+    "https://*.allegro.pl/*",
+    "https://dobreprinty.pl/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://allegro.pl/*", "https://*.allegro.pl/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

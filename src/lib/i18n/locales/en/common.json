@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Register",
+    "login": "Log in",
+    "logout": "Log out",
+    "account": "Account",
+    "admin": "Admin panel",
+    "cart": "Resume your order"
+  },
+  "lang": {
+    "picker": "Choose language"
+  },
+  "auth": {
+    "titleLogin": "Log in",
+    "titleRegister": "Create account",
+    "emailLabel": "Email address",
+    "nameLabel": "Full name",
+    "nameHint": "Optional — we'll show it in your orders panel",
+    "sendCode": "Send code",
+    "sending": "Sending…",
+    "codeSent": "We sent a 6-digit code to your inbox.",
+    "codeLabel": "Code from the email",
+    "codeHint": "The code is valid for 10 minutes.",
+    "verify": "Confirm and log in",
+    "verifying": "Verifying…",
+    "back": "Back",
+    "resend": "Resend code",
+    "close": "Close",
+    "switchToLogin": "Already have an account? Log in.",
+    "switchToRegister": "Don't have an account? Sign up in 30 seconds.",
+    "shieldLabel": "DobrePrinty",
+    "errSendCode": "We couldn't send the code. Please try again.",
+    "errInvalidCode": "Invalid code. Please try again."
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading…",
+    "tryAgain": "Try again"
+  }
+}
