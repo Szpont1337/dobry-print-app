@@ -42,7 +42,10 @@ export function Faq() {
             {t("faq.eyebrow")}
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
-            {t("faq.headlinePart1")} <span className="text-primary">{t("faq.headlinePart2")}</span>.
+            {t("faq.headlinePart1")}{" "}
+            <span className="whitespace-nowrap">
+              <span className="text-primary">{t("faq.headlinePart2")}</span>.
+            </span>
           </h2>
           <p className="mt-4 max-w-sm text-base text-muted-foreground">{t("faq.sub")}</p>
 

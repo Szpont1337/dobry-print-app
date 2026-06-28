@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       {
         url: "/og/dobreprinty.jpg",
         width: 1200,
-        height: 588,
+        height: 630,
         alt: "DobrePrinty. Welcome to print.",
       },
     ],

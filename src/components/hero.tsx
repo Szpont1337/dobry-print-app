@@ -35,8 +35,9 @@ export function Hero() {
         <div className="grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-20">
           <div className="flex flex-col items-start gap-5">
             <Eyebrow className="font-mono">{t("hero.eyebrow")}</Eyebrow>
-            <h1 className="text-[2.4rem] font-extrabold leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[4rem]">
-              {t("hero.title")}
+            <h1 className="text-balance text-[2.4rem] font-extrabold leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[4rem]">
+              <span className="text-primary">{t("hero.titleAccent")}</span>{" "}
+              {t("hero.titleRest")}
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("hero.lead")}
