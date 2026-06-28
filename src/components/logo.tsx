@@ -1,4 +1,4 @@
-import { Leaf } from "lucide-react";
+import { LeafIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 
 import { cn } from "@/lib/cn";
@@ -23,7 +23,7 @@ export function Logo({
         aria-hidden
         className="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:-rotate-6 sm:size-9"
       >
-        <Leaf strokeWidth={2.4} className="size-5" />
+        <LeafIcon weight="duotone" className="size-5" />
       </span>
       <span
         className={cn(

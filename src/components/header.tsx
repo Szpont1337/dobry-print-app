@@ -1,7 +1,15 @@
 "use client";
 
 import { useMutation, useQuery } from "convex/react";
-import { LayoutDashboard, LogIn, LogOut, ShieldCheck, ShoppingCart, UserRound } from "lucide-react";
+import {
+  ArrowRightIcon,
+  CaretDownIcon,
+  SignOutIcon,
+  ShieldCheckIcon,
+  ShoppingCartIcon,
+  SquaresFourIcon,
+  UserIcon,
+} from "@phosphor-icons/react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,20 +25,7 @@ import { Logo } from "./logo";
 import { Button } from "@/components/ui";
 
 function ChevronDown() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-      className="size-3.5"
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
+  return <CaretDownIcon weight="duotone" aria-hidden className="size-3.5" />;
 }
 
 function FlagPL() {
@@ -132,16 +127,16 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-lg backdrop-saturate-150">
-        <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-3 px-5 sm:h-18 sm:px-8">
+      <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+        <div className="relative mx-auto flex h-16 max-w-[1200px] items-center gap-3 rounded-2xl border border-secondary bg-background/90 px-5 shadow-[0_18px_50px_-24px_rgba(14,122,90,0.45)] ring-1 ring-secondary/60 backdrop-blur-lg backdrop-saturate-150 sm:h-18 sm:px-7">
           <Logo className="shrink-0" />
 
-          <nav className="ml-5 hidden items-center gap-1 lg:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="text-sm font-bold text-foreground/75 transition-colors hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -156,7 +151,7 @@ export function Header() {
                 title={t("nav.cart")}
                 className={`relative size-10 sm:size-11 ${iconBtn}`}
               >
-                <ShoppingCart aria-hidden className="size-5" />
+                <ShoppingCartIcon weight="duotone" aria-hidden className="size-5" />
                 <span
                   aria-hidden
                   className="absolute right-2 top-2 size-2 rounded-full bg-primary ring-2 ring-card"
@@ -228,7 +223,7 @@ export function Header() {
                   aria-label={user.name || user.email}
                   className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 sm:h-11 sm:px-4"
                 >
-                  <UserRound aria-hidden className="size-4" />
+                  <UserIcon weight="duotone" aria-hidden className="size-4" />
                   <span className="hidden max-w-[8rem] truncate sm:inline">
                     {user.name?.split(" ")[0] || user.email.split("@")[0]}
                   </span>
@@ -257,7 +252,7 @@ export function Header() {
                       onClick={() => setUserMenuOpen(false)}
                       className="flex w-full items-center gap-2 border-b border-border px-4 py-3 text-left font-medium text-foreground transition-colors hover:bg-muted"
                     >
-                      <LayoutDashboard aria-hidden className="size-4" />
+                      <SquaresFourIcon weight="duotone" aria-hidden className="size-4" />
                       {locale === "en" ? "My account" : "Moje konto"}
                     </Link>
                     {isAdmin && (
@@ -266,7 +261,7 @@ export function Header() {
                         onClick={() => setUserMenuOpen(false)}
                         className="flex w-full items-center gap-2 border-b border-border bg-secondary/60 px-4 py-3 text-left font-medium text-foreground transition-colors hover:bg-secondary"
                       >
-                        <ShieldCheck aria-hidden className="size-4 text-primary" />
+                        <ShieldCheckIcon weight="duotone" aria-hidden className="size-4 text-primary" />
                         {locale === "en" ? "Admin panel" : "Panel admina"}
                       </Link>
                     )}
@@ -275,7 +270,7 @@ export function Header() {
                       onClick={handleLogout}
                       className="flex w-full items-center gap-2 px-4 py-3 text-left font-medium text-foreground transition-colors hover:bg-muted"
                     >
-                      <LogOut aria-hidden className="size-4" />
+                      <SignOutIcon weight="duotone" aria-hidden className="size-4" />
                       {t("nav.logout")}
                     </button>
                   </div>
@@ -285,23 +280,23 @@ export function Header() {
               <>
                 <span className="hidden md:inline-flex">
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="md"
                     onClick={() => openAuth("register")}
-                    className="h-10 sm:h-11"
+                    className="h-10 font-bold sm:h-11"
                   >
                     {t("nav.register")}
                   </Button>
                 </span>
                 <Button
-                  variant="primary"
+                  variant="subtle"
                   size="md"
                   onClick={() => openAuth("login")}
                   aria-label={t("nav.login")}
-                  className="h-10 px-3 sm:h-11 sm:px-5"
+                  className="h-10 gap-2 rounded-xl px-3.5 font-bold sm:h-11 sm:px-5"
                 >
-                  <LogIn aria-hidden className="size-4 sm:hidden" />
                   <span className="hidden sm:inline">{t("nav.login")}</span>
+                  <ArrowRightIcon weight="duotone" aria-hidden className="size-4" />
                 </Button>
               </>
             )}

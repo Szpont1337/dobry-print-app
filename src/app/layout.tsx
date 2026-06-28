@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
+import { Nunito, IBM_Plex_Mono } from "next/font/google";
 
 import { AuthProvider } from "@/components/auth-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
@@ -12,14 +12,8 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
@@ -79,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${inter.variable} ${bricolage.variable} ${ibmPlexMono.variable} h-full antialiased`}
+      className={`${nunito.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ConvexClientProvider>
