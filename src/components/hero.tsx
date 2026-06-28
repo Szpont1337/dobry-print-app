@@ -53,23 +53,6 @@ export function Hero() {
                 </Link>
               ))}
             </div>
-
-            <dl className="mt-3 grid w-full max-w-md grid-cols-3 divide-x divide-border border border-border">
-              {[
-                { v: "24 h", l: t("hero.stat1") },
-                { v: "12 000+", l: t("hero.stat2") },
-                { v: "4,9/5", l: t("hero.stat3") },
-              ].map((s) => (
-                <div key={s.v} className="px-3 py-3 sm:px-4">
-                  <dt className="whitespace-nowrap text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
-                    {s.v}
-                  </dt>
-                  <dd className="mt-0.5 font-mono text-[10px] uppercase leading-tight tracking-wide text-muted-foreground sm:text-[11px]">
-                    {s.l}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           {/* hero card only in the 2-column layout (lg+) */}

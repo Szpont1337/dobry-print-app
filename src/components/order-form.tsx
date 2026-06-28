@@ -427,7 +427,7 @@ export function OrderForm({
   const ready = hydrated && profileReady;
 
   return (
-    <div className="bg-background-alt py-13 sm:py-21">
+    <div className="bg-background-alt py-8 sm:py-13">
       <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-8">
         <Link
           href={`/produkty/${product.slug}`}
@@ -457,7 +457,7 @@ export function OrderForm({
         </header>
 
         {!ready ? (
-          <div className="mt-8 flex items-center justify-center gap-3 border border-border bg-card p-12 text-sm text-muted-foreground">
+          <div className="mt-5 flex items-center justify-center gap-3 border border-border bg-card p-12 text-sm text-muted-foreground">
             <Loader2 aria-hidden className="size-5 animate-spin text-primary" />
             {t("loadingProfile")}
           </div>
@@ -465,7 +465,7 @@ export function OrderForm({
           <form
             onSubmit={handleSubmit(onValid)}
             noValidate
-            className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
+            className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
           >
             <div className="flex flex-col gap-5">
               <Fieldset index="01" legend={t("fieldsetInvoice")}>
@@ -795,14 +795,18 @@ function Fieldset({
   legend: string;
   children: React.ReactNode;
 }) {
+  const id = useId();
   return (
-    <fieldset className="grid gap-5 border border-border bg-card p-5 sm:grid-cols-2 sm:p-8">
-      <legend className="col-span-full mb-1 flex items-center gap-2 border-b border-border pb-3 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+    <fieldset aria-labelledby={id} className="border border-border bg-card">
+      <div
+        id={id}
+        className="flex items-center gap-2 border-b border-border px-5 py-4 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:px-8"
+      >
         <span className="text-primary">{index}</span>
         <span aria-hidden>/</span>
         {legend}
-      </legend>
-      {children}
+      </div>
+      <div className="grid gap-5 p-5 sm:grid-cols-2 sm:p-8">{children}</div>
     </fieldset>
   );
 }
