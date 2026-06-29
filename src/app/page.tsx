@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { CtaBand, HowItWorks } from "@/components/home-sections";
 import { ProductsGrid } from "@/components/products-grid";
+import { SocialProofToast } from "@/components/social-proof-toast";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +32,7 @@ export default function Home() {
       <HowItWorks />
       <Faq />
       <CtaBand />
+      <SocialProofToast />
     </main>
   );
 }

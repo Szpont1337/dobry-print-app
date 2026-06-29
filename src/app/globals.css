@@ -3,40 +3,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* DobrePrinty palette — deep green / cream / amber (from reference mockup) */
-  --background: #fbfcfb;
-  --background-alt: #f4f6f4;
-  --foreground: #14241f;
+  /* DobrePrinty palette — fresh mint / green / near-black (Brim-style) */
+  --background: #ffffff;
+  --background-alt: #f1faf5;
+  --foreground: #16211d;
   --card: #ffffff;
-  --card-foreground: #14241f;
+  --card-foreground: #16211d;
   --popover: #ffffff;
-  --popover-foreground: #14241f;
-  --primary: #0e6a57;
+  --popover-foreground: #16211d;
+  --primary: #0e7a5a;
   --primary-foreground: #ffffff;
-  --secondary: #e7f1ed;
-  --secondary-foreground: #0a4e40;
-  --muted: #eef1ee;
-  --muted-foreground: #7a8884;
-  --accent: #e7a33c;
-  --accent-foreground: #3a2a07;
+  --secondary: #c8f1dd;
+  --secondary-foreground: #0e5a42;
+  --muted: #eef5f1;
+  --muted-foreground: #6a7a73;
+  --accent: #b4ebcf;
+  --accent-foreground: #0e5a42;
   --destructive: #c0392b;
   --destructive-foreground: #ffffff;
-  --border: #e5e8e5;
-  --input: #dce0dd;
-  --ring: #0e6a57;
-  --chart-1: #0e6a57;
-  --chart-2: #e7a33c;
+  --border: #e4efe9;
+  --input: #d6e4dd;
+  --ring: #0e7a5a;
+  --chart-1: #0e7a5a;
+  --chart-2: #3ec98c;
   --chart-3: #0a4e40;
   --chart-4: #00a8e0;
   --chart-5: #9aa6a1;
-  --sidebar: #f4f6f4;
-  --sidebar-foreground: #14241f;
-  --sidebar-primary: #0e6a57;
+  --sidebar: #f1faf5;
+  --sidebar-foreground: #16211d;
+  --sidebar-primary: #0e7a5a;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e7f1ed;
-  --sidebar-accent-foreground: #0a4e40;
-  --sidebar-border: #e5e8e5;
-  --sidebar-ring: #0e6a57;
+  --sidebar-accent: #c8f1dd;
+  --sidebar-accent-foreground: #0e5a42;
+  --sidebar-border: #e4efe9;
+  --sidebar-ring: #0e7a5a;
 
   /* Dark surfaces (footer + green hero/CTA cards) */
   --footer: #0e1a16;
@@ -132,9 +132,9 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-sans: var(--font-inter), "Inter", sans-serif;
-  --font-display: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
-  --font-serif: var(--font-bricolage), "Bricolage Grotesque", sans-serif;
+  --font-sans: var(--font-nunito), "Nunito", sans-serif;
+  --font-display: var(--font-nunito), "Nunito", sans-serif;
+  --font-serif: var(--font-nunito), "Nunito", sans-serif;
   --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
 
   --radius-sm: calc(var(--radius) - 3px);

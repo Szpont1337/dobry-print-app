@@ -22,28 +22,22 @@ function fromPrice(product: Product): number {
 }
 
 function formatPLN(value: number): string {
-  return value.toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return value.toLocaleString("pl-PL", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 }
 
 function HeroProductCard({ product }: { product: Product }) {
   const { t } = useTranslation("home");
   return (
     <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-br from-hero-card-from to-hero-card-to p-5 text-footer-foreground shadow-xl">
-      {/* window chrome */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-3">
-        <div className="flex items-center gap-1.5" aria-hidden>
-          <span className="size-2.5 rounded-full bg-white/25" />
-          <span className="size-2.5 rounded-full bg-white/25" />
-          <span className="size-2.5 rounded-full bg-white/25" />
-        </div>
-        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-footer-foreground/60">
-          {t("hero.cardLabel")}
-        </span>
-      </div>
-
       {/* preview panel */}
-      <div className="relative mt-4 grid flex-1 place-items-center overflow-hidden rounded-xl bg-white/95 p-6">
-        <ProductMockup variant={product.variant} className="h-full w-full max-w-[240px]" />
+      <div className="relative grid flex-1 place-items-center overflow-hidden rounded-xl bg-white/95 p-6">
+        <ProductMockup
+          variant={product.variant}
+          className="h-full w-full max-w-[600px]"
+        />
         <span className="absolute left-3 top-3 inline-flex items-center rounded-md bg-accent px-2.5 py-1 font-mono text-[11px] font-extrabold uppercase tracking-wide text-accent-foreground">
           New
         </span>
@@ -74,13 +68,13 @@ export function HeroCardSwap() {
   return (
     <div className="relative mx-auto h-[500px] w-full max-w-[460px] sm:h-[560px] sm:max-w-[500px]">
       <CardSwap
-        width={340}
-        height={400}
-        cardDistance={40}
+        width={400}
+        height={500}
+        cardDistance={50}
         verticalDistance={46}
-        delay={4000}
-        skewAmount={5}
-        rotationY={26}
+        delay={3200}
+        skewAmount={0}
+        rotationY={0}
         pauseOnHover
         easing="elastic"
       >

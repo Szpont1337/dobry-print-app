@@ -36,17 +36,19 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   customClass?: string;
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ customClass, ...rest }, ref) => (
-  <div
-    ref={ref}
-    {...rest}
-    className={cn(
-      "absolute left-1/2 top-1/2 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]",
-      customClass,
-      rest.className,
-    )}
-  />
-));
+export const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ customClass, ...rest }, ref) => (
+    <div
+      ref={ref}
+      {...rest}
+      className={cn(
+        "absolute left-1/2 top-1/2 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]",
+        customClass,
+        rest.className,
+      )}
+    />
+  ),
+);
 Card.displayName = "Card";
 
 type CardRef = RefObject<HTMLDivElement | null>;
@@ -57,7 +59,12 @@ interface Slot {
   zIndex: number;
 }
 
-const makeSlot = (i: number, distX: number, distY: number, total: number): Slot => ({
+const makeSlot = (
+  i: number,
+  distX: number,
+  distY: number,
+  total: number,
+): Slot => ({
   x: i * distX,
   y: -i * distY,
   z: -i * distX * 1.5,
@@ -110,14 +117,20 @@ const CardSwap: React.FC<CardSwapProps> = ({
           returnDelay: 0.2,
         };
 
-  const childArr = useMemo(() => Children.toArray(children) as ReactElement<CardProps>[], [children]);
+  const childArr = useMemo(
+    () => Children.toArray(children) as ReactElement<CardProps>[],
+    [children],
+  );
   // Recreate one ref per card only when the card count changes.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const refs = useMemo<CardRef[]>(() => childArr.map(() => createRef<HTMLDivElement>()), [
-    childArr.length,
-  ]);
+  const refs = useMemo<CardRef[]>(
+    () => childArr.map(() => createRef<HTMLDivElement>()),
+    [childArr.length],
+  );
 
-  const order = useRef<number[]>(Array.from({ length: childArr.length }, (_, i) => i));
+  const order = useRef<number[]>(
+    Array.from({ length: childArr.length }, (_, i) => i),
+  );
 
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const intervalRef = useRef<number>(0);
@@ -126,7 +139,12 @@ const CardSwap: React.FC<CardSwapProps> = ({
   useEffect(() => {
     const total = refs.length;
     refs.forEach((r, i) =>
-      placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount, rotationY),
+      placeNow(
+        r.current!,
+        makeSlot(i, cardDistance, verticalDistance, total),
+        skewAmount,
+        rotationY,
+      ),
     );
 
     const swap = () => {
@@ -161,7 +179,12 @@ const CardSwap: React.FC<CardSwapProps> = ({
         );
       });
 
-      const backSlot = makeSlot(refs.length - 1, cardDistance, verticalDistance, refs.length);
+      const backSlot = makeSlot(
+        refs.length - 1,
+        cardDistance,
+        verticalDistance,
+        refs.length,
+      );
       tl.addLabel("return", `promote+=${config.durMove * config.returnDelay}`);
       tl.call(
         () => {
@@ -210,7 +233,15 @@ const CardSwap: React.FC<CardSwapProps> = ({
     }
     return () => clearInterval(intervalRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, rotationY, easing]);
+  }, [
+    cardDistance,
+    verticalDistance,
+    delay,
+    pauseOnHover,
+    skewAmount,
+    rotationY,
+    easing,
+  ]);
 
   const rendered = childArr.map((child, i) =>
     isValidElement<CardProps>(child)
@@ -229,7 +260,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   return (
     <div
       ref={container}
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center [perspective:900px] overflow-visible max-[768px]:scale-[0.8] max-[480px]:scale-[0.62]"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center [perspective:1000px] overflow-visible max-[768px]:scale-[0.8] max-[480px]:scale-[0.62]"
       style={{ width, height }}
     >
       {rendered}

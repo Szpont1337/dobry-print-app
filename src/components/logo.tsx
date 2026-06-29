@@ -1,7 +1,8 @@
-import { Leaf } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/lib/cn";
+
+import { BrandMark } from "./brand-mark";
 
 export function Logo({
   className = "",
@@ -23,7 +24,7 @@ export function Logo({
         aria-hidden
         className="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:-rotate-6 sm:size-9"
       >
-        <Leaf strokeWidth={2.4} className="size-5" />
+        <BrandMark className="size-4.5 sm:size-5" />
       </span>
       <span
         className={cn(

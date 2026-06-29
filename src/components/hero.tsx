@@ -1,13 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 import { visibleProducts } from "@/lib/products";
 import { Eyebrow } from "@/components/ui";
 
-import { HeroCardSwap } from "./hero-card-swap";
 import { HeroSearch } from "./hero-search";
+
+// Deferred (bundle-dynamic-imports): pulls in gsap, only used in the lg+
+// 2-column layout. Keep it out of the initial home bundle / SSR.
+const HeroCardSwap = dynamic(
+  () => import("./hero-card-swap").then((m) => m.HeroCardSwap),
+  { ssr: false },
+);
 
 const POPULAR_SLUGS = ["ulotki", "wizytowki", "plakaty", "naklejki"];
 
@@ -28,8 +35,9 @@ export function Hero() {
         <div className="grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-20">
           <div className="flex flex-col items-start gap-5">
             <Eyebrow className="font-mono">{t("hero.eyebrow")}</Eyebrow>
-            <h1 className="text-[2.4rem] font-extrabold leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[4rem]">
-              {t("hero.title")}
+            <h1 className="text-balance text-[2.4rem] font-extrabold leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[4rem]">
+              <span className="text-primary">{t("hero.titleAccent")}</span>{" "}
+              {t("hero.titleRest")}
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("hero.lead")}
@@ -53,23 +61,6 @@ export function Hero() {
                 </Link>
               ))}
             </div>
-
-            <dl className="mt-3 grid w-full max-w-md grid-cols-3 divide-x divide-border border border-border">
-              {[
-                { v: "24 h", l: t("hero.stat1") },
-                { v: "12 000+", l: t("hero.stat2") },
-                { v: "4,9/5", l: t("hero.stat3") },
-              ].map((s) => (
-                <div key={s.v} className="px-3 py-3 sm:px-4">
-                  <dt className="whitespace-nowrap text-xl font-extrabold tracking-tight text-foreground sm:text-2xl">
-                    {s.v}
-                  </dt>
-                  <dd className="mt-0.5 font-mono text-[10px] uppercase leading-tight tracking-wide text-muted-foreground sm:text-[11px]">
-                    {s.l}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           {/* hero card only in the 2-column layout (lg+) */}
