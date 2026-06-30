@@ -14,6 +14,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        // No /produkty index page — canonical product listing is the
+        // #produkty section on the home page.
+        source: "/produkty",
+        destination: "/#produkty",
+        permanent: true,
+      },
+    ];
+  },
   experimental: {
     // Barrel-import optimization (bundle-barrel-imports). `lucide-react` is
     // already in Next's default list; `motion` and `@react-three/drei` aren't.

@@ -42,7 +42,7 @@ export default async function OrderPage({
       <div className="mx-auto w-full max-w-[1200px] border-b border-border px-5 pb-5 pt-8 sm:px-8">
         <Breadcrumbs
           items={[
-            { label: "Produkty", href: "/produkty" },
+            { label: "Produkty", href: "/#produkty" },
             { label: product.name },
           ]}
         />

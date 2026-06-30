@@ -119,7 +119,7 @@ export default async function PaymentCancelledPage({
             <Button href={`/produkty/${order.productSlug}`} variant="primary">
               Wróć do produktu
             </Button>
-            <Button href="/produkty" variant="outline">
+            <Button href="/#produkty" variant="outline">
               Inne produkty
             </Button>
           </div>

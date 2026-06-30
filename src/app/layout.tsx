@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Nunito, IBM_Plex_Mono } from "next/font/google";
 
 import { AuthProvider } from "@/components/auth-provider";
@@ -91,6 +92,7 @@ export default function RootLayout({
         <CookieConsentBanner />
         <CookieConsentGA />
         <PostHogConsent />
+        <Analytics />
       </body>
     </html>
   );
