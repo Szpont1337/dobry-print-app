@@ -32,6 +32,11 @@ import { article as papierBialyCzyKraft } from "./artykuly/papier-bialy-czy-kraf
 import { article as torbyPlocienneprzewodnik } from "./artykuly/torby-plocienne-z-nadrukiem-przewodnik";
 import { article as torbaBawelnianaGadzet } from "./artykuly/torba-bawelniana-gadzet-reklamowy";
 import { article as nadrukNaTorbe } from "./artykuly/jak-zaprojektowac-nadruk-na-torbe";
+import { article as kalendarzeFirmowe } from "./artykuly/kalendarze-firmowe-druk";
+import { article as raportRoczny } from "./artykuly/raport-roczny-druk";
+import { article as kartkiSwiateczne } from "./artykuly/kartki-swiateczne-korporacyjne";
+import { article as banerJakZaprojektowac } from "./artykuly/baner-reklamowy-jak-zaprojektowac";
+import { article as tabliceForexDibond } from "./artykuly/tablice-reklamowe-forex-dibond";
 
 export const articles: Article[] = [
   pdfDoDruku,
@@ -66,21 +71,15 @@ export const articles: Article[] = [
   torbyPlocienneprzewodnik,
   torbaBawelnianaGadzet,
   nadrukNaTorbe,
+  kalendarzeFirmowe,
+  raportRoczny,
+  kartkiSwiateczne,
+  banerJakZaprojektowac,
+  tabliceForexDibond,
 ];
 
 /** Planowane artykuły — meta-only, treść w przygotowaniu */
 export const plannedArticles: ArticleMeta[] = [
-  {
-    slug: "kalendarze-firmowe-druk",
-    title: "Kalendarze firmowe — wybór, projektowanie, terminy zamówień",
-    excerpt:
-      "Ścienny, biurowy, kieszonkowy — jaki kalendarz firmowy zamówić. Terminy zamówień z wyprzedzeniem na nowy rok.",
-    category: "produkty",
-    tags: ["kalendarze", "gadżety firmowe", "Boże Narodzenie"],
-    publishedAt: "2026-05-07",
-    author: "Zespół DobrePrinty",
-    status: "planowany",
-  },
   {
     slug: "katalog-produktowy-jak-zaprojektowac",
     title: "Katalog produktowy — jak zaprojektować skuteczną publikację B2B",
@@ -89,18 +88,6 @@ export const plannedArticles: ArticleMeta[] = [
     category: "biznes",
     tags: ["katalog", "B2B", "broszury klejone"],
     publishedAt: "2026-05-14",
-    author: "Zespół DobrePrinty",
-    status: "planowany",
-    relatedProducts: ["broszury-klejone"],
-  },
-  {
-    slug: "raport-roczny-druk",
-    title: "Druk raportu rocznego — format, papier, oprawa",
-    excerpt:
-      "Standardy graficzne raportów rocznych spółek giełdowych. Wybór oprawy, papieru, ilość stron.",
-    category: "biznes",
-    tags: ["raport roczny", "spółki", "broszury klejone"],
-    publishedAt: "2026-05-21",
     author: "Zespół DobrePrinty",
     status: "planowany",
     relatedProducts: ["broszury-klejone"],
@@ -138,18 +125,6 @@ export const plannedArticles: ArticleMeta[] = [
     publishedAt: "2026-07-02",
     author: "Zespół DobrePrinty",
     status: "planowany",
-  },
-  {
-    slug: "kartki-swiateczne-korporacyjne",
-    title: "Kartki świąteczne korporacyjne — formaty, terminy, etykieta B2B",
-    excerpt:
-      "Druk kartek świątecznych dla firm. Format A5 składany, papier, tłoczenie złotem, terminy zamówień przed świętami.",
-    category: "produkty",
-    tags: ["kartki świąteczne", "B2B", "Boże Narodzenie", "premium"],
-    publishedAt: "2026-09-10",
-    author: "Zespół DobrePrinty",
-    status: "planowany",
-    relatedProducts: ["kartki-pocztowki"],
   },
   {
     slug: "tloczenie-folia-zlota-srebrna",
