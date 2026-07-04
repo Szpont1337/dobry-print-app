@@ -91,3 +91,36 @@ export function robotsForMiasto(
 ): { index: false; follow: true } | undefined {
   return isIndexableMiasto(miasto) ? undefined : { index: false, follow: true };
 }
+
+/**
+ * Czy podstrona miasto×produkt (`/drukarnia-<miasto>/<produkt>`) ma być
+ * indeksowana. Reguła ostrzejsza niż dla samej strony miasta: tylko miasta
+ * z listy statycznej (STATIC_CITY_SLUGS). Przy ~90 indeksowalnych miastach
+ * i kilkunastu produktach sitemap puchła do ~1400 niemal identycznych,
+ * szablonowych podstron — Google skanował je, ale odmawiał indeksowania
+ * (thin/doorway pages). Ograniczenie do miast statycznych tnie to do ~600
+ * stron i podnosi średnią jakość zgłaszanego zbioru.
+ */
+export function isIndexableCityProduct(miasto: Miasto): boolean {
+  return isStaticCity(miasto.slug);
+}
+
+/**
+ * Miasta, dla których podstrony miasto×produkt są indeksowane — używane
+ * w `generateStaticParams` trasy `drukarnia/[miasto]/[produkt]` i w sitemap.
+ */
+export function getCityProductMiasta(): Miasto[] {
+  return miasta.filter(isIndexableCityProduct);
+}
+
+/**
+ * Metadane `robots` dla podstrony miasto×produkt — analogicznie do
+ * `robotsForMiasto`, ale z ostrzejszą regułą `isIndexableCityProduct`.
+ */
+export function robotsForCityProduct(
+  miasto: Miasto,
+): { index: false; follow: true } | undefined {
+  return isIndexableCityProduct(miasto)
+    ? undefined
+    : { index: false, follow: true };
+}

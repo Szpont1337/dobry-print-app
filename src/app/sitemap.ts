@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { getPublishedArticles } from "@/data/artykuly";
 import { produkty } from "@/data/produkty";
 import { tematyDrukarnie } from "@/data/tematy-drukarnie";
-import { getIndexableMiasta } from "@/lib/miasta-seo";
+import { getCityProductMiasta, getIndexableMiasta } from "@/lib/miasta-seo";
 
 export const revalidate = 86400;
 
@@ -68,13 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const cityProductPages: MetadataRoute.Sitemap = indexableMiasta.flatMap((m) =>
-    produkty.map((p) => ({
-      url: `${BASE_URL}/drukarnia-${m.slug}/${p.slug}`,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
+  // Podstrony miasto×produkt zgłaszamy tylko dla miast z listy statycznej
+  // (ostrzejsza reguła niż dla stron miast) — patrz isIndexableCityProduct.
+  const cityProductPages: MetadataRoute.Sitemap = getCityProductMiasta().flatMap(
+    (m) =>
+      produkty.map((p) => ({
+        url: `${BASE_URL}/drukarnia-${m.slug}/${p.slug}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      })),
   );
 
   return [

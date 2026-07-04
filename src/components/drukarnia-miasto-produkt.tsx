@@ -13,7 +13,7 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import type { Miasto } from "@/data/miasta";
-import { robotsForMiasto } from "@/lib/miasta-seo";
+import { robotsForCityProduct } from "@/lib/miasta-seo";
 import type { Product } from "@/lib/products";
 import { visibleProducts as products } from "@/lib/products";
 import { getProductContent } from "@/lib/products-content";
@@ -601,7 +601,9 @@ export function buildCityProductMetadata({
   const lowestPrice = Math.min(
     ...product.formats.map((f) => f.unitPrice),
   ).toFixed(2);
-  const title = `${product.name} ${miasto.nazwa} — druk online, dostawa 24h | DobrePrinty`;
+  // Bez „| DobrePrinty" — layout dokleja szablonem „· DobrePrinty"; z sufiksem
+  // w obu miejscach tytuł wychodził zdublowany („… | DobrePrinty · DobrePrinty").
+  const title = `${product.name} ${miasto.nazwa} — druk online, dostawa 24h`;
   const description =
     `${product.name} w ${miasto.nazwa} — zamów online. Realizacja 24-48h, dostawa kurierem. Cena od ${lowestPrice} zł. Sprawdź DobrePrinty!`.slice(
       0,
@@ -611,9 +613,9 @@ export function buildCityProductMetadata({
     title,
     description,
     alternates: { canonical: url },
-    robots: robotsForMiasto(miasto),
+    robots: robotsForCityProduct(miasto),
     openGraph: {
-      title,
+      title: `${title} | DobrePrinty`,
       description,
       url,
       siteName: "DobrePrinty",

@@ -6,7 +6,7 @@ import {
   buildCityProductMetadata,
 } from "@/components/drukarnia-miasto-produkt";
 import { miasta } from "@/data/miasta";
-import { getIndexableMiasta } from "@/lib/miasta-seo";
+import { getCityProductMiasta } from "@/lib/miasta-seo";
 import { getAllProductSlugs, getProduct } from "@/lib/products";
 
 export const revalidate = 86400;
@@ -16,11 +16,12 @@ type Params = { miasto: string; produkt: string };
 
 export function generateStaticParams(): Params[] {
   // Adres publiczny /drukarnia-<slug>/<produkt> jest przepisywany (rewrite) na tę
-  // trasę. Budujemy statycznie wszystkie indeksowane miasta × produkty; pozostałe
-  // kombinacje renderują się na żądanie i są oznaczone noindex.
+  // trasę. Budujemy statycznie tylko miasta z listy statycznej × produkty
+  // (ostrzejsza reguła niż dla stron miast — patrz isIndexableCityProduct);
+  // pozostałe kombinacje renderują się na żądanie i są oznaczone noindex.
   const productSlugs = getAllProductSlugs();
   const params: Params[] = [];
-  for (const m of getIndexableMiasta()) {
+  for (const m of getCityProductMiasta()) {
     for (const produkt of productSlugs) {
       params.push({ miasto: m.slug, produkt });
     }
