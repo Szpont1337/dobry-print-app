@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Blog DobrePrinty — poradniki, design, technologia druku",
   description:
     "Praktyczne poradniki o druku online: jak przygotować plik PDF, wybór papieru, CMYK, projektowanie ulotek. 30+ artykułów dla firm i projektantów.",
-  alternates: { canonical: "https://dobreprinty.pl/blog" },
+  alternates: { canonical: "https://www.dobreprinty.pl/blog" },
   openGraph: {
     title: "Blog DobrePrinty — poradniki o druku online",
     description:
       "30+ artykułów o przygotowaniu plików, wyborze papieru, projektowaniu ulotek i wizytówek.",
-    url: "https://dobreprinty.pl/blog",
+    url: "https://www.dobreprinty.pl/blog",
     siteName: "DobrePrinty",
     type: "website",
   },

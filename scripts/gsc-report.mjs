@@ -16,11 +16,11 @@
 //   4. Set env vars (e.g. in .env.local, NOT committed):
 //        GSC_KEY_FILE=./gsc-service-account.json
 //        GSC_SITE_URL=sc-domain:dobreprinty.pl        # domain property
-//        # or  GSC_SITE_URL=https://dobreprinty.pl/   # URL-prefix property
+//        # or  GSC_SITE_URL=https://www.dobreprinty.pl/   # URL-prefix property
 //
 // Usage:
 //   bun run seo:gsc                              # inspect sample of sitemap URLs
-//   bun run seo:gsc -- --url https://dobreprinty.pl/drukarnia-kielce
+//   bun run seo:gsc -- --url https://www.dobreprinty.pl/drukarnia-kielce
 //   bun run seo:gsc -- --limit 30
 //   bun run seo:gsc -- queries                   # last 28 days search analytics
 //   bun run seo:gsc -- queries --days 90
@@ -31,7 +31,7 @@ import { XMLParser } from "fast-xml-parser";
 const KEY_FILE =
   process.env.GSC_KEY_FILE || process.env.GOOGLE_APPLICATION_CREDENTIALS;
 const SITE_URL = process.env.GSC_SITE_URL || "sc-domain:dobreprinty.pl";
-const BASE_URL = (process.env.SEO_BASE_URL || "https://dobreprinty.pl").replace(
+const BASE_URL = (process.env.SEO_BASE_URL || "https://www.dobreprinty.pl").replace(
   /\/$/,
   "",
 );

@@ -8,7 +8,7 @@ import { tematyDrukarnie } from "@/data/tematy-drukarnie";
 
 export const revalidate = 86400;
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dobreprinty.pl";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dobreprinty.pl";
 const URL = `${BASE_URL}/drukarnie-lokalne`;
 
 export const metadata: Metadata = {
@@ -108,6 +108,9 @@ export default function DrukarnieLokalnePage() {
                     <li key={m.slug}>
                       <Link
                         href={`/drukarnia-${m.slug}`}
+                        // Katalog ~100 miast — prefetch całej listy generowałby
+                        // dziesiątki requestów ?_rsc= przy każdym wejściu.
+                        prefetch={false}
                         className="inline-flex items-center rounded-lg border border-border bg-background-alt px-3 py-1.5 font-mono text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary"
                       >
                         Drukarnia {m.nazwa}

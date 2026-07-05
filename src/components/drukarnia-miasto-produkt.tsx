@@ -18,7 +18,7 @@ import type { Product } from "@/lib/products";
 import { visibleProducts as products } from "@/lib/products";
 import { getProductContent } from "@/lib/products-content";
 
-export const BASE_URL = "https://dobreprinty.pl";
+export const BASE_URL = "https://www.dobreprinty.pl";
 
 function formatPopulacja(populacja: number): string {
   return new Intl.NumberFormat("pl-PL").format(populacja);

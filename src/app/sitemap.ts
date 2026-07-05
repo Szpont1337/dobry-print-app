@@ -7,7 +7,7 @@ import { getCityProductMiasta, getIndexableMiasta } from "@/lib/miasta-seo";
 
 export const revalidate = 86400;
 
-const BASE_URL = "https://dobreprinty.pl";
+const BASE_URL = "https://www.dobreprinty.pl";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

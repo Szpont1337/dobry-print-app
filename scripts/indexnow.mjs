@@ -9,7 +9,7 @@
  *   node scripts/indexnow.mjs
  *
  * Zmienne środowiskowe (wszystkie opcjonalne):
- *   INDEXNOW_SITE_URL    bazowy URL strony (domyślnie NEXT_PUBLIC_SITE_URL lub https://dobreprinty.pl)
+ *   INDEXNOW_SITE_URL    bazowy URL strony (domyślnie NEXT_PUBLIC_SITE_URL lub https://www.dobreprinty.pl)
  *   INDEXNOW_KEY         klucz IndexNow (domyślnie ten z public/<key>.txt)
  *   INDEXNOW_KEY_LOCATION pełny URL pliku klucza (domyślnie ${SITE_URL}/${KEY}.txt)
  *   INDEXNOW_SITEMAP_URL  skąd pobrać sitemap (domyślnie ${SITE_URL}/sitemap.xml)
@@ -20,7 +20,7 @@
 const SITE_URL = (
   process.env.INDEXNOW_SITE_URL ||
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://dobreprinty.pl"
+  "https://www.dobreprinty.pl"
 ).replace(/\/+$/, "");
 
 const KEY = process.env.INDEXNOW_KEY || "04b109151a53412dbc3edc1c5dfd3b01";

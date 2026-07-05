@@ -24,7 +24,7 @@ export function getServerSecret(): string {
 }
 
 export function getSiteUrl() {
-  // Must be set per environment (e.g. production = https://dobreprinty.pl). We do
+  // Must be set per environment (e.g. production = https://www.dobreprinty.pl). We do
   // NOT fall back to request headers (Host / X-Forwarded-Host) — those are
   // attacker-controlled and would let someone point Stripe's success/cancel
   // redirect at their own domain to steal the session_id.

@@ -23,7 +23,7 @@ import { visibleProducts as products } from "@/lib/products";
 export const revalidate = 86400;
 export const dynamicParams = false;
 
-const BASE_URL = "https://dobreprinty.pl";
+const BASE_URL = "https://www.dobreprinty.pl";
 
 type Params = { slug: string };
 

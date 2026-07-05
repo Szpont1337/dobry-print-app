@@ -22,7 +22,7 @@ import {
 
 export const revalidate = 86400;
 
-const BASE_URL = "https://dobreprinty.pl";
+const BASE_URL = "https://www.dobreprinty.pl";
 
 type Params = { slug: string };
 

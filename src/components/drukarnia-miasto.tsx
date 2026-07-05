@@ -24,7 +24,7 @@ import { getMiastoTresc, type MiastoTresc } from "@/data/miasta-tresc";
 import { isIndexableMiasto, robotsForMiasto } from "@/lib/miasta-seo";
 import { visibleProducts as products } from "@/lib/products";
 
-const BASE_URL = "https://dobreprinty.pl";
+const BASE_URL = "https://www.dobreprinty.pl";
 
 function cityUrl(miasto: Miasto): string {
   return `${BASE_URL}/drukarnia-${miasto.slug}`;
@@ -552,6 +552,9 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
             <li key={p.slug} className="border-r border-b border-border">
               <Link
                 href={`/drukarnia-${miasto.slug}/${p.slug}`}
+                // Pełny katalog produktów (kilkanaście linków) na każdej z
+                // ~100 stron miast — bez prefetchu, żeby nie mnożyć ?_rsc=.
+                prefetch={false}
                 className="group flex h-full items-start gap-5 p-5 transition-colors hover:bg-secondary/50 sm:p-8"
               >
                 <span className="grid size-20 shrink-0 place-items-center rounded-lg border border-border bg-background-alt sm:size-24">

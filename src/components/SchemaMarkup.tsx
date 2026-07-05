@@ -5,8 +5,8 @@ export default function SchemaMarkup() {
       {
         "@type": "Organization",
         name: "DobrePrinty",
-        url: "https://dobreprinty.pl",
-        logo: "https://dobreprinty.pl/logo.png",
+        url: "https://www.dobreprinty.pl",
+        logo: "https://www.dobreprinty.pl/logo.png",
         description:
           "Drukarnia internetowa — druk ulotek, wizytówek, plakatów. Dostawa w całej Polsce.",
         contactPoint: {
@@ -20,7 +20,7 @@ export default function SchemaMarkup() {
       {
         "@type": "WebSite",
         name: "DobrePrinty",
-        url: "https://dobreprinty.pl",
+        url: "https://www.dobreprinty.pl",
       },
     ],
   };

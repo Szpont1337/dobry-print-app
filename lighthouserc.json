@@ -3,10 +3,10 @@
     "collect": {
       "numberOfRuns": 1,
       "url": [
-        "https://dobreprinty.pl/",
-        "https://dobreprinty.pl/drukarnia-kielce",
-        "https://dobreprinty.pl/produkty/wizytowki",
-        "https://dobreprinty.pl/blog"
+        "https://www.dobreprinty.pl/",
+        "https://www.dobreprinty.pl/drukarnia-kielce",
+        "https://www.dobreprinty.pl/produkty/wizytowki",
+        "https://www.dobreprinty.pl/blog"
       ],
       "settings": {
         "onlyCategories": ["seo", "performance", "accessibility", "best-practices"]

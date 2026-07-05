@@ -2,6 +2,19 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  async headers() {
+    return [
+      {
+        // Druga warstwa zabezpieczenia poza robots.txt: odpowiedzi na RSC
+        // payload requests (?_rsc=<hash>) dostają noindex, gdyby jakiś bot
+        // zignorował robots.txt albo reguła została kiedyś usunięta. Nagłówek
+        // jest neutralny dla przeglądarek, więc nie warunkujemy po User-Agent.
+        source: "/:path*",
+        has: [{ type: "query", key: "_rsc" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

@@ -14,7 +14,7 @@ import {
 import { tematyDrukarnie, type TematDrukarnia } from "@/data/tematy-drukarnie";
 import { visibleProducts as products } from "@/lib/products";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dobreprinty.pl";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dobreprinty.pl";
 
 const tileIcons = [Sparkles, ShieldCheck, Truck, Award];
 
