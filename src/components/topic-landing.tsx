@@ -14,7 +14,10 @@ import {
 import { tematyDrukarnie, type TematDrukarnia } from "@/data/tematy-drukarnie";
 import { visibleProducts as products } from "@/lib/products";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dobreprinty.pl";
+// Kanoniczna domena produkcyjna — hardkod jak w pozostałych stronach SEO.
+// Celowo NIE bierzemy NEXT_PUBLIC_SITE_URL: błędna wartość env (np. apex bez
+// www) rozjeżdżała canonicale z resztą serwisu.
+const BASE_URL = "https://www.dobreprinty.pl";
 
 const tileIcons = [Sparkles, ShieldCheck, Truck, Award];
 

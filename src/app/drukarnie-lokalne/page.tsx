@@ -8,7 +8,10 @@ import { tematyDrukarnie } from "@/data/tematy-drukarnie";
 
 export const revalidate = 86400;
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dobreprinty.pl";
+// Kanoniczna domena produkcyjna — hardkod jak w pozostałych stronach SEO.
+// Celowo NIE bierzemy NEXT_PUBLIC_SITE_URL: błędna wartość env (np. apex bez
+// www) rozjeżdżała canonicale z resztą serwisu.
+const BASE_URL = "https://www.dobreprinty.pl";
 const URL = `${BASE_URL}/drukarnie-lokalne`;
 
 export const metadata: Metadata = {

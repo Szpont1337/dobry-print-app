@@ -26,7 +26,10 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dobreprinty.pl";
+// Kanoniczna domena produkcyjna — hardkod jak w pozostałych stronach SEO.
+// Celowo NIE bierzemy NEXT_PUBLIC_SITE_URL: błędna wartość env (np. apex bez
+// www) rozjeżdżała metadataBase/og:url z resztą serwisu.
+const SITE_URL = "https://www.dobreprinty.pl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
