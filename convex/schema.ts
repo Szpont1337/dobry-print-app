@@ -67,6 +67,15 @@ export default defineSchema({
     ),
     source: v.optional(v.string()),
 
+    // Atrybucja ruchu (first-touch) — skąd trafił kupujący. Ustawiane przy
+    // składaniu zamówienia na podstawie referrera/UTM z pierwszego wejścia.
+    // attrChannel: ai_llm | organic | paid | social | referral | direct.
+    attrChannel: v.optional(v.string()),
+    attrSourceName: v.optional(v.string()),
+    attrReferrer: v.optional(v.string()),
+    attrUtmSource: v.optional(v.string()),
+    attrLanding: v.optional(v.string()),
+
     // Payment (Stripe)
     paymentStatus: v.optional(
       v.union(

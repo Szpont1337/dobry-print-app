@@ -11,6 +11,7 @@ import { z } from "zod";
 
 import { api } from "@convex/_generated/api";
 import { ORDER_DRAFT_EVENT, ORDER_DRAFT_KEY, type OrderDraftConfig } from "@/hooks/use-order-draft";
+import { getOrderAttribution } from "@/lib/attribution";
 import { computeTotals } from "@/lib/pricing";
 import type { Product } from "@/lib/products";
 import { safeCapture } from "@/lib/posthog-client";
@@ -377,6 +378,8 @@ export function OrderForm({
         fileUrl: trimmedUrl === "" ? undefined : trimmedUrl,
         notes: optional(values.notes),
         source: `produkty/${product.slug}`,
+        // First-touch atrybucja ruchu (skąd trafił kupujący).
+        ...getOrderAttribution(),
       });
 
       safeCapture("order_submitted", {

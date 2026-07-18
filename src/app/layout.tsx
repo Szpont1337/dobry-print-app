@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Nunito, IBM_Plex_Mono } from "next/font/google";
 
+import { AttributionCapture } from "@/components/attribution-capture";
 import { AuthProvider } from "@/components/auth-provider";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
@@ -95,6 +96,7 @@ export default function RootLayout({
         <CookieConsentBanner />
         <CookieConsentGA />
         <PostHogConsent />
+        <AttributionCapture />
         <Analytics />
       </body>
     </html>

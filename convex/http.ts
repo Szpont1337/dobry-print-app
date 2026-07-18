@@ -125,12 +125,44 @@ const handleDiscordInteraction = httpAction(async (ctx, request) => {
   return new Response("Unknown interaction type", { status: 400 });
 });
 
+// Endpoint wewnętrzny: zwraca dzienne statystyki TEJ marki (utarg + wejścia).
+// Wołany przez agregator drukalo, by złożyć jedną wspólną wiadomość na Discord.
+// Autoryzacja współdzielonym sekretem INTERNAL_API_SECRET.
+const handleDailyStats = httpAction(async (ctx, request) => {
+  const secret = process.env.INTERNAL_API_SECRET;
+  if (!secret || request.headers.get("X-Internal-Secret") !== secret) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+
+  let body: { startMs?: number; endMs?: number };
+  try {
+    body = await request.json();
+  } catch {
+    return new Response("Bad request", { status: 400 });
+  }
+  if (typeof body.startMs !== "number" || typeof body.endMs !== "number") {
+    return new Response("Missing startMs/endMs", { status: 400 });
+  }
+
+  const stats = await ctx.runAction(internal.dailyReport.brandDailyStats, {
+    startMs: body.startMs,
+    endMs: body.endMs,
+  });
+  return Response.json(stats);
+});
+
 const http = httpRouter();
 
 http.route({
   path: "/discord/interactions",
   method: "POST",
   handler: handleDiscordInteraction,
+});
+
+http.route({
+  path: "/internal/daily-stats",
+  method: "POST",
+  handler: handleDailyStats,
 });
 
 export default http;
