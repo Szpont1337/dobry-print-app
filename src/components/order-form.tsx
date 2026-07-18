@@ -378,7 +378,7 @@ export function OrderForm({
         fileUrl: trimmedUrl === "" ? undefined : trimmedUrl,
         notes: optional(values.notes),
         source: `produkty/${product.slug}`,
-        // First-touch atrybucja ruchu (skąd trafił kupujący).
+        // Marka (wg domeny) + first-touch atrybucja ruchu — skąd trafił kupujący.
         ...getOrderAttribution(),
       });
 

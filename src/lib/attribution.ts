@@ -3,6 +3,7 @@
 // third-party cookies → działa dla WSZYSTKICH odwiedzających (w odróżnieniu
 // od PostHog/GA, które ładują się dopiero po zgodzie na cookies).
 
+import { currentBrand } from "./brands";
 import {
   classifyTrafficSource,
   referrerHostname,
@@ -20,8 +21,10 @@ export interface StoredAttribution {
   ts: number;
 }
 
-// Argumenty przekazywane do mutacji createOrder (rozpłaszczone).
+// Argumenty przekazywane do mutacji submitOrder (rozpłaszczone). Zawiera też
+// markę (drukalo/dobreprinty), by front oznaczał zamówienie w wspólnej bazie.
 export interface OrderAttributionArgs {
+  brand: string;
   attrChannel: string;
   attrSourceName: string;
   attrReferrer?: string;
@@ -77,6 +80,7 @@ export function getOrderAttribution(): OrderAttributionArgs {
     utmMedium: stored?.utmMedium,
   });
   return {
+    brand: currentBrand(),
     attrChannel: channel satisfies TrafficChannel,
     attrSourceName: sourceName,
     attrReferrer: stored?.referrerDomain || undefined,

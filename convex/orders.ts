@@ -51,12 +51,6 @@ export const submitOrder = mutation({
     fileKeys: v.optional(v.array(v.string())),
     notes: v.optional(v.string()),
     source: v.optional(v.string()),
-    // Atrybucja ruchu (first-touch) — skąd trafił kupujący.
-    attrChannel: v.optional(v.string()),
-    attrSourceName: v.optional(v.string()),
-    attrReferrer: v.optional(v.string()),
-    attrUtmSource: v.optional(v.string()),
-    attrLanding: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const locale = args.locale;
@@ -142,11 +136,6 @@ export const submitOrder = mutation({
       fileUrl: args.fileUrl,
       notes: args.notes,
       source: args.source,
-      attrChannel: args.attrChannel,
-      attrSourceName: args.attrSourceName,
-      attrReferrer: args.attrReferrer,
-      attrUtmSource: args.attrUtmSource,
-      attrLanding: args.attrLanding,
       // Server-computed — never trusted from the client
       productName: computed.productName,
       formatLabel: computed.formatLabel,

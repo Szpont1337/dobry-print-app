@@ -36,6 +36,7 @@ import {
   Input,
   SectionHeader,
 } from "@/components/ui";
+import { BRANDS, type BrandKey, normalizeBrand } from "@/lib/brands";
 import { cn } from "@/lib/cn";
 
 import { useAuth } from "./auth-provider";
@@ -288,11 +289,22 @@ function StatsSection({ token }: { token: string }) {
 function OrdersSection({ token }: { token: string }) {
   const { t } = useTranslation("admin");
   const [filter, setFilter] = useState<OrderStatus | "all">("all");
+  // Marka, dla której pokazujemy zamówienia (wspólna baza obu domen). Filtr
+  // po stronie klienta — działa na dowolnej domenie panelu.
+  const [brandFilter, setBrandFilter] = useState<BrandKey | "all">("all");
   const orders = useQuery(api.admin.listOrders, {
     token,
     status: filter === "all" ? undefined : filter,
     limit: 100,
   });
+
+  const visibleOrders =
+    orders && brandFilter !== "all"
+      ? orders.filter(
+          (o) =>
+            normalizeBrand((o as { brand?: string }).brand) === brandFilter,
+        )
+      : orders;
 
   return (
     <section className="bg-background pb-10">
@@ -320,20 +332,41 @@ function OrdersSection({ token }: { token: string }) {
           ))}
         </div>
 
-        {orders === undefined ? (
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            Marka
+          </span>
+          <FilterChip
+            active={brandFilter === "all"}
+            onClick={() => setBrandFilter("all")}
+          >
+            Wszystkie
+          </FilterChip>
+          {BRANDS.map((b) => (
+            <FilterChip
+              key={b.key}
+              active={brandFilter === b.key}
+              onClick={() => setBrandFilter(b.key)}
+            >
+              {b.emoji} {b.label}
+            </FilterChip>
+          ))}
+        </div>
+
+        {visibleOrders === undefined ? (
           <div className="mt-8 grid place-items-center border border-border bg-card py-16">
             <Loader2
               aria-hidden
               className="size-8 animate-spin text-muted-foreground"
             />
           </div>
-        ) : orders.length === 0 ? (
+        ) : visibleOrders.length === 0 ? (
           <p className="mt-8 border border-dashed border-border bg-card px-6 py-16 text-center text-sm text-muted-foreground">
             {t("emptyFilter")}
           </p>
         ) : (
           <ul className="mt-6 space-y-3">
-            {orders.map((order) => (
+            {visibleOrders.map((order) => (
               <AdminOrderRow key={order._id} token={token} order={order} />
             ))}
           </ul>

@@ -1,6 +1,5 @@
 import { v } from "convex/values";
 
-import { CHANNEL_META, type TrafficChannel } from "../src/lib/traffic-source";
 import { internal } from "./_generated/api";
 import { internalAction } from "./_generated/server";
 
@@ -13,18 +12,6 @@ function deliveryLabel(method: string | undefined): string {
   if (method === "courier") return "Kurier";
   if (method === "parcel_locker") return "Paczkomat InPost";
   return "—";
-}
-
-// Ładny opis źródła ruchu zamówienia do embeda ("🤖 ChatGPT").
-function trafficSourceLabel(
-  channel: string | undefined,
-  sourceName: string | undefined,
-): string {
-  if (!channel) return "—";
-  const meta = CHANNEL_META[channel as TrafficChannel];
-  const emoji = meta?.emoji ?? "";
-  const name = sourceName || meta?.label || channel;
-  return `${emoji} ${name}`.trim();
 }
 
 // Powiadomienie na Discord o nowym (opłaconym) zamówieniu.
@@ -64,11 +51,6 @@ export const sendOrderNotification = internalAction({
       {
         name: "Dostawa",
         value: deliveryLabel(order.deliveryMethod),
-        inline: true,
-      },
-      {
-        name: "Źródło ruchu",
-        value: trafficSourceLabel(order.attrChannel, order.attrSourceName),
         inline: true,
       },
     ];
