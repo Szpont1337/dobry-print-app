@@ -37,6 +37,11 @@ import { article as raportRoczny } from "./artykuly/raport-roczny-druk";
 import { article as kartkiSwiateczne } from "./artykuly/kartki-swiateczne-korporacyjne";
 import { article as banerJakZaprojektowac } from "./artykuly/baner-reklamowy-jak-zaprojektowac";
 import { article as tabliceForexDibond } from "./artykuly/tablice-reklamowe-forex-dibond";
+import { article as overprintNaddruk } from "./artykuly/overprint-naddruk-w-druku";
+import { article as papierKredaMatBlysk } from "./artykuly/papier-kreda-mat-czy-blysk";
+import { article as etykietySloikiButelki } from "./artykuly/etykiety-na-sloiki-i-butelki";
+import { article as plakatNaEvent } from "./artykuly/plakat-na-event-jak-zaprojektowac";
+import { article as formatyPapieruAbc } from "./artykuly/formaty-papieru-seria-a-b-c";
 
 export const articles: Article[] = [
   pdfDoDruku,
@@ -76,6 +81,11 @@ export const articles: Article[] = [
   kartkiSwiateczne,
   banerJakZaprojektowac,
   tabliceForexDibond,
+  overprintNaddruk,
+  papierKredaMatBlysk,
+  etykietySloikiButelki,
+  plakatNaEvent,
+  formatyPapieruAbc,
 ];
 
 /** Planowane artykuły — meta-only, treść w przygotowaniu */
