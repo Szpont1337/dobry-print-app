@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalPage } from "@/components/legal-page";
+import { COMPANY, COMPANY_ADDRESS } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Regulamin. DobrePrinty",
@@ -19,9 +20,8 @@ export default function RegulaminPage() {
       <ul>
         <li>
           <strong>DobrePrinty</strong>, czyli serwis dobreprinty.pl prowadzony
-          przez MYMIDWIFE sp. z o.o. z siedzibą przy ul. Kazimierza
-          Tetmajera-Przerwy 10, 21-500 Biała Podlaska, KRS 0001220264, NIP
-          5372694237, REGON 543833099 (administrator danych osobowych).
+          przez <strong>{COMPANY.name}</strong>, {COMPANY_ADDRESS}, e-mail{" "}
+          {COMPANY.email} (administrator danych osobowych).
         </li>
         <li>
           <strong>Klient</strong>, czyli osoba fizyczna, prawna lub jednostka

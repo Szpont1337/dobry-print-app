@@ -9,6 +9,7 @@ import { internalAction } from "./_generated/server";
 import {
   BRAND,
   callout,
+  COMPANY_LINE,
   escapeHtml,
   plainBlock,
   renderShell,
@@ -39,8 +40,7 @@ function shortId(id: string): string {
   return id.slice(-8).toUpperCase();
 }
 
-const ORDER_FOOTER =
-  "DobrePrinty sp. z o.o. · hej@dobreprinty.pl<br>Otrzymujesz tę wiadomość, bo złożyłeś zamówienie w dobreprinty.pl.";
+const ORDER_FOOTER = `${COMPANY_LINE}<br>Otrzymujesz tę wiadomość, bo złożyłeś zamówienie w dobreprinty.pl.`;
 
 const SITE_URL = (process.env.SITE_URL ?? "https://dobreprinty.pl").replace(
   /\/$/,

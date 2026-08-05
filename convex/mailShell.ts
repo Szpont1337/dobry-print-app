@@ -8,6 +8,10 @@ export const BRAND = {
   cardBackground: "#ffffff",
 };
 
+// Dane podmiotu w stopce maili (jednoosobowa działalność, nie spółka).
+export const COMPANY_LINE =
+  "DobrePrinty · Piotr Pręciuk, ul. Jagiellońska 97/2, 20-806 Lublin · hej@dobreprinty.pl";
+
 export function escapeHtml(text: string): string {
   return text
     .replace(/&/g, "&amp;")
@@ -23,7 +27,7 @@ export function renderShell({
   detailsHtml = "",
   followUpHtml = "",
   signature = "Pozdrawiamy,<br>zespół DobrePrinty",
-  footerNote = "DobrePrinty sp. z o.o. · hej@dobreprinty.pl",
+  footerNote = COMPANY_LINE,
   lang = "pl",
 }: {
   preheader: string;
