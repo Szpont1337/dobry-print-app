@@ -1,0 +1,37 @@
+name: IndexNow ping
+
+# Automatycznie pinguje IndexNow listą URL-i z sitemap PO udanym deployu
+# produkcyjnym. Działa z hostingami zintegrowanymi z GitHubem (Vercel, Netlify,
+# Cloudflare Pages…), które zgłaszają status deploymentu do GitHuba.
+# Można też odpalić ręcznie (zakładka Actions → Run workflow).
+on:
+  deployment_status:
+  workflow_dispatch:
+
+# Nie pinguj kilka razy równolegle dla tego samego środowiska.
+concurrency:
+  group: indexnow-${{ github.event.deployment_status.environment || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    # Tylko po SUKCESIE deployu na PRODUKCJI (pomijamy preview/inne stany),
+    # albo gdy uruchomiono ręcznie.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       (github.event.deployment_status.environment == 'Production' ||
+        github.event.deployment_status.environment == 'production'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Ping IndexNow z sitemap
+        env:
+          # Nadpisywalne przez repo Variables (Settings → Variables) — inaczej
+          # skrypt użyje domyślnych (https://www.dobreprinty.pl + klucz z public/).
+          INDEXNOW_SITE_URL: ${{ vars.INDEXNOW_SITE_URL }}
+          INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+        run: node scripts/indexnow.mjs
