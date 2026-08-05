@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalPage } from "@/components/legal-page";
+import { COMPANY, COMPANY_ADDRESS } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności. DobrePrinty",
@@ -18,11 +19,8 @@ export default function PolitykaPrywatnosciPage() {
       <h2>1. Administrator danych</h2>
       <p>
         Administratorem Twoich danych osobowych jest{" "}
-        <strong>MYMIDWIFE sp. z o.o.</strong> z siedzibą przy ul. Kazimierza
-        Tetmajera-Przerwy 10, 21-500 Biała Podlaska, wpisana do rejestru
-        przedsiębiorców KRS pod numerem 0001220264, NIP 5372694237, REGON
-        543833099, prowadząca serwis dobreprinty.pl. Kontakt:
-        hej@dobreprinty.pl.
+        <strong>{COMPANY.name}</strong>, {COMPANY_ADDRESS}, prowadzący serwis
+        dobreprinty.pl. Kontakt: {COMPANY.email}.
       </p>
 
       <h2>2. Zakres zbieranych danych</h2>

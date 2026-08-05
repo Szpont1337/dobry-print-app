@@ -5,7 +5,12 @@ import nodemailer from "nodemailer";
 
 import { internal } from "./_generated/api";
 import { action } from "./_generated/server";
-import { codeDisplay, plainBlock, renderShell } from "./mailShell";
+import {
+  codeDisplay,
+  COMPANY_LINE,
+  plainBlock,
+  renderShell,
+} from "./mailShell";
 
 function generateSixDigitCode(): string {
   const bytes = new Uint8Array(4);
@@ -32,8 +37,7 @@ function htmlBody(code: string, locale: "pl" | "en"): string {
         "If you didn't request this code, you can safely ignore this email — nobody can sign in without it.",
       ),
       signature: "See you on the other side,<br>DobrePrinty team",
-      footerNote:
-        "DobrePrinty sp. z o.o. · hej@dobreprinty.pl<br>You're receiving this email because someone requested a sign-in code for your address.",
+      footerNote: `${COMPANY_LINE}<br>You're receiving this email because someone requested a sign-in code for your address.`,
     });
   }
   return renderShell({
@@ -46,8 +50,7 @@ function htmlBody(code: string, locale: "pl" | "en"): string {
       "Jeśli to nie Ty go zamówiłeś, zignoruj tę wiadomość — bez kodu nikt się nie zaloguje.",
     ),
     signature: "Do zobaczenia w panelu,<br>zespół DobrePrinty",
-    footerNote:
-      "DobrePrinty sp. z o.o. · hej@dobreprinty.pl<br>Otrzymujesz tę wiadomość, bo ktoś poprosił o kod logowania dla tego adresu.",
+    footerNote: `${COMPANY_LINE}<br>Otrzymujesz tę wiadomość, bo ktoś poprosił o kod logowania dla tego adresu.`,
   });
 }
 
