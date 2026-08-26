@@ -1652,7 +1652,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy drukujecie też na kolorowych koszulkach?",
         answer:
-          "Na ten moment oferujemy nadruk na białej koszulce bawełnianej — to najtańsza i najbardziej uniwersalna opcja, na której kolory wychodzą najwierniej. Jeśli potrzebujesz koszulek w innym kolorze, napisz do nas na hej@dobreprinty.pl po wycenę indywidualną.",
+          "Na ten moment oferujemy nadruk na białej koszulce bawełnianej — to najtańsza i najbardziej uniwersalna opcja, na której kolory wychodzą najwierniej. Jeśli potrzebujesz koszulek w innym kolorze, napisz do nas na hej@drukalo.pl po wycenę indywidualną.",
       },
     ],
     seoParagraph: [

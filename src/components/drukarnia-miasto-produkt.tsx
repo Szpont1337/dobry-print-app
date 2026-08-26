@@ -189,7 +189,7 @@ export function CityProductPageContent({
         name: `DobrePrinty, ${product.name} ${miasto.nazwa}`,
         description: `${product.name} dla firm z ${miasto.nazwa}. Druk online z dostawą 24–48 h, cena z VAT od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
         url,
-        email: "hej@dobreprinty.pl",
+        email: "hej@drukalo.pl",
         priceRange: "29 zł – 4 500 zł",
         areaServed: {
           "@type": "City",
@@ -571,7 +571,7 @@ export function CityProductPageContent({
               Skonfiguruj i zamów <span aria-hidden>→</span>
             </Button>
             <Button
-              href={`mailto:hej@dobreprinty.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
+              href={`mailto:hej@drukalo.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
               variant="outline"
               size="lg"
             >

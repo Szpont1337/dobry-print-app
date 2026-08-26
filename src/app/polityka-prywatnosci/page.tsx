@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalPage } from "@/components/legal-page";
-import { COMPANY, COMPANY_ADDRESS } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności. DobrePrinty",
@@ -19,8 +19,8 @@ export default function PolitykaPrywatnosciPage() {
       <h2>1. Administrator danych</h2>
       <p>
         Administratorem Twoich danych osobowych jest{" "}
-        <strong>{COMPANY.name}</strong>, {COMPANY_ADDRESS}, prowadzący serwis
-        dobreprinty.pl. Kontakt: {COMPANY.email}.
+        <strong>{COMPANY.name}</strong>, prowadzący serwis dobreprinty.pl.
+        Kontakt: {COMPANY.email}.
       </p>
 
       <h2>2. Zakres zbieranych danych</h2>

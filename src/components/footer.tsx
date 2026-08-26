@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
-import { COMPANY, COMPANY_FULL } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 
 import { Logo } from "./logo";
 
@@ -42,7 +42,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-footer-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {t("footer.copyright", { year })} · {COMPANY_FULL}
+            {t("footer.copyright", { year })} · {COMPANY.name}
           </p>
           <a
             href={`mailto:${COMPANY.email}`}

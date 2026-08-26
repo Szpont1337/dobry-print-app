@@ -279,7 +279,7 @@ function SchemaMarkup({
     description: `Drukarnia online dla firm i instytucji z ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena z VAT widoczna od razu.`,
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
-    email: "hej@dobreprinty.pl",
+    email: "hej@drukalo.pl",
     priceRange: "29 zł – 4 500 zł",
     areaServed: [
       {
@@ -648,7 +648,7 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
             </p>
           </div>
           <Button
-            href={`mailto:hej@dobreprinty.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
+            href={`mailto:hej@drukalo.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
             variant="primary"
             size="md"
             className="shrink-0"

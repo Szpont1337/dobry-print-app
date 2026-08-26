@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalPage } from "@/components/legal-page";
-import { COMPANY, COMPANY_ADDRESS } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Regulamin. DobrePrinty",
@@ -19,8 +19,7 @@ export default function RegulaminPage() {
       <h2>1. Definicje</h2>
       <ul>
         <li>
-          <strong>DobrePrinty</strong>, czyli serwis dobreprinty.pl prowadzony
-          przez <strong>{COMPANY.name}</strong>, {COMPANY_ADDRESS}, e-mail{" "}
+          <strong>DobrePrinty</strong>, czyli serwis dobreprinty.pl, e-mail{" "}
           {COMPANY.email} (administrator danych osobowych).
         </li>
         <li>
@@ -78,7 +77,7 @@ export default function RegulaminPage() {
       <h2>7. Reklamacje</h2>
       <p>
         Reklamacje przyjmujemy w 14 dni od otrzymania zamówienia na adres{" "}
-        <strong>hej@dobreprinty.pl</strong>. Rozpatrujemy je w 7 dni roboczych.
+        <strong>hej@drukalo.pl</strong>. Rozpatrujemy je w 7 dni roboczych.
         Jeśli wina leży po stronie drukarni partnerskiej, koszt ponownego druku
         pokrywamy my; to nasza umowa z partnerem.
       </p>

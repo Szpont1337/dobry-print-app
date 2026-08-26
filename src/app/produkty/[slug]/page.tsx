@@ -467,7 +467,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
                 Skonfiguruj i zamów <span aria-hidden>→</span>
               </Button>
               <Button
-                href="mailto:hej@dobreprinty.pl?subject=Wycena%20druku"
+                href="mailto:hej@drukalo.pl?subject=Wycena%20druku"
                 variant="outline"
                 size="lg"
               >
