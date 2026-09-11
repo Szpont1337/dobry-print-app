@@ -59,7 +59,7 @@
       },
       {
         "question": "Will I get a VAT invoice?",
-        "answer": "Yes. After your order is finalized we automatically issue a VAT invoice and send it as a PDF to your email — no need to ask for one."
+        "answer": "No. DobrePrinty operates as unregistered business activity and is not a VAT payer, so we do not issue VAT invoices. After payment you automatically receive a receipt by email, issued by our payment provider Stripe — with your company details if you provide them with the order."
       },
       {
         "question": "Can I cancel or return an order?",

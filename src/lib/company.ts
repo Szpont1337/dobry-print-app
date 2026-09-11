@@ -4,4 +4,6 @@
 export const COMPANY = {
   name: "DobrePrinty",
   email: "hej@drukalo.pl",
+  owner: "Huberta Kolejko",
+  address: "ul. Stanisława Leszczyńskiego 25/403B",
 } as const;

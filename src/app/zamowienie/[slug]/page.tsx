@@ -9,7 +9,7 @@ import { getProduct } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Zamówienie",
   description:
-    "Wgraj projekt, podaj dane do faktury i dostawy, a następnie przejdź do płatności.",
+    "Wgraj projekt, podaj dane do rachunku i dostawy, a następnie przejdź do płatności.",
   robots: { index: false, follow: false },
 };
 

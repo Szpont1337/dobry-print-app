@@ -239,7 +239,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
             </p>
             <span className="mt-1 block text-sm font-semibold text-foreground">Wgraj projekt</span>
             <p className="mt-1 text-xs text-muted-foreground">
-              Dołącz gotowy plik teraz — dane do faktury, dostawę i płatność uzupełnisz w jednym,
+              Dołącz gotowy plik teraz — dane do rachunku, dostawę i płatność uzupełnisz w jednym,
               ostatnim kroku.
             </p>
             <div className="mt-3">

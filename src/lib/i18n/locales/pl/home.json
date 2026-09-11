@@ -51,7 +51,7 @@
       },
       {
         "question": "Jakie metody płatności akceptujecie?",
-        "answer": "BLIK, karta (Visa/Mastercard), Przelewy24, Apple Pay i Google Pay. Dla klientów biznesowych dostępna jest faktura proforma z odroczonym terminem 14 dni po zweryfikowaniu firmy."
+        "answer": "BLIK, karta (Visa/Mastercard), Przelewy24, Apple Pay i Google Pay. Płatność z góry przy składaniu zamówienia — rachunek za nią dostajesz automatycznie na maila."
       },
       {
         "question": "Co jeśli kolory nie odpowiadają tym z monitora?",
@@ -59,7 +59,7 @@
       },
       {
         "question": "Czy dostanę fakturę VAT?",
-        "answer": "Tak. Po finalizacji zamówienia faktura VAT jest wystawiana automatycznie i trafia na maila w PDF, bez dopisków typu „proszę o fakturę”."
+        "answer": "Nie. DobrePrinty prowadzi działalność nierejestrowaną i nie jest podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia automatycznie dostajesz na maila rachunek wystawiony przez platformę płatniczą Stripe — z danymi firmy, jeśli podasz je przy zamówieniu."
       },
       {
         "question": "Czy mogę anulować lub zwrócić zamówienie?",

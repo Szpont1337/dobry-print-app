@@ -44,7 +44,7 @@ const formatQty = new Intl.NumberFormat("pl-PL");
  * Koszyk jako panel: sheet przy prawej krawędzi na desktopie, szuflada od dołu
  * na telefonie (shadcn/ui: Sheet = Radix Dialog, Drawer = vaul).
  *
- * Projekty (pliki) i dane do faktury zbieramy dalej, na /checkout — w wąskim
+ * Projekty (pliki) i dane do rachunku zbieramy dalej, na /checkout — w wąskim
  * panelu nie ma na to miejsca, a i tak są potrzebne dopiero przy płatności.
  */
 export function CartSheet() {

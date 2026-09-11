@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Zamówienie",
   description:
-    "Wgraj projekty, podaj dane do faktury i dostawy, zapłać za cały koszyk jedną płatnością.",
+    "Wgraj projekty, podaj dane do rachunku i dostawy, zapłać za cały koszyk jedną płatnością.",
   robots: { index: false, follow: false },
 };
 

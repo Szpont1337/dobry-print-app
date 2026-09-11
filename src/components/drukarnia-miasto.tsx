@@ -69,7 +69,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa} obsługuje większe nakłady firmowe?`,
-      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały targowe, serie wizytówek dla całych zespołów. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.`,
+      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały targowe, serie wizytówek dla całych zespołów.`,
     },
     {
       question: `Czy mogę odebrać zamówienie osobiście w ${miasto.nazwa}?`,
@@ -81,7 +81,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Tak. Faktura VAT trafia na maila razem z potwierdzeniem zamówienia, bez konieczności proszenia o nią osobno. Dla klientów z ${miasto.wojewodztwo} obsługujemy także zamówienia z odroczonym terminem płatności (proforma + przelew 14 dni).`,
+      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila — z danymi firmy, jeśli podasz je przy zamówieniu. Dotyczy to także klientów z ${miasto.wojewodztwo}.`,
     },
   ];
 
@@ -131,7 +131,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
   if (uczelnieProse) {
     p4 += ` Obsługujemy też sektor edukacji i nauki — m.in. ${uczelnieProse}.`;
   }
-  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, faktura VAT przychodzi na maila, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
+  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, rachunek ze Stripe przychodzi na maila, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
 
   return [p1, p2, p3, p4];
 }
