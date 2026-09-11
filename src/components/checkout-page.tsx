@@ -10,7 +10,7 @@ import { CheckoutForm } from "@/components/checkout-form";
 import { buttonVariants } from "@/components/ui";
 import { useCart } from "@/hooks/use-cart";
 
-export function CheckoutPage() {
+export function CheckoutPage({ testMode = false }: { testMode?: boolean }) {
   const { t } = useTranslation("order");
   const { items, totals, ready } = useCart();
 
@@ -50,6 +50,11 @@ export function CheckoutPage() {
 
   return (
     <div className="flex flex-col gap-8">
+      {testMode && (
+        <p className="rounded-lg border border-primary/30 bg-primary/5 px-5 py-3 text-sm font-semibold text-primary">
+          {t("cart.testBanner")}
+        </p>
+      )}
       <section>
         <header className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
           <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -65,7 +70,12 @@ export function CheckoutPage() {
         <CartLines items={items} onUploadingChange={handleUploadingChange} />
       </section>
 
-      <CheckoutForm items={items} totals={totals} filesUploading={filesUploading} />
+      <CheckoutForm
+        items={items}
+        totals={totals}
+        filesUploading={filesUploading}
+        testMode={testMode}
+      />
     </div>
   );
 }

@@ -56,6 +56,8 @@ export const submitOrder = mutation({
     fileKeys: v.optional(v.array(v.string())),
     notes: v.optional(v.string()),
     source: v.optional(v.string()),
+    /** zamówienie testowe — bez obciążenia i bez powiadomień */
+    test: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     const locale = args.locale;
@@ -141,6 +143,7 @@ export const submitOrder = mutation({
       fileUrl: args.fileUrl,
       notes: args.notes,
       source: args.source,
+      test: args.test,
       // Server-computed — never trusted from the client
       productName: computed.productName,
       formatLabel: computed.formatLabel,
@@ -220,6 +223,8 @@ export const submitCart = mutation({
     parcelLockerAddress: v.optional(v.string()),
     parcelLockerDescription: v.optional(v.string()),
     source: v.optional(v.string()),
+    /** zamówienie testowe — bez obciążenia i bez powiadomień */
+    test: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     const locale = args.locale;
@@ -326,6 +331,7 @@ export const submitCart = mutation({
         fileUrl: cfg.fileUrl,
         notes: cfg.notes,
         source: args.source,
+        test: args.test,
         // Server-computed — never trusted from the client
         productName: priced.productName,
         formatLabel: priced.formatLabel,

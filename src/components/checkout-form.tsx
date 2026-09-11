@@ -75,10 +75,13 @@ export function CheckoutForm({
   items,
   totals,
   filesUploading,
+  testMode = false,
 }: {
   items: ResolvedCartItem[];
   totals: CartTotals;
   filesUploading: boolean;
+  /** ?test — zamówienie testowe: bez obciążenia i bez powiadomień */
+  testMode?: boolean;
 }) {
   const { t, i18n } = useTranslation("order");
   const submitCart = useMutation(api.orders.submitCart);
@@ -295,7 +298,8 @@ export function CheckoutForm({
         parcelLockerAddress: deliveryMethod === "parcel_locker" ? parcelLocker?.address : undefined,
         parcelLockerDescription:
           deliveryMethod === "parcel_locker" ? (parcelLocker?.description ?? undefined) : undefined,
-        source: "koszyk",
+        source: testMode ? "koszyk (test)" : "koszyk",
+        test: testMode || undefined,
         // Marka (wg domeny) + first-touch atrybucja ruchu — skąd trafił kupujący.
         ...getOrderAttribution(),
       });
@@ -317,6 +321,7 @@ export function CheckoutForm({
         body: JSON.stringify({
           orderIds: orderIds.map(String),
           locale: i18n.language,
+          test: testMode,
         }),
       });
       const payload = (await res.json().catch(() => ({}))) as {
@@ -533,7 +538,9 @@ export function CheckoutForm({
                   ? t("submitting")
                   : filesUploading
                     ? t("uploadingFiles")
-                    : t("submit")}
+                    : testMode
+                      ? t("cart.testSubmit")
+                      : t("submit")}
             </Button>
 
             {mode === "error" && errorMsg ? (

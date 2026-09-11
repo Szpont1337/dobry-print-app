@@ -55,6 +55,10 @@ export default defineSchema({
     pickupCode: v.optional(v.string()),
     pickupPhone: v.optional(v.string()),
 
+    // Zamówienie testowe: przeszło CAŁY przepływ (koszyk → dane → „płatność" →
+    // panel), ale nikt nie został obciążony i nie poleciały powiadomienia.
+    test: v.optional(v.boolean()),
+
     // Status and metadata
     status: v.union(
       v.literal("pending"),

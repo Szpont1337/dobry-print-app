@@ -136,6 +136,11 @@ export default async function PaymentSuccessPage({
               ? `Zamówienia: ${bundle.map((o) => `#${shortId(String(o._id))}`).join(" · ")}`
               : `Zamówienie #${shortId(String(order._id))}`}
           </p>
+          {order.test && (
+            <span className="rounded-lg bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+              Zamówienie testowe — bez płatności i bez produkcji
+            </span>
+          )}
           {paid ? (
             <>
               <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">

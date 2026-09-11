@@ -100,6 +100,8 @@
     "errMissingDesign": "Dodaj projekt do pozycji: {{products}}.",
     "checkout": "Przejdź do płatności",
     "designLater": "Projekt dodasz w następnym kroku",
-    "description": "Podgląd koszyka z pozycjami i podsumowaniem."
+    "description": "Podgląd koszyka z pozycjami i podsumowaniem.",
+    "testBanner": "Tryb testowy — przejdziesz całe zamówienie, ale nie pobierzemy płatności i nie ruszymy produkcji.",
+    "testSubmit": "Złóż zamówienie testowe"
   }
 }
