@@ -47,6 +47,18 @@ export async function GET(request: Request) {
         { status: 404, headers: CORS },
       );
     }
+    // Zamówienie testowe nie idzie do realizacji — bot kupujący na Allegro
+    // dostaje tu jasną odmowę zamiast danych do zakupu.
+    if (order.test) {
+      return NextResponse.json(
+        {
+          error: "test_order",
+          detail:
+            "Zamówienie testowe — nie kupujemy pod nie towaru ani nie wysyłamy paczki.",
+        },
+        { status: 409 },
+      );
+    }
     return NextResponse.json(shapeFulfillmentPayload(order), {
       headers: CORS,
     });

@@ -50,6 +50,18 @@ export async function POST(request: Request) {
         { status: 404 },
       );
     }
+    // Zamówienie testowe nie idzie do realizacji — bot kupujący na Allegro
+    // dostaje tu jasną odmowę zamiast danych do zakupu.
+    if (order.test) {
+      return NextResponse.json(
+        {
+          error: "test_order",
+          detail:
+            "Zamówienie testowe — nie kupujemy pod nie towaru ani nie wysyłamy paczki.",
+        },
+        { status: 409 },
+      );
+    }
 
     // Allegro offer mapping (may be absent → spec carries offerUrl: null and the
     // agent is told to stop).
