@@ -35,7 +35,6 @@ export const get = query({
       profile: profile
         ? {
             companyName: profile.companyName ?? null,
-            taxId: profile.taxId ?? null,
             phone: profile.phone ?? null,
             shippingStreet: profile.shippingStreet ?? null,
             shippingCity: profile.shippingCity ?? null,
@@ -52,7 +51,6 @@ export const upsert = mutation({
     token: v.string(),
     name: v.optional(v.string()),
     companyName: v.optional(v.string()),
-    taxId: v.optional(v.string()),
     phone: v.optional(v.string()),
     shippingStreet: v.optional(v.string()),
     shippingCity: v.optional(v.string()),
@@ -76,7 +74,6 @@ export const upsert = mutation({
 
     const profileData = {
       companyName: normalize(args.companyName),
-      taxId: normalize(args.taxId),
       phone: normalize(args.phone),
       shippingStreet: normalize(args.shippingStreet),
       shippingCity: normalize(args.shippingCity),

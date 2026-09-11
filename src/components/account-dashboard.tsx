@@ -181,7 +181,6 @@ type Order = {
   fileUrl?: string;
   notes?: string;
   companyName?: string;
-  taxId?: string;
   pickupPointAddress?: string;
   pickupCode?: string;
   pickupPhone?: string;
@@ -385,7 +384,6 @@ function OrderCard({ order }: { order: Order }) {
             {order.companyName && (
               <p>
                 <strong className="text-foreground">{order.companyName}</strong>
-                {order.taxId ? ` · ${order.taxId}` : ""}
               </p>
             )}
             {order.notes && (
@@ -419,7 +417,6 @@ function ProfileSection({
   const nameId = useId();
   const phoneId = useId();
   const companyId = useId();
-  const taxId = useId();
   const streetId = useId();
   const cityId = useId();
   const zipId = useId();
@@ -457,7 +454,6 @@ function ProfileSection({
         name: get("name"),
         phone: get("phone"),
         companyName: get("companyName"),
-        taxId: get("taxId"),
         shippingStreet: get("shippingStreet"),
         shippingCity: get("shippingCity"),
         shippingPostalCode: get("shippingPostalCode"),
@@ -521,13 +517,6 @@ function ProfileSection({
               name="companyName"
               defaultValue={profile?.companyName ?? ""}
               autoComplete="organization"
-            />
-            <Field
-              id={taxId}
-              label={t("fields.taxId")}
-              name="taxId"
-              defaultValue={profile?.taxId ?? ""}
-              inputMode="numeric"
             />
           </Fieldset>
 

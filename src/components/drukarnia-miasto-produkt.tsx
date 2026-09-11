@@ -86,7 +86,7 @@ function buildSteps(miasto: Miasto, product: Product) {
     {
       icon: ClipboardCheck,
       title: `Skonfiguruj ${product.name.toLowerCase()} online`,
-      body: `Wybierz format, nakład i papier w naszym konfiguratorze. Cena brutto z VAT pokazuje się od razu, bez czekania na ofertę handlowca. Dla firm z ${miasto.nazwa} obowiązują te same warunki, co dla reszty Polski.`,
+      body: `Wybierz format, nakład i papier w naszym konfiguratorze. Cena finalna pokazuje się od razu, bez czekania na ofertę handlowca. Dla firm z ${miasto.nazwa} obowiązują te same warunki, co dla reszty Polski.`,
     },
     {
       icon: CreditCard,
@@ -110,7 +110,7 @@ function buildLocalFaqs(miasto: Miasto, product: Product) {
         ...product.formats.map((f) => f.unitPrice),
       ).toFixed(
         2,
-      )} zł netto za sztukę przy większych nakładach. Dokładna kwota brutto z VAT pojawia się w konfiguratorze po wybraniu formatu, nakładu i wykończenia. Dostawa kurierem do ${miasto.nazwa} wliczona w cenę dla zamówień powyżej 200 zł brutto.`,
+      )} zł za sztukę przy większych nakładach. Dokładna kwota pojawia się w konfiguratorze po wybraniu formatu, nakładu i wykończenia. Dostawa kurierem do ${miasto.nazwa} wliczona w cenę dla zamówień powyżej 200 zł.`,
     },
     {
       question: `Jak długo trwa dostawa ${keyword} do ${miasto.nazwa}?`,
@@ -151,7 +151,7 @@ function buildSeoParagraph(miasto: Miasto, product: Product): string {
   const uczelnieZdanie = uczelnieProse
     ? ` Stałą grupą zamawiających są też uczelnie i koła naukowe (${uczelnieProse}), dla których drukujemy materiały konferencyjne, dydaktyczne i promocyjne.`
     : "";
-  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród firm szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a rynek B2B w ${miasto.wojewodztwo} regularnie zamawia ${keyword} na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną brutto z VAT, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — każdy partner z naszej sieci przechodzi kwartalny audyt jakości druku i terminowości. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
+  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród firm szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a rynek B2B w ${miasto.wojewodztwo} regularnie zamawia ${keyword} na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną finalną, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — każdy partner z naszej sieci przechodzi kwartalny audyt jakości druku i terminowości. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
 }
 
 export function CityProductPageContent({
@@ -389,7 +389,7 @@ export function CityProductPageContent({
           index="03"
           eyebrow="Specyfikacja i ceny"
           title={`Cennik ${keyword} dla ${miasto.nazwa}`}
-          description="Standardowy cennik w DobrePrinty, identyczny dla wszystkich miast Polski. Cena netto za sztukę przy nakładach standardowych. Wycena dokładna w konfiguratorze."
+          description="Standardowy cennik w DobrePrinty, identyczny dla wszystkich miast Polski. Cena za sztukę przy nakładach standardowych. Wycena dokładna w konfiguratorze."
         />
 
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-card">
@@ -426,7 +426,7 @@ export function CityProductPageContent({
         <p className="mt-5 max-w-3xl text-sm text-muted-foreground">
           Ceny netto. Podane stawki obowiązują dla standardowej specyfikacji.
           Wykończenia (folia, lakier UV, tłoczenie), wyższa gramatura i
-          mikronakłady mogą zmieniać cenę — pełna wycena brutto z VAT pojawia
+          mikronakłady mogą zmieniać cenę — pełna wycena pojawia
           się w konfiguratorze.
         </p>
       </Section>
@@ -553,9 +553,9 @@ export function CityProductPageContent({
             <span className="text-primary">{miasto.nazwa}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Cena brutto z VAT widoczna od razu w konfiguratorze, produkcja w
+            Cena finalna widoczna od razu w konfiguratorze, produkcja w
             24–48 h, kurier do {miasto.nazwa} kolejnego dnia roboczego. Cena
-            startowa: {lowestPrice} zł netto za sztukę przy większych nakładach.
+            startowa: {lowestPrice} zł za sztukę przy większych nakładach.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button asChild variant="default" size="lg">

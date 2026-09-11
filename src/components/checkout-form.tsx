@@ -29,7 +29,6 @@ type Fields = {
   customerEmail: string;
   customerPhone: string;
   companyName: string;
-  taxId: string;
   shippingStreet: string;
   shippingCity: string;
   shippingPostalCode: string;
@@ -41,7 +40,6 @@ const EMPTY_FIELDS: Fields = {
   customerEmail: "",
   customerPhone: "",
   companyName: "",
-  taxId: "",
   shippingStreet: "",
   shippingCity: "",
   shippingPostalCode: "",
@@ -52,7 +50,6 @@ const NAME_RE = /^[\p{L}][\p{L}\s.'-]*$/u;
 const CITY_RE = /^[\p{L}][\p{L}\s.-]*$/u;
 const PHONE_RE = /^\+?[0-9][0-9\s-]{7,}$/;
 const POSTAL_RE = /^\d{2}-\d{3}$/;
-const NIP_RE = /^\d{10}$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Dane kupującego przeżywają odświeżenie strony — koszyk trzyma się osobno. */
@@ -121,11 +118,6 @@ export function CheckoutForm({
         .min(1, t("errors.phoneRequired"))
         .regex(PHONE_RE, t("errors.phoneInvalid")),
       companyName: z.string().trim().optional(),
-      taxId: z
-        .string()
-        .trim()
-        .optional()
-        .refine((v) => !v || NIP_RE.test(v.replace(/[\s-]/g, "")), t("errors.taxIdInvalid")),
     };
     const shipping =
       deliveryMethod === "courier"
@@ -194,7 +186,6 @@ export function CheckoutForm({
       customerEmail: cur.customerEmail || profileData.user.email || "",
       customerPhone: cur.customerPhone || profileData.profile?.phone || "",
       companyName: cur.companyName || profileData.profile?.companyName || "",
-      taxId: cur.taxId || profileData.profile?.taxId || "",
       shippingStreet: cur.shippingStreet || profileData.profile?.shippingStreet || "",
       shippingCity: cur.shippingCity || profileData.profile?.shippingCity || "",
       shippingPostalCode: cur.shippingPostalCode || profileData.profile?.shippingPostalCode || "",
@@ -285,7 +276,6 @@ export function CheckoutForm({
         customerEmail: values.customerEmail.trim(),
         customerPhone: values.customerPhone.trim(),
         companyName: optional(values.companyName),
-        taxId: optional(values.taxId),
         deliveryMethod,
         shippingStreet: deliveryMethod === "courier" ? values.shippingStreet.trim() : undefined,
         shippingCity: deliveryMethod === "courier" ? values.shippingCity.trim() : undefined,
@@ -389,13 +379,6 @@ export function CheckoutForm({
             hint={t("fields.optional")}
             registration={register("companyName")}
             error={errors.companyName?.message}
-          />
-          <Field
-            label={t("fields.taxId")}
-            inputMode="numeric"
-            hint={t("fields.optional")}
-            registration={register("taxId")}
-            error={errors.taxId?.message}
           />
         </Fieldset>
 

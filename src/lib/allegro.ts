@@ -239,7 +239,7 @@ wybrany punkt/paczkomat, czy uwagi z linkiem wklejone), lista pól
 
 /**
  * Project an order to the minimal set the extension needs to fill the Allegro
- * checkout. Deliberately omits email, prices, Stripe IDs and NIP — they are not
+ * checkout. Deliberately omits email, prices and Stripe IDs — they are not
  * needed to address a parcel and keeping them out limits PII exposure.
  */
 export function shapeFulfillmentPayload(

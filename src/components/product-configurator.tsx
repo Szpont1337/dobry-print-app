@@ -315,33 +315,25 @@ export function ProductConfigurator({ product }: { product: Product }) {
               </dt>
               <dd className="font-semibold text-foreground">{format.label}</dd>
             </div>
-            {product.priceTiers && (
+            <div className="flex items-baseline justify-between">
+              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                Cena za sztukę
+              </dt>
+              <dd className="font-semibold text-foreground tabular-nums">
+                {formatPLN.format(gross / quantity)}
+              </dd>
+            </div>
+            <div className="my-3 h-px bg-border" />
+            {shippingFee > 0 && (
               <div className="flex items-baseline justify-between">
                 <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Cena za sztukę
+                  Druk
                 </dt>
                 <dd className="font-semibold text-foreground tabular-nums">
-                  {formatPLN.format(unitPrice)}
+                  {formatPLN.format(gross)}
                 </dd>
               </div>
             )}
-            <div className="my-3 h-px bg-border" />
-            <div className="flex items-baseline justify-between">
-              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Cena netto
-              </dt>
-              <dd className="font-semibold text-foreground tabular-nums">
-                {formatPLN.format(net)}
-              </dd>
-            </div>
-            <div className="flex items-baseline justify-between">
-              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                plus VAT (23%)
-              </dt>
-              <dd className="font-semibold text-foreground tabular-nums">
-                {formatPLN.format(vat)}
-              </dd>
-            </div>
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 Wysyłka
@@ -356,7 +348,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
             </div>
             <div className="mt-3 flex items-baseline justify-between rounded-lg bg-accent px-5 py-3">
               <dt className="font-mono text-xs font-bold uppercase tracking-wider text-accent-foreground">
-                Razem brutto
+                Razem
               </dt>
               <PriceTag
                 amount={formatPLN.format(totals.gross)}

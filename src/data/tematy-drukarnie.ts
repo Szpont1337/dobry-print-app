@@ -54,7 +54,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     bullets: [
       {
         title: "Wycena bez pytania o ofertę",
-        body: "Kwota brutto z VAT pokazuje się przy każdej zmianie nakładu i formatu. Nie wysyłasz zapytań ofertowych i nie czekasz na odpowiedź — cenę znasz od pierwszego kliknięcia.",
+        body: "Finalna kwota pokazuje się przy każdej zmianie nakładu i formatu. Nie wysyłasz zapytań ofertowych i nie czekasz na odpowiedź — cenę znasz od pierwszego kliknięcia.",
       },
       {
         title: "Plik sprawdzamy za Ciebie",

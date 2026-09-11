@@ -40,7 +40,6 @@ export const submitOrder = mutation({
     customerEmail: v.string(),
     customerPhone: v.string(),
     companyName: v.optional(v.string()),
-    taxId: v.optional(v.string()),
     deliveryMethod: v.optional(
       v.union(v.literal("courier"), v.literal("parcel_locker")),
     ),
@@ -80,7 +79,6 @@ export const submitOrder = mutation({
     capped(args.customerEmail, 200, "E-mail", "Email", locale);
     capped(args.customerPhone, 40, "Telefon", "Phone", locale);
     capped(args.companyName, 200, "Nazwa firmy", "Company name", locale);
-    capped(args.taxId, 30, "NIP", "Tax ID", locale);
     capped(args.shippingStreet, 200, "Ulica", "Street", locale);
     capped(args.shippingCity, 120, "Miasto", "City", locale);
     capped(args.shippingPostalCode, 20, "Kod pocztowy", "Postal code", locale);
@@ -131,7 +129,6 @@ export const submitOrder = mutation({
       customerEmail: args.customerEmail,
       customerPhone: args.customerPhone,
       companyName: args.companyName,
-      taxId: args.taxId,
       shippingStreet: args.shippingStreet,
       shippingCity: args.shippingCity,
       shippingPostalCode: args.shippingPostalCode,
@@ -210,7 +207,6 @@ export const submitCart = mutation({
     customerEmail: v.string(),
     customerPhone: v.string(),
     companyName: v.optional(v.string()),
-    taxId: v.optional(v.string()),
     deliveryMethod: v.optional(
       v.union(v.literal("courier"), v.literal("parcel_locker")),
     ),
@@ -250,7 +246,6 @@ export const submitCart = mutation({
     capped(args.customerEmail, 200, "E-mail", "Email", locale);
     capped(args.customerPhone, 40, "Telefon", "Phone", locale);
     capped(args.companyName, 200, "Nazwa firmy", "Company name", locale);
-    capped(args.taxId, 30, "NIP", "Tax ID", locale);
     capped(args.shippingStreet, 200, "Ulica", "Street", locale);
     capped(args.shippingCity, 120, "Miasto", "City", locale);
     capped(args.shippingPostalCode, 20, "Kod pocztowy", "Postal code", locale);
@@ -319,7 +314,6 @@ export const submitCart = mutation({
         customerEmail: args.customerEmail,
         customerPhone: args.customerPhone,
         companyName: args.companyName,
-        taxId: args.taxId,
         shippingStreet: args.shippingStreet,
         shippingCity: args.shippingCity,
         shippingPostalCode: args.shippingPostalCode,

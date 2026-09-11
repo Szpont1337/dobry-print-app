@@ -4,7 +4,7 @@ import type { PrintShape } from "@/components/print-3d-scene";
 export type ProductFormat = {
   id: string;
   label: string;
-  /** zł netto za sztukę */
+  /** zł za sztukę */
   unitPrice: number;
 };
 

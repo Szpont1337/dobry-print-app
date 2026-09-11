@@ -36,7 +36,7 @@ export const productContent: Record<string, ProductContent> = {
   ulotki: {
     keyword: "ulotki",
     heroLead:
-      "Druk ulotek online to najszybszy sposób, w jaki firma może dotrzeć do klienta w okolicy. Drukujemy ulotki reklamowe od jednej sztuki, w formatach od A7 aż po A3, dwustronnie 4/4, z dostawą w 24–48 h. Cena brutto z VAT widoczna od razu w konfiguratorze. Bez gwiazdek, bez dopłat za spady, bez czekania na ofertę handlowca.",
+      "Druk ulotek online to najszybszy sposób, w jaki firma może dotrzeć do klienta w okolicy. Drukujemy ulotki reklamowe od jednej sztuki, w formatach od A7 aż po A3, dwustronnie 4/4, z dostawą w 24–48 h. Cena finalna widoczna od razu w konfiguratorze. Bez gwiazdek, bez dopłat za spady, bez czekania na ofertę handlowca.",
     whyBlocks: [
       {
         tytul: "Tani druk ulotek od 1 sztuki",
@@ -269,7 +269,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Składane ulotki to format dla treści, które wymagają większej przestrzeni niż zwykła ulotka, ale nie potrzebują formy broszury. Druk składanych ulotek online w DobrePrinty obejmuje trzy formaty finalne (DL, A5, A4) i trzy typy falcowania (C, Z, drabinka). Wszystkie zamówienia idą przez konfigurator z ceną brutto z VAT widoczną od razu, a 28 drukarni partnerskich w naszej sieci pozwala dobrać najszybszego partnera pod konkretny nakład.",
+      "Składane ulotki to format dla treści, które wymagają większej przestrzeni niż zwykła ulotka, ale nie potrzebują formy broszury. Druk składanych ulotek online w DobrePrinty obejmuje trzy formaty finalne (DL, A5, A4) i trzy typy falcowania (C, Z, drabinka). Wszystkie zamówienia idą przez konfigurator z ceną finalną widoczną od razu, a 28 drukarni partnerskich w naszej sieci pozwala dobrać najszybszego partnera pod konkretny nakład.",
       "Najczęstsze zastosowania to menu restauracyjne, programy konferencji, oferty wycieczek, foldery promocyjne deweloperów i mini-katalogi produktów. Składane ulotki sprawdzają się tam, gdzie standardowa ulotka jest zbyt mała, ale broszura zbyt duża i zbyt droga. Tania drukarnia składanych ulotek to dla naszych klientów najczęściej oszczędność rzędu 40–60% w stosunku do broszury szytej przy podobnej zawartości treściowej.",
       "Bigowanie i falcowanie to procesy, które rozróżniają profesjonalny druk składanych ulotek od próby zagięcia papieru ręcznie. Bigowanie wgniata linię złożenia, zanim papier zostanie złożony — chroni to powłokę kredy przed pęknięciem. Falcowanie to mechaniczne złożenie. Bez obu tych procesów ulotka 170 g po kilku użyciach pęka i wygląda nieprofesjonalnie. W konfiguratorze automatycznie dobieramy bigowanie dla wszystkich gramatur ≥150 g.",
     ],
@@ -1265,7 +1265,7 @@ export const productContent: Record<string, ProductContent> = {
   "baner-reklamowy": {
     keyword: "banery reklamowe",
     heroLead:
-      "Druk banerów reklamowych online z dostawą w 24–48 h. Baner to najtańszy sposób na dużą, widoczną z daleka powierzchnię reklamową — na płot, elewację, scenę czy stoisko targowe. Drukujemy na materiale PVC 510 g drukiem solwentowym, odpornym na słońce i deszcz. W cenie zawsze: zgrzewane krawędzie i metalowe oczka co 50 cm, więc baner przychodzi gotowy do zawieszenia. Cena brutto z VAT widoczna od razu w konfiguratorze.",
+      "Druk banerów reklamowych online z dostawą w 24–48 h. Baner to najtańszy sposób na dużą, widoczną z daleka powierzchnię reklamową — na płot, elewację, scenę czy stoisko targowe. Drukujemy na materiale PVC 510 g drukiem solwentowym, odpornym na słońce i deszcz. W cenie zawsze: zgrzewane krawędzie i metalowe oczka co 50 cm, więc baner przychodzi gotowy do zawieszenia. Cena finalna widoczna od razu w konfiguratorze.",
     whyBlocks: [
       {
         tytul: "PVC 510 g, nie tańszy substytut",
@@ -1371,7 +1371,7 @@ export const productContent: Record<string, ProductContent> = {
   naklejki: {
     keyword: "naklejki",
     heroLead:
-      "Druk naklejek online od 1 sztuki, z dostawą w 48 h. Naklejka to najprostszy sposób na umieszczenie logo, informacji produktowej lub komunikatu na dowolnej powierzchni — od etykiet na słoikach, przez naklejki na laptopach, po oznaczenia na kartonach. Drukujemy na papierze, folii białej PP i folii transparentnej, z klejem trwałym lub zmywalnym i cięciem ploterowym do dowolnego kształtu. Cena brutto z VAT widoczna od razu w konfiguratorze.",
+      "Druk naklejek online od 1 sztuki, z dostawą w 48 h. Naklejka to najprostszy sposób na umieszczenie logo, informacji produktowej lub komunikatu na dowolnej powierzchni — od etykiet na słoikach, przez naklejki na laptopach, po oznaczenia na kartonach. Drukujemy na papierze, folii białej PP i folii transparentnej, z klejem trwałym lub zmywalnym i cięciem ploterowym do dowolnego kształtu. Cena finalna widoczna od razu w konfiguratorze.",
     whyBlocks: [
       {
         tytul: "Trzy podłoża: papier i folia",
@@ -1472,7 +1472,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk naklejek online to najprostszy sposób, by umieścić logo, etykietę produktową lub komunikat promocyjny na dowolnej powierzchni. DobrePrinty realizuje druk naklejek na papierze, folii białej PP i folii transparentnej, z klejem trwałym lub zmywalnym, od jednej sztuki, z ceną brutto z VAT widoczną od razu w konfiguratorze. Ploter tnący wycina dowolny kształt bez dopłaty za wykrojnik, a 28 drukarni partnerskich pozwala dobrać najszybszego partnera pod konkretne zamówienie.",
+      "Druk naklejek online to najprostszy sposób, by umieścić logo, etykietę produktową lub komunikat promocyjny na dowolnej powierzchni. DobrePrinty realizuje druk naklejek na papierze, folii białej PP i folii transparentnej, z klejem trwałym lub zmywalnym, od jednej sztuki, z ceną finalną widoczną od razu w konfiguratorze. Ploter tnący wycina dowolny kształt bez dopłaty za wykrojnik, a 28 drukarni partnerskich pozwala dobrać najszybszego partnera pod konkretne zamówienie.",
       "Tanie naklejki nie muszą oznaczać kompromisu na trwałości — wszystko zależy od dobrania podłoża i kleju do zastosowania. Etykiety produktowe na słoiki i butelki najlepiej drukować na folii transparentnej lub białej z klejem trwałym. Ceny i oznaczenia sklepowe — na papierze z klejem zmywalnym, który odchodzi bez śladu. Naklejki na samochody i witryny wymagają folii vinyl z laminatem UV, odpornej na deszcz i słońce przez kilka lat. Druk naklejek z konfiguratora DobrePrinty jest tani również dlatego, że nie obciążamy klienta marżą handlowca: konfigurujesz produkt sam, my dobieramy drukarnię.",
       "Naklejki sprawdzają się w zastosowaniach produktowych, promocyjnych i logistycznych. Etykiety na kosmetyki i żywność, naklejki promocyjne na gadżety eventowe (folia biała z laminatem, arkusze kiss-cut), oznaczenia logistyczne na kartony (papier, klej trwały lub mrozoodporny), naklejki dekoracyjne na laptopy i telefony. Druk naklejek online obsługujemy od pojedynczych sztuk testowych po nakłady kilku tysięcy sztuk na rolce do automatów etykietujących. Plik przygotowujesz raz — z linią cięcia na osobnej warstwie i, dla folii transparentnej, warstwą białego poddruku — a działa na każdym podłożu z naszej oferty.",
     ],

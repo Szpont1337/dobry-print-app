@@ -185,7 +185,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje kalendarz trójdzielny z własnym projektem?",
-          a: "Przy nakładzie 100 sztuk realny koszt to 10-14 zł netto za sztukę, przy 250 sztukach 8-11 zł, a przy 500+ sztukach cena spada do 6-9 zł. Do tego dochodzi projekt główki (150-400 zł jednorazowo) lub zero, jeśli dostarczasz gotowy plik PDF zgodny ze specyfikacją drukarni.",
+          a: "Przy nakładzie 100 sztuk realny koszt to 10-14 zł za sztukę, przy 250 sztukach 8-11 zł, a przy 500+ sztukach cena spada do 6-9 zł. Do tego dochodzi projekt główki (150-400 zł jednorazowo) lub zero, jeśli dostarczasz gotowy plik PDF zgodny ze specyfikacją drukarni.",
         },
         {
           q: "Kiedy najpóźniej zamówić kalendarze, żeby zdążyły przed świętami?",

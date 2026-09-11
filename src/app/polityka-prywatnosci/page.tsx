@@ -14,7 +14,7 @@ export default function PolitykaPrywatnosciPage() {
     <LegalPage
       title="Polityka prywatności"
       intro="Wyjaśniamy, jakie dane osobowe zbieramy, do czego ich potrzebujemy i jakie masz prawa."
-      updatedAt="20 maja 2026"
+      updatedAt="11 września 2026"
     >
       <h2>1. Administrator danych</h2>
       <p>
@@ -29,7 +29,7 @@ export default function PolitykaPrywatnosciPage() {
         zamówienia oraz korzystaniu z usług:
       </p>
       <ul>
-        <li>imię, nazwisko, e-mail, telefon, adres dostawy i faktury</li>
+        <li>imię, nazwisko, e-mail, telefon, adres dostawy i dane do rachunku</li>
         <li>
           dane do druku (pliki graficzne), wyłącznie w celu realizacji zlecenia
         </li>
@@ -39,7 +39,7 @@ export default function PolitykaPrywatnosciPage() {
       <h2>3. Cele przetwarzania</h2>
       <ul>
         <li>realizacja zamówień i obsługa posprzedażowa</li>
-        <li>wystawianie faktur i obowiązki podatkowe</li>
+        <li>rozliczenie płatności i obowiązki podatkowe</li>
         <li>obsługa reklamacji i kontakt z klientem</li>
         <li>analityka i poprawa działania serwisu (dane zanonimizowane)</li>
       </ul>

@@ -415,7 +415,6 @@ type AdminOrder = {
   customerEmail: string;
   customerPhone: string;
   companyName?: string;
-  taxId?: string;
   shippingStreet?: string;
   shippingCity?: string;
   shippingPostalCode?: string;
@@ -569,9 +568,6 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                     <>
                       <br />
                       <strong>{order.companyName}</strong>
-                      {order.taxId && (
-                        <span className="text-muted-foreground"> · NIP {order.taxId}</span>
-                      )}
                     </>
                   )}
                 </dd>

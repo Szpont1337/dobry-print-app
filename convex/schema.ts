@@ -23,7 +23,6 @@ export default defineSchema({
     customerEmail: v.string(),
     customerPhone: v.string(),
     companyName: v.optional(v.string()),
-    taxId: v.optional(v.string()),
 
     // Delivery method
     deliveryMethod: v.optional(
@@ -167,7 +166,6 @@ export default defineSchema({
   user_profiles: defineTable({
     userId: v.id("users"),
     companyName: v.optional(v.string()),
-    taxId: v.optional(v.string()),
     phone: v.optional(v.string()),
     shippingStreet: v.optional(v.string()),
     shippingCity: v.optional(v.string()),

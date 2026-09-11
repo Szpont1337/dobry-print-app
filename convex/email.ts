@@ -91,12 +91,8 @@ function detailsBox(order: Order): string {
               <td align="right" style="font-size:14px;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${order.shippingFee && order.shippingFee > 0 ? formatPLN.format(order.shippingFee) : "Gratis"}</td>
             </tr>
             <tr>
-              <td style="padding-top:8px;font-size:14px;color:${BRAND.muted}">Razem brutto</td>
+              <td style="padding-top:8px;font-size:14px;color:${BRAND.muted}">Razem</td>
               <td align="right" style="padding-top:8px;font-size:18px;font-weight:600;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${formatPLN.format(order.grossTotal)}</td>
-            </tr>
-            <tr>
-              <td style="padding-top:4px;font-size:12px;color:${BRAND.muted}">w tym VAT 23%</td>
-              <td align="right" style="padding-top:4px;font-size:12px;color:${BRAND.muted};font-variant-numeric:tabular-nums">${formatPLN.format(order.vatTotal)}</td>
             </tr>
           </table>
         </td>
@@ -126,7 +122,7 @@ function plainSummary(order: Order, headline: string, body: string): string {
     `Produkt: ${order.productName}`,
     `Nakład: ${formatQty.format(order.quantity)} szt. · ${order.formatLabel}`,
     deliveryLine(order),
-    `Razem brutto: ${formatPLN.format(order.grossTotal)} (VAT 23%: ${formatPLN.format(order.vatTotal)})`,
+    `Razem: ${formatPLN.format(order.grossTotal)}`,
     "",
     "DobrePrinty · hej@dobreprinty.pl",
   ].join("\n");
@@ -353,7 +349,7 @@ function completedEmail(order: Order) {
     `Zamówienie #${shortId(order._id)}`,
     `Produkt: ${order.productName}`,
     `Nakład: ${formatQty.format(order.quantity)} szt. · ${order.formatLabel}`,
-    `Razem brutto: ${formatPLN.format(order.grossTotal)} (VAT 23%: ${formatPLN.format(order.vatTotal)})`,
+    `Razem: ${formatPLN.format(order.grossTotal)}`,
     "",
     "DobrePrinty · hej@dobreprinty.pl",
   ].join("\n");
@@ -440,7 +436,7 @@ function adminNotificationEmail(order: Order) {
           <strong>${escapeHtml(order.customerName)}</strong><br>
           <a href="mailto:${escapeHtml(order.customerEmail)}" style="color:${BRAND.primary};text-decoration:underline">${escapeHtml(order.customerEmail)}</a><br>
           <a href="tel:${escapeHtml(order.customerPhone)}" style="color:${BRAND.foreground};text-decoration:none">${escapeHtml(order.customerPhone)}</a>
-          ${order.companyName ? `<br><span style="color:${BRAND.muted}">${escapeHtml(order.companyName)}${order.taxId ? ` · NIP ${escapeHtml(order.taxId)}` : ""}</span>` : ""}
+          ${order.companyName ? `<br><span style="color:${BRAND.muted}">${escapeHtml(order.companyName)}</span>` : ""}
         </p>
       </td>
     </tr>`;
@@ -491,12 +487,8 @@ function adminNotificationEmail(order: Order) {
         <td style="padding:14px 20px 18px;border-top:1px solid ${BRAND.border}">
           <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
             <tr>
-              <td style="font-size:14px;color:${BRAND.muted}">Razem brutto (opłacone)</td>
+              <td style="font-size:14px;color:${BRAND.muted}">Razem (opłacone)</td>
               <td align="right" style="font-size:18px;font-weight:600;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${formatPLN.format(order.grossTotal)}</td>
-            </tr>
-            <tr>
-              <td style="padding-top:4px;font-size:12px;color:${BRAND.muted}">w tym VAT 23%</td>
-              <td align="right" style="padding-top:4px;font-size:12px;color:${BRAND.muted};font-variant-numeric:tabular-nums">${formatPLN.format(order.vatTotal)}</td>
             </tr>
           </table>
         </td>
@@ -522,10 +514,10 @@ function adminNotificationEmail(order: Order) {
     deliveryLine(order),
     `Klient: ${order.customerName} <${order.customerEmail}> · ${order.customerPhone}`,
     order.companyName
-      ? `Firma: ${order.companyName}${order.taxId ? ` (NIP ${order.taxId})` : ""}`
+      ? `Firma: ${order.companyName}`
       : "",
     order.source ? `Źródło: ${order.source}` : "",
-    `Razem brutto: ${formatPLN.format(order.grossTotal)} (VAT 23%: ${formatPLN.format(order.vatTotal)})`,
+    `Razem: ${formatPLN.format(order.grossTotal)}`,
     "",
     "Panel admina: https://dobreprinty.pl/admin",
   ]

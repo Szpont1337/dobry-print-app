@@ -49,7 +49,7 @@ function listToProse(items: string[] | undefined, max = 4): string | null {
 // ──────────────────────────────────────────────────────────────────────────
 
 function fallbackHeroLead(miasto: Miasto): string {
-  return `${miasto.opis_krotki} DobrePrinty dostarcza tu pełen katalog: ulotki, wizytówki, plakaty, roll-upy i broszury z dostawą w 24–48 h. Cena brutto z VAT widoczna od pierwszego kliknięcia.`;
+  return `${miasto.opis_krotki} DobrePrinty dostarcza tu pełen katalog: ulotki, wizytówki, plakaty, roll-upy i broszury z dostawą w 24–48 h. Cena finalna widoczna od pierwszego kliknięcia.`;
 }
 
 function fallbackDostawaBody(miasto: Miasto): string {
@@ -111,7 +111,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
         : miasto.populacja >= 50000
           ? `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to prężny ośrodek średniej wielkości w ${miasto.wojewodztwo}. `
           : `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to lokalny rynek w ${miasto.wojewodztwo}, gdzie liczy się szybki, przewidywalny druk. `;
-  p1 += `${miasto.opis_krotki} ${drukarnia} online z sieci DobrePrinty obsługuje tu zarówno freelancerów, jak i większe organizacje — wszystko w jednym konfiguratorze, z ceną brutto z VAT widoczną od razu.`;
+  p1 += `${miasto.opis_krotki} ${drukarnia} online z sieci DobrePrinty obsługuje tu zarówno freelancerów, jak i większe organizacje — wszystko w jednym konfiguratorze, z ceną finalną widoczną od razu.`;
   if (branzeProse) {
     p1 += ` Najczęściej drukują u nas ${branzeProse}.`;
   }
@@ -172,7 +172,7 @@ function resolveCity(miasto: Miasto, t: MiastoTresc): ResolvedCity {
       {
         icon: ReceiptText,
         title: "Cena znana przed zamówieniem",
-        body: 'Kwota brutto z VAT pokazuje się przy każdej zmianie nakładu i formatu. Bez gwiazdek, dopłat za spady i ukrytych „kosztów obsługi zamówienia".',
+        body: 'Finalna kwota pokazuje się przy każdej zmianie nakładu i formatu. Bez gwiazdek, dopłat za spady i ukrytych „kosztów obsługi zamówienia".',
       },
       {
         icon: ShieldCheck,

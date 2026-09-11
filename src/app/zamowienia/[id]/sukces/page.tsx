@@ -189,7 +189,7 @@ export default async function PaymentSuccessPage({
             ))}
             <div className="flex items-start justify-between gap-4 border-t border-border pt-3">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
-                Razem brutto
+                Razem
               </span>
               <span className="text-right font-extrabold tracking-tight text-foreground">
                 {formatPLN.format(grossTotal)}
