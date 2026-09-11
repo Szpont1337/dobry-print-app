@@ -30,10 +30,6 @@
     "helpCta": "Write to us",
     "items": [
       {
-        "question": "Can I order just one piece?",
-        "answer": "Yes. Every DobrePrinty product can be ordered from a single piece, with no minimum order and no hidden fees for small runs. The price shown in the configurator is final."
-      },
-      {
         "question": "How long does an order take?",
         "answer": "Standard production is 2–5 business days depending on the product and quantity. You see the exact time in the configurator after choosing a format, and courier delivery adds another 24 hours after dispatch."
       },

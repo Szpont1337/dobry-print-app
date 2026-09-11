@@ -30,10 +30,6 @@
     "helpCta": "Napisz do nas",
     "items": [
       {
-        "question": "Czy mogę zamówić tylko 1 sztukę?",
-        "answer": "Tak. Każdy produkt w DobrePrinty można zamówić już od jednej sztuki, bez kosztów minimalnych i bez ukrytych opłat za małe nakłady. Cena pokazywana w konfiguratorze jest finalna."
-      },
-      {
         "question": "Jak długo trwa realizacja zamówienia?",
         "answer": "Standardowy czas produkcji to 2–5 dni roboczych w zależności od produktu i nakładu. Czas widać w konfiguratorze po wyborze formatu, a wysyłka kurierem trwa kolejne 24 godziny po nadaniu."
       },
