@@ -86,7 +86,7 @@ export function CheckoutForm({
   const profileData = useQuery(api.profile.get, token ? { token } : "skip");
   const profileReady = !token || profileData !== undefined;
 
-  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - totals.productGross);
+  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - totals.productTotal);
 
   const [deliveryMethod, setDeliveryMethod] = useState<DeliveryMethod>("courier");
   const [parcelLocker, setParcelLocker] = useState<ParcelLocker | null>(null);
@@ -297,7 +297,7 @@ export function CheckoutForm({
       safeCapture("order_submitted", {
         item_count: items.length,
         product_slugs: items.map((i) => i.slug),
-        gross_total: totals.gross,
+        gross_total: totals.total,
         delivery_method: deliveryMethod,
       });
 
@@ -472,15 +472,13 @@ export function CheckoutForm({
               {items.map((item) => (
                 <div key={item.id} className="flex items-start justify-between gap-4">
                   <dt className="min-w-0 text-muted-foreground">
-                    <span className="block font-semibold text-foreground">
-                      {item.product.name}
-                    </span>
+                    <span className="block font-semibold text-foreground">{item.product.name}</span>
                     <span className="block text-xs">
                       {formatQty.format(item.quantity)} szt. · {item.format.label}
                     </span>
                   </dt>
                   <dd className="shrink-0 text-right font-semibold text-foreground tabular-nums">
-                    {formatPLN.format(item.gross)}
+                    {formatPLN.format(item.total)}
                   </dd>
                 </div>
               ))}
@@ -499,7 +497,7 @@ export function CheckoutForm({
                   {t("cart.total")}
                 </dt>
                 <dd className="text-right text-lg font-extrabold tracking-tight text-foreground tabular-nums">
-                  {formatPLN.format(totals.gross)}
+                  {formatPLN.format(totals.total)}
                 </dd>
               </div>
             </dl>
@@ -531,7 +529,10 @@ export function CheckoutForm({
             ) : (
               <p className="mt-3 text-xs text-muted-foreground">
                 {t("consentBefore")}
-                <Link href="/regulamin" className="underline underline-offset-4 hover:text-foreground">
+                <Link
+                  href="/regulamin"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
                   {t("consentTerms")}
                 </Link>
                 {t("consentAnd")}

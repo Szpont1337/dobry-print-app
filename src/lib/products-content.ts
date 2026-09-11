@@ -240,7 +240,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić składane ulotki w nakładzie 100 sztuk?",
         answer:
-          "Tak, minimum to 1 sztuka, ale cena jednostkowa znacząco spada od 250 sztuk. Przy 100 sztukach cena za ulotkę DL falcowaną w C to ok. 1,8 zł brutto, przy 500 sztukach — 0,45 zł, przy 2 000 — 0,28 zł. Konfigurator pokazuje pełen breakdown ceny od razu po wybraniu nakładu.",
+          "Tak, minimum to 1 sztuka, ale cena jednostkowa znacząco spada od 250 sztuk. Przy 100 sztukach cena za ulotkę DL falcowaną w C to ok. 1,8 zł, przy 500 sztukach — 0,45 zł, przy 2 000 — 0,28 zł. Konfigurator pokazuje pełen breakdown ceny od razu po wybraniu nakładu.",
       },
       {
         question: "Czym różni się bigowanie od samego falcowania?",
@@ -289,7 +289,7 @@ export const productContent: Record<string, ProductContent> = {
       },
       {
         tytul: "Niski koszt jednostkowy",
-        opis: "Koszt broszury 16-stronicowej A5 zaczyna się od ok. 2,1 zł brutto przy nakładach 250+. Dla porównania: oprawa klejona w tym formacie to ok. 5,8 zł, szyta nicią — 12,4 zł. Broszury szyte to ekonomiczna oprawa dla treści, które nie muszą trwać dekadami.",
+        opis: "Koszt broszury 16-stronicowej A5 zaczyna się od ok. 2,1 zł przy nakładach 250+. Dla porównania: oprawa klejona w tym formacie to ok. 5,8 zł, szyta nicią — 12,4 zł. Broszury szyte to ekonomiczna oprawa dla treści, które nie muszą trwać dekadami.",
       },
       {
         tytul: "Do 48 stron",
@@ -357,7 +357,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Jaki jest minimalny nakład broszur szytych?",
         answer:
-          "Minimum to 25 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. Przy 25 sztukach koszt jednostkowy 16-stronicowej broszury A5 to ok. 8 zł brutto, przy 250 sztukach — 2,1 zł. Cyfrowa technologia druku pozwala nam realizować mikronakłady, ale ekonomicznie sens ma to dopiero od 100+.",
+          "Minimum to 25 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. Przy 25 sztukach koszt jednostkowy 16-stronicowej broszury A5 to ok. 8 zł, przy 250 sztukach — 2,1 zł. Cyfrowa technologia druku pozwala nam realizować mikronakłady, ale ekonomicznie sens ma to dopiero od 100+.",
       },
       {
         question: "Czy mogę połączyć kolorowy środek z czarno-białym?",
@@ -391,8 +391,8 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk broszur szytych drutem to najczęstsza oprawa wybierana dla materiałów konferencyjnych, programów wydarzeń, cenników i katalogów produktowych do 48 stron. DobrePrinty realizuje druk broszur szytych w trzech formatach (A6, A5, A4), z różnymi liczbami stron i opcjami okładki. Konfigurator pokazuje cenę brutto z VAT przy każdej zmianie parametrów, a 28 drukarni partnerskich pozwala dobrać najlepszego partnera dla konkretnego zamówienia.",
-      "Broszury szyte drutem są lekkie i tanie w produkcji, ale mają limit grubości — powyżej 48 stron drut przestaje trzymać blok stabilnie. Dla grubszych publikacji polecamy oprawę klejoną (do 200 stron) lub szytą nicią (do 400+). Druk broszur szytych w naszej sieci kosztuje od 2,1 zł brutto za sztukę dla 16-stronicowej A5 przy nakładach 250+, co jest cenowo niedoścignione przez oprawę klejoną i szytą nicią.",
+      "Druk broszur szytych drutem to najczęstsza oprawa wybierana dla materiałów konferencyjnych, programów wydarzeń, cenników i katalogów produktowych do 48 stron. DobrePrinty realizuje druk broszur szytych w trzech formatach (A6, A5, A4), z różnymi liczbami stron i opcjami okładki. Konfigurator pokazuje cenę finalną przy każdej zmianie parametrów, a 28 drukarni partnerskich pozwala dobrać najlepszego partnera dla konkretnego zamówienia.",
+      "Broszury szyte drutem są lekkie i tanie w produkcji, ale mają limit grubości — powyżej 48 stron drut przestaje trzymać blok stabilnie. Dla grubszych publikacji polecamy oprawę klejoną (do 200 stron) lub szytą nicią (do 400+). Druk broszur szytych w naszej sieci kosztuje od 2,1 zł za sztukę dla 16-stronicowej A5 przy nakładach 250+, co jest cenowo niedoścignione przez oprawę klejoną i szytą nicią.",
       "Tania drukarnia broszur szytych nie musi oznaczać kompromisu jakościowego. Kontrolujemy plik PDF przed drukiem (spady, rozdzielczość, CMYK), używamy maszyn cyfrowych Konica Minolta i HP Indigo dla mniejszych nakładów, offsetowych dla 500+. Każda drukarnia partnerska przechodzi kwartalny audyt jakości, a klient w razie reklamacji ma kontakt z DobrePrinty, nie z drukarnią — my przejmujemy proces reklamacyjny.",
     ],
     aggregateRating: { value: "4.8", count: "640" },
@@ -489,7 +489,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić broszurę klejoną w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 25 sztuk, ale cena jednostkowa zaczyna sens ekonomiczny od 100+. Przy 25 sztukach A5 100-stronicowej koszt to ok. 18 zł brutto, przy 100 sztukach — 8 zł, przy 500 — 4,5 zł. Klejenie wymaga rozruchu maszyny, który amortyzuje się dopiero przy większych nakładach.",
+          "Tak, minimum to 25 sztuk, ale cena jednostkowa zaczyna sens ekonomiczny od 100+. Przy 25 sztukach A5 100-stronicowej koszt to ok. 18 zł, przy 100 sztukach — 8 zł, przy 500 — 4,5 zł. Klejenie wymaga rozruchu maszyny, który amortyzuje się dopiero przy większych nakładach.",
       },
       {
         question: "Jaki papier wybrać na środek katalogu produktowego?",
@@ -519,7 +519,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk broszur klejonych online to wybór dla katalogów, raportów rocznych i materiałów konferencyjnych powyżej 48 stron. DobrePrinty realizuje druk broszur klejonych w A5 i A4, z liczbą stron od 48 do 200, klejeniem hotmelt lub PUR (opcja premium), zawsze z folią matową na okładce w cenie podstawowej. Konfigurator pokazuje cenę brutto z VAT i konkretny termin realizacji od razu po wybraniu parametrów.",
+      "Druk broszur klejonych online to wybór dla katalogów, raportów rocznych i materiałów konferencyjnych powyżej 48 stron. DobrePrinty realizuje druk broszur klejonych w A5 i A4, z liczbą stron od 48 do 200, klejeniem hotmelt lub PUR (opcja premium), zawsze z folią matową na okładce w cenie podstawowej. Konfigurator pokazuje cenę finalną i konkretny termin realizacji od razu po wybraniu parametrów.",
       "Klejenie hotmelt to standard dla broszur klejonych — klej termiczny po stwardnieniu trzyma blok stabilnie przez lata. Tania drukarnia broszur klejonych nie może oszczędzać na jakości kleju, bo skutek widać dopiero po kilku miesiącach — pęknięty grzbiet w bibliotekach klientów. W DobrePrinty testujemy każdą partię klejów u partnerów: 5 kg obciążenia na otwartą broszurę przez 30 sekund. Klej, który pęka, nie wchodzi do produkcji.",
       "Druk broszur klejonych w 28-osobowej sieci drukarni partnerskich pozwala obsłużyć zarówno mikronakłady (25–100 sztuk, druk cyfrowy Konica Minolta), jak i większe (500+, offset). Dla nakładów premium polecamy klejenie PUR (klej poliuretanowy), które jest bardziej elastyczne i wytrzymuje skrajne temperatury. PUR rekomendujemy dla broszur używanych w terenie (instrukcje techniczne) i regularnie otwieranych (książki kucharskie, podręczniki).",
     ],
@@ -613,7 +613,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić książkę szytą nicią w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 25 sztuk. Przy 25 sztukach A5 144-stronicowej z miękką okładką koszt to ok. 32 zł brutto za sztukę, przy 100 sztukach — 18 zł, przy 500 — 10 zł. Twarda okładka dodaje ok. 60% do ceny. Szycie nicią to oprawa wymagająca ręcznego nadzoru przy nakładach do 100 sztuk, dlatego koszt jednostkowy jest wyższy niż w innych oprawach.",
+          "Tak, minimum to 25 sztuk. Przy 25 sztukach A5 144-stronicowej z miękką okładką koszt to ok. 32 zł za sztukę, przy 100 sztukach — 18 zł, przy 500 — 10 zł. Twarda okładka dodaje ok. 60% do ceny. Szycie nicią to oprawa wymagająca ręcznego nadzoru przy nakładach do 100 sztuk, dlatego koszt jednostkowy jest wyższy niż w innych oprawach.",
       },
       {
         question: "Jakie kolory kapitałek macie do wyboru?",
@@ -744,7 +744,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę wymienić grafikę bez kupowania nowego stelaża?",
         answer:
-          "Tak. Standardem jest sprzedaż blockoutu z grafiką oddzielnie od stelaża. Cena samej grafiki 85 × 200 cm to ok. 85–110 zł brutto, podczas gdy zestaw stelaż + grafika to 165 zł. Wymiana wymaga wyciągnięcia starego blockoutu z kasety zwijającej (5 minut) i wsunięcia nowego. Trzymaj stelaż, wymieniaj grafikę co kampanię.",
+          "Tak. Standardem jest sprzedaż blockoutu z grafiką oddzielnie od stelaża. Cena samej grafiki 85 × 200 cm to ok. 85–110 zł, podczas gdy zestaw stelaż + grafika to 165 zł. Wymiana wymaga wyciągnięcia starego blockoutu z kasety zwijającej (5 minut) i wsunięcia nowego. Trzymaj stelaż, wymieniaj grafikę co kampanię.",
       },
       {
         question: "Ile czasu zajmuje druk roll-upa?",
@@ -754,7 +754,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie roll-upy ze podświetleniem LED?",
         answer:
-          "Tak, jako opcja premium. Stelaż z taśmą LED wbudowaną w boczne ramiona kasety zwijającej — daje równomierne podświetlenie grafiki, idealne dla stoisk konferencyjnych w słabym oświetleniu. Cena: 380 zł brutto vs 165 zł za standardowy zestaw. Bateria akumulatorowa działa 6 h ciągłego świecenia.",
+          "Tak, jako opcja premium. Stelaż z taśmą LED wbudowaną w boczne ramiona kasety zwijającej — daje równomierne podświetlenie grafiki, idealne dla stoisk konferencyjnych w słabym oświetleniu. Cena: 380 zł vs 165 zł za standardowy zestaw. Bateria akumulatorowa działa 6 h ciągłego świecenia.",
       },
       {
         question: "Czy zwroty są możliwe?",
@@ -763,7 +763,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk roll-upów online to klasyczna pozycja w katalogu DobrePrinty. Roll-up to mobilna reklama nadająca się do wszystkich stoisk targowych, konferencji, premier produktowych, prezentacji w lobby biurowców i imprez okolicznościowych. Drukujemy roll-upy w trzech formatach (85, 100, 120 cm szerokości), zawsze z blockoutem 200 g i drukiem ekosolwentowym o 12-miesięcznej odporności na UV. Konfigurator pokazuje cenę brutto z VAT od razu po wybraniu formatu.",
+      "Druk roll-upów online to klasyczna pozycja w katalogu DobrePrinty. Roll-up to mobilna reklama nadająca się do wszystkich stoisk targowych, konferencji, premier produktowych, prezentacji w lobby biurowców i imprez okolicznościowych. Drukujemy roll-upy w trzech formatach (85, 100, 120 cm szerokości), zawsze z blockoutem 200 g i drukiem ekosolwentowym o 12-miesięcznej odporności na UV. Konfigurator pokazuje cenę finalną od razu po wybraniu formatu.",
       "Tania drukarnia roll-upów nie musi oszczędzać na blockoucie ani na druku. Standardem rynkowym jest często blockout 150 g z drukiem wodnym, który po 3–6 miesiącach pod oświetleniem konferencyjnym widocznie blaknie. W DobrePrinty zawsze blockout 200 g (z czarnym rdzeniem, nie prześwieca) i druk ekosolwentowy z gwarancją intensywności kolorów przez 12+ miesięcy. Stelaż aluminiowy ma 12-miesięczną gwarancję na mechanizm.",
       "Druk roll-upów w 24–48 h pozwala obsłużyć pilne zamówienia: konferencje w przyszłym tygodniu, premiery produktowe, eventy okolicznościowe. Dla naprawdę pilnych terminów dostępna jest opcja express 12 h (dopłata 50%). Roll-up zamówiony w środę rano jest u Ciebie w czwartek po południu — wystarczy do prezentacji w piątek. Dla nakładów 10+ roll-upów polecamy z wyprzedzeniem 72 h, żeby zoptymalizować druk na laserze i nie wstrzymywać innych zamówień.",
     ],
@@ -875,7 +875,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić papier firmowy w nakładzie 100 sztuk?",
         answer:
-          "Tak, minimum to 100 sztuk. Cena za 100 sztuk A4 z drukiem 4/0 to ok. 75 zł brutto (0,75 zł za sztukę), 250 sztuk — 110 zł (0,44 zł), 500 sztuk — 145 zł (0,29 zł), 1000 sztuk — 215 zł (0,22 zł). Spadek ceny jednostkowej z nakładem jest znaczący — większe nakłady są zdecydowanie ekonomiczniejsze.",
+          "Tak, minimum to 100 sztuk. Cena za 100 sztuk A4 z drukiem 4/0 to ok. 75 zł (0,75 zł za sztukę), 250 sztuk — 110 zł (0,44 zł), 500 sztuk — 145 zł (0,29 zł), 1000 sztuk — 215 zł (0,22 zł). Spadek ceny jednostkowej z nakładem jest znaczący — większe nakłady są zdecydowanie ekonomiczniejsze.",
       },
       {
         question:
@@ -890,7 +890,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk papieru firmowego online to standardowa pozycja w katalogu drukarni — i w DobrePrinty realizujemy go w wersji uproszczonej, ale konkurencyjnej cenowo. Papier firmowy A4 lub A5, offset biały 90 g, druk 4/0 w pełnym kolorze lub 1/0 jednokolorowy. Pakowanie po 100 sztuk w opaskę papierową, dostawa 2 dni robocze. Konfigurator pokazuje cenę brutto z VAT od razu po wybraniu nakładu — bez gwiazdek, bez dopłat.",
+      "Druk papieru firmowego online to standardowa pozycja w katalogu drukarni — i w DobrePrinty realizujemy go w wersji uproszczonej, ale konkurencyjnej cenowo. Papier firmowy A4 lub A5, offset biały 90 g, druk 4/0 w pełnym kolorze lub 1/0 jednokolorowy. Pakowanie po 100 sztuk w opaskę papierową, dostawa 2 dni robocze. Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu — bez gwiazdek, bez dopłat.",
       "Papier firmowy to nadal podstawowe narzędzie B2B, mimo digitalizacji wielu procesów. Faktury, oferty wstępne, listy intencyjne, pisma urzędowe i korespondencja z klientami — wszystko to nadal wymaga papieru z firmowym logo i danymi rejestrowymi. Tania drukarnia papieru firmowego pozwala obsłużyć zarówno mikroprzedsiębiorców (nakład 100–250 sztuk dla freelancera), jak i większe firmy (1000–5000 sztuk dla działu sprzedaży korporacji).",
       "Druk papieru firmowego musi spełniać wymogi prawne: każdy egzemplarz musi zawierać dane obowiązkowe zgodnie z KSH (pełna nazwa firmy, forma prawna, adres siedziby, NIP, REGON, KRS, kapitał zakładowy). Klient odpowiada za poprawność tych danych, ale my przy preflight sprawdzamy, czy stopka zawiera minimalny zestaw informacji — jeśli brakuje istotnego elementu (np. NIP-u), zwracamy uwagę przed drukiem. Drobiazg, który chroni Klienta przed karami administracyjnymi.",
     ],
@@ -1003,7 +1003,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić wizytówki w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 50 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. 50 sztuk = ok. 18 zł brutto (0,36 zł/szt.), 100 sztuk = 25 zł (0,25 zł/szt.), 500 sztuk = 65 zł (0,13 zł/szt.). Wizytówki są tanie w produkcji niezależnie od nakładu — w masowym zamówieniu znaczna jest oszczędność jednostkowa.",
+          "Tak, minimum to 50 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. 50 sztuk = ok. 18 zł (0,36 zł/szt.), 100 sztuk = 25 zł (0,25 zł/szt.), 500 sztuk = 65 zł (0,13 zł/szt.). Wizytówki są tanie w produkcji niezależnie od nakładu — w masowym zamówieniu znaczna jest oszczędność jednostkowa.",
       },
       {
         question: "Czy oferujecie wizytówki personalizowane (różne imiona)?",
@@ -1017,7 +1017,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk wizytówek online to klasyczna pozycja katalogu DobrePrinty — i nasza najszybsza pozycja w produkcji. Wizytówki 85 × 55 mm (klasyk) lub 90 × 50 mm (europejski), karton 350 g kreda mat, druk 4/4 dwustronny, narożniki proste lub zaokrąglone. Konfigurator pokazuje cenę brutto z VAT od razu, a 28 drukarni partnerskich pozwala produkować w 24 h dla standardowych zamówień. Wizytówki to drobiazg, który robi pierwsze wrażenie, więc warto go zrobić dobrze.",
+      "Druk wizytówek online to klasyczna pozycja katalogu DobrePrinty — i nasza najszybsza pozycja w produkcji. Wizytówki 85 × 55 mm (klasyk) lub 90 × 50 mm (europejski), karton 350 g kreda mat, druk 4/4 dwustronny, narożniki proste lub zaokrąglone. Konfigurator pokazuje cenę finalną od razu, a 28 drukarni partnerskich pozwala produkować w 24 h dla standardowych zamówień. Wizytówki to drobiazg, który robi pierwsze wrażenie, więc warto go zrobić dobrze.",
       "Tania drukarnia wizytówek nie musi oznaczać kompromisu jakości. Standardem jest dla nas karton 350 g kreda mat — sztywne, premium, ale jeszcze mieści się w szczelinkach portfela. Dla wizytówek noszonych długo polecamy folię matową na okładce (chroni przed zarysowaniem). Dla branży premium (kancelarie prawne, hotele, marki luksusowe) — tłoczenie folią złotą lub srebrną. Opcje są szerokie, ale standard jest na tyle dobry, że większość zamówień nie wymaga dodatków.",
       "Druk wizytówek w 24 h to nasz produkt „awaryjny”. Jeśli rano w środę dowiedziałeś się, że masz prezentację u klienta w piątek i potrzebujesz wizytówek — wgrywasz plik do 12:00 w środę, paczka jest u Ciebie w czwartek po południu lub piątek rano. Express 12 h dla pilnych zamówień. Wizytówki to też produkt, w którym największe znaczenie ma jakość pliku — fonty na krzywe, CMYK, spady. Sprawdzamy każdy plik przed drukiem i jeśli coś jest nie tak, dzwonimy w ciągu 2 godzin roboczych.",
     ],
@@ -1112,7 +1112,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie kartki świąteczne z kopertami?",
         answer:
-          "Koperty A6, DL i C5 (dla A5) nie są w standardowej ofercie, ale możemy je zrealizować jako zamówienie specjalne (z wyprzedzeniem 5–7 dni). Koperty białe lub kolorowe (kreda mat 100 g), bez nadruku lub z prostym nadrukiem 1/0. Typowy zestaw: 100 kartek A5 + 100 kopert C5 z białego papieru = ok. 195 zł brutto.",
+          "Koperty A6, DL i C5 (dla A5) nie są w standardowej ofercie, ale możemy je zrealizować jako zamówienie specjalne (z wyprzedzeniem 5–7 dni). Koperty białe lub kolorowe (kreda mat 100 g), bez nadruku lub z prostym nadrukiem 1/0. Typowy zestaw: 100 kartek A5 + 100 kopert C5 z białego papieru = ok. 195 zł.",
       },
       {
         question: "Ile czasu zajmuje druk pocztówek?",
@@ -1138,7 +1138,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Druk kartek i pocztówek online to w DobrePrinty pozycja sezonowa — największe nakłady realizujemy w listopadzie i grudniu (kartki świąteczne), w lutym (walentynki), w marcu (Dzień Kobiet, Wielkanoc) i jesienią (kartki dla branży eventowej). Pocztówki turystyczne i hotelowe drukujemy stale przez cały rok. Drukujemy na kartonie 300 g kreda mat w trzech formatach: A6 (klasyk pocztówki), DL (długa pocztówka), A5 (kartki okolicznościowe).",
-      "Tania drukarnia kartek i pocztówek musi obsłużyć zarówno mikronakłady (50 sztuk dla małej firmy wysyłającej kartki świąteczne do kluczowych klientów), jak i duże (5000+ dla sieci hotelowej zamawiającej pocztówki promocyjne). Konfigurator pokazuje cenę brutto z VAT od razu po wybraniu nakładu, a 28 drukarni partnerskich pozwala dobrać partnera pod konkretne wymagania. Standardowy nakład dla kartek świątecznych B2B to 250–500 sztuk.",
+      "Tania drukarnia kartek i pocztówek musi obsłużyć zarówno mikronakłady (50 sztuk dla małej firmy wysyłającej kartki świąteczne do kluczowych klientów), jak i duże (5000+ dla sieci hotelowej zamawiającej pocztówki promocyjne). Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu, a 28 drukarni partnerskich pozwala dobrać partnera pod konkretne wymagania. Standardowy nakład dla kartek świątecznych B2B to 250–500 sztuk.",
       "Pocztówki nadawane pocztą są w polskim biznesie nadal popularnym narzędziem marketingowym — szczególnie dla branży hotelowej i turystycznej (pocztówki z miejscami pobytu wysyłane do byłych gości jako forma reaktywacji), dla branży eventowej (kartki z podziękowaniami po wydarzeniu), dla branży edukacyjnej (kartki z gratulacjami po ukończeniu kursu). Druk pocztówek z polem adresowym i ramką znaczka pozwala bezpośrednio nadać przesyłkę bez dodatkowego pakowania.",
     ],
     aggregateRating: { value: "4.8", count: "560" },
@@ -1235,7 +1235,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić jeden plakat?",
         answer:
-          "Tak, minimum to 1 sztuka. Cena 1 sztuki A2 to ok. 12 zł brutto, A1 — 22 zł, B1 — 38 zł, A0 — 65 zł. Druk cyfrowy laserowy nie wymaga rozruchu maszyny, więc 1 sztuka kosztuje liniowo. Dla nakładów 10+ uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%.",
+          "Tak, minimum to 1 sztuka. Cena 1 sztuki A2 to ok. 12 zł, A1 — 22 zł, B1 — 38 zł, A0 — 65 zł. Druk cyfrowy laserowy nie wymaga rozruchu maszyny, więc 1 sztuka kosztuje liniowo. Dla nakładów 10+ uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%.",
       },
       {
         question: "Czy plakat zmieści się w typowej ramce na ścianie?",
@@ -1254,7 +1254,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk plakatów online to nasza specjalizacja dla wielkoformatu. DobrePrinty realizuje druk plakatów w pięciu formatach (A3, A2, A1, B1, A0) na papierze satynowym 170 g jako standardowym wyborze. Konfigurator pokazuje cenę brutto z VAT od razu po wybraniu formatu i nakładu, a 28 drukarni partnerskich pozwala dobrać partnera z dostępnym wielkoformatowym sprzętem (drukarki HP Latex, Roland VersaUV, offset wielkoformatowy dla większych nakładów).",
+      "Druk plakatów online to nasza specjalizacja dla wielkoformatu. DobrePrinty realizuje druk plakatów w pięciu formatach (A3, A2, A1, B1, A0) na papierze satynowym 170 g jako standardowym wyborze. Konfigurator pokazuje cenę finalną od razu po wybraniu formatu i nakładu, a 28 drukarni partnerskich pozwala dobrać partnera z dostępnym wielkoformatowym sprzętem (drukarki HP Latex, Roland VersaUV, offset wielkoformatowy dla większych nakładów).",
       "Tania drukarnia plakatów dla nakładów 1–10 sztuk to druk cyfrowy laserowy — bez rozruchu maszyny, bez dopłaty za małą partię. Powyżej 25 sztuk plakatów A1/B1/A0 uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%. Dla plakatów outdoor (papier blueback) i premium (papier fotograficzny 200 g) dostępne są opcje dodatkowe. Laminowanie (mat lub błysk) wydłuża żywotność plakatu do 24+ miesięcy.",
       "Druk plakatów obsługujemy dla wszystkich branż: koncerty i festiwale (B1 na słupach), wystawy muzealne (A0 i A1 w gablotach), kampanie reklamowe sklepów (A2 w witrynach), promocje hotelowe (A1/A2 w lobby), wystawy uczelniane (A0 i A1 na korytarzach). Każdy plakat pakujemy w sztywną tubę kartonową — bez ryzyka zagnieceń w transporcie. Czas realizacji 72 h dla standardów, express 24 h za dopłatą 40% dla pilnych zamówień.",
     ],
@@ -1360,7 +1360,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Banery reklamowe to najtańszy sposób na dużą, widoczną z daleka powierzchnię reklamową na zewnątrz. DobrePrinty realizuje druk banerów online na materiale PVC 510 g drukiem solwentowym odpornym na UV i deszcz, zawsze ze zgrzewanymi krawędziami i metalowymi oczkami co 50 cm w cenie. Cena brutto z VAT jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za oczka, bez czekania na ofertę handlowca. Baner zamawiasz od jednej sztuki, w czterech gotowych formatach lub w wymiarze niestandardowym.",
+      "Banery reklamowe to najtańszy sposób na dużą, widoczną z daleka powierzchnię reklamową na zewnątrz. DobrePrinty realizuje druk banerów online na materiale PVC 510 g drukiem solwentowym odpornym na UV i deszcz, zawsze ze zgrzewanymi krawędziami i metalowymi oczkami co 50 cm w cenie. Cena finalna jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za oczka, bez czekania na ofertę handlowca. Baner zamawiasz od jednej sztuki, w czterech gotowych formatach lub w wymiarze niestandardowym.",
       "Tani baner reklamowy nie musi oznaczać kompromisu na jakości. Standardem rynkowym bywa cienki PVC 440 g z drukiem wodnym, który po jednym sezonie pęka na zgięciach i blaknie na słońcu. W DobrePrinty zawsze drukujemy na PVC 510 g drukiem solwentowym z gwarancją intensywności kolorów przez 24+ miesiące ekspozycji zewnętrznej. Zgrzew na gorąco i aluminiowe oczka sprawiają, że baner nie rwie się na wietrze i przychodzi gotowy do natychmiastowego zawieszenia na płocie, elewacji czy rusztowaniu.",
       "Druk banerów online sprawdza się dla wszystkich branż: handlu (otwarcia sklepów, wyprzedaże w witrynach), budownictwa (banery na rusztowaniach i ogrodzeniach), eventów (sceny, mecze, festyny), gastronomii (menu i promocje na elewacji) oraz polityki i sportu. Dla dużych powierzchni i ogrodzeń narażonych na silny wiatr polecamy siatkę mesh 370 g, która przepuszcza podmuchy i odciąża konstrukcję. Baner standardowy dostarczamy w 3 dni robocze, a dzięki drukowi solwentowemu bez rozruchu maszyny opłaca się już od pojedynczej sztuki.",
     ],
@@ -1574,7 +1574,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk tablic reklamowych online to rozwiązanie dla firm, które potrzebują solidnej, trwałej reklamy zamiast tymczasowego banera. DobrePrinty realizuje druk tablic na piankowym forexie 3 mm i dibondzie aluminiowym 3 mm, zawsze technologią UV bezpośrednio na płycie, z cięciem CNC do dokładnego wymiaru. Cena brutto z VAT jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za cięcie, bez czekania na ofertę handlowca. Tablicę zamawiasz od jednej sztuki, w formatach od A3 po 70 × 100 cm lub w wymiarze niestandardowym.",
+      "Druk tablic reklamowych online to rozwiązanie dla firm, które potrzebują solidnej, trwałej reklamy zamiast tymczasowego banera. DobrePrinty realizuje druk tablic na piankowym forexie 3 mm i dibondzie aluminiowym 3 mm, zawsze technologią UV bezpośrednio na płycie, z cięciem CNC do dokładnego wymiaru. Cena finalna jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za cięcie, bez czekania na ofertę handlowca. Tablicę zamawiasz od jednej sztuki, w formatach od A3 po 70 × 100 cm lub w wymiarze niestandardowym.",
       "Tablice forex to najpopularniejszy wybór do wnętrz: lekkie, sztywne i tanie, świetnie sprawdzają się jako tablice informacyjne w gabinetach lekarskich, oznaczenia sal, menu i cenniki w restauracjach oraz szyldy w recepcjach. Tam, gdzie reklama ma stać na zewnątrz przez lata — szyldy na elewacjach, tablice firmowe przy wjazdach, oznaczenia parkingów — polecamy dibond aluminiowy, w pełni odporny na deszcz, słońce i mróz. Druk UV wtapia atrament w powierzchnię materiału, dzięki czemu tablica nie odkleja się ani nie blaknie jak nośniki oklejane folią.",
       "Druk tablic reklamowych w 28-osobowej sieci drukarni partnerskich pozwala obsłużyć zarówno pojedyncze sztuki (oznaczenie jednego gabinetu), jak i serie kilkudziesięciu tablic na sieć placówek. Cięcie CNC umożliwia dowolny kontur bez kosztu wykrojnika, a szlifowane krawędzie i otwory montażowe sprawiają, że tablica przychodzi gotowa do powieszenia. Tania tablica reklamowa nie musi oznaczać kompromisu na jakości — kontrolujemy plik przed drukiem (spady, rozdzielczość, CMYK), a każda drukarnia partnerska przechodzi kwartalny audyt jakości druku i terminowości.",
     ],
@@ -1585,7 +1585,7 @@ export const productContent: Record<string, ProductContent> = {
   koszulki: {
     keyword: "koszulki z nadrukiem",
     heroLead:
-      "Druk koszulek online z własnym projektem, od jednej sztuki. Drukujemy bezpośrednio na tkaninie (DTG) na białej bawełnie 100% 180 g — pełny kolor, miękki w dotyku nadruk, który nie pęka i nie blaknie w praniu. Wgraj grafikę w konfiguratorze i od razu zobacz podgląd na koszulce. Cena brutto z VAT widoczna od razu, dostawa w 3 dni robocze.",
+      "Druk koszulek online z własnym projektem, od jednej sztuki. Drukujemy bezpośrednio na tkaninie (DTG) na białej bawełnie 100% 180 g — pełny kolor, miękki w dotyku nadruk, który nie pęka i nie blaknie w praniu. Wgraj grafikę w konfiguratorze i od razu zobacz podgląd na koszulce. Cena finalna widoczna od razu, dostawa w 3 dni robocze.",
     whyBlocks: [
       {
         tytul: "Koszulki z nadrukiem od 1 sztuki",
@@ -1657,7 +1657,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Koszulki z własnym nadrukiem to jeden z najpopularniejszych nośników reklamy i odzieży eventowej: koszulki firmowe dla zespołu, gadżety na konferencje i targi, koszulki na wieczory kawalerskie i panieńskie, prezenty z autorską grafiką. Druk DTG na białej bawełnie pozwala odtworzyć dowolnie kolorowy projekt — zdjęcie, ilustrację, logo z gradientem — bez dopłat za liczbę kolorów, które obowiązują w klasycznym sitodruku.",
-      "Zamawianie koszulek online w DobrePrinty jest proste: wgrywasz grafikę, w podglądzie widzisz nadruk na koszulce, dopasowujesz jego rozmiar, wybierasz rozmiar koszulki i nakład, a cenę brutto z VAT widzisz od razu. Drukujemy od pojedynczych sztuk po serie na cały zespół, z dostawą kurierem w 3 dni robocze w całej Polsce.",
+      "Zamawianie koszulek online w DobrePrinty jest proste: wgrywasz grafikę, w podglądzie widzisz nadruk na koszulce, dopasowujesz jego rozmiar, wybierasz rozmiar koszulki i nakład, a cenę finalną widzisz od razu. Drukujemy od pojedynczych sztuk po serie na cały zespół, z dostawą kurierem w 3 dni robocze w całej Polsce.",
     ],
     aggregateRating: { value: "4.9", count: "210" },
     ctaCopy:
@@ -1666,7 +1666,7 @@ export const productContent: Record<string, ProductContent> = {
   "torby-papierowe": {
     keyword: "torby papierowe",
     heroLead:
-      "Druk papierowych toreb z własnym logo online. Ekologiczne opakowanie z papieru białego lub kraft 120 g, z uchwytem skręcanym i wzmacnianym dnem. Wgraj grafikę i zobacz podgląd nadruku na torbie. Cena brutto z VAT od razu, dostawa w 4 dni robocze.",
+      "Druk papierowych toreb z własnym logo online. Ekologiczne opakowanie z papieru białego lub kraft 120 g, z uchwytem skręcanym i wzmacnianym dnem. Wgraj grafikę i zobacz podgląd nadruku na torbie. Cena finalna od razu, dostawa w 4 dni robocze.",
     whyBlocks: [
       {
         tytul: "Ekologiczne opakowanie z logo",
@@ -1733,7 +1733,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Papierowe torby z nadrukiem to ekologiczne opakowanie, które jednocześnie pełni funkcję nośnika reklamy. Sprawdzają się w sklepach odzieżowych i obuwniczych, cukierniach i piekarniach, kawiarniach z daniami na wynos, butikach i na stoiskach targowych. Klient, który wychodzi z Twoją torbą, nieświadomie reklamuje markę wszędzie, gdzie się pojawi — to jeden z najtańszych sposobów na budowanie rozpoznawalności.",
-      "W DobrePrinty zamawiasz torby papierowe online: wybierasz papier (biały lub kraft), rozmiar i nakład, wgrywasz grafikę i w podglądzie widzisz nadruk na torbie. Cena brutto z VAT widoczna od razu, bez czekania na ofertę handlowca. Drukujemy z dostawą kurierem w całej Polsce w 4 dni robocze.",
+      "W DobrePrinty zamawiasz torby papierowe online: wybierasz papier (biały lub kraft), rozmiar i nakład, wgrywasz grafikę i w podglądzie widzisz nadruk na torbie. Cena finalna widoczna od razu, bez czekania na ofertę handlowca. Drukujemy z dostawą kurierem w całej Polsce w 4 dni robocze.",
     ],
     aggregateRating: { value: "4.8", count: "96" },
     ctaCopy:
@@ -1802,7 +1802,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Ile kosztuje płócienna torba z nadrukiem?",
         answer:
-          "Pojedyncza torba kosztuje 16 zł, a cena jednostkowa maleje wraz z nakładem — przy 10 sztukach to 14 zł, przy 50 sztukach 12 zł, a od 250 sztuk już 10 zł za torbę. Pełną cenę brutto z VAT dla wybranego nakładu widzisz od razu w konfiguratorze.",
+          "Pojedyncza torba kosztuje 16 zł, a cena jednostkowa maleje wraz z nakładem — przy 10 sztukach to 14 zł, przy 50 sztukach 12 zł, a od 250 sztuk już 10 zł za torbę. Pełną cenę finalną dla wybranego nakładu widzisz od razu w konfiguratorze.",
       },
       {
         question: "Czy mogę zamówić jedną płócienną torbę?",
@@ -1839,7 +1839,7 @@ export const productContent: Record<string, ProductContent> = {
       },
       {
         tytul: "Min. Stripe",
-        opis: "163 szt. × 1 gr = 1,63 PLN netto → 2,00 PLN brutto. Trafia w minimum Stripe dla PLN (2,00).",
+        opis: "163 szt. × 1 gr × 1,23 = 2,00 PLN. Trafia w minimum Stripe dla PLN (2,00).",
       },
       {
         tytul: "Ukryty",
@@ -1851,15 +1851,15 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     params: [
-      { parametr: "Cena jednostkowa", wartosc: "0,01 PLN netto" },
+      { parametr: "Cena jednostkowa", wartosc: "0,01 PLN (katalogowa)" },
       { parametr: "Setup fee", wartosc: "Pominięte (noFees)" },
-      { parametr: "Nakład domyślny", wartosc: "163 szt. → 2,00 PLN brutto" },
+      { parametr: "Nakład domyślny", wartosc: "163 szt. → 2,00 PLN" },
     ],
     filePrepIntro: "Wgranie pliku nie jest wymagane do testu Stripe.",
     filePrepSteps: [
       {
         tytul: "1. Zostaw nakład 163",
-        opis: "163 szt. × 1 gr netto + 23% VAT = 2,00 PLN brutto, dokładne minimum Stripe.",
+        opis: "163 szt. × 1 gr × PRICE_FACTOR (1,23) = 2,00 PLN, dokładne minimum Stripe.",
       },
       {
         tytul: "2. Wgraj dowolny plik PDF (opcjonalnie)",
@@ -1878,7 +1878,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Dlaczego nakład 163?",
         answer:
-          "Stripe PLN min = 2,00 PLN brutto. 163 szt. × 1 gr × 1,23 = 2,0049 → toFixed(2) = 2,00 → Stripe ok.",
+          "Stripe PLN min = 2,00 PLN. 163 szt. × 1 gr × 1,23 = 2,0049 → toFixed(2) = 2,00 → Stripe ok.",
       },
       {
         question: "Co przy mniejszym nakładzie?",

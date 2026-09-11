@@ -8,7 +8,7 @@ const STEPS: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Settings2,
     title: "Skonfiguruj",
-    desc: "Wybierz produkt, format i nakład. Cena z VAT liczy się na żywo.",
+    desc: "Wybierz produkt, format i nakład. Cena finalna liczy się na żywo.",
   },
   {
     icon: UploadCloud,

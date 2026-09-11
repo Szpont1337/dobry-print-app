@@ -65,7 +65,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "A3 to też format typowy dla plakatów eventowych (koncerty klubowe, wystawy lokalne, spektakle teatralne małej sceny). Nakład typowy: 25-100 sztuk. Cena: ok. 2-4 zł brutto za sztukę przy nakładzie 25-50 sztuk.",
+      text: "A3 to też format typowy dla plakatów eventowych (koncerty klubowe, wystawy lokalne, spektakle teatralne małej sceny). Nakład typowy: 25-100 sztuk. Cena: ok. 2-4 zł za sztukę przy nakładzie 25-50 sztuk.",
     },
     {
       type: "h2",
@@ -74,7 +74,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "A2 (420×594 mm) to najpopularniejszy format [plakatu reklamowego](/produkty/plakaty) w Polsce. Mieści się w gablotach szkolnych, w witrynach sklepowych, na drzwiach wejściowych do lokali. Czytelny z odległości 2-4 metrów. Cena: ok. 3-5 zł brutto za sztukę przy nakładzie 50-100 sztuk.",
+      text: "A2 (420×594 mm) to najpopularniejszy format [plakatu reklamowego](/produkty/plakaty) w Polsce. Mieści się w gablotach szkolnych, w witrynach sklepowych, na drzwiach wejściowych do lokali. Czytelny z odległości 2-4 metrów. Cena: ok. 3-5 zł za sztukę przy nakładzie 50-100 sztuk.",
     },
     {
       type: "p",
@@ -87,7 +87,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "A1 (594×841 mm) to format dla witryn sklepowych, wnętrz klubów, lobby hotelowych. Widoczny z dystansu 3-6 metrów. Cena: ok. 6-10 zł brutto za sztukę przy nakładzie 25-50 sztuk. Większy budżet typograficzny — można umieścić więcej tekstu czytelnego z dystansu.",
+      text: "A1 (594×841 mm) to format dla witryn sklepowych, wnętrz klubów, lobby hotelowych. Widoczny z dystansu 3-6 metrów. Cena: ok. 6-10 zł za sztukę przy nakładzie 25-50 sztuk. Większy budżet typograficzny — można umieścić więcej tekstu czytelnego z dystansu.",
     },
     {
       type: "p",
@@ -104,7 +104,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Drugie zastosowanie B1: gabloty miejskie informacyjne. Trzecie: backdropy na koncertach klubowych i wystawach galeryjnych. Cena: ok. 10-18 zł brutto za sztukę przy nakładzie 50-100 sztuk.",
+      text: "Drugie zastosowanie B1: gabloty miejskie informacyjne. Trzecie: backdropy na koncertach klubowych i wystawach galeryjnych. Cena: ok. 10-18 zł za sztukę przy nakładzie 50-100 sztuk.",
     },
     {
       type: "h2",
@@ -117,7 +117,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Czytelność z dystansu 4-10 metrów. Cena: ok. 20-30 zł brutto za sztukę przy nakładzie 25-50 sztuk. Pakowanie: sztywna tuba kartonowa o długości ok. 130 cm. Transport: wymaga większego pojazdu (nie zmieści się do samochodu osobowego w stanie zrolowanym).",
+      text: "Czytelność z dystansu 4-10 metrów. Cena: ok. 20-30 zł za sztukę przy nakładzie 25-50 sztuk. Pakowanie: sztywna tuba kartonowa o długości ok. 130 cm. Transport: wymaga większego pojazdu (nie zmieści się do samochodu osobowego w stanie zrolowanym).",
     },
     {
       type: "h2",
@@ -126,7 +126,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "B2 (500×707 mm) to format pośredni między A2 i A1. Mniej popularny w masowej dystrybucji, ale przydatny w specyficznych zastosowaniach: gabloty miejskie o niestandardowych wymiarach, plakaty w środkach komunikacji miejskiej (np. niektóre standy w metrze), specjalistyczne ekspozycje muzealne. Cena podobna do A1 (ok. 7-12 zł brutto za sztukę).",
+      text: "B2 (500×707 mm) to format pośredni między A2 i A1. Mniej popularny w masowej dystrybucji, ale przydatny w specyficznych zastosowaniach: gabloty miejskie o niestandardowych wymiarach, plakaty w środkach komunikacji miejskiej (np. niektóre standy w metrze), specjalistyczne ekspozycje muzealne. Cena podobna do A1 (ok. 7-12 zł za sztukę).",
     },
     {
       type: "h2",

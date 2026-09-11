@@ -146,8 +146,6 @@ export const submitOrder = mutation({
       formatLabel: computed.formatLabel,
       quantity: computed.quantity,
       unitPrice: computed.unitPrice,
-      netTotal: computed.netTotal,
-      vatTotal: computed.vatTotal,
       grossTotal: computed.grossTotal,
       shippingFee: computed.shippingFee,
       deliveryMethod: method,
@@ -185,7 +183,7 @@ const MAX_CART_ITEMS = 10;
  * mail, tak jak działa reszta systemu. Spina je wspólny `bundleId` (grupa
  * realizacji): jeden zakup i jedna przesyłka na wspólny adres.
  *
- * Wysyłkę liczymy RAZ, od sumy brutto całego koszyka (próg darmowej wysyłki też
+ * Wysyłkę liczymy RAZ, od sumy całego koszyka (próg darmowej wysyłki też
  * patrzy na sumę), i doklejamy w całości do pierwszego zamówienia — patrz
  * `splitCartTotals`. Dzięki temu suma `grossTotal` zamówień = kwota, którą
  * realnie pobiera Stripe, więc maile i faktury się zgadzają.
@@ -331,8 +329,6 @@ export const submitCart = mutation({
         formatLabel: priced.formatLabel,
         quantity: priced.quantity,
         unitPrice: priced.unitPrice,
-        netTotal: totals.netTotal,
-        vatTotal: totals.vatTotal,
         grossTotal: totals.grossTotal,
         shippingFee: totals.shippingFee,
         deliveryMethod: method,

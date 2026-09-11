@@ -17,11 +17,7 @@ const BRAND = {
 };
 
 const escapeHtml = (t) =>
-  t
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+  t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 function renderShell({
   preheader,
@@ -105,7 +101,6 @@ const order = {
   shippingCountry: "Polska",
   shippingFee: 0,
   grossTotal: 89.0,
-  vatTotal: 16.64,
 };
 
 function detailsBox(o) {
@@ -128,8 +123,7 @@ function detailsBox(o) {
       <tr><td style="padding:14px 20px 18px;border-top:1px solid ${BRAND.border}">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr><td style="font-size:13px;color:${BRAND.muted}">Wysyłka</td><td align="right" style="font-size:14px;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${o.shippingFee > 0 ? formatPLN.format(o.shippingFee) : "Gratis"}</td></tr>
-          <tr><td style="padding-top:8px;font-size:14px;color:${BRAND.muted}">Razem brutto</td><td align="right" style="padding-top:8px;font-size:18px;font-weight:600;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${formatPLN.format(o.grossTotal)}</td></tr>
-          <tr><td style="padding-top:4px;font-size:12px;color:${BRAND.muted}">w tym VAT 23%</td><td align="right" style="padding-top:4px;font-size:12px;color:${BRAND.muted};font-variant-numeric:tabular-nums">${formatPLN.format(o.vatTotal)}</td></tr>
+          <tr><td style="padding-top:8px;font-size:14px;color:${BRAND.muted}">Razem</td><td align="right" style="padding-top:8px;font-size:18px;font-weight:600;color:${BRAND.foreground};font-variant-numeric:tabular-nums">${formatPLN.format(o.grossTotal)}</td></tr>
         </table>
       </td></tr>
     </table>`;
@@ -178,7 +172,7 @@ const text = [
   `Zamówienie #${shortId(order._id)}`,
   `Produkt: ${order.productName}`,
   `Nakład: ${formatQty.format(order.quantity)} szt. · ${order.formatLabel}`,
-  `Razem brutto: ${formatPLN.format(order.grossTotal)} (VAT 23%: ${formatPLN.format(order.vatTotal)})`,
+  `Razem: ${formatPLN.format(order.grossTotal)}`,
   "",
   "dobreprinty · hej@dobreprinty.pl",
 ].join("\n");

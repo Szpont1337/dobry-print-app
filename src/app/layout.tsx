@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "DobrePrinty. drukarnia online",
     description:
-      "Druk ulotek, wizytówek, plakatów, roll-upów i broszur. Dostawa w 24–48 h, cena z VAT od razu.",
+      "Druk ulotek, wizytówek, plakatów, roll-upów i broszur. Dostawa w 24–48 h, cena finalna od razu.",
     images: [
       {
         url: "/og/dobreprinty.jpg",

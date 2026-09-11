@@ -25,12 +25,7 @@ import {
 import { useCart } from "@/hooks/use-cart";
 import { closeCartSheet, useCartSheetOpen } from "@/hooks/use-cart-sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
-import {
-  itemHasDesign,
-  removeCartItem,
-  type ResolvedCartItem,
-  updateCartItem,
-} from "@/lib/cart";
+import { itemHasDesign, removeCartItem, type ResolvedCartItem, updateCartItem } from "@/lib/cart";
 import { MAX_QTY, MIN_QTY, clampQuantity } from "@/lib/pricing";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -137,9 +132,7 @@ function CartFooter({ totals }: { totals: ReturnType<typeof useCart>["totals"] }
             {t("cart.shipping")}
           </dt>
           <dd className="font-semibold text-foreground tabular-nums">
-            {totals.shippingFee > 0
-              ? formatPLN.format(totals.shippingFee)
-              : t("cart.shippingFree")}
+            {totals.shippingFee > 0 ? formatPLN.format(totals.shippingFee) : t("cart.shippingFree")}
           </dd>
         </div>
         <div className="flex items-baseline justify-between gap-3">
@@ -147,7 +140,7 @@ function CartFooter({ totals }: { totals: ReturnType<typeof useCart>["totals"] }
             {t("cart.total")}
           </dt>
           <dd className="text-lg font-extrabold tracking-tight text-foreground tabular-nums">
-            {formatPLN.format(totals.gross)}
+            {formatPLN.format(totals.total)}
           </dd>
         </div>
       </dl>
@@ -186,7 +179,7 @@ function CartLine({ item }: { item: ResolvedCartItem }) {
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <span className="text-sm font-extrabold tracking-tight text-foreground tabular-nums">
-            {formatPLN.format(item.gross)}
+            {formatPLN.format(item.total)}
           </span>
           <button
             type="button"
@@ -219,7 +212,9 @@ function CartLine({ item }: { item: ResolvedCartItem }) {
             aria-label={t("cart.quantity")}
             value={item.quantity}
             onChange={(e) =>
-              updateCartItem(item.id, { quantity: clampQuantity(Number(e.target.value) || 1, item.product.minQuantity) })
+              updateCartItem(item.id, {
+                quantity: clampQuantity(Number(e.target.value) || 1, item.product.minQuantity),
+              })
             }
             className="h-9 w-24 text-center text-sm font-bold tabular-nums"
           />

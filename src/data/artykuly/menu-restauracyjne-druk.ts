@@ -197,7 +197,7 @@ export const article: Article = {
         },
         {
           q: "Ile kosztuje druk menu i jaki nakład się opłaca?",
-          a: "Cena zależy od formatu, papieru i laminatu — w konfiguratorze kwota brutto z VAT pojawia się od razu po wyborze opcji. Dla lokalu wystarczy zwykle 20-50 sztuk karty (tyle, ile stolików razy 1,5-2). Przy laminacie opłaca się dodrukować zapas — wymiana zniszczonych egzemplarzy w sezonie jest naturalna.",
+          a: "Cena zależy od formatu, papieru i laminatu — w konfiguratorze kwota finalna pojawia się od razu po wyborze opcji. Dla lokalu wystarczy zwykle 20-50 sztuk karty (tyle, ile stolików razy 1,5-2). Przy laminacie opłaca się dodrukować zapas — wymiana zniszczonych egzemplarzy w sezonie jest naturalna.",
         },
         {
           q: "Jak szybko zrobicie menu na otwarcie lokalu?",
@@ -208,7 +208,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Zamów menu dla swojego lokalu",
-      body: "Wybierz format (karta A4/A5 lub menu składane), papier i laminat, wgraj plik — drukujemy z dostawą w 24-48 h. Cena brutto z VAT widoczna od razu.",
+      body: "Wybierz format (karta A4/A5 lub menu składane), papier i laminat, wgraj plik — drukujemy z dostawą w 24-48 h. Cena finalna widoczna od razu.",
       href: "/produkty/skladane-ulotki",
       label: "Zamów menu →",
     },

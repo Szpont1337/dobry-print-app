@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
+import { finalUnitPrice } from "@/lib/pricing";
 import { visibleProducts, type Product } from "@/lib/products";
 
 import CardSwap, { Card } from "./card-swap";
@@ -11,14 +12,14 @@ import { ProductMockup } from "./product-mockup";
 
 const SWAP_SLUGS = ["wizytowki", "ulotki", "plakaty", "naklejki"];
 
-const swapProducts = SWAP_SLUGS.map((slug) =>
-  visibleProducts.find((p) => p.slug === slug),
-).filter((p): p is Product => Boolean(p));
+const swapProducts = SWAP_SLUGS.map((slug) => visibleProducts.find((p) => p.slug === slug)).filter(
+  (p): p is Product => Boolean(p),
+);
 
 function fromPrice(product: Product): number {
   const tierPrices = product.priceTiers?.map((tier) => tier.unitPrice) ?? [];
   const formatPrices = product.formats.map((format) => format.unitPrice);
-  return Math.min(...formatPrices, ...tierPrices);
+  return finalUnitPrice(Math.min(...formatPrices, ...tierPrices));
 }
 
 function formatPLN(value: number): string {
@@ -34,10 +35,7 @@ function HeroProductCard({ product }: { product: Product }) {
     <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-br from-hero-card-from to-hero-card-to p-5 text-footer-foreground shadow-xl">
       {/* preview panel */}
       <div className="relative grid flex-1 place-items-center overflow-hidden rounded-xl bg-white/95 p-6">
-        <ProductMockup
-          variant={product.variant}
-          className="h-full w-full max-w-[600px]"
-        />
+        <ProductMockup variant={product.variant} className="h-full w-full max-w-[600px]" />
         <span className="absolute left-3 top-3 inline-flex items-center rounded-md bg-accent px-2.5 py-1 font-mono text-[11px] font-extrabold uppercase tracking-wide text-accent-foreground">
           New
         </span>

@@ -261,7 +261,7 @@ export const article: Article = {
         },
         {
           q: "Ile kosztuje przygotowanie pliku przez drukarnię?",
-          a: "W DobrePrinty preflight jest gratis — sprawdzamy plik i wracamy z listą poprawek, jeśli coś jest nie tak. Korekta drobnych błędów (np. brak spadów, plik w RGB) to ok. 30–80 zł netto za godzinę pracy DTP. Pełne przygotowanie projektu od zera to inna usługa — 200–800 zł za ulotkę czy wizytówkę, w zależności od skomplikowania. DobrePrinty nie świadczy usług DTP, ale polecamy freelancerów z naszej sieci.",
+          a: "W DobrePrinty preflight jest gratis — sprawdzamy plik i wracamy z listą poprawek, jeśli coś jest nie tak. Korekta drobnych błędów (np. brak spadów, plik w RGB) to ok. 30–80 zł za godzinę pracy DTP. Pełne przygotowanie projektu od zera to inna usługa — 200–800 zł za ulotkę czy wizytówkę, w zależności od skomplikowania. DobrePrinty nie świadczy usług DTP, ale polecamy freelancerów z naszej sieci.",
         },
         {
           q: "Czy plik PSD lub AI mogę wysłać zamiast PDF?",

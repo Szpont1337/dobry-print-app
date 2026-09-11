@@ -295,7 +295,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje druk ulotek składanych vs zwykłych?",
-          a: "Ulotki składane są o 15-30% droższe od płaskich w tym samym formacie bazowym — dochodzi koszt falcowania lub bigowania. Przy nakładzie 1000 sztuk A4 składanych w C na kredzie 170g: cena ok. 250-350 zł brutto. Płaskie A4 w tym samym nakładzie: ok. 200-280 zł. Różnica maleje przy większych nakładach.",
+          a: "Ulotki składane są o 15-30% droższe od płaskich w tym samym formacie bazowym — dochodzi koszt falcowania lub bigowania. Przy nakładzie 1000 sztuk A4 składanych w C na kredzie 170g: cena ok. 250-350 zł. Płaskie A4 w tym samym nakładzie: ok. 200-280 zł. Różnica maleje przy większych nakładach.",
         },
         {
           q: "Czy mogę złożyć ulotkę ręcznie zamiast maszynowo?",

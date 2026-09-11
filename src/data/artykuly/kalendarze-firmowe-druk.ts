@@ -78,7 +78,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "*Ceny orientacyjne netto przy nakładzie 100-250 sztuk; przy 500+ sztukach stawki jednostkowe spadają o 20-40%. Kalendarz planszowy to w praktyce [plakat](/produkty/plakaty) z kalendarium — najtańszy sposób, żeby marka wisiała u klienta cały rok. Kalendarz książkowy z personalizowaną okładką technologicznie przypomina [broszurę w oprawie](/produkty/broszury-szyte), tyle że z blokiem kalendarium i twardą okładką.",
+      text: "*Ceny orientacyjne przy nakładzie 100-250 sztuk; przy 500+ sztukach stawki jednostkowe spadają o 20-40%. Kalendarz planszowy to w praktyce [plakat](/produkty/plakaty) z kalendarium — najtańszy sposób, żeby marka wisiała u klienta cały rok. Kalendarz książkowy z personalizowaną okładką technologicznie przypomina [broszurę w oprawie](/produkty/broszury-szyte), tyle że z blokiem kalendarium i twardą okładką.",
     },
     {
       type: "h2",

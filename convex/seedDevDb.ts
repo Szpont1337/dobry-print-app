@@ -29,8 +29,6 @@ export const insertSeed = internalMutation({
       formatLabel: computed.formatLabel,
       quantity,
       unitPrice: computed.unitPrice,
-      netTotal: computed.netTotal,
-      vatTotal: computed.vatTotal,
       grossTotal: computed.grossTotal,
       shippingFee: computed.shippingFee,
 
@@ -108,13 +106,11 @@ export const setOrderStatus = internalMutation({
 export const shareForOrder = internalMutation({
   args: { orderId: v.id("orders") },
   handler: async (ctx, args) => {
-    const alphabet =
-      "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
+    const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
     const bytes = new Uint8Array(11);
     crypto.getRandomValues(bytes);
     let code = "";
-    for (let i = 0; i < bytes.length; i++)
-      code += alphabet[bytes[i] % alphabet.length];
+    for (let i = 0; i < bytes.length; i++) code += alphabet[bytes[i] % alphabet.length];
 
     await ctx.db.insert("share_links", {
       code,

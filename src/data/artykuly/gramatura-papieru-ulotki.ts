@@ -263,7 +263,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Wybierz gramaturę i zamów druk",
-      body: "W konfiguratorze DobrePrinty gramatura jest opcją wybieraną przy każdym produkcie. Cena brutto z VAT zmienia się od razu po zmianie gramatury — możesz porównać 130g vs 170g na żywo i wybrać świadomie.",
+      body: "W konfiguratorze DobrePrinty gramatura jest opcją wybieraną przy każdym produkcie. Cena finalna zmienia się od razu po zmianie gramatury — możesz porównać 130g vs 170g na żywo i wybrać świadomie.",
       href: "/produkty/ulotki",
       label: "Skonfiguruj ulotki →",
     },

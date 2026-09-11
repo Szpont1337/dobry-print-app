@@ -57,12 +57,7 @@ const handleDiscordInteraction = httpAction(async (ctx, request) => {
   if (!signature || !timestamp) {
     return new Response("Missing signature", { status: 401 });
   }
-  const valid = await verifyDiscordRequest(
-    publicKey,
-    signature,
-    timestamp,
-    rawBody,
-  );
+  const valid = await verifyDiscordRequest(publicKey, signature, timestamp, rawBody);
   if (!valid) {
     return new Response("Invalid request signature", { status: 401 });
   }
@@ -90,13 +85,8 @@ const handleDiscordInteraction = httpAction(async (ctx, request) => {
               description: "Liczone tylko zamówienia **zrealizowane**.",
               fields: [
                 {
-                  name: "Brutto (z VAT)",
+                  name: "Kwota",
                   value: PLN.format(stats.gross),
-                  inline: true,
-                },
-                {
-                  name: "Netto",
-                  value: PLN.format(stats.net),
                   inline: true,
                 },
                 {
@@ -105,7 +95,7 @@ const handleDiscordInteraction = httpAction(async (ctx, request) => {
                   inline: true,
                 },
                 {
-                  name: "Średnia wartość (brutto)",
+                  name: "Średnia wartość",
                   value: PLN.format(stats.avgGross),
                   inline: true,
                 },

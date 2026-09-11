@@ -27,7 +27,7 @@ const text = [
   "Szczegóły zamówienia:",
   "  • Produkt: Ulotki DL (100 × 210 mm)",
   "  • Nakład: 1000 sztuk",
-  "  • Wartość: 153,14 zł brutto",
+  "  • Wartość: 153,14 zł",
   "",
   "Status zamówienia możesz śledzić na: https://dobreprinty.pl/zamowienia",
   "W razie pytań odpowiedz na tę wiadomość albo zadzwoń pod numer wsparcia.",
@@ -48,7 +48,7 @@ const html = `<!DOCTYPE html>
   <ul style="padding-left:20px;margin:0;">
     <li>Produkt: Ulotki DL (100 × 210 mm)</li>
     <li>Nakład: 1000 sztuk</li>
-    <li>Wartość: <strong>153,14 zł brutto</strong></li>
+    <li>Wartość: <strong>153,14 zł</strong></li>
   </ul>
   <p style="margin-top:24px;">Status zamówienia możesz śledzić na <a href="https://dobreprinty.pl/zamowienia">dobreprinty.pl/zamowienia</a>. W razie pytań odpowiedz na tę wiadomość lub zadzwoń pod numer wsparcia.</p>
   <p>Pozdrawiamy,<br>Zespół dobreprinty.pl</p>

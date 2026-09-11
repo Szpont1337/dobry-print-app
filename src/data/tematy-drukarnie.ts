@@ -40,7 +40,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     keyword: "drukarnia internetowa",
     metaTitle: "Drukarnia internetowa — zamów druk online | DobrePrinty",
     metaDescription:
-      "Drukarnia internetowa DobrePrinty: cały proces online, konfigurator 24/7, cena z VAT od razu i dostawa kurierem w 24–48 h. Bez maili i handlowca.",
+      "Drukarnia internetowa DobrePrinty: cały proces online, konfigurator 24/7, cena finalna od razu i dostawa kurierem w 24–48 h. Bez maili i handlowca.",
     h1Lead: "Drukarnia",
     h1Highlight: "internetowa",
     heroLead:
@@ -65,13 +65,13 @@ export const tematyDrukarnie: TematDrukarnia[] = [
         body: "Do każdego produktu dobieramy partnera, który zrobi go najszybciej i najtaniej. Ty zamawiasz w jednym miejscu, my zarządzamy produkcją w tle.",
       },
       {
-        title: "Faktura i historia zamówień",
-        body: "Faktura VAT przychodzi na maila razem z potwierdzeniem, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
+        title: "Rachunek i historia zamówień",
+        body: "Rachunek ze Stripe przychodzi na maila razem z potwierdzeniem, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
       },
     ],
     bodyHeading: "Jak działa drukarnia online",
     body: [
-      "Drukarnia internetowa to model, w którym zamiast jeździć do punktu ksero i dogadywać szczegóły z handlowcem, konfigurujesz zamówienie samodzielnie w przeglądarce. W DobrePrinty wygląda to tak: wybierasz produkt z katalogu, ustawiasz nakład i format, a kalkulator od razu pokazuje cenę brutto. Potem wgrywasz plik PDF, wybierasz dostawę i płacisz online — gotowe.",
+      "Drukarnia internetowa to model, w którym zamiast jeździć do punktu ksero i dogadywać szczegóły z handlowcem, konfigurujesz zamówienie samodzielnie w przeglądarce. W DobrePrinty wygląda to tak: wybierasz produkt z katalogu, ustawiasz nakład i format, a kalkulator od razu pokazuje cenę finalną. Potem wgrywasz plik PDF, wybierasz dostawę i płacisz online — gotowe.",
       "Największą zaletą jest przewidywalność. Konfigurator działa tak samo o 9:00, jak o 22:00, więc zamówienie złożysz wtedy, kiedy masz na to czas, a nie w godzinach pracy biura. Cena nie zmienia się „po wycenie” — to, co widzisz w koszyku, płacisz. Nie ma dopłat za spady, gwiazdek ani ukrytych kosztów obsługi zamówienia.",
       "Druk internetowy nie oznacza kompromisu jakościowego. Produkcję realizuje jedna z 28 zweryfikowanych drukarni partnerskich, każda po kwartalnym audycie jakości i terminowości. Reklamacje rozpatrujemy my — nie odsyłamy Cię do drukarni, która fizycznie wykonała zlecenie.",
     ],
@@ -105,12 +105,12 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Tak, automatycznie na maila razem z potwierdzeniem zamówienia. Dla firm obsługujemy też płatność odroczoną (proforma z terminem 14 dni) przy większych zamówieniach.",
+          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila rachunek wystawiony przez Stripe. Dla firm obsługujemy też płatność odroczoną (proforma z terminem 14 dni) przy większych zamówieniach.",
       },
     ],
     cta: {
       heading: "Zamów druk online w 5 minut",
-      body: "Wybierz produkt, ustaw nakład, wgraj plik — cena z VAT i termin pokażą się od razu.",
+      body: "Wybierz produkt, ustaw nakład, wgraj plik — cena finalna i termin pokażą się od razu.",
       href: "/#produkty",
       label: "Otwórz konfigurator →",
     },
@@ -359,21 +359,21 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     metaTitle:
       "Tania drukarnia online — niska cena bez ukrytych kosztów | DobrePrinty",
     metaDescription:
-      "Tania drukarnia online DobrePrinty: cena brutto z VAT od razu, bez dopłat za spady i ukrytych kosztów. Zobacz, jak drukować tanio bez utraty jakości.",
+      "Tania drukarnia online DobrePrinty: cena finalna od razu, bez dopłat za spady i ukrytych kosztów. Zobacz, jak drukować tanio bez utraty jakości.",
     h1Lead: "Tania drukarnia",
     h1Highlight: "online",
     heroLead:
-      "Tanio nie musi znaczyć byle jak. Pokazujemy pełną cenę z VAT od razu, bez gwiazdek i dopłat — a Ty decydujesz, na czym oszczędzić, a na czym nie.",
+      "Tanio nie musi znaczyć byle jak. Pokazujemy pełną cenę finalną od razu, bez gwiazdek i dopłat — a Ty decydujesz, na czym oszczędzić, a na czym nie.",
     heroStats: [
       { value: "0 zł", label: "ukrytych dopłat" },
-      { value: "z VAT", label: "cena od razu" },
+      { value: "1 kwota", label: "cena od razu" },
       { value: "od 1 szt.", label: "bez wysokich minimów" },
     ],
     bulletsHeading: "Skąd niska cena (i czego w niej nie ma)",
     bullets: [
       {
-        title: "Cena z VAT, nie netto „od”",
-        body: "Pokazujemy kwotę brutto, którą realnie zapłacisz. Żadnego „od 9 zł netto” rosnącego w koszyku o dopłaty za spady, przygotowanie czy obsługę zamówienia.",
+        title: "Cena finalna, nie „od”",
+        body: "Pokazujemy kwotę, którą realnie zapłacisz. Żadnego „od 9 zł” rosnącego w koszyku o dopłaty za spady, przygotowanie czy obsługę zamówienia.",
       },
       {
         title: "Model agencyjny obniża koszt",
@@ -392,7 +392,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     body: [
       "„Tania drukarnia” kojarzy się czasem z ryzykiem: prześwitującym roll-upem, cienkimi wizytówkami albo terminem, który okazuje się fikcją. My podchodzimy do tego inaczej — niska cena bierze się z modelu (konfigurator zamiast handlowca, sieć drukarni zamiast jednej maszyny), a nie z oszczędzania na materiale czy uczciwości terminu.",
       "Najwięcej zaoszczędzisz na świadomych decyzjach: jeden wzór ulotki w większym nakładzie zamiast trzech małych serii, rezygnacja z lakieru na materiałach masowych, dobór formatu pod standardowy arkusz. Z kolei na gramaturze wizytówek, blockoucie roll-upa czy laminacie menu nie warto schodzić — tam oszczędność widać i czuć w dłoni.",
-      "Cała cena jest transparentna od początku. Kwota brutto z VAT aktualizuje się przy każdej zmianie nakładu i formatu, więc tani druk planujesz na spokojnie, porównując warianty — bez wysyłania zapytań i czekania na „indywidualną wycenę”, która zawsze okazuje się wyższa.",
+      "Cała cena jest transparentna od początku. Kwota finalna aktualizuje się przy każdej zmianie nakładu i formatu, więc tani druk planujesz na spokojnie, porównując warianty — bez wysyłania zapytań i czekania na „indywidualną wycenę”, która zawsze okazuje się wyższa.",
     ],
     relatedProducts: [
       "ulotki",
@@ -404,7 +404,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     productsHeading: "Tanio i konkretnie",
     productsLead:
-      "Najczęściej zamawiane produkty z ceną z VAT widoczną od razu.",
+      "Najczęściej zamawiane produkty z ceną finalną widoczną od razu.",
     faqs: [
       {
         question: "Czy tani druk oznacza gorszą jakość?",
@@ -414,7 +414,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy do ceny dochodzą jakieś dopłaty?",
         answer:
-          "Cena w konfiguratorze jest brutto z VAT i obejmuje druk. Nie doliczamy opłat za spady ani „kosztów obsługi”. Jedyne dodatki, które wybierasz świadomie, to np. tryb ekspresowy czy dostawa — i widzisz je przed zamówieniem.",
+          "Cena w konfiguratorze jest ceną finalną i obejmuje druk. Nie doliczamy opłat za spady ani „kosztów obsługi”. Jedyne dodatki, które wybierasz świadomie, to np. tryb ekspresowy czy dostawa — i widzisz je przed zamówieniem.",
       },
       {
         question: "Jak zamówić druk najtaniej?",
@@ -429,7 +429,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     cta: {
       heading: "Policz, ile zapłacisz naprawdę",
-      body: "Cena brutto z VAT bez gwiazdek. Ustaw nakład i format, a zobaczysz pełną kwotę.",
+      body: "Cena finalna bez gwiazdek. Ustaw nakład i format, a zobaczysz pełną kwotę.",
       href: "/#produkty",
       label: "Sprawdź ceny →",
     },
@@ -439,13 +439,13 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     eyebrow: "Drukarnia dla firm",
     keyword: "drukarnia dla firm",
     metaTitle:
-      "Drukarnia dla firm — druk B2B, faktura, stała obsługa | DobrePrinty",
+      "Drukarnia dla firm — druk B2B, rachunek, stała obsługa | DobrePrinty",
     metaDescription:
-      "Drukarnia dla firm DobrePrinty: faktura VAT automatycznie, płatność odroczona, większe nakłady i powtarzalne zamówienia. Druk firmowy bez handlowca.",
+      "Drukarnia dla firm DobrePrinty: rachunek automatycznie na maila, płatność odroczona, większe nakłady i powtarzalne zamówienia. Druk firmowy bez handlowca.",
     h1Lead: "Drukarnia",
     h1Highlight: "dla firm",
     heroLead:
-      "Materiały firmowe bez wysyłania zapytań ofertowych. Faktura VAT na maila, płatność odroczona przy większych zamówieniach i powtarzalny druk jednym kliknięciem.",
+      "Materiały firmowe bez wysyłania zapytań ofertowych. Rachunek na maila, płatność odroczona przy większych zamówieniach i powtarzalny druk jednym kliknięciem.",
     heroStats: [
       { value: "14 dni", label: "termin płatności B2B" },
       { value: "10 000+", label: "obsługiwane nakłady" },
@@ -454,12 +454,12 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     bulletsHeading: "Druk firmowy ułożony pod B2B",
     bullets: [
       {
-        title: "Faktura VAT od ręki",
-        body: "Faktura przychodzi na maila razem z potwierdzeniem zamówienia — bez proszenia i czekania. Wszystkie dokumenty masz w jednym miejscu, gotowe do księgowości.",
+        title: "Rachunek od ręki",
+        body: "Rachunek ze Stripe przychodzi na maila razem z potwierdzeniem zamówienia — bez proszenia i czekania. Wszystkie dokumenty masz w jednym miejscu, gotowe do księgowości.",
       },
       {
         title: "Płatność odroczona",
-        body: "Przy zamówieniach powyżej progu udostępniamy fakturę proforma z 14-dniowym terminem. Materiały produkujemy, zanim zamknie się przelew.",
+        body: "Przy zamówieniach powyżej progu udostępniamy proformę z 14-dniowym terminem. Materiały produkujemy, zanim zamknie się przelew.",
       },
       {
         title: "Większe i powtarzalne nakłady",
@@ -473,7 +473,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     bodyHeading: "Druk dla firm bez działu zakupów",
     body: [
       "Dla firmy druk to często powtarzalny proces: wizytówki dla nowych pracowników, ulotki na kolejną kampanię, teczki i papier firmowy, materiały na targi. DobrePrinty upraszcza to do jednego konta: konfigurujesz, zamawiasz, dostajesz fakturę — bez rundy maili z handlowcem i bez „prześlemy wycenę do końca tygodnia”.",
-      "Dla większych organizacji liczą się trzy rzeczy: przewidywalny koszt, terminowość i dokumentacja. Cena z VAT jest jawna od razu, terminy realne (a przy pilnych zleceniach mamy tryb ekspresowy), a faktury i historia zamówień są w panelu. Przy zamówieniach powyżej progu dostępna jest płatność odroczona — proforma z terminem 14 dni.",
+      "Dla większych organizacji liczą się trzy rzeczy: przewidywalny koszt, terminowość i dokumentacja. Cena finalna jest jawna od razu, terminy realne (a przy pilnych zleceniach mamy tryb ekspresowy), a faktury i historia zamówień są w panelu. Przy zamówieniach powyżej progu dostępna jest płatność odroczona — proforma z terminem 14 dni.",
       "Obsługujemy zarówno jednoosobowe działalności, jak i większe firmy oraz instytucje. Niezależnie od skali zlecenie trafia do jednej z 28 drukarni partnerskich dobranej pod konkretny produkt, a reklamacje prowadzimy my — masz jednego partnera do rozliczeń, nie kilka drukarni do pilnowania.",
     ],
     relatedProducts: [
@@ -486,17 +486,17 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     productsHeading: "Materiały firmowe",
     productsLead:
-      "Od wizytówek całego zespołu po materiały targowe — zamów i odbierz fakturę.",
+      "Od wizytówek całego zespołu po materiały targowe — zamów i odbierz rachunek.",
     faqs: [
       {
         question: "Czy dostanę fakturę VAT na firmę?",
         answer:
-          "Tak, automatycznie na adres e-mail razem z potwierdzeniem zamówienia. Wystarczy podać dane firmy przy zamawianiu — nie trzeba prosić o fakturę osobno.",
+          "Nie wystawiamy faktur VAT — prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT. Po opłaceniu zamówienia automatycznie dostajesz na maila rachunek ze Stripe. Wystarczy podać dane firmy przy zamawianiu, a znajdą się na rachunku.",
       },
       {
         question: "Czy oferujecie płatność z odroczonym terminem?",
         answer:
-          "Tak, przy zamówieniach powyżej ustalonego progu udostępniamy fakturę proforma z 14-dniowym terminem płatności. Produkcję uruchamiamy bez czekania na zaksięgowanie przelewu.",
+          "Tak, przy zamówieniach powyżej ustalonego progu udostępniamy proformę z 14-dniowym terminem płatności. Produkcję uruchamiamy bez czekania na zaksięgowanie przelewu.",
       },
       {
         question: "Czy obsługujecie duże nakłady i stałą współpracę?",
@@ -511,7 +511,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     cta: {
       heading: "Druk firmowy bez zbędnych maili",
-      body: "Skonfiguruj materiały, odbierz fakturę VAT, ponawiaj zamówienia z panelu.",
+      body: "Skonfiguruj materiały, odbierz rachunek, ponawiaj zamówienia z panelu.",
       href: "/produkty/wizytowki",
       label: "Zamów dla firmy →",
     },
@@ -781,8 +781,8 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     bulletsHeading: "6 rzeczy, które warto sprawdzić",
     bullets: [
       {
-        title: "Cena z VAT, nie „od netto”",
-        body: "Sprawdź, czy widzisz pełną kwotę brutto przed zamówieniem. Oferty „od X zł netto” potrafią urosnąć o dopłaty za spady, przygotowanie i obsługę — porównuj ceny końcowe.",
+        title: "Cena finalna, nie „od”",
+        body: "Sprawdź, czy widzisz pełną kwotę przed zamówieniem. Oferty „od X zł” potrafią urosnąć o dopłaty za spady, przygotowanie i obsługę — porównuj ceny końcowe.",
       },
       {
         title: "Realny, nie obiecany termin",
@@ -799,9 +799,9 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     bodyHeading: "Checklista wyboru drukarni online",
     body: [
-      "Wybór drukarni internetowej sprowadza się do kilku pytań, które warto zadać przed pierwszym zamówieniem. Pierwsze: czy cena, którą widzę, jest pełna? Kwota brutto z VAT, bez dopłat pojawiających się w koszyku, pozwala uczciwie porównać oferty. Druga sprawa to termin — i to, czy obejmuje produkcję, dostawę, czy obie rzeczy razem.",
+      "Wybór drukarni internetowej sprowadza się do kilku pytań, które warto zadać przed pierwszym zamówieniem. Pierwsze: czy cena, którą widzę, jest pełna? Kwota finalna, bez dopłat pojawiających się w koszyku, pozwala uczciwie porównać oferty. Druga sprawa to termin — i to, czy obejmuje produkcję, dostawę, czy obie rzeczy razem.",
       "Trzeci punkt to obsługa pliku. Drukarnia, która tylko „przyjmuje PDF i drukuje”, przerzuca całe ryzyko na Ciebie. Taka z preflightem sprawdzi spady, rozdzielczość i czerń tekstu, i odezwie się, zanim coś pójdzie nie tak. Czwarty: kto odpowiada za reklamacje — jeden partner czy łańcuszek podwykonawców. Piąty: wybór materiałów i wykończeń pod Twój konkretny produkt. Szósty: dostępność i czas reakcji obsługi, gdy pojawi się pytanie.",
-      "Najprostszy test w praktyce: zamów mały nakład jednego produktu i zobacz, jak przebiega proces — od jasności ceny, przez kontakt przy pliku, po jakość i termin dostawy. Tak sprawdzisz drukarnię taniej niż na dużym, ważnym zleceniu. W DobrePrinty każdy z tych punktów jest wpisany w sam model: cena z VAT od razu, preflight w standardzie, reklamacje po naszej stronie i 28 drukarni partnerskich dobieranych pod produkt.",
+      "Najprostszy test w praktyce: zamów mały nakład jednego produktu i zobacz, jak przebiega proces — od jasności ceny, przez kontakt przy pliku, po jakość i termin dostawy. Tak sprawdzisz drukarnię taniej niż na dużym, ważnym zleceniu. W DobrePrinty każdy z tych punktów jest wpisany w sam model: cena finalna od razu, preflight w standardzie, reklamacje po naszej stronie i 28 drukarni partnerskich dobieranych pod produkt.",
     ],
     relatedProducts: ["wizytowki", "ulotki", "plakaty", "roll-up"],
     productsHeading: "Przetestuj nas na małym zamówieniu",
@@ -811,7 +811,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Na co najpierw zwrócić uwagę przy wyborze drukarni online?",
         answer:
-          "Na pełną cenę z VAT (bez dopłat doliczanych później), realny termin obejmujący produkcję i dostawę oraz na to, czy drukarnia weryfikuje plik przed drukiem. To trzy rzeczy, które najczęściej decydują o tym, czy będziesz zadowolony.",
+          "Na pełną cenę finalną (bez dopłat doliczanych później), realny termin obejmujący produkcję i dostawę oraz na to, czy drukarnia weryfikuje plik przed drukiem. To trzy rzeczy, które najczęściej decydują o tym, czy będziesz zadowolony.",
       },
       {
         question: "Jak sprawdzić jakość drukarni bez ryzyka?",
@@ -821,7 +821,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy najtańsza oferta jest najlepsza?",
         answer:
-          "Niekoniecznie. Bardzo niska cena bywa okupiona prześwitującym materiałem, cienkim papierem albo terminem, który okazuje się fikcją. Porównuj ceny końcowe z VAT i sprawdzaj, co dokładnie obejmują — czasem „drożej” znaczy „bez niespodzianek”.",
+          "Niekoniecznie. Bardzo niska cena bywa okupiona prześwitującym materiałem, cienkim papierem albo terminem, który okazuje się fikcją. Porównuj ceny końcowe i sprawdzaj, co dokładnie obejmują — czasem „drożej” znaczy „bez niespodzianek”.",
       },
       {
         question: "Co to jest preflight i czemu jest ważny?",

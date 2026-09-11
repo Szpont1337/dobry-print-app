@@ -161,7 +161,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Tłoczenie folią złotą lub srebrną to opcja najbardziej luksusowa — używana przez kancelarie prawne z 100-letnią tradycją, hotele 5-gwiazdkowe, marki biżuteryjne. Folia jest fizycznie tłoczona w karton, daje efekt 3D i blasku. Wymaga osobnego pliku z maską tłoczenia. Cena: +120 zł netto za 100 sztuk.",
+      text: "Tłoczenie folią złotą lub srebrną to opcja najbardziej luksusowa — używana przez kancelarie prawne z 100-letnią tradycją, hotele 5-gwiazdkowe, marki biżuteryjne. Folia jest fizycznie tłoczona w karton, daje efekt 3D i blasku. Wymaga osobnego pliku z maską tłoczenia. Cena: +120 zł za 100 sztuk.",
     },
     {
       type: "h2",
@@ -211,11 +211,11 @@ export const article: Article = {
         },
         {
           q: "Ile kosztują wizytówki w 2026?",
-          a: "Standardowe wizytówki klasyczne 85×55 mm na 350g kreda mat z drukiem 4/4: 100 sztuk ok. 25 zł brutto, 250 sztuk ok. 38 zł, 500 sztuk 65 zł, 1000 sztuk 115 zł. Wykończenia (folia, UV, tłoczenie) dodają 30-70% do ceny. Premium 400g + folia matowa + UV punktowy: 100 sztuk ok. 95 zł brutto.",
+          a: "Standardowe wizytówki klasyczne 85×55 mm na 350g kreda mat z drukiem 4/4: 100 sztuk ok. 25 zł, 250 sztuk ok. 38 zł, 500 sztuk 65 zł, 1000 sztuk 115 zł. Wykończenia (folia, UV, tłoczenie) dodają 30-70% do ceny. Premium 400g + folia matowa + UV punktowy: 100 sztuk ok. 95 zł.",
         },
         {
           q: "Czy można zamówić wizytówki w nakładzie 25 sztuk?",
-          a: "Tak, minimum to 25 sztuk dla mikronakładów. Cena jednostkowa jest wyższa (25 sztuk ok. 18 zł brutto, czyli 0,72 zł za sztukę), ale dla freelancerów testujących projekt wizytówki to sensowny próg. Po zatwierdzeniu wzoru zamów docelowo 250-500 sztuk z lepszą ceną jednostkową.",
+          a: "Tak, minimum to 25 sztuk dla mikronakładów. Cena jednostkowa jest wyższa (25 sztuk ok. 18 zł, czyli 0,72 zł za sztukę), ale dla freelancerów testujących projekt wizytówki to sensowny próg. Po zatwierdzeniu wzoru zamów docelowo 250-500 sztuk z lepszą ceną jednostkową.",
         },
         {
           q: "Czy wizytówki z NFC chipem to dobry pomysł?",
@@ -230,7 +230,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Zaprojektuj swoje wizytówki",
-      body: "Wybierz format, papier, druk 4/0 lub 4/4 w konfiguratorze DobrePrinty. Cena brutto z VAT widoczna od razu, produkcja 24 h, dostawa kurierem.",
+      body: "Wybierz format, papier, druk 4/0 lub 4/4 w konfiguratorze DobrePrinty. Cena finalna widoczna od razu, produkcja 24 h, dostawa kurierem.",
       href: "/produkty/wizytowki",
       label: "Zamów wizytówki →",
     },

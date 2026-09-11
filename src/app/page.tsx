@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: "Drukarnia online — druk ulotek, wizytówek, plakatów | DobrePrinty",
   },
   description:
-    "Drukarnia internetowa DobrePrinty: druk ulotek, wizytówek, plakatów i roll-upów online. Konfigurator 24/7, wycena z VAT od ręki, dostawa kurierem w całej Polsce.",
+    "Drukarnia internetowa DobrePrinty: druk ulotek, wizytówek, plakatów i roll-upów online. Konfigurator 24/7, wycena finalna od ręki, dostawa kurierem w całej Polsce.",
   alternates: { canonical: "https://www.dobreprinty.pl" },
   openGraph: {
     title: "Drukarnia online — druk ulotek, wizytówek, plakatów | DobrePrinty",

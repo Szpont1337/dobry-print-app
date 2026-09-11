@@ -14,7 +14,7 @@ import UploadPlikDoDruku, { type UploadedFileInfo } from "@/components/UploadPli
 import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { MAX_CART_ITEMS, addCartItem } from "@/lib/cart";
 import { safeCapture } from "@/lib/posthog-client";
-import { MAX_QTY, MIN_QTY, VAT_RATE, clampQuantity, priceFor } from "@/lib/pricing";
+import { MAX_QTY, MIN_QTY, clampQuantity, priceFor } from "@/lib/pricing";
 import { FREE_SHIPPING_THRESHOLD, shippingFeeFor, withShipping } from "@/lib/shipping";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -44,15 +44,13 @@ export function ProductConfigurator({ product }: { product: Product }) {
     [product, format, quantity],
   );
 
-  const net = useMemo(
+  const productTotal = useMemo(
     () => priceFor(quantity, unitPrice, product.noFees),
     [quantity, unitPrice, product.noFees],
   );
-  const vat = net * VAT_RATE;
-  const gross = net + vat;
-  const shippingFee = shippingFeeFor(gross);
-  const totals = withShipping(net, vat, gross);
-  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - gross);
+  const shippingFee = shippingFeeFor(productTotal);
+  const totals = withShipping(productTotal);
+  const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - productTotal);
 
   const clamp = (n: number) => clampQuantity(n, minQty);
   // Skróty nakładu poniżej minimum nie mają sensu; zamiast nich pokazujemy samo
@@ -95,20 +93,12 @@ export function ProductConfigurator({ product }: { product: Product }) {
       product_name: product.name,
       format: format.label,
       quantity,
-      gross_total: totals.gross,
+      gross_total: totals.total,
       has_files: uploadedFiles.length > 0,
       file_count: uploadedFiles.length,
     });
     return id;
-  }, [
-    product.slug,
-    product.name,
-    format.id,
-    format.label,
-    quantity,
-    uploadedFiles,
-    totals.gross,
-  ]);
+  }, [product.slug, product.name, format.id, format.label, quantity, uploadedFiles, totals.total]);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
@@ -320,7 +310,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                 Cena za sztukę
               </dt>
               <dd className="font-semibold text-foreground tabular-nums">
-                {formatPLN.format(gross / quantity)}
+                {formatPLN.format(productTotal / quantity)}
               </dd>
             </div>
             <div className="my-3 h-px bg-border" />
@@ -330,7 +320,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                   Druk
                 </dt>
                 <dd className="font-semibold text-foreground tabular-nums">
-                  {formatPLN.format(gross)}
+                  {formatPLN.format(productTotal)}
                 </dd>
               </div>
             )}
@@ -351,7 +341,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                 Razem
               </dt>
               <PriceTag
-                amount={formatPLN.format(totals.gross)}
+                amount={formatPLN.format(totals.total)}
                 suffix=""
                 size="lg"
                 className="text-accent-foreground"

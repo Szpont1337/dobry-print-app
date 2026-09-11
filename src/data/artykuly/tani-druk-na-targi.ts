@@ -21,7 +21,7 @@ export const article: Article = {
     {
       type: "callout",
       variant: "info",
-      text: "Wszystkie kwoty w tym artykule są orientacyjne i mają pokazać proporcje budżetu, a nie zastąpić wyceny. Realna cena zależy od nakładu, formatu, papieru i wykończenia — przy małych nakładach koszt jednostkowy rośnie. Aktualną cenę brutto z VAT zobaczysz od razu w konfiguratorze danego produktu (linki w przyciskach na końcu artykułu).",
+      text: "Wszystkie kwoty w tym artykule są orientacyjne i mają pokazać proporcje budżetu, a nie zastąpić wyceny. Realna cena zależy od nakładu, formatu, papieru i wykończenia — przy małych nakładach koszt jednostkowy rośnie. Aktualną cenę finalną zobaczysz od razu w konfiguratorze danego produktu (linki w przyciskach na końcu artykułu).",
     },
     {
       type: "h2",
@@ -276,7 +276,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje minimalny komplet materiałów na pierwsze targi?",
-          a: "Minimum: roll-up 85×200 (165 zł) + 500 ulotek A5 (115 zł) + 200 wizytówek (35 zł) = ok. 315 zł brutto. To bardzo skromny komplet — wystarczy na 1-dniowe targi lokalne dla mikrofirmy. Dla 3-dniowych targów branżowych realistyczny budżet to 800-1500 zł (komplet startera w tabeli wyżej).",
+          a: "Minimum: roll-up 85×200 (165 zł) + 500 ulotek A5 (115 zł) + 200 wizytówek (35 zł) = ok. 315 zł. To bardzo skromny komplet — wystarczy na 1-dniowe targi lokalne dla mikrofirmy. Dla 3-dniowych targów branżowych realistyczny budżet to 800-1500 zł (komplet startera w tabeli wyżej).",
         },
         {
           q: "Czy warto wydać więcej na premium roll-up z LED?",
@@ -300,14 +300,14 @@ export const article: Article = {
         },
         {
           q: "Jak rozliczyć materiały targowe podatkowo?",
-          a: "Wszystkie materiały drukowane na targi to koszt uzyskania przychodu w działalności gospodarczej. Faktura VAT od DobrePrinty automatyczna na e-mail. Materiały marketingowe (ulotki, roll-upy, broszury) są kosztem 100%, gadżety reklamowe (długopisy, smycze) — też koszt 100% jeśli nie przekraczają 200 zł/sztuka. Dla większych prezentów (np. zegarki firmowe) — ograniczenia, ale to inna kategoria niż druk.",
+          a: "Wszystkie materiały drukowane na targi to koszt uzyskania przychodu w działalności gospodarczej. Rachunek od DobrePrinty automatycznie na e-mail. Materiały marketingowe (ulotki, roll-upy, broszury) są kosztem 100%, gadżety reklamowe (długopisy, smycze) — też koszt 100% jeśli nie przekraczają 200 zł/sztuka. Dla większych prezentów (np. zegarki firmowe) — ograniczenia, ale to inna kategoria niż druk.",
         },
       ],
     },
     {
       type: "cta",
       heading: "Skompletuj materiały na targi w DobrePrinty",
-      body: "Wszystkie kategorie (roll-upy, ulotki, wizytówki, broszury) w jednym konfiguratorze. Cena brutto z VAT od razu, dostawa kurierem 24-48 h, faktura na maila.",
+      body: "Wszystkie kategorie (roll-upy, ulotki, wizytówki, broszury) w jednym konfiguratorze. Cena finalna od razu, dostawa kurierem 24-48 h, faktura na maila.",
       href: "/produkty/roll-up",
       label: "Zamów materiały targowe →",
     },

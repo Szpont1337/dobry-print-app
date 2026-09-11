@@ -22,6 +22,7 @@ import {
 import { miasta, type Miasto } from "@/data/miasta";
 import { getMiastoTresc, type MiastoTresc } from "@/data/miasta-tresc";
 import { isIndexableMiasto, robotsForMiasto } from "@/lib/miasta-seo";
+import { finalUnitPrice } from "@/lib/pricing";
 import { visibleProducts as products } from "@/lib/products";
 
 const BASE_URL = "https://www.dobreprinty.pl";
@@ -122,7 +123,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
   }
   p2 += ` Plik sprawdzamy przed drukiem, a reklamacje rozpatrujemy my, nie odsyłamy do drukarni.`;
 
-  let p3 = `Tania drukarnia ${miasto.nazwa} online nie musi oznaczać kompromisu jakościowego. Ceny w DobrePrinty są transparentne: kwota z VAT pokazuje się przy każdej zmianie nakładu i formatu, bez gwiazdek i dopłat za spady.`;
+  let p3 = `Tania drukarnia ${miasto.nazwa} online nie musi oznaczać kompromisu jakościowego. Ceny w DobrePrinty są transparentne: kwota finalna pokazuje się przy każdej zmianie nakładu i formatu, bez gwiazdek i dopłat za spady.`;
   p3 += dzielniceProse
     ? ` Kurier dowozi zamówienia do dzielnic i okolic takich jak ${dzielniceProse}, zwykle następnego dnia roboczego po produkcji.`
     : ` Kurier dowozi zamówienia pod wskazany adres w ${miasto.wojewodztwo} zwykle następnego dnia roboczego po produkcji.`;
@@ -227,7 +228,7 @@ export function buildCityMetadata(miasto: Miasto): Metadata {
   const title = `Drukarnia ${miasto.nazwa} online. Druk 24h z dostawą`;
   const description = (
     t.metaDescription ??
-    `Drukarnia ${miasto.nazwa} online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.`
+    `Drukarnia ${miasto.nazwa} online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.`
   ).slice(0, 200);
   return {
     title,
@@ -276,7 +277,7 @@ function SchemaMarkup({
     "@id": `${url}#localbusiness`,
     name: `DobrePrinty, drukarnia ${miasto.nazwa} online`,
     alternateName: `DobrePrinty ${miasto.nazwa}`,
-    description: `Drukarnia online dla firm i instytucji z ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena z VAT widoczna od razu.`,
+    description: `Drukarnia online dla firm i instytucji z ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena finalna widoczna od razu.`,
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
     email: "hej@drukalo.pl",
@@ -324,8 +325,12 @@ function SchemaMarkup({
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "PLN",
-            lowPrice: Math.min(...p.formats.map((f) => f.unitPrice)),
-            highPrice: Math.max(...p.formats.map((f) => f.unitPrice)),
+            lowPrice: finalUnitPrice(
+              Math.min(...p.formats.map((f) => f.unitPrice)),
+            ),
+            highPrice: finalUnitPrice(
+              Math.max(...p.formats.map((f) => f.unitPrice)),
+            ),
             offerCount: p.formats.length,
           },
         },

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Drukarnie lokalne w Polsce — druk online w Twoim mieście | DobrePrinty",
   },
   description:
-    "Druk online z dostawą kurierem w całej Polsce. Wybierz swoje miasto i sprawdź ofertę DobrePrinty: ulotki, wizytówki, plakaty i roll-upy z wyceną z VAT od ręki.",
+    "Druk online z dostawą kurierem w całej Polsce. Wybierz swoje miasto i sprawdź ofertę DobrePrinty: ulotki, wizytówki, plakaty i roll-upy z wyceną finalną od ręki.",
   alternates: { canonical: URL },
   openGraph: {
     title: "Drukarnie lokalne w Polsce | DobrePrinty",

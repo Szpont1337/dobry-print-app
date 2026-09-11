@@ -8,9 +8,9 @@ import type { MiastoTresc } from "./miasta-tresc";
 export const miastaTresc: Record<string, MiastoTresc> = {
   warszawa: {
     metaDescription:
-      "Drukarnia Warszawa online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Warszawa online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Warszawy w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Warszawy w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców z Woli, otwartych spaceów z Mokotowa, agencji kreatywnych z Pragi i sieci HoReCa ze Śródmieścia. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -60,8 +60,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Warszawa to największy rynek biznesowy w Polsce. Stolicowe centrale banków (PKO BP, Pekao, mBank), big four (PwC, Deloitte, EY, KPMG), korporacje IT (Google, Microsoft, IBM) i giełda papierów wartościowych zamawiają druk regularnie, w dużych skalach i pod krótkie terminy. Drukarnia Warszawa obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Pragi po dziesięć tysięcy plakatów na Orange Warsaw Festival.",
-      "Druk Warszawa sprawdza się tam, gdzie liczy się czas reakcji. Agencja kreatywna z Woli potrzebuje 200 broszur klejonych na piątkową prezentację, korporacja z Mokotowa zamawia 5 000 katalogów na onboarding, organizator targów modowych z PTAK Warsaw Expo wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Warszawa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Warszawy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Warszawa sprawdza się tam, gdzie liczy się czas reakcji. Agencja kreatywna z Woli potrzebuje 200 broszur klejonych na piątkową prezentację, korporacja z Mokotowa zamawia 5 000 katalogów na onboarding, organizator targów modowych z PTAK Warsaw Expo wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Warszawa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Warszawy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Warszawa to dla nas codzienność. Kancelarie prawne z Hożej, startupy z Brain Embassy, agencje eventowe z Pragi, sieci gastronomiczne ze Śródmieścia i wydziały UW i SGH zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Warszawa z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -77,7 +77,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia korporacyjne?",
         answer:
-          "Tak. Drukarnia Warszawa w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały promocyjne dla wystawców PTAK Warsaw Expo i serie wizytówek dla całych zespołów korporacji z Woli. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Warszawa w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały promocyjne dla wystawców PTAK Warsaw Expo i serie wizytówek dla całych zespołów korporacji z Woli. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -110,9 +110,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   krakow: {
     metaDescription:
-      "Drukarnia Kraków online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Kraków online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Krakowa w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Krakowa w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców na Zabłociu, agencji z Kazimierza, kawiarni ze Starego Miasta i centrów BPO z Bronowic. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -163,8 +163,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Kraków to drugie miasto Polski i największy europejski hub centrów usług biznesowych. Pracują tu polskie i zagraniczne giganty IT (Google, Cisco, Comarch, Capgemini, Motorola), centra BPO/SSC (Shell, UBS, State Street, Akamai), agencje kreatywne z Zabłocia, restauracje i kawiarnie Kazimierza oraz Starego Miasta. Do tego cztery duże uczelnie (UJ, AGH, UEK, Politechnika Krakowska) z ponad 130 tysiącami studentów i kalendarz festiwali, który ściąga turystów od kwietnia do września. Drukarnia Kraków obsługująca taki rynek musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po osiem tysięcy plakatów na Festiwal Kultury Żydowskiej.",
-      "Druk Kraków sprawdza się tam, gdzie liczy się czas reakcji. Kawiarnia z Kazimierza otwiera nową lokalizację i potrzebuje 500 składanych ulotek z menu, korpo IT z Zabłocia zamawia 3 000 broszur onboardingowych dla nowych zespołów, organizator konferencji w ICE Kraków wymaga roll-upów na czwartkowe otwarcie. Tania drukarnia Kraków online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Krakowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Kraków sprawdza się tam, gdzie liczy się czas reakcji. Kawiarnia z Kazimierza otwiera nową lokalizację i potrzebuje 500 składanych ulotek z menu, korpo IT z Zabłocia zamawia 3 000 broszur onboardingowych dla nowych zespołów, organizator konferencji w ICE Kraków wymaga roll-upów na czwartkowe otwarcie. Tania drukarnia Kraków online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Krakowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Kraków to dla nas codzienność. Kancelarie prawne z Karmelickiej, agencje kreatywne z Zabłocia, lokale gastronomiczne z Kazimierza, koła naukowe UJ i AGH oraz centra BPO z Bronowic zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Kraków z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -181,7 +181,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Czy obsługujecie duże zamówienia dla korporacji IT z Krakowa?",
         answer:
-          "Tak. Drukarnia Kraków w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały onboardingowe dla centrów BPO (Shell, UBS, State Street) i serie wizytówek dla całych zespołów IT z Comarchu, Capgemini i Cisco. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Kraków w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały onboardingowe dla centrów BPO (Shell, UBS, State Street) i serie wizytówek dla całych zespołów IT z Comarchu, Capgemini i Cisco. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców EXPO Kraków i ICE Kraków?",
@@ -212,9 +212,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   wroclaw: {
     metaDescription:
-      "Drukarnia Wrocław online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h do Wrocławia. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Wrocław online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h do Wrocławia. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Wrocławia w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Wrocławia w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców Sky Tower, software house’ów z Krzyków, centrów BPO/SSC z Fabrycznej i sieci HoReCa z Rynku. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -265,8 +265,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Wrocław to stolica Dolnego Śląska i jeden z najsilniejszych rynków biznesowych w Polsce. Pracują tu software house’y i sektor IT skupiony w lokalnym klastrze, centra usług wspólnych BPO/SSC obsługujące klientów z całej Europy, producenci AGD i części motoryzacyjnych oraz operatorzy logistyczni przy autostradzie A4. Do tego Uniwersytet Wrocławski, Politechnika Wrocławska i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów, sieci HoReCa z Rynku i Starego Miasta oraz wydarzenia ściągające tysiące widzów. Drukarnia Wrocław obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera ze Śródmieścia po dziesięć tysięcy plakatów na koncert na Stadionie Wrocław.",
-      "Druk Wrocław sprawdza się tam, gdzie liczy się czas reakcji. Software house z Krzyków potrzebuje 200 broszur rekrutacyjnych na targi pracy, centrum BPO/SSC z Fabrycznej zamawia 5 000 katalogów na onboarding nowej zmiany, organizator targów w Hali Stulecia wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Wrocław online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Wrocławia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Wrocław sprawdza się tam, gdzie liczy się czas reakcji. Software house z Krzyków potrzebuje 200 broszur rekrutacyjnych na targi pracy, centrum BPO/SSC z Fabrycznej zamawia 5 000 katalogów na onboarding nowej zmiany, organizator targów w Hali Stulecia wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Wrocław online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Wrocławia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Wrocław to dla nas codzienność. Kancelarie prawne ze Starego Miasta, software house’y z wrocławskiego klastra IT, centra usług wspólnych z Fabrycznej, producenci AGD i motoryzacji z Psiego Pola oraz wydziały UWr i Politechniki Wrocławskiej zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Wrocław z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -282,7 +282,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Wrocławia?",
         answer:
-          "Tak. Drukarnia Wrocław w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów software house’ów. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Wrocław w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów software house’ów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla software house’ów i centrów BPO/SSC?",
@@ -314,9 +314,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   lodz: {
     metaDescription:
-      "Drukarnia Łódź online. Ulotki, wizytówki i plakaty z dostawą do Łodzi w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Łódź online. Ulotki, wizytówki i plakaty z dostawą do Łodzi w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Łodzi w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Łodzi w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do studiów kreatywnych z Off Piotrkowska, biurowców Śródmieścia, magazynów e-commerce przy A1/A2 i restauracji z Piotrkowskiej. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -367,8 +367,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Łódź to trzecie co do wielkości miasto w Polsce i centrum, które z dawnej stolicy włókiennictwa przekuło się w prężny ośrodek przemysłu filmowego i kreatywnego, e-commerce oraz logistyki. Pracują tu klaster filmowy i Szkoła Filmowa, producent AGD BSH, centra usług wspólnych oraz wielkie magazyny operatorów logistycznych spod węzłów A1 i A2. Do tego Uniwersytet Łódzki i Politechnika Łódzka z dziesiątkami tysięcy studentów oraz lokale i studia z Piotrkowskiej i Off Piotrkowska. Drukarnia Łódź obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Polesia po dziesięć tysięcy plakatów na Łódź Design Festival.",
-      "Druk Łódź sprawdza się tam, gdzie liczy się czas reakcji. Studio kreatywne z Off Piotrkowska potrzebuje 200 broszur klejonych na piątkową prezentację, marka e-commerce zamawia 5 000 katalogów na sezon, organizator Festiwalu Light Move wymaga plakatów B1 na wieczorne otwarcie. Tania drukarnia Łódź online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Łodzi kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Łódź sprawdza się tam, gdzie liczy się czas reakcji. Studio kreatywne z Off Piotrkowska potrzebuje 200 broszur klejonych na piątkową prezentację, marka e-commerce zamawia 5 000 katalogów na sezon, organizator Festiwalu Light Move wymaga plakatów B1 na wieczorne otwarcie. Tania drukarnia Łódź online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Łodzi kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Łódź to dla nas codzienność. Ekipy planów filmowych łódzkiego klastra, studia z Off Piotrkowska, operatorzy logistyczni spod A1/A2, producenci AGD, centra usług wspólnych oraz koła naukowe Uniwersytetu Łódzkiego i Politechniki Łódzkiej zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Łódź z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -384,7 +384,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Łodzi?",
         answer:
-          "Tak. Drukarnia Łódź w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci e-commerce, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów centrów usług wspólnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Łódź w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci e-commerce, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów centrów usług wspólnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla branży filmowej i kreatywnej z Łodzi?",
@@ -416,9 +416,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   poznan: {
     metaDescription:
-      "Drukarnia Poznań online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h, w sam raz pod targi na MTP. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Poznań online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h, w sam raz pod targi na MTP. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Poznania w 24–48 h, gotowe na targi na MTP. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Poznania w 24–48 h, gotowe na targi na MTP. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców z Grunwaldu, stoisk wystawców na MTP, restauracji ze Starego Rynku, dostawców motoryzacji i firm IT z całego Poznania. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -468,8 +468,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Poznań to stolica Wielkopolski i jedno z najsilniejszych centrów gospodarczych zachodniej Polski. Rytm miasta wyznaczają Międzynarodowe Targi Poznańskie — kalendarz imprez na MTP ściąga do miasta tysiące wystawców i odwiedzających, a każda edycja targów meblarskich, motoryzacyjnych czy branżowych kongresów uruchamia falę zamówień na roll-upy, katalogi i plakaty. Drukarnia Poznań obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla handlowca po dziesięć tysięcy katalogów na otwarcie pawilonów MTP.",
-      "Druk Poznań sprawdza się tam, gdzie liczy się czas reakcji. Wystawca z pawilonu MTP potrzebuje 30 roll-upów na środowy montaż stoiska, dostawca motoryzacji spod fabryki Volkswagena zamawia 2 000 broszur technicznych, operator logistyczny z Nowego Miasta wymaga serii etykiet i naklejek na flotę. Tania drukarnia Poznań online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Poznania kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Pod targi na MTP planujemy nadanie tak, by materiały dotarły 1–2 dni przed montażem stoiska. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Poznań sprawdza się tam, gdzie liczy się czas reakcji. Wystawca z pawilonu MTP potrzebuje 30 roll-upów na środowy montaż stoiska, dostawca motoryzacji spod fabryki Volkswagena zamawia 2 000 broszur technicznych, operator logistyczny z Nowego Miasta wymaga serii etykiet i naklejek na flotę. Tania drukarnia Poznań online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Poznania kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Pod targi na MTP planujemy nadanie tak, by materiały dotarły 1–2 dni przed montażem stoiska. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Poznań to dla nas codzienność. Wystawcy kolejnych edycji MTP, dostawcy motoryzacji, operatorzy logistyczni z Nowego Miasta, firmy IT z Wildy, restauracje ze Starego Rynku oraz wydziały UAM, Politechniki Poznańskiej i Uniwersytetu Ekonomicznego zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Poznań z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -485,7 +485,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Poznania?",
         answer:
-          "Tak. Drukarnia Poznań w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla dostawców motoryzacji i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Poznań w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla dostawców motoryzacji i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -517,9 +517,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   gdansk: {
     metaDescription:
-      "Drukarnia Gdańsk online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich, dostawa w całym Trójmieście. Wyceń teraz.",
+      "Drukarnia Gdańsk online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich, dostawa w całym Trójmieście. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gdańska i całego Trójmiasta w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gdańska i całego Trójmiasta w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców Olivia Centre, restauracji z Długiego Targu, firm portowych z terminala DCT i hoteli z Przymorza, a także do reszty Trójmiasta. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -570,8 +570,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Gdańsk to gospodarcze serce Pomorza i część aglomeracji trójmiejskiej. Pracują tu silna gospodarka morska i sektor portowy (terminal kontenerowy DCT, jeden z największych na Bałtyku), petrochemia spod znaku Grupy Lotos i Orlenu oraz dynamiczny sektor IT skupiony wokół Olivia Centre. Do tego Uniwersytet Gdański i Politechnika Gdańska z dziesiątkami tysięcy studentów, restauracje z Długiego Targu i Mariackiej oraz eventy, które ściągają tłumy. Drukarnia Gdańsk obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Wrzeszcza po dziesięć tysięcy plakatów na Jarmark św. Dominika.",
-      "Druk Gdańsk sprawdza się tam, gdzie liczy się czas reakcji. Software house z Olivia Centre potrzebuje 200 broszur klejonych na piątkową prezentację, firma portowa z terminala DCT zamawia 5 000 katalogów na targi morskie w AmberExpo, organizator koncertu w Polsat Plus Arena wymaga roll-upów na sobotnie wydarzenie. Tania drukarnia Gdańsk online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Gdańska kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Obsługujemy całe Trójmiasto, więc paczka równie sprawnie trafia do Sopotu czy Gdyni. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Gdańsk sprawdza się tam, gdzie liczy się czas reakcji. Software house z Olivia Centre potrzebuje 200 broszur klejonych na piątkową prezentację, firma portowa z terminala DCT zamawia 5 000 katalogów na targi morskie w AmberExpo, organizator koncertu w Polsat Plus Arena wymaga roll-upów na sobotnie wydarzenie. Tania drukarnia Gdańsk online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Gdańska kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Obsługujemy całe Trójmiasto, więc paczka równie sprawnie trafia do Sopotu czy Gdyni. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Gdańsk to dla nas codzienność. Kancelarie prawne z Wrzeszcza, software house’y z Olivia Centre, firmy gospodarki morskiej z terminala DCT, spółki petrochemiczne z grupy Orlen, sieci gastronomiczne ze Starego Miasta oraz wydziały Uniwersytetu Gdańskiego i Politechniki Gdańskiej zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Gdańsk z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -587,7 +587,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Gdańska?",
         answer:
-          "Tak. Drukarnia Gdańsk w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i hoteli, materiały promocyjne dla firm portowych i petrochemicznych oraz serie wizytówek dla całych zespołów software house’ów z Olivia Centre. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Gdańsk w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i hoteli, materiały promocyjne dla firm portowych i petrochemicznych oraz serie wizytówek dla całych zespołów software house’ów z Olivia Centre. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -620,9 +620,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   szczecin: {
     metaDescription:
-      "Drukarnia Szczecin online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla portu, logistyki transgranicznej i firm IT. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Szczecin online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla portu, logistyki transgranicznej i firm IT. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Szczecina w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Szczecina w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, firm spedycyjnych z Prawobrzeża, operatorów portu nad Odrą, startupów IT i sieci HoReCa z całego Szczecina. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -672,8 +672,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Szczecin to stolica województwa zachodniopomorskiego i największy ośrodek gospodarczy na północno-zachodnim krańcu Polski. Pracuje tu silna gospodarka morska skupiona wokół portu nad Odrą, przemysł stoczniowy, logistyka transgraniczna napędzana bliskością granicy z Niemcami oraz rosnący sektor IT. Do tego Uniwersytet Szczeciński i Zachodniopomorski Uniwersytet Technologiczny z tysiącami studentów, restauracje Śródmieścia i wydarzenia jak Dni Morza, które ściągają nad Wały Chrobrego tłumy odwiedzających. Drukarnia Szczecin obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla agenta celnego po pięć tysięcy plakatów na Dni Morza.",
-      "Druk Szczecin sprawdza się tam, gdzie liczy się czas reakcji. Firma spedycyjna z Prawobrzeża potrzebuje 500 dwujęzycznych ulotek PL/DE na targi po niemieckiej stronie granicy, operator portowy zamawia 2 000 katalogów na konferencję gospodarki morskiej, restauracja ze Śródmieścia chce składanych ulotek z nowym menu na sezon. Tania drukarnia Szczecin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Szczecina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Szczecin sprawdza się tam, gdzie liczy się czas reakcji. Firma spedycyjna z Prawobrzeża potrzebuje 500 dwujęzycznych ulotek PL/DE na targi po niemieckiej stronie granicy, operator portowy zamawia 2 000 katalogów na konferencję gospodarki morskiej, restauracja ze Śródmieścia chce składanych ulotek z nowym menu na sezon. Tania drukarnia Szczecin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Szczecina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Szczecin to dla nas codzienność. Kancelarie i biura celne ze Śródmieścia, firmy spedycyjne obsługujące handel transgraniczny z Niemcami, operatorzy portu nad Odrą, stocznie, startupy IT oraz koła naukowe Uniwersytetu Szczecińskiego i ZUT zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Szczecin z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -689,7 +689,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm ze Szczecina?",
         answer:
-          "Tak. Drukarnia Szczecin w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów portowych i serie wizytówek dla zespołów firm IT i spedycyjnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Szczecin w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów portowych i serie wizytówek dla zespołów firm IT i spedycyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -721,9 +721,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   bydgoszcz: {
     metaDescription:
-      "Drukarnia Bydgoszcz online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Bydgoszcz online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bydgoszczy w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bydgoszczy w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Fordonie, do restauracji ze Starego Rynku, centrów usług wspólnych i firm elektronicznych z całej Bydgoszczy. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -773,8 +773,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Bydgoszcz to największe miasto województwa kujawsko-pomorskiego i ważny węzeł logistyczny nad Brdą. Pracują tu silna branża logistyczna i transportowa, przemysł elektroniczny i zbrojeniowy oraz rosnący sektor centrów usług wspólnych (BPO/SSC). Do tego Uniwersytet Kazimierza Wielkiego i Politechnika Bydgoska z dziesiątkami tysięcy studentów, restauracje ze Starego Rynku i Wyspy Młyńskiej oraz instytucje kultury z Operą Nova na czele. Drukarnia Bydgoszcz obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po trzy tysiące plakatów na Bydgoski Festiwal Operowy.",
-      "Druk Bydgoszcz sprawdza się tam, gdzie liczy się czas reakcji. Restauracja ze Starego Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, operator logistyczny z węzła nad Brdą zamawia 2 000 broszur z ofertą, organizator wydarzenia w Operze Nova wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Bydgoszcz online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Bydgoszczy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Bydgoszcz sprawdza się tam, gdzie liczy się czas reakcji. Restauracja ze Starego Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, operator logistyczny z węzła nad Brdą zamawia 2 000 broszur z ofertą, organizator wydarzenia w Operze Nova wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Bydgoszcz online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Bydgoszczy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Bydgoszcz to dla nas codzienność. Kancelarie prawne ze Śródmieścia, firmy logistyczne obsługujące węzeł nad Brdą, producenci elektroniki i zakłady zbrojeniowe, centra usług wspólnych z Bartodziei oraz koła naukowe UKW i Politechniki Bydgoskiej zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Bydgoszcz z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -790,7 +790,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Bydgoszczy?",
         answer:
-          "Tak. Drukarnia Bydgoszcz w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i operatorów logistycznych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów centrów usług wspólnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Bydgoszcz w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i operatorów logistycznych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów centrów usług wspólnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -823,9 +823,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   lublin: {
     metaDescription:
-      "Drukarnia Lublin online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Lublin online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Lublina w 24–48 h. Cena z VAT od razu. Konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Lublina w 24–48 h. Cena finalna od razu. Konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur na Wojciechowskiej, lokali na Starym Mieście, agencji eventowych i firm IT z całego Lublina. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -876,8 +876,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Lublin to silne centrum biznesowe wschodniej Polski. Pracują tu dynamiczny sektor IT (Britenet, eLeader, Comarch, Asseco BS), branża spożywcza (Lubella, Herbapol, Solidarność, Perła Browary Lubelskie) i Targi Lublin, które goszczą Lub-Invest, Smak Lasu i Eurogastro. Do tego osiem uczelni z ponad 65 tysiącami studentów oraz festiwale, które zaludniają Stare Miasto przez całe lato. Drukarnia Lublin obsługująca takie miasto musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po pięć tysięcy plakatów na Carnaval Sztukmistrzów.",
-      "Druk Lublin sprawdza się tam, gdzie liczy się czas reakcji. Restauracja ze Starego Miasta otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, startup z Wojciechowskiej leci na konferencję IT z roll-upem, organizator hali targowej wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Lublin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Lublina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Lublin sprawdza się tam, gdzie liczy się czas reakcji. Restauracja ze Starego Miasta otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, startup z Wojciechowskiej leci na konferencję IT z roll-upem, organizator hali targowej wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Lublin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Lublina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Lublin to dla nas codzienność. Agencje eventowe spod Bramy Krakowskiej, kancelarie z Czechowa, biura logistyczne obsługujące eksport na Ukrainę i koła naukowe KUL zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni; biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Lublin z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -893,7 +893,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Lublina?",
         answer:
-          "Tak. Drukarnia Lublin w naszej sieci realizuje nakłady 10 000+ ulotek dla branży spożywczej, materiały dla wystawców Targów Lublin i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Lublin w naszej sieci realizuje nakłady 10 000+ ulotek dla branży spożywczej, materiały dla wystawców Targów Lublin i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców Targów Lublin?",
@@ -924,9 +924,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   bialystok: {
     metaDescription:
-      "Drukarnia Białystok online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Białystok online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Białegostoku w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Białegostoku w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Centrum, na Antoniuku, do restauracji z Lipowej, agencji eventowych i firm IT z całego Białegostoku. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -976,8 +976,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Białystok to stolica Podlaskiego i największe miasto północno-wschodniej Polski. Pracują tu silna branża logistyczna i transportowa (graniczne położenie, eksport na wschód), meblarska, drzewna oraz rosnący sektor IT (Sii, Transition Technologies). Do tego Politechnika Białostocka, UwB i Uniwersytet Medyczny z prawie 40 tysiącami studentów, restauracje z Lipowej i Rynku Kościuszki oraz festiwale, które ściągają tysiące widzów. Drukarnia Białystok obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po trzy tysiące plakatów na Halfway Festival.",
-      "Druk Białystok sprawdza się tam, gdzie liczy się czas reakcji. Restauracja z Rynku Kościuszki otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, deweloper podlaskiego osiedla zamawia 2 000 broszur sprzedażowych, organizator Up To Date Festival wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Białystok online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Białegostoku kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Białystok sprawdza się tam, gdzie liczy się czas reakcji. Restauracja z Rynku Kościuszki otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, deweloper podlaskiego osiedla zamawia 2 000 broszur sprzedażowych, organizator Up To Date Festival wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Białystok online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Białegostoku kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Białystok to dla nas codzienność. Kancelarie prawne z Lipowej, biura logistyczne obsługujące trasy do Białorusi i Litwy, producenci mebli z podlaskiego klastra, koła naukowe Politechniki Białostockiej i sieci handlowe z Outletu zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Białystok z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -993,7 +993,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Białegostoku?",
         answer:
-          "Tak. Drukarnia Białystok w naszej sieci realizuje nakłady 10 000+ ulotek dla deweloperów i sieci handlowych, materiały promocyjne dla producentów mebli i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Białystok w naszej sieci realizuje nakłady 10 000+ ulotek dla deweloperów i sieci handlowych, materiały promocyjne dla producentów mebli i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla Politechniki Białostockiej i UMB?",
@@ -1024,9 +1024,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   katowice: {
     metaDescription:
-      "Drukarnia Katowice online. Ulotki, wizytówki i plakaty z dostawą do Katowic w 24–48 h. Druk pod kongresy w Spodku i MCK, eventy GZM. Cena z VAT od razu, 28 drukarni partnerskich.",
+      "Drukarnia Katowice online. Ulotki, wizytówki i plakaty z dostawą do Katowic w 24–48 h. Druk pod kongresy w Spodku i MCK, eventy GZM. Cena finalna od razu, 28 drukarni partnerskich.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Katowic w 24–48 h. Druk pod eventy w Spodku i MCK, cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Katowic w 24–48 h. Druk pod eventy w Spodku i MCK, cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców ze Śródmieścia, centrów BPO, wystawców Spodka i MCK, restauracji z Mariackiej i firm z całej Metropolii GZM. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1076,8 +1076,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Katowice to serce Metropolii GZM i jeden z najważniejszych rynków biznesowych południa Polski. Pracują tu centra usług wspólnych i firmy IT (klaster BPO ze Śródmieścia), spółki górnicze i energetyczne z tradycją sięgającą dekad oraz prężny sektor eventowo-kongresowy skupiony wokół Spodka, Międzynarodowego Centrum Kongresowego i Strefy Kultury z siedzibą NOSPR. Do tego Uniwersytet Śląski i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów. Drukarnia Katowice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po dziesięć tysięcy plakatów na OFF Festival.",
-      "Druk Katowice sprawdza się tam, gdzie liczy się czas reakcji. Wystawca targów w MCK potrzebuje 200 broszur klejonych na otwarcie kongresu, centrum BPO ze Śródmieścia zamawia 5 000 materiałów na onboarding, organizator Intel Extreme Masters wymaga roll-upów do stref gamingowych w Spodku, a agencja eventowa z Metropolii GZM kompletuje plakaty pod Tauron Nowa Muzyka. Tania drukarnia Katowice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Katowic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Katowice sprawdza się tam, gdzie liczy się czas reakcji. Wystawca targów w MCK potrzebuje 200 broszur klejonych na otwarcie kongresu, centrum BPO ze Śródmieścia zamawia 5 000 materiałów na onboarding, organizator Intel Extreme Masters wymaga roll-upów do stref gamingowych w Spodku, a agencja eventowa z Metropolii GZM kompletuje plakaty pod Tauron Nowa Muzyka. Tania drukarnia Katowice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Katowic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Katowice to dla nas codzienność. Centra usług wspólnych ze Śródmieścia, spółki górnicze i energetyczne, organizatorzy kongresów w MCK i wystawcy Intel Extreme Masters w Spodku, restauracje z Mariackiej oraz wydziały Uniwersytetu Śląskiego i UE zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Katowice z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1093,7 +1093,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Katowic?",
         answer:
-          "Tak. Drukarnia Katowice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla wystawców MCK i serie wizytówek dla całych zespołów centrów BPO. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Katowice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla wystawców MCK i serie wizytówek dla całych zespołów centrów BPO. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1126,9 +1126,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   gdynia: {
     metaDescription:
-      "Drukarnia Gdynia online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z portu pasażerskiego, IT i Trójmiasta, pod festiwale FPFF i Open’er. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Gdynia online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z portu pasażerskiego, IT i Trójmiasta, pod festiwale FPFF i Open’er. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gdyni w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gdyni w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców Śródmieścia, lokali ze Skweru Kościuszki, firm z sektora morskiego przy porcie pasażerskim, startupów IT i agencji eventowych z całego Trójmiasta. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1178,8 +1178,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Gdynia to jedno z trzech serc Trójmiasta i jeden z najważniejszych ośrodków gospodarki morskiej w Polsce. Pracują tu firmy żeglugowe i logistyczne związane z portem pasażerskim, operatorzy promów i wycieczek nadmorskich, rosnący sektor IT oraz branża eventowa, którą napędzają Festiwal Polskich Filmów Fabularnych, Open’er Festival i Gdynia Design Days. Do tego Uniwersytet Morski w Gdyni i Akademia Marynarki Wojennej z tysiącami studentów oraz restauracje ze Skweru Kościuszki i Bulwaru Nadmorskiego. Drukarnia Gdynia obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Orłowa po pięć tysięcy plakatów na Open’er Festival.",
-      "Druk Gdynia sprawdza się tam, gdzie liczy się czas reakcji. Lokal ze Skweru Kościuszki otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, firma z sektora morskiego zamawia 2 000 katalogów na targi branżowe, organizator Gdynia Design Days wymaga roll-upów i plakatów B1 na otwarcie wystawy. Tania drukarnia Gdynia online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Gdyni kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Gdynia sprawdza się tam, gdzie liczy się czas reakcji. Lokal ze Skweru Kościuszki otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, firma z sektora morskiego zamawia 2 000 katalogów na targi branżowe, organizator Gdynia Design Days wymaga roll-upów i plakatów B1 na otwarcie wystawy. Tania drukarnia Gdynia online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Gdyni kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Gdynia to dla nas codzienność. Kancelarie prawne ze Śródmieścia, biura maklerów żeglugowych z okolic portu, spółki IT z Gdyni, koła naukowe Uniwersytetu Morskiego i Akademii Marynarki Wojennej oraz sieci HoReCa znad Zatoki zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Gdynia z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1195,7 +1195,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Gdyni?",
         answer:
-          "Tak. Drukarnia Gdynia w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i operatorów turystycznych, materiały promocyjne dla firm z sektora morskiego i serie wizytówek dla zespołów spółek IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Gdynia w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i operatorów turystycznych, materiały promocyjne dla firm z sektora morskiego i serie wizytówek dla zespołów spółek IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla sektora morskiego i firm IT z Gdyni?",
@@ -1227,9 +1227,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   czestochowa: {
     metaDescription:
-      "Drukarnia Częstochowa online. Druk dla pielgrzymkowej Częstochowy, sektora HoReCa spod Jasnej Góry i przemysłu metalowego. Ulotki, wizytówki i plakaty z dostawą w 24–48 h, cena z VAT od razu. Wyceń teraz.",
+      "Drukarnia Częstochowa online. Druk dla pielgrzymkowej Częstochowy, sektora HoReCa spod Jasnej Góry i przemysłu metalowego. Ulotki, wizytówki i plakaty z dostawą w 24–48 h, cena finalna od razu. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Częstochowy w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Częstochowy w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do hoteli i pensjonatów spod Jasnej Góry, lokali z alei Najświętszej Maryi Panny, zakładów metalowych z Rakowa i firm ze Śródmieścia całej Częstochowy. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1280,8 +1280,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Częstochowa to miasto o dwóch twarzach. Z jednej strony to duchowa stolica Polski: Jasna Góra ściąga rocznie miliony pielgrzymów, a wokół sanktuarium wyrósł cały sektor hotelarstwa, gastronomii i handlu dewocjonaliami. Z drugiej strony to silny ośrodek przemysłowy — hutnictwo, metalurgia i produkcja tworzyw sztucznych z Rakowa i częstochowskiego okręgu przemysłowego — oraz akademicki, z Politechniką Częstochowską i Uniwersytetem Jana Długosza. Drukarnia Częstochowa obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przewodnika pielgrzymkowego po dziesięć tysięcy folderów na szczyt sezonu.",
-      "Druk Częstochowa sprawdza się tam, gdzie liczy się czas reakcji. Hotel spod Jasnej Góry przed sierpniowymi pielgrzymkami zamawia 5 000 folderów i menu, sklep z dewocjonaliami z III Alei potrzebuje pocztówek z sanktuarium, a zakład metalowy z Rakowa wymaga katalogów technicznych na targi branżowe. Tania drukarnia Częstochowa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Częstochowy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Częstochowa sprawdza się tam, gdzie liczy się czas reakcji. Hotel spod Jasnej Góry przed sierpniowymi pielgrzymkami zamawia 5 000 folderów i menu, sklep z dewocjonaliami z III Alei potrzebuje pocztówek z sanktuarium, a zakład metalowy z Rakowa wymaga katalogów technicznych na targi branżowe. Tania drukarnia Częstochowa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Częstochowy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Częstochowa to dla nas codzienność. Pensjonaty i restauracje z alei Najświętszej Maryi Panny, sklepy pamiątkarskie spod Jasnej Góry, producenci tworzyw sztucznych i firmy hutnicze z Rakowa, koła naukowe Politechniki Częstochowskiej i wydziały UJD zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Częstochowa z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1297,7 +1297,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Częstochowy?",
         answer:
-          "Tak. Drukarnia Częstochowa w naszej sieci realizuje nakłady 10 000+ ulotek dla hoteli i sieci handlowych, materiały promocyjne dla producentów tworzyw i serie wizytówek dla zespołów zakładów metalowych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Częstochowa w naszej sieci realizuje nakłady 10 000+ ulotek dla hoteli i sieci handlowych, materiały promocyjne dla producentów tworzyw i serie wizytówek dla zespołów zakładów metalowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1330,9 +1330,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   radom: {
     metaDescription:
-      "Drukarnia Radom online. Ulotki, wizytówki i plakaty z dostawą do Radomia w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Radom online. Ulotki, wizytówki i plakaty z dostawą do Radomia w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Radomia w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Radomia w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Gołębiów i Ustronie, do restauracji ze Starego Miasta, firm obuwniczych i logistycznych z całego Radomia. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1382,8 +1382,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Radom to drugie miasto Mazowsza i przemysłowe serce południowej części województwa. Pracują tu Fabryka Broni Łucznik i sektor zbrojeniowy z gronem kooperantów, firmy obuwnicze i skórzane kontynuujące wielowiekowe tradycje radomskiego obuwnictwa, a także rosnący sektor logistyczny i magazynowy korzystający z położenia na trasie Warszawa–Kraków. Do tego Uniwersytet Radomski (dawniej UTH Radom), restauracje i lokale Starego Miasta oraz Air Show Radom, które co edycję ściąga setki tysięcy widzów. Drukarnia Radom obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla rzemieślnika po trzy tysiące plakatów na pokazy lotnicze.",
-      "Druk Radom sprawdza się tam, gdzie liczy się czas reakcji. Producent obuwia szykuje katalog na targi branżowe i potrzebuje 500 broszur klejonych, kooperant Fabryki Broni Łucznik zamawia 2 000 folderów technicznych na wystawę zbrojeniową, organizator imprezy towarzyszącej Air Show wymaga roll-upów i banerów na sobotnie otwarcie. Tania drukarnia Radom online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Radomia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Radom sprawdza się tam, gdzie liczy się czas reakcji. Producent obuwia szykuje katalog na targi branżowe i potrzebuje 500 broszur klejonych, kooperant Fabryki Broni Łucznik zamawia 2 000 folderów technicznych na wystawę zbrojeniową, organizator imprezy towarzyszącej Air Show wymaga roll-upów i banerów na sobotnie otwarcie. Tania drukarnia Radom online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Radomia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Radom to dla nas codzienność. Kancelarie prawne ze Śródmieścia, firmy logistyczne z magazynami na Borkach, producenci obuwia i wyrobów skórzanych, koła naukowe Uniwersytetu Radomskiego i restauratorzy ze Starego Miasta zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Radom z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1399,7 +1399,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Radomia?",
         answer:
-          "Tak. Drukarnia Radom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów obuwia i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Radom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów obuwia i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1431,9 +1431,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   rzeszow: {
     metaDescription:
-      "Drukarnia Rzeszów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm Doliny Lotniczej i sektora IT. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Rzeszów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm Doliny Lotniczej i sektora IT. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rzeszowa w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rzeszowa w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do firm Doliny Lotniczej, software house’ów z Nowego Miasta, restauracji z Rynku i instytutów Politechniki Rzeszowskiej. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1484,8 +1484,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Rzeszów to stolica Podkarpacia i serce Doliny Lotniczej — klastra, który skupia Pratt & Whitney, Borg Warner i dziesiątki firm kooperujących z przemysłem lotniczym. Obok nich pracuje tu prężny sektor IT z Asseco i G2A, produkcja przemysłowa oraz lotnisko Rzeszów-Jasionka obsługujące ładunki i pasażerów. Do tego Uniwersytet Rzeszowski i Politechnika Rzeszowska z dziesiątkami tysięcy studentów. Drukarnia Rzeszów obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla inżyniera po dziesięć tysięcy katalogów technicznych dla Doliny Lotniczej.",
-      "Druk Rzeszów sprawdza się tam, gdzie liczy się czas reakcji. Software house z Nowego Miasta potrzebuje 200 broszur klejonych na piątkową prezentację, firma lotnicza spod Jasionki zamawia 5 000 katalogów na targi branżowe, restauracja z Rynku wymaga składanych ulotek z nowym menu na weekend. Tania drukarnia Rzeszów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Rzeszowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Rzeszów sprawdza się tam, gdzie liczy się czas reakcji. Software house z Nowego Miasta potrzebuje 200 broszur klejonych na piątkową prezentację, firma lotnicza spod Jasionki zamawia 5 000 katalogów na targi branżowe, restauracja z Rynku wymaga składanych ulotek z nowym menu na weekend. Tania drukarnia Rzeszów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Rzeszowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Rzeszów to dla nas codzienność. Kancelarie prawne ze Śródmieścia, zespoły IT z Asseco i G2A, inżynierowie firm Doliny Lotniczej, koła naukowe Politechniki Rzeszowskiej i restauracje z Rynku zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Rzeszów z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1501,7 +1501,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Rzeszowa?",
         answer:
-          "Tak. Drukarnia Rzeszów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów przemysłowych i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Rzeszów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów przemysłowych i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla firm Doliny Lotniczej i sektora IT?",
@@ -1532,9 +1532,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   torun: {
     metaDescription:
-      "Drukarnia Toruń online. Ulotki, wizytówki i plakaty z dostawą do Torunia w 24–48 h. Druk dla turystyki spod gotyckiej starówki UNESCO i producentów pierników. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Toruń online. Ulotki, wizytówki i plakaty z dostawą do Torunia w 24–48 h. Druk dla turystyki spod gotyckiej starówki UNESCO i producentów pierników. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Torunia w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Torunia w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do kawiarni i hoteli ze Starówki, pensjonatów Bydgoskiego Przedmieścia, producentów pierników i firm IT z całego Torunia. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1585,8 +1585,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Toruń to jedno z najważniejszych miast turystycznych Polski i serce województwa kujawsko-pomorskiego. Gotycka starówka wpisana na listę UNESCO, Dom Mikołaja Kopernika i Krzywa Wieża ściągają tu rocznie miliony odwiedzających, a obok turystyki pracują tu silny przemysł spożywczy i cukierniczy (toruńskie pierniki, Kopernik), rosnący sektor IT oraz Uniwersytet Mikołaja Kopernika z dziesiątkami tysięcy studentów. Drukarnia Toruń obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przewodnika po starówce po trzy tysiące plakatów na Bella Skyway Festival.",
-      "Druk Toruń sprawdza się tam, gdzie liczy się czas reakcji. Kawiarnia z Rynku Staromiejskiego otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, wytwórnia pierników zamawia 5 000 etykiet na opakowania, organizator Bella Skyway Festival wymaga plakatów B1 na otwarcie. Tania drukarnia Toruń online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Torunia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Toruń sprawdza się tam, gdzie liczy się czas reakcji. Kawiarnia z Rynku Staromiejskiego otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, wytwórnia pierników zamawia 5 000 etykiet na opakowania, organizator Bella Skyway Festival wymaga plakatów B1 na otwarcie. Tania drukarnia Toruń online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Torunia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Toruń to dla nas codzienność. Hotele i pensjonaty Bydgoskiego Przedmieścia, punkty informacji turystycznej ze Starówki, producenci pierników z toruńskiego sektora cukierniczego, koła naukowe Uniwersytetu Mikołaja Kopernika oraz startupy IT zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Toruń z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1602,7 +1602,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Torunia?",
         answer:
-          "Tak. Drukarnia Toruń w naszej sieci realizuje nakłady 10 000+ ulotek dla obiektów turystycznych i sieci handlowych, etykiety i opakowania dla producentów pierników oraz serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Toruń w naszej sieci realizuje nakłady 10 000+ ulotek dla obiektów turystycznych i sieci handlowych, etykiety i opakowania dla producentów pierników oraz serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1635,9 +1635,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   sosnowiec: {
     metaDescription:
-      "Drukarnia Sosnowiec online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z Zagłębia Dąbrowskiego, stref logistycznych i Metropolii GZM. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Sosnowiec online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z Zagłębia Dąbrowskiego, stref logistycznych i Metropolii GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Sosnowca w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Sosnowca w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, centrów logistycznych przy S1, firm motoryzacyjnych i metalowych Zagłębia oraz lokali z całego Sosnowca. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1688,8 +1688,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Sosnowiec to największe miasto Zagłębia Dąbrowskiego i jeden z filarów Górnośląsko-Zagłębiowskiej Metropolii. Pracują tu firmy z branży motoryzacyjnej i metalowej, rozległy sektor handlu i usług skupiony w Śródmieściu oraz coraz silniejsza logistyka: strefy magazynowe i centra dystrybucyjne wzdłuż trasy S1 i autostrady A4. Do tego kampus Uniwersytetu Śląskiego z kilkoma wydziałami w Sosnowcu, Pałac Schoena z muzeum i Park Sielecki. Drukarnia Sosnowiec obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po dziesięć tysięcy etykiet produktowych dla magazynu z Zagórza.",
-      "Druk Sosnowiec sprawdza się tam, gdzie liczy się czas reakcji. Sklep ze Śródmieścia otwiera sezon i potrzebuje 500 składanych ulotek z nową ofertą, operator logistyczny ze strefy przy S1 zamawia 10 000 naklejek na opakowania, koło naukowe kampusu UŚ wymaga roll-upów na czwartkową konferencję. Tania drukarnia Sosnowiec online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Sosnowca kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Sosnowiec sprawdza się tam, gdzie liczy się czas reakcji. Sklep ze Śródmieścia otwiera sezon i potrzebuje 500 składanych ulotek z nową ofertą, operator logistyczny ze strefy przy S1 zamawia 10 000 naklejek na opakowania, koło naukowe kampusu UŚ wymaga roll-upów na czwartkową konferencję. Tania drukarnia Sosnowiec online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Sosnowca kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Sosnowiec to dla nas codzienność. Operatorzy magazynowi ze stref przy S1, firmy motoryzacyjne i metalowe Zagłębia, kancelarie i biura księgowe ze Śródmieścia, lokale gastronomiczne z Pogoni oraz wydziały Uniwersytetu Śląskiego zamawiają u nas regularnie. Ponieważ Sosnowiec leży w sercu Metropolii GZM, jednym zamówieniem obsługujemy też firmy z Dąbrowy Górniczej, Będzina i Katowic. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Sosnowiec z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1705,7 +1705,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Sosnowca?",
         answer:
-          "Tak. Drukarnia Sosnowiec w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Sosnowiec w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla branży logistycznej i motoryzacyjnej?",
@@ -1736,9 +1736,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   kielce: {
     metaDescription:
-      "Drukarnia Kielce online. Ulotki, wizytówki i plakaty z dostawą do Kielc w 24–48 h, w sam raz pod Targi Kielce. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Kielce online. Ulotki, wizytówki i plakaty z dostawą do Kielc w 24–48 h, w sam raz pod Targi Kielce. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Kielc w 24–48 h, na czas pod targi MSPO, Agrotech i Plastpol. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Kielc w 24–48 h, na czas pod targi MSPO, Agrotech i Plastpol. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Bocianku i Ślichowicach, do wystawców Targów Kielce, firm z przemysłu metalowego i restauracji z Rynku. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1788,8 +1788,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Kielce to stolica Świętokrzyskiego i miasto, które żyje rytmem Targów Kielce — drugiego co do wielkości centrum targowego w Polsce. MSPO, Agrotech i Plastpol ściągają tu co roku tysiące wystawców z całego kraju i zza granicy, a każda taka impreza to fala zapotrzebowania na druk: katalogi, plakaty, roll-upy, materiały na stoiska. Do tego silny przemysł metalowy i budowlany, logistyka spięta węzłem S7, Politechnika Świętokrzyska i UJK. Drukarnia Kielce obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po trzy tysiące plakatów pod otwarcie hal MSPO.",
-      "Druk Kielce sprawdza się tam, gdzie liczy się czas reakcji. Wystawca Agrotechu potrzebuje 500 katalogów klejonych na czwartkowe otwarcie, firma budowlana z Czarnowa zamawia 2 000 broszur ofertowych, restauracja z Rynku odświeża menu na sezon. Tania drukarnia Kielce online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem — szczególnie ważne, gdy materiał ma być gotowy na pierwszy dzień targów.",
-      "W DobrePrinty dostarczamy druk do Kielc kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Kielce sprawdza się tam, gdzie liczy się czas reakcji. Wystawca Agrotechu potrzebuje 500 katalogów klejonych na czwartkowe otwarcie, firma budowlana z Czarnowa zamawia 2 000 broszur ofertowych, restauracja z Rynku odświeża menu na sezon. Tania drukarnia Kielce online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem — szczególnie ważne, gdy materiał ma być gotowy na pierwszy dzień targów.",
+      "W DobrePrinty dostarczamy druk do Kielc kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Kielce to dla nas codzienność. Wystawcy MSPO, Agrotechu i Plastpolu, firmy z przemysłu metalowego z Czarnowa, biura logistyczne przy S7, koła naukowe Politechniki Świętokrzyskiej i hotele z okolic Rynku zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Kielce z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami — a do otwarcia targów zostało kilka dni.",
     ],
     statBadge: {
@@ -1805,7 +1805,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Kielc?",
         answer:
-          "Tak. Drukarnia Kielce w naszej sieci realizuje nakłady 10 000+ ulotek dla firm budowlanych i sieci handlowych, materiały promocyjne dla wystawców Targów Kielce i serie wizytówek dla całych zespołów z przemysłu metalowego. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Kielce w naszej sieci realizuje nakłady 10 000+ ulotek dla firm budowlanych i sieci handlowych, materiały promocyjne dla wystawców Targów Kielce i serie wizytówek dla całych zespołów z przemysłu metalowego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców Targów Kielce?",
@@ -1837,9 +1837,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   gliwice: {
     metaDescription:
-      "Drukarnia Gliwice online. Ulotki, wizytówki i plakaty z dostawą do Gliwic w 24–48 h dla firm motoryzacyjnych i Politechniki Śląskiej. Cena z VAT od razu, 28 drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Gliwice online. Ulotki, wizytówki i plakaty z dostawą do Gliwic w 24–48 h dla firm motoryzacyjnych i Politechniki Śląskiej. Cena finalna od razu, 28 drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gliwic w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gliwic w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur ze Śródmieścia, zakładów z Łabęd, kooperantów motoryzacyjnych z okolic fabryki Stellantis, firm IT i kół naukowych Politechniki Śląskiej z całych Gliwic. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1890,8 +1890,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Gliwice to jedno z najważniejszych miast przemysłowych Górnego Śląska i część Metropolii GZM. Pracują tu fabryka Stellantis (dawny Opel) z całym łańcuchem kooperantów motoryzacyjnych, firmy przemysłu maszynowego i metalowego, rosnący sektor IT oraz zakłady ulokowane w Katowickiej Specjalnej Strefie Ekonomicznej. Sercem akademickim miasta jest Politechnika Śląska z kilkudziesięcioma tysiącami studentów. Drukarnia Gliwice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla inżyniera po pięć tysięcy katalogów technicznych dla firmy ze strefy.",
-      "Druk Gliwice sprawdza się tam, gdzie liczy się czas reakcji. Kooperant Stellantis potrzebuje 300 broszur klejonych z dokumentacją na audyt jakości, koło naukowe Politechniki Śląskiej zamawia roll-upy na targi techniczne, restauracja z Rynku otwiera sezon i wymaga 500 składanych ulotek z nowym menu. Tania drukarnia Gliwice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Gliwic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Gliwice sprawdza się tam, gdzie liczy się czas reakcji. Kooperant Stellantis potrzebuje 300 broszur klejonych z dokumentacją na audyt jakości, koło naukowe Politechniki Śląskiej zamawia roll-upy na targi techniczne, restauracja z Rynku otwiera sezon i wymaga 500 składanych ulotek z nowym menu. Tania drukarnia Gliwice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Gliwic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Gliwice to dla nas codzienność. Firmy przemysłu maszynowego z Łabęd, kooperanci motoryzacyjni z okolic fabryki Stellantis, startupy IT, koła naukowe Politechniki Śląskiej, biura logistyczne obsługujące port śródlądowy na Kanale Gliwickim i lokale z Rynku zamawiają u nas regularnie. Ponieważ Gliwice leżą w sercu Metropolii GZM, równie sprawnie dostarczamy do Zabrza, Bytomia i Katowic. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Gliwice z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -1907,7 +1907,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Gliwic?",
         answer:
-          "Tak. Drukarnia Gliwice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm przemysłu maszynowego i serie wizytówek dla zespołów kooperantów motoryzacyjnych Stellantis. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Gliwice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm przemysłu maszynowego i serie wizytówek dla zespołów kooperantów motoryzacyjnych Stellantis. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1940,9 +1940,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   olsztyn: {
     metaDescription:
-      "Drukarnia Olsztyn online. Ulotki, wizytówki i plakaty dla firm z Olsztyna i całych Mazur z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Olsztyn online. Ulotki, wizytówki i plakaty dla firm z Olsztyna i całych Mazur z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Olsztyna w 24–48 h. Druk pod sezon turystyczny Mazur, ośrodki wypoczynkowe i firmy znad jeziora Ukiel. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Olsztyna w 24–48 h. Druk pod sezon turystyczny Mazur, ośrodki wypoczynkowe i firmy znad jeziora Ukiel. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Jaroty i Nagórki, do ośrodków wypoczynkowych znad jeziora Ukiel, firm znad Mazur i kampusu Kortowo. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -1992,8 +1992,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Olsztyn to stolica Warmii i Mazur oraz brama do Krainy Tysiąca Jezior. Pracują tu silny przemysł oponiarski (fabryka opon Michelin, jeden z największych pracodawców regionu), zakłady spożywcze i mleczarskie, a obok nich rozbudowana branża turystyczna i hotelarska żyjąca rytmem sezonu nad jeziorami. Do tego Uniwersytet Warmińsko-Mazurski z kampusem w Kortowie i dziesiątkami tysięcy studentów oraz restauracje i lokale Starego Miasta wokół Zamku Kapituły Warmińskiej. Drukarnia Olsztyn obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla instruktora żeglarstwa po trzy tysiące plakatów na otwarcie sezonu nad jeziorem Ukiel.",
-      "Druk Olsztyn sprawdza się tam, gdzie liczy się czas reakcji. Ośrodek wypoczynkowy znad Ukiel otwiera sezon i potrzebuje 1 000 składanych folderów z cennikiem, dostawca branży oponiarskiej zamawia 2 000 katalogów na targi, organizator regat żeglarskich wymaga plakatów B1 i roll-upów na weekendowe wydarzenie. Tania drukarnia Olsztyn online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Olsztyna kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Olsztyn sprawdza się tam, gdzie liczy się czas reakcji. Ośrodek wypoczynkowy znad Ukiel otwiera sezon i potrzebuje 1 000 składanych folderów z cennikiem, dostawca branży oponiarskiej zamawia 2 000 katalogów na targi, organizator regat żeglarskich wymaga plakatów B1 i roll-upów na weekendowe wydarzenie. Tania drukarnia Olsztyn online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Olsztyna kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Olsztyn to dla nas codzienność. Kancelarie prawne ze Śródmieścia, biura księgowe obsługujące ośrodki wypoczynkowe Mazur, dostawcy fabryki opon Michelin, zakłady spożywcze Warmii i koła naukowe Uniwersytetu Warmińsko-Mazurskiego z Kortowa zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Olsztyn z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2009,7 +2009,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Olsztyna?",
         answer:
-          "Tak. Drukarnia Olsztyn w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i ośrodków wypoczynkowych, materiały promocyjne dla zakładów spożywczych i serie wizytówek dla całych zespołów firm znad Mazur. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Olsztyn w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i ośrodków wypoczynkowych, materiały promocyjne dla zakładów spożywczych i serie wizytówek dla całych zespołów firm znad Mazur. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2042,9 +2042,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   "bielsko-biala": {
     metaDescription:
-      "Drukarnia Bielsko-Biała online. Ulotki, wizytówki i plakaty z dostawą do Bielska-Białej w 24–48 h. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich u podnóża Beskidów. Wyceń teraz.",
+      "Drukarnia Bielsko-Biała online. Ulotki, wizytówki i plakaty z dostawą do Bielska-Białej w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich u podnóża Beskidów. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bielska-Białej w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bielska-Białej w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, do serwisów klastra motoryzacyjnego z Aleksandrowic, restauracji ze Starówki i pensjonatów u podnóża Beskidów. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2095,8 +2095,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Bielsko-Biała to przemysłowe serce południa województwa śląskiego i brama w Beskidy. Pracują tu silny klaster motoryzacyjny z tradycjami Fiata, dziś Stellantis (fabryka i dziesiątki poddostawców), przemysł maszynowy i produkcyjny z Wapienicy oraz prężna branża turystyczna napędzana ruchem w góry. Do tego Akademia Techniczno-Humanistyczna z tysiącami studentów, restauracje ze Starówki i okolic Zamku Sułkowskich oraz unikatowe Studio Filmów Rysunkowych, kolebka Bolka i Lolka. Drukarnia Bielsko-Biała obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przewodnika górskiego po trzy tysiące plakatów na sezon turystyczny.",
-      "Druk Bielsko-Biała sprawdza się tam, gdzie liczy się czas reakcji. Pensjonat spod Szyndzielni otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, poddostawca motoryzacyjny z Aleksandrowic zamawia 2 000 katalogów technicznych na targi branżowe, biuro turystyczne wymaga plakatów B1 na promocję wycieczek po Beskidach. Tania drukarnia Bielsko-Biała online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Bielska-Białej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Bielsko-Biała sprawdza się tam, gdzie liczy się czas reakcji. Pensjonat spod Szyndzielni otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, poddostawca motoryzacyjny z Aleksandrowic zamawia 2 000 katalogów technicznych na targi branżowe, biuro turystyczne wymaga plakatów B1 na promocję wycieczek po Beskidach. Tania drukarnia Bielsko-Biała online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Bielska-Białej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Bielsko-Biała to dla nas codzienność. Kancelarie prawne ze Śródmieścia, biura księgowe z Białej, poddostawcy klastra motoryzacyjnego, firmy maszynowe z Wapienicy, koła naukowe ATH oraz schroniska i pensjonaty u podnóża Beskidów zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Bielsko-Biała z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2112,7 +2112,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Bielska-Białej?",
         answer:
-          "Tak. Drukarnia Bielsko-Biała w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla poddostawców motoryzacyjnych i serie wizytówek dla całych zespołów firm przemysłu maszynowego. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Bielsko-Biała w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla poddostawców motoryzacyjnych i serie wizytówek dla całych zespołów firm przemysłu maszynowego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2144,9 +2144,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   zabrze: {
     metaDescription:
-      "Drukarnia Zabrze online dla medycyny, turystyki poprzemysłowej i firm z GZM. Ulotki, wizytówki i plakaty z dostawą do Zabrza w 24–48 h. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Zabrze online dla medycyny, turystyki poprzemysłowej i firm z GZM. Ulotki, wizytówki i plakaty z dostawą do Zabrza w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Zabrza w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Zabrza w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do jednostek medycznych wokół Śląskiego Centrum Chorób Serca, obiektów turystyki poprzemysłowej Guido i Sztolni, firm energetycznych z Centrum oraz przedsiębiorców z całej Metropolii GZM. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2197,8 +2197,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Zabrze to jedno z najważniejszych miast Metropolii GZM, łączące przemysłową przeszłość z renomą medyczną na skalę kraju. Śląskie Centrum Chorób Serca ściąga pacjentów i kongresy kardiologiczne z całej Polski, wydziały Śląskiego Uniwersytetu Medycznego kształcą kolejne roczniki lekarzy, a górnictwo i energetyka wciąż napędzają lokalną gospodarkę. Do tego turystyka poprzemysłowa: Kopalnia Guido i Sztolnia Królowa Luiza przyciągają zwiedzających z całego regionu. Drukarnia Zabrze obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla lekarza po materiały dużego kongresu kardiologicznego.",
-      "Druk Zabrze sprawdza się tam, gdzie liczy się czas reakcji. Poradnia wokół ŚCCS potrzebuje 500 broszur informacyjnych dla pacjentów, firma energetyczna z GZM zamawia 2 000 katalogów na targi branżowe, a Kopalnia Guido wymaga plakatów B1 na nowy sezon turystyczny. Tania drukarnia Zabrze online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Zabrza kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Zabrze sprawdza się tam, gdzie liczy się czas reakcji. Poradnia wokół ŚCCS potrzebuje 500 broszur informacyjnych dla pacjentów, firma energetyczna z GZM zamawia 2 000 katalogów na targi branżowe, a Kopalnia Guido wymaga plakatów B1 na nowy sezon turystyczny. Tania drukarnia Zabrze online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Zabrza kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Zabrze to dla nas codzienność. Jednostki medyczne ŚCCS, katedry i koła naukowe Śląskiego Uniwersytetu Medycznego, firmy górnicze i energetyczne z Metropolii GZM, obiekty turystyki poprzemysłowej Guido i Sztolni oraz lokale gastronomiczne z Centrum i Zaborza zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Zabrze z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2214,7 +2214,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Zabrza?",
         answer:
-          "Tak. Drukarnia Zabrze w naszej sieci realizuje nakłady 10 000+ ulotek dla jednostek medycznych i sieci handlowych, materiały promocyjne dla firm energetycznych z GZM i serie wizytówek dla całych zespołów. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Zabrze w naszej sieci realizuje nakłady 10 000+ ulotek dla jednostek medycznych i sieci handlowych, materiały promocyjne dla firm energetycznych z GZM i serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2230,7 +2230,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całej Metropolii GZM?",
         answer:
-          "Tak. Zabrze jest częścią Metropolii GZM, więc tym samym kurierem dostarczamy druk do firm z Gliwic, Bytomia, Rudy Śląskiej i pozostałych miast aglomeracji. Górnictwo, energetyka, turystyka poprzemysłowa i sektor medyczny zamawiają u nas regularnie, w jednym konfiguratorze i z ceną z VAT widoczną od razu.",
+          "Tak. Zabrze jest częścią Metropolii GZM, więc tym samym kurierem dostarczamy druk do firm z Gliwic, Bytomia, Rudy Śląskiej i pozostałych miast aglomeracji. Górnictwo, energetyka, turystyka poprzemysłowa i sektor medyczny zamawiają u nas regularnie, w jednym konfiguratorze i z ceną finalną widoczną od razu.",
       },
     ],
     geo: { lat: 50.3249, lng: 18.7857 },
@@ -2246,9 +2246,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   bytom: {
     metaDescription:
-      "Drukarnia Bytom online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla instytucji kultury, Opery Śląskiej i firm z Metropolii GZM. Cena z VAT od razu, 28 drukarni partnerskich.",
+      "Drukarnia Bytom online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla instytucji kultury, Opery Śląskiej i firm z Metropolii GZM. Cena finalna od razu, 28 drukarni partnerskich.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bytomia w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Bytomia w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do instytucji kultury wokół Opery Śląskiej, sklepów i usług ze Śródmieścia, lokali z Rynku oraz firm z całej Metropolii GZM. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2299,8 +2299,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Bytom to jedno z najstarszych miast Górnego Śląska i ważna część Górnośląsko-Zagłębiowskiej Metropolii. Przez dekady tożsamość miasta budowało górnictwo, a dziś na pierwszy plan wychodzą kultura, handel i usługi. Działa tu Opera Śląska, jedyna na Górnym Śląsku, Muzeum Górnictwa Węglowego oraz instytucje publiczne obsługujące mieszkańców całej aglomeracji. Drukarnia Bytom obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla usługodawcy ze Śródmieścia po serie plakatów promujących repertuar Opery Śląskiej.",
-      "Druk Bytom sprawdza się tam, gdzie liczy się czas reakcji. Sklep z Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nową ofertą, instytucja kultury zamawia broszury programowe na premierę, organizator wydarzenia w zrewitalizowanym Rozbarku wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Bytom online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Bytomia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Bytom sprawdza się tam, gdzie liczy się czas reakcji. Sklep z Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nową ofertą, instytucja kultury zamawia broszury programowe na premierę, organizator wydarzenia w zrewitalizowanym Rozbarku wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Bytom online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Bytomia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Bytom to dla nas codzienność. Instytucje kultury wokół Opery Śląskiej, Muzeum Górnictwa Węglowego, firmy handlowe i usługowe ze Śródmieścia, lokale gastronomiczne z Rynku oraz MŚP z całej Metropolii GZM zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Bytom z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2316,7 +2316,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Bytomia?",
         answer:
-          "Tak. Drukarnia Bytom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla instytucji kultury i serie wizytówek dla całych zespołów firm z Metropolii GZM. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Bytom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla instytucji kultury i serie wizytówek dla całych zespołów firm z Metropolii GZM. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2332,7 +2332,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całej Metropolii GZM?",
         answer:
-          "Tak. Bytom jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc poza samym miastem drukujemy regularnie dla firm z sąsiednich miast GZM. Jeden konfigurator, jedna cena z VAT i kurier pod adres w całej aglomeracji. Przy stałej współpracy ustalamy indywidualne warunki rozliczeń.",
+          "Tak. Bytom jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc poza samym miastem drukujemy regularnie dla firm z sąsiednich miast GZM. Jeden konfigurator, jedna cena finalna i kurier pod adres w całej aglomeracji. Przy stałej współpracy ustalamy indywidualne warunki rozliczeń.",
       },
     ],
     geo: { lat: 50.3483, lng: 18.9157 },
@@ -2348,9 +2348,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   "zielona-gora": {
     metaDescription:
-      "Drukarnia Zielona Góra online. Ulotki, wizytówki i plakaty z dostawą do Zielonej Góry w 24–48 h. Etykiety win na Winobranie i druk dla branży elektronicznej. Cena z VAT od razu, 28 zweryfikowanych drukarni. Wyceń teraz.",
+      "Drukarnia Zielona Góra online. Ulotki, wizytówki i plakaty z dostawą do Zielonej Góry w 24–48 h. Etykiety win na Winobranie i druk dla branży elektronicznej. Cena finalna od razu, 28 zweryfikowanych drukarni. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Zielonej Góry w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Zielonej Góry w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy, plakaty i etykiety win bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Jędrzychowie, do winnic z lubuskiego szlaku, lokali ze Starego Rynku i firm elektronicznych z całej Zielonej Góry. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2400,8 +2400,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Zielona Góra to stolica województwa lubuskiego i jedyne w Polsce miasto z prawdziwą tradycją winiarską — to stąd pochodzi Winobranie, największy festyn w regionie, który co roku ściąga setki tysięcy odwiedzających. Obok turystyki i winnic z lubuskiego szlaku wina pracuje tu silny klaster elektroniczny (Lumel, ADB), rosnący sektor IT i software house’y oraz Uniwersytet Zielonogórski z kilkunastoma tysiącami studentów. Drukarnia Zielona Góra obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po pięć tysięcy etykiet na butelki wina tuż przed Winobraniem.",
-      "Druk Zielona Góra sprawdza się tam, gdzie liczy się czas reakcji. Winnica spod miasta szykuje nowy rocznik i potrzebuje 3 000 etykiet na butelki, firma elektroniczna zamawia 2 000 katalogów na targi branżowe, lokal z deptaka Stary Rynek wymaga składanych kart win na sezon. Tania drukarnia Zielona Góra online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Zielonej Góry kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Zielona Góra sprawdza się tam, gdzie liczy się czas reakcji. Winnica spod miasta szykuje nowy rocznik i potrzebuje 3 000 etykiet na butelki, firma elektroniczna zamawia 2 000 katalogów na targi branżowe, lokal z deptaka Stary Rynek wymaga składanych kart win na sezon. Tania drukarnia Zielona Góra online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Zielonej Góry kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Zielona Góra to dla nas codzienność. Winnice z lubuskiego szlaku wina, producenci elektroniki z klastra Lumel i ADB, software house’y i startupy IT, koła naukowe Uniwersytetu Zielonogórskiego oraz lokale gastronomiczne ze Starego Rynku zamawiają u nas regularnie — szczególnie w gorącym okresie wokół Winobrania. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Zielona Góra z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2417,7 +2417,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Zielonej Góry?",
         answer:
-          "Tak. Drukarnia Zielona Góra w naszej sieci realizuje nakłady 10 000+ ulotek dla winnic i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Zielona Góra w naszej sieci realizuje nakłady 10 000+ ulotek dla winnic i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2449,9 +2449,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   rybnik: {
     metaDescription:
-      "Drukarnia Rybnika online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla firm z subregionu rybnickiego i sektora energetycznego. Wyceń teraz.",
+      "Drukarnia Rybnika online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla firm z subregionu rybnickiego i sektora energetycznego. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rybnika w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rybnika w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do firm okołogórniczych z Boguszowic, biur spod Bazyliki św. Antoniego, lokali z Rynku i przedsiębiorstw z całego subregionu rybnickiego. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2502,8 +2502,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Rybnik to stolica subregionu rybnickiego i serce Rybnickiego Okręgu Węglowego (ROW). Gospodarka miasta wyrosła na górnictwie węgla kamiennego, a obok kopalń i firm okołogórniczych pracuje tu potężny sektor energetyczny z Elektrownią Rybnik na czele. Do tego dochodzą handel i usługi skupione w Śródmieściu i wokół Rynku, kampus z filiami uczelni oraz turystyka i rekreacja nad Zalewem Rybnickim. Drukarnia Rybnik obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla handlowca z Maroko-Nowin po pięć tysięcy plakatów na Rybnicką Jesień Kabaretową.",
-      "Druk Rybnik sprawdza się tam, gdzie liczy się czas reakcji. Firma okołogórnicza z Boguszowic potrzebuje 300 broszur technicznych na spotkanie z kontrahentem, dział BHP kopalni zamawia serię tablic i oznaczeń, a organizator pikniku nad Zalewem Rybnickim wymaga banerów i roll-upów na sobotnie otwarcie. Tania drukarnia Rybnik online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Rybnika kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Rybnik sprawdza się tam, gdzie liczy się czas reakcji. Firma okołogórnicza z Boguszowic potrzebuje 300 broszur technicznych na spotkanie z kontrahentem, dział BHP kopalni zamawia serię tablic i oznaczeń, a organizator pikniku nad Zalewem Rybnickim wymaga banerów i roll-upów na sobotnie otwarcie. Tania drukarnia Rybnik online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Rybnika kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Rybnik to dla nas codzienność. Kancelarie prawne ze Śródmieścia, biura księgowe obsługujące MŚP z całego ROW, firmy współpracujące z Elektrownią Rybnik, lokale gastronomiczne spod Bazyliki św. Antoniego i organizatorzy wydarzeń nad Zalewem Rybnickim zamawiają u nas regularnie. Obsługujemy też sąsiednie miasta okręgu — Żory, Wodzisław Śląski i Jastrzębie-Zdrój. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Rybnik z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2519,7 +2519,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Rybnika?",
         answer:
-          "Tak. Drukarnia Rybnik w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm okołogórniczych i serie wizytówek dla całych zespołów przedsiębiorstw z subregionu rybnickiego. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Rybnik w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm okołogórniczych i serie wizytówek dla całych zespołów przedsiębiorstw z subregionu rybnickiego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla sektora energetycznego i górniczego?",
@@ -2534,7 +2534,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całego subregionu rybnickiego (ROW)?",
         answer:
-          "Tak. Rybnik jest stolicą subregionu rybnickiego, więc drukujemy dla przedsiębiorstw z całego Rybnickiego Okręgu Węglowego — Żor, Wodzisławia Śląskiego, Jastrzębia-Zdroju i okolic. Kurier dowozi pod każdy adres w regionie, a fakturę VAT wysyłamy razem z potwierdzeniem zamówienia.",
+          "Tak. Rybnik jest stolicą subregionu rybnickiego, więc drukujemy dla przedsiębiorstw z całego Rybnickiego Okręgu Węglowego — Żor, Wodzisławia Śląskiego, Jastrzębia-Zdroju i okolic. Kurier dowozi pod każdy adres w regionie, a rachunek wysyłamy razem z potwierdzeniem zamówienia.",
       },
     ],
     geo: { lat: 50.0971, lng: 18.5416 },
@@ -2550,9 +2550,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   "ruda-slaska": {
     metaDescription:
-      "Drukarnia Ruda Śląska online. Ulotki, wizytówki i plakaty z dostawą do Rudy Śląskiej w 24–48 h. Cena z VAT od razu, druk dla przemysłu i firm Metropolii GZM. Wyceń teraz.",
+      "Drukarnia Ruda Śląska online. Ulotki, wizytówki i plakaty z dostawą do Rudy Śląskiej w 24–48 h. Cena finalna od razu, druk dla przemysłu i firm Metropolii GZM. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rudy Śląskiej w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rudy Śląskiej w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do firm z Nowego Bytomia i Wirku, zakładów górniczych i hutniczych z Halemby i Bielszowic, firm logistycznych oraz MŚP z całej konurbacji górnośląskiej. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2603,8 +2603,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Ruda Śląska to jedno z miast w sercu konurbacji górnośląskiej — zlepek dawnych gmin, który przez dekady żył kopalniami węgla kamiennego i hutami. Dziś obok tradycyjnego górnictwa i hutnictwa rośnie tu logistyka i sektor MŚP, a firmy z Nowego Bytomia, Wirku, Halemby i Bielszowic zamawiają druk regularnie i pod krótkie terminy. Drukarnia Ruda Śląska obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przedstawiciela handlowego po dziesięć tysięcy ulotek dla zakładu z całej Metropolii GZM.",
-      "Druk Ruda Śląska sprawdza się tam, gdzie liczy się czas reakcji. Dostawca dla kopalni potrzebuje 200 broszur klejonych z katalogiem na targi przemysłowe, huta zamawia tablice BHP i oznaczenia hal, firma logistyczna z konurbacji wymaga naklejek na flotę i papieru firmowego na nowy kwartał. Tania drukarnia Ruda Śląska online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Rudy Śląskiej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Ruda Śląska sprawdza się tam, gdzie liczy się czas reakcji. Dostawca dla kopalni potrzebuje 200 broszur klejonych z katalogiem na targi przemysłowe, huta zamawia tablice BHP i oznaczenia hal, firma logistyczna z konurbacji wymaga naklejek na flotę i papieru firmowego na nowy kwartał. Tania drukarnia Ruda Śląska online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Rudy Śląskiej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Ruda Śląska to dla nas codzienność. Dostawcy sektora wydobywczego z Halemby, zakłady przetwórstwa metali z Bielszowic, firmy logistyczne obsługujące całą konurbację, lokale HoReCa z Nowego Bytomia i instytucje publiczne Metropolii GZM zamawiają u nas regularnie. Drukujemy też pamiątkowe albumy o zabytkowej Kolonii Ficinus i kościele św. Józefa. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Ruda Śląska z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2620,7 +2620,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Rudy Śląskiej?",
         answer:
-          "Tak. Drukarnia Ruda Śląska w naszej sieci realizuje nakłady 10 000+ ulotek dla MŚP konurbacji, materiały promocyjne dla dostawców sektora przemysłowego i serie wizytówek dla całych zespołów handlowych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Ruda Śląska w naszej sieci realizuje nakłady 10 000+ ulotek dla MŚP konurbacji, materiały promocyjne dla dostawców sektora przemysłowego i serie wizytówek dla całych zespołów handlowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2636,7 +2636,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całej Metropolii GZM?",
         answer:
-          "Tak. Ruda Śląska leży w sercu konurbacji górnośląskiej, więc obsługujemy firmy z całej Metropolii GZM — od Katowic i Zabrza po Bytom i Gliwice. Dostawę kurierską realizujemy do wszystkich miast Metropolii w 24–48 h, a wycenę i faktury VAT prowadzimy w pełni online.",
+          "Tak. Ruda Śląska leży w sercu konurbacji górnośląskiej, więc obsługujemy firmy z całej Metropolii GZM — od Katowic i Zabrza po Bytom i Gliwice. Dostawę kurierską realizujemy do wszystkich miast Metropolii w 24–48 h, a wycenę i rachunki prowadzimy w pełni online.",
       },
     ],
     geo: { lat: 50.2558, lng: 18.8556 },
@@ -2652,9 +2652,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   opole: {
     metaDescription:
-      "Drukarnia Opole online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla cementowni, energetyki i organizatorów wydarzeń w amfiteatrze KFPP. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Opole online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla cementowni, energetyki i organizatorów wydarzeń w amfiteatrze KFPP. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Opola w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Opola w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Zaodrzu, do restauracji z Rynku, zakładów cementowych i energetycznych oraz organizatorów wydarzeń w amfiteatrze z całego Opola. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2705,8 +2705,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Opole to stolica województwa opolskiego i miasto o wyrazistym profilu gospodarczym. Pracują tu silny przemysł cementowy (grupa Górażdże, Cement Odra), energetyka z Elektrownią Opole na czele oraz rozbudowany sektor rolny i przetwórstwo spożywcze regionu. Do tego Uniwersytet Opolski i Politechnika Opolska z kilkunastoma tysiącami studentów, restauracje z Rynku i Krakowskiej oraz wydarzenia, które rozsławiły miasto jako stolicę polskiej piosenki. Drukarnia Opole obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przedsiębiorcy z Pasieki po trzy tysiące plakatów na festiwal w amfiteatrze.",
-      "Druk Opole sprawdza się tam, gdzie liczy się czas reakcji. Restauracja z Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, zakład energetyczny zamawia 2 000 broszur technicznych na audyt, organizator koncertu w amfiteatrze wymaga plakatów B1 i banera na scenę przed weekendowym otwarciem. Tania drukarnia Opole online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Opola kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Opole sprawdza się tam, gdzie liczy się czas reakcji. Restauracja z Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, zakład energetyczny zamawia 2 000 broszur technicznych na audyt, organizator koncertu w amfiteatrze wymaga plakatów B1 i banera na scenę przed weekendowym otwarciem. Tania drukarnia Opole online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Opola kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Opole to dla nas codzienność. Kancelarie prawne ze Śródmieścia, dostawcy obsługujący cementownie Górażdże i Cement Odra, działy komunikacji Elektrowni Opole, przetwórcy rolni z regionu, koła naukowe Politechniki Opolskiej i organizatorzy wydarzeń w amfiteatrze zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Opole z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2722,7 +2722,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Opola?",
         answer:
-          "Tak. Drukarnia Opole w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i przetwórców, materiały promocyjne dla zakładów cementowych i serie wizytówek dla całych zespołów firm energetycznych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Opole w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i przetwórców, materiały promocyjne dla zakładów cementowych i serie wizytówek dla całych zespołów firm energetycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla przemysłu cementowego i energetyki?",
@@ -2753,9 +2753,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   tychy: {
     metaDescription:
-      "Drukarnia Tychy online. Ulotki, wizytówki i plakaty z dostawą do Tychów w 24–48 h. Druk dla motoryzacji (Stellantis) i browarnictwa (Tyskie). Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Tychy online. Ulotki, wizytówki i plakaty z dostawą do Tychów w 24–48 h. Druk dla motoryzacji (Stellantis) i browarnictwa (Tyskie). Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Tychów w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Tychów w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur na osiedlach literowych, firm motoryzacyjnych spod fabryki Stellantis, lokali gastronomicznych znad jeziora Paprocany i przedsiębiorstw z całej Metropolii GZM. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2806,8 +2806,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Tychy to jedno z najsilniejszych przemysłowo miast Górnośląsko-Zagłębiowskiej Metropolii. Pracują tu fabryka samochodów Stellantis (produkcja Fiata 500), Browar Tyskie z Kompanii Piwowarskiej oraz setki poddostawców motoryzacyjnych i firm produkcyjnych. Do tego rozpoznawalne modernistyczne osiedla literowe, rekreacyjne jezioro Paprocany i gęsta sieć gastronomii. Drukarnia Tychy obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przedstawiciela handlowego po dziesięć tysięcy etykiet dla browaru czy kooperanta fabryki.",
-      "Druk Tychy sprawdza się tam, gdzie liczy się czas reakcji. Poddostawca motoryzacyjny potrzebuje 1 000 tablic BHP i naklejek ostrzegawczych na nową linię, restauracja z osiedla literowego zamawia 500 składanych ulotek z sezonowym menu, organizator festynu nad jeziorem Paprocany wymaga banerów na sobotnie otwarcie. Tania drukarnia Tychy online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Tychów kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Tychy sprawdza się tam, gdzie liczy się czas reakcji. Poddostawca motoryzacyjny potrzebuje 1 000 tablic BHP i naklejek ostrzegawczych na nową linię, restauracja z osiedla literowego zamawia 500 składanych ulotek z sezonowym menu, organizator festynu nad jeziorem Paprocany wymaga banerów na sobotnie otwarcie. Tania drukarnia Tychy online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Tychów kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Tychy to dla nas codzienność. Firmy motoryzacyjne spod fabryki Stellantis, dostawcy branży spożywczej i browarniczej spod Tyskiego Browarium, firmy logistyczne, lokale gastronomiczne z osiedli literowych i znad Paprocan oraz MŚP z całej Metropolii GZM zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Tychy z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2823,7 +2823,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Tychów?",
         answer:
-          "Tak. Drukarnia Tychy w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów poddostawców motoryzacyjnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Tychy w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów poddostawców motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla branży motoryzacyjnej i browarniczej?",
@@ -2855,9 +2855,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   "gorzow-wielkopolski": {
     metaDescription:
-      "Drukarnia Gorzów Wielkopolski online. Ulotki, wizytówki i plakaty z dostawą do Gorzowa Wielkopolskiego w 24–48 h. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich, obsługa klastra motoryzacyjnego i firm z SSE. Wyceń teraz.",
+      "Drukarnia Gorzów Wielkopolski online. Ulotki, wizytówki i plakaty z dostawą do Gorzowa Wielkopolskiego w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich, obsługa klastra motoryzacyjnego i firm z SSE. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gorzowa Wielkopolskiego w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gorzowa Wielkopolskiego w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do zakładów klastra motoryzacyjnego, biur ze Śródmieścia, firm z Kostrzyńsko-Słubickiej SSE i lokali przy Bulwarze Nadwarciańskim z całego Gorzowa Wielkopolskiego. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -2908,8 +2908,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Gorzów Wielkopolski to druga stolica województwa lubuskiego i miasto nad Wartą, w którym przemysł gra pierwsze skrzypce. Pracują tu silny klaster motoryzacyjny i producenci części (TPV Displays, Faurecia/Forvia), przemysł przetwórczy oraz operatorzy logistyczni korzystający z bliskości granicy i Kostrzyńsko-Słubickiej Specjalnej Strefy Ekonomicznej. Do tego Akademia im. Jakuba z Paradyża, gastronomia ze Śródmieścia i wydarzenia kulturalne nad Wartą. Drukarnia Gorzów Wielkopolski obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla menedżera produkcji po dziesięć tysięcy etykiet dla dostawcy części.",
-      "Druk Gorzów Wielkopolski sprawdza się tam, gdzie liczy się czas reakcji. Dostawca części z klastra motoryzacyjnego potrzebuje 5 000 etykiet produktowych na poniedziałkową dostawę, zakład z Kostrzyńsko-Słubickiej SSE zamawia 2 000 broszur eksportowych, a restauracja przy Bulwarze Nadwarciańskim wymaga składanych ulotek z nowym menu na otwarcie sezonu. Tania drukarnia Gorzów Wielkopolski online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Gorzowa Wielkopolskiego kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Gorzów Wielkopolski sprawdza się tam, gdzie liczy się czas reakcji. Dostawca części z klastra motoryzacyjnego potrzebuje 5 000 etykiet produktowych na poniedziałkową dostawę, zakład z Kostrzyńsko-Słubickiej SSE zamawia 2 000 broszur eksportowych, a restauracja przy Bulwarze Nadwarciańskim wymaga składanych ulotek z nowym menu na otwarcie sezonu. Tania drukarnia Gorzów Wielkopolski online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Gorzowa Wielkopolskiego kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Gorzów Wielkopolski to dla nas codzienność. Zakłady motoryzacyjne i ich kooperanci, firmy przetwórcze, operatorzy logistyczni, kancelarie ze Śródmieścia, koła naukowe Akademii im. Jakuba z Paradyża i lokale z Górczyna oraz Manhattanu zamawiają u nas regularnie. Obsługujemy też inwestorów z całego Lubuskiego — od Kostrzyna nad Odrą po Słubice. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Gorzów Wielkopolski z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -2926,7 +2926,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Czy obsługujecie duże zamówienia dla firm z Gorzowa Wielkopolskiego?",
         answer:
-          "Tak. Drukarnia Gorzów Wielkopolski w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów firm z klastra motoryzacyjnego. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Gorzów Wielkopolski w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów firm z klastra motoryzacyjnego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2960,9 +2960,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   "dabrowa-gornicza": {
     metaDescription:
-      "Drukarnia Dąbrowa Górnicza online. Ulotki, wizytówki i plakaty z dostawą do Dąbrowy Górniczej w 24–48 h. Cena z VAT od razu, druk dla hutnictwa i logistyki GZM. Wyceń teraz.",
+      "Drukarnia Dąbrowa Górnicza online. Ulotki, wizytówki i plakaty z dostawą do Dąbrowy Górniczej w 24–48 h. Cena finalna od razu, druk dla hutnictwa i logistyki GZM. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Dąbrowy Górniczej w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Dąbrowy Górniczej w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do zakładów hutniczych z ArcelorMittal, hal magazynowych przy A4 i S1, biur z Centrum, lokali znad jezior Pogoria i firm z całej Dąbrowy Górniczej. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3013,8 +3013,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Dąbrowa Górnicza to jedno z największych miast Zagłębia Dąbrowskiego i ważny ośrodek przemysłowy Metropolii GZM. Działa tu największa huta stali w Polsce — ArcelorMittal Poland — wraz z całym zapleczem podwykonawców przemysłu ciężkiego, a wzdłuż A4 i S1 wyrosły ogromne strefy magazynowo-logistyczne. Do tego Akademia WSB, lokale gastronomiczne z Centrum i sezonowa rekreacja nad jeziorami Pogoria. Drukarnia Dąbrowa Górnicza obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla podwykonawcy huty po dziesięć tysięcy ulotek dla sieci handlowej z Gołonogu.",
-      "Druk Dąbrowa Górnicza sprawdza się tam, gdzie liczy się czas reakcji. Operator magazynu przy A4 zamawia 2 000 katalogów produktowych, podwykonawca ArcelorMittal potrzebuje serii oznaczeń BHP i tablic na hale, organizator targów pracy w Pałacu Kultury Zagłębia wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Dąbrowa Górnicza online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Dąbrowy Górniczej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Dąbrowa Górnicza sprawdza się tam, gdzie liczy się czas reakcji. Operator magazynu przy A4 zamawia 2 000 katalogów produktowych, podwykonawca ArcelorMittal potrzebuje serii oznaczeń BHP i tablic na hale, organizator targów pracy w Pałacu Kultury Zagłębia wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Dąbrowa Górnicza online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Dąbrowy Górniczej kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Dąbrowa Górnicza to dla nas codzienność. Zakłady przemysłowe Zagłębia, operatorzy logistyczni spod S1, biura rachunkowe z Centrum, koła naukowe Akademii WSB i lokale znad Pogorii zamawiają u nas regularnie. Ponieważ Dąbrowa Górnicza jest częścią Górnośląsko-Zagłębiowskiej Metropolii, obsługujemy też firmy z sąsiednich miast GZM. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Dąbrowa Górnicza z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3031,7 +3031,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Czy obsługujecie duże zamówienia dla firm z Dąbrowy Górniczej?",
         answer:
-          "Tak. Drukarnia Dąbrowa Górnicza w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów zakładów przemysłowych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Dąbrowa Górnicza w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów zakładów przemysłowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla hutnictwa i firm logistycznych?",
@@ -3062,9 +3062,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   elblag: {
     metaDescription:
-      "Drukarnia Elbląg online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla portu, turystyki znad Kanału Elbląskiego i firm. Wyceń teraz.",
+      "Drukarnia Elbląg online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla portu, turystyki znad Kanału Elbląskiego i firm. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Elbląga w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Elbląga w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur ze Śródmieścia, zakładów przemysłu maszynowego, firm logistycznych spod portu, lokali ze Starego Miasta i operatorów rejsów po Kanale Elbląskim. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3115,8 +3115,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Elbląg to drugie co do wielkości miasto województwa warmińsko-mazurskiego i brama na Mazury oraz Żuławy. Pracuje tu silny przemysł maszynowy z wieloletnią tradycją zakładów produkcyjnych, port śródlądowy nad Zalewem Wiślanym z rosnącą branżą logistyczną oraz turystyka skupiona wokół zabytkowego Kanału Elbląskiego z unikatowymi pochylniami i otwartego przekopu Mierzei Wiślanej. Do tego Akademia Nauk Stosowanych w Elblągu (dawniej PWSZ), lokale gastronomiczne ze Starego Miasta i obiekty hotelarskie obsługujące ruch turystyczny. Drukarnia Elbląg obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przewodnika po trzy tysiące plakatów na start sezonu turystycznego.",
-      "Druk Elbląg sprawdza się tam, gdzie liczy się czas reakcji. Restauracja znad Bulwaru Zygmunta Augusta otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, operator rejsów Kanałem Elbląskim zamawia 2 000 folderów z rozkładem rejsów po pochylniach, zakład przemysłu maszynowego wymaga katalogów produktowych na targi branżowe. Tania drukarnia Elbląg online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Elbląga kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Elbląg sprawdza się tam, gdzie liczy się czas reakcji. Restauracja znad Bulwaru Zygmunta Augusta otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, operator rejsów Kanałem Elbląskim zamawia 2 000 folderów z rozkładem rejsów po pochylniach, zakład przemysłu maszynowego wymaga katalogów produktowych na targi branżowe. Tania drukarnia Elbląg online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Elbląga kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Elbląg to dla nas codzienność. Kancelarie i biura księgowe ze Śródmieścia, spedytorzy obsługujący port śródlądowy i transport znad Zalewu Wiślanego, producenci z elbląskiego przemysłu maszynowego, koła naukowe Akademii Nauk Stosowanych oraz branża turystyczna i hotelarska znad Kanału Elbląskiego zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Elbląg z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3132,7 +3132,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Elbląga?",
         answer:
-          "Tak. Drukarnia Elbląg w naszej sieci realizuje nakłady 10 000+ ulotek dla branży turystycznej i sieci handlowych, materiały promocyjne dla zakładów przemysłu maszynowego i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Elbląg w naszej sieci realizuje nakłady 10 000+ ulotek dla branży turystycznej i sieci handlowych, materiały promocyjne dla zakładów przemysłu maszynowego i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -3165,9 +3165,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   plock: {
     metaDescription:
-      "Drukarnia Płock online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla petrochemii, firm okołorafineryjnych i kontrahentów Orlenu. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Płock online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla petrochemii, firm okołorafineryjnych i kontrahentów Orlenu. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Płocka w 24–48 h. Druk dla petrochemii i kontrahentów Orlenu, cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Płocka w 24–48 h. Druk dla petrochemii i kontrahentów Orlenu, cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do firm okołorafineryjnych z Podolszyc, spółek energetycznych, restauracji ze Starego Miasta i kontrahentów Orlenu z całego Płocka. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3217,8 +3217,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Płock to najstarsze miasto Mazowsza i jedno z najważniejszych centrów przemysłowych w Polsce. Pracuje tu siedziba koncernu Orlen — największej firmy w kraju — oraz potężny kadłub petrochemii i rafinerii, wokół których wyrósł cały ekosystem firm chemicznych, energetycznych i okołorafineryjnych. Do tego filia Politechniki Warszawskiej w Płocku, restauracje i hotele spod Wzgórza Tumskiego oraz ruch turystyczny przy molo nad Wisłą. Drukarnia Płock obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla inżyniera po dziesięć tysięcy etykiet przemysłowych dla dostawcy rafinerii.",
-      "Druk Płock sprawdza się tam, gdzie liczy się czas reakcji. Firma okołorafineryjna z Podolszyc potrzebuje 500 broszur szkoleniowych BHP na poniedziałkowy audyt, dostawca petrochemii zamawia 5 000 katalogów na targi branżowe, restauracja ze Starego Miasta wymaga składanych ulotek z nowym menu przed sezonem nad Wisłą. Tania drukarnia Płock online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Płocka kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Płock sprawdza się tam, gdzie liczy się czas reakcji. Firma okołorafineryjna z Podolszyc potrzebuje 500 broszur szkoleniowych BHP na poniedziałkowy audyt, dostawca petrochemii zamawia 5 000 katalogów na targi branżowe, restauracja ze Starego Miasta wymaga składanych ulotek z nowym menu przed sezonem nad Wisłą. Tania drukarnia Płock online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Płocka kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Płock to dla nas codzienność. Kontrahenci Orlenu, firmy chemiczne i energetyczne, kadra inżynierska petrochemii, koła naukowe filii Politechniki Warszawskiej oraz lokale i hotele spod Wzgórza Tumskiego zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Płock z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3234,7 +3234,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia firmowe z Płocka?",
         answer:
-          "Tak. Drukarnia Płock w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm chemicznych i serie wizytówek dla całych zespołów spółek energetycznych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Płock w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm chemicznych i serie wizytówek dla całych zespołów spółek energetycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -3267,9 +3267,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   walbrzych: {
     metaDescription:
-      "Drukarnia Wałbrzycha online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla motoryzacji, firm z SSE Invest-Park i turystyki spod Zamku Książ. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Wałbrzycha online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla motoryzacji, firm z SSE Invest-Park i turystyki spod Zamku Książ. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Wałbrzycha w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Wałbrzycha w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do zakładów z Wałbrzyskiej SSE Invest-Park, kooperantów Toyoty, pensjonatów spod Zamku Książ i punktów usługowych ze Śródmieścia. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3320,8 +3320,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Wałbrzych to drugie co do wielkości miasto Dolnego Śląska i gospodarczy biegun południa regionu. Po zamknięciu kopalń miasto przeszło głęboką transformację: dziś jego sercem są Wałbrzyska Specjalna Strefa Ekonomiczna „Invest-Park” oraz fabryka Toyota Motor Manufacturing Poland, wokół których wyrosła gęsta sieć kooperantów motoryzacyjnych, firm logistycznych i przemysłowych. Obok przemysłu rośnie turystyka napędzana Zamkiem Książ, największym zamkiem Dolnego Śląska, oraz Starą Kopalnią i Palmiarnią. Drukarnia Wałbrzych obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla pensjonatu spod Książa po pięć tysięcy etykiet dla zakładu z podstrefy Invest-Park.",
-      "Druk Wałbrzych sprawdza się tam, gdzie liczy się czas reakcji. Kooperant Toyoty potrzebuje 1 000 instrukcji BHP na rozruch nowej linii, operator logistyczny ze strefy zamawia 3 000 etykiet paletowych, pensjonat spod Zamku Książ chce foldery na sezon turystyczny w Górach Wałbrzyskich i Sowich. Tania drukarnia Wałbrzych online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Wałbrzycha kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Wałbrzych sprawdza się tam, gdzie liczy się czas reakcji. Kooperant Toyoty potrzebuje 1 000 instrukcji BHP na rozruch nowej linii, operator logistyczny ze strefy zamawia 3 000 etykiet paletowych, pensjonat spod Zamku Książ chce foldery na sezon turystyczny w Górach Wałbrzyskich i Sowich. Tania drukarnia Wałbrzych online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Wałbrzycha kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Wałbrzych to dla nas codzienność. Zakłady z Wałbrzyskiej SSE Invest-Park, podwykonawcy motoryzacyjni Toyoty, firmy logistyczne z południa Dolnego Śląska, Akademia Nauk Stosowanych Angelusa Silesiusa oraz pensjonaty i lokale spod Zamku Książ zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Wałbrzych z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3337,7 +3337,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Wałbrzycha?",
         answer:
-          "Tak. Drukarnia Wałbrzych w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów z Wałbrzyskiej SSE Invest-Park i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Wałbrzych w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów z Wałbrzyskiej SSE Invest-Park i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -3369,9 +3369,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   wloclawek: {
     metaDescription:
-      "Drukarnia Włocławek online. Ulotki, wizytówki i plakaty dla firm chemicznych, producentów fajansu i HoReCa ze Śródmieścia z dostawą w 24–48 h. Cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Włocławek online. Ulotki, wizytówki i plakaty dla firm chemicznych, producentów fajansu i HoReCa ze Śródmieścia z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Włocławka w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Włocławka w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do zakładów chemicznych z otoczenia Anwilu, pracowni włocławskiego fajansu, restauracji ze Śródmieścia i firm z całego Włocławka. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3422,8 +3422,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Włocławek to jedno z trzech największych miast województwa kujawsko-pomorskiego i ważny ośrodek przemysłowy nad Wisłą. Pracują tu potężny przemysł chemiczny (Anwil z grupy Orlen, produkcja nawozów i tworzyw), tradycyjna ceramika i słynny włocławski fajans, a także energetyka wodna oparta na zaporze i elektrowni na Wiśle. Do tego Kujawska Szkoła Wyższa, restauracje ze Śródmieścia i lokale przy bulwarach pod gotycką katedrą. Drukarnia Włocławek obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla rzemieślnika po dziesięć tysięcy etykiet na wyroby fajansowe.",
-      "Druk Włocławek sprawdza się tam, gdzie liczy się czas reakcji. Pracownia ceramiki przygotowuje nową kolekcję i potrzebuje 2 000 metek z opisem wzoru, dostawca zaplecza Anwilu zamawia karty charakterystyki i etykiety ostrzegawcze, restauracja ze Śródmieścia chce 500 składanych ulotek z menu na sezon przy bulwarach. Tania drukarnia Włocławek online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Włocławka kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Włocławek sprawdza się tam, gdzie liczy się czas reakcji. Pracownia ceramiki przygotowuje nową kolekcję i potrzebuje 2 000 metek z opisem wzoru, dostawca zaplecza Anwilu zamawia karty charakterystyki i etykiety ostrzegawcze, restauracja ze Śródmieścia chce 500 składanych ulotek z menu na sezon przy bulwarach. Tania drukarnia Włocławek online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Włocławka kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Włocławek to dla nas codzienność. Zakłady chemiczne z otoczenia Anwilu, producenci włocławskiego fajansu, firmy energetyki wodnej spod zapory na Wiśle, koła naukowe Kujawskiej Szkoły Wyższej i lokale gastronomiczne ze Śródmieścia zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Włocławek z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3439,7 +3439,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Włocławka?",
         answer:
-          "Tak. Drukarnia Włocławek w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów fajansu i serie wizytówek dla zespołów firm z otoczenia Anwilu. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Włocławek w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów fajansu i serie wizytówek dla zespołów firm z otoczenia Anwilu. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla przemysłu chemicznego i ceramicznego?",
@@ -3471,9 +3471,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   tarnow: {
     metaDescription:
-      "Drukarnia Tarnów online dla firm z Grupy Azoty i biznesu spod renesansowej starówki. Ulotki, wizytówki i plakaty z dostawą do Tarnowa w 24–48 h. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Tarnów online dla firm z Grupy Azoty i biznesu spod renesansowej starówki. Ulotki, wizytówki i plakaty z dostawą do Tarnowa w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Tarnowa w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Tarnowa w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur firm spod Grupy Azoty w Mościcach, lokali z renesansowego Rynku, pensjonatów Pogórza i instytucji spod Akademii Nauk Stosowanych w Tarnowie. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3524,8 +3524,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Tarnów to drugie co do wielkości miasto Małopolski i ważny węzeł gospodarczy regionu. Pracuje tu potężny przemysł chemiczny z Grupą Azoty w Mościcach na czele (nawozy, tworzywa), rozwinięta logistyka korzystająca z położenia przy autostradzie A4 oraz turystyka napędzana renesansową starówką, katedrą i Mauzoleum gen. Józefa Bema. Tarnów bywa nazywany „polskim biegunem ciepła”, najcieplejszym miastem w Polsce i bramą w Beskidy oraz na Pogórze. Drukarnia Tarnów obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla przewodnika po pięć tysięcy ulotek na sezon turystyczny Starówki.",
-      "Druk Tarnów sprawdza się tam, gdzie liczy się czas reakcji. Lokal z renesansowego Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, firma kooperująca z Grupą Azoty zamawia 2 000 katalogów produktowych na targi branży chemicznej, biuro turystyczne wymaga plakatów B1 promujących katedrę i Mauzoleum gen. Bema. Tania drukarnia Tarnów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Tarnowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Tarnów sprawdza się tam, gdzie liczy się czas reakcji. Lokal z renesansowego Rynku otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, firma kooperująca z Grupą Azoty zamawia 2 000 katalogów produktowych na targi branży chemicznej, biuro turystyczne wymaga plakatów B1 promujących katedrę i Mauzoleum gen. Bema. Tania drukarnia Tarnów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Tarnowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Tarnów to dla nas codzienność. Firmy z tarnowskiego klastra chemicznego z Mościc, kancelarie prawne spod Rynku, hotele i pensjonaty Pogórza, biura turystyczne reklamujące renesansową starówkę oraz koła naukowe Akademii Nauk Stosowanych zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Tarnów z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3541,7 +3541,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Tarnowa?",
         answer:
-          "Tak. Drukarnia Tarnów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i biur turystycznych, materiały promocyjne dla firm spod Grupy Azoty i serie wizytówek dla całych zespołów. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Tarnów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i biur turystycznych, materiały promocyjne dla firm spod Grupy Azoty i serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -3574,9 +3574,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   koszalin: {
     metaDescription:
-      "Drukarnia Koszalina online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk pod sezon nadmorski i ośrodki w Mielnie, cena z VAT widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Koszalina online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk pod sezon nadmorski i ośrodki w Mielnie, cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Koszalina w 24–48 h. Cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Koszalina w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biur w Śródmieściu, na Rokosowie, do ośrodków wczasowych z Mielna, hoteli pasa nadmorskiego i firm usługowych z całego Koszalina. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3626,8 +3626,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Koszalin to jeden z głównych ośrodków województwa zachodniopomorskiego i brama do Mielna oraz pasa nadmorskiego Bałtyku. Pracują tu silna turystyka nadmorska i sektor HoReCa, przemysł elektroniczny, handel i usługi, a do tego Politechnika Koszalińska z tysiącami studentów. Latem miasto żyje sezonem, a wiosną Koszaliński Festiwal Debiutów Filmowych „Młodzi i Film” ściąga twórców i widzów z całej Polski. Drukarnia Koszalin obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po trzy tysiące plakatów na festiwal i menu dla dziesiątek ośrodków w Mielnie.",
-      "Druk Koszalin sprawdza się tam, gdzie liczy się czas reakcji. Pensjonat z Mielna otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, ośrodek wczasowy zamawia 2 000 cenników i broszur, organizator wydarzeń przy amfiteatrze wymaga plakatów B1 na weekendowy koncert. Tania drukarnia Koszalin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Koszalina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Koszalin sprawdza się tam, gdzie liczy się czas reakcji. Pensjonat z Mielna otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, ośrodek wczasowy zamawia 2 000 cenników i broszur, organizator wydarzeń przy amfiteatrze wymaga plakatów B1 na weekendowy koncert. Tania drukarnia Koszalin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Koszalina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Koszalin to dla nas codzienność. Hotele i ośrodki wczasowe z Mielna, restauracje ze Śródmieścia, producenci elektroniki, firmy handlowe i usługowe, koła naukowe Politechniki Koszalińskiej oraz organizatorzy wydarzeń przy Górze Chełmskiej i amfiteatrze zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Koszalin z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3643,7 +3643,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Koszalina?",
         answer:
-          "Tak. Drukarnia Koszalin w naszej sieci realizuje nakłady 10 000+ ulotek dla ośrodków wczasowych i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm usługowych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Koszalin w naszej sieci realizuje nakłady 10 000+ ulotek dla ośrodków wczasowych i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm usługowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -3675,9 +3675,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   chorzow: {
     metaDescription:
-      "Drukarnia Chorzów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm z Chorzowa, eventów w Parku Śląskim i na Stadionie Śląskim oraz MŚP z GZM. Cena z VAT od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Chorzów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm z Chorzowa, eventów w Parku Śląskim i na Stadionie Śląskim oraz MŚP z GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
-      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Chorzowa w 24–48 h. Druk pod imprezy w Parku Śląskim i na Stadionie Śląskim, cena z VAT od razu, konfigurator online.",
+      "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Chorzowa w 24–48 h. Druk pod imprezy w Parku Śląskim i na Stadionie Śląskim, cena finalna od razu, konfigurator online.",
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do firm z Centrum i Batorego, organizatorów eventów w Parku Śląskim i na Stadionie Śląskim, atrakcji takich jak Legendia i Śląskie ZOO oraz MŚP z całej Metropolii GZM. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
@@ -3728,8 +3728,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     },
     paragraphs: [
       "Chorzów to jedno z serc Górnośląsko-Zagłębiowskiej Metropolii i miasto, które łączy hutniczą tradycję z funkcją rekreacyjną całego regionu. To tutaj leży Park Śląski, jeden z największych parków miejskich w Europie, Stadion Śląski z meczami reprezentacji i wielkimi koncertami, Legendia, Planetarium Śląskie i Śląski Ogród Zoologiczny. Drukarnia Chorzów obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla usługodawcy z Centrum po pięć tysięcy plakatów na koncert na Stadionie Śląskim.",
-      "Druk Chorzów sprawdza się tam, gdzie liczy się czas reakcji. Organizator pikniku w Parku Śląskim potrzebuje 1 000 składanych ulotek z programem, atrakcja turystyczna z sezonu w Legendii zamawia 2 000 broszur, a agencja eventowa wymaga roll-upów i plakatów B1 na sobotni koncert. Tania drukarnia Chorzów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena z VAT widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
-      "W DobrePrinty dostarczamy druk do Chorzowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Faktura VAT trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o fakturę”.",
+      "Druk Chorzów sprawdza się tam, gdzie liczy się czas reakcji. Organizator pikniku w Parku Śląskim potrzebuje 1 000 składanych ulotek z programem, atrakcja turystyczna z sezonu w Legendii zamawia 2 000 broszur, a agencja eventowa wymaga roll-upów i plakatów B1 na sobotni koncert. Tania drukarnia Chorzów online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "W DobrePrinty dostarczamy druk do Chorzowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Chorzów to dla nas codzienność. Lokale gastronomiczne z Centrum i Batorego, sieci handlowe z całej Metropolii GZM, instytucje kultury i rekreacji spod Parku Śląskiego oraz firmy usługowe z Klimzowca i Maciejkowic zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Chorzów z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
     statBadge: {
@@ -3745,7 +3745,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Czy obsługujecie duże zamówienia dla firm z Chorzowa?",
         answer:
-          "Tak. Drukarnia Chorzów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych z GZM, materiały promocyjne dla atrakcji turystycznych i serie wizytówek dla całych zespołów firm usługowych. Powyżej 3 000 zł netto dostępna jest faktura proforma z 14-dniowym terminem.",
+          "Tak. Drukarnia Chorzów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych z GZM, materiały promocyjne dla atrakcji turystycznych i serie wizytówek dla całych zespołów firm usługowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:

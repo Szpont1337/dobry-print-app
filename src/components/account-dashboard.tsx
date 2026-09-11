@@ -170,8 +170,6 @@ type Order = {
   productName: string;
   formatLabel: string;
   quantity: number;
-  netTotal: number;
-  vatTotal: number;
   grossTotal: number;
   status: OrderStatus;
   shippingStreet: string;
@@ -292,12 +290,6 @@ function OrderCard({ order }: { order: Order }) {
             </dt>
             <dd className="mt-1 font-mono text-lg font-semibold text-foreground tabular-nums">
               {formatPLN.format(order.grossTotal)}
-            </dd>
-            <dd className="font-mono text-xs text-muted-foreground">
-              {t("netVat", {
-                net: formatPLN.format(order.netTotal),
-                vat: formatPLN.format(order.vatTotal),
-              })}
             </dd>
           </div>
           <div>

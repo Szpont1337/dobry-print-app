@@ -2,8 +2,9 @@
 // dictate the price — submitOrder recomputes every monetary value here from the
 // product catalog. Imports are pure data / pure math (no browser/node deps), so
 // they bundle cleanly into Convex.
+import { PRICE_FACTOR } from "../src/lib/pricing";
 import { products, unitPriceForQuantity } from "../src/lib/products";
-import { VAT_RATE, withShipping } from "../src/lib/shipping";
+import { withShipping } from "../src/lib/shipping";
 import { type Locale, tErr } from "./i18nError";
 
 const SETUP_FEE = 4.5;
@@ -11,10 +12,9 @@ export const MIN_QTY = 1;
 export const MAX_QTY = 100_000;
 
 function priceFor(quantity: number, unitPrice: number, noFees: boolean): number {
-  if (noFees) return quantity * unitPrice;
-  const scale =
-    quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
-  return SETUP_FEE + quantity * unitPrice * scale;
+  if (noFees) return quantity * unitPrice * PRICE_FACTOR;
+  const scale = quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
+  return (SETUP_FEE + quantity * unitPrice * scale) * PRICE_FACTOR;
 }
 
 function round2(n: number): number {
@@ -26,8 +26,6 @@ export type ComputedOrder = {
   formatLabel: string;
   unitPrice: number;
   quantity: number;
-  netTotal: number;
-  vatTotal: number;
   grossTotal: number;
   shippingFee: number;
 };
@@ -68,18 +66,13 @@ export function computeItemTotals(
   }
 
   const unitPrice = unitPriceForQuantity(product, format, q);
-  const productNet = priceFor(q, unitPrice, product.noFees ?? false);
-  const productVat = productNet * VAT_RATE;
-  const productGross = productNet + productVat;
 
   return {
     productName: product.name,
     formatLabel: format.label,
     unitPrice,
     quantity: q,
-    netTotal: productNet,
-    vatTotal: productVat,
-    grossTotal: productGross,
+    grossTotal: priceFor(q, unitPrice, product.noFees ?? false),
   };
 }
 
@@ -91,43 +84,32 @@ export function computeOrderTotals(
   locale?: Locale,
 ): ComputedOrder {
   const item = computeItemTotals(productSlug, formatId, quantity, locale);
-  const totals = withShipping(item.netTotal, item.vatTotal, item.grossTotal);
+  const totals = withShipping(item.grossTotal);
   return {
     ...item,
-    netTotal: round2(totals.net),
-    vatTotal: round2(totals.vat),
-    grossTotal: round2(totals.gross),
+    grossTotal: round2(totals.total),
     shippingFee: round2(totals.shippingFee),
   };
 }
 
 /** Kwoty jednego zamówienia z koszyka (po rozdzieleniu wysyłki). */
 export type CartLineTotals = {
-  netTotal: number;
-  vatTotal: number;
   grossTotal: number;
   shippingFee: number;
 };
 
 /**
  * Rozdziela wysyłkę na pozycje koszyka. Wysyłka liczona JEDEN raz — od sumy
- * brutto całego koszyka (próg darmowej wysyłki też patrzy na sumę) — i w
+ * całego koszyka (próg darmowej wysyłki też patrzy na sumę) — i w
  * całości doklejona do pierwszego zamówienia. Dzięki temu suma `grossTotal`
  * wszystkich zamówień = kwota realnie pobrana w Stripe.
  */
 export function splitCartTotals(items: ComputedItem[]): CartLineTotals[] {
-  const net = items.reduce((sum, i) => sum + i.netTotal, 0);
-  const vat = items.reduce((sum, i) => sum + i.vatTotal, 0);
-  const gross = items.reduce((sum, i) => sum + i.grossTotal, 0);
-  const cart = withShipping(net, vat, gross);
-  const feeNet = cart.net - net;
-  const feeVat = cart.vat - vat;
+  const cart = withShipping(items.reduce((sum, i) => sum + i.grossTotal, 0));
 
   return items.map((item, index) => {
     const first = index === 0;
     return {
-      netTotal: round2(item.netTotal + (first ? feeNet : 0)),
-      vatTotal: round2(item.vatTotal + (first ? feeVat : 0)),
       grossTotal: round2(item.grossTotal + (first ? cart.shippingFee : 0)),
       shippingFee: first ? round2(cart.shippingFee) : 0,
     };

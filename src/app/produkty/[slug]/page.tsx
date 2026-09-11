@@ -10,6 +10,7 @@ import { ProductConfigurator } from "@/components/product-configurator";
 import { ProductMockup } from "@/components/product-mockup";
 import { miasta } from "@/data/miasta";
 import { getAllProductSlugsIncludingHidden, getProduct, visibleProducts } from "@/lib/products";
+import { finalUnitPrice } from "@/lib/pricing";
 import { getProductContent } from "@/lib/products-content";
 import {
   Breadcrumbs,
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const url = `${BASE_URL}/produkty/${product.slug}`;
   const title = `${product.name} online — tani druk, dostawa 24h`;
   const description =
-    `Druk ${content.keyword} online: konfigurator, cena z VAT od razu, dostawa 24–48 h. ${product.tagline}`.slice(
+    `Druk ${content.keyword} online: konfigurator, cena finalna od razu, dostawa 24–48 h. ${product.tagline}`.slice(
       0,
       155,
     );
@@ -87,7 +88,9 @@ function SchemaMarkup({
   content: NonNullable<ReturnType<typeof getProductContent>>;
   url: string;
 }) {
-  const lowestPrice = Math.min(...product.formats.map((f) => f.unitPrice)).toFixed(2);
+  const lowestPrice = finalUnitPrice(
+    Math.min(...product.formats.map((f) => f.unitPrice)),
+  ).toFixed(2);
 
   // Only emit aggregateRating when there is a real rating to report. A
   // ratingCount of 0 is invalid in schema.org and triggers a hard error in
@@ -123,7 +126,9 @@ function SchemaMarkup({
           "@type": "AggregateOffer",
           priceCurrency: "PLN",
           lowPrice: lowestPrice,
-          highPrice: Math.max(...product.formats.map((f) => f.unitPrice)).toFixed(2),
+          highPrice: finalUnitPrice(
+            Math.max(...product.formats.map((f) => f.unitPrice)),
+          ).toFixed(2),
           offerCount: product.formats.length,
           availability: "https://schema.org/InStock",
           url,

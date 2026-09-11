@@ -100,7 +100,7 @@ export const article: Article = {
     },
     {
       type: "table",
-      caption: "Cennik toreb płóciennych z nadrukiem (cena brutto za sztukę)",
+      caption: "Cennik toreb płóciennych z nadrukiem (cena finalna za sztukę)",
       headers: ["Nakład", "Cena za sztukę"],
       rows: [
         ["1 szt.", "16 zł"],

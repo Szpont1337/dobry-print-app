@@ -31,7 +31,7 @@
     "items": [
       {
         "question": "Czy mogę zamówić tylko 1 sztukę?",
-        "answer": "Tak. Każdy produkt w DobrePrinty można zamówić już od jednej sztuki, bez kosztów minimalnych i bez ukrytych opłat za małe nakłady. Cena pokazywana w konfiguratorze jest finalna (poza VAT-em)."
+        "answer": "Tak. Każdy produkt w DobrePrinty można zamówić już od jednej sztuki, bez kosztów minimalnych i bez ukrytych opłat za małe nakłady. Cena pokazywana w konfiguratorze jest finalna."
       },
       {
         "question": "Jak długo trwa realizacja zamówienia?",
@@ -39,7 +39,7 @@
       },
       {
         "question": "Ile kosztuje wysyłka?",
-        "answer": "Wysyłka kosztuje 10 zł brutto, a od 50 zł wartości zamówienia jest darmowa — niezależnie od tego, czy wybierzesz kuriera, czy paczkomat. Koszt wysyłki widać w konfiguratorze i w podsumowaniu zamówienia przed płatnością."
+        "answer": "Wysyłka kosztuje 10 zł, a od 50 zł wartości zamówienia jest darmowa — niezależnie od tego, czy wybierzesz kuriera, czy paczkomat. Koszt wysyłki widać w konfiguratorze i w podsumowaniu zamówienia przed płatnością."
       },
       {
         "question": "Jak przygotować plik do druku?",

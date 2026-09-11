@@ -31,11 +31,11 @@ export type CartItem = {
   notes?: string;
 };
 
-/** Pozycja koszyka rozwiązana o katalog + jej cena brutto (bez wysyłki). */
+/** Pozycja koszyka rozwiązana o katalog + jej cena (bez wysyłki). */
 export type ResolvedCartItem = CartItem & {
   product: Product;
   format: ProductFormat;
-  gross: number;
+  total: number;
 };
 
 export type CartState = {
@@ -202,8 +202,7 @@ export function resolveCart(items: CartItem[]): {
   for (const item of items) {
     const product = getProduct(item.slug);
     if (!product) continue; // produkt zniknął z katalogu — pomijamy pozycję
-    const format =
-      product.formats.find((f) => f.id === item.formatId) ?? product.formats[0];
+    const format = product.formats.find((f) => f.id === item.formatId) ?? product.formats[0];
     resolved.push({ ...item, product, format });
   }
 
@@ -216,7 +215,7 @@ export function resolveCart(items: CartItem[]): {
   );
 
   return {
-    items: resolved.map((r, index) => ({ ...r, gross: totals.lineGross[index] })),
+    items: resolved.map((r, index) => ({ ...r, total: totals.lineTotal[index] })),
     totals,
   };
 }

@@ -1,14 +1,22 @@
-import {
-  type Product,
-  type ProductFormat,
-  unitPriceForQuantity,
-} from "@/lib/products";
-import { VAT_RATE, shippingFeeFor, withShipping } from "@/lib/shipping";
+import { type Product, type ProductFormat, unitPriceForQuantity } from "@/lib/products";
+import { shippingFeeFor, withShipping } from "@/lib/shipping";
 
-export { VAT_RATE };
 export const MIN_QTY = 1;
 export const MAX_QTY = 100_000;
 const SETUP_FEE = 4.5;
+
+/**
+ * Mnożnik ceny katalogowej do ceny finalnej. Historycznie była to stawka VAT,
+ * ale DobrePrinty prowadzi działalność nierejestrowaną i nie jest podatnikiem
+ * VAT — nie ma podziału na netto/brutto, jest jedna kwota do zapłaty. Mnożnik
+ * został, żeby ceny dla klienta pozostały takie same jak dotąd.
+ */
+export const PRICE_FACTOR = 1.23;
+
+/** Cena katalogowa jednej sztuki przeliczona na kwotę, którą płaci klient. */
+export function finalUnitPrice(unitPrice: number): number {
+  return unitPrice * PRICE_FACTOR;
+}
 
 /**
  * Wpasowuje nakład w dozwolony zakres i zaokrągla do pełnej sztuki.
@@ -20,25 +28,20 @@ export function clampQuantity(n: number, minQuantity?: number): number {
   return Math.max(min, Math.min(MAX_QTY, Math.round(n)));
 }
 
-/** Cena netto produktu (bez wysyłki) dla danego nakładu i ceny jednostkowej. */
+/** Cena produktu (bez wysyłki) dla danego nakładu i ceny jednostkowej. */
 export function priceFor(quantity: number, unitPrice: number, noFees = false) {
-  if (noFees) return quantity * unitPrice;
-  const scale =
-    quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
-  return SETUP_FEE + quantity * unitPrice * scale;
+  if (noFees) return quantity * unitPrice * PRICE_FACTOR;
+  const scale = quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
+  return (SETUP_FEE + quantity * unitPrice * scale) * PRICE_FACTOR;
 }
 
 export type OrderTotals = {
-  /** netto/VAT/brutto samego produktu (bez wysyłki) */
-  productNet: number;
-  productVat: number;
-  productGross: number;
-  /** opłata za wysyłkę brutto (0 = gratis) */
+  /** kwota samego produktu (bez wysyłki) */
+  productTotal: number;
+  /** opłata za wysyłkę (0 = gratis) */
   shippingFee: number;
-  /** netto/VAT/brutto łącznie z wysyłką */
-  net: number;
-  vat: number;
-  gross: number;
+  /** kwota do zapłaty razem z wysyłką */
+  total: number;
 };
 
 /** Jedno źródło prawdy o cenie — konfigurator i strona zamówienia liczą tak samo. */
@@ -48,18 +51,12 @@ export function computeTotals(
   quantity: number,
 ): OrderTotals {
   const unitPrice = unitPriceForQuantity(product, format, quantity);
-  const productNet = priceFor(quantity, unitPrice, product.noFees);
-  const productVat = productNet * VAT_RATE;
-  const productGross = productNet + productVat;
-  const totals = withShipping(productNet, productVat, productGross);
+  const productTotal = priceFor(quantity, unitPrice, product.noFees);
+  const totals = withShipping(productTotal);
   return {
-    productNet,
-    productVat,
-    productGross,
+    productTotal,
     shippingFee: totals.shippingFee,
-    net: totals.net,
-    vat: totals.vat,
-    gross: totals.gross,
+    total: totals.total,
   };
 }
 
@@ -71,49 +68,36 @@ export type CartLine = {
 };
 
 export type CartTotals = OrderTotals & {
-  /** brutto każdej pozycji z osobna (bez wysyłki) — w kolejności wejściowej */
-  lineGross: number[];
+  /** kwota każdej pozycji z osobna (bez wysyłki) — w kolejności wejściowej */
+  lineTotal: number[];
 };
 
 /**
- * Wycena całego koszyka. Wysyłka liczona RAZ od sumy brutto (próg darmowej
+ * Wycena całego koszyka. Wysyłka liczona RAZ od sumy pozycji (próg darmowej
  * wysyłki też patrzy na sumę) — dokładnie tak, jak liczy ją serwer w
  * `splitCartTotals`, więc podsumowanie w UI = kwota pobrana w Stripe.
  */
 export function computeCartTotals(lines: CartLine[]): CartTotals {
-  const lineGross: number[] = [];
-  let productNet = 0;
-  let productVat = 0;
-  let productGross = 0;
+  const lineTotal: number[] = [];
+  let productTotal = 0;
 
   for (const line of lines) {
-    const unitPrice = unitPriceForQuantity(
-      line.product,
-      line.format,
-      line.quantity,
-    );
-    const net = priceFor(line.quantity, unitPrice, line.product.noFees);
-    const vat = net * VAT_RATE;
-    productNet += net;
-    productVat += vat;
-    productGross += net + vat;
+    const unitPrice = unitPriceForQuantity(line.product, line.format, line.quantity);
+    const price = priceFor(line.quantity, unitPrice, line.product.noFees);
+    productTotal += price;
     // Grosze zaokrąglamy per pozycja — dokładnie tak, jak serwer zapisuje
-    // `grossTotal` każdego zamówienia (convex/orderPricing splitCartTotals).
-    lineGross.push(round2(net + vat));
+    // kwotę każdego zamówienia (convex/orderPricing splitCartTotals).
+    lineTotal.push(round2(price));
   }
 
-  const totals = withShipping(productNet, productVat, productGross);
+  const totals = withShipping(productTotal);
   return {
-    productNet,
-    productVat,
-    productGross,
+    productTotal,
     shippingFee: totals.shippingFee,
-    net: totals.net,
-    vat: totals.vat,
     // Suma zaokrąglonych pozycji + wysyłka = kwota, którą realnie pobiera
     // Stripe (sesja ma po jednej pozycji na zamówienie).
-    gross: round2(lineGross.reduce((sum, g) => sum + g, 0) + totals.shippingFee),
-    lineGross,
+    total: round2(lineTotal.reduce((sum, g) => sum + g, 0) + totals.shippingFee),
+    lineTotal,
   };
 }
 

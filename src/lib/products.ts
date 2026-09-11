@@ -517,7 +517,7 @@ export const products: Product[] = [
     noFees: true,
     highlights: [
       { value: "1 gr", label: "cena jednostkowa" },
-      { value: "2,00 zł", label: "brutto (min. Stripe)" },
+      { value: "2,00 zł", label: "min. Stripe" },
       { value: "163 szt.", label: "nakład domyślny" },
     ],
     formats: [

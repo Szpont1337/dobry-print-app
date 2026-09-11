@@ -41,7 +41,7 @@ export const sendOrderNotification = internalAction({
       },
       { name: "Ilość", value: String(order.quantity), inline: true },
       {
-        name: "Kwota brutto",
+        name: "Kwota finalna",
         value: PLN.format(order.grossTotal),
         inline: true,
       },

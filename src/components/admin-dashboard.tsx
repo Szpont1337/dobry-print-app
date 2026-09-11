@@ -404,8 +404,6 @@ type AdminOrder = {
   formatLabel: string;
   quantity: number;
   grossTotal: number;
-  netTotal: number;
-  vatTotal: number;
   status: OrderStatus;
   paymentStatus?: "unpaid" | "paid" | "failed";
   paidAt?: number;
@@ -622,8 +620,6 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                   <br />
                   {formatQty.format(order.quantity)} szt. · {order.formatLabel}
                   <br />
-                  Netto {formatPLN.format(order.netTotal)} · VAT{" "}
-                  {formatPLN.format(order.vatTotal)} · brutto{" "}
                   <strong>{formatPLN.format(order.grossTotal)}</strong>
                 </dd>
               </div>

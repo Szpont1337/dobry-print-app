@@ -6,14 +6,7 @@ import nodemailer from "nodemailer";
 import { internal } from "./_generated/api";
 import type { Doc } from "./_generated/dataModel";
 import { internalAction } from "./_generated/server";
-import {
-  BRAND,
-  callout,
-  COMPANY_LINE,
-  escapeHtml,
-  plainBlock,
-  renderShell,
-} from "./mailShell";
+import { BRAND, callout, COMPANY_LINE, escapeHtml, plainBlock, renderShell } from "./mailShell";
 
 type Order = Doc<"orders">;
 type StatusKind =
@@ -42,10 +35,7 @@ function shortId(id: string): string {
 
 const ORDER_FOOTER = `${COMPANY_LINE}<br>Otrzymujesz tę wiadomość, bo złożyłeś zamówienie w dobreprinty.pl.`;
 
-const SITE_URL = (process.env.SITE_URL ?? "https://dobreprinty.pl").replace(
-  /\/$/,
-  "",
-);
+const SITE_URL = (process.env.SITE_URL ?? "https://dobreprinty.pl").replace(/\/$/, "");
 
 function payUrl(order: Order): string {
   return `${SITE_URL}/api/stripe/pay?order=${order._id}`;
@@ -104,9 +94,7 @@ function detailsBox(order: Order): string {
 function deliveryLine(order: Order): string {
   if (order.deliveryMethod === "parcel_locker") {
     const id = order.parcelLockerId ?? "";
-    const addr = order.parcelLockerAddress
-      ? ` (${order.parcelLockerAddress})`
-      : "";
+    const addr = order.parcelLockerAddress ? ` (${order.parcelLockerAddress})` : "";
     return `Paczkomat InPost: ${id}${addr}`;
   }
   return `Adres dostawy: ${order.shippingStreet ?? ""}, ${order.shippingPostalCode ?? ""} ${order.shippingCity ?? ""}`;
@@ -159,8 +147,7 @@ function summaryEmail(order: Order) {
 
 function inProductionEmail(order: Order) {
   const headline = `Drukujemy Twoje zamówienie #${shortId(order._id)}.`;
-  const intro =
-    "Plik jest zatwierdzony, drukarnia partnerska właśnie pracuje nad Twoim zleceniem.";
+  const intro = "Plik jest zatwierdzony, drukarnia partnerska właśnie pracuje nad Twoim zleceniem.";
   const followUp = [
     callout(
       "Standardowy czas produkcji to 24 do 48 godzin. Jak tylko paczka będzie u kuriera, dostaniesz kolejną wiadomość z numerem listu przewozowego.",
@@ -287,9 +274,7 @@ function awaitingPickupEmail(order: Order) {
     "",
     intro,
     "",
-    order.pickupPointAddress
-      ? `Punkt odbioru: ${order.pickupPointAddress}`
-      : "",
+    order.pickupPointAddress ? `Punkt odbioru: ${order.pickupPointAddress}` : "",
     order.pickupCode ? `Kod odbioru: ${order.pickupCode}` : "",
     order.pickupPhone ? `Numer telefonu odbiorcy: ${order.pickupPhone}` : "",
     "",
@@ -381,7 +366,7 @@ function paymentReminderEmail(order: Order, reminderNumber: number) {
 
   const followUp = [
     callout(
-      `Do zapłaty: <strong>${formatPLN.format(order.grossTotal)}</strong> brutto. Płatność zajmuje chwilę - BLIK, karta, Przelewy24, Apple Pay lub Google Pay.`,
+      `Do zapłaty: <strong>${formatPLN.format(order.grossTotal)}</strong>. Płatność zajmuje chwilę - BLIK, karta, Przelewy24, Apple Pay lub Google Pay.`,
     ),
     `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:18px 0 4px"><tr><td style="background:${BRAND.primary};border-radius:12px"><a href="${payUrl(order)}" style="display:inline-block;padding:12px 22px;color:#ffffff;text-decoration:none;font-size:15px;font-weight:600">Zapłać teraz</a></td></tr></table>`,
     plainBlock(
@@ -394,7 +379,7 @@ function paymentReminderEmail(order: Order, reminderNumber: number) {
     "",
     intro,
     "",
-    `Do zapłaty: ${formatPLN.format(order.grossTotal)} brutto.`,
+    `Do zapłaty: ${formatPLN.format(order.grossTotal)}.`,
     `Opłać zamówienie: ${payUrl(order)}`,
     "",
     `Zamówienie #${shortId(order._id)}`,
@@ -513,9 +498,7 @@ function adminNotificationEmail(order: Order) {
     `Nakład: ${formatQty.format(order.quantity)} szt. · ${order.formatLabel}`,
     deliveryLine(order),
     `Klient: ${order.customerName} <${order.customerEmail}> · ${order.customerPhone}`,
-    order.companyName
-      ? `Firma: ${order.companyName}`
-      : "",
+    order.companyName ? `Firma: ${order.companyName}` : "",
     order.source ? `Źródło: ${order.source}` : "",
     `Razem: ${formatPLN.format(order.grossTotal)}`,
     "",
@@ -577,9 +560,7 @@ async function send({
   const secureRaw = process.env.SMTP_SECURE;
 
   if (!host || !portRaw || !user || !pass || !from) {
-    console.log(
-      `[email/dev] Brak SMTP. Pominięto wysyłkę do ${to}: ${subject}`,
-    );
+    console.log(`[email/dev] Brak SMTP. Pominięto wysyłkę do ${to}: ${subject}`);
     return;
   }
 

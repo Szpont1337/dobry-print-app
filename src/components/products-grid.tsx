@@ -7,6 +7,8 @@ import { visibleProducts as products, type Product } from "@/lib/products";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 import { SectionHeader } from "@/components/ui";
 
+import { finalUnitPrice } from "@/lib/pricing";
+
 import { FadeIn } from "./fade-in";
 import { FilePrepBadge } from "./file-prep-badge";
 import { ProductMockup } from "./product-mockup";
@@ -14,7 +16,7 @@ import { ProductMockup } from "./product-mockup";
 function fromPrice(product: Product): number {
   const tierPrices = product.priceTiers?.map((tier) => tier.unitPrice) ?? [];
   const formatPrices = product.formats.map((format) => format.unitPrice);
-  return Math.min(...formatPrices, ...tierPrices);
+  return finalUnitPrice(Math.min(...formatPrices, ...tierPrices));
 }
 
 function formatPLN(value: number): string {

@@ -14,6 +14,7 @@ import {
 } from "@/components/ui";
 import type { Miasto } from "@/data/miasta";
 import { robotsForCityProduct } from "@/lib/miasta-seo";
+import { finalUnitPrice } from "@/lib/pricing";
 import type { Product } from "@/lib/products";
 import { visibleProducts as products } from "@/lib/products";
 
@@ -106,11 +107,9 @@ function buildLocalFaqs(miasto: Miasto, product: Product) {
   return [
     {
       question: `Ile kosztuje druk ${keyword} w ${miasto.nazwa}?`,
-      answer: `Cena ${keyword} dla firm z ${miasto.nazwa} jest taka sama jak w innych miastach Polski — DobrePrinty prowadzi cennik ogólnopolski. ${product.name} w podstawowej specyfikacji startują od ${Math.min(
-        ...product.formats.map((f) => f.unitPrice),
-      ).toFixed(
-        2,
-      )} zł za sztukę przy większych nakładach. Dokładna kwota pojawia się w konfiguratorze po wybraniu formatu, nakładu i wykończenia. Dostawa kurierem do ${miasto.nazwa} wliczona w cenę dla zamówień powyżej 200 zł.`,
+      answer: `Cena ${keyword} dla firm z ${miasto.nazwa} jest taka sama jak w innych miastach Polski — DobrePrinty prowadzi cennik ogólnopolski. ${product.name} w podstawowej specyfikacji startują od ${finalUnitPrice(
+        Math.min(...product.formats.map((f) => f.unitPrice)),
+      ).toFixed(2)} zł za sztukę przy większych nakładach. Dokładna kwota pojawia się w konfiguratorze po wybraniu formatu, nakładu i wykończenia. Dostawa kurierem do ${miasto.nazwa} wliczona w cenę dla zamówień powyżej 200 zł.`,
     },
     {
       question: `Jak długo trwa dostawa ${keyword} do ${miasto.nazwa}?`,
@@ -164,8 +163,8 @@ export function CityProductPageContent({
   const url = `${BASE_URL}/drukarnia-${miasto.slug}/${product.slug}`;
   const cityUrl = `${BASE_URL}/drukarnia-${miasto.slug}`;
   const keyword = product.name.toLowerCase();
-  const lowestPrice = Math.min(
-    ...product.formats.map((f) => f.unitPrice),
+  const lowestPrice = finalUnitPrice(
+    Math.min(...product.formats.map((f) => f.unitPrice)),
   ).toFixed(2);
 
   const branze = buildBranze(miasto);
@@ -184,7 +183,7 @@ export function CityProductPageContent({
         "@type": "LocalBusiness",
         "@id": `${url}#localbusiness`,
         name: `DobrePrinty, ${product.name} ${miasto.nazwa}`,
-        description: `${product.name} dla firm z ${miasto.nazwa}. Druk online z dostawą 24–48 h, cena z VAT od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
+        description: `${product.name} dla firm z ${miasto.nazwa}. Druk online z dostawą 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
         url,
         email: "hej@drukalo.pl",
         priceRange: "29 zł – 4 500 zł",
@@ -398,7 +397,7 @@ export function CityProductPageContent({
               <tr>
                 <th className="px-5 py-4 font-bold sm:px-6 sm:py-5">Format</th>
                 <th className="px-5 py-4 font-bold sm:px-6 sm:py-5">
-                  Cena od (netto/szt.)
+                  Cena od (zł/szt.)
                 </th>
                 <th className="hidden px-5 py-4 font-bold sm:table-cell sm:px-6 sm:py-5">
                   Realizacja
@@ -412,7 +411,7 @@ export function CityProductPageContent({
                     {format.label}
                   </td>
                   <td className="px-5 py-4 font-mono font-semibold tabular-nums text-foreground sm:px-6 sm:py-5">
-                    {format.unitPrice.toFixed(2)} zł
+                    {finalUnitPrice(format.unitPrice).toFixed(2)} zł
                   </td>
                   <td className="hidden px-5 py-4 font-mono text-muted-foreground sm:table-cell sm:px-6 sm:py-5">
                     24–48 h
@@ -424,7 +423,7 @@ export function CityProductPageContent({
         </div>
 
         <p className="mt-5 max-w-3xl text-sm text-muted-foreground">
-          Ceny netto. Podane stawki obowiązują dla standardowej specyfikacji.
+          Ceny finalne. Podane stawki obowiązują dla standardowej specyfikacji.
           Wykończenia (folia, lakier UV, tłoczenie), wyższa gramatura i
           mikronakłady mogą zmieniać cenę — pełna wycena pojawia
           się w konfiguratorze.
@@ -591,8 +590,8 @@ export function buildCityProductMetadata({
   product: Product;
 }) {
   const url = `${BASE_URL}/drukarnia-${miasto.slug}/${product.slug}`;
-  const lowestPrice = Math.min(
-    ...product.formats.map((f) => f.unitPrice),
+  const lowestPrice = finalUnitPrice(
+    Math.min(...product.formats.map((f) => f.unitPrice)),
   ).toFixed(2);
   // Bez „| DobrePrinty" — layout dokleja szablonem „· DobrePrinty"; z sufiksem
   // w obu miejscach tytuł wychodził zdublowany („… | DobrePrinty · DobrePrinty").

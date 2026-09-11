@@ -12,8 +12,6 @@ export default defineSchema({
 
     // Price (all values in PLN)
     unitPrice: v.number(),
-    netTotal: v.number(),
-    vatTotal: v.number(),
     grossTotal: v.number(),
     // Shipping fee (gross, in PLN). 0 / absent means free shipping.
     shippingFee: v.optional(v.number()),
@@ -25,9 +23,7 @@ export default defineSchema({
     companyName: v.optional(v.string()),
 
     // Delivery method
-    deliveryMethod: v.optional(
-      v.union(v.literal("courier"), v.literal("parcel_locker")),
-    ),
+    deliveryMethod: v.optional(v.union(v.literal("courier"), v.literal("parcel_locker"))),
 
     // Shipping address (courier)
     shippingStreet: v.optional(v.string()),
@@ -71,13 +67,7 @@ export default defineSchema({
     source: v.optional(v.string()),
 
     // Payment (Stripe)
-    paymentStatus: v.optional(
-      v.union(
-        v.literal("unpaid"),
-        v.literal("paid"),
-        v.literal("failed"),
-      ),
-    ),
+    paymentStatus: v.optional(v.union(v.literal("unpaid"), v.literal("paid"), v.literal("failed"))),
     stripeSessionId: v.optional(v.string()),
     stripePaymentIntentId: v.optional(v.string()),
     paidAt: v.optional(v.number()),
