@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 // three.js ładowany dopiero po wejściu w tryb 3D (client-only, poza bundlem startowym).
 const loading3D = () => (
@@ -166,7 +166,7 @@ export function PrintPreview({
   }
 
   return (
-    <Card padding="md">
+    <Card className="p-5 sm:p-8">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-sm font-medium text-foreground">Podgląd nadruku</h3>
         {has3D ? (

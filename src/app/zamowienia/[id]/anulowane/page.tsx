@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { api } from "@convex/_generated/api";
@@ -41,13 +42,15 @@ export default async function PaymentCancelledPage({
 
   const convex = getConvexHttp();
   const serverSecret = getServerSecret();
-  const order = await convex.query(api.orders.getById, {
+  // Koszyk = kilka zamówień na jednej sesji; anulujemy całą grupę.
+  const bundle = await convex.query(api.orders.getBundleOrders, {
     serverSecret,
     id: id as Id<"orders">,
   });
+  const order = bundle.find((o) => String(o._id) === id);
   if (!order) notFound();
 
-  // Hard rule: no retry. Expire the Stripe session and mark the order.
+  // Hard rule: no retry. Expire the Stripe session and mark the orders.
   if (sessionId && order.paymentStatus !== "paid") {
     try {
       await stripe.checkout.sessions.expire(sessionId);
@@ -55,13 +58,16 @@ export default async function PaymentCancelledPage({
       // Session may already be expired — not an error.
       console.warn("[stripe/cancel] expire session", err);
     }
-    try {
-      await convex.mutation(api.orders.markPaymentFailed, {
-        serverSecret,
-        stripeSessionId: sessionId,
-      });
-    } catch (err) {
-      console.error("[stripe/cancel] markPaymentFailed", err);
+    for (const member of bundle) {
+      try {
+        await convex.mutation(api.orders.markPaymentFailed, {
+          serverSecret,
+          orderId: String(member._id),
+          stripeSessionId: sessionId,
+        });
+      } catch (err) {
+        console.error("[stripe/cancel] markPaymentFailed", err);
+      }
     }
   }
 
@@ -97,31 +103,35 @@ export default async function PaymentCancelledPage({
           </p>
 
           <div className="mt-2 grid w-full max-w-md gap-3 border border-border bg-background-alt px-5 py-4 text-left text-sm">
-            <div className="flex items-start justify-between gap-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Produkt
-              </span>
-              <span className="text-right font-semibold text-foreground">
-                {order.productName}
-              </span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
+            {bundle.map((member) => (
+              <div key={String(member._id)} className="flex items-start justify-between gap-4">
+                <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                  {member.productName}
+                </span>
+                <span className="text-right font-semibold text-foreground">
+                  {formatPLN.format(member.grossTotal)}
+                </span>
+              </div>
+            ))}
+            <div className="flex items-start justify-between gap-4 border-t border-border pt-3">
               <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 Kwota
               </span>
               <span className="text-right font-semibold text-foreground">
-                {formatPLN.format(order.grossTotal)}
+                {formatPLN.format(bundle.reduce((sum, o) => sum + o.grossTotal, 0))}
               </span>
             </div>
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            <Button href={`/produkty/${order.productSlug}`} variant="primary">
-              Wróć do produktu
+            <Button asChild variant="default">
+              <Link href={`/produkty/${order.productSlug}`}>Wróć do produktu</Link>
             </Button>
-            <Button href="/#produkty" variant="outline">
+            <Button asChild variant="outline">
+<Link href="/#produkty">
               Inne produkty
-            </Button>
+            </Link>
+</Button>
           </div>
         </div>
       </section>

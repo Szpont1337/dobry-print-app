@@ -61,7 +61,7 @@ export function BlogListFilters({ items }: { items: BlogListItem[] }) {
           {(["opublikowany", "all"] as const).map((status) => (
             <Button
               key={status}
-              variant={statusFilter === status ? "primary" : "outline"}
+              variant={statusFilter === status ? "default" : "outline"}
               size="sm"
               onClick={() => setStatusFilter(status)}
             >
@@ -73,7 +73,7 @@ export function BlogListFilters({ items }: { items: BlogListItem[] }) {
 
       <div className="mt-5 flex flex-wrap gap-2">
         <Button
-          variant={activeCategory === "all" ? "primary" : "outline"}
+          variant={activeCategory === "all" ? "default" : "outline"}
           size="sm"
           onClick={() => setActiveCategory("all")}
         >
@@ -82,7 +82,7 @@ export function BlogListFilters({ items }: { items: BlogListItem[] }) {
         {categories.map((cat) => (
           <Button
             key={cat}
-            variant={activeCategory === cat ? "primary" : "outline"}
+            variant={activeCategory === cat ? "default" : "outline"}
             size="sm"
             onClick={() => setActiveCategory(cat)}
           >
@@ -133,7 +133,7 @@ export function BlogListFilters({ items }: { items: BlogListItem[] }) {
                 <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   <span>{CATEGORY_LABELS[item.category]}</span>
                   <span aria-hidden>·</span>
-                  <Badge tone="warning">Wkrótce</Badge>
+                  <Badge variant="warning">Wkrótce</Badge>
                 </div>
                 <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground">
                   {item.title}

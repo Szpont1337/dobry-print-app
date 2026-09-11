@@ -17,7 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { useEditor } from "../store/editor-store";
 import type { NodeKind, SceneNode } from "../types";

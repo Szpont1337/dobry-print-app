@@ -1,6 +1,7 @@
 "use client";
 
 import { useMutation, useQuery } from "convex/react";
+import Link from "next/link";
 import {
   Building2,
   ClipboardList,
@@ -26,7 +27,7 @@ import {
   Input,
   SectionHeader,
 } from "@/components/ui";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
 
@@ -151,10 +152,12 @@ function WelcomeBanner({
               </p>
             </div>
           </div>
-          <Button href="/#produkty" variant="primary" size="lg">
+          <Button asChild variant="default" size="lg">
+<Link href="/#produkty">
             {t("ctaNew")}
             <span aria-hidden>→</span>
-          </Button>
+          </Link>
+</Button>
         </div>
       </div>
     </section>
@@ -203,7 +206,7 @@ function OrdersSection({ token }: { token: string }) {
           title={t("tabHistory")}
           aside={
             !isLoading && orders.length > 0 ? (
-              <Badge tone="neutral">{orders.length} / 50</Badge>
+              <Badge variant="secondary">{orders.length} / 50</Badge>
             ) : null
           }
         />
@@ -242,10 +245,12 @@ function EmptyOrders() {
       <p className="mt-2 max-w-sm text-sm text-muted-foreground">
         {t("emptyHint")}
       </p>
-      <Button href="/#produkty" variant="primary" className="mt-6">
+      <Button asChild variant="default" className="mt-6">
+<Link href="/#produkty">
         {t("chooseProduct")}
         <span aria-hidden>→</span>
-      </Button>
+      </Link>
+</Button>
     </div>
   );
 }
@@ -575,7 +580,7 @@ function ProfileSection({
                 {t("privacy")}
               </span>
             )}
-            <Button type="submit" variant="primary" disabled={busy}>
+            <Button type="submit" variant="default" disabled={busy}>
               {busy && <Loader2 aria-hidden className="size-4 animate-spin" />}
               {busy ? t("saving") : t("save")}
             </Button>

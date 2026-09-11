@@ -84,11 +84,19 @@ export default defineSchema({
     lastPaymentReminderAt: v.optional(v.number()),
     // When true, the reminder cron never auto-cancels this order (manual override).
     autoCancelPaused: v.optional(v.boolean()),
+
+    // Grupa realizacji ("spięcie"): wspólne id zamówień złożonych jednym
+    // koszykiem — jedna płatność, jeden zakup, jedna przesyłka. Zamówienia
+    // zostają osobne (osobne pliki, statusy, faktury). Brak = samodzielne.
+    bundleId: v.optional(v.string()),
+    // Zamówienie wyznaczające punkt dostawy wspólnej paczki.
+    bundleShipToOrderId: v.optional(v.id("orders")),
   })
     .index("by_email", ["customerEmail"])
     .index("by_status", ["status"])
     .index("by_stripe_session", ["stripeSessionId"])
-    .index("by_payment_status", ["paymentStatus"]),
+    .index("by_payment_status", ["paymentStatus"])
+    .index("by_bundle", ["bundleId"]),
 
   pliki_zamowien: defineTable({
     fileKey: v.string(),

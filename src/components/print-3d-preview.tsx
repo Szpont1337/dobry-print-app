@@ -55,10 +55,10 @@ export function Print3DPreview({
   }
 
   return (
-    <Card padding="md">
+    <Card className="p-5 sm:p-8">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-sm font-medium text-foreground">Podgląd 3D</h3>
-        <Badge tone="neutral">obróć myszką</Badge>
+        <Badge variant="secondary">obróć myszką</Badge>
       </div>
 
       <div

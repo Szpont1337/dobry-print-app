@@ -37,7 +37,7 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import { BRANDS, type BrandKey, normalizeBrand } from "@/lib/brands";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
 
@@ -389,7 +389,7 @@ function FilterChip({
     <Button
       type="button"
       size="sm"
-      variant={active ? "primary" : "outline"}
+      variant={active ? "default" : "outline"}
       onClick={onClick}
     >
       {children}
@@ -672,15 +672,11 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                       {order.fileUrl}
                     </p>
                     {/^https?:\/\//.test(order.fileUrl) && (
-                      <Button
-                        href={order.fileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="outline"
-                        size="sm"
-                      >
+                      <Button asChild variant="outline" size="sm">
+<a href={order.fileUrl} target="_blank" rel="noopener noreferrer">
                         {t("openExternalLink")}
-                      </Button>
+                      </a>
+</Button>
                     )}
                   </dd>
                 </div>
@@ -914,7 +910,7 @@ function ShipForm({
         >
           {t("actions.cancel")}
         </Button>
-        <Button type="submit" variant="primary" disabled={busy}>
+        <Button type="submit" variant="default" disabled={busy}>
           {busy && <Loader2 aria-hidden className="size-4 animate-spin" />}
           {t("saveShipment")}
         </Button>
@@ -997,7 +993,7 @@ function PickupForm({
         >
           {t("actions.cancel")}
         </Button>
-        <Button type="submit" variant="primary" disabled={busy}>
+        <Button type="submit" variant="default" disabled={busy}>
           {busy && <Loader2 aria-hidden className="size-4 animate-spin" />}
           {t("savePickup")}
         </Button>
@@ -1062,11 +1058,11 @@ function OrderFiles({ token, orderId }: { token: string; orderId: string }) {
                 {(file.fileSize / 1024 / 1024).toFixed(1)} MB
               </span>
               <Badge
-                tone={
+                variant={
                   file.status === "zatwierdzony"
-                    ? "success"
+                    ? "soft"
                     : file.status === "odrzucony"
-                      ? "danger"
+                      ? "destructive"
                       : "accent"
                 }
                 className="shrink-0"
@@ -1135,7 +1131,7 @@ function ShareLink({ token, orderId }: { token: string; orderId: string }) {
       <div className="flex flex-wrap items-center gap-2">
         <Button
           type="button"
-          variant="primary"
+          variant="default"
           size="sm"
           onClick={generate}
           disabled={busy}
@@ -1310,7 +1306,7 @@ function AllegroOffersSection({ token }: { token: string }) {
           <ShoppingCart aria-hidden className="size-5 text-primary" />
           Aukcje Allegro
         </h2>
-        {offers && <Badge tone="neutral">{offers.length}</Badge>}
+        {offers && <Badge variant="secondary">{offers.length}</Badge>}
       </header>
       <p className="mt-1 text-sm text-muted-foreground">
         Mapowanie produkt (slug) → aukcja, z której odkupujesz. „Kup na Allegro”
@@ -1335,7 +1331,7 @@ function AllegroOffersSection({ token }: { token: string }) {
         />
         <Button
           type="button"
-          variant="primary"
+          variant="default"
           disabled={busy || !productSlug.trim() || !offerUrl.trim()}
           onClick={submit}
         >
@@ -1404,7 +1400,7 @@ function RecentFiles({ token }: { token: string }) {
           <FileText aria-hidden className="size-5 text-primary" />
           {t("filesTitle")}
         </h2>
-        {files && <Badge tone="neutral">{files.length}</Badge>}
+        {files && <Badge variant="secondary">{files.length}</Badge>}
       </header>
       {files === undefined ? (
         <div className="mt-6 grid place-items-center py-8">
@@ -1427,7 +1423,7 @@ function RecentFiles({ token }: { token: string }) {
                   {f.fileKey} · {(f.fileSize / 1024 / 1024).toFixed(1)} MB
                 </p>
               </div>
-              <Badge tone="accent" className="shrink-0">
+              <Badge variant="accent" className="shrink-0">
                 {t(`fileStatus.${f.status}`)}
               </Badge>
             </li>
@@ -1448,7 +1444,7 @@ function UsersList({ token }: { token: string }) {
           <Users aria-hidden className="size-5 text-primary" />
           {t("usersTitle")}
         </h2>
-        {users && <Badge tone="neutral">{users.length}</Badge>}
+        {users && <Badge variant="secondary">{users.length}</Badge>}
       </header>
       {users === undefined ? (
         <div className="mt-6 grid place-items-center py-8">

@@ -1,4 +1,5 @@
 import { CreditCard, Settings2, Truck, UploadCloud } from "lucide-react";
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 
 import { Button, Container, Section, SectionHeader } from "@/components/ui";
@@ -79,9 +80,11 @@ export function CtaBand() {
                 Skonfiguruj produkt w 2 minuty i zobacz cenę od razu — bez zakładania konta.
               </p>
             </div>
-            <Button href="/#produkty" variant="accent" size="lg" className="shrink-0">
+            <Button asChild variant="accent" size="lg" className="shrink-0">
+<Link href="/#produkty">
               Rozpocznij wycenę
-            </Button>
+            </Link>
+</Button>
           </div>
         </div>
       </Container>

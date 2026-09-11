@@ -146,9 +146,11 @@ export function TopicLanding({ temat }: { temat: TematDrukarnia }) {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button href={temat.cta.href} variant="primary" size="lg">
+                <Button asChild variant="default" size="lg">
+<Link href={temat.cta.href}>
                   {temat.cta.label}
-                </Button>
+                </Link>
+</Button>
               </div>
             </div>
 
@@ -291,14 +293,11 @@ export function TopicLanding({ temat }: { temat: TematDrukarnia }) {
               {temat.cta.body}
             </p>
           </div>
-          <Button
-            href={temat.cta.href}
-            variant="primary"
-            size="md"
-            className="shrink-0"
-          >
+          <Button asChild variant="default" size="default" className="shrink-0">
+<Link href={temat.cta.href}>
             {temat.cta.label}
-          </Button>
+          </Link>
+</Button>
         </div>
       </Section>
 

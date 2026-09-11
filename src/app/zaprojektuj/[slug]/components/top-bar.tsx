@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import type { PixiEngine } from "../engine/pixi-engine";
 import { useExportOrder } from "../hooks/use-export-order";

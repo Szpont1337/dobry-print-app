@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cn } from "@/lib/utils";
 import { Award, CheckCircle2, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -17,7 +18,7 @@ import {
   Eyebrow,
   Section,
   SectionHeader,
-  buttonClasses,
+  buttonVariants,
 } from "@/components/ui";
 
 export const revalidate = 86400;
@@ -336,7 +337,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
             <a
               href={`/szablony/${product.slug}.zip`}
               download
-              className={buttonClasses("outline", "sm", "shrink-0")}
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "shrink-0")}
             >
               Pobierz szablon →
             </a>
@@ -463,16 +464,16 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
               {content.ctaCopy}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Button href="#konfigurator" variant="primary" size="lg">
+              <Button asChild variant="default" size="lg">
+<a href="#konfigurator">
                 Skonfiguruj i zamów <span aria-hidden>→</span>
-              </Button>
-              <Button
-                href="mailto:hej@drukalo.pl?subject=Wycena%20druku"
-                variant="outline"
-                size="lg"
-              >
+              </a>
+</Button>
+              <Button asChild variant="outline" size="lg">
+<a href="mailto:hej@drukalo.pl?subject=Wycena%20druku">
                 Wycena indywidualna →
-              </Button>
+              </a>
+</Button>
             </div>
           </div>
         </Container>

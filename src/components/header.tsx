@@ -16,10 +16,12 @@ import { useTranslation } from "react-i18next";
 
 import { api } from "@convex/_generated/api";
 
-import { orderHref, useOrderDraft } from "@/hooks/use-order-draft";
+import { useCart } from "@/hooks/use-cart";
+import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/i18n";
 
 import { AuthDialog, type AuthMode } from "./auth-dialog";
+import { CartSheet } from "./cart-sheet";
 import { useAuth } from "./auth-provider";
 import { Logo } from "./logo";
 import { Button } from "@/components/ui";
@@ -78,7 +80,7 @@ const NAV_LINKS: { href: string; label: string }[] = [
 export function Header() {
   const { user, status, token, setToken, locale, setLocale } = useAuth();
   const { t } = useTranslation("common");
-  const orderDraft = useOrderDraft();
+  const { count: cartCount } = useCart();
   const logout = useMutation(api.authDb.logout);
   const adminInfo = useQuery(api.admin.isAdmin, token ? { token } : "skip");
   const isAdmin = !!adminInfo;
@@ -144,20 +146,20 @@ export function Header() {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
-            {orderDraft && (
-              <Link
-                href={orderHref(orderDraft)}
-                aria-label={t("nav.cart")}
-                title={t("nav.cart")}
-                className={`relative size-10 sm:size-11 ${iconBtn}`}
-              >
-                <ShoppingCartIcon weight="duotone" aria-hidden className="size-5" />
-                <span
-                  aria-hidden
-                  className="absolute right-2 top-2 size-2 rounded-full bg-primary ring-2 ring-card"
-                />
-              </Link>
-            )}
+            <button
+              type="button"
+              onClick={openCartSheet}
+              aria-label={t("nav.cart")}
+              title={t("nav.cart")}
+              className={`relative size-10 sm:size-11 ${iconBtn}`}
+            >
+              <ShoppingCartIcon weight="duotone" aria-hidden className="size-5" />
+              {cartCount > 0 && (
+                <span className="absolute -right-1.5 -top-1.5 grid min-w-5 place-items-center rounded-lg bg-primary px-1 text-[11px] font-bold leading-5 text-primary-foreground ring-2 ring-card">
+                  {cartCount}
+                </span>
+              )}
+            </button>
 
             <div ref={langRef} className="relative">
               <button
@@ -281,7 +283,7 @@ export function Header() {
                 <span className="hidden md:inline-flex">
                   <Button
                     variant="ghost"
-                    size="md"
+                    size="default"
                     onClick={() => openAuth("register")}
                     className="h-10 font-bold sm:h-11"
                   >
@@ -289,8 +291,8 @@ export function Header() {
                   </Button>
                 </span>
                 <Button
-                  variant="subtle"
-                  size="md"
+                  variant="secondary"
+                  size="default"
                   onClick={() => openAuth("login")}
                   aria-label={t("nav.login")}
                   className="h-10 gap-2 rounded-xl px-3.5 font-bold sm:h-11 sm:px-5"
@@ -303,6 +305,8 @@ export function Header() {
           </div>
         </div>
       </header>
+
+      <CartSheet />
 
       <AuthDialog
         open={authOpen}

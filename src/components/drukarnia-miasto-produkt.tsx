@@ -16,7 +16,6 @@ import type { Miasto } from "@/data/miasta";
 import { robotsForCityProduct } from "@/lib/miasta-seo";
 import type { Product } from "@/lib/products";
 import { visibleProducts as products } from "@/lib/products";
-import { getProductContent } from "@/lib/products-content";
 
 export const BASE_URL = "https://www.dobreprinty.pl";
 
@@ -162,10 +161,8 @@ export function CityProductPageContent({
   miasto: Miasto;
   product: Product;
 }) {
-  const content = getProductContent(product.slug);
   const url = `${BASE_URL}/drukarnia-${miasto.slug}/${product.slug}`;
   const cityUrl = `${BASE_URL}/drukarnia-${miasto.slug}`;
-  const productUrl = `${BASE_URL}/produkty/${product.slug}`;
   const keyword = product.name.toLowerCase();
   const lowestPrice = Math.min(
     ...product.formats.map((f) => f.unitPrice),
@@ -291,12 +288,10 @@ export function CityProductPageContent({
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button
-                  href={`/produkty/${product.slug}#konfigurator`}
-                  variant="primary"
-                  size="lg"
-                >
-                  Skonfiguruj {keyword} <span aria-hidden>→</span>
+                <Button asChild variant="default" size="lg">
+                  <Link href={`/produkty/${product.slug}#konfigurator`}>
+                    Skonfiguruj {keyword} <span aria-hidden>→</span>
+                  </Link>
                 </Button>
               </div>
 
@@ -563,19 +558,17 @@ export function CityProductPageContent({
             startowa: {lowestPrice} zł netto za sztukę przy większych nakładach.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button
-              href={`/produkty/${product.slug}#konfigurator`}
-              variant="primary"
-              size="lg"
-            >
-              Skonfiguruj i zamów <span aria-hidden>→</span>
+            <Button asChild variant="default" size="lg">
+              <Link href={`/produkty/${product.slug}#konfigurator`}>
+                Skonfiguruj i zamów <span aria-hidden>→</span>
+              </Link>
             </Button>
-            <Button
-              href={`mailto:hej@drukalo.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
-              variant="outline"
-              size="lg"
-            >
-              Wycena indywidualna →
+            <Button asChild variant="outline" size="lg">
+              <a
+                href={`mailto:hej@drukalo.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
+              >
+                Wycena indywidualna →
+              </a>
             </Button>
           </div>
           <FilePrepBadge className="mx-auto mt-6" />

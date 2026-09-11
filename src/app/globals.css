@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* animacje utility (animate-in / slide-in-from-*) dla komponentów shadcn/ui */
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 

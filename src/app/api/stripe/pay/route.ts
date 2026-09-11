@@ -31,10 +31,14 @@ export async function GET(request: Request) {
 
     const convex = getConvexHttp();
     const serverSecret = getServerSecret();
-    const order = await convex.query(api.orders.getById, {
+    // Koszyk = kilka zamówień z jednej płatności. Link „zapłać" musi domknąć
+    // CAŁĄ grupę — inaczej klient zapłaciłby tylko jedną pozycję i dostał
+    // niekompletną paczkę.
+    const bundle = await convex.query(api.orders.getBundleOrders, {
       serverSecret,
       id: orderId as Id<"orders">,
     });
+    const order = bundle.find((o) => String(o._id) === orderId);
 
     if (!order) {
       return NextResponse.redirect(`${site}/`);
@@ -46,38 +50,51 @@ export async function GET(request: Request) {
       return NextResponse.redirect(`${site}/zamowienia/${order._id}/anulowane`);
     }
 
-    const unitAmount = Math.round(order.grossTotal * 100);
+    // Opłacone pozycje z grupy pomijamy (płatność częściowa nie powinna się
+    // zdarzyć, ale nie każemy płacić dwa razy).
+    const toPay = bundle.filter(
+      (o) => o.paymentStatus !== "paid" && o.status !== "cancelled",
+    );
+    const orders = toPay.length > 0 ? toPay : [order];
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       currency: "pln",
       customer_email: order.customerEmail,
       locale: "pl",
-      line_items: [
-        {
-          quantity: 1,
-          price_data: {
-            currency: "pln",
-            unit_amount: unitAmount,
-            product_data: {
-              name: order.productName,
-              description: `${order.formatLabel} · ${order.quantity} szt.`,
-            },
+      line_items: orders.map((member) => ({
+        quantity: 1,
+        price_data: {
+          currency: "pln" as const,
+          unit_amount: Math.round(member.grossTotal * 100),
+          product_data: {
+            name: member.productName,
+            description: `${member.formatLabel} · ${member.quantity} szt.`,
           },
         },
-      ],
-      metadata: { orderId: String(order._id) },
-      payment_intent_data: { metadata: { orderId: String(order._id) } },
+      })),
+      metadata: {
+        orderId: String(order._id),
+        orderIds: orders.map((o) => String(o._id)).join(","),
+      },
+      payment_intent_data: {
+        metadata: {
+          orderId: String(order._id),
+          orderIds: orders.map((o) => String(o._id)).join(","),
+        },
+      },
       invoice_creation: { enabled: true },
       success_url: `${site}/zamowienia/${order._id}/sukces?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${site}/zamowienia/${order._id}/anulowane?session_id={CHECKOUT_SESSION_ID}`,
     });
 
-    await convex.mutation(api.orders.attachStripeSession, {
-      serverSecret,
-      orderId: order._id,
-      stripeSessionId: session.id,
-    });
+    for (const member of orders) {
+      await convex.mutation(api.orders.attachStripeSession, {
+        serverSecret,
+        orderId: member._id,
+        stripeSessionId: session.id,
+      });
+    }
 
     if (!session.url) {
       return NextResponse.redirect(`${site}/`);

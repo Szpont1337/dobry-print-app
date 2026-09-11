@@ -48,6 +48,12 @@ export type Product = {
    * cena najwyższego progu, którego `minQty <= nakład`. Implikuje `noFees`.
    */
   priceTiers?: { minQty: number; unitPrice: number }[];
+  /**
+   * Minimalny nakład (sztuk). Wynika z technologii druku i JEST WALIDOWANY
+   * server-side przy składaniu zamówienia — konfigurator i koszyk muszą trzymać
+   * tę samą wartość, inaczej klient wyklika nakład, którego backend nie przyjmie.
+   */
+  minQuantity?: number;
   /** ukryty z list, gridów, search i sitemap. Dostępny tylko po bezpośrednim URL. */
   hidden?: boolean;
   /** pomija SETUP_FEE i scale w konfiguratorze — cena = qty * unitPrice */
@@ -69,8 +75,9 @@ export const products: Product[] = [
     print3d: { shape: "sheet", aspect: 0.707 },
     defaultFormatId: "dl",
     defaultQuantity: 1000,
+    minQuantity: 50,
     highlights: [
-      { value: "1+", label: "sztuka minimum" },
+      { value: "50+", label: "sztuk minimum" },
       { value: "6", label: "formatów A7–A3" },
       { value: "3 dni", label: "do wysyłki" },
     ],
@@ -97,6 +104,7 @@ export const products: Product[] = [
     print3d: { shape: "folded", aspect: 0.707 },
     defaultFormatId: "a5",
     defaultQuantity: 500,
+    minQuantity: 40,
     highlights: [
       { value: "3", label: "formaty finalne" },
       { value: "6", label: "stron treści" },
@@ -244,8 +252,9 @@ export const products: Product[] = [
     print3d: { shape: "card", aspect: 1.545 },
     defaultFormatId: "85x55",
     defaultQuantity: 100,
+    minQuantity: 100,
     highlights: [
-      { value: "1+", label: "sztuka minimum" },
+      { value: "100+", label: "sztuk minimum" },
       { value: "2", label: "rozmiary" },
       { value: "2 dni", label: "do wysyłki" },
     ],
@@ -269,8 +278,9 @@ export const products: Product[] = [
     print3d: { shape: "card", aspect: 1.414 },
     defaultFormatId: "a6",
     defaultQuantity: 100,
+    minQuantity: 100,
     highlights: [
-      { value: "1+", label: "sztuka minimum" },
+      { value: "100+", label: "sztuk minimum" },
       { value: "3", label: "formaty" },
       { value: "3 dni", label: "do wysyłki" },
     ],
@@ -295,12 +305,13 @@ export const products: Product[] = [
     defaultQuantity: 25,
     highlights: [
       { value: "1+", label: "sztuka minimum" },
-      { value: "5", label: "formatów A3–B1" },
+      { value: "6", label: "formatów A3–B1" },
       { value: "3 dni", label: "do wysyłki" },
     ],
     formats: [
       { id: "a3", label: "A3 · 297 × 420 mm", unitPrice: 1.8 },
       { id: "a2", label: "A2 · 420 × 594 mm", unitPrice: 3.4 },
+      { id: "b2", label: "B2 · 500 × 707 mm", unitPrice: 4.4 },
       { id: "a1", label: "A1 · 594 × 841 mm", unitPrice: 5.6 },
       { id: "a0", label: "A0 · 841 × 1189 mm", unitPrice: 9.2 },
       { id: "b1", label: "B1 · 707 × 1000 mm", unitPrice: 7.4 },
@@ -338,7 +349,7 @@ export const products: Product[] = [
     name: "Naklejki",
     inHeading: "swoje naklejki",
     tagline:
-      "Naklejki na folii i papierze od 1 sztuki. Kształt prostokąt, koło lub dowolny kontur.",
+      "Naklejki na folii i papierze od 100 sztuk. Kształt prostokąt, koło lub dowolny kontur.",
     intro:
       "Naklejki na każdą powierzchnię: etykiety produktowe, naklejki na auto, gadżety promocyjne, oznaczenia. Drukujemy na papierze, folii białej i transparentnej, z klejem trwałym lub zmywalnym.",
     footerHeadline: "Naklejki. Twoje logo na każdej powierzchni.",
@@ -348,8 +359,9 @@ export const products: Product[] = [
     print3d: { shape: "sheet", aspect: 0.72 },
     defaultFormatId: "a6",
     defaultQuantity: 100,
+    minQuantity: 100,
     highlights: [
-      { value: "1+", label: "sztuka minimum" },
+      { value: "100+", label: "sztuk minimum" },
       { value: "3", label: "podłoża" },
       { value: "2 dni", label: "do wysyłki" },
     ],

@@ -1,16 +1,18 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useMemo, useState } from "react";
 
 import { type Product, unitPriceForQuantity } from "@/lib/products";
-import { Badge, Card, PriceTag, buttonClasses } from "@/components/ui";
-import { cn } from "@/lib/cn";
+import { Badge, Button, Card, PriceTag } from "@/components/ui";
+import { cn } from "@/lib/utils";
 import { FilePrepBadge } from "@/components/file-prep-badge";
 import { PrintPreview } from "@/components/print-preview";
 import UploadPlikDoDruku, { type UploadedFileInfo } from "@/components/UploadPlikDoDruku";
-import { ORDER_DRAFT_EVENT, ORDER_DRAFT_KEY } from "@/hooks/use-order-draft";
+import { openCartSheet } from "@/hooks/use-cart-sheet";
+import { MAX_CART_ITEMS, addCartItem } from "@/lib/cart";
 import { safeCapture } from "@/lib/posthog-client";
 import { MAX_QTY, MIN_QTY, VAT_RATE, clampQuantity, priceFor } from "@/lib/pricing";
 import { FREE_SHIPPING_THRESHOLD, shippingFeeFor, withShipping } from "@/lib/shipping";
@@ -23,10 +25,13 @@ const formatPLN = new Intl.NumberFormat("pl-PL", {
 
 const formatQty = new Intl.NumberFormat("pl-PL");
 
-const quickAmounts = [1, 25, 100, 500, 1000, 5000];
+const QUICK_AMOUNTS = [1, 25, 100, 500, 1000, 5000];
 
 export function ProductConfigurator({ product }: { product: Product }) {
-  const [quantity, setQuantity] = useState(product.defaultQuantity);
+  // Minimum nakładu wynika z technologii druku i jest walidowane server-side —
+  // konfigurator nie może pozwolić zejść niżej.
+  const minQty = Math.max(MIN_QTY, product.minQuantity ?? MIN_QTY);
+  const [quantity, setQuantity] = useState(Math.max(product.defaultQuantity, minQty));
   const [formatId, setFormatId] = useState<string>(product.defaultFormatId);
 
   const format = useMemo(
@@ -49,8 +54,10 @@ export function ProductConfigurator({ product }: { product: Product }) {
   const totals = withShipping(net, vat, gross);
   const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - gross);
 
-  const clamp = clampQuantity;
-  const orderHref = `/zamowienie/${product.slug}?qty=${quantity}&format=${format.id}`;
+  const clamp = (n: number) => clampQuantity(n, minQty);
+  // Skróty nakładu poniżej minimum nie mają sensu; zamiast nich pokazujemy samo
+  // minimum jako pierwszy skrót.
+  const amounts = [minQty, ...QUICK_AMOUNTS.filter((n) => n > minQty)];
   const designHref = `/zaprojektuj/${product.slug}?qty=${quantity}&format=${format.id}`;
 
   // Plik wgrywamy już w konfiguratorze. Stabilny callback — inline arrow tworzyłby
@@ -61,35 +68,47 @@ export function ProductConfigurator({ product }: { product: Product }) {
   }, []);
   const hasFiles = uploadedFiles.length > 0;
 
-  // Zapis szkicu zamówienia (jak „dodaj do koszyka"): konfiguracja + wgrane pliki
-  // trafiają do localStorage, więc przechodzą do formularza zamówienia i zapalają
-  // ikonę koszyka w navbarze. Nie nadpisujemy cudzego szkicu pustą listą — piszemy
-  // dopiero po pierwszym wgraniu pliku (engagedRef), potem synchronizujemy zmiany.
-  const persistDraft = useCallback(
-    (files: UploadedFileInfo[]) => {
-      try {
-        const raw = localStorage.getItem(ORDER_DRAFT_KEY);
-        const prev = raw ? JSON.parse(raw) : {};
-        const next = {
-          ...prev,
-          config: { slug: product.slug, formatId: format.id, quantity },
-          uploadedFiles: files,
-        };
-        localStorage.setItem(ORDER_DRAFT_KEY, JSON.stringify(next));
-        window.dispatchEvent(new Event(ORDER_DRAFT_EVENT));
-      } catch {
-        // brak miejsca / tryb prywatny — pomijamy
-      }
-    },
-    [product.slug, format.id, quantity],
-  );
+  // „Dodaj do koszyka": konfiguracja + wgrane pliki lecą do koszyka
+  // (localStorage). Zamówienie powstaje dopiero przy płatności w /checkout.
+  const router = useRouter();
+  // Potwierdzenie „Dodano" znika po zmianie konfiguracji — inaczej sugerowałoby,
+  // że w koszyku leży nakład/format, którego tam nie ma.
+  const [addedKey, setAddedKey] = useState<string | null>(null);
+  const [cartError, setCartError] = useState<string | null>(null);
+  const configKey = `${format.id}:${quantity}`;
+  const added = addedKey === configKey;
 
-  const engagedRef = useRef(false);
-  useEffect(() => {
-    if (hasFiles) engagedRef.current = true;
-    if (!engagedRef.current) return;
-    persistDraft(uploadedFiles);
-  }, [uploadedFiles, hasFiles, persistDraft]);
+  const addToCart = useCallback(() => {
+    const id = addCartItem({
+      slug: product.slug,
+      formatId: format.id,
+      quantity,
+      files: uploadedFiles,
+    });
+    if (!id) {
+      setCartError(`Koszyk mieści maksymalnie ${MAX_CART_ITEMS} pozycji.`);
+      return null;
+    }
+    setCartError(null);
+    safeCapture("cart_item_added", {
+      product_slug: product.slug,
+      product_name: product.name,
+      format: format.label,
+      quantity,
+      gross_total: totals.gross,
+      has_files: uploadedFiles.length > 0,
+      file_count: uploadedFiles.length,
+    });
+    return id;
+  }, [
+    product.slug,
+    product.name,
+    format.id,
+    format.label,
+    quantity,
+    uploadedFiles,
+    totals.gross,
+  ]);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
@@ -103,7 +122,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
               Zamów w 3 krokach
             </h2>
           </div>
-          <Badge tone="accent">Proste jak druk</Badge>
+          <Badge variant="accent">Proste jak druk</Badge>
         </header>
 
         {product.mockupPreview && (
@@ -126,7 +145,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
             >
               <span>Nakład</span>
               <span className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                od 1 sztuki
+                od {formatQty.format(minQty)} {minQty === 1 ? "sztuki" : "szt."}
               </span>
             </label>
             <div className="mt-3 flex items-stretch gap-2">
@@ -142,11 +161,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
                 id="quantity"
                 type="number"
                 inputMode="numeric"
-                min={MIN_QTY}
+                min={minQty}
                 max={MAX_QTY}
                 step={1}
                 value={quantity}
-                onChange={(e) => setQuantity(clamp(Number(e.target.value) || 1))}
+                onChange={(e) => setQuantity(clamp(Number(e.target.value) || minQty))}
                 className="h-12 min-w-0 flex-1 rounded-lg border border-input bg-card px-4 text-center text-lg font-bold text-foreground tabular-nums outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/25"
               />
               <button
@@ -159,11 +178,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
               </button>
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
-              {quickAmounts.map((n) => (
+              {amounts.map((n) => (
                 <button
                   key={n}
                   type="button"
-                  onClick={() => setQuantity(n)}
+                  onClick={() => setQuantity(clamp(n))}
                   className={cn(
                     "rounded-lg border px-3 py-1.5 text-sm font-semibold tracking-tight transition-colors",
                     quantity === n
@@ -268,7 +287,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       </section>
 
       <aside className="lg:sticky lg:top-28 lg:self-start">
-        <Card padding="md" className="rounded-lg shadow-none">
+        <Card className="p-5 sm:p-8 rounded-lg shadow-none">
           <header className="border-b border-border pb-5">
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Wycena na żywo
@@ -377,25 +396,42 @@ export function ProductConfigurator({ product }: { product: Product }) {
           )}
 
           <div className="mt-8 flex flex-col gap-2">
-            <Link
-              href={orderHref}
-              prefetch
+            <Button
+              type="button"
+              variant="default"
+              size="lg"
+              className="w-full"
               onClick={() => {
-                safeCapture("order_form_opened", {
-                  product_slug: product.slug,
-                  product_name: product.name,
-                  format: format.label,
-                  quantity,
-                  gross_total: totals.gross,
-                  has_files: hasFiles,
-                  file_count: uploadedFiles.length,
-                });
+                if (addToCart()) router.push("/checkout");
               }}
-              className={buttonClasses("primary", "lg", "w-full")}
             >
               {hasFiles ? "Dokończ zamówienie" : "Przejdź do danych i płatności"}
               <span aria-hidden>→</span>
-            </Link>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="lg"
+              className="w-full"
+              onClick={() => {
+                if (addToCart()) {
+                  setAddedKey(configKey);
+                  openCartSheet();
+                }
+              }}
+            >
+              {added ? (
+                <>
+                  <Check aria-hidden className="size-4" />
+                  Dodano do koszyka
+                </>
+              ) : (
+                "Dodaj do koszyka i kupuj dalej"
+              )}
+            </Button>
+            {cartError && (
+              <p className="text-center text-xs font-medium text-destructive">{cartError}</p>
+            )}
           </div>
         </Card>
       </aside>

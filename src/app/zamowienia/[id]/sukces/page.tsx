@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { api } from "@convex/_generated/api";
@@ -6,7 +7,12 @@ import type { Id } from "@convex/_generated/dataModel";
 
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui";
-import { getConvexHttp, getServerSecret, stripe } from "@/lib/stripe";
+import {
+  getConvexHttp,
+  getServerSecret,
+  orderIdsFromMetadata,
+  stripe,
+} from "@/lib/stripe";
 
 export const metadata: Metadata = {
   title: "Płatność potwierdzona · DobrePrinty",
@@ -43,14 +49,17 @@ export default async function PaymentSuccessPage({
   const convex = getConvexHttp();
   const serverSecret = getServerSecret();
   const orderId = id as Id<"orders">;
-  const initial = await convex.query(api.orders.getById, {
+  // Koszyk: jedna płatność = kilka zamówień spiętych bundleId. Pokazujemy
+  // wszystko, co klient właśnie opłacił.
+  const initial = await convex.query(api.orders.getBundleOrders, {
     serverSecret,
     id: orderId,
   });
-  if (!initial) notFound();
+  if (initial.length === 0) notFound();
+  const anyUnpaid = initial.some((o) => o.paymentStatus !== "paid");
 
   // Synchronous verification with Stripe (like an OAuth callback) — no need to wait for the webhook.
-  if (sessionId && initial.paymentStatus !== "paid") {
+  if (sessionId && anyUnpaid) {
     try {
       const session = await stripe.checkout.sessions.retrieve(sessionId);
       if (session.payment_status === "paid") {
@@ -58,26 +67,33 @@ export default async function PaymentSuccessPage({
           typeof session.payment_intent === "string"
             ? session.payment_intent
             : session.payment_intent?.id;
-        await convex.mutation(api.orders.markPaid, {
-          serverSecret,
-          stripeSessionId: session.id,
-          paymentIntentId,
-        });
+        const ids = orderIdsFromMetadata(session.metadata);
+        const targets = ids.length > 0 ? ids : initial.map((o) => String(o._id));
+        for (const target of targets) {
+          await convex.mutation(api.orders.markPaid, {
+            serverSecret,
+            orderId: target,
+            stripeSessionId: session.id,
+            paymentIntentId,
+          });
+        }
       }
     } catch (err) {
       console.warn("[stripe/sukces] verify session", err);
     }
   }
 
-  const order =
-    sessionId && initial.paymentStatus !== "paid"
-      ? ((await convex.query(api.orders.getById, {
+  const bundle =
+    sessionId && anyUnpaid
+      ? ((await convex.query(api.orders.getBundleOrders, {
           serverSecret,
           id: orderId,
         })) ?? initial)
       : initial;
+  const order = bundle.find((o) => String(o._id) === id) ?? bundle[0];
+  const grossTotal = bundle.reduce((sum, o) => sum + o.grossTotal, 0);
 
-  const paid = order.paymentStatus === "paid";
+  const paid = bundle.every((o) => o.paymentStatus === "paid");
 
   return (
     <main className="relative flex flex-1 flex-col bg-background-alt">
@@ -116,7 +132,9 @@ export default async function PaymentSuccessPage({
             )}
           </span>
           <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-primary">
-            Zamówienie #{shortId(String(order._id))}
+            {bundle.length > 1
+              ? `Zamówienia: ${bundle.map((o) => `#${shortId(String(o._id))}`).join(" · ")}`
+              : `Zamówienie #${shortId(String(order._id))}`}
           </p>
           {paid ? (
             <>
@@ -149,39 +167,42 @@ export default async function PaymentSuccessPage({
           )}
 
           <div className="mt-2 grid w-full max-w-md gap-3 border border-border bg-background-alt px-5 py-4 text-left text-sm">
-            <div className="flex items-start justify-between gap-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Produkt
-              </span>
-              <span className="text-right font-semibold text-foreground">
-                {order.productName}
-              </span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Nakład
-              </span>
-              <span className="text-right font-semibold text-foreground">
-                {formatQty.format(order.quantity)} szt. · {order.formatLabel}
-              </span>
-            </div>
+            {bundle.map((member) => (
+              <div key={String(member._id)} className="flex items-start justify-between gap-4">
+                <span className="min-w-0 text-muted-foreground">
+                  <span className="block font-semibold text-foreground">
+                    {member.productName}
+                  </span>
+                  <span className="block font-mono text-xs uppercase tracking-wider">
+                    {formatQty.format(member.quantity)} szt. · {member.formatLabel}
+                  </span>
+                </span>
+                <span className="shrink-0 text-right font-semibold text-foreground tabular-nums">
+                  {formatPLN.format(member.grossTotal)}
+                </span>
+              </div>
+            ))}
             <div className="flex items-start justify-between gap-4 border-t border-border pt-3">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
                 Razem brutto
               </span>
               <span className="text-right font-extrabold tracking-tight text-foreground">
-                {formatPLN.format(order.grossTotal)}
+                {formatPLN.format(grossTotal)}
               </span>
             </div>
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/konto" variant="primary">
+            <Button asChild variant="default">
+<Link href="/konto">
               Zobacz w panelu
-            </Button>
-            <Button href="/" variant="outline">
+            </Link>
+</Button>
+            <Button asChild variant="outline">
+<Link href="/">
               Strona główna
-            </Button>
+            </Link>
+</Button>
           </div>
         </div>
       </section>

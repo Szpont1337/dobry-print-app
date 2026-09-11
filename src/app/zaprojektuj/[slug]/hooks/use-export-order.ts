@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
 import { api } from "@convex/_generated/api";
-import { ORDER_DRAFT_EVENT, ORDER_DRAFT_KEY } from "@/hooks/use-order-draft";
+import { upsertCartItem } from "@/lib/cart";
 
 import type { PixiEngine } from "../engine/pixi-engine";
 import { useEditor } from "../store/editor-store";
@@ -22,9 +22,9 @@ interface UploadedFileInfo {
 }
 
 /**
- * Eksport projektu → PDF → upload do chmury (B2) → dopięcie pliku do szkicu
- * zamówienia → przekierowanie na /zamowienie. Reużywa tej samej ścieżki uploadu
- * co ręczne wgrywanie plików, więc projekt staje się plikiem zamówienia.
+ * Eksport projektu → PDF → upload do chmury (B2) → dopięcie pliku do pozycji
+ * koszyka → przekierowanie na /checkout. Reużywa tej samej ścieżki uploadu co
+ * ręczne wgrywanie plików, więc projekt staje się plikiem zamówienia.
  */
 export function useExportOrder({
   engine,
@@ -116,12 +116,15 @@ export function useExportOrder({
         fileSize: blob.size,
         fileType: pdf.mimeType,
       };
-      writeOrderDraft({ productSlug, formatId, quantity, design });
+      upsertCartItem({
+        slug: productSlug,
+        formatId,
+        quantity,
+        files: [design],
+      });
 
       setPhase("redirecting");
-      router.push(
-        `/zamowienie/${productSlug}?qty=${quantity}&format=${encodeURIComponent(formatId)}`,
-      );
+      router.push("/checkout");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Nie udało się zapisać projektu.");
       setPhase("error");
@@ -144,35 +147,4 @@ export function useExportOrder({
     exportAndOrder,
     download,
   };
-}
-
-function writeOrderDraft({
-  productSlug,
-  formatId,
-  quantity,
-  design,
-}: {
-  productSlug: string;
-  formatId: string;
-  quantity: number;
-  design: UploadedFileInfo;
-}): void {
-  try {
-    const raw = localStorage.getItem(ORDER_DRAFT_KEY);
-    const prev = raw ? (JSON.parse(raw) as Record<string, unknown>) : {};
-    const prevFiles = Array.isArray(prev.uploadedFiles)
-      ? (prev.uploadedFiles as UploadedFileInfo[])
-      : [];
-    // Zastępujemy poprzedni eksport (prefiks „projekt-”), zachowując inne pliki.
-    const kept = prevFiles.filter((f) => !f.fileName.startsWith("projekt-"));
-    const next = {
-      ...prev,
-      config: { slug: productSlug, formatId, quantity },
-      uploadedFiles: [...kept, design].slice(0, 10),
-    };
-    localStorage.setItem(ORDER_DRAFT_KEY, JSON.stringify(next));
-    window.dispatchEvent(new Event(ORDER_DRAFT_EVENT));
-  } catch {
-    // brak miejsca / tryb prywatny — pomijamy
-  }
 }

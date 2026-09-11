@@ -1,39 +1,93 @@
-import { forwardRef, type HTMLAttributes } from "react";
+import * as React from "react"
+import { cn } from "@/lib/utils"
 
-import { cn } from "@/lib/cn";
-
-export type CardPadding = "none" | "sm" | "md" | "lg";
-
-const PADDING: Record<CardPadding, string> = {
-  none: "",
-  sm: "p-4",
-  md: "p-5 sm:p-8",
-  lg: "p-8 sm:p-13",
-};
-
-export type CardProps = HTMLAttributes<HTMLDivElement> & {
-  /** Dark green gradient surface (hero / CTA cards). */
-  dark?: boolean;
-  padding?: CardPadding;
-};
-
-/** Rounded surface card. Light by default, dark-green gradient when `dark`. */
-export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
-  { dark = false, padding = "md", className, ...rest },
-  ref,
-) {
+function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      ref={ref}
+      data-slot="card"
       className={cn(
-        "rounded-2xl",
-        dark
-          ? "border border-white/5 bg-gradient-to-br from-hero-card-from to-hero-card-to text-footer-foreground shadow-lg"
-          : "border border-border bg-card text-card-foreground shadow-sm",
-        PADDING[padding],
-        className,
+        // Bez wymuszonego paddingu: karty w tym projekcie dostają go z
+        // klasy (p-5 sm:p-8) albo z CardHeader/CardContent, jak w shadcn.
+        "flex flex-col rounded-2xl border border-border bg-card text-card-foreground shadow-sm",
+        className
       )}
-      {...rest}
+      {...props}
     />
-  );
-});
+  )
+}
+
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props}
+    />
+  )
+}
+
+function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-sm text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-6", className)}
+      {...props}
+    />
+  )
+}
+
+function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+}

@@ -15,7 +15,7 @@ import {
   createRef,
 } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 export interface CardSwapProps {
   width?: number | string;

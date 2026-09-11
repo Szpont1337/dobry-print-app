@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { ACCEPTED_IMAGE_TYPES, FONT_FAMILIES } from "../constant/editor";
 import { useEditor } from "../store/editor-store";

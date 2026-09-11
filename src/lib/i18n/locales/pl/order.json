@@ -75,5 +75,31 @@
     "apiError": "Nie udało się pobrać listy paczkomatów.",
     "apiStatus": "API InPost zwróciło status {{status}}.",
     "change": "Zmień"
+  },
+  "cart": {
+    "loading": "Wczytuję koszyk…",
+    "redirecting": "Dodaję do koszyka…",
+    "emptyTitle": "Koszyk jest pusty",
+    "emptyBody": "Wybierz produkt, ustaw nakład i format, wgraj projekt — możesz dorzucić kilka pozycji i zapłacić za wszystko jedną płatnością.",
+    "emptyCta": "Zobacz produkty",
+    "itemsHeading": "Pozycje w koszyku ({{count}})",
+    "addMore": "+ Dodaj kolejny produkt",
+    "remove": "Usuń pozycję",
+    "quantity": "Nakład",
+    "decrease": "Zmniejsz nakład",
+    "increase": "Zwiększ nakład",
+    "design": "Projekt do druku",
+    "designRequired": "Dodaj projekt do tej pozycji",
+    "notesSummary": "Uwagi do tej pozycji",
+    "summary": "Podsumowanie",
+    "shipping": "Wysyłka",
+    "shippingFree": "Gratis",
+    "total": "Razem brutto",
+    "freeShippingHint": "Wysyłka płatna — dodaj jeszcze {{missing}} do darmowej wysyłki.",
+    "freeShippingDone": "Darmowa wysyłka w 3 dni robocze.",
+    "errMissingDesign": "Dodaj projekt do pozycji: {{products}}.",
+    "checkout": "Przejdź do płatności",
+    "designLater": "Projekt dodasz w następnym kroku",
+    "description": "Podgląd koszyka z pozycjami i podsumowaniem."
   }
 }

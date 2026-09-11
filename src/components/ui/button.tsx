@@ -1,105 +1,64 @@
-import Link from "next/link";
-import {
-  forwardRef,
-  type AnchorHTMLAttributes,
-  type ButtonHTMLAttributes,
-  type ReactNode,
-} from "react";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+import { Slot } from "radix-ui"
 
-import { cn } from "@/lib/cn";
+const buttonVariants = cva(
+  // Baza w stylu DobrePrinty: rounded-lg (nigdy rounded-full), półgruby krój,
+  // ring focusu z tokenu --ring.
+  "inline-flex shrink-0 items-center justify-center gap-2 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap outline-none transition-[background-color,border-color,color,filter,box-shadow] focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 active:bg-primary/95",
+        // Jasny, miętowy wariant marki (CTA na ciemnym tle).
+        accent:
+          "bg-accent text-accent-foreground shadow-sm hover:brightness-[1.04] active:brightness-95",
+        destructive:
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
+        outline:
+          "border border-border bg-card text-foreground hover:border-primary/40 hover:bg-muted",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/70",
+        ghost: "text-foreground hover:bg-muted",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-11 gap-2 px-5 text-sm sm:text-base",
+        sm: "h-9 gap-1.5 px-3 text-sm",
+        lg: "h-13 gap-2 px-8 text-base",
+        icon: "size-11",
+        "icon-sm": "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
 
-export type ButtonVariant = "primary" | "accent" | "outline" | "ghost" | "subtle";
-export type ButtonSize = "sm" | "md" | "lg";
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+  }) {
+  const Comp = asChild ? Slot.Root : "button"
 
-const VARIANTS: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 active:bg-primary/95",
-  accent: "bg-accent text-accent-foreground shadow-sm hover:brightness-[1.04] active:brightness-95",
-  outline: "border border-border bg-card text-foreground hover:border-primary/40 hover:bg-muted",
-  ghost: "text-foreground hover:bg-muted",
-  subtle: "bg-secondary text-secondary-foreground hover:bg-secondary/70",
-};
-
-const SIZES: Record<ButtonSize, string> = {
-  sm: "h-9 gap-1.5 px-3 text-sm",
-  md: "h-11 gap-2 px-5 text-sm sm:text-base",
-  lg: "h-13 gap-2 px-8 text-base",
-};
-
-const BASE =
-  "inline-flex shrink-0 items-center justify-center rounded-lg font-semibold tracking-tight whitespace-nowrap outline-none transition-[background-color,border-color,color,filter,box-shadow] focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
-
-export function buttonClasses(
-  variant: ButtonVariant = "primary",
-  size: ButtonSize = "md",
-  className?: string,
-): string {
-  return cn(BASE, VARIANTS[variant], SIZES[size], className);
+  return (
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
 }
 
-type CommonProps = {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  className?: string;
-  children?: ReactNode;
-};
-
-type ButtonAsButton = CommonProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & {
-    href?: undefined;
-  };
-
-type ButtonAsLink = CommonProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href"> & {
-    href: string;
-  };
-
-export type ButtonProps = ButtonAsButton | ButtonAsLink;
-
-/**
- * Button primitive. Renders a `<button>`, or a link when `href` is set
- * (next/link for internal paths, plain `<a>` for external/anchors).
- */
-export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  function Button({ variant = "primary", size = "md", className, children, ...rest }, ref) {
-    const classes = buttonClasses(variant, size, className);
-
-    if ("href" in rest && rest.href !== undefined) {
-      const { href, ...anchorRest } = rest as ButtonAsLink;
-      const isInternal = href.startsWith("/");
-      if (isInternal) {
-        return (
-          <Link
-            ref={ref as React.Ref<HTMLAnchorElement>}
-            href={href}
-            className={classes}
-            {...anchorRest}
-          >
-            {children}
-          </Link>
-        );
-      }
-      return (
-        <a
-          ref={ref as React.Ref<HTMLAnchorElement>}
-          href={href}
-          className={classes}
-          {...anchorRest}
-        >
-          {children}
-        </a>
-      );
-    }
-
-    const { type, ...buttonRest } = rest as ButtonAsButton;
-    return (
-      <button
-        ref={ref as React.Ref<HTMLButtonElement>}
-        type={type ?? "button"}
-        className={classes}
-        {...buttonRest}
-      >
-        {children}
-      </button>
-    );
-  },
-);
+export { Button, buttonVariants }

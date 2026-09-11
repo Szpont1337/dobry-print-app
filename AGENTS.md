@@ -27,6 +27,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Validation: always `zod`.
 
 ## UI & styling
+- **shadcn/ui zawsze.** Każdy nowy komponent UI (sheet, drawer, dialog, select, tabs, tooltip, dropdown…) bierzemy z shadcn: `bunx shadcn@latest add <komponent>` → ląduje w `src/components/ui` i stamtąd go używamy. Nie piszemy własnych odpowiedników od zera i nie dokładamy innych bibliotek UI. Projekt jest skonfigurowany (`components.json`, styl `new-york`, `cn` z `@/lib/utils`, tokeny z `globals.css`, animacje z `tw-animate-css`). Prymitywy (`button`, `input`, `textarea`, `card`, `badge`, `sheet`, `drawer`) są już z shadcn — warianty dostrojone do designu marki (rounded-lg, wysokości h-9/h-11/h-13, warianty `accent`/`soft`/`warning`/`info`). Edytujemy te pliki u siebie zamiast owijać je własnymi wrapperami; linki w przyciskach robimy przez `asChild` + `<Link>`.
 - Build from reusable primitives in `@/components/ui`; compose new components from them, don't reinvent.
 - All text/typography via the `Typography` component — no raw heading/text tags.
 - Design system only: use colors/tokens from `src/app/globals.css`. Never add custom Tailwind colors or hardcoded color values anywhere.

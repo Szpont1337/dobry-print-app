@@ -7,6 +7,7 @@ import {
   assertStripeConfigured,
   getConvexHttp,
   getServerSecret,
+  orderIdsFromMetadata,
   stripe,
 } from "@/lib/stripe";
 
@@ -58,11 +59,25 @@ export async function POST(request: Request) {
             typeof session.payment_intent === "string"
               ? session.payment_intent
               : session.payment_intent?.id;
-          await convex.mutation(api.orders.markPaid, {
-            serverSecret,
-            stripeSessionId: session.id,
-            paymentIntentId,
-          });
+          // Koszyk = kilka zamówień na jednej sesji. Księgujemy każde po jego
+          // id z metadanych; bez tego znalezione byłoby tylko jedno.
+          const orderIds = orderIdsFromMetadata(session.metadata);
+          if (orderIds.length > 0) {
+            for (const orderId of orderIds) {
+              await convex.mutation(api.orders.markPaid, {
+                serverSecret,
+                orderId,
+                stripeSessionId: session.id,
+                paymentIntentId,
+              });
+            }
+          } else {
+            await convex.mutation(api.orders.markPaid, {
+              serverSecret,
+              stripeSessionId: session.id,
+              paymentIntentId,
+            });
+          }
 
           const posthog = getPostHogServer();
           if (posthog) {
@@ -91,10 +106,21 @@ export async function POST(request: Request) {
       case "checkout.session.async_payment_failed":
       case "checkout.session.expired": {
         const session = event.data.object;
-        await convex.mutation(api.orders.markPaymentFailed, {
-          serverSecret,
-          stripeSessionId: session.id,
-        });
+        const orderIds = orderIdsFromMetadata(session.metadata);
+        if (orderIds.length > 0) {
+          for (const orderId of orderIds) {
+            await convex.mutation(api.orders.markPaymentFailed, {
+              serverSecret,
+              orderId,
+              stripeSessionId: session.id,
+            });
+          }
+        } else {
+          await convex.mutation(api.orders.markPaymentFailed, {
+            serverSecret,
+            stripeSessionId: session.id,
+          });
+        }
         break;
       }
       default:

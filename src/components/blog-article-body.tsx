@@ -225,14 +225,11 @@ export function BlogArticleBody({
               <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-secondary-foreground/80 sm:text-lg">
                 {section.body}
               </p>
-              <Button
-                href={section.href}
-                variant="primary"
-                size="lg"
-                className="mt-6"
-              >
+              <Button asChild variant="default" size="lg" className="mt-6">
+<Link href={section.href}>
                 {section.label}
-              </Button>
+              </Link>
+</Button>
             </aside>
           );
         }

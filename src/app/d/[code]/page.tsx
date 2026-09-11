@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { cn } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
 import { api } from "@convex/_generated/api";
 
-import { buttonClasses, Card, Eyebrow } from "@/components/ui";
+import { buttonVariants, Card, Eyebrow } from "@/components/ui";
 import { getConvexHttp } from "@/lib/serverEnv";
 
 export const dynamic = "force-dynamic";
@@ -36,7 +37,7 @@ export default async function SharePage({
 
   return (
     <main className="mx-auto w-full max-w-2xl px-5 py-13 sm:px-8 sm:py-21">
-      <Card padding="md">
+      <Card className="p-5 sm:p-8">
         <Eyebrow className="font-mono">DobrePrinty · pliki do druku</Eyebrow>
         <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground">
           Zamówienie #{data.orderShortId}
@@ -82,7 +83,7 @@ export default async function SharePage({
           <>
             <a
               href={`/d/${code}/zip`}
-              className={buttonClasses("primary", "md", "mt-8 w-full")}
+              className={cn(buttonVariants({ variant: "default", size: "default" }), "mt-8 w-full")}
             >
               Pobierz wszystko jako ZIP ({data.files.length})
             </a>
@@ -101,7 +102,7 @@ export default async function SharePage({
                   </span>
                   <a
                     href={`/d/${code}/f/${i}`}
-                    className={buttonClasses("outline", "sm", "shrink-0")}
+                    className={cn(buttonVariants({ variant: "outline", size: "sm" }), "shrink-0")}
                   >
                     Pobierz
                   </a>

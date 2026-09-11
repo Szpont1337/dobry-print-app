@@ -448,10 +448,12 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
               ) : null}
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button href="/#produkty" variant="primary" size="lg">
+                <Button asChild variant="default" size="lg">
+<Link href="/#produkty">
                   Wyceń druk dla {miasto.nazwa}
                   <span aria-hidden>→</span>
-                </Button>
+                </Link>
+</Button>
               </div>
             </div>
 
@@ -647,13 +649,12 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
               Biuro obsługi przygotuje wycenę indywidualną w 2 godziny robocze.
             </p>
           </div>
-          <Button
-            href={`mailto:hej@drukalo.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
-            variant="primary"
-            size="md"
-            className="shrink-0"
-          >
-            Napisz do nas →
+          <Button asChild variant="default" className="shrink-0">
+            <a
+              href={`mailto:hej@drukalo.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
+            >
+              Napisz do nas →
+            </a>
           </Button>
         </div>
       </Section>

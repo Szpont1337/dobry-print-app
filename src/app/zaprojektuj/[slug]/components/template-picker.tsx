@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { useEffect } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { STARTER_TEMPLATES } from "../constant/templates";
 import { useEditor } from "../store/editor-store";

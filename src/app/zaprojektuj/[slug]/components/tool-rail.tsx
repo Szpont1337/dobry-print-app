@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { useRef, useState } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { ACCEPTED_IMAGE_TYPES } from "../constant/editor";
 import { useEditor } from "../store/editor-store";

@@ -75,5 +75,31 @@
     "apiError": "Couldn't load the locker list.",
     "apiStatus": "InPost API returned status {{status}}.",
     "change": "Change"
+  },
+  "cart": {
+    "loading": "Loading your cart…",
+    "redirecting": "Adding to cart…",
+    "emptyTitle": "Your cart is empty",
+    "emptyBody": "Pick a product, set the quantity and format, upload your design — you can add several items and pay for everything in one go.",
+    "emptyCta": "Browse products",
+    "itemsHeading": "Items in cart ({{count}})",
+    "addMore": "+ Add another product",
+    "remove": "Remove item",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "design": "Print-ready design",
+    "designRequired": "Add a design to this item",
+    "notesSummary": "Notes for this item",
+    "summary": "Summary",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "total": "Total gross",
+    "freeShippingHint": "Shipping is paid — add {{missing}} more for free shipping.",
+    "freeShippingDone": "Free shipping, dispatched in 3 business days.",
+    "errMissingDesign": "Add a design to: {{products}}.",
+    "checkout": "Go to payment",
+    "designLater": "You'll add the design in the next step",
+    "description": "Cart preview with items and totals."
   }
 }

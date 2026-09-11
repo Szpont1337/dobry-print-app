@@ -11,6 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         "/api/",
         "/admin/",
         "/konto",
+        "/checkout",
         "/zamowienia/",
         "/zamowienie/",
         // RSC payload requests App Routera (prefetch) — losowy hash w _rsc

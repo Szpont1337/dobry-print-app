@@ -32,17 +32,24 @@ export type ComputedOrder = {
   shippingFee: number;
 };
 
+/** Pozycja policzona BEZ wysyłki. Kwoty SUROWE (bez round2) — w koszyku
+ *  sumujemy je przed doliczeniem wysyłki, więc zaokrąglamy dopiero na końcu. */
+export type ComputedItem = Omit<ComputedOrder, "shippingFee">;
+
 /**
  * Look the product/format up in the catalog and recompute totals. Throws on an
  * unknown product/format or an out-of-range quantity — that doubles as
  * server-side validation of the client-supplied slug/format/quantity.
+ *
+ * Wysyłki NIE dolicza — robi to `computeOrderTotals` (jedna pozycja) albo
+ * `splitCartTotals` (koszyk: jedna wysyłka od sumy).
  */
-export function computeOrderTotals(
+export function computeItemTotals(
   productSlug: string,
   formatId: string,
   quantity: number,
   locale?: Locale,
-): ComputedOrder {
+): ComputedItem {
   const q = Math.round(quantity);
   if (!Number.isFinite(q) || q < MIN_QTY || q > MAX_QTY) {
     throw new Error(tErr(locale, "Nieprawidłowy nakład.", "Invalid quantity."));
@@ -50,6 +57,10 @@ export function computeOrderTotals(
   const product = products.find((p) => p.slug === productSlug);
   if (!product) {
     throw new Error(tErr(locale, "Nieznany produkt.", "Unknown product."));
+  }
+  // Minimum nakładu per produkt (np. naklejki od 100 szt.).
+  if (q < (product.minQuantity ?? MIN_QTY)) {
+    throw new Error(tErr(locale, "Nieprawidłowy nakład.", "Invalid quantity."));
   }
   const format = product.formats.find((f) => f.id === formatId);
   if (!format) {
@@ -60,16 +71,65 @@ export function computeOrderTotals(
   const productNet = priceFor(q, unitPrice, product.noFees ?? false);
   const productVat = productNet * VAT_RATE;
   const productGross = productNet + productVat;
-  const totals = withShipping(productNet, productVat, productGross);
 
   return {
     productName: product.name,
     formatLabel: format.label,
     unitPrice,
     quantity: q,
+    netTotal: productNet,
+    vatTotal: productVat,
+    grossTotal: productGross,
+  };
+}
+
+/** Jedna pozycja + wysyłka liczona od jej wartości. Ścieżka `submitOrder`. */
+export function computeOrderTotals(
+  productSlug: string,
+  formatId: string,
+  quantity: number,
+  locale?: Locale,
+): ComputedOrder {
+  const item = computeItemTotals(productSlug, formatId, quantity, locale);
+  const totals = withShipping(item.netTotal, item.vatTotal, item.grossTotal);
+  return {
+    ...item,
     netTotal: round2(totals.net),
     vatTotal: round2(totals.vat),
     grossTotal: round2(totals.gross),
     shippingFee: round2(totals.shippingFee),
   };
+}
+
+/** Kwoty jednego zamówienia z koszyka (po rozdzieleniu wysyłki). */
+export type CartLineTotals = {
+  netTotal: number;
+  vatTotal: number;
+  grossTotal: number;
+  shippingFee: number;
+};
+
+/**
+ * Rozdziela wysyłkę na pozycje koszyka. Wysyłka liczona JEDEN raz — od sumy
+ * brutto całego koszyka (próg darmowej wysyłki też patrzy na sumę) — i w
+ * całości doklejona do pierwszego zamówienia. Dzięki temu suma `grossTotal`
+ * wszystkich zamówień = kwota realnie pobrana w Stripe.
+ */
+export function splitCartTotals(items: ComputedItem[]): CartLineTotals[] {
+  const net = items.reduce((sum, i) => sum + i.netTotal, 0);
+  const vat = items.reduce((sum, i) => sum + i.vatTotal, 0);
+  const gross = items.reduce((sum, i) => sum + i.grossTotal, 0);
+  const cart = withShipping(net, vat, gross);
+  const feeNet = cart.net - net;
+  const feeVat = cart.vat - vat;
+
+  return items.map((item, index) => {
+    const first = index === 0;
+    return {
+      netTotal: round2(item.netTotal + (first ? feeNet : 0)),
+      vatTotal: round2(item.vatTotal + (first ? feeVat : 0)),
+      grossTotal: round2(item.grossTotal + (first ? cart.shippingFee : 0)),
+      shippingFee: first ? round2(cart.shippingFee) : 0,
+    };
+  });
 }
