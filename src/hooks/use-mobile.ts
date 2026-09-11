@@ -11,13 +11,6 @@ function subscribe(onChange: () => void): () => void {
   return () => mql.removeEventListener("change", onChange);
 }
 
-/**
- * Rozróżnienie telefon/desktop po media query (konwencja shadcn/ui, ale przez
- * `useSyncExternalStore` zamiast efektu z setState — bez kaskady renderów).
- *
- * Na serwerze i w trakcie hydratacji zwraca `false`; komponenty, które z tego
- * korzystają, montują się po interakcji, więc nie ma rozjazdu hydratacji.
- */
 export function useIsMobile(): boolean {
   return useSyncExternalStore(
     subscribe,
