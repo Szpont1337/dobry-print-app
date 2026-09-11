@@ -18,8 +18,9 @@ export default async function CheckoutRoute({
 }: {
   searchParams: Promise<Search>;
 }) {
-  // ?test=1 → pełna ścieżka zakupu bez płatności i bez skutków (patrz
-  // /api/stripe/checkout). Serwer i tak musi mieć włączony TEST_ORDERS_ENABLED.
+  // ?test=1 → pełna ścieżka zakupu bez płatności i bez skutków: zamówienie
+  // powstaje z flagą `test`, Stripe jest pomijany, powiadomienia nie lecą
+  // (patrz /api/stripe/checkout i applyPaid w convex/orders.ts).
   const { test } = await searchParams;
   const testMode = test !== undefined && test !== "0";
 

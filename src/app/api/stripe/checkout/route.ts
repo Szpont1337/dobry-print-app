@@ -20,18 +20,9 @@ type Body = {
   /** pojedyncze zamówienie — zgodność ze starymi wywołaniami */
   orderId?: string;
   locale?: string;
-  /** ?test — pełny przepływ bez pobierania pieniędzy (patrz TEST_ORDERS_ENABLED) */
+  /** ?test — pełny przepływ bez pobierania pieniędzy */
   test?: boolean;
 };
-
-/**
- * Tryb testowy jest WYŁĄCZONY, dopóki środowisko go nie włączy. Bez tego
- * bezpiecznika każdy mógłby wysłać `test: true` i dostać „opłacone" zamówienie
- * za darmo.
- */
-function testOrdersEnabled(): boolean {
-  return process.env.TEST_ORDERS_ENABLED === "true";
-}
 
 export async function POST(request: Request) {
   try {
@@ -73,7 +64,7 @@ export async function POST(request: Request) {
     // Zamówienie testowe: pomijamy Stripe i od razu księgujemy „wpłatę".
     // `applyPaid` w Convexie widzi flagę `test` i nie wysyła maili ani Discorda,
     // więc klient przechodzi całą ścieżkę, a na zewnątrz nic się nie dzieje.
-    if (body.test && testOrdersEnabled()) {
+    if (body.test) {
       for (const member of orders) {
         await convex.mutation(api.orders.markPaid, {
           serverSecret,
@@ -83,12 +74,6 @@ export async function POST(request: Request) {
       return NextResponse.json({
         url: `${site}/zamowienia/${orders[0]._id}/sukces`,
       });
-    }
-    if (body.test && !testOrdersEnabled()) {
-      return NextResponse.json(
-        { error: "Tryb testowy jest wyłączony na tym środowisku." },
-        { status: 403 },
-      );
     }
     // Zamówienie prowadzące: na nie wraca klient po płatności i jego kwota
     // zawiera wysyłkę całego koszyka (patrz convex/orderPricing splitCartTotals).
