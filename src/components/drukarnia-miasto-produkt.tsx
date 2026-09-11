@@ -91,7 +91,7 @@ function buildSteps(miasto: Miasto, product: Product) {
     {
       icon: CreditCard,
       title: "Wgraj plik i opłać zamówienie",
-      body: `Załaduj PDF — przygotowanie pliku do druku i kontrolę techniczną (spady, rozdzielczość, CMYK) masz w cenie, drobne poprawki nanosimy bez dopłat. Płatność przelewem online lub kartą.`,
+      body: `Załaduj PDF — przygotowanie pliku do druku i kontrolę techniczną (spady, rozdzielczość, CMYK) masz w cenie, drobne poprawki nanosimy bez dopłat. Płatność przelewem online lub kartą. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem zapłaty.`,
     },
     {
       icon: Truck,

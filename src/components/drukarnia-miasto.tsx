@@ -69,7 +69,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa} obsługuje większe nakłady firmowe?`,
-      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały targowe, serie wizytówek dla całych zespołów.`,
+      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały targowe, serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.`,
     },
     {
       question: `Czy mogę odebrać zamówienie osobiście w ${miasto.nazwa}?`,
@@ -81,7 +81,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila — z danymi firmy, jeśli podasz je przy zamówieniu. Dotyczy to także klientów z ${miasto.wojewodztwo}.`,
+      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila — z danymi firmy, jeśli podasz je przy zamówieniu. Dla klientów z ${miasto.wojewodztwo} obsługujemy także zamówienia z odroczonym terminem płatności (proforma + przelew 14 dni).`,
     },
   ];
 

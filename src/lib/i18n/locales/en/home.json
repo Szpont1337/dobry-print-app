@@ -51,7 +51,7 @@
       },
       {
         "question": "Which payment methods do you accept?",
-        "answer": "BLIK, card (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Business customers can use a pro-forma invoice with 14-day deferred payment after company verification."
+        "answer": "BLIK, cards (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Business customers can request a proforma with a 14-day payment term once the company is verified."
       },
       {
         "question": "What if colors don't match my monitor?",
