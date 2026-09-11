@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 export const metadata: Metadata = {
   title: "Twoje konto. DobrePrinty",
   description:
-    "Panel klienta DobrePrinty: zamówienia, dane firmowe, adres dostawy i ustawienia konta.",
+    "Panel klienta DobrePrinty: zamówienia, adres dostawy i ustawienia konta.",
   robots: { index: false, follow: false },
 };
 

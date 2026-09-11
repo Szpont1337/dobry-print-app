@@ -6,7 +6,7 @@ export const article: Article = {
   excerpt:
     "Jak wydrukować raport roczny, który buduje wiarygodność: format, papier, oprawa klejona, typografia danych finansowych i terminy produkcji.",
   category: "biznes",
-  tags: ["raport roczny", "spółki", "broszury klejone", "B2B"],
+  tags: ["raport roczny", "spółki", "broszury klejone"],
   publishedAt: "2026-06-21",
   author: "Zespół DobrePrinty",
   status: "opublikowany",

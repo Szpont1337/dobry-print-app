@@ -165,11 +165,11 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "PMS (Pantone Matching System) to system kolorów spot — każdy kolor jest specjalnie mieszany jako oddzielny pigment, nie kombinacja CMYK. PMS używamy tam, gdzie brand color musi być odwzorowany dokładnie: korporacyjne logo (np. Coca-Cola, IBM), oznaczenia bezpieczeństwa (jaskrawy żółty), opakowania (gdzie kolor jest częścią identyfikacji).",
+      text: "PMS (Pantone Matching System) to system kolorów spot — każdy kolor jest specjalnie mieszany jako oddzielny pigment, nie kombinacja CMYK. PMS używamy tam, gdzie brand color musi być odwzorowany dokładnie: logo marek (np. Coca-Cola, IBM), oznaczenia bezpieczeństwa (jaskrawy żółty), opakowania (gdzie kolor jest częścią identyfikacji).",
     },
     {
       type: "p",
-      text: "Druk PMS wymaga dodatkowej płyty na każdy kolor spot — co podnosi cenę. Druk CMYK + 1 PMS (np. dla brand color) to standard dla wielu klientów korporacyjnych. CMYK + 2 PMS (np. PMS metaliczny złoty + PMS srebrny) to opcja premium. W DobrePrinty druk z PMS dostępny dla nakładów 500+ sztuk z wyprzedzeniem 7 dni.",
+      text: "Druk PMS wymaga dodatkowej płyty na każdy kolor spot — co podnosi cenę. Druk CMYK + 1 PMS (np. dla brand color) to standard dla wielu marek. CMYK + 2 PMS (np. PMS metaliczny złoty + PMS srebrny) to opcja premium. W DobrePrinty druk z PMS dostępny dla nakładów 500+ sztuk z wyprzedzeniem 7 dni.",
     },
     {
       type: "h2",

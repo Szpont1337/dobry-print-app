@@ -92,11 +92,11 @@ export const articles: Article[] = [
 export const plannedArticles: ArticleMeta[] = [
   {
     slug: "katalog-produktowy-jak-zaprojektowac",
-    title: "Katalog produktowy — jak zaprojektować skuteczną publikację B2B",
+    title: "Katalog produktowy — jak zaprojektować skuteczną publikację",
     excerpt:
-      "Struktura katalogu, ilość stron, papier, zdjęcia produktowe, paginacja. Praktyczny przewodnik dla działów marketingu B2B.",
+      "Struktura katalogu, ilość stron, papier, zdjęcia produktowe, paginacja. Praktyczny przewodnik dla działów marketingu.",
     category: "biznes",
-    tags: ["katalog", "B2B", "broszury klejone"],
+    tags: ["katalog", "broszury klejone"],
     publishedAt: "2026-05-14",
     author: "Zespół DobrePrinty",
     status: "planowany",

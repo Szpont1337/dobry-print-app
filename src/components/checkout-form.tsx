@@ -28,7 +28,6 @@ type Fields = {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
-  companyName: string;
   shippingStreet: string;
   shippingCity: string;
   shippingPostalCode: string;
@@ -39,7 +38,6 @@ const EMPTY_FIELDS: Fields = {
   customerName: "",
   customerEmail: "",
   customerPhone: "",
-  companyName: "",
   shippingStreet: "",
   shippingCity: "",
   shippingPostalCode: "",
@@ -117,7 +115,6 @@ export function CheckoutForm({
         .trim()
         .min(1, t("errors.phoneRequired"))
         .regex(PHONE_RE, t("errors.phoneInvalid")),
-      companyName: z.string().trim().optional(),
     };
     const shipping =
       deliveryMethod === "courier"
@@ -185,7 +182,6 @@ export function CheckoutForm({
       customerName: cur.customerName || profileData.user.name || "",
       customerEmail: cur.customerEmail || profileData.user.email || "",
       customerPhone: cur.customerPhone || profileData.profile?.phone || "",
-      companyName: cur.companyName || profileData.profile?.companyName || "",
       shippingStreet: cur.shippingStreet || profileData.profile?.shippingStreet || "",
       shippingCity: cur.shippingCity || profileData.profile?.shippingCity || "",
       shippingPostalCode: cur.shippingPostalCode || profileData.profile?.shippingPostalCode || "",
@@ -275,7 +271,6 @@ export function CheckoutForm({
         customerName: values.customerName.trim(),
         customerEmail: values.customerEmail.trim(),
         customerPhone: values.customerPhone.trim(),
-        companyName: optional(values.companyName),
         deliveryMethod,
         shippingStreet: deliveryMethod === "courier" ? values.shippingStreet.trim() : undefined,
         shippingCity: deliveryMethod === "courier" ? values.shippingCity.trim() : undefined,
@@ -372,13 +367,6 @@ export function CheckoutForm({
             placeholder="+48 …"
             registration={register("customerPhone")}
             error={errors.customerPhone?.message}
-          />
-          <Field
-            label={t("fields.companyName")}
-            autoComplete="organization"
-            hint={t("fields.optional")}
-            registration={register("companyName")}
-            error={errors.companyName?.message}
           />
         </Fieldset>
 

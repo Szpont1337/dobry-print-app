@@ -4,9 +4,9 @@ export const article: Article = {
   slug: "papier-firmowy-jak-zaprojektowac",
   title: "Papier firmowy — jak zaprojektować profesjonalny szablon",
   excerpt:
-    "Wymiary, marginesy, dane prawne, hierarchia — pełny przewodnik projektowania papieru firmowego dla firm B2B. Format A4, układ pionowy, elementy obowiązkowe.",
+    "Wymiary, marginesy, dane prawne, hierarchia — pełny przewodnik projektowania papieru firmowego. Format A4, układ pionowy, elementy obowiązkowe.",
   category: "produkty",
-  tags: ["papier firmowy", "B2B", "branding", "identyfikacja wizualna"],
+  tags: ["papier firmowy", "branding", "identyfikacja wizualna"],
   publishedAt: "2026-05-26",
   author: "Zespół DobrePrinty",
   status: "opublikowany",

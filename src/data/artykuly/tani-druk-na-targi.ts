@@ -230,7 +230,7 @@ export const article: Article = {
           "Wszystko + gadżety + ścianka backwall",
         ],
         [
-          "VIP/Korporacja",
+          "VIP / duże stoisko",
           "10×10 m+",
           "20 000-50 000 zł+",
           "Customowe konstrukcje, premium gadżety",
@@ -296,7 +296,7 @@ export const article: Article = {
         },
         {
           q: "Czy materiały drukowane mają jeszcze sens w 2026?",
-          a: "Tak, szczególnie na targach i w bezpośrednim kontakcie B2B. Wymiana wizytówek nadal jest standardem (LinkedIn jest dodatkiem, nie zamiennikiem). Roll-up pełni rolę „banneru fizycznego” — bez niego stoisko wygląda jak biurko. Ulotki sprawdzają się jako materiał „do podarowania klientowi do zabrania”. Cyfrowa alternatywa (QR kody, e-mail follow-up) jest dodatkiem, nie zastępstwem.",
+          a: "Tak, szczególnie na targach i w bezpośrednim kontakcie. Wymiana wizytówek nadal jest standardem (LinkedIn jest dodatkiem, nie zamiennikiem). Roll-up pełni rolę „banneru fizycznego” — bez niego stoisko wygląda jak biurko. Ulotki sprawdzają się jako materiał „do podarowania klientowi do zabrania”. Cyfrowa alternatywa (QR kody, e-mail follow-up) jest dodatkiem, nie zastępstwem.",
         },
         {
           q: "Jak rozliczyć materiały targowe podatkowo?",

@@ -475,7 +475,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
               </a>
 </Button>
               <Button asChild variant="outline" size="lg">
-<a href="mailto:hej@drukalo.pl?subject=Wycena%20druku">
+<a href="mailto:hej@dobreprinty.pl?subject=Wycena%20druku">
                 Wycena indywidualna →
               </a>
 </Button>

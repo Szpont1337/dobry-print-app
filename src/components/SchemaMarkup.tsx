@@ -11,7 +11,7 @@ export default function SchemaMarkup() {
           "Drukarnia internetowa — druk ulotek, wizytówek, plakatów. Dostawa w całej Polsce.",
         contactPoint: {
           "@type": "ContactPoint",
-          email: "hej@drukalo.pl",
+          email: "hej@dobreprinty.pl",
           contactType: "customer service",
           availableLanguage: "Polish",
         },

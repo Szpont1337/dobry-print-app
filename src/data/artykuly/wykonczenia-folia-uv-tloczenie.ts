@@ -159,7 +159,7 @@ export const article: Article = {
         "Wizytówki premium → folia matowa + lakier UV na logo (lub soft-touch)",
         "Ulotki masowe (targi, skrzynki) → bez wykończenia lub folia matowa (ochrona)",
         "Menu restauracyjne → folia matowa (odporność na tłuszcz i wilgoć)",
-        "Broszury B2B → folia matowa na okładce, środek bez wykończenia",
+        "Broszury ofertowe → folia matowa na okładce, środek bez wykończenia",
         "[Zaproszenia eventowe](/blog/zaproszenia-slubne-druk) → tłoczenie ślepe lub folia złota",
         "Plakaty wewnętrzne → lakier dyspersyjny (ochrona, niski koszt)",
         "Teczki ofertowe → folia matowa + tłoczenie logo (profesjonalny dotyk)",

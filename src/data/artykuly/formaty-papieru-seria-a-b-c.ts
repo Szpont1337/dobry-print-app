@@ -107,7 +107,7 @@ export const article: Article = {
     {
       type: "callout",
       variant: "info",
-      text: "Najczęstsze pytanie o koperty: kartka A4 na płasko wchodzi do koperty C4. Złożona raz na pół (do A5) mieści się w C5. Złożona w trzy (klasyczny list biznesowy) pasuje do koperty DL 110 × 220 mm — tej samej, do której projektuje się większość ulotek składanych i papieru firmowego z listem.",
+      text: "Najczęstsze pytanie o koperty: kartka A4 na płasko wchodzi do koperty C4. Złożona raz na pół (do A5) mieści się w C5. Złożona w trzy (klasyczny list) pasuje do koperty DL 110 × 220 mm — tej samej, do której projektuje się większość ulotek składanych i papieru firmowego z listem.",
     },
     {
       type: "h2",

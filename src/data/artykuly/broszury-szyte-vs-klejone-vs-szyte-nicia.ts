@@ -80,7 +80,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Zastosowania: [katalogi produktowe](/produkty/broszury-klejone), raporty roczne, podręczniki, oferty handlowe B2B, magazyny. Grzbiet pozwala na nadruk tytułu — przydatne dla publikacji stojących na półce.",
+      text: "Zastosowania: [katalogi produktowe](/produkty/broszury-klejone), raporty roczne, podręczniki, oferty handlowe, magazyny. Grzbiet pozwala na nadruk tytułu — przydatne dla publikacji stojących na półce.",
     },
     {
       type: "callout",

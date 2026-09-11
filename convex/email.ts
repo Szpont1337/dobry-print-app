@@ -421,7 +421,6 @@ function adminNotificationEmail(order: Order) {
           <strong>${escapeHtml(order.customerName)}</strong><br>
           <a href="mailto:${escapeHtml(order.customerEmail)}" style="color:${BRAND.primary};text-decoration:underline">${escapeHtml(order.customerEmail)}</a><br>
           <a href="tel:${escapeHtml(order.customerPhone)}" style="color:${BRAND.foreground};text-decoration:none">${escapeHtml(order.customerPhone)}</a>
-          ${order.companyName ? `<br><span style="color:${BRAND.muted}">${escapeHtml(order.companyName)}</span>` : ""}
         </p>
       </td>
     </tr>`;
@@ -498,7 +497,6 @@ function adminNotificationEmail(order: Order) {
     `Nakład: ${formatQty.format(order.quantity)} szt. · ${order.formatLabel}`,
     deliveryLine(order),
     `Klient: ${order.customerName} <${order.customerEmail}> · ${order.customerPhone}`,
-    order.companyName ? `Firma: ${order.companyName}` : "",
     order.source ? `Źródło: ${order.source}` : "",
     `Razem: ${formatPLN.format(order.grossTotal)}`,
     "",

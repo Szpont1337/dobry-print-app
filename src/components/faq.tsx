@@ -55,7 +55,7 @@ export function Faq() {
             </h3>
             <p className="mt-1 text-sm text-secondary-foreground/80">{t("faq.helpSub")}</p>
             <a
-              href="mailto:hej@drukalo.pl"
+              href="mailto:hej@dobreprinty.pl"
               className="mt-4 inline-flex h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               {t("faq.helpCta")}

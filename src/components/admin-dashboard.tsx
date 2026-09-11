@@ -412,7 +412,6 @@ type AdminOrder = {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
-  companyName?: string;
   shippingStreet?: string;
   shippingCity?: string;
   shippingPostalCode?: string;
@@ -562,12 +561,6 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                   </a>
                   <br />
                   {order.customerPhone}
-                  {order.companyName && (
-                    <>
-                      <br />
-                      <strong>{order.companyName}</strong>
-                    </>
-                  )}
                 </dd>
               </div>
               <div>

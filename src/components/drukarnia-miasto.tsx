@@ -69,12 +69,12 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
       answer: `Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do ${miasto.nazwa} to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w ${miasto.wojewodztwo} w czwartek lub piątek.`,
     },
     {
-      question: `Czy ${drukarniaNazwa} obsługuje większe nakłady firmowe?`,
-      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały targowe, serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.`,
+      question: `Czy ${drukarniaNazwa} obsługuje większe nakłady?`,
+      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek, materiały targowe i serie wizytówek. Nakład wybierasz w konfiguratorze, a cena jednostkowa spada wraz z jego wielkością.`,
     },
     {
       question: `Czy mogę odebrać zamówienie osobiście w ${miasto.nazwa}?`,
-      answer: `Nie. DobrePrinty nie ma stacjonarnego punktu w ${miasto.nazwa}. Druk realizuje wybrana drukarnia partnerska, a kurier dostarcza paczkę pod podany adres zwykle następnego dnia po wysyłce. Dla firm dostępna jest dostawa pod konkretną godzinę za dopłatą.`,
+      answer: `Nie. DobrePrinty nie ma stacjonarnego punktu w ${miasto.nazwa}. Druk realizuje wybrana drukarnia partnerska, a kurier dostarcza paczkę pod podany adres zwykle następnego dnia po wysyłce.`,
     },
     {
       question: `Jakie produkty drukuje ${drukarniaNazwa.toLowerCase()} online?`,
@@ -82,7 +82,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila — z danymi firmy, jeśli podasz je przy zamówieniu. Dla klientów z ${miasto.wojewodztwo} obsługujemy także zamówienia z odroczonym terminem płatności (proforma + przelew 14 dni).`,
+      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila podany w zamówieniu — dotyczy to także zamówień z ${miasto.wojewodztwo}.`,
     },
   ];
 
@@ -106,13 +106,13 @@ function fallbackParagraphs(miasto: Miasto): string[] {
 
   let p1 =
     miasto.populacja >= 300000
-      ? `${miasto.nazwa} to jeden z największych rynków biznesowych w Polsce — ok. ${populacjaTekst} mieszkańców, gęsta sieć firm, instytucji i agencji. `
+      ? `${miasto.nazwa} to jeden z największych rynków w Polsce — ok. ${populacjaTekst} mieszkańców i gęsta sieć instytucji, agencji i lokali. `
       : miasto.populacja >= 100000
-        ? `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to duży regionalny rynek B2B w ${miasto.wojewodztwo}. `
+        ? `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to duży rynek regionalny w ${miasto.wojewodztwo}. `
         : miasto.populacja >= 50000
           ? `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to prężny ośrodek średniej wielkości w ${miasto.wojewodztwo}. `
           : `${miasto.nazwa} (ok. ${populacjaTekst} mieszkańców) to lokalny rynek w ${miasto.wojewodztwo}, gdzie liczy się szybki, przewidywalny druk. `;
-  p1 += `${miasto.opis_krotki} ${drukarnia} online z sieci DobrePrinty obsługuje tu zarówno freelancerów, jak i większe organizacje — wszystko w jednym konfiguratorze, z ceną finalną widoczną od razu.`;
+  p1 += `${miasto.opis_krotki} ${drukarnia} online z sieci DobrePrinty obsługuje tu zarówno pojedyncze wydruki, jak i większe nakłady — wszystko w jednym konfiguratorze, z ceną finalną widoczną od razu.`;
   if (branzeProse) {
     p1 += ` Najczęściej drukują u nas ${branzeProse}.`;
   }
@@ -277,10 +277,10 @@ function SchemaMarkup({
     "@id": `${url}#localbusiness`,
     name: `DobrePrinty, drukarnia ${miasto.nazwa} online`,
     alternateName: `DobrePrinty ${miasto.nazwa}`,
-    description: `Drukarnia online dla firm i instytucji z ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena finalna widoczna od razu.`,
+    description: `Drukarnia online z dostawą do ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena finalna widoczna od razu.`,
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
-    email: "hej@drukalo.pl",
+    email: "hej@dobreprinty.pl",
     priceRange: "29 zł – 4 500 zł",
     areaServed: [
       {
@@ -656,7 +656,7 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
           </div>
           <Button asChild variant="default" className="shrink-0">
             <a
-              href={`mailto:hej@drukalo.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
+              href={`mailto:hej@dobreprinty.pl?subject=Wycena%20dla%20${encodeURIComponent(miasto.nazwa)}`}
             >
               Napisz do nas →
             </a>

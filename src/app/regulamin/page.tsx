@@ -115,10 +115,6 @@ export default function RegulaminPage() {
       <ul>
         <li>BLIK, karta płatnicza, Przelewy24, Apple Pay, Google Pay</li>
         <li>
-          Proforma z 14-dniowym terminem dla klientów biznesowych (proforma nie jest fakturą VAT ani
-          dokumentem księgowym — służy wyłącznie do dokonania zapłaty)
-        </li>
-        <li>
           Rachunek (potwierdzenie zapłaty) generowany automatycznie przez platformę płatniczą Stripe
           i wysyłany na adres e-mail Klienta po zaksięgowaniu płatności
         </li>
@@ -128,7 +124,7 @@ export default function RegulaminPage() {
         Nie wystawiamy faktur VAT. Jedynym dokumentem potwierdzającym zakup jest rachunek wystawiany
         przez platformę Stripe (operatora płatności), który zawiera dane sprzedawcy, Klienta, opis
         zamówienia i zapłaconą kwotę. Ceny w serwisie nie zawierają podatku VAT — nie ma podatku do
-        odliczenia, a Klient biznesowy księguje zakup na podstawie rachunku ze Stripe. Rachunek
+        odliczenia. Rachunek
         trafia na adres e-mail podany w zamówieniu; w razie potrzeby ponownej wysyłki napisz na{" "}
         <strong>{COMPANY.email}</strong>.
       </p>

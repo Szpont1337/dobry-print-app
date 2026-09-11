@@ -6,7 +6,7 @@ export const article: Article = {
   excerpt:
     "Ścienny, biurkowy, trójdzielny czy książkowy — jaki kalendarz firmowy zamówić, jak go zaprojektować i kiedy złożyć zamówienie na nowy rok.",
   category: "produkty",
-  tags: ["kalendarze", "gadżety firmowe", "B2B", "Boże Narodzenie"],
+  tags: ["kalendarze", "gadżety firmowe", "Boże Narodzenie"],
   publishedAt: "2026-06-17",
   author: "Zespół DobrePrinty",
   status: "opublikowany",
@@ -24,7 +24,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "W marketingu B2B liczy się koszt pojedynczego kontaktu z marką. Kalendarz trójdzielny za 8-12 zł, który wisi w biurze klienta przez rok, generuje setki ekspozycji logo — przy założeniu, że odbiorca spojrzy na niego choćby 2 razy dziennie w dni robocze, to ponad 500 kontaktów rocznie. Koszt jednego kontaktu spada poniżej 2-3 groszy. Dla porównania: ulotka trafia do kosza średnio po kilku sekundach, a smycz reklamowa rzadko opuszcza szufladę.",
+      text: "W marketingu liczy się koszt pojedynczego kontaktu z marką. Kalendarz trójdzielny za 8-12 zł, który wisi w biurze klienta przez rok, generuje setki ekspozycji logo — przy założeniu, że odbiorca spojrzy na niego choćby 2 razy dziennie w dni robocze, to ponad 500 kontaktów rocznie. Koszt jednego kontaktu spada poniżej 2-3 groszy. Dla porównania: ulotka trafia do kosza średnio po kilku sekundach, a smycz reklamowa rzadko opuszcza szufladę.",
     },
     {
       type: "p",
@@ -94,8 +94,8 @@ export const article: Article = {
       items: [
         "Logo i dane kontaktowe — na główce kalendarza trójdzielnego (pole ok. 310×210 mm) oraz na dolnej listwie lub plecach. Telefon i adres www powinny być czytelne z odległości ręki, minimum 10-12 pt",
         "Zdjęcia branżowe — pokazuj to, czym firma się zajmuje: realizacje, produkty, zespół. Zdjęcie stockowe z uśmiechniętymi ludźmi w garniturach nie buduje skojarzenia z marką",
-        "Czytelne kalendarium — niedziele i święta wyróżnione czerwienią, numeracja tygodni dla firm produkcyjnych i logistycznych, imieniny opcjonalnie",
-        "Święta i dni wolne — kalendarium musi uwzględniać polskie święta ustawowe; dla firm z zagranicznymi kontrahentami warto dodać wersję z kalendarium PL/EN/DE",
+        "Czytelne kalendarium — niedziele i święta wyróżnione czerwienią, numeracja tygodni w branży produkcyjnej i logistycznej, imieniny opcjonalnie",
+        "Święta i dni wolne — kalendarium musi uwzględniać polskie święta ustawowe; przy zagranicznych kontrahentach warto dodać wersję z kalendarium PL/EN/DE",
         "Miejsce na notatki — w kalendarzach biurkowych i książkowych to realna wartość użytkowa, która przedłuża życie gadżetu",
         "Okienko lub pasek wskazujący bieżący dzień — w trójdzielnych przesuwane czerwone okienko to standard, bez niego kalendarz traci funkcjonalność",
       ],
@@ -135,7 +135,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Czwarty kwartał to szczyt sezonu w każdej drukarni: kalendarze, kartki świąteczne, paczki B2B i materiały na końcówkę budżetów marketingowych kumulują się między październikiem a grudniem. Standardowy czas realizacji kalendarzy trójdzielnych, który we wrześniu wynosi 5-7 dni roboczych, w grudniu potrafi wydłużyć się do 15-20 dni — a część introligatorni w ogóle przestaje przyjmować nowe zlecenia po pierwszym tygodniu grudnia.",
+      text: "Czwarty kwartał to szczyt sezonu w każdej drukarni: kalendarze, kartki świąteczne, paczki świąteczne i materiały na końcówkę budżetów marketingowych kumulują się między październikiem a grudniem. Standardowy czas realizacji kalendarzy trójdzielnych, który we wrześniu wynosi 5-7 dni roboczych, w grudniu potrafi wydłużyć się do 15-20 dni — a część introligatorni w ogóle przestaje przyjmować nowe zlecenia po pierwszym tygodniu grudnia.",
     },
     {
       type: "list",
@@ -193,7 +193,7 @@ export const article: Article = {
         },
         {
           q: "Jaki nakład kalendarzy zamówić na start?",
-          a: "Policz odbiorców: aktywni klienci + kluczowi potencjalni + pracownicy + rezerwa 10-15% na nowe kontakty w ciągu roku. Dla małej firmy B2B typowy nakład to 100-250 sztuk. Zamawianie „na zapas” nie ma sensu — kalendarz z datami traci wartość 1 stycznia następnego roku.",
+          a: "Policz odbiorców: aktywni klienci + kluczowi potencjalni + pracownicy + rezerwa 10-15% na nowe kontakty w ciągu roku. Typowy nakład to 100-250 sztuk. Zamawianie „na zapas” nie ma sensu — kalendarz z datami traci wartość 1 stycznia następnego roku.",
         },
         {
           q: "Czy mogę zamówić kalendarze z kalendarium w kilku językach?",

@@ -105,7 +105,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila rachunek wystawiony przez Stripe. Dla firm obsługujemy też płatność odroczoną (proforma z terminem 14 dni) przy większych zamówieniach.",
+          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila rachunek wystawiony przez Stripe.",
       },
     ],
     cta: {
@@ -435,88 +435,6 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     },
   },
   {
-    slug: "drukarnia-dla-firm",
-    eyebrow: "Drukarnia dla firm",
-    keyword: "drukarnia dla firm",
-    metaTitle:
-      "Drukarnia dla firm — druk B2B, rachunek, stała obsługa | DobrePrinty",
-    metaDescription:
-      "Drukarnia dla firm DobrePrinty: rachunek automatycznie na maila, płatność odroczona, większe nakłady i powtarzalne zamówienia. Druk firmowy bez handlowca.",
-    h1Lead: "Drukarnia",
-    h1Highlight: "dla firm",
-    heroLead:
-      "Materiały firmowe bez wysyłania zapytań ofertowych. Rachunek na maila, płatność odroczona przy większych zamówieniach i powtarzalny druk jednym kliknięciem.",
-    heroStats: [
-      { value: "14 dni", label: "termin płatności B2B" },
-      { value: "10 000+", label: "obsługiwane nakłady" },
-      { value: "1 panel", label: "historia i ponawianie" },
-    ],
-    bulletsHeading: "Druk firmowy ułożony pod B2B",
-    bullets: [
-      {
-        title: "Rachunek od ręki",
-        body: "Rachunek ze Stripe przychodzi na maila razem z potwierdzeniem zamówienia — bez proszenia i czekania. Wszystkie dokumenty masz w jednym miejscu, gotowe do księgowości.",
-      },
-      {
-        title: "Płatność odroczona",
-        body: "Przy zamówieniach powyżej progu udostępniamy proformę z 14-dniowym terminem. Materiały produkujemy, zanim zamknie się przelew.",
-      },
-      {
-        title: "Większe i powtarzalne nakłady",
-        body: "Serie wizytówek dla całego zespołu, 10 000 ulotek dla sieci, materiały na cykliczne eventy. Powtórzysz wcześniejsze zamówienie z panelu bez ponownej konfiguracji.",
-      },
-      {
-        title: "Spójność marki",
-        body: "Trzymamy te same kolory i papier w kolejnych zleceniach, żeby wizytówki z marca pasowały do tych z listopada. Ważne, gdy materiały robią różni ludzie w firmie.",
-      },
-    ],
-    bodyHeading: "Druk dla firm bez działu zakupów",
-    body: [
-      "Dla firmy druk to często powtarzalny proces: wizytówki dla nowych pracowników, ulotki na kolejną kampanię, teczki i papier firmowy, materiały na targi. DobrePrinty upraszcza to do jednego konta: konfigurujesz, zamawiasz, dostajesz fakturę — bez rundy maili z handlowcem i bez „prześlemy wycenę do końca tygodnia”.",
-      "Dla większych organizacji liczą się trzy rzeczy: przewidywalny koszt, terminowość i dokumentacja. Cena finalna jest jawna od razu, terminy realne (a przy pilnych zleceniach mamy tryb ekspresowy), a faktury i historia zamówień są w panelu. Przy zamówieniach powyżej progu dostępna jest płatność odroczona — proforma z terminem 14 dni.",
-      "Obsługujemy zarówno jednoosobowe działalności, jak i większe firmy oraz instytucje. Niezależnie od skali zlecenie trafia do jednej z 28 drukarni partnerskich dobranej pod konkretny produkt, a reklamacje prowadzimy my — masz jednego partnera do rozliczeń, nie kilka drukarni do pilnowania.",
-    ],
-    relatedProducts: [
-      "wizytowki",
-      "papier-firmowy",
-      "ulotki",
-      "broszury-klejone",
-      "roll-up",
-      "skladane-ulotki",
-    ],
-    productsHeading: "Materiały firmowe",
-    productsLead:
-      "Od wizytówek całego zespołu po materiały targowe — zamów i odbierz rachunek.",
-    faqs: [
-      {
-        question: "Czy dostanę fakturę VAT na firmę?",
-        answer:
-          "Nie wystawiamy faktur VAT — prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT. Po opłaceniu zamówienia automatycznie dostajesz na maila rachunek ze Stripe. Wystarczy podać dane firmy przy zamawianiu, a znajdą się na rachunku.",
-      },
-      {
-        question: "Czy oferujecie płatność z odroczonym terminem?",
-        answer:
-          "Tak, przy zamówieniach powyżej ustalonego progu udostępniamy proformę z 14-dniowym terminem płatności. Produkcję uruchamiamy bez czekania na zaksięgowanie przelewu.",
-      },
-      {
-        question: "Czy obsługujecie duże nakłady i stałą współpracę?",
-        answer:
-          "Tak. Realizujemy nakłady 10 000+ ulotek, serie wizytówek dla całych zespołów i cykliczne zamówienia. W panelu łatwo ponowisz wcześniejszy druk, a my pilnujemy spójności kolorów i papieru między partiami.",
-      },
-      {
-        question: "Jak zapanować nad spójnością materiałów w firmie?",
-        answer:
-          "Zapisując zamówienia na koncie, korzystasz z tych samych ustawień przy kolejnych partiach. Dzięki temu materiały zamawiane przez różne osoby w firmie wychodzą na tym samym papierze i w tych samych kolorach.",
-      },
-    ],
-    cta: {
-      heading: "Druk firmowy bez zbędnych maili",
-      body: "Skonfiguruj materiały, odbierz rachunek, ponawiaj zamówienia z panelu.",
-      href: "/produkty/wizytowki",
-      label: "Zamów dla firmy →",
-    },
-  },
-  {
     slug: "drukarnia-offsetowa",
     eyebrow: "Drukarnia offsetowa",
     keyword: "drukarnia offsetowa",
@@ -711,7 +629,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
         body: "Plakaty w sztywnych tubach, roll-upy w pokrowcach, ulotki w opaskach. Materiały docierają bez zagnieceń i wgnieceń narożników.",
       },
       {
-        title: "Dostawa na godzinę dla firm",
+        title: "Dostawa na konkretną godzinę",
         body: "Gdy materiały muszą być na miejscu o konkretnej porze — np. na otwarcie targów — dostępna jest dostawa pod wskazaną godzinę za dopłatą.",
       },
     ],

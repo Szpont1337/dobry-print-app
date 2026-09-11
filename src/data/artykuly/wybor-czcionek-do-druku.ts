@@ -118,7 +118,7 @@ export const article: Article = {
         "Montserrat — geometryczny sans-serif, dobry do nagłówków i brandingu",
         "Merriweather — serif zoptymalizowany do ekranów i druku, dobry do body",
         "Playfair Display — elegancki serif do nagłówków premium i luksusowych",
-        "Lora — ciepły serif do broszur, zaproszeń i dokumentów B2B",
+        "Lora — ciepły serif do broszur, zaproszeń i dokumentów oficjalnych",
         "Source Sans Pro — profesjonalny sans-serif od Adobe, świetny w dokumentach",
         "Raleway — lekki, nowoczesny sans-serif do nagłówków i brandingu kreatywnego",
       ],
@@ -149,7 +149,7 @@ export const article: Article = {
           "Roboto Bold",
           "Roboto Regular",
           "Jednolity, profesjonalny",
-          "Dokumenty B2B, papier firmowy, katalogi",
+          "Dokumenty oficjalne, papier firmowy, katalogi",
         ],
         [
           "Raleway Bold",

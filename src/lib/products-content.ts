@@ -638,7 +638,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Jakie są zastosowania książek szytych nicią w biznesie?",
         answer:
-          "Najczęściej: monografie wydziałowe uczelni (UW, SGH, UJ, UAM), albumy promocyjne miast (np. „Kraków — 700 lat”), książki jubileuszowe firm (10/25/50 lat istnienia), prezenty biznesowe od korporacji (np. „Historia ABC Sp. z o.o.”), katalogi galerii sztuki, książki kucharskie szefów kuchni, publikacje muzeów (UNESCO, Wawel). Wybór klientów premium.",
+          "Najczęściej: monografie wydziałowe uczelni (UW, SGH, UJ, UAM), albumy promocyjne miast (np. „Kraków — 700 lat”), książki jubileuszowe firm (10/25/50 lat istnienia), prezenty jubileuszowe (np. „Historia ABC Sp. z o.o.”), katalogi galerii sztuki, książki kucharskie szefów kuchni, publikacje muzeów (UNESCO, Wawel). Wybór klientów premium.",
       },
     ],
     seoParagraph: [
@@ -729,7 +729,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Jaki format roll-upa wybrać?",
         answer:
-          "85 × 200 cm to klasyk dla stoisk targowych i konferencji — zajmuje mało miejsca, łatwo transportowalny w bagażu samochodowym. 100 × 200 cm — większa powierzchnia grafiki, lepsza widoczność z dalszej odległości. 120 × 200 cm — premium, używany w lobby biurowców i przy prezentacjach wymagających dużej powierzchni wizualnej. Standardem korporacyjnym jest 85 cm lub 100 cm.",
+          "85 × 200 cm to klasyk dla stoisk targowych i konferencji — zajmuje mało miejsca, łatwo transportowalny w bagażu samochodowym. 100 × 200 cm — większa powierzchnia grafiki, lepsza widoczność z dalszej odległości. 120 × 200 cm — premium, używany w lobby biurowców i przy prezentacjach wymagających dużej powierzchni wizualnej. Standardem jest 85 cm lub 100 cm.",
       },
       {
         question: "Czy mogę używać roll-upa na zewnątrz?",
@@ -891,7 +891,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Druk papieru firmowego online to standardowa pozycja w katalogu drukarni — i w DobrePrinty realizujemy go w wersji uproszczonej, ale konkurencyjnej cenowo. Papier firmowy A4 lub A5, offset biały 90 g, druk 4/0 w pełnym kolorze lub 1/0 jednokolorowy. Pakowanie po 100 sztuk w opaskę papierową, dostawa 2 dni robocze. Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu — bez gwiazdek, bez dopłat.",
-      "Papier firmowy to nadal podstawowe narzędzie B2B, mimo digitalizacji wielu procesów. Faktury, oferty wstępne, listy intencyjne, pisma urzędowe i korespondencja z klientami — wszystko to nadal wymaga papieru z firmowym logo i danymi rejestrowymi. Tania drukarnia papieru firmowego pozwala obsłużyć zarówno mikroprzedsiębiorców (nakład 100–250 sztuk dla freelancera), jak i większe firmy (1000–5000 sztuk dla działu sprzedaży korporacji).",
+      "Papier firmowy to nadal podstawowe narzędzie korespondencji, mimo digitalizacji wielu procesów. Faktury, oferty wstępne, listy intencyjne, pisma urzędowe i korespondencja z klientami — wszystko to nadal wymaga papieru z firmowym logo i danymi rejestrowymi. Tania drukarnia papieru firmowego pozwala obsłużyć zarówno mikroprzedsiębiorców (nakład 100–250 sztuk dla freelancera), jak i większe nakłady (1000–5000 sztuk dla całego działu sprzedaży).",
       "Druk papieru firmowego musi spełniać wymogi prawne: każdy egzemplarz musi zawierać dane obowiązkowe zgodnie z KSH (pełna nazwa firmy, forma prawna, adres siedziby, NIP, REGON, KRS, kapitał zakładowy). Klient odpowiada za poprawność tych danych, ale my przy preflight sprawdzamy, czy stopka zawiera minimalny zestaw informacji — jeśli brakuje istotnego elementu (np. NIP-u), zwracamy uwagę przed drukiem. Drobiazg, który chroni Klienta przed karami administracyjnymi.",
     ],
     aggregateRating: { value: "4.8", count: "780" },
@@ -914,7 +914,7 @@ export const productContent: Record<string, ProductContent> = {
       },
       {
         tytul: "Druk 4/4 dwustronny",
-        opis: "Standardem jest druk 4/4 — przód z imieniem, nazwiskiem, telefonem, e-mailem, tył z logo lub claimem firmy. To wykorzystuje całą powierzchnię wizytówki. 4/0 jednostronny dostępny taniej, ale rzadziej zamawiany — większość wizytówek B2B wykorzystuje dwie strony.",
+        opis: "Standardem jest druk 4/4 — przód z imieniem, nazwiskiem, telefonem, e-mailem, tył z logo lub claimem firmy. To wykorzystuje całą powierzchnię wizytówki. 4/0 jednostronny dostępny taniej, ale rzadziej zamawiany — większość wizytówek wykorzystuje dwie strony.",
       },
       {
         tytul: "Folia matowa lub błyszcząca",
@@ -1105,9 +1105,9 @@ export const productContent: Record<string, ProductContent> = {
           "Tak, każdy nasz format (A6, DL, A5) mieści się w standardach Poczty Polskiej dla nadawania jako kartka pocztowa lub przesyłka standardowa. Wystarczy nakleić znaczek (3,30 zł dla A6/DL, 4,50 zł dla A5) i wrzucić do skrzynki nadawczej. Nie trzeba koperty — wpisujesz adres na tylnej stronie pocztówki i już.",
       },
       {
-        question: "Jaki format wybrać do kartek świątecznych korporacyjnych?",
+        question: "Jaki format wybrać do kartek świątecznych?",
         answer:
-          "A5 (148 × 210 mm) to standard dla korporacyjnych kartek świątecznych — większy format daje miejsce na pełną grafikę świąteczną na przodzie i obszerne życzenia w środku (po złożeniu na pół). A5 składany w połowie tworzy „kartkę otwieralną” — popularny format prezentowy. Bigujemy linię złożenia (dodatkowo +10% do ceny).",
+          "A5 (148 × 210 mm) to standard dla kartek świątecznych — większy format daje miejsce na pełną grafikę świąteczną na przodzie i obszerne życzenia w środku (po złożeniu na pół). A5 składany w połowie tworzy „kartkę otwieralną” — popularny format prezentowy. Bigujemy linię złożenia (dodatkowo +10% do ceny).",
       },
       {
         question: "Czy oferujecie kartki świąteczne z kopertami?",
@@ -1133,12 +1133,12 @@ export const productContent: Record<string, ProductContent> = {
         question:
           "Czy oferujecie tłoczenie folią złotą na kartkach świątecznych?",
         answer:
-          "Tak — opcja premium dla kartek korporacyjnych. Tłoczenie złotą lub srebrną folią na elementach świątecznych (gwiazda, choinka, śnieżynka, monogram firmy). Wymaga osobnego pliku z maską tłoczenia i wydłuża czas realizacji o 72 h. Cena: +95 zł za 100 sztuk A5. Efekt premium, idealny dla kartek B2B do najważniejszych klientów.",
+          "Tak — opcja premium dla kartek świątecznych. Tłoczenie złotą lub srebrną folią na elementach świątecznych (gwiazda, choinka, śnieżynka, monogram firmy). Wymaga osobnego pliku z maską tłoczenia i wydłuża czas realizacji o 72 h. Cena: +95 zł za 100 sztuk A5. Efekt premium, idealny dla kartek do najważniejszych klientów.",
       },
     ],
     seoParagraph: [
       "Druk kartek i pocztówek online to w DobrePrinty pozycja sezonowa — największe nakłady realizujemy w listopadzie i grudniu (kartki świąteczne), w lutym (walentynki), w marcu (Dzień Kobiet, Wielkanoc) i jesienią (kartki dla branży eventowej). Pocztówki turystyczne i hotelowe drukujemy stale przez cały rok. Drukujemy na kartonie 300 g kreda mat w trzech formatach: A6 (klasyk pocztówki), DL (długa pocztówka), A5 (kartki okolicznościowe).",
-      "Tania drukarnia kartek i pocztówek musi obsłużyć zarówno mikronakłady (50 sztuk dla małej firmy wysyłającej kartki świąteczne do kluczowych klientów), jak i duże (5000+ dla sieci hotelowej zamawiającej pocztówki promocyjne). Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu, a 28 drukarni partnerskich pozwala dobrać partnera pod konkretne wymagania. Standardowy nakład dla kartek świątecznych B2B to 250–500 sztuk.",
+      "Tania drukarnia kartek i pocztówek musi obsłużyć zarówno mikronakłady (50 sztuk dla małej firmy wysyłającej kartki świąteczne do kluczowych klientów), jak i duże (5000+ dla sieci hotelowej zamawiającej pocztówki promocyjne). Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu, a 28 drukarni partnerskich pozwala dobrać partnera pod konkretne wymagania. Standardowy nakład dla kartek świątecznych to 250–500 sztuk.",
       "Pocztówki nadawane pocztą są w polskim biznesie nadal popularnym narzędziem marketingowym — szczególnie dla branży hotelowej i turystycznej (pocztówki z miejscami pobytu wysyłane do byłych gości jako forma reaktywacji), dla branży eventowej (kartki z podziękowaniami po wydarzeniu), dla branży edukacyjnej (kartki z gratulacjami po ukończeniu kursu). Druk pocztówek z polem adresowym i ramką znaczka pozwala bezpośrednio nadać przesyłkę bez dodatkowego pakowania.",
     ],
     aggregateRating: { value: "4.8", count: "560" },
@@ -1574,7 +1574,7 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: [
-      "Druk tablic reklamowych online to rozwiązanie dla firm, które potrzebują solidnej, trwałej reklamy zamiast tymczasowego banera. DobrePrinty realizuje druk tablic na piankowym forexie 3 mm i dibondzie aluminiowym 3 mm, zawsze technologią UV bezpośrednio na płycie, z cięciem CNC do dokładnego wymiaru. Cena finalna jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za cięcie, bez czekania na ofertę handlowca. Tablicę zamawiasz od jednej sztuki, w formatach od A3 po 70 × 100 cm lub w wymiarze niestandardowym.",
+      "Druk tablic reklamowych online to rozwiązanie dla tych, którzy potrzebują solidnej, trwałej reklamy zamiast tymczasowego banera. DobrePrinty realizuje druk tablic na piankowym forexie 3 mm i dibondzie aluminiowym 3 mm, zawsze technologią UV bezpośrednio na płycie, z cięciem CNC do dokładnego wymiaru. Cena finalna jest widoczna od razu w konfiguratorze — bez gwiazdek, bez dopłaty za cięcie, bez czekania na ofertę handlowca. Tablicę zamawiasz od jednej sztuki, w formatach od A3 po 70 × 100 cm lub w wymiarze niestandardowym.",
       "Tablice forex to najpopularniejszy wybór do wnętrz: lekkie, sztywne i tanie, świetnie sprawdzają się jako tablice informacyjne w gabinetach lekarskich, oznaczenia sal, menu i cenniki w restauracjach oraz szyldy w recepcjach. Tam, gdzie reklama ma stać na zewnątrz przez lata — szyldy na elewacjach, tablice firmowe przy wjazdach, oznaczenia parkingów — polecamy dibond aluminiowy, w pełni odporny na deszcz, słońce i mróz. Druk UV wtapia atrament w powierzchnię materiału, dzięki czemu tablica nie odkleja się ani nie blaknie jak nośniki oklejane folią.",
       "Druk tablic reklamowych w 28-osobowej sieci drukarni partnerskich pozwala obsłużyć zarówno pojedyncze sztuki (oznaczenie jednego gabinetu), jak i serie kilkudziesięciu tablic na sieć placówek. Cięcie CNC umożliwia dowolny kontur bez kosztu wykrojnika, a szlifowane krawędzie i otwory montażowe sprawiają, że tablica przychodzi gotowa do powieszenia. Tania tablica reklamowa nie musi oznaczać kompromisu na jakości — kontrolujemy plik przed drukiem (spady, rozdzielczość, CMYK), a każda drukarnia partnerska przechodzi kwartalny audyt jakości druku i terminowości.",
     ],
@@ -1652,7 +1652,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy drukujecie też na kolorowych koszulkach?",
         answer:
-          "Na ten moment oferujemy nadruk na białej koszulce bawełnianej — to najtańsza i najbardziej uniwersalna opcja, na której kolory wychodzą najwierniej. Jeśli potrzebujesz koszulek w innym kolorze, napisz do nas na hej@drukalo.pl po wycenę indywidualną.",
+          "Na ten moment oferujemy nadruk na białej koszulce bawełnianej — to najtańsza i najbardziej uniwersalna opcja, na której kolory wychodzą najwierniej. Jeśli potrzebujesz koszulek w innym kolorze, napisz do nas na hej@dobreprinty.pl po wycenę indywidualną.",
       },
     ],
     seoParagraph: [

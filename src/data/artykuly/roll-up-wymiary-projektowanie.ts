@@ -78,7 +78,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "120×200 cm to premium — używany w lobby biurowców, hotelach 5-gwiazdkowych, przy prezentacjach korporacyjnych. Wymaga więcej miejsca w transporcie (większy pokrowiec) i jest droższy od standardu o ok. 25%. Warto dla stoisk premium, ale dla stoiska konferencyjnego 5 dni w roku — przesadne.",
+      text: "120×200 cm to premium — używany w lobby biurowców, hotelach 5-gwiazdkowych, przy dużych prezentacjach. Wymaga więcej miejsca w transporcie (większy pokrowiec) i jest droższy od standardu o ok. 25%. Warto dla stoisk premium, ale dla stoiska konferencyjnego 5 dni w roku — przesadne.",
     },
     {
       type: "h2",

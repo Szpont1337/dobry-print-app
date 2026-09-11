@@ -87,7 +87,7 @@ export const article: Article = {
       type: "list",
       items: [
         "Materiały z dużą ilością tekstu — ulotki informacyjne, katalogi, instrukcje, książki: mat nie odbija światła, więc czyta się je komfortowo pod każdą lampą.",
-        "Elegancki, stonowany charakter marki — mat kojarzy się z klasą i premium (kosmetyki, usługi B2B, kultura).",
+        "Elegancki, stonowany charakter marki — mat kojarzy się z klasą i premium (kosmetyki, usługi profesjonalne, kultura).",
         "Materiały, na których ktoś będzie pisać — formularze, karty lojalnościowe, ankiety.",
         "Wizytówki, które mają być dotykane — mat brudzi się mniej niż błysk i lepiej znosi folię matową oraz lakier wybiórczy jako kontrast.",
       ],

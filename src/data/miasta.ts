@@ -16,7 +16,7 @@ export type Miasto = {
   landmarki?: string[];
   /** Dominujące lokalne branże i więksi pracodawcy. */
   branze?: string[];
-  /** Uczelnie i ważniejsze instytucje (źródło zamówień B2B/edu). */
+  /** Uczelnie i ważniejsze instytucje (źródło zamówień). */
   uczelnie?: string[];
 };
 
@@ -27,7 +27,7 @@ export const miasta: Miasto[] = [
     wojewodztwo: "mazowieckie",
     populacja: 1861000,
     opis_krotki:
-      "Stolica Polski i największe centrum biznesowe kraju, siedziba central banków i   korporacji.",
+      "Stolica Polski i największe centrum gospodarcze kraju, siedziba central banków i   instytucji.",
   },
   {
     nazwa: "Kraków",
@@ -207,7 +207,7 @@ export const miasta: Miasto[] = [
     wojewodztwo: "śląskie",
     populacja: 285000,
     opis_krotki:
-      "Serce Górnośląsko-Zagłębiowskiej Metropolii, centrum biznesowe i kongresowe Śląska.",
+      "Serce Górnośląsko-Zagłębiowskiej Metropolii, centrum gospodarcze i kongresowe Śląska.",
     dzielnice: ["Śródmieście", "Ligota", "Nikiszowiec", "Załęże"],
     landmarki: [
       "Spodek",

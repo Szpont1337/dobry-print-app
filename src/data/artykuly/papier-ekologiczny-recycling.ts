@@ -4,7 +4,7 @@ export const article: Article = {
   slug: "papier-ekologiczny-recycling",
   title: "Papier ekologiczny i recycling — kiedy warto wybrać",
   excerpt:
-    "Papiery ekologiczne w druku: recycling, FSC, bezchlorowy. Cena, wygląd, branding eko. Przewodnik dla firm dbających o zrównoważony rozwój.",
+    "Papiery ekologiczne w druku: recycling, FSC, bezchlorowy. Cena, wygląd, branding eko. Przewodnik dla marek dbających o zrównoważony rozwój.",
   category: "papier",
   tags: [
     "ekologia",
@@ -156,7 +156,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Papier recycling 100% ma szarawy odcień i widoczną teksturę włókien — kolory są mniej nasycone, biel jest cieplejsza. Dla materiałów z dużą ilością zdjęć (katalogi produktowe, [ulotki](/produkty/ulotki) gastronomiczne) to minus. Dla materiałów B2B, kancelarii i firm premium to plus — naturalny wygląd buduje autentyczność.",
+      text: "Papier recycling 100% ma szarawy odcień i widoczną teksturę włókien — kolory są mniej nasycone, biel jest cieplejsza. Dla materiałów z dużą ilością zdjęć (katalogi produktowe, [ulotki](/produkty/ulotki) gastronomiczne) to minus. Dla materiałów ofertowych, kancelarii i marek premium to plus — naturalny wygląd buduje autentyczność.",
     },
     {
       type: "p",

@@ -46,7 +46,6 @@
     "customerName": "Full name",
     "customerEmail": "Email",
     "customerPhone": "Phone",
-    "companyName": "Company name",
     "shippingStreet": "Street and number",
     "shippingCity": "City",
     "shippingPostalCode": "Postal code",

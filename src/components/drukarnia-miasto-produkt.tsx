@@ -13,6 +13,7 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import type { Miasto } from "@/data/miasta";
+import { COMPANY } from "@/lib/company";
 import { robotsForCityProduct } from "@/lib/miasta-seo";
 import { finalUnitPrice } from "@/lib/pricing";
 import type { Product } from "@/lib/products";
@@ -35,7 +36,7 @@ function listToProse(items: string[] | undefined, max = 4): string | null {
 function tierBranze(miasto: Miasto): string[] {
   if (miasto.populacja >= 200000) {
     return [
-      "korporacje i centra usług wspólnych",
+      "centra usług wspólnych",
       "agencje kreatywne i marketingowe",
       "kancelarie prawne i biura doradcze",
       "sieci HoReCa i franczyzy gastronomiczne",
@@ -92,7 +93,7 @@ function buildSteps(miasto: Miasto, product: Product) {
     {
       icon: CreditCard,
       title: "Wgraj plik i opłać zamówienie",
-      body: `Załaduj PDF — przygotowanie pliku do druku i kontrolę techniczną (spady, rozdzielczość, CMYK) masz w cenie, drobne poprawki nanosimy bez dopłat. Płatność przelewem online lub kartą. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem zapłaty.`,
+      body: `Załaduj PDF — przygotowanie pliku do druku i kontrolę techniczną (spady, rozdzielczość, CMYK) masz w cenie, drobne poprawki nanosimy bez dopłat. Płatność z góry: BLIK, karta, Przelewy24, Apple Pay lub Google Pay.`,
     },
     {
       icon: Truck,
@@ -107,7 +108,7 @@ function buildLocalFaqs(miasto: Miasto, product: Product) {
   return [
     {
       question: `Ile kosztuje druk ${keyword} w ${miasto.nazwa}?`,
-      answer: `Cena ${keyword} dla firm z ${miasto.nazwa} jest taka sama jak w innych miastach Polski — DobrePrinty prowadzi cennik ogólnopolski. ${product.name} w podstawowej specyfikacji startują od ${finalUnitPrice(
+      answer: `Cena ${keyword} w ${miasto.nazwa} jest taka sama jak w innych miastach Polski — DobrePrinty prowadzi cennik ogólnopolski. ${product.name} w podstawowej specyfikacji startują od ${finalUnitPrice(
         Math.min(...product.formats.map((f) => f.unitPrice)),
       ).toFixed(2)} zł za sztukę przy większych nakładach. Dokładna kwota pojawia się w konfiguratorze po wybraniu formatu, nakładu i wykończenia. Dostawa kurierem do ${miasto.nazwa} wliczona w cenę dla zamówień powyżej 200 zł.`,
     },
@@ -117,7 +118,7 @@ function buildLocalFaqs(miasto: Miasto, product: Product) {
     },
     {
       question: `Czy przygotowanie pliku ${keyword} do druku jest płatne?`,
-      answer: `Nie. Przygotowanie pliku ${keyword} do druku i kontrola techniczna (spady, rozdzielczość, tryb kolorów CMYK, osadzenie fontów) są w cenie każdego zamówienia dla firm z ${miasto.nazwa} — bez dopłat. Drobne poprawki techniczne nanosimy bezpłatnie, a jeśli plik wymaga Twojej decyzji, wstrzymujemy druk i kontaktujemy się przed produkcją. Do każdego produktu udostępniamy też darmowy szablon z liniami cięcia i spadami.`,
+      answer: `Nie. Przygotowanie pliku ${keyword} do druku i kontrola techniczna (spady, rozdzielczość, tryb kolorów CMYK, osadzenie fontów) są w cenie każdego zamówienia do ${miasto.nazwa} — bez dopłat. Drobne poprawki techniczne nanosimy bezpłatnie, a jeśli plik wymaga Twojej decyzji, wstrzymujemy druk i kontaktujemy się przed produkcją. Do każdego produktu udostępniamy też darmowy szablon z liniami cięcia i spadami.`,
     },
     {
       question: `Czy mogę odebrać ${keyword} osobiście w ${miasto.nazwa}?`,
@@ -132,7 +133,7 @@ function buildLeadSentences(miasto: Miasto, product: Product): string {
   const dzielniceZdanie = dzielniceProse
     ? ` Dowozimy do wszystkich dzielnic — od ${dzielniceProse}.`
     : "";
-  return `${product.name} dla firm z ${miasto.nazwa} drukujemy w pełnym katalogu DobrePrinty: od mikronakładów po zamówienia produkcyjne. ${miasto.opis_krotki}${dzielniceZdanie} Sieć 28 drukarni partnerskich pozwala dobrać partnera, który dla Twojego zamówienia ${keyword} zrobi to najszybciej i najbardziej opłacalnie — z dostawą kurierem do ${miasto.wojewodztwo} w 24–48 h.`;
+  return `${product.name} z dostawą do ${miasto.nazwa} drukujemy w pełnym katalogu DobrePrinty: od mikronakładów po duże nakłady. ${miasto.opis_krotki}${dzielniceZdanie} Sieć 28 drukarni partnerskich pozwala dobrać partnera, który dla Twojego zamówienia ${keyword} zrobi to najszybciej i najbardziej opłacalnie — z dostawą kurierem do ${miasto.wojewodztwo} w 24–48 h.`;
 }
 
 function buildSeoParagraph(miasto: Miasto, product: Product): string {
@@ -150,7 +151,7 @@ function buildSeoParagraph(miasto: Miasto, product: Product): string {
   const uczelnieZdanie = uczelnieProse
     ? ` Stałą grupą zamawiających są też uczelnie i koła naukowe (${uczelnieProse}), dla których drukujemy materiały konferencyjne, dydaktyczne i promocyjne.`
     : "";
-  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród firm szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a rynek B2B w ${miasto.wojewodztwo} regularnie zamawia ${keyword} na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną finalną, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — każdy partner z naszej sieci przechodzi kwartalny audyt jakości druku i terminowości. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
+  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród osób szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a ${keyword} zamawia się tu regularnie na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną finalną, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — każdy partner z naszej sieci przechodzi kwartalny audyt jakości druku i terminowości. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
 }
 
 export function CityProductPageContent({
@@ -183,9 +184,9 @@ export function CityProductPageContent({
         "@type": "LocalBusiness",
         "@id": `${url}#localbusiness`,
         name: `DobrePrinty, ${product.name} ${miasto.nazwa}`,
-        description: `${product.name} dla firm z ${miasto.nazwa}. Druk online z dostawą 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
+        description: `${product.name} z dostawą do ${miasto.nazwa}. Druk online w 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
         url,
-        email: "hej@drukalo.pl",
+        email: COMPANY.email,
         priceRange: "29 zł – 4 500 zł",
         areaServed: {
           "@type": "City",
@@ -279,7 +280,7 @@ export function CityProductPageContent({
                 Druk {keyword} w {miasto.nazwa}
               </Eyebrow>
               <h1 className="mt-4 text-balance font-display text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
-                {product.name} dla firm z{" "}
+                {product.name} z dostawą do{" "}
                 <span className="text-primary">{miasto.nazwa}</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
@@ -564,7 +565,7 @@ export function CityProductPageContent({
             </Button>
             <Button asChild variant="outline" size="lg">
               <a
-                href={`mailto:hej@drukalo.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
+                href={`mailto:hej@dobreprinty.pl?subject=Wycena%20${encodeURIComponent(product.name)}%20${encodeURIComponent(miasto.nazwa)}`}
               >
                 Wycena indywidualna →
               </a>

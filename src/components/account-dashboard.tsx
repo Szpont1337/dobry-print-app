@@ -3,7 +3,6 @@
 import { useMutation, useQuery } from "convex/react";
 import Link from "next/link";
 import {
-  Building2,
   ClipboardList,
   Inbox,
   Loader2,
@@ -178,7 +177,6 @@ type Order = {
   shippingCountry: string;
   fileUrl?: string;
   notes?: string;
-  companyName?: string;
   pickupPointAddress?: string;
   pickupCode?: string;
   pickupPhone?: string;
@@ -371,19 +369,12 @@ function OrderCard({ order }: { order: Order }) {
             </div>
           )}
 
-        {(order.notes || order.companyName) && (
+        {order.notes && (
           <footer className="mt-4 grid gap-2 border-t border-border pt-3 text-sm text-muted-foreground">
-            {order.companyName && (
-              <p>
-                <strong className="text-foreground">{order.companyName}</strong>
-              </p>
-            )}
-            {order.notes && (
-              <p>
-                {t("notesPrefix")}
-                {order.notes}
-              </p>
-            )}
+            <p>
+              {t("notesPrefix")}
+              {order.notes}
+            </p>
           </footer>
         )}
       </div>
@@ -408,7 +399,6 @@ function ProfileSection({
 
   const nameId = useId();
   const phoneId = useId();
-  const companyId = useId();
   const streetId = useId();
   const cityId = useId();
   const zipId = useId();
@@ -445,7 +435,6 @@ function ProfileSection({
         token,
         name: get("name"),
         phone: get("phone"),
-        companyName: get("companyName"),
         shippingStreet: get("shippingStreet"),
         shippingCity: get("shippingCity"),
         shippingPostalCode: get("shippingPostalCode"),
@@ -499,16 +488,6 @@ function ProfileSection({
               defaultValue={profile?.phone ?? ""}
               autoComplete="tel"
               placeholder="+48 …"
-            />
-          </Fieldset>
-
-          <Fieldset legend={t("fieldsetCompany")} icon={Building2}>
-            <Field
-              id={companyId}
-              label={t("fields.companyName")}
-              name="companyName"
-              defaultValue={profile?.companyName ?? ""}
-              autoComplete="organization"
             />
           </Fieldset>
 

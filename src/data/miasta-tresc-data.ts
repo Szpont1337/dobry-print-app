@@ -14,7 +14,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
     heroLead:
       "Zamów ulotki, wizytówki, roll-upy i plakaty bez wychodzenia z biura. Dostarczamy do biurowców z Woli, otwartych spaceów z Mokotowa, agencji kreatywnych z Pragi i sieci HoReCa ze Śródmieścia. Kurier zwykle nadrabia trasę następnego dnia po produkcji.",
     industryTags: [
-      "korporacje z Woli i Warsaw Spire",
+      "biura z Woli i Warsaw Spire",
       "startupy z Mokotowa i Służewca",
       "wystawcy PTAK Warsaw Expo i EXPO XXI",
       "agencje eventowe i kreatywne",
@@ -30,7 +30,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "skladane-ulotki":
         "Idealne na menu lokali z Hożej i Nowego Światu oraz programy eventów na PGE Narodowym. Falcowanie typu C, papier 170 g.",
       "broszury-szyte":
-        "Programy konferencji organizowanych w EXPO XXI i materiały szkoleń korporacyjnych z Wola Park. Spinanie drutem, do 48 stron.",
+        "Programy konferencji organizowanych w EXPO XXI i materiały szkoleniowe z Wola Park. Spinanie drutem, do 48 stron.",
       "broszury-klejone":
         "Katalogi inwestorów, raporty roczne dla spółek z GPW i prezentacje dla doradczych big four. Twarda okładka 300 g, środek 135 g.",
       "broszury-szyte-nicia":
@@ -42,7 +42,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       wizytowki:
         "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla startupów z Mokotowa i freelancerów z Pragi. Karton 350 g.",
       "kartki-pocztowki":
-        "Kartki świąteczne korporacji z Woli i Mokotowa, pocztówki promocyjne dla hoteli przy Stadionie Narodowym i w Wilanowie. Karton 300 g, druk 4/4.",
+        "Kartki świąteczne z Woli i Mokotowa, pocztówki promocyjne dla hoteli przy Stadionie Narodowym i w Wilanowie. Karton 300 g, druk 4/4.",
       plakaty:
         "Wielkoformatowa promocja Warszawskiego Festiwalu Filmowego, Orange Warsaw, eventów w Pradze i premier teatralnych. Formaty A3, A2, A1, A0, B1.",
       naklejki:
@@ -59,8 +59,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na konferencje w Centrum Nauki Kopernik, gadżety wystawców PTAK Warsaw Expo i eventy agencji kreatywnych z Woli. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Warszawa to największy rynek biznesowy w Polsce. Stolicowe centrale banków (PKO BP, Pekao, mBank), big four (PwC, Deloitte, EY, KPMG), korporacje IT (Google, Microsoft, IBM) i giełda papierów wartościowych zamawiają druk regularnie, w dużych skalach i pod krótkie terminy. Drukarnia Warszawa obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Pragi po dziesięć tysięcy plakatów na Orange Warsaw Festival.",
-      "Druk Warszawa sprawdza się tam, gdzie liczy się czas reakcji. Agencja kreatywna z Woli potrzebuje 200 broszur klejonych na piątkową prezentację, korporacja z Mokotowa zamawia 5 000 katalogów na onboarding, organizator targów modowych z PTAK Warsaw Expo wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Warszawa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
+      "Warszawa to największy rynek w Polsce. Stolicowe centrale banków (PKO BP, Pekao, mBank), big four (PwC, Deloitte, EY, KPMG), giganci IT (Google, Microsoft, IBM) i giełda papierów wartościowych zamawiają druk regularnie, w dużych skalach i pod krótkie terminy. Drukarnia Warszawa obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera z Pragi po dziesięć tysięcy plakatów na Orange Warsaw Festival.",
+      "Druk Warszawa sprawdza się tam, gdzie liczy się czas reakcji. Agencja kreatywna z Woli potrzebuje 200 broszur klejonych na piątkową prezentację, zespół z Mokotowa zamawia 5 000 katalogów na onboarding, organizator targów modowych z PTAK Warsaw Expo wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Warszawa online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Warszawy kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Warszawa to dla nas codzienność. Kancelarie prawne z Hożej, startupy z Brain Embassy, agencje eventowe z Pragi, sieci gastronomiczne ze Śródmieścia i wydziały UW i SGH zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Warszawa z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
     ],
@@ -73,11 +73,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Warszawy?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Warszawy to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Woli, Mokotowie czy w Śródmieściu w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia korporacyjne?",
-        answer:
-          "Tak. Drukarnia Warszawa w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały promocyjne dla wystawców PTAK Warsaw Expo i serie wizytówek dla całych zespołów korporacji z Woli. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -162,7 +157,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na Targi Książki w Krakowie, gadżety startupów z Krakow Technology Park i sklepów z Kazimierza. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Kraków to drugie miasto Polski i największy europejski hub centrów usług biznesowych. Pracują tu polskie i zagraniczne giganty IT (Google, Cisco, Comarch, Capgemini, Motorola), centra BPO/SSC (Shell, UBS, State Street, Akamai), agencje kreatywne z Zabłocia, restauracje i kawiarnie Kazimierza oraz Starego Miasta. Do tego cztery duże uczelnie (UJ, AGH, UEK, Politechnika Krakowska) z ponad 130 tysiącami studentów i kalendarz festiwali, który ściąga turystów od kwietnia do września. Drukarnia Kraków obsługująca taki rynek musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po osiem tysięcy plakatów na Festiwal Kultury Żydowskiej.",
+      "Kraków to drugie miasto Polski i największy europejski hub centrów usług wspólnych. Pracują tu polskie i zagraniczne giganty IT (Google, Cisco, Comarch, Capgemini, Motorola), centra BPO/SSC (Shell, UBS, State Street, Akamai), agencje kreatywne z Zabłocia, restauracje i kawiarnie Kazimierza oraz Starego Miasta. Do tego cztery duże uczelnie (UJ, AGH, UEK, Politechnika Krakowska) z ponad 130 tysiącami studentów i kalendarz festiwali, który ściąga turystów od kwietnia do września. Drukarnia Kraków obsługująca taki rynek musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po osiem tysięcy plakatów na Festiwal Kultury Żydowskiej.",
       "Druk Kraków sprawdza się tam, gdzie liczy się czas reakcji. Kawiarnia z Kazimierza otwiera nową lokalizację i potrzebuje 500 składanych ulotek z menu, korpo IT z Zabłocia zamawia 3 000 broszur onboardingowych dla nowych zespołów, organizator konferencji w ICE Kraków wymaga roll-upów na czwartkowe otwarcie. Tania drukarnia Kraków online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Krakowa kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Kraków to dla nas codzienność. Kancelarie prawne z Karmelickiej, agencje kreatywne z Zabłocia, lokale gastronomiczne z Kazimierza, koła naukowe UJ i AGH oraz centra BPO z Bronowic zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Kraków z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
@@ -176,12 +171,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Krakowa?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Krakowa to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Kazimierzu, Zabłociu czy w Bronowicach w czwartek lub piątek.",
-      },
-      {
-        question:
-          "Czy obsługujecie duże zamówienia dla korporacji IT z Krakowa?",
-        answer:
-          "Tak. Drukarnia Kraków w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa, materiały onboardingowe dla centrów BPO (Shell, UBS, State Street) i serie wizytówek dla całych zespołów IT z Comarchu, Capgemini i Cisco. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców EXPO Kraków i ICE Kraków?",
@@ -264,7 +253,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na konferencje w Hali Stulecia, gadżety rekrutacyjne Politechniki Wrocławskiej i eventy software house’ów z Krzyków. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Wrocław to stolica Dolnego Śląska i jeden z najsilniejszych rynków biznesowych w Polsce. Pracują tu software house’y i sektor IT skupiony w lokalnym klastrze, centra usług wspólnych BPO/SSC obsługujące klientów z całej Europy, producenci AGD i części motoryzacyjnych oraz operatorzy logistyczni przy autostradzie A4. Do tego Uniwersytet Wrocławski, Politechnika Wrocławska i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów, sieci HoReCa z Rynku i Starego Miasta oraz wydarzenia ściągające tysiące widzów. Drukarnia Wrocław obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera ze Śródmieścia po dziesięć tysięcy plakatów na koncert na Stadionie Wrocław.",
+      "Wrocław to stolica Dolnego Śląska i jeden z najsilniejszych rynków w Polsce. Pracują tu software house’y i sektor IT skupiony w lokalnym klastrze, centra usług wspólnych BPO/SSC obsługujące klientów z całej Europy, producenci AGD i części motoryzacyjnych oraz operatorzy logistyczni przy autostradzie A4. Do tego Uniwersytet Wrocławski, Politechnika Wrocławska i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów, sieci HoReCa z Rynku i Starego Miasta oraz wydarzenia ściągające tysiące widzów. Drukarnia Wrocław obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera ze Śródmieścia po dziesięć tysięcy plakatów na koncert na Stadionie Wrocław.",
       "Druk Wrocław sprawdza się tam, gdzie liczy się czas reakcji. Software house z Krzyków potrzebuje 200 broszur rekrutacyjnych na targi pracy, centrum BPO/SSC z Fabrycznej zamawia 5 000 katalogów na onboarding nowej zmiany, organizator targów w Hali Stulecia wymaga roll-upów na sobotnie otwarcie. Tania drukarnia Wrocław online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Wrocławia kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Wrocław to dla nas codzienność. Kancelarie prawne ze Starego Miasta, software house’y z wrocławskiego klastra IT, centra usług wspólnych z Fabrycznej, producenci AGD i motoryzacji z Psiego Pola oraz wydziały UWr i Politechniki Wrocławskiej zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Wrocław z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
@@ -278,11 +267,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Wrocławia?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Wrocławia to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Krzykach, Psim Polu czy w Śródmieściu w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Wrocławia?",
-        answer:
-          "Tak. Drukarnia Wrocław w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i HoReCa, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów software house’ów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla software house’ów i centrów BPO/SSC?",
@@ -382,11 +366,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Łodzi to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Bałutach czy na Widzewie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Łodzi?",
-        answer:
-          "Tak. Drukarnia Łódź w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci e-commerce, materiały promocyjne dla producentów AGD i serie wizytówek dla całych zespołów centrów usług wspólnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question: "Realizujecie druk dla branży filmowej i kreatywnej z Łodzi?",
         answer:
           "Tak. Druk Łódź pod przemysł filmowy i kreatywny to nasza częsta kategoria zamówień. Plakaty B1, roll-upy 100×200 i broszury klejone dla planów filmowych klastra, studiów z Off Piotrkowska i Szkoły Filmowej nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
@@ -448,7 +427,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii prawnych ze Starego Miasta, biur księgowych z Jeżyc oraz firm logistycznych i dostawców Volkswagena. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm IT z Wildy i handlowców obsługujących stoiska na MTP. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla branży IT z Wildy i handlowców obsługujących stoiska na MTP. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki z koziołkami z Ratusza i Ostrowem Tumskim, kartki świąteczne firm motoryzacyjnych i operatorów logistycznych. Karton 300 g, druk 4/4.",
       plakaty:
@@ -481,11 +460,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Poznania?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Poznania to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Grunwaldzie, Wildzie czy w Jeżycach w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Poznania?",
-        answer:
-          "Tak. Drukarnia Poznań w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla dostawców motoryzacji i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -556,7 +530,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja Jarmarku św. Dominika, koncertów w Polsat Plus Arena, wydarzeń w Europejskim Centrum Solidarności i premier teatralnych Trójmiasta. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm spożywczych z Trójmiasta, naklejki na auta flot logistycznych obsługujących port i gadżety eventowe wystawców Jarmarku św. Dominika. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla branży spożywczej z Trójmiasta, naklejki na auta flot logistycznych obsługujących port i gadżety eventowe wystawców Jarmarku św. Dominika. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Starego Miasta, ogrodzenia inwestycji deweloperskich na Przymorzu i sceny koncertów w Polsat Plus Arena. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -583,11 +557,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Gdańska?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Gdańska to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, we Wrzeszczu czy na Przymorzu w czwartek lub piątek. Obsługujemy też całe Trójmiasto.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Gdańska?",
-        answer:
-          "Tak. Drukarnia Gdańsk w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i hoteli, materiały promocyjne dla firm portowych i petrochemicznych oraz serie wizytówek dla całych zespołów software house’ów z Olivia Centre. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -658,7 +627,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja Dni Morza, koncertów w Filharmonii im. Karłowicza i wydarzeń przy Wałach Chrobrego. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm spożywczych z Pogodna, naklejki na auta flot spedycyjnych obsługujących handel transgraniczny i gadżety startupów IT ze Szczecina. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla branży spożywczej z Pogodna, naklejki na auta flot spedycyjnych obsługujących handel transgraniczny i gadżety startupów IT ze Szczecina. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Śródmieścia, ogrodzenia terenów portowych nad Odrą i sceny Dni Morza przy Wałach Chrobrego. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -687,15 +656,10 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Szczecina to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Prawobrzeżu czy na Pogodnie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm ze Szczecina?",
-        answer:
-          "Tak. Drukarnia Szczecin w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów portowych i serie wizytówek dla zespołów firm IT i spedycyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla branży morskiej i logistyki transgranicznej?",
         answer:
-          "Tak. Druk Szczecin pod gospodarkę morską i logistykę to nasza częsta kategoria zamówień. Katalogi spedycyjne, papier firmowy dla biur celnych, broszury operatorów portowych i materiały targowe dla firm obsługujących handel transgraniczny z Niemcami nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
+          "Tak. Druk Szczecin pod gospodarkę morską i logistykę to nasza częsta kategoria zamówień. Katalogi spedycyjne, papier firmowy dla biur celnych, broszury operatorów portowych i materiały targowe dla obsługi handlu transgranicznego z Niemcami nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
       },
       {
         question: "Czy mogę odebrać zamówienie osobiście w Szczecinie?",
@@ -705,7 +669,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Drukujecie materiały dwujęzyczne PL/DE i druk na Dni Morza?",
         answer:
-          "Tak. Ze względu na bliskość granicy z Niemcami często realizujemy druk dwujęzyczny PL/DE dla firm obsługujących handel transgraniczny: ulotki, katalogi i papier firmowy. Co roku drukujemy też plakaty B1/A0 i roll-upy na Dni Morza oraz wydarzenia przy Wałach Chrobrego. Przy nakładach 1 000+ warto zamówić 2 tygodnie przed wydarzeniem.",
+          "Tak. Ze względu na bliskość granicy z Niemcami często realizujemy druk dwujęzyczny PL/DE dla obsługi handlu transgranicznego: ulotki, katalogi i papier firmowy. Co roku drukujemy też plakaty B1/A0 i roll-upy na Dni Morza oraz wydarzenia przy Wałach Chrobrego. Przy nakładach 1 000+ warto zamówić 2 tygodnie przed wydarzeniem.",
       },
     ],
     geo: { lat: 53.4285, lng: 14.5528 },
@@ -788,13 +752,8 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Bydgoszczy to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Fordonie czy na Szwederowie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Bydgoszczy?",
-        answer:
-          "Tak. Drukarnia Bydgoszcz w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i operatorów logistycznych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów centrów usług wspólnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
-          "Realizujecie druk dla firm logistycznych i elektronicznych z Bydgoszczy?",
+          "Realizujecie druk dla branży logistycznej i elektronicznej z Bydgoszczy?",
         answer:
           "Tak. Druk Bydgoszcz pod lokalny przemysł to nasza częsta kategoria zamówień. Katalogi, etykiety, papier firmowy i materiały konferencyjne dla operatorów logistycznych z węzła nad Brdą, producentów elektroniki i firm zbrojeniowych nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
       },
@@ -858,11 +817,11 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       wizytowki:
         "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Karton 350 g, format klasyczny lub europejski.",
       "kartki-pocztowki":
-        "Kartki świąteczne dla firm spożywczych z Lublina, pocztówki promocyjne dla hoteli przy Festiwalu Inne Brzmienia. Karton 300 g, druk 4/4.",
+        "Kartki świąteczne dla branży spożywczej z Lublina, pocztówki promocyjne dla hoteli przy Festiwalu Inne Brzmienia. Karton 300 g, druk 4/4.",
       plakaty:
         "Wielkoformatowa promocja festiwali (Noc Kultury, Carnaval Sztukmistrzów, Open City), wydarzeń akademickich i premier teatralnych. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm spożywczych (Lubella, Herbapol), naklejki na auta firm logistycznych z trasy wschodniej i gadżety startupów z Lubelskiego Parku Naukowo-Technologicznego. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla branży spożywczej (Lubella, Herbapol), naklejki na auta firm logistycznych z trasy wschodniej i gadżety startupów z Lubelskiego Parku Naukowo-Technologicznego. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali z Krakowskiego Przedmieścia, ogrodzenia budów i sceny festiwali (Noc Kultury, Carnaval Sztukmistrzów). PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -875,7 +834,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na Noc Kultury i Carnaval Sztukmistrzów, gadżety rekrutacyjne UMCS i KUL oraz konferencje w LPNT. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Lublin to silne centrum biznesowe wschodniej Polski. Pracują tu dynamiczny sektor IT (Britenet, eLeader, Comarch, Asseco BS), branża spożywcza (Lubella, Herbapol, Solidarność, Perła Browary Lubelskie) i Targi Lublin, które goszczą Lub-Invest, Smak Lasu i Eurogastro. Do tego osiem uczelni z ponad 65 tysiącami studentów oraz festiwale, które zaludniają Stare Miasto przez całe lato. Drukarnia Lublin obsługująca takie miasto musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po pięć tysięcy plakatów na Carnaval Sztukmistrzów.",
+      "Lublin to silny ośrodek wschodniej Polski. Pracują tu dynamiczny sektor IT (Britenet, eLeader, Comarch, Asseco BS), branża spożywcza (Lubella, Herbapol, Solidarność, Perła Browary Lubelskie) i Targi Lublin, które goszczą Lub-Invest, Smak Lasu i Eurogastro. Do tego osiem uczelni z ponad 65 tysiącami studentów oraz festiwale, które zaludniają Stare Miasto przez całe lato. Drukarnia Lublin obsługująca takie miasto musi nadążać za bardzo różnym rytmem zamówień: od jednej wizytówki dla freelancera po pięć tysięcy plakatów na Carnaval Sztukmistrzów.",
       "Druk Lublin sprawdza się tam, gdzie liczy się czas reakcji. Restauracja ze Starego Miasta otwiera sezon i potrzebuje 500 składanych ulotek z nowym menu, startup z Wojciechowskiej leci na konferencję IT z roll-upem, organizator hali targowej wymaga plakatów B1 na piątkowe otwarcie. Tania drukarnia Lublin online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Lublina kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Lublin to dla nas codzienność. Agencje eventowe spod Bramy Krakowskiej, kancelarie z Czechowa, biura logistyczne obsługujące eksport na Ukrainę i koła naukowe KUL zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni; biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Lublin z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
@@ -889,11 +848,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Lublina?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Lublina to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Lublina?",
-        answer:
-          "Tak. Drukarnia Lublin w naszej sieci realizuje nakłady 10 000+ ulotek dla branży spożywczej, materiały dla wystawców Targów Lublin i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców Targów Lublin?",
@@ -991,11 +945,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Białegostoku to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Centrum, na Antoniuku czy w Bacieczkach w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Białegostoku?",
-        answer:
-          "Tak. Drukarnia Białystok w naszej sieci realizuje nakłady 10 000+ ulotek dla deweloperów i sieci handlowych, materiały promocyjne dla producentów mebli i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question: "Realizujecie druk dla Politechniki Białostockiej i UMB?",
         answer:
           "Tak. Druk Białystok pod sektor akademicki to nasza częsta kategoria zamówień. Materiały konferencyjne, monografie, plakaty rekrutacyjne i broszury wydziałowe dla Politechniki, UwB i UMB nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
@@ -1075,7 +1024,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na kongresy w MCK, gadżety wystawców Intel Extreme Masters i eventy agencji z Metropolii GZM. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Katowice to serce Metropolii GZM i jeden z najważniejszych rynków biznesowych południa Polski. Pracują tu centra usług wspólnych i firmy IT (klaster BPO ze Śródmieścia), spółki górnicze i energetyczne z tradycją sięgającą dekad oraz prężny sektor eventowo-kongresowy skupiony wokół Spodka, Międzynarodowego Centrum Kongresowego i Strefy Kultury z siedzibą NOSPR. Do tego Uniwersytet Śląski i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów. Drukarnia Katowice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po dziesięć tysięcy plakatów na OFF Festival.",
+      "Katowice to serce Metropolii GZM i jeden z najważniejszych rynków południa Polski. Pracują tu centra usług wspólnych i firmy IT (klaster BPO ze Śródmieścia), spółki górnicze i energetyczne z tradycją sięgającą dekad oraz prężny sektor eventowo-kongresowy skupiony wokół Spodka, Międzynarodowego Centrum Kongresowego i Strefy Kultury z siedzibą NOSPR. Do tego Uniwersytet Śląski i Uniwersytet Ekonomiczny z dziesiątkami tysięcy studentów. Drukarnia Katowice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla freelancera po dziesięć tysięcy plakatów na OFF Festival.",
       "Druk Katowice sprawdza się tam, gdzie liczy się czas reakcji. Wystawca targów w MCK potrzebuje 200 broszur klejonych na otwarcie kongresu, centrum BPO ze Śródmieścia zamawia 5 000 materiałów na onboarding, organizator Intel Extreme Masters wymaga roll-upów do stref gamingowych w Spodku, a agencja eventowa z Metropolii GZM kompletuje plakaty pod Tauron Nowa Muzyka. Tania drukarnia Katowice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Katowic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Katowice to dla nas codzienność. Centra usług wspólnych ze Śródmieścia, spółki górnicze i energetyczne, organizatorzy kongresów w MCK i wystawcy Intel Extreme Masters w Spodku, restauracje z Mariackiej oraz wydziały Uniwersytetu Śląskiego i UE zamawiają u nas regularnie. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Katowice z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
@@ -1089,11 +1038,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Katowic?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Katowic to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Ligocie czy w Załężu w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Katowic?",
-        answer:
-          "Tak. Drukarnia Katowice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla wystawców MCK i serie wizytówek dla całych zespołów centrów BPO. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1126,7 +1070,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   gdynia: {
     metaDescription:
-      "Drukarnia Gdynia online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z portu pasażerskiego, IT i Trójmiasta, pod festiwale FPFF i Open’er. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Gdynia online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla klientów z portu pasażerskiego, IT i Trójmiasta, pod festiwale FPFF i Open’er. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gdyni w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -1164,7 +1108,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja Festiwalu Polskich Filmów Fabularnych, Open’er Festival, Gdynia Design Days i wydarzeń w Gdynia Arena. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety dla firm spożywczych znad Zatoki, naklejki na flotę pojazdów operatorów portowych i gadżety startupów IT z Gdyni. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety dla branży spożywczej znad Zatoki, naklejki na flotę pojazdów operatorów portowych i gadżety startupów IT z Gdyni. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Skweru Kościuszki, ogrodzenia inwestycji w Redłowie i sceny Open’er Festival w Gdyni-Kosakowie. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -1191,11 +1135,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Gdyni?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Gdyni to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, Orłowie czy Redłowie w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Gdyni?",
-        answer:
-          "Tak. Drukarnia Gdynia w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci HoReCa i operatorów turystycznych, materiały promocyjne dla firm z sektora morskiego i serie wizytówek dla zespołów spółek IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla sektora morskiego i firm IT z Gdyni?",
@@ -1295,11 +1234,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Częstochowy to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Tysiącleciu czy w Rakowie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Częstochowy?",
-        answer:
-          "Tak. Drukarnia Częstochowa w naszej sieci realizuje nakłady 10 000+ ulotek dla hoteli i sieci handlowych, materiały promocyjne dla producentów tworzyw i serie wizytówek dla zespołów zakładów metalowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla sektora HoReCa i hoteli spod Jasnej Góry?",
         answer:
@@ -1362,7 +1296,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii prawnych ze Śródmieścia, biur księgowych z Ustronia i kooperantów Fabryki Broni Łucznik. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm obuwniczych i kooperantów przemysłu zbrojeniowego z Radomia. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla branży obuwniczej i kooperantów przemysłu zbrojeniowego z Radomia. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki z lotniczymi motywami Air Show Radom i Lotniska Radom-Sadków, kartki świąteczne firm obuwniczych i logistycznych. Karton 300 g, druk 4/4.",
       plakaty:
@@ -1397,11 +1331,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Radomia to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Gołębiowie czy na Ustroniu w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Radomia?",
-        answer:
-          "Tak. Drukarnia Radom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów obuwia i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla przemysłu zbrojeniowego i obuwniczego z Radomia?",
         answer:
@@ -1431,7 +1360,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   rzeszow: {
     metaDescription:
-      "Drukarnia Rzeszów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm Doliny Lotniczej i sektora IT. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Rzeszów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla Doliny Lotniczej i sektora IT. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rzeszowa w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -1454,9 +1383,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "skladane-ulotki":
         "Idealne na menu lokali ze Śródmieścia i programy wydarzeń przy Wieży zamkowej oraz Podziemnej Trasie Turystycznej. Falcowanie typu C, papier 170 g.",
       "broszury-szyte":
-        "Programy konferencji branży lotniczej i materiały szkoleń korporacyjnych firm z Doliny Lotniczej. Spinanie drutem, do 48 stron.",
+        "Programy konferencji branży lotniczej i materiały szkoleniowe z Doliny Lotniczej. Spinanie drutem, do 48 stron.",
       "broszury-klejone":
-        "Katalogi producentów z Podkarpacia, raporty roczne spółek IT (Asseco) i prezentacje inwestorskie dla firm z lotniska Jasionka. Twarda okładka 300 g, środek 135 g.",
+        "Katalogi producentów z Podkarpacia, raporty roczne spółek IT (Asseco) i prezentacje inwestorskie dla klientów z lotniska Jasionka. Twarda okładka 300 g, środek 135 g.",
       "broszury-szyte-nicia":
         "Monografie wydziałowe Uniwersytetu Rzeszowskiego i Politechniki Rzeszowskiej, albumy o rzeszowskim Rynku i Ratuszu, książki jubileuszowe. Trwałość liczona w dekadach.",
       "roll-up":
@@ -1499,14 +1428,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Rzeszowa to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Nowym Mieście czy Baranówce w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Rzeszowa?",
+        question: "Realizujecie druk dla Doliny Lotniczej i sektora IT?",
         answer:
-          "Tak. Drukarnia Rzeszów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów przemysłowych i serie wizytówek dla całych zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
-        question: "Realizujecie druk dla firm Doliny Lotniczej i sektora IT?",
-        answer:
-          "Tak. Druk Rzeszów pod przemysł lotniczy i software house’y to nasza częsta kategoria zamówień. Katalogi techniczne, materiały konferencyjne, roll-upy i wizytówki dla firm spod Jasionki, Asseco i G2A nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
+          "Tak. Druk Rzeszów pod przemysł lotniczy i software house’y to nasza częsta kategoria zamówień. Katalogi techniczne, materiały konferencyjne, roll-upy i wizytówki dla zamawiających spod Jasionki, Asseco i G2A nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
       },
       {
         question: "Czy mogę odebrać zamówienie osobiście w Rzeszowie?",
@@ -1600,11 +1524,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Torunia to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Starówce, Bydgoskim Przedmieściu czy Rubinkowie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Torunia?",
-        answer:
-          "Tak. Drukarnia Toruń w naszej sieci realizuje nakłady 10 000+ ulotek dla obiektów turystycznych i sieci handlowych, etykiety i opakowania dla producentów pierników oraz serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla branży turystycznej i spożywczej z Torunia?",
         answer:
@@ -1635,7 +1554,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   sosnowiec: {
     metaDescription:
-      "Drukarnia Sosnowiec online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla firm z Zagłębia Dąbrowskiego, stref logistycznych i Metropolii GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Sosnowiec online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Druk dla klientów z Zagłębia Dąbrowskiego, stref logistycznych i Metropolii GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Sosnowca w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -1658,7 +1577,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "skladane-ulotki":
         "Idealne na menu lokali ze Śródmieścia i przy Parku Sieleckim oraz programy wydarzeń w Pałacu Schoena. Falcowanie typu C, papier 170 g.",
       "broszury-szyte":
-        "Programy konferencji z kampusu Uniwersytetu Śląskiego w Sosnowcu i materiały szkoleń dla firm motoryzacyjnych i metalowych Zagłębia. Spinanie drutem, do 48 stron.",
+        "Programy konferencji z kampusu Uniwersytetu Śląskiego w Sosnowcu i materiały szkoleń dla branży motoryzacyjnej i metalowej Zagłębia. Spinanie drutem, do 48 stron.",
       "broszury-klejone":
         "Katalogi operatorów logistycznych z sosnowieckich stref magazynowych, raporty firm metalowych i prezentacje dla inwestorów z Metropolii GZM. Twarda okładka 300 g, środek 135 g.",
       "broszury-szyte-nicia":
@@ -1674,7 +1593,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja wydarzeń w Pałacu Schoena, imprez w Parku Sieleckim i targów Metropolii GZM. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm metalowych i motoryzacyjnych Zagłębia, naklejki na auta flot logistycznych z sosnowieckich magazynów i gadżety dla studentów kampusu UŚ. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla branży metalowej i motoryzacyjnej Zagłębia, naklejki na auta flot logistycznych z sosnowieckich magazynów i gadżety dla studentów kampusu UŚ. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Śródmieścia, ogrodzenia budów stref magazynowych przy S1 i sceny imprez w Parku Sieleckim. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -1703,14 +1622,9 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Sosnowca to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Pogoni czy w Zagórzu w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Sosnowca?",
-        answer:
-          "Tak. Drukarnia Sosnowiec w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question: "Realizujecie druk dla branży logistycznej i motoryzacyjnej?",
         answer:
-          "Tak. Druk Sosnowiec pod sektor logistyczny, motoryzacyjny i metalowy to nasza częsta kategoria zamówień. Etykiety produktowe, oznaczenia magazynów, katalogi i broszury klejone dla firm ze stref przy S1 nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
+          "Tak. Druk Sosnowiec pod sektor logistyczny, motoryzacyjny i metalowy to nasza częsta kategoria zamówień. Etykiety produktowe, oznaczenia magazynów, katalogi i broszury klejone dla klientów ze stref przy S1 nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
       },
       {
         question: "Czy mogę odebrać zamówienie osobiście w Sosnowcu?",
@@ -1720,7 +1634,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całej Metropolii GZM?",
         answer:
-          "Tak. Sosnowiec jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc oprócz samego miasta drukujemy dla firm z Dąbrowy Górniczej, Będzina, Katowic i całego Zagłębia Dąbrowskiego. Jedno zamówienie, jeden kurier, dostawa pod adres w obrębie GZM zwykle następnego dnia po produkcji.",
+          "Tak. Sosnowiec jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc oprócz samego miasta drukujemy dla klientów z Dąbrowy Górniczej, Będzina, Katowic i całego Zagłębia Dąbrowskiego. Jedno zamówienie, jeden kurier, dostawa pod adres w obrębie GZM zwykle następnego dnia po produkcji.",
       },
     ],
     geo: { lat: 50.2863, lng: 19.104 },
@@ -1774,7 +1688,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja stoisk na MSPO, Agrotech i Plastpol, wydarzeń w Targach Kielce i imprez Kieleckiego Centrum Kultury. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm z przemysłu metalowego i budowlanego, naklejki na auta flot logistycznych z węzła S7 i gadżety wystawców Targów Kielce. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla klientów z przemysłu metalowego i budowlanego, naklejki na auta flot logistycznych z węzła S7 i gadżety wystawców Targów Kielce. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Śródmieścia, ogrodzenia świętokrzyskich budów i sceny wydarzeń przy Targach Kielce. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -1801,11 +1715,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Kielc?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Kielc to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Bocianku czy na Ślichowicach w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Kielc?",
-        answer:
-          "Tak. Drukarnia Kielce w naszej sieci realizuje nakłady 10 000+ ulotek dla firm budowlanych i sieci handlowych, materiały promocyjne dla wystawców Targów Kielce i serie wizytówek dla całych zespołów z przemysłu metalowego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla wystawców Targów Kielce?",
@@ -1837,7 +1746,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   gliwice: {
     metaDescription:
-      "Drukarnia Gliwice online. Ulotki, wizytówki i plakaty z dostawą do Gliwic w 24–48 h dla firm motoryzacyjnych i Politechniki Śląskiej. Cena finalna od razu, 28 drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Gliwice online. Ulotki, wizytówki i plakaty z dostawą do Gliwic w 24–48 h dla branży motoryzacyjnej i Politechniki Śląskiej. Cena finalna od razu, 28 drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Gliwic w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -1876,7 +1785,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja wydarzeń akademickich Politechniki Śląskiej, koncertów w Arenie Gliwice i imprez miejskich na Rynku. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety dla firm przemysłu maszynowego z Katowickiej SSE, naklejki na flotę kooperantów motoryzacyjnych Stellantis i gadżety startupów IT z Gliwic. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety dla przemysłu maszynowego z Katowickiej SSE, naklejki na flotę kooperantów motoryzacyjnych Stellantis i gadżety startupów IT z Gliwic. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Śródmieścia, ogrodzenia inwestycji w Katowickiej SSE i sceny wydarzeń przy Arenie Gliwice. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -1889,7 +1798,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         "Bawełniane tote na konferencje Politechniki Śląskiej, gadżety rekrutacyjne firm z Katowickiej SSE i eventy branży motoryzacyjnej z GZM. Nadruk A4, od 16 zł za sztukę — przy większym nakładzie 10 zł.",
     },
     paragraphs: [
-      "Gliwice to jedno z najważniejszych miast przemysłowych Górnego Śląska i część Metropolii GZM. Pracują tu fabryka Stellantis (dawny Opel) z całym łańcuchem kooperantów motoryzacyjnych, firmy przemysłu maszynowego i metalowego, rosnący sektor IT oraz zakłady ulokowane w Katowickiej Specjalnej Strefie Ekonomicznej. Sercem akademickim miasta jest Politechnika Śląska z kilkudziesięcioma tysiącami studentów. Drukarnia Gliwice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla inżyniera po pięć tysięcy katalogów technicznych dla firmy ze strefy.",
+      "Gliwice to jedno z najważniejszych miast przemysłowych Górnego Śląska i część Metropolii GZM. Pracują tu fabryka Stellantis (dawny Opel) z całym łańcuchem kooperantów motoryzacyjnych, firmy przemysłu maszynowego i metalowego, rosnący sektor IT oraz zakłady ulokowane w Katowickiej Specjalnej Strefie Ekonomicznej. Sercem akademickim miasta jest Politechnika Śląska z kilkudziesięcioma tysiącami studentów. Drukarnia Gliwice obsługująca taki rynek musi nadążać za bardzo różnym rytmem: od jednej wizytówki dla inżyniera po pięć tysięcy katalogów technicznych dla zakładu ze strefy.",
       "Druk Gliwice sprawdza się tam, gdzie liczy się czas reakcji. Kooperant Stellantis potrzebuje 300 broszur klejonych z dokumentacją na audyt jakości, koło naukowe Politechniki Śląskiej zamawia roll-upy na targi techniczne, restauracja z Rynku otwiera sezon i wymaga 500 składanych ulotek z nowym menu. Tania drukarnia Gliwice online nie musi przy tym oznaczać kompromisu jakościowego. Przy sieci 28 zweryfikowanych partnerów cena finalna widoczna jest od pierwszego kliknięcia, a plik sprawdzamy przed drukiem.",
       "W DobrePrinty dostarczamy druk do Gliwic kurierem: produkcja standardowych zamówień startuje w 24 godziny, kurier dokłada zwykle jeden dzień roboczy. Wybierasz nakład i format w konfiguratorze, my dobieramy drukarnię partnerską, która dla Twojego produktu zrobi to najlepiej. Niekoniecznie najtaniej, ale optymalnie pod kątem czasu i jakości. Rachunek ze Stripe trafia na maila razem z potwierdzeniem, bez dopisków typu „proszę o dokument”.",
       "Druk Gliwice to dla nas codzienność. Firmy przemysłu maszynowego z Łabęd, kooperanci motoryzacyjni z okolic fabryki Stellantis, startupy IT, koła naukowe Politechniki Śląskiej, biura logistyczne obsługujące port śródlądowy na Kanale Gliwickim i lokale z Rynku zamawiają u nas regularnie. Ponieważ Gliwice leżą w sercu Metropolii GZM, równie sprawnie dostarczamy do Zabrza, Bytomia i Katowic. Reklamacje rozpatrujemy my, nie odsyłamy do drukarni. Biuro obsługi odpowiada w 2 godziny robocze. Drukarnia online Gliwice z sieci DobrePrinty to wybór, gdy nie chcesz tracić popołudnia na porównywanie ofert i rozmowy z handlowcami.",
@@ -1903,11 +1812,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Gliwic?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Gliwic to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, Sośnicy czy na Trynku w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Gliwic?",
-        answer:
-          "Tak. Drukarnia Gliwice w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm przemysłu maszynowego i serie wizytówek dla zespołów kooperantów motoryzacyjnych Stellantis. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -1940,7 +1844,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   olsztyn: {
     metaDescription:
-      "Drukarnia Olsztyn online. Ulotki, wizytówki i plakaty dla firm z Olsztyna i całych Mazur z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Olsztyn online. Ulotki, wizytówki i plakaty dla klientów z Olsztyna i całych Mazur z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Olsztyna w 24–48 h. Druk pod sezon turystyczny Mazur, ośrodki wypoczynkowe i firmy znad jeziora Ukiel. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -2007,11 +1911,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Olsztyna to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Jarotach czy w Kortowie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Olsztyna?",
-        answer:
-          "Tak. Drukarnia Olsztyn w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i ośrodków wypoczynkowych, materiały promocyjne dla zakładów spożywczych i serie wizytówek dla całych zespołów firm znad Mazur. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla branży turystycznej i oponiarskiej z Olsztyna?",
         answer:
@@ -2065,7 +1964,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "skladane-ulotki":
         "Idealne na menu lokali z Rynku i okolic Zamku Sułkowskich oraz przewodniki po szlakach beskidzkich. Falcowanie typu C, papier 170 g.",
       "broszury-szyte":
-        "Programy konferencji na ATH i materiały szkoleń technicznych dla firm przemysłu maszynowego z Wapienicy. Spinanie drutem, do 48 stron.",
+        "Programy konferencji na ATH i materiały szkoleń technicznych dla przemysłu maszynowego z Wapienicy. Spinanie drutem, do 48 stron.",
       "broszury-klejone":
         "Katalogi poddostawców motoryzacyjnych Fiat/Stellantis, raporty firm produkcyjnych i prezentacje dla biur turystycznych. Twarda okładka 300 g, środek 135 g.",
       "broszury-szyte-nicia":
@@ -2108,11 +2007,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Bielska-Białej?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Bielska-Białej to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Białej czy w Aleksandrowicach w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Bielska-Białej?",
-        answer:
-          "Tak. Drukarnia Bielsko-Biała w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla poddostawców motoryzacyjnych i serie wizytówek dla całych zespołów firm przemysłu maszynowego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:
@@ -2212,11 +2106,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Zabrza to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Centrum, na Zaborzu czy w Biskupicach w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Zabrza?",
-        answer:
-          "Tak. Drukarnia Zabrze w naszej sieci realizuje nakłady 10 000+ ulotek dla jednostek medycznych i sieci handlowych, materiały promocyjne dla firm energetycznych z GZM i serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk na kongresy kardiologiczne i dla sektora medycznego?",
         answer:
@@ -2285,7 +2174,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja repertuaru Opery Śląskiej, wystaw Muzeum Górnictwa Węglowego i wydarzeń w Rozbarku. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety produktowe dla firm handlowych z Bytomia, naklejki na auta flot usługowych i gadżety promocyjne instytucji kultury z Metropolii GZM. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety produktowe dla handlu z Bytomia, naklejki na auta flot usługowych i gadżety promocyjne instytucji kultury z Metropolii GZM. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Śródmieścia, ogrodzenia inwestycji w Rozbarku i sceny wydarzeń kulturalnych w Bytomiu. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -2314,11 +2203,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Bytomia to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, Miechowicach czy Szombierkach w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Bytomia?",
-        answer:
-          "Tak. Drukarnia Bytom w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i usługowych, materiały promocyjne dla instytucji kultury i serie wizytówek dla całych zespołów firm z Metropolii GZM. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla instytucji kultury i handlu w Bytomiu?",
         answer:
@@ -2332,7 +2216,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       {
         question: "Obsługujecie firmy z całej Metropolii GZM?",
         answer:
-          "Tak. Bytom jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc poza samym miastem drukujemy regularnie dla firm z sąsiednich miast GZM. Jeden konfigurator, jedna cena finalna i kurier pod adres w całej aglomeracji. Przy stałej współpracy ustalamy indywidualne warunki rozliczeń.",
+          "Tak. Bytom jest częścią Górnośląsko-Zagłębiowskiej Metropolii, więc poza samym miastem drukujemy regularnie dla klientów z sąsiednich miast GZM. Jeden konfigurator, jedna cena finalna i kurier pod adres w całej aglomeracji. Przy stałej współpracy ustalamy indywidualne warunki rozliczeń.",
       },
     ],
     geo: { lat: 50.3483, lng: 18.9157 },
@@ -2386,7 +2270,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja Winobrania, koncertów na Starym Rynku, wydarzeń Uniwersytetu Zielonogórskiego i degustacji w winnicach. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety na butelki wina dla winnic z lubuskiego szlaku, naklejki produktowe dla firm elektronicznych z Zielonej Góry i gadżety eventowe na Winobranie. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety na butelki wina dla winnic z lubuskiego szlaku, naklejki produktowe dla branży elektronicznej z Zielonej Góry i gadżety eventowe na Winobranie. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Starego Rynku, sceny i strefy degustacji podczas Winobrania oraz ogrodzenia budów osiedli na Jędrzychowie. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -2415,15 +2299,10 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Zielonej Góry to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Jędrzychowie czy Chynowie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Zielonej Góry?",
-        answer:
-          "Tak. Drukarnia Zielona Góra w naszej sieci realizuje nakłady 10 000+ ulotek dla winnic i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm IT. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla winiarstwa i branży elektronicznej z regionu?",
         answer:
-          "Tak. Druk Zielona Góra pod lokalny biznes to nasza częsta kategoria zamówień. Etykiety na butelki wina i foldery dla winnic z lubuskiego szlaku, katalogi i naklejki produktowe dla firm elektronicznych (Lumel, ADB) oraz materiały dla software house’ów nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
+          "Tak. Druk Zielona Góra pod lokalny biznes to nasza częsta kategoria zamówień. Etykiety na butelki wina i foldery dla winnic z lubuskiego szlaku, katalogi i naklejki produktowe dla branży elektronicznej (Lumel, ADB) oraz materiały dla software house’ów nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
       },
       {
         question: "Czy mogę odebrać zamówienie osobiście w Zielonej Górze?",
@@ -2449,7 +2328,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   rybnik: {
     metaDescription:
-      "Drukarnia Rybnika online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla firm z subregionu rybnickiego i sektora energetycznego. Wyceń teraz.",
+      "Drukarnia Rybnika online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Druk dla klientów z subregionu rybnickiego i sektora energetycznego. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Rybnika w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -2515,11 +2394,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Rybnika?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Rybnika to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, Boguszowicach czy na Maroko-Nowinach w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Rybnika?",
-        answer:
-          "Tak. Drukarnia Rybnik w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm okołogórniczych i serie wizytówek dla całych zespołów przedsiębiorstw z subregionu rybnickiego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla sektora energetycznego i górniczego?",
@@ -2618,11 +2492,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Rudy Śląskiej to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Nowym Bytomiu, Wirku czy Halembie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Rudy Śląskiej?",
-        answer:
-          "Tak. Drukarnia Ruda Śląska w naszej sieci realizuje nakłady 10 000+ ulotek dla MŚP konurbacji, materiały promocyjne dla dostawców sektora przemysłowego i serie wizytówek dla całych zespołów handlowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Drukujecie dla sektora górniczego, hutniczego i logistycznego?",
         answer:
@@ -2685,7 +2554,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii prawnych ze Śródmieścia, biur księgowych z Zaodrza i firm obsługujących sektor cementowy oraz energetyczny. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm z Pasieki i przedsiębiorców z Nowej Wsi Królewskiej. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla klientów z Pasieki i przedsiębiorców z Nowej Wsi Królewskiej. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki turystyczne z Wieżą Piastowską i amfiteatrem, kartki świąteczne firm cementowych i energetycznych z Opola. Karton 300 g, druk 4/4.",
       plakaty:
@@ -2718,11 +2587,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Opola?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Opola to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Zaodrzu czy w Nowej Wsi Królewskiej w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Opola?",
-        answer:
-          "Tak. Drukarnia Opole w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i przetwórców, materiały promocyjne dla zakładów cementowych i serie wizytówek dla całych zespołów firm energetycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla przemysłu cementowego i energetyki?",
@@ -2786,7 +2650,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii i biur księgowych z osiedli literowych, poddostawców fabryki Stellantis oraz firm logistycznych z Tychów. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm motoryzacyjnych i przedstawicieli handlowych z Tychów. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla branży motoryzacyjnej i przedstawicieli handlowych z Tychów. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki z modernistycznymi osiedlami literowymi i jeziorem Paprocany, kartki świąteczne firm motoryzacyjnych i browarniczych. Karton 300 g, druk 4/4.",
       plakaty:
@@ -2819,11 +2683,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Tychów?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Tychów to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na osiedlach literowych, w Paprocanach czy Czułowie w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Tychów?",
-        answer:
-          "Tak. Drukarnia Tychy w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów poddostawców motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla branży motoryzacyjnej i browarniczej?",
@@ -2924,12 +2783,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       },
       {
         question:
-          "Czy obsługujecie duże zamówienia dla firm z Gorzowa Wielkopolskiego?",
-        answer:
-          "Tak. Drukarnia Gorzów Wielkopolski w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów przemysłowych i serie wizytówek dla całych zespołów firm z klastra motoryzacyjnego. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
-        question:
           "Realizujecie druk dla branży motoryzacyjnej i dostawców części z Gorzowa?",
         answer:
           "Tak. Druk Gorzów Wielkopolski pod sektor motoryzacyjny to nasza częsta kategoria zamówień. Katalogi dostawców, etykiety produktowe, broszury klejone i roll-upy dla zakładów TPV, Faurecii/Forvii i ich kooperantów nadajemy 4–5 dni przed wydarzeniem. Dla ekspresów oferujemy produkcję 24h.",
@@ -2944,7 +2797,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Obsługujecie firmy z całego Lubuskiego i z Kostrzyńsko-Słubickiej SSE?",
         answer:
-          "Tak. Gorzów Wielkopolski to druga stolica województwa lubuskiego, więc obsługujemy stąd firmy z całego regionu — od Kostrzyna nad Odrą po Słubice i Strzelce Krajeńskie. Dla inwestorów z Kostrzyńsko-Słubickiej SSE realizujemy druk materiałów eksportowych i korporacyjnych, a kurier rozwozi zamówienia po całym Lubuskiem w 24–48 h.",
+          "Tak. Gorzów Wielkopolski to druga stolica województwa lubuskiego, więc obsługujemy stąd firmy z całego regionu — od Kostrzyna nad Odrą po Słubice i Strzelce Krajeńskie. Dla inwestorów z Kostrzyńsko-Słubickiej SSE realizujemy druk materiałów eksportowych i szkoleniowych, a kurier rozwozi zamówienia po całym Lubuskiem w 24–48 h.",
       },
     ],
     geo: { lat: 52.7368, lng: 15.2288 },
@@ -2993,13 +2846,13 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii i biur rachunkowych z Centrum, operatorów logistycznych spod S1 i podwykonawców hutnictwa współpracujących z ArcelorMittal. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm z dąbrowskich magazynów i absolwentów Akademii WSB. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla klientów z dąbrowskich magazynów i absolwentów Akademii WSB. Karton 350 g.",
       "kartki-pocztowki":
         "Kartki świąteczne zakładów przemysłowych Zagłębia, pocztówki promocyjne z jeziorami Pogoria i Pałacem Kultury Zagłębia. Karton 300 g, druk 4/4.",
       plakaty:
         "Wielkoformatowa promocja wydarzeń w Pałacu Kultury Zagłębia, imprez plenerowych nad Pogorią i targów branżowych dla przemysłu ciężkiego. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety dla firm spożywczych i usługowych Zagłębia, naklejki na floty kurierskie obsługujące magazyny przy A4 oraz oznaczenia BHP w halach huty ArcelorMittal. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety dla branży spożywczej i usługowej Zagłębia, naklejki na floty kurierskie obsługujące magazyny przy A4 oraz oznaczenia BHP w halach huty ArcelorMittal. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali znad Pogorii, ogrodzenia inwestycji magazynowych przy S1 i sceny imprez przy Pałacu Kultury Zagłębia. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -3026,12 +2879,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Dąbrowy Górniczej?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Dąbrowy Górniczej to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Centrum, na Gołonogu czy w Ząbkowicach w czwartek lub piątek.",
-      },
-      {
-        question:
-          "Czy obsługujecie duże zamówienia dla firm z Dąbrowy Górniczej?",
-        answer:
-          "Tak. Drukarnia Dąbrowa Górnicza w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla operatorów logistycznych i serie wizytówek dla całych zespołów zakładów przemysłowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question: "Realizujecie druk dla hutnictwa i firm logistycznych?",
@@ -3130,11 +2977,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Elbląga to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Zatorzu czy w Próchniku w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Elbląga?",
-        answer:
-          "Tak. Drukarnia Elbląg w naszej sieci realizuje nakłady 10 000+ ulotek dla branży turystycznej i sieci handlowych, materiały promocyjne dla zakładów przemysłu maszynowego i serie wizytówek dla całych zespołów firm logistycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla przemysłu maszynowego i branży turystycznej?",
         answer:
@@ -3203,7 +3045,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       plakaty:
         "Wielkoformatowa promocja wydarzeń przy molo nad Wisłą, dni miasta na Starym Mieście i konferencji branżowych dla petrochemii. Formaty A3, A2, A1, A0, B1.",
       naklejki:
-        "Etykiety przemysłowe dla firm chemicznych, naklejki ostrzegawcze i oznaczenia dla kontrahentów rafinerii oraz gadżety filii Politechniki Warszawskiej. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
+        "Etykiety przemysłowe dla branży chemicznej, naklejki ostrzegawcze i oznaczenia dla odbiorców rafinerii oraz gadżety filii Politechniki Warszawskiej. Folia lub papier, klej trwały lub zmywalny, od 1 sztuki.",
       "baner-reklamowy":
         "Banery na otwarcia lokali nad Wisłą, ogrodzenia budów na Podolszycach i sceny wydarzeń przy molo. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
@@ -3232,11 +3074,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Płocka to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Starym Mieście, Podolszycach czy Skarpie w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia firmowe z Płocka?",
-        answer:
-          "Tak. Drukarnia Płock w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla firm chemicznych i serie wizytówek dla całych zespołów spółek energetycznych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla sektora petrochemicznego i firm okołorafineryjnych?",
         answer:
@@ -3251,7 +3088,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Obsługujecie kontrahentów Orlenu i duże zamówienia przemysłowe?",
         answer:
-          "Tak. Regularnie drukujemy dla firm współpracujących z Orlenem i sektorem petrochemicznym: serie wizytówek dla kadry inżynierskiej, etykiety i oznaczenia przemysłowe, raporty oraz katalogi dostawców. Przy nakładach 10 000+ i powtarzalnych zamówieniach przemysłowych przygotujemy wycenę indywidualną i fakturę proforma z 14-dniowym terminem.",
+          "Tak. Regularnie drukujemy dla kooperantów Orlenu i sektora petrochemicznego: serie wizytówek dla kadry inżynierskiej, etykiety i oznaczenia przemysłowe, raporty oraz katalogi dostawców. Przy nakładach 10 000+ i powtarzalnych zamówieniach przygotujemy wycenę indywidualną.",
       },
     ],
     geo: { lat: 52.5468, lng: 19.7064 },
@@ -3335,11 +3172,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Wałbrzycha to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Białym Kamieniu czy na Piaskowej Górze w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Wałbrzycha?",
-        answer:
-          "Tak. Drukarnia Wałbrzych w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla zakładów z Wałbrzyskiej SSE Invest-Park i serie wizytówek dla całych zespołów firm motoryzacyjnych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla motoryzacji i firm z Wałbrzyskiej SSE Invest-Park?",
         answer:
@@ -3369,7 +3201,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   wloclawek: {
     metaDescription:
-      "Drukarnia Włocławek online. Ulotki, wizytówki i plakaty dla firm chemicznych, producentów fajansu i HoReCa ze Śródmieścia z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Włocławek online. Ulotki, wizytówki i plakaty dla branży chemicznej, producentów fajansu i HoReCa ze Śródmieścia z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Włocławka w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -3402,7 +3234,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii prawnych ze Śródmieścia, biur księgowych obsługujących przemysł chemiczny i dostawców zaplecza Anwilu. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm z otoczenia Anwilu i pracowni ceramiki. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla klientów z otoczenia Anwilu i pracowni ceramiki. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki z katedrą i bulwarami nad Wisłą, kartki świąteczne firm chemicznych i producentów fajansu. Karton 300 g, druk 4/4.",
       plakaty:
@@ -3437,11 +3269,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Włocławka to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Śródmieściu, Zazamczu czy w Michelinie we Włocławku w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Włocławka?",
-        answer:
-          "Tak. Drukarnia Włocławek w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych, materiały promocyjne dla producentów fajansu i serie wizytówek dla zespołów firm z otoczenia Anwilu. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question: "Realizujecie druk dla przemysłu chemicznego i ceramicznego?",
         answer:
           "Tak. Druk we Włocławku pod lokalny przemysł to nasza częsta kategoria zamówień. Karty charakterystyki, etykiety ostrzegawcze i broszury BHP dla zakładów chemicznych z Anwilu oraz katalogi i metki dla producentów włocławskiego fajansu nadajemy 4–5 dni przed terminem. Dla ekspresów oferujemy produkcję 24h.",
@@ -3455,7 +3282,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question:
           "Obsługujecie producentów fajansu i duże zamówienia przemysłowe?",
         answer:
-          "Tak. Dla producentów włocławskiego fajansu drukujemy serie etykiet, metek i katalogów eksportowych, a dla zakładów chemicznych Anwilu i firm energetyki wodnej obsługujemy nakłady przemysłowe z fakturą proforma. Powtarzalne zamówienia trzymamy w pamięci konfiguratora, więc ponowna produkcja zajmuje kilka kliknięć.",
+          "Tak. Dla producentów włocławskiego fajansu drukujemy serie etykiet, metek i katalogów eksportowych, a dla zakładów chemicznych Anwilu i energetyki wodnej obsługujemy nakłady przemysłowe. Powtarzalne zamówienia trzymamy w pamięci konfiguratora, więc ponowna produkcja zajmuje kilka kliknięć.",
       },
     ],
     geo: { lat: 52.6483, lng: 19.0677 },
@@ -3471,7 +3298,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   tarnow: {
     metaDescription:
-      "Drukarnia Tarnów online dla firm z Grupy Azoty i biznesu spod renesansowej starówki. Ulotki, wizytówki i plakaty z dostawą do Tarnowa w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Tarnów online dla klientów z Grupy Azoty i biznesu spod renesansowej starówki. Ulotki, wizytówki i plakaty z dostawą do Tarnowa w 24–48 h. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Tarnowa w 24–48 h. Cena finalna od razu, konfigurator online.",
     heroLead:
@@ -3539,11 +3366,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Tarnowa to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres na Starówce, w Mościcach czy na Krzyżu w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Tarnowa?",
-        answer:
-          "Tak. Drukarnia Tarnów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych i biur turystycznych, materiały promocyjne dla firm spod Grupy Azoty i serie wizytówek dla całych zespołów. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla branży chemicznej Grupy Azoty i turystyki?",
         answer:
@@ -3606,7 +3428,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "papier-firmowy":
         "Dla kancelarii prawnych ze Śródmieścia, biur księgowych i firm obsługujących turystykę nadmorską oraz handel. Offset 90 g, druk 4/0.",
       wizytowki:
-        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla firm usługowych z Rokosowa i pensjonatów z Mielna. Karton 350 g.",
+        "Najszybsza pozycja w katalogu: nadajemy następnego dnia po wgraniu pliku. Standard dla usług z Rokosowa i pensjonatów z Mielna. Karton 350 g.",
       "kartki-pocztowki":
         "Pocztówki turystyczne z plażą w Mielnie, Górą Chełmską i amfiteatrem, kartki świąteczne firm elektronicznych i handlowych. Karton 300 g, druk 4/4.",
       plakaty:
@@ -3641,11 +3463,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Koszalina to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Śródmieściu, na Rokosowie czy w Przylesiu w czwartek lub piątek.",
       },
       {
-        question: "Czy obsługujecie duże zamówienia dla firm z Koszalina?",
-        answer:
-          "Tak. Drukarnia Koszalin w naszej sieci realizuje nakłady 10 000+ ulotek dla ośrodków wczasowych i sieci handlowych, materiały promocyjne dla producentów elektroniki i serie wizytówek dla zespołów firm usługowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
-      },
-      {
         question:
           "Realizujecie druk dla turystyki nadmorskiej i sektora HoReCa?",
         answer:
@@ -3675,7 +3492,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
   },
   chorzow: {
     metaDescription:
-      "Drukarnia Chorzów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla firm z Chorzowa, eventów w Parku Śląskim i na Stadionie Śląskim oraz MŚP z GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
+      "Drukarnia Chorzów online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h dla klientów z Chorzowa, eventów w Parku Śląskim i na Stadionie Śląskim oraz MŚP z GZM. Cena finalna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.",
     ogDescription:
       "Ulotki, wizytówki, plakaty i roll-upy z dostawą do Chorzowa w 24–48 h. Druk pod imprezy w Parku Śląskim i na Stadionie Śląskim, cena finalna od razu, konfigurator online.",
     heroLead:
@@ -3741,11 +3558,6 @@ export const miastaTresc: Record<string, MiastoTresc> = {
         question: "Ile czasu zajmuje dostawa do Chorzowa?",
         answer:
           "Produkcja standardowych zamówień (ulotki, wizytówki, plakaty) trwa 24–48 h, dostawa kurierem do Chorzowa to zwykle kolejny dzień roboczy. Zamówienie złożone we wtorek do południa trafia pod adres w Centrum, na Batorym czy w Klimzowcu w czwartek lub piątek.",
-      },
-      {
-        question: "Czy obsługujecie duże zamówienia dla firm z Chorzowa?",
-        answer:
-          "Tak. Drukarnia Chorzów w naszej sieci realizuje nakłady 10 000+ ulotek dla sieci handlowych z GZM, materiały promocyjne dla atrakcji turystycznych i serie wizytówek dla całych zespołów firm usługowych. Powyżej 3 000 zł dostępna jest proforma z 14-dniowym terminem.",
       },
       {
         question:

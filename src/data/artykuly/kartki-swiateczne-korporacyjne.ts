@@ -2,11 +2,11 @@ import type { Article } from "@/lib/blog-types";
 
 export const article: Article = {
   slug: "kartki-swiateczne-korporacyjne",
-  title: "Kartki świąteczne korporacyjne — formaty, terminy, etykieta B2B",
+  title: "Kartki świąteczne — formaty, terminy, etykieta życzeń",
   excerpt:
-    "Druk kartek świątecznych dla firm: format A5 składany, papiery ozdobne, tłoczenie złotem, teksty życzeń B2B i terminy zamówień przed świętami.",
+    "Druk kartek świątecznych: format A5 składany, papiery ozdobne, tłoczenie złotem, teksty życzeń i terminy zamówień przed świętami.",
   category: "produkty",
-  tags: ["kartki świąteczne", "B2B", "Boże Narodzenie", "premium"],
+  tags: ["kartki świąteczne", "Boże Narodzenie", "premium"],
   publishedAt: "2026-06-25",
   author: "Zespół DobrePrinty",
   status: "opublikowany",
@@ -15,7 +15,7 @@ export const article: Article = {
   sections: [
     {
       type: "p",
-      text: "Skrzynka e-mailowa kontrahenta w grudniu to pole bitwy: dziesiątki automatycznych newsletterów z życzeniami, które znikają po jednym kliknięciu. Papierowa kartka świąteczna działa inaczej — ląduje na biurku, przechodzi przez ręce sekretariatu i zarządu, często stoi na parapecie do końca stycznia. Dla firm to jedno z najtańszych narzędzi podtrzymywania relacji B2B: koszt 3-8 zł za sztukę z kopertą i wysyłką, a efekt zapamiętywalności nieporównywalny z e-mailem. W tym poradniku przechodzimy przez cały proces: wybór formatu i papieru, wykończenia premium, etykietę życzeń biznesowych oraz — co najważniejsze — harmonogram, bo kartki świąteczne to produkt, którego nie da się zamówić „na ostatnią chwilę”.",
+      text: "Skrzynka e-mailowa kontrahenta w grudniu to pole bitwy: dziesiątki automatycznych newsletterów z życzeniami, które znikają po jednym kliknięciu. Papierowa kartka świąteczna działa inaczej — ląduje na biurku, przechodzi przez ręce sekretariatu i zarządu, często stoi na parapecie do końca stycznia. To jedno z najtańszych narzędzi podtrzymywania relacji z klientami: koszt 3-8 zł za sztukę z kopertą i wysyłką, a efekt zapamiętywalności nieporównywalny z e-mailem. W tym poradniku przechodzimy przez cały proces: wybór formatu i papieru, wykończenia premium, etykietę życzeń oraz — co najważniejsze — harmonogram, bo kartki świąteczne to produkt, którego nie da się zamówić „na ostatnią chwilę”.",
     },
     {
       type: "h2",
@@ -24,7 +24,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "E-mail z życzeniami ma otwieralność na poziomie zwykłego newslettera — a w drugiej połowie grudnia, gdy skrzynki pękają w szwach, często jeszcze niższą. Papierowa kartka omija ten szum całkowicie. Badania neuromarketingowe od lat pokazują, że komunikacja fizyczna angażuje więcej zmysłów (dotyk faktury papieru, ciężar kartonu 350 g) i jest lepiej zapamiętywana niż komunikacja cyfrowa. W relacjach B2B dochodzi drugi mechanizm: kartka to sygnał, że firma poświęciła czas i budżet konkretnie temu odbiorcy. Masowy e-mail mówi „jesteś rekordem w naszym CRM”, kartka z odręcznym podpisem mówi „jesteś dla nas ważnym partnerem”.",
+      text: "E-mail z życzeniami ma otwieralność na poziomie zwykłego newslettera — a w drugiej połowie grudnia, gdy skrzynki pękają w szwach, często jeszcze niższą. Papierowa kartka omija ten szum całkowicie. Badania neuromarketingowe od lat pokazują, że komunikacja fizyczna angażuje więcej zmysłów (dotyk faktury papieru, ciężar kartonu 350 g) i jest lepiej zapamiętywana niż komunikacja cyfrowa. W relacjach z klientami dochodzi drugi mechanizm: kartka to sygnał, że nadawca poświęcił czas i budżet konkretnie temu odbiorcy. Masowy e-mail mówi „jesteś rekordem w naszym CRM”, kartka z odręcznym podpisem mówi „jesteś dla nas ważnym partnerem”.",
     },
     {
       type: "list",
@@ -43,7 +43,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Standardem korporacyjnym jest kartka składana: arkusz A5 (210 × 148 mm) bigowany i składany do formatu A6 (105 × 148 mm). Daje cztery strony: front z grafiką, dwie strony wewnętrzne na życzenia i podpis oraz tył na dyskretne logo drukarni lub dopisek ekologiczny. Kartki płaskie (pocztówkowe) są tańsze, ale w komunikacji B2B wyglądają mniej formalnie — sprawdzają się raczej w relacjach B2C. Poniżej zestawienie najpopularniejszych formatów wraz z pasującymi kopertami.",
+      text: "Standardem jest kartka składana: arkusz A5 (210 × 148 mm) bigowany i składany do formatu A6 (105 × 148 mm). Daje cztery strony: front z grafiką, dwie strony wewnętrzne na życzenia i podpis oraz tył na dyskretne logo drukarni lub dopisek ekologiczny. Kartki płaskie (pocztówkowe) są tańsze, ale w oficjalnej komunikacji wyglądają mniej formalnie — sprawdzają się raczej w wysyłkach masowych. Poniżej zestawienie najpopularniejszych formatów wraz z pasującymi kopertami.",
     },
     {
       type: "table",
@@ -54,13 +54,13 @@ export const article: Article = {
           "A6 płaska (pocztówka)",
           "105 × 148 mm",
           "C6 (114 × 162 mm)",
-          "Życzenia B2C, wysyłki masowe, budżetowe kampanie",
+          "Wysyłki masowe, budżetowe kampanie",
         ],
         [
           "A5 składana do A6",
           "105 × 148 mm (4 strony)",
           "C6 (114 × 162 mm)",
-          "Standard korporacyjny — miejsce na życzenia i podpisy wewnątrz",
+          "Standard — miejsce na życzenia i podpisy wewnątrz",
         ],
         [
           "DL składana (z A4 lub 2×DL)",
@@ -101,7 +101,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "To wykończenie decyduje, czy kartka wygląda na 3 zł, czy na 15 zł. Najmocniejszy efekt daje tłoczenie folią metaliczną (hot stamping): rozgrzana matryca wtłacza złotą, srebrną lub miedzianą folię w papier. Złota folia na granatowym papierze barwionym w masie to klasyka korporacyjnych kartek świątecznych — elegancka, bez ryzyka kiczu. Koszt matrycy to jednorazowo ok. 150-400 zł zależnie od wielkości motywu, dlatego tłoczenie opłaca się od nakładu ok. 100-200 sztuk. Alternatywy: tłoczenie ślepe (relief bez folii, bardzo dyskretne), lakier UV wybiórczy na macie oraz folia soft-touch, która daje aksamitny chwyt całej powierzchni. Szczegółowe porównanie technik znajdziesz w artykule o [folii, lakierze UV i tłoczeniu](/blog/wykonczenia-folia-uv-tloczenie).",
+      text: "To wykończenie decyduje, czy kartka wygląda na 3 zł, czy na 15 zł. Najmocniejszy efekt daje tłoczenie folią metaliczną (hot stamping): rozgrzana matryca wtłacza złotą, srebrną lub miedzianą folię w papier. Złota folia na granatowym papierze barwionym w masie to klasyka eleganckich kartek świątecznych — elegancka, bez ryzyka kiczu. Koszt matrycy to jednorazowo ok. 150-400 zł zależnie od wielkości motywu, dlatego tłoczenie opłaca się od nakładu ok. 100-200 sztuk. Alternatywy: tłoczenie ślepe (relief bez folii, bardzo dyskretne), lakier UV wybiórczy na macie oraz folia soft-touch, która daje aksamitny chwyt całej powierzchni. Szczegółowe porównanie technik znajdziesz w artykule o [folii, lakierze UV i tłoczeniu](/blog/wykonczenia-folia-uv-tloczenie).",
     },
     {
       type: "callout",
@@ -110,18 +110,18 @@ export const article: Article = {
     },
     {
       type: "h2",
-      id: "etykieta-zyczen-b2b",
-      text: "Etykieta życzeń B2B — co napisać, czego unikać",
+      id: "etykieta-zyczen",
+      text: "Etykieta życzeń — co napisać, czego unikać",
     },
     {
       type: "p",
-      text: "Treść życzeń biznesowych rządzi się prostą zasadą: nie wiesz, kto siedzi po drugiej stronie, więc nie zakładaj niczego o jego światopoglądzie. W praktyce oznacza to życzenia neutralne religijnie, chyba że doskonale znasz odbiorcę. Formuła „Spokojnych Świąt Bożego Narodzenia i pomyślnego Nowego Roku” jest w Polsce bezpieczna i powszechnie akceptowana; przy kontrahentach zagranicznych lepiej sprawdzi się „Season’s Greetings” lub „Best wishes for the Holiday Season and the New Year”. Unikaj cytatów religijnych, motywów szopki na kartkach do klientów międzynarodowych oraz humoru — to, co bawi w zespole, może nie zabawić prezesa spółki partnera.",
+      text: "Treść życzeń rządzi się prostą zasadą: nie wiesz, kto siedzi po drugiej stronie, więc nie zakładaj niczego o jego światopoglądzie. W praktyce oznacza to życzenia neutralne religijnie, chyba że doskonale znasz odbiorcę. Formuła „Spokojnych Świąt Bożego Narodzenia i pomyślnego Nowego Roku” jest w Polsce bezpieczna i powszechnie akceptowana; przy kontrahentach zagranicznych lepiej sprawdzi się „Season’s Greetings” lub „Best wishes for the Holiday Season and the New Year”. Unikaj cytatów religijnych, motywów szopki na kartkach do klientów międzynarodowych oraz humoru — to, co bawi w zespole, może nie zabawić prezesa spółki partnera.",
     },
     {
       type: "list",
       items: [
         "Dwie wersje językowe: przy odbiorcach zagranicznych drukuj osobny nakład PL i EN albo układ dwujęzyczny na rozkładówce — nigdy tłumaczenia maszynowego w jednej linii",
-        "Życzenia biznesowe, nie sprzedażowe: kartka to podziękowanie za współpracę, nie ulotka — zero ofert, rabatów i kodów promocyjnych",
+        "Życzenia, nie sprzedaż: kartka to podziękowanie za współpracę, nie ulotka — zero ofert, rabatów i kodów promocyjnych",
         "Podpis odręczny zawsze wygrywa: drukowane imię i nazwisko prezesa to minimum, odręczny podpis (choćby tylko parafka niebieskim atramentem) podnosi wartość kartki kilkukrotnie",
         "Wnętrze częściowo puste: zostaw miejsce na dopisek ręczny — jedno spersonalizowane zdanie („dziękujemy za wspólny projekt X”) robi więcej niż cały drukowany akapit",
         "Adresowanie imienne: kartka do „Szanownego Pana Prezesa Jana Kowalskiego” działa, kartka do „Działu Zakupów” — nie",

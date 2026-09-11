@@ -24,7 +24,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "85×55 mm to historyczny standard polskiej [wizytówki](/produkty/wizytowki), używany od lat 90. Mieści się w szczelinkach większości portfeli (gdzie pomieszczone są karty kredytowe — które mają format 85,6×53,98 mm). Pasuje do większości wizytowników, organizerów i bind do wizytówek. Dla 90% projektów B2B w Polsce to bezpieczny i sprawdzony wybór.",
+      text: "85×55 mm to historyczny standard polskiej [wizytówki](/produkty/wizytowki), używany od lat 90. Mieści się w szczelinkach większości portfeli (gdzie pomieszczone są karty kredytowe — które mają format 85,6×53,98 mm). Pasuje do większości wizytowników, organizerów i bind do wizytówek. Dla 90% projektów w Polsce to bezpieczny i sprawdzony wybór.",
     },
     {
       type: "p",
@@ -51,7 +51,7 @@ export const article: Article = {
         [
           "Klasyczny",
           "85 × 55 mm",
-          "Standard polski, B2B uniwersalne",
+          "Standard polski, uniwersalny",
           "Tak (wszystkie portfele)",
         ],
         [
@@ -98,7 +98,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "350g kreda mat to standard premium dla wizytówek B2B. Sztywne, ale jeszcze mieści się w szczelinkach portfela. Większość drukarni polskich wybiera 350g jako default — bo daje optymalny kompromis: dobre odczucie w dłoni, ale bez ryzyka, że klient nie weźmie wizytówki, „bo się nie zmieści”.",
+      text: "350g kreda mat to standard premium dla wizytówek. Sztywne, ale jeszcze mieści się w szczelinkach portfela. Większość drukarni polskich wybiera 350g jako default — bo daje optymalny kompromis: dobre odczucie w dłoni, ale bez ryzyka, że klient nie weźmie wizytówki, „bo się nie zmieści”.",
     },
     {
       type: "h3",
@@ -125,7 +125,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "4/0 = druk jednostronny w pełnym kolorze. 4/4 = dwustronny. Standardem dla wizytówek B2B jest 4/4 — przód z danymi kontaktowymi (imię, nazwisko, telefon, e-mail, stanowisko), tył z logo lub claimem firmy. Tył wykorzystany jako pole brandingowe robi wrażenie i wzmacnia rozpoznawalność.",
+      text: "4/0 = druk jednostronny w pełnym kolorze. 4/4 = dwustronny. Standardem dla wizytówek jest 4/4 — przód z danymi kontaktowymi (imię, nazwisko, telefon, e-mail, stanowisko), tył z logo lub claimem firmy. Tył wykorzystany jako pole brandingowe robi wrażenie i wzmacnia rozpoznawalność.",
     },
     {
       type: "p",
@@ -170,11 +170,11 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Standard polskiej wizytówki B2B: imię i nazwisko (najwyższa hierarchia, font 11-14 pt), stanowisko (8-9 pt), telefon, e-mail, adres www (8-9 pt). Logo firmy umieszczone tradycyjnie w lewym górnym rogu lub na całej tylnej stronie. Adres siedziby — opcjonalny, dla branż gdzie ma znaczenie (kancelarie, biura nieruchomości).",
+      text: "Standard polskiej wizytówki: imię i nazwisko (najwyższa hierarchia, font 11-14 pt), stanowisko (8-9 pt), telefon, e-mail, adres www (8-9 pt). Logo firmy umieszczone tradycyjnie w lewym górnym rogu lub na całej tylnej stronie. Adres siedziby — opcjonalny, dla branż gdzie ma znaczenie (kancelarie, biura nieruchomości).",
     },
     {
       type: "p",
-      text: "Czego nie umieszczać: domowy telefon, prywatny e-mail, ksywka, social media (chyba że LinkedIn dla kontaktu B2B), zdjęcie (chyba że branża wymaga — agenci nieruchomości, adwokaci). NIP, REGON, KRS — zbędne na wizytówce, to dane dla [papieru firmowego](/produkty/papier-firmowy). Wizytówka to pierwsze wrażenie, nie dokument księgowy.",
+      text: "Czego nie umieszczać: domowy telefon, prywatny e-mail, ksywka, social media (chyba że LinkedIn), zdjęcie (chyba że branża wymaga — agenci nieruchomości, adwokaci). NIP, REGON, KRS — zbędne na wizytówce, to dane dla [papieru firmowego](/produkty/papier-firmowy). Wizytówka to pierwsze wrażenie, nie dokument księgowy.",
     },
     {
       type: "callout",

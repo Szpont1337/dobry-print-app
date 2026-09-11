@@ -55,9 +55,6 @@ export const sendOrderNotification = internalAction({
       },
     ];
 
-    if (order.companyName) {
-      fields.push({ name: "Firma", value: order.companyName });
-    }
     if (order.notes) {
       fields.push({ name: "Uwagi", value: order.notes.slice(0, 1000) });
     }

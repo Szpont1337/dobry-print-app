@@ -39,7 +39,6 @@ export const submitOrder = mutation({
     customerName: v.string(),
     customerEmail: v.string(),
     customerPhone: v.string(),
-    companyName: v.optional(v.string()),
     deliveryMethod: v.optional(
       v.union(v.literal("courier"), v.literal("parcel_locker")),
     ),
@@ -78,7 +77,6 @@ export const submitOrder = mutation({
     capped(args.customerName, 120, "Imię i nazwisko", "Full name", locale);
     capped(args.customerEmail, 200, "E-mail", "Email", locale);
     capped(args.customerPhone, 40, "Telefon", "Phone", locale);
-    capped(args.companyName, 200, "Nazwa firmy", "Company name", locale);
     capped(args.shippingStreet, 200, "Ulica", "Street", locale);
     capped(args.shippingCity, 120, "Miasto", "City", locale);
     capped(args.shippingPostalCode, 20, "Kod pocztowy", "Postal code", locale);
@@ -128,7 +126,6 @@ export const submitOrder = mutation({
       customerName: args.customerName,
       customerEmail: args.customerEmail,
       customerPhone: args.customerPhone,
-      companyName: args.companyName,
       shippingStreet: args.shippingStreet,
       shippingCity: args.shippingCity,
       shippingPostalCode: args.shippingPostalCode,
@@ -204,7 +201,6 @@ export const submitCart = mutation({
     customerName: v.string(),
     customerEmail: v.string(),
     customerPhone: v.string(),
-    companyName: v.optional(v.string()),
     deliveryMethod: v.optional(
       v.union(v.literal("courier"), v.literal("parcel_locker")),
     ),
@@ -243,7 +239,6 @@ export const submitCart = mutation({
     capped(args.customerName, 120, "Imię i nazwisko", "Full name", locale);
     capped(args.customerEmail, 200, "E-mail", "Email", locale);
     capped(args.customerPhone, 40, "Telefon", "Phone", locale);
-    capped(args.companyName, 200, "Nazwa firmy", "Company name", locale);
     capped(args.shippingStreet, 200, "Ulica", "Street", locale);
     capped(args.shippingCity, 120, "Miasto", "City", locale);
     capped(args.shippingPostalCode, 20, "Kod pocztowy", "Postal code", locale);
@@ -311,7 +306,6 @@ export const submitCart = mutation({
         customerName: args.customerName,
         customerEmail: args.customerEmail,
         customerPhone: args.customerPhone,
-        companyName: args.companyName,
         shippingStreet: args.shippingStreet,
         shippingCity: args.shippingCity,
         shippingPostalCode: args.shippingPostalCode,

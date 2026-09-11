@@ -207,7 +207,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Każde wykończenie podnosi cenę o 20–50% i wydłuża czas realizacji o 24–72 h. Dla większości projektów wystarcza dobra gramatura (170g) bez wykończeń. Folia matowa polecana dla projektów premium (zaproszenia, kartki świąteczne korporacyjne) i tam, gdzie ulotka będzie noszona długo (np. menu restauracji, karty członkowskie).",
+      text: "Każde wykończenie podnosi cenę o 20–50% i wydłuża czas realizacji o 24–72 h. Dla większości projektów wystarcza dobra gramatura (170g) bez wykończeń. Folia matowa polecana dla projektów premium (zaproszenia, kartki świąteczne) i tam, gdzie ulotka będzie noszona długo (np. menu restauracji, karty członkowskie).",
     },
     {
       type: "callout",

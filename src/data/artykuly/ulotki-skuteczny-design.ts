@@ -15,7 +15,7 @@ export const article: Article = {
   sections: [
     {
       type: "p",
-      text: "Skuteczna [ulotka](/produkty/ulotki) to nie ozdobiona kartka z logo i numerem telefonu. Skuteczna ulotka prowokuje akcję: telefon, wizytę w sklepie, zakup, zapisanie się na newsletter. W tym poradniku rozkładamy zasady designu skutecznej ulotki na konkretne elementy: nagłówek, hierarchia, kolory, CTA, typografia. Z przykładami dla branży gastronomicznej, beauty, B2B, fitness i edukacji.",
+      text: "Skuteczna [ulotka](/produkty/ulotki) to nie ozdobiona kartka z logo i numerem telefonu. Skuteczna ulotka prowokuje akcję: telefon, wizytę w sklepie, zakup, zapisanie się na newsletter. W tym poradniku rozkładamy zasady designu skutecznej ulotki na konkretne elementy: nagłówek, hierarchia, kolory, CTA, typografia. Z przykładami dla branży gastronomicznej, beauty, usługowej, fitness i edukacji.",
     },
     {
       type: "h2",
@@ -67,8 +67,8 @@ export const article: Article = {
     },
     {
       type: "table",
-      caption: "Sprawdzone formuły headline dla ulotek B2C i B2B",
-      headers: ["Formuła", "Przykład B2C", "Przykład B2B"],
+      caption: "Sprawdzone formuły headline dla ulotek",
+      headers: ["Formuła", "Przykład konsumencki", "Przykład usługowy"],
       rows: [
         [
           "Konkretna korzyść",
@@ -117,7 +117,7 @@ export const article: Article = {
         "Gastronomia: czerwony, pomarańcz, żółty (apetyt) — McDonald's, KFC, Burger King",
         "Beauty / SPA: pastele (różowy, mięta, beż) — przyjemność, luksus",
         "Fitness: czarny + żółty/zielony (energia) — Gymshark, Nike",
-        "B2B / IT: niebieski + biały (zaufanie) — IBM, Microsoft, Allegro",
+        "Technologie i IT: niebieski + biały (zaufanie) — IBM, Microsoft, Allegro",
         "Edukacja: pomarańcz / niebieski (kreatywność + zaufanie)",
         "Premium / luksus: czarny + złoty + biały (ekskluzywność)",
         "Eko / natural: zielony + brąz + biały (natura)",
@@ -211,12 +211,12 @@ export const article: Article = {
     },
     {
       type: "h3",
-      id: "b2b-doradztwo",
-      text: "B2B (doradztwo, IT, konsulting)",
+      id: "doradztwo-it",
+      text: "Doradztwo, IT, konsulting",
     },
     {
       type: "p",
-      text: "Headline: konkretny rezultat biznesowy („Sprzedaż +30% w 6 miesięcy”). Hero: ikona lub diagram (nie zdjęcie produktu, którego nie ma). Kolory: niebieski + biały (zaufanie) lub czarny + biały (premium). CTA: „Bezpłatna konsultacja: 123 456 789” lub „Pobierz raport branżowy na www.firma.pl/raport”. Format: A5 lub składana A4.",
+      text: "Headline: konkretny rezultat („Sprzedaż +30% w 6 miesięcy”). Hero: ikona lub diagram (nie zdjęcie produktu, którego nie ma). Kolory: niebieski + biały (zaufanie) lub czarny + biały (premium). CTA: „Bezpłatna konsultacja: 123 456 789” lub „Pobierz raport branżowy na www.firma.pl/raport”. Format: A5 lub składana A4.",
     },
     {
       type: "h3",

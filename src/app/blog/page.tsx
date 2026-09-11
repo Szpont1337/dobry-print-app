@@ -10,7 +10,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Blog DobrePrinty — poradniki, design, technologia druku",
   description:
-    "Praktyczne poradniki o druku online: jak przygotować plik PDF, wybór papieru, CMYK, projektowanie ulotek. 30+ artykułów dla firm i projektantów.",
+    "Praktyczne poradniki o druku online: jak przygotować plik PDF, wybór papieru, CMYK, projektowanie ulotek. 30+ artykułów dla projektantów i zamawiających druk.",
   alternates: { canonical: "https://www.dobreprinty.pl/blog" },
   openGraph: {
     title: "Blog DobrePrinty — poradniki o druku online",
@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Praktyczne artykuły o przygotowaniu plików, wyborze papieru,
             kolorach CMYK i projektowaniu materiałów reklamowych. Pisane przez
-            zespół DobrePrinty dla firm, projektantów i mikroprzedsiębiorców.
+            zespół DobrePrinty dla projektantów i wszystkich, którzy zamawiają druk.
           </p>
         </div>
       </section>
