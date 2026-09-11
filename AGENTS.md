@@ -9,6 +9,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 ## Components & rendering
 - `page.tsx` and `layout.tsx` are ALWAYS server components — never put `"use client"` in them. Keep data fetching / composition there. Push interactivity down into child components that may be client (`"use client"`), and render those from the server page/layout.
 
+
 ## Data & state
 - Minimize `useEffect` — avoid it unless no alternative.
 - Server state: always `@tanstack/react-query` via `useQuery`/`useMutation`. Handle loading with `isLoading`/`isPending` from the hook result (and `isError` as needed) — no Suspense, no `useSuspenseQuery` (it throws during SSR and triggers reload loops). Never inline `queryKey`/`queryFn`/`mutationFn` at the call site — pull them from the central query-options factory and spread the result: `const myData = useQuery(queries.me.company())`. Define options with `queryOptions`/`mutationOptions` in the factory (global in `src/lib/queries`, feature-specific colocated in the route's folder).
