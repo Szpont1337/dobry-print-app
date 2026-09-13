@@ -84,6 +84,17 @@ export default defineSchema({
     stripePaymentIntentId: v.optional(v.string()),
     paidAt: v.optional(v.number()),
 
+    // Customer w Stripe zakładany, gdy klient podał NIP — trzyma nazwę firmy,
+    // adres i tax id `pl_nip`, z których renderuje się faktura. Zapamiętany,
+    // żeby kolejne linki „zapłać" nie mnożyły kopii tego samego klienta.
+    stripeCustomerId: v.optional(v.string()),
+
+    // Faktura wystawiona przez Stripe (invoice_creation na sesji Checkout).
+    stripeInvoiceUrl: v.optional(v.string()),
+    stripeInvoicePdf: v.optional(v.string()),
+    // Dedup: mail z fakturą wychodzi dokładnie raz.
+    invoiceEmailSentAt: v.optional(v.number()),
+
     // Automated payment reminders
     paymentReminderCount: v.optional(v.number()),
     lastPaymentReminderAt: v.optional(v.number()),

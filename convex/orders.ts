@@ -374,6 +374,8 @@ export const attachStripeSession = mutation({
     serverSecret: v.string(),
     orderId: v.id("orders"),
     stripeSessionId: v.string(),
+    // Ustawiany tylko przy pierwszej sesji z NIP-em — kolejne go odczytują.
+    stripeCustomerId: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     assertServerSecret(args.serverSecret);
@@ -381,8 +383,54 @@ export const attachStripeSession = mutation({
     if (!order) throw new Error("Brak zamówienia.");
     await ctx.db.patch(args.orderId, {
       stripeSessionId: args.stripeSessionId,
+      ...(args.stripeCustomerId
+        ? { stripeCustomerId: args.stripeCustomerId }
+        : {}),
     });
     return { ok: true as const };
+  },
+});
+
+/**
+ * Dopina fakturę ze Stripe do zamówienia i wysyła ją klientowi mailem.
+ *
+ * Własny mail, bo dostarczenie dokumentu nie może zależeć od ustawienia
+ * „Customer emails" w Dashboardzie Stripe'a. `invoiceEmailSentAt` pilnuje,
+ * żeby klient nie dostał faktury dwa razy.
+ */
+export const attachStripeInvoice = mutation({
+  args: {
+    serverSecret: v.string(),
+    orderId: v.id("orders"),
+    hostedUrl: v.optional(v.string()),
+    pdfUrl: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    assertServerSecret(args.serverSecret);
+    const order = await ctx.db.get(args.orderId);
+    if (!order) {
+      return { ok: false as const, reason: "order_not_found" as const };
+    }
+
+    await ctx.db.patch(args.orderId, {
+      ...(args.hostedUrl ? { stripeInvoiceUrl: args.hostedUrl } : {}),
+      ...(args.pdfUrl ? { stripeInvoicePdf: args.pdfUrl } : {}),
+    });
+
+    if (order.invoiceEmailSentAt != null) {
+      return { ok: true as const, already: true as const };
+    }
+    // Zamówienie testowe nie mailuje nikogo — tak samo jak przy markPaid.
+    if (order.test) return { ok: true as const, already: true as const };
+    if (!args.hostedUrl && !args.pdfUrl) {
+      return { ok: true as const, already: false as const, sent: false as const };
+    }
+
+    await ctx.db.patch(args.orderId, { invoiceEmailSentAt: Date.now() });
+    await ctx.scheduler.runAfter(0, internal.email.sendInvoiceEmail, {
+      orderId: args.orderId,
+    });
+    return { ok: true as const, already: false as const, sent: true as const };
   },
 });
 
