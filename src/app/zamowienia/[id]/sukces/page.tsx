@@ -6,6 +6,7 @@ import { api } from "@convex/_generated/api";
 import type { Id } from "@convex/_generated/dataModel";
 
 import { Header } from "@/components/header";
+import { ClearCartOnSuccess } from "./components/clear-cart-on-success";
 import { Button } from "@/components/ui";
 import {
   getConvexHttp,
@@ -97,6 +98,7 @@ export default async function PaymentSuccessPage({
 
   return (
     <main className="relative flex flex-1 flex-col bg-background-alt">
+      {paid ? <ClearCartOnSuccess /> : null}
       <Header />
       <section className="mx-auto flex w-full max-w-xl flex-col px-5 py-13 sm:px-8 sm:py-21">
         <div className="flex flex-col items-center gap-5 border border-border bg-card p-8 text-center sm:p-13">

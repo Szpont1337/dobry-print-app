@@ -502,6 +502,68 @@ export const markPaid = mutation({
   },
 });
 
+/**
+ * Księguje zwrot ze Stripe i wysyła klientowi mail „pieniądze wracają".
+ *
+ * `refundedTotal` to kwota zwrócona ŁĄCZNIE (Stripe podaje `amount_refunded`
+ * narastająco), więc kolejny zwrot częściowy tylko ją podbija. Pełny zwrot
+ * przestawia `paymentStatus` na "refunded" i anuluje zamówienie; częściowy
+ * zostawia je opłaconym — klient dalej dostaje swój druk, tylko taniej.
+ *
+ * Idempotentne: `charge.refunded` potrafi przyjść kilka razy, a mail ma wyjść
+ * raz na każdą ZMIANĘ kwoty zwrotu.
+ */
+export const markRefunded = mutation({
+  args: {
+    serverSecret: v.string(),
+    orderId: v.optional(v.string()),
+    stripeSessionId: v.optional(v.string()),
+    /**
+     * Łączna kwota zwrócona w PLN. Ignorowana przy `full` — obciążenie
+     * potrafi obejmować cały koszyk, więc kwotę zwrotu dla POJEDYNCZEGO
+     * zamówienia bierzemy wtedy z jego własnego `grossTotal`.
+     */
+    refundedTotal: v.optional(v.number()),
+    /** Czy zwrócono całość obciążenia. */
+    full: v.boolean(),
+  },
+  handler: async (ctx, args) => {
+    assertServerSecret(args.serverSecret);
+    const order = await findPaymentOrder(
+      ctx,
+      args.orderId,
+      args.stripeSessionId,
+    );
+    if (!order) {
+      return { ok: false as const, reason: "order_not_found" as const };
+    }
+    const amount = args.full ? order.grossTotal : (args.refundedTotal ?? 0);
+    if (amount <= 0) {
+      return { ok: false as const, reason: "nothing_refunded" as const };
+    }
+    // Ta sama kwota co poprzednio = powtórka eventu, nie nowy zwrot.
+    if ((order.refundAmount ?? 0) >= amount) {
+      return { ok: true as const, already: true as const };
+    }
+
+    await ctx.db.patch(order._id, {
+      refundAmount: amount,
+      refundedAt: Date.now(),
+      ...(args.full
+        ? { paymentStatus: "refunded" as const, status: "cancelled" as const }
+        : {}),
+    });
+
+    // Zamówienie testowe nie mailuje nikogo — tak samo jak przy markPaid.
+    if (order.test) return { ok: true as const, already: false as const };
+
+    await ctx.scheduler.runAfter(0, internal.email.sendRefundEmail, {
+      orderId: order._id,
+    });
+    return { ok: true as const, already: false as const, emailed: true as const };
+  },
+});
+
 export const markPaymentFailed = mutation({
   args: {
     serverSecret: v.string(),

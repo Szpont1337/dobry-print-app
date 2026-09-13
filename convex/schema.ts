@@ -79,7 +79,16 @@ export default defineSchema({
     source: v.optional(v.string()),
 
     // Payment (Stripe)
-    paymentStatus: v.optional(v.union(v.literal("unpaid"), v.literal("paid"), v.literal("failed"))),
+    // "refunded" = pełny zwrot. Zwrot częściowy zostaje "paid" i niesie tylko
+    // `refundAmount` — zamówienie nadal jest opłacone, tylko na mniejszą kwotę.
+    paymentStatus: v.optional(
+      v.union(
+        v.literal("unpaid"),
+        v.literal("paid"),
+        v.literal("failed"),
+        v.literal("refunded"),
+      ),
+    ),
     stripeSessionId: v.optional(v.string()),
     stripePaymentIntentId: v.optional(v.string()),
     paidAt: v.optional(v.number()),
@@ -94,6 +103,12 @@ export default defineSchema({
     stripeInvoicePdf: v.optional(v.string()),
     // Dedup: mail z fakturą wychodzi dokładnie raz.
     invoiceEmailSentAt: v.optional(v.number()),
+
+    // Zwrot płatności. `refundAmount` to kwota zwrócona ŁĄCZNIE (w PLN), więc
+    // kolejny zwrot częściowy tylko ją podbija. `refundedAt` pilnuje też dedupu
+    // maila — Stripe potrafi przysłać `charge.refunded` więcej niż raz.
+    refundedAt: v.optional(v.number()),
+    refundAmount: v.optional(v.number()),
 
     // Automated payment reminders
     paymentReminderCount: v.optional(v.number()),

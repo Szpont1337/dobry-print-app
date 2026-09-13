@@ -60,18 +60,20 @@ const STATUS_TONE: Record<OrderStatus, string> = {
   cancelled: "bg-destructive/10 text-destructive",
 };
 
-type PaymentStatus = "unpaid" | "paid" | "failed";
+type PaymentStatus = "unpaid" | "paid" | "failed" | "refunded";
 
 const PAYMENT_TONE: Record<PaymentStatus, string> = {
   unpaid: "bg-muted text-muted-foreground",
   paid: "bg-primary/15 text-primary",
   failed: "bg-destructive/10 text-destructive",
+  refunded: "bg-muted text-muted-foreground",
 };
 
 const PAYMENT_LABEL: Record<PaymentStatus, string> = {
   unpaid: "Nieopłacone",
   paid: "Opłacone",
   failed: "Płatność nieudana",
+  refunded: "Zwrócone",
 };
 
 const STATUSES: OrderStatus[] = [
@@ -405,7 +407,7 @@ type AdminOrder = {
   quantity: number;
   grossTotal: number;
   status: OrderStatus;
-  paymentStatus?: "unpaid" | "paid" | "failed";
+  paymentStatus?: "unpaid" | "paid" | "failed" | "refunded";
   paidAt?: number;
   stripeSessionId?: string;
   stripePaymentIntentId?: string;

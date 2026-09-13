@@ -11,7 +11,7 @@ import { z } from "zod";
 
 import { api } from "@convex/_generated/api";
 import { getOrderAttribution } from "@/lib/attribution";
-import { clearCart, itemHasDesign, type ResolvedCartItem } from "@/lib/cart";
+import { itemHasDesign, type ResolvedCartItem } from "@/lib/cart";
 import type { CartTotals } from "@/lib/pricing";
 import { safeCapture } from "@/lib/posthog-client";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
@@ -313,9 +313,9 @@ export function CheckoutForm({
         delivery_method: deliveryMethod,
       });
 
-      // Zamówienia zapisane — koszyk nie jest już potrzebny.
-      clearCart();
-
+      // Koszyka NIE czyścimy tutaj. Zamówienia są dopiero zapisane i nieopłacone
+      // — kto porzuci płatność albo wróci ze Stripe'a, musi zastać swój koszyk
+      // w całości. Czyści go dopiero strona sukcesu, po potwierdzonej wpłacie.
       setMode("redirecting");
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",

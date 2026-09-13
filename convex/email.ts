@@ -391,6 +391,44 @@ function invoiceEmail(order: Order) {
   };
 }
 
+/**
+ * Zwrot pieniędzy. Pełny zwrot zamyka zamówienie, częściowy je zostawia —
+ * mail musi rozróżniać te dwa przypadki, bo znaczą co innego dla klienta.
+ */
+function refundEmail(order: Order) {
+  const amount = order.refundAmount ?? order.grossTotal;
+  const full = order.paymentStatus === "refunded";
+  const headline = full
+    ? `Zwrot za zamówienie #${shortId(order._id)}.`
+    : `Częściowy zwrot za zamówienie #${shortId(order._id)}.`;
+  const intro = full
+    ? `Zwróciliśmy ${formatPLN.format(amount)}. Zamówienie jest anulowane — nie obciążamy Cię za nie w żaden sposób.`
+    : `Zwróciliśmy ${formatPLN.format(amount)}. Zamówienie zostaje w realizacji, zmienia się tylko kwota, którą za nie płacisz.`;
+  const followUp = [
+    callout(
+      "Pieniądze wracają tą samą drogą, którą przyszła płatność. Bank zwykle księguje je w 3–5 dni roboczych — u części banków szybciej, ale to już poza naszą kontrolą.",
+    ),
+    plainBlock(
+      `Jeśli po tym czasie nie zobaczysz przelewu, napisz na <a href="mailto:hej@dobreprinty.pl" style="color:${BRAND.primary};text-decoration:underline">hej@dobreprinty.pl</a> — sprawdzimy status zwrotu po stronie operatora płatności.`,
+    ),
+  ].join("");
+
+  return {
+    subject: headline.replace(/\.$/, ""),
+    preheader: `Zwrot ${formatPLN.format(amount)} w drodze na Twoje konto.`,
+    html: renderShell({
+      preheader: headline,
+      headline,
+      intro,
+      detailsHtml: detailsBox(order),
+      followUpHtml: followUp,
+      signature: "Pozdrawiamy,<br>zespół DobrePrinty",
+      footerNote: ORDER_FOOTER,
+    }),
+    text: plainSummary(order, headline, intro),
+  };
+}
+
 function paymentReminderEmail(order: Order, reminderNumber: number) {
   const last = reminderNumber >= 3;
   const headline = last
@@ -662,6 +700,27 @@ export const sendInvoiceEmail = internalAction({
       return;
     }
     const built = invoiceEmail(order);
+    await send({
+      to: order.customerEmail,
+      subject: built.subject,
+      html: built.html,
+      text: built.text,
+    });
+  },
+});
+
+/** Mail o zwrocie pieniędzy. Dedup robi `orders.markRefunded`. */
+export const sendRefundEmail = internalAction({
+  args: { orderId: v.id("orders") },
+  handler: async (ctx, args) => {
+    const order = await ctx.runQuery(internal.emailDb.getOrder, {
+      orderId: args.orderId,
+    });
+    if (!order) {
+      console.warn("[email] Brak zamówienia", args.orderId);
+      return;
+    }
+    const built = refundEmail(order);
     await send({
       to: order.customerEmail,
       subject: built.subject,

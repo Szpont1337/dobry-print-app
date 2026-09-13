@@ -136,6 +136,47 @@ export async function POST(request: Request) {
         }
         break;
       }
+      case "charge.refunded": {
+        // Zwrot zrobiony z Dashboardu Stripe albo przez API. Klient dostaje
+        // mail „pieniądze wracają" — inaczej widzi tylko przelew bez kontekstu.
+        //
+        // Metadane: Charge dziedziczy je z PaymentIntent, ale nie polegamy na
+        // tym w ciemno — gdy ich nie ma, dociągamy sam PaymentIntent.
+        const charge = event.data.object;
+        let orderIds = orderIdsFromMetadata(charge.metadata);
+        const intentId =
+          typeof charge.payment_intent === "string"
+            ? charge.payment_intent
+            : charge.payment_intent?.id;
+        if (orderIds.length === 0 && intentId) {
+          const intent = await stripe.paymentIntents.retrieve(intentId);
+          orderIds = orderIdsFromMetadata(intent.metadata);
+        }
+
+        const full = charge.amount_refunded >= charge.amount;
+        if (full) {
+          // Koszyk = jedno obciążenie na kilka zamówień. Przy pełnym zwrocie
+          // każde dostaje własną kwotę, więc maile się zgadzają co do grosza.
+          for (const orderId of orderIds) {
+            await convex.mutation(api.orders.markRefunded, {
+              serverSecret,
+              orderId,
+              full: true,
+            });
+          }
+        } else if (orderIds.length > 0) {
+          // Zwrot częściowy z jednego obciążenia na kilka zamówień — nie da się
+          // powiedzieć, którego dotyczy. Przypisujemy go zamówieniu wiodącemu
+          // (metadata.orderId), czyli temu, na które wraca klient po płatności.
+          await convex.mutation(api.orders.markRefunded, {
+            serverSecret,
+            orderId: orderIds[0],
+            refundedTotal: charge.amount_refunded / 100,
+            full: false,
+          });
+        }
+        break;
+      }
       case "checkout.session.async_payment_failed":
       case "checkout.session.expired": {
         const session = event.data.object;
