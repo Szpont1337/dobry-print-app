@@ -18,7 +18,7 @@ const STEPS: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: CreditCard,
     title: "Zapłać online",
-    desc: "BLIK, karta, Przelewy24 lub Apple/Google Pay. Rachunek ze Stripe od ręki.",
+    desc: "BLIK, karta, Przelewy24 lub Apple/Google Pay. Faktura ze Stripe od ręki.",
   },
   {
     icon: Truck,

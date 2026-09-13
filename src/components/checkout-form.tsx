@@ -15,7 +15,7 @@ import { clearCart, itemHasDesign, type ResolvedCartItem } from "@/lib/cart";
 import type { CartTotals } from "@/lib/pricing";
 import { safeCapture } from "@/lib/posthog-client";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
-import { Button, Input, Textarea } from "@/components/ui";
+import { Button, Input, Textarea, Typography } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
@@ -28,6 +28,9 @@ type Fields = {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
+  /** opcjonalne dane firmy — trafiają na fakturę wystawianą przez Stripe */
+  companyName: string;
+  taxId: string;
   shippingStreet: string;
   shippingCity: string;
   shippingPostalCode: string;
@@ -38,6 +41,8 @@ const EMPTY_FIELDS: Fields = {
   customerName: "",
   customerEmail: "",
   customerPhone: "",
+  companyName: "",
+  taxId: "",
   shippingStreet: "",
   shippingCity: "",
   shippingPostalCode: "",
@@ -48,6 +53,8 @@ const NAME_RE = /^[\p{L}][\p{L}\s.'-]*$/u;
 const CITY_RE = /^[\p{L}][\p{L}\s.-]*$/u;
 const PHONE_RE = /^\+?[0-9][0-9\s-]{7,}$/;
 const POSTAL_RE = /^\d{2}-\d{3}$/;
+/** NIP: 10 cyfr, spacje i myślniki dozwolone przy wpisywaniu. */
+const NIP_RE = /^\d{10}$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Dane kupującego przeżywają odświeżenie strony — koszyk trzyma się osobno. */
@@ -115,6 +122,16 @@ export function CheckoutForm({
         .trim()
         .min(1, t("errors.phoneRequired"))
         .regex(PHONE_RE, t("errors.phoneInvalid")),
+      // Firma i NIP są opcjonalne — podaje je tylko kupujący na firmę.
+      companyName: z.string().trim().optional(),
+      taxId: z
+        .string()
+        .trim()
+        .optional()
+        .refine(
+          (value) => !value || NIP_RE.test(value.replace(/[\s-]/g, "")),
+          t("errors.taxIdInvalid"),
+        ),
     };
     const shipping =
       deliveryMethod === "courier"
@@ -368,6 +385,22 @@ export function CheckoutForm({
             registration={register("customerPhone")}
             error={errors.customerPhone?.message}
           />
+          <Field
+            label={t("fields.companyName")}
+            autoComplete="organization"
+            registration={register("companyName")}
+            error={errors.companyName?.message}
+          />
+          <Field
+            label={t("fields.taxId")}
+            inputMode="numeric"
+            placeholder="1234567890"
+            registration={register("taxId")}
+            error={errors.taxId?.message}
+          />
+          <Typography as="p" variant="small" className="col-span-full text-muted-foreground">
+            {t("invoiceNote")}
+          </Typography>
         </Fieldset>
 
         <Fieldset index="02" legend={t("fieldsetDelivery")}>

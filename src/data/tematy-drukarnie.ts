@@ -65,8 +65,8 @@ export const tematyDrukarnie: TematDrukarnia[] = [
         body: "Do każdego produktu dobieramy partnera, który zrobi go najszybciej i najtaniej. Ty zamawiasz w jednym miejscu, my zarządzamy produkcją w tle.",
       },
       {
-        title: "Rachunek i historia zamówień",
-        body: "Rachunek ze Stripe przychodzi na maila razem z potwierdzeniem, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
+        title: "Faktura i historia zamówień",
+        body: "Faktura ze Stripe przychodzi na maila razem z potwierdzeniem, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
       },
     ],
     bodyHeading: "Jak działa drukarnia online",
@@ -104,7 +104,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila rachunek wystawiony przez Stripe.",
+          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila zwykłą fakturę bez VAT, wystawioną przez Stripe.",
       },
     ],
     cta: {

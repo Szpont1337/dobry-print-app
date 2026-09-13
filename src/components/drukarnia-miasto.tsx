@@ -132,7 +132,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
   if (uczelnieProse) {
     p4 += ` Obsługujemy też sektor edukacji i nauki — m.in. ${uczelnieProse}.`;
   }
-  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, rachunek ze Stripe przychodzi na maila, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
+  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, faktura ze Stripe przychodzi na maila, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
 
   return [p1, p2, p3, p4];
 }

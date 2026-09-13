@@ -29,7 +29,7 @@ export default function PolitykaPrywatnosciPage() {
         zamówienia oraz korzystaniu z usług:
       </p>
       <ul>
-        <li>imię, nazwisko, e-mail, telefon, adres dostawy i dane do rachunku</li>
+        <li>imię, nazwisko, e-mail, telefon, adres dostawy i dane do faktury</li>
         <li>
           dane do druku (pliki graficzne), wyłącznie w celu realizacji zlecenia
         </li>

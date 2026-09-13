@@ -115,16 +115,16 @@ export default function RegulaminPage() {
       <ul>
         <li>BLIK, karta płatnicza, Przelewy24, Apple Pay, Google Pay</li>
         <li>
-          Rachunek (potwierdzenie zapłaty) generowany automatycznie przez platformę płatniczą Stripe
+          Faktura bez VAT (potwierdzenie zapłaty) generowana automatycznie przez platformę płatniczą Stripe
           i wysyłany na adres e-mail Klienta po zaksięgowaniu płatności
         </li>
       </ul>
       <p>
         DobrePrinty prowadzi działalność nierejestrowaną i nie jest zarejestrowanym podatnikiem VAT.
-        Nie wystawiamy faktur VAT. Jedynym dokumentem potwierdzającym zakup jest rachunek wystawiany
+        Nie wystawiamy faktur VAT. Jedynym dokumentem potwierdzającym zakup jest faktura bez VAT wystawiana
         przez platformę Stripe (operatora płatności), który zawiera dane sprzedawcy, Klienta, opis
         zamówienia i zapłaconą kwotę. Ceny w serwisie nie zawierają podatku VAT — nie ma podatku do
-        odliczenia. Rachunek
+        odliczenia. Faktura
         trafia na adres e-mail podany w zamówieniu; w razie potrzeby ponownej wysyłki napisz na{" "}
         <strong>{COMPANY.email}</strong>.
       </p>
