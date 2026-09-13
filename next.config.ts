@@ -1,5 +1,13 @@
 import type { NextConfig } from "next";
 
+// Broszury wycofane z oferty — slugi zostają zaindeksowane, więc ich strony
+// produktowe przekierowujemy na katalog zamiast zwracać 404.
+const DISCONTINUED_PRODUCT_SLUGS = [
+  "broszury-szyte",
+  "broszury-klejone",
+  "broszury-szyte-nicia",
+];
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
   async headers() {
@@ -36,6 +44,19 @@ const nextConfig: NextConfig = {
         destination: "/#produkty",
         permanent: true,
       },
+      ...DISCONTINUED_PRODUCT_SLUGS.flatMap((slug) => [
+        {
+          source: `/produkty/${slug}`,
+          destination: "/#produkty",
+          permanent: true,
+        },
+        {
+          // Strony miasto × produkt też były indeksowane — wracają na miasto.
+          source: `/drukarnia-:miasto/${slug}`,
+          destination: "/drukarnia-:miasto",
+          permanent: true,
+        },
+      ]),
     ];
   },
   experimental: {

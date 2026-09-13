@@ -81,7 +81,6 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       "plakaty",
       "roll-up",
       "skladane-ulotki",
-      "broszury-klejone",
     ],
     productsHeading: "Co wydrukujesz online",
     productsLead:
@@ -163,7 +162,6 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       "skladane-ulotki",
       "kartki-pocztowki",
       "naklejki",
-      "broszury-szyte",
     ],
     productsHeading: "Produkty idealne na druk cyfrowy",
     productsLead:
@@ -478,10 +476,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     ],
     relatedProducts: [
       "ulotki",
-      "broszury-klejone",
-      "broszury-szyte",
       "plakaty",
-      "broszury-szyte-nicia",
     ],
     productsHeading: "Produkty na duże nakłady",
     productsLead:
@@ -644,7 +639,6 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       "wizytowki",
       "plakaty",
       "roll-up",
-      "broszury-klejone",
       "skladane-ulotki",
     ],
     productsHeading: "Zamów z dostawą",

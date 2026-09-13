@@ -18,24 +18,6 @@ export const produkty: Produkt[] = [
       "Sześciostronicowe składane ulotki w formacie DL, A5 i A4 z falcowaniem typu C na papierze 170 g.",
   },
   {
-    nazwa: "Broszury szyte",
-    slug: "broszury-szyte",
-    opis_krotki:
-      "Spinane drutem broszury w formatach A6, A5 i A4, do 48 stron, idealne na cenniki i programy wydarzeń.",
-  },
-  {
-    nazwa: "Broszury z klejoną oprawą",
-    slug: "broszury-klejone",
-    opis_krotki:
-      "Profesjonalna oprawa klejona hotmelt w A5 i A4, okładka 300 g, środek 135 g, do 200 stron.",
-  },
-  {
-    nazwa: "Książki z oprawą szytą nicią",
-    slug: "broszury-szyte-nicia",
-    opis_krotki:
-      "Najbardziej trwała oprawa szyta nicią, otwiera się na płasko, idealna do monografii i albumów.",
-  },
-  {
     nazwa: "Roll-up",
     slug: "roll-up",
     opis_krotki:
