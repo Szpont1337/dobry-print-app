@@ -15,7 +15,7 @@ import { clearCart, itemHasDesign, type ResolvedCartItem } from "@/lib/cart";
 import type { CartTotals } from "@/lib/pricing";
 import { safeCapture } from "@/lib/posthog-client";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
-import { Button, Input, Textarea, Typography } from "@/components/ui";
+import { Button, Input, Textarea } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
@@ -324,6 +324,10 @@ export function CheckoutForm({
           orderIds: orderIds.map(String),
           locale: i18n.language,
           test: testMode,
+          // Dane firmy idą prosto do Stripe (Customer + tax id `pl_nip`) —
+          // nie przechowujemy NIP-u u siebie, ląduje tylko na fakturze.
+          companyName: optional(values.companyName ?? ""),
+          taxId: optional(values.taxId ?? ""),
         }),
       });
       const payload = (await res.json().catch(() => ({}))) as {
@@ -398,9 +402,9 @@ export function CheckoutForm({
             registration={register("taxId")}
             error={errors.taxId?.message}
           />
-          <Typography as="p" variant="small" className="col-span-full text-muted-foreground">
+          <p className="col-span-full text-sm text-muted-foreground">
             {t("invoiceNote")}
-          </Typography>
+          </p>
         </Fieldset>
 
         <Fieldset index="02" legend={t("fieldsetDelivery")}>

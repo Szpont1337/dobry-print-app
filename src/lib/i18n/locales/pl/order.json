@@ -27,7 +27,8 @@
     "cityInvalid": "Nazwa miasta może zawierać tylko litery.",
     "postalRequired": "Podaj kod pocztowy.",
     "postalInvalid": "Kod pocztowy w formacie 00-000.",
-    "fileUrlInvalid": "Podaj poprawny link (http/https)."
+    "fileUrlInvalid": "Podaj poprawny link (http/https).",
+    "taxIdInvalid": "NIP to 10 cyfr."
   },
   "consentBefore": "Klikając „Przejdź do płatności” akceptujesz ",
   "consentTerms": "regulamin",
@@ -54,7 +55,9 @@
     "fileUrlHint": "Alternatywa dla wgrywania pliku — wystarczy jedno z dwóch",
     "fileUrlSummary": "Albo wklej link do projektu (Drive / WeTransfer / Dropbox)",
     "notes": "Uwagi do zamówienia",
-    "optional": "Opcjonalnie"
+    "optional": "Opcjonalnie",
+    "companyName": "Nazwa firmy (opcjonalnie)",
+    "taxId": "NIP (opcjonalnie)"
   },
   "success": {
     "headline": "Mamy zamówienie!",
@@ -100,5 +103,6 @@
     "description": "Podgląd koszyka z pozycjami i podsumowaniem.",
     "testBanner": "Tryb testowy — przejdziesz całe zamówienie, ale nie pobierzemy płatności i nie ruszymy produkcji.",
     "testSubmit": "Złóż zamówienie testowe"
-  }
+  },
+  "invoiceNote": "Nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — na dokumencie nie ma kwoty podatku. Po opłaceniu dostaniesz na maila zwykłą fakturę bez VAT; podana wyżej firma i NIP będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach, nie ma tylko VAT-u do odliczenia."
 }

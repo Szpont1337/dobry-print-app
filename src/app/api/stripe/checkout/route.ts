@@ -23,6 +23,9 @@ type Body = {
   locale?: string;
   /** ?test — pełny przepływ bez pobierania pieniędzy */
   test?: boolean;
+  /** Dane firmy z checkoutu — lecą prosto na fakturę, nie zapisujemy NIP-u. */
+  companyName?: string;
+  taxId?: string;
 };
 
 export async function POST(request: Request) {
@@ -82,7 +85,11 @@ export async function POST(request: Request) {
     const orderIdList = orders.map((o) => String(o._id)).join(",");
 
     // Payer + dane na fakturę (NIP → Customer z tax id `pl_nip`).
-    const billing = await billingParamsFor(lead);
+    const billing = await billingParamsFor({
+      ...lead,
+      companyName: body.companyName,
+      taxId: body.taxId,
+    });
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",

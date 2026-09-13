@@ -27,7 +27,8 @@
     "cityInvalid": "City may contain letters only.",
     "postalRequired": "Enter your postal code.",
     "postalInvalid": "Postal code in 00-000 format.",
-    "fileUrlInvalid": "Enter a valid link (http/https)."
+    "fileUrlInvalid": "Enter a valid link (http/https).",
+    "taxIdInvalid": "A Polish tax ID has 10 digits."
   },
   "consentBefore": "By clicking \"Proceed to payment\" you accept the ",
   "consentTerms": "terms",
@@ -54,7 +55,9 @@
     "fileUrlHint": "Alternative to uploading — either is fine",
     "fileUrlSummary": "Or paste a link to your design (Drive / WeTransfer / Dropbox)",
     "notes": "Order notes",
-    "optional": "Optional"
+    "optional": "Optional",
+    "companyName": "Company name (optional)",
+    "taxId": "Tax ID / NIP (optional)"
   },
   "success": {
     "headline": "Order received!",
@@ -100,5 +103,6 @@
     "description": "Cart preview with items and totals.",
     "testBanner": "Test mode — you'll go through the whole order, but no payment is taken and nothing goes to production.",
     "testSubmit": "Place a test order"
-  }
+  },
+  "invoiceNote": "We are not a VAT payer, so we do not issue VAT invoices — the document carries no tax amount. After payment you get a regular non-VAT invoice by email; the company name and tax ID above appear on it. The full amount is a deductible business expense, there is simply no VAT to reclaim."
 }
