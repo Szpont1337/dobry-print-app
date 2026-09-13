@@ -64,21 +64,25 @@ export async function billingParamsFor(order: BillingOrder): Promise<{
   params: Partial<Stripe.Checkout.SessionCreateParams>;
   createdCustomerId?: string;
 }> {
+  // Zamówienie ma już Customera — odzyskujemy go ZAWSZE, jeszcze przed
+  // sprawdzeniem NIP-u. To on trzyma nazwę firmy i tax id, a link „zapłać"
+  // z maila nie niesie ze sobą danych z formularza. Bez tego kolejna sesja
+  // gubiłaby NIP i zakładała drugą kopię tego samego klienta.
+  if (order.stripeCustomerId) {
+    return {
+      params: {
+        customer: order.stripeCustomerId,
+        customer_update: { address: "auto" },
+      },
+    };
+  }
+
   const nip = order.taxId?.replace(/[\s-]/g, "");
   if (!nip) {
     return {
       params: {
         customer_email: order.customerEmail,
         customer_creation: "always",
-      },
-    };
-  }
-
-  if (order.stripeCustomerId) {
-    return {
-      params: {
-        customer: order.stripeCustomerId,
-        customer_update: { address: "auto", name: "auto" },
       },
     };
   }
@@ -96,7 +100,10 @@ export async function billingParamsFor(order: BillingOrder): Promise<{
   return {
     params: {
       customer: customer.id,
-      customer_update: { address: "auto", name: "auto" },
+      // TYLKO adres. `name: "auto"` nadpisałoby nazwę firmy imieniem i
+      // nazwiskiem wpisanym przy karcie — a to właśnie nazwa firmy ma wyjść
+      // na fakturze, skoro klient podał NIP.
+      customer_update: { address: "auto" },
     },
     createdCustomerId: customer.id,
   };
