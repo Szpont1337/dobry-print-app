@@ -53,6 +53,19 @@ export default defineSchema({
     // panel), ale nikt nie został obciążony i nie poleciały powiadomienia.
     test: v.optional(v.boolean()),
 
+    // Marka, z której złożono zamówienie ("drukalo" | "dobreprinty"). Obie
+    // domeny piszą do tej samej bazy — to jedyny sposób ich rozróżnienia.
+    brand: v.optional(v.string()),
+
+    // Atrybucja ruchu (first-touch) — skąd trafił kupujący. Ustawiane przy
+    // składaniu zamówienia na podstawie referrera/UTM z pierwszego wejścia.
+    // attrChannel: ai_llm | organic | paid | social | referral | direct.
+    attrChannel: v.optional(v.string()),
+    attrSourceName: v.optional(v.string()),
+    attrReferrer: v.optional(v.string()),
+    attrUtmSource: v.optional(v.string()),
+    attrLanding: v.optional(v.string()),
+
     // Status and metadata
     status: v.union(
       v.literal("pending"),

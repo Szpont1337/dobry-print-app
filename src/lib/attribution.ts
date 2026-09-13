@@ -21,7 +21,7 @@ export interface StoredAttribution {
   ts: number;
 }
 
-// Argumenty przekazywane do mutacji submitOrder (rozpłaszczone). Zawiera też
+// Argumenty przekazywane do mutacji submitCart (rozpłaszczone). Zawiera też
 // markę (drukalo/dobreprinty), by front oznaczał zamówienie w wspólnej bazie.
 export interface OrderAttributionArgs {
   brand: string;

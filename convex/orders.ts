@@ -215,6 +215,14 @@ export const submitCart = mutation({
     source: v.optional(v.string()),
     /** zamówienie testowe — bez obciążenia i bez powiadomień */
     test: v.optional(v.boolean()),
+    /** marka wg domeny — obie domeny piszą do tej samej bazy */
+    brand: v.optional(v.string()),
+    /** first-touch atrybucja ruchu (patrz src/lib/attribution.ts) */
+    attrChannel: v.optional(v.string()),
+    attrSourceName: v.optional(v.string()),
+    attrReferrer: v.optional(v.string()),
+    attrUtmSource: v.optional(v.string()),
+    attrLanding: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const locale = args.locale;
@@ -318,6 +326,12 @@ export const submitCart = mutation({
         notes: cfg.notes,
         source: args.source,
         test: args.test,
+        brand: args.brand,
+        attrChannel: args.attrChannel,
+        attrSourceName: args.attrSourceName,
+        attrReferrer: args.attrReferrer,
+        attrUtmSource: args.attrUtmSource,
+        attrLanding: args.attrLanding,
         // Server-computed — never trusted from the client
         productName: priced.productName,
         formatLabel: priced.formatLabel,
