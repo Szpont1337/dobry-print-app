@@ -104,5 +104,6 @@
     "testBanner": "Tryb testowy — przejdziesz całe zamówienie, ale nie pobierzemy płatności i nie ruszymy produkcji.",
     "testSubmit": "Złóż zamówienie testowe"
   },
-  "invoiceNote": "Nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — na dokumencie nie ma kwoty podatku. Po opłaceniu dostaniesz na maila zwykłą fakturę bez VAT; podana wyżej firma i NIP będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach, nie ma tylko VAT-u do odliczenia."
+  "invoiceNote": "Nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — na dokumencie nie ma kwoty podatku. Po opłaceniu dostaniesz na maila zwykłą fakturę bez VAT; podana wyżej firma i NIP będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach, nie ma tylko VAT-u do odliczenia.",
+  "fieldsetInvoiceNote": "Fakturę wysyłamy automatycznie na maila po opłaceniu zamówienia — nie trzeba o nią prosić. Nie jesteśmy podatnikiem VAT, więc jest to faktura bez VAT: nie ma na niej kwoty podatku, ale całą kwotę zaksięgujesz w kosztach firmy. Kupujesz na firmę? Podaj nazwę i NIP poniżej, a znajdą się na dokumencie."
 }

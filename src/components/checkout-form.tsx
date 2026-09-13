@@ -364,7 +364,7 @@ export function CheckoutForm({
       className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
     >
       <div className="flex flex-col gap-5">
-        <Fieldset index="01" legend={t("fieldsetInvoice")}>
+        <Fieldset index="01" legend={t("fieldsetInvoice")} note={t("fieldsetInvoiceNote")}>
           <Field
             label={t("fields.customerName")}
             required
@@ -629,22 +629,32 @@ function DeliveryOption({
 function Fieldset({
   index,
   legend,
+  note,
   children,
 }: {
   index: string;
   legend: string;
+  /** Zdanie pod legendą — używane tam, gdzie sama etykieta nie wystarcza. */
+  note?: string;
   children: React.ReactNode;
 }) {
   const id = useId();
   return (
     <fieldset aria-labelledby={id} className="border border-border bg-card">
-      <div
-        id={id}
-        className="flex items-center gap-2 border-b border-border px-5 py-4 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:px-8"
-      >
-        <span className="text-primary">{index}</span>
-        <span aria-hidden>/</span>
-        {legend}
+      <div className="border-b border-border px-5 py-4 sm:px-8">
+        <div
+          id={id}
+          className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+        >
+          <span className="text-primary">{index}</span>
+          <span aria-hidden>/</span>
+          {legend}
+        </div>
+        {note ? (
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {note}
+          </p>
+        ) : null}
       </div>
       <div className="grid gap-5 p-5 sm:grid-cols-2 sm:p-8">{children}</div>
     </fieldset>

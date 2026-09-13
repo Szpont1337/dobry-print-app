@@ -104,5 +104,6 @@
     "testBanner": "Test mode — you'll go through the whole order, but no payment is taken and nothing goes to production.",
     "testSubmit": "Place a test order"
   },
-  "invoiceNote": "We are not a VAT payer, so we do not issue VAT invoices — the document carries no tax amount. After payment you get a regular non-VAT invoice by email; the company name and tax ID above appear on it. The full amount is a deductible business expense, there is simply no VAT to reclaim."
+  "invoiceNote": "We are not a VAT payer, so we do not issue VAT invoices — the document carries no tax amount. After payment you get a regular non-VAT invoice by email; the company name and tax ID above appear on it. The full amount is a deductible business expense, there is simply no VAT to reclaim.",
+  "fieldsetInvoiceNote": "We email your invoice automatically once the order is paid — no need to ask. We are not a VAT payer, so it is a VAT-exempt invoice: it carries no tax amount, but the full sum is deductible as a business cost. Buying for a company? Enter the name and tax ID below and they will appear on the document."
 }
