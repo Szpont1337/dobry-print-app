@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { api } from "@convex/_generated/api";
+import type { Id } from "@convex/_generated/dataModel";
 
 import { getPostHogServer } from "@/lib/posthog-server";
 import {
@@ -100,6 +101,38 @@ export async function POST(request: Request) {
             });
             await posthog.flush();
           }
+        }
+        break;
+      }
+      case "invoice.paid": {
+        // Faktura ze Stripe (invoice_creation na sesji). Zapisujemy linki przy
+        // zamówieniu i wysyłamy własny mail — dostarczenie dokumentu nie może
+        // zależeć od ustawienia „Customer emails" w Dashboardzie Stripe'a.
+        // Mapowanie po metadanych z invoice_creation.invoice_data.metadata.
+        const invoice = event.data.object;
+        for (const orderId of orderIdsFromMetadata(invoice.metadata)) {
+          await convex.mutation(api.orders.attachStripeInvoice, {
+            serverSecret,
+            orderId: orderId as Id<"orders">,
+            hostedUrl: invoice.hosted_invoice_url ?? undefined,
+            pdfUrl: invoice.invoice_pdf ?? undefined,
+          });
+        }
+        break;
+      }
+      case "payment_intent.succeeded": {
+        // Pas bezpieczeństwa dla płatności async (BLIK/Przelewy24): gdy w Stripe
+        // nie włączono `checkout.session.async_payment_succeeded`, to JEDYNY
+        // event potwierdzający wpłatę w czasie rzeczywistym. Klucz —
+        // `metadata.orderId` z payment_intent_data. Idempotentne: markPaid
+        // pomija już zaksięgowane.
+        const intent = event.data.object;
+        for (const orderId of orderIdsFromMetadata(intent.metadata)) {
+          await convex.mutation(api.orders.markPaid, {
+            serverSecret,
+            orderId,
+            paymentIntentId: intent.id,
+          });
         }
         break;
       }

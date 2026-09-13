@@ -55,7 +55,7 @@
       },
       {
         "question": "Czy dostanę fakturę VAT?",
-        "answer": "Nie. DobrePrinty prowadzi działalność nierejestrowaną i nie jest podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia automatycznie dostajesz na maila rachunek wystawiony przez platformę płatniczą Stripe — z danymi firmy, jeśli podasz je przy zamówieniu."
+        "answer": "Nie — nie jesteśmy podatnikiem VAT, więc faktury VAT nie wystawiamy i na dokumencie nie ma kwoty podatku. Dostajesz natomiast zwykłą fakturę bez VAT: po opłaceniu zamówienia trafia automatycznie na maila, a jeśli przy płatności podasz nazwę firmy i NIP, będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach firmy — nie ma tylko VAT-u do odliczenia."
       },
       {
         "question": "Czy mogę anulować lub zwrócić zamówienie?",

@@ -5,6 +5,7 @@ import type { Id } from "@convex/_generated/dataModel";
 
 import {
   assertStripeConfigured,
+  billingParamsFor,
   getConvexHttp,
   getServerSecret,
   getSiteUrl,
@@ -78,11 +79,15 @@ export async function POST(request: Request) {
     // Zamówienie prowadzące: na nie wraca klient po płatności i jego kwota
     // zawiera wysyłkę całego koszyka (patrz convex/orderPricing splitCartTotals).
     const lead = orders[0];
+    const orderIdList = orders.map((o) => String(o._id)).join(",");
+
+    // Payer + dane na fakturę (NIP → Customer z tax id `pl_nip`).
+    const billing = await billingParamsFor(lead);
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       currency: "pln",
-      customer_email: lead.customerEmail,
+      ...billing.params,
       locale,
       // Jedna pozycja Stripe = jedno zamówienie, więc suma sesji zgadza się co
       // do grosza z kwotami zapisanymi w bazie (maile, faktury, panel).
@@ -102,15 +107,28 @@ export async function POST(request: Request) {
       // dzieli je kilka zamówień naraz.
       metadata: {
         orderId: String(lead._id),
-        orderIds: orders.map((o) => String(o._id)).join(","),
+        orderIds: orderIdList,
       },
       payment_intent_data: {
         metadata: {
           orderId: String(lead._id),
-          orderIds: orders.map((o) => String(o._id)).join(","),
+          orderIds: orderIdList,
         },
       },
-      invoice_creation: { enabled: true },
+      // Adres na fakturę zbiera Stripe — nasz formularz zbiera adres WYSYŁKI,
+      // a przy paczkomacie nie ma nawet ulicy. `tax_id_collection` pozwala
+      // kupującemu podać NIP i nazwę firmy przy płatności; `required`
+      // domyślnie `never`, bo większość klientów to osoby prywatne.
+      billing_address_collection: "required",
+      tax_id_collection: { enabled: true },
+      invoice_creation: {
+        enabled: true,
+        // Te same metadane co na sesji — webhook `invoice.paid` dostaje sam
+        // obiekt faktury i bez nich nie wie, do którego zamówienia ją dopiąć.
+        invoice_data: {
+          metadata: { orderId: String(lead._id), orderIds: orderIdList },
+        },
+      },
       success_url: `${site}/zamowienia/${lead._id}/sukces?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${site}/zamowienia/${lead._id}/anulowane?session_id={CHECKOUT_SESSION_ID}`,
     });
@@ -120,6 +138,7 @@ export async function POST(request: Request) {
         serverSecret,
         orderId: order._id,
         stripeSessionId: session.id,
+        stripeCustomerId: billing.createdCustomerId,
       });
     }
 

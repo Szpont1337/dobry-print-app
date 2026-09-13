@@ -130,7 +130,7 @@ function detailsBox(o) {
 }
 
 const ORDER_FOOTER =
-  "dobreprinty · Hubert Kolejko · hej@dobreprinty.pl<br>Otrzymujesz tę wiadomość, bo złożyłeś zamówienie w dobreprinty.pl.";
+  "dobreprinty · Cezary Prusak · hej@dobreprinty.pl<br>Otrzymujesz tę wiadomość, bo złożyłeś zamówienie w dobreprinty.pl.";
 
 const headline = `Zamówienie #${shortId(order._id)} odebrane.`;
 const intro =

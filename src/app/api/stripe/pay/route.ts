@@ -5,6 +5,7 @@ import type { Id } from "@convex/_generated/dataModel";
 
 import {
   assertStripeConfigured,
+  billingParamsFor,
   getConvexHttp,
   getServerSecret,
   getSiteUrl,
@@ -56,11 +57,15 @@ export async function GET(request: Request) {
       (o) => o.paymentStatus !== "paid" && o.status !== "cancelled",
     );
     const orders = toPay.length > 0 ? toPay : [order];
+    const orderIdList = orders.map((o) => String(o._id)).join(",");
+
+    // Payer + dane na fakturę (NIP → Customer z tax id `pl_nip`).
+    const billing = await billingParamsFor(order);
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       currency: "pln",
-      customer_email: order.customerEmail,
+      ...billing.params,
       locale: "pl",
       line_items: orders.map((member) => ({
         quantity: 1,
@@ -75,15 +80,26 @@ export async function GET(request: Request) {
       })),
       metadata: {
         orderId: String(order._id),
-        orderIds: orders.map((o) => String(o._id)).join(","),
+        orderIds: orderIdList,
       },
       payment_intent_data: {
         metadata: {
           orderId: String(order._id),
-          orderIds: orders.map((o) => String(o._id)).join(","),
+          orderIds: orderIdList,
         },
       },
-      invoice_creation: { enabled: true },
+      // Adres na fakturę zbiera Stripe; `tax_id_collection` pozwala podać NIP
+      // i nazwę firmy przy płatności.
+      billing_address_collection: "required",
+      tax_id_collection: { enabled: true },
+      invoice_creation: {
+        enabled: true,
+        // Webhook `invoice.paid` dostaje sam obiekt faktury — bez metadanych
+        // nie wie, do którego zamówienia ją dopiąć.
+        invoice_data: {
+          metadata: { orderId: String(order._id), orderIds: orderIdList },
+        },
+      },
       success_url: `${site}/zamowienia/${order._id}/sukces?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${site}/zamowienia/${order._id}/anulowane?session_id={CHECKOUT_SESSION_ID}`,
     });
@@ -93,6 +109,7 @@ export async function GET(request: Request) {
         serverSecret,
         orderId: member._id,
         stripeSessionId: session.id,
+        stripeCustomerId: billing.createdCustomerId,
       });
     }
 

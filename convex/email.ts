@@ -355,6 +355,42 @@ function completedEmail(order: Order) {
   };
 }
 
+/**
+ * Faktura ze Stripe (invoice_creation na sesji Checkout).
+ *
+ * Mówimy „faktura", a nie „faktura VAT" — DobrePrinty prowadzi działalność
+ * nierejestrowaną i nie jest podatnikiem VAT, więc dokument nie ma pozycji VAT.
+ */
+function invoiceEmail(order: Order) {
+  const headline = `Faktura do zamówienia #${shortId(order._id)}.`;
+  const intro =
+    "Płatność zaksięgowana. Poniżej faktura wystawiona przez Stripe — do pobrania w PDF albo do obejrzenia w przeglądarce.";
+  const url = order.stripeInvoicePdf ?? order.stripeInvoiceUrl ?? "";
+  const followUp = [
+    callout(
+      `<a href="${escapeHtml(url)}" style="color:${BRAND.primary};text-decoration:underline">Pobierz fakturę (PDF)</a>`,
+    ),
+    plainBlock(
+      "Nie jesteśmy podatnikiem VAT, więc faktury VAT nie wystawiamy i na dokumencie nie ma kwoty podatku. To zwykła faktura bez VAT — jeśli przy płatności podałeś nazwę firmy i NIP, są na niej widoczne. Całą kwotę zaksięgujesz w kosztach firmy, nie ma tylko VAT-u do odliczenia.",
+    ),
+  ].join("");
+
+  return {
+    subject: `Faktura do zamówienia #${shortId(order._id)}`,
+    preheader: "Płatność zaksięgowana — faktura w załączonym linku.",
+    html: renderShell({
+      preheader: headline,
+      headline,
+      intro,
+      detailsHtml: detailsBox(order),
+      followUpHtml: followUp,
+      signature: "Pozdrawiamy,<br>zespół DobrePrinty",
+      footerNote: ORDER_FOOTER,
+    }),
+    text: `${plainSummary(order, headline, intro)}\n\nFaktura: ${url}`,
+  };
+}
+
 function paymentReminderEmail(order: Order, reminderNumber: number) {
   const last = reminderNumber >= 3;
   const headline = last
@@ -601,6 +637,31 @@ export const sendOrderStatusEmail = internalAction({
       return;
     }
     const built = buildEmail(order, args.kind);
+    await send({
+      to: order.customerEmail,
+      subject: built.subject,
+      html: built.html,
+      text: built.text,
+    });
+  },
+});
+
+/**
+ * Mail z fakturą. Własny, bo dostarczenie dokumentu nie może zależeć od
+ * ustawienia „Customer emails" w Dashboardzie Stripe'a. Dedup po
+ * `invoiceEmailSentAt` robi `orders.attachStripeInvoice`.
+ */
+export const sendInvoiceEmail = internalAction({
+  args: { orderId: v.id("orders") },
+  handler: async (ctx, args) => {
+    const order = await ctx.runQuery(internal.emailDb.getOrder, {
+      orderId: args.orderId,
+    });
+    if (!order) {
+      console.warn("[email] Brak zamówienia", args.orderId);
+      return;
+    }
+    const built = invoiceEmail(order);
     await send({
       to: order.customerEmail,
       subject: built.subject,

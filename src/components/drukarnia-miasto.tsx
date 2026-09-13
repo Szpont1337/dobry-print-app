@@ -82,7 +82,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT. Po opłaceniu zamówienia rachunek wystawia platforma płatnicza Stripe i wysyła go na maila podany w zamówieniu — dotyczy to także zamówień z ${miasto.wojewodztwo}.`,
+      answer: `Nie — nie jesteśmy podatnikiem VAT, więc faktury VAT nie wystawiamy i na dokumencie nie ma kwoty podatku. Dostajesz natomiast zwykłą fakturę bez VAT: po opłaceniu zamówienia trafia automatycznie na maila, a jeśli przy płatności podasz nazwę firmy i NIP, będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach firmy — nie ma tylko VAT-u do odliczenia. Dotyczy to także zamówień z ${miasto.wojewodztwo}.`,
     },
   ];
 
