@@ -72,7 +72,11 @@ export async function billingParamsFor(order: BillingOrder): Promise<{
     return {
       params: {
         customer: order.stripeCustomerId,
-        customer_update: { address: "auto" },
+        // `name: "auto"` jest WYMAGANE przez Stripe, gdy `tax_id_collection`
+        // działa na istniejącym Customerze. Przy włączonym zbieraniu NIP-u
+        // pole „name" w Checkout to nazwa FIRMY (prefill z Customera), nie
+        // imię z karty — więc nazwa firmy na fakturze zostaje.
+        customer_update: { address: "auto", name: "auto" },
       },
     };
   }
@@ -100,10 +104,10 @@ export async function billingParamsFor(order: BillingOrder): Promise<{
   return {
     params: {
       customer: customer.id,
-      // TYLKO adres. `name: "auto"` nadpisałoby nazwę firmy imieniem i
-      // nazwiskiem wpisanym przy karcie — a to właśnie nazwa firmy ma wyjść
-      // na fakturze, skoro klient podał NIP.
-      customer_update: { address: "auto" },
+      // `name: "auto"` wymagane przez Stripe przy `tax_id_collection` na
+      // istniejącym Customerze — patrz wyżej; Checkout zapisuje tu nazwę
+      // firmy, nie imię z karty.
+      customer_update: { address: "auto", name: "auto" },
     },
     createdCustomerId: customer.id,
   };
