@@ -8,6 +8,21 @@ export type ProductFormat = {
   unitPrice: number;
 };
 
+/**
+ * Stronność nadruku. Dla koszulek: `single` = nadruk z przodu (w cenie),
+ * `double` = przód + plecy. Wartość zapisywana przy zamówieniu (`sides`) —
+ * ten sam format, co w backendzie.
+ */
+export type PrintSide = "single" | "double";
+
+export type BackPrint = {
+  /** STAŁA dopłata za sztukę (zł, przed narzutem) za nadruk na plecach */
+  fee: number;
+  labels: Record<PrintSide, string>;
+};
+
+export const DEFAULT_SIDE: PrintSide = "single";
+
 export type Product = {
   slug: string;
   name: string;
@@ -58,6 +73,11 @@ export type Product = {
   hidden?: boolean;
   /** pomija SETUP_FEE i scale w konfiguratorze — cena = qty * unitPrice */
   noFees?: boolean;
+  /**
+   * Opcja nadruku na plecach (koszulki). Gdy podana, konfigurator pozwala
+   * wybrać `single` (przód, w cenie) albo `double` (przód + plecy, +`fee`/szt).
+   */
+  backPrint?: BackPrint;
 };
 
 export const products: Product[] = [
@@ -337,12 +357,19 @@ export const products: Product[] = [
       "Koszulka z nadrukiem to chodząca reklama, gadżet na event i odzież firmowa w jednym. Drukujemy bezpośrednio na tkaninie (DTG) na białej bawełnie 100% 180 g — pełny kolor, miękki w dotyku nadruk, który nie pęka w praniu. Wgraj grafikę i zobacz podgląd na koszulce przed zamówieniem.",
     footerHeadline: "Koszulki z nadrukiem. Twoja marka na ludziach.",
     footerNote:
-      "Biała bawełna 100% 180 g, druk DTG 4/0 w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie.",
+      "Biała bawełna 100% 180 g, druk DTG w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie, plecy +25 zł/szt.",
     variant: "tshirt",
     formatNoun: "Rozmiar",
     mockupPreview: {
       surface: "tshirt",
       printArea: { x: 38, y: 44, width: 24, height: 30 },
+    },
+    // Przód w cenie; plecy = stała dopłata 25 zł/szt. przed narzutem — druk DTG
+    // na plecach to osobny przebieg, niezależny od rozmiaru. Ta sama kwota, co
+    // w katalogu backendu (wspólny Convex liczy cenę server-side).
+    backPrint: {
+      fee: 25,
+      labels: { single: "Nadruk z przodu", double: "Przód + plecy" },
     },
     defaultFormatId: "m",
     defaultQuantity: 1,
@@ -475,6 +502,34 @@ export function unitPriceForQuantity(
     return price;
   }
   return format.unitPrice;
+}
+
+/**
+ * Dopłata za nadruk na plecach (zł, przed narzutem) dla całego nakładu.
+ * 0 dla produktów bez opcji albo przy nadruku tylko z przodu.
+ */
+export function backPrintSurcharge(
+  product: Product,
+  sides: PrintSide | undefined,
+  quantity: number,
+): number {
+  if (!product.backPrint || sides !== "double") return 0;
+  return Math.max(0, quantity) * product.backPrint.fee;
+}
+
+/** Etykieta stronności pozycji/zamówienia, np. „Przód + plecy". Null, gdy produkt nie ma opcji. */
+export function sideLabelFor(product: Product, sides: PrintSide | undefined): string | null {
+  if (!product.backPrint) return null;
+  return product.backPrint.labels[sides ?? DEFAULT_SIDE];
+}
+
+/** Jak {@link sideLabelFor}, ale po slugu — dla zapisanych zamówień. */
+export function sideLabelForOrder(
+  productSlug: string,
+  sides: PrintSide | undefined,
+): string | null {
+  const product = getProduct(productSlug);
+  return product ? sideLabelFor(product, sides) : null;
 }
 
 export function getProduct(slug: string): Product | undefined {

@@ -26,6 +26,7 @@ import {
   Input,
   SectionHeader,
 } from "@/components/ui";
+import { type PrintSide, sideLabelForOrder } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
@@ -166,9 +167,11 @@ function WelcomeBanner({
 type Order = {
   _id: string;
   _creationTime: number;
+  productSlug: string;
   productName: string;
   formatLabel: string;
   quantity: number;
+  sides?: PrintSide;
   grossTotal: number;
   status: OrderStatus;
   shippingStreet: string;
@@ -265,7 +268,13 @@ function OrderCard({ order }: { order: Order }) {
               {order.productName}
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              {formatQty.format(order.quantity)} · {order.formatLabel}
+              {[
+                formatQty.format(order.quantity),
+                order.formatLabel,
+                sideLabelForOrder(order.productSlug, order.sides),
+              ]
+                .filter(Boolean)
+                .join(" · ")}
             </p>
           </div>
           <div className="flex flex-col items-end gap-2 text-right">

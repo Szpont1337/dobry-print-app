@@ -26,6 +26,7 @@ import { useCart } from "@/hooks/use-cart";
 import { closeCartSheet, useCartSheetOpen } from "@/hooks/use-cart-sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { itemHasDesign, removeCartItem, type ResolvedCartItem, updateCartItem } from "@/lib/cart";
+import { sideLabelFor } from "@/lib/products";
 import { MAX_QTY, MIN_QTY, clampQuantity } from "@/lib/pricing";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -175,7 +176,9 @@ function CartLine({ item }: { item: ResolvedCartItem }) {
           >
             {item.product.name}
           </Link>
-          <p className="mt-0.5 text-xs text-muted-foreground">{item.format.label}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {[item.format.label, sideLabelFor(item.product, item.sides)].filter(Boolean).join(" · ")}
+          </p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <span className="text-sm font-extrabold tracking-tight text-foreground tabular-nums">

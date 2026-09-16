@@ -9,6 +9,8 @@ export default defineSchema({
     formatId: v.string(),
     formatLabel: v.string(),
     quantity: v.number(),
+    /** nadruk przód (`single`) / przód + plecy (`double`) — tylko koszulki */
+    sides: v.optional(v.union(v.literal("single"), v.literal("double"))),
 
     // Price (all values in PLN)
     unitPrice: v.number(),

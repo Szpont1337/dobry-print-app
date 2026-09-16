@@ -1,4 +1,10 @@
-import { type Product, type ProductFormat, unitPriceForQuantity } from "@/lib/products";
+import {
+  backPrintSurcharge,
+  type PrintSide,
+  type Product,
+  type ProductFormat,
+  unitPriceForQuantity,
+} from "@/lib/products";
 import { shippingFeeFor, withShipping } from "@/lib/shipping";
 
 export const MIN_QTY = 1;
@@ -28,11 +34,15 @@ export function clampQuantity(n: number, minQuantity?: number): number {
   return Math.max(min, Math.min(MAX_QTY, Math.round(n)));
 }
 
-/** Cena produktu (bez wysyłki) dla danego nakładu i ceny jednostkowej. */
-export function priceFor(quantity: number, unitPrice: number, noFees = false) {
-  if (noFees) return quantity * unitPrice * PRICE_FACTOR;
+/**
+ * Cena produktu (bez wysyłki) dla danego nakładu i ceny jednostkowej.
+ * `surcharge` — stała dopłata (zł, przed narzutem), np. nadruk na plecach;
+ * dolicza się PRZED mnożnikiem, żeby wszystko było nim objęte.
+ */
+export function priceFor(quantity: number, unitPrice: number, noFees = false, surcharge = 0) {
   const scale = quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
-  return (SETUP_FEE + quantity * unitPrice * scale) * PRICE_FACTOR;
+  const base = noFees ? quantity * unitPrice : SETUP_FEE + quantity * unitPrice * scale;
+  return (base + surcharge) * PRICE_FACTOR;
 }
 
 export type OrderTotals = {
@@ -49,9 +59,15 @@ export function computeTotals(
   product: Product,
   format: ProductFormat,
   quantity: number,
+  sides?: PrintSide,
 ): OrderTotals {
   const unitPrice = unitPriceForQuantity(product, format, quantity);
-  const productTotal = priceFor(quantity, unitPrice, product.noFees);
+  const productTotal = priceFor(
+    quantity,
+    unitPrice,
+    product.noFees,
+    backPrintSurcharge(product, sides, quantity),
+  );
   const totals = withShipping(productTotal);
   return {
     productTotal,
@@ -65,6 +81,7 @@ export type CartLine = {
   product: Product;
   format: ProductFormat;
   quantity: number;
+  sides?: PrintSide;
 };
 
 export type CartTotals = OrderTotals & {
@@ -83,7 +100,12 @@ export function computeCartTotals(lines: CartLine[]): CartTotals {
 
   for (const line of lines) {
     const unitPrice = unitPriceForQuantity(line.product, line.format, line.quantity);
-    const price = priceFor(line.quantity, unitPrice, line.product.noFees);
+    const price = priceFor(
+      line.quantity,
+      unitPrice,
+      line.product.noFees,
+      backPrintSurcharge(line.product, line.sides, line.quantity),
+    );
     productTotal += price;
     // Grosze zaokrąglamy per pozycja — dokładnie tak, jak serwer zapisuje
     // kwotę każdego zamówienia (convex/orderPricing splitCartTotals).

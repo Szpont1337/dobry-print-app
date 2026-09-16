@@ -8,6 +8,7 @@ import type { Id } from "@convex/_generated/dataModel";
 import { Header } from "@/components/header";
 import { ClearCartOnSuccess } from "./components/clear-cart-on-success";
 import { Button } from "@/components/ui";
+import { sideLabelForOrder } from "@/lib/products";
 import {
   getConvexHttp,
   getServerSecret,
@@ -181,7 +182,13 @@ export default async function PaymentSuccessPage({
                     {member.productName}
                   </span>
                   <span className="block font-mono text-xs uppercase tracking-wider">
-                    {formatQty.format(member.quantity)} szt. · {member.formatLabel}
+                    {[
+                      `${formatQty.format(member.quantity)} szt.`,
+                      member.formatLabel,
+                      sideLabelForOrder(member.productSlug, member.sides),
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </span>
                 </span>
                 <span className="shrink-0 text-right font-semibold text-foreground tabular-nums">

@@ -3,7 +3,13 @@
 // product catalog. Imports are pure data / pure math (no browser/node deps), so
 // they bundle cleanly into Convex.
 import { PRICE_FACTOR } from "../src/lib/pricing";
-import { products, unitPriceForQuantity } from "../src/lib/products";
+import {
+  backPrintSurcharge,
+  DEFAULT_SIDE,
+  type PrintSide,
+  products,
+  unitPriceForQuantity,
+} from "../src/lib/products";
 import { withShipping } from "../src/lib/shipping";
 import { type Locale, tErr } from "./i18nError";
 
@@ -11,10 +17,15 @@ const SETUP_FEE = 4.5;
 export const MIN_QTY = 1;
 export const MAX_QTY = 100_000;
 
-function priceFor(quantity: number, unitPrice: number, noFees: boolean): number {
-  if (noFees) return quantity * unitPrice * PRICE_FACTOR;
+function priceFor(
+  quantity: number,
+  unitPrice: number,
+  noFees: boolean,
+  surcharge = 0,
+): number {
   const scale = quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
-  return (SETUP_FEE + quantity * unitPrice * scale) * PRICE_FACTOR;
+  const base = noFees ? quantity * unitPrice : SETUP_FEE + quantity * unitPrice * scale;
+  return (base + surcharge) * PRICE_FACTOR;
 }
 
 function round2(n: number): number {
@@ -26,6 +37,8 @@ export type ComputedOrder = {
   formatLabel: string;
   unitPrice: number;
   quantity: number;
+  /** znormalizowana stronność — tylko produkty z `backPrint` */
+  sides?: PrintSide;
   grossTotal: number;
   shippingFee: number;
 };
@@ -47,6 +60,7 @@ export function computeItemTotals(
   formatId: string,
   quantity: number,
   locale?: Locale,
+  sides?: PrintSide,
 ): ComputedItem {
   const q = Math.round(quantity);
   if (!Number.isFinite(q) || q < MIN_QTY || q > MAX_QTY) {
@@ -66,13 +80,21 @@ export function computeItemTotals(
   }
 
   const unitPrice = unitPriceForQuantity(product, format, q);
+  // Stronność tylko dla produktów z opcją; klient bez wyboru → domyślna.
+  const sided = product.backPrint ? (sides ?? DEFAULT_SIDE) : undefined;
 
   return {
     productName: product.name,
     formatLabel: format.label,
     unitPrice,
     quantity: q,
-    grossTotal: priceFor(q, unitPrice, product.noFees ?? false),
+    sides: sided,
+    grossTotal: priceFor(
+      q,
+      unitPrice,
+      product.noFees ?? false,
+      backPrintSurcharge(product, sided, q),
+    ),
   };
 }
 

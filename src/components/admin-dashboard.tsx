@@ -37,6 +37,7 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import { BRANDS, type BrandKey, normalizeBrand } from "@/lib/brands";
+import { type PrintSide, sideLabelForOrder } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
@@ -402,9 +403,11 @@ function FilterChip({
 type AdminOrder = {
   _id: Id<"orders">;
   _creationTime: number;
+  productSlug: string;
   productName: string;
   formatLabel: string;
   quantity: number;
+  sides?: PrintSide;
   grossTotal: number;
   status: OrderStatus;
   paymentStatus?: "unpaid" | "paid" | "failed" | "refunded";
@@ -613,7 +616,13 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                 <dd className="mt-1 text-foreground">
                   {order.productName}
                   <br />
-                  {formatQty.format(order.quantity)} szt. · {order.formatLabel}
+                  {[
+                    `${formatQty.format(order.quantity)} szt.`,
+                    order.formatLabel,
+                    sideLabelForOrder(order.productSlug, order.sides),
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
                   <br />
                   <strong>{formatPLN.format(order.grossTotal)}</strong>
                 </dd>

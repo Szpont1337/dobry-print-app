@@ -6,6 +6,7 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { itemHasDesign, removeCartItem, type ResolvedCartItem, updateCartItem } from "@/lib/cart";
+import { sideLabelFor } from "@/lib/products";
 import { cn } from "@/lib/utils";
 import { MAX_QTY, MIN_QTY, clampQuantity } from "@/lib/pricing";
 import { Input, Textarea } from "@/components/ui";
@@ -70,7 +71,9 @@ function CartLine({
           >
             {item.product.name}
           </Link>
-          <p className="mt-0.5 text-xs text-muted-foreground">{item.format.label}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {[item.format.label, sideLabelFor(item.product, item.sides)].filter(Boolean).join(" · ")}
+          </p>
         </div>
         <div className="flex shrink-0 items-center gap-3">
           <span className="text-base font-extrabold tracking-tight text-foreground tabular-nums">

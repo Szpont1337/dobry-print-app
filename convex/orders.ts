@@ -193,6 +193,7 @@ export const submitCart = mutation({
         productSlug: v.string(),
         formatId: v.string(),
         quantity: v.number(),
+        sides: v.optional(v.union(v.literal("single"), v.literal("double"))),
         fileKeys: v.optional(v.array(v.string())),
         fileUrl: v.optional(v.string()),
         notes: v.optional(v.string()),
@@ -255,7 +256,13 @@ export const submitCart = mutation({
     // Ceny liczone server-side z katalogu (rzuca na nieznany produkt/format i
     // zły nakład) — klient nigdy nie dyktuje kwoty.
     const computed = args.items.map((item) =>
-      computeItemTotals(item.productSlug, item.formatId, item.quantity, locale),
+      computeItemTotals(
+        item.productSlug,
+        item.formatId,
+        item.quantity,
+        locale,
+        item.sides,
+      ),
     );
 
     for (const item of args.items) {
@@ -336,6 +343,7 @@ export const submitCart = mutation({
         productName: priced.productName,
         formatLabel: priced.formatLabel,
         quantity: priced.quantity,
+        sides: priced.sides,
         unitPrice: priced.unitPrice,
         grossTotal: totals.grossTotal,
         shippingFee: totals.shippingFee,

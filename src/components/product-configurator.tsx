@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 
-import { type Product, unitPriceForQuantity } from "@/lib/products";
+import {
+  backPrintSurcharge,
+  DEFAULT_SIDE,
+  type PrintSide,
+  type Product,
+  unitPriceForQuantity,
+} from "@/lib/products";
 import { Badge, Button, Card, PriceTag } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { FilePrepBadge } from "@/components/file-prep-badge";
@@ -14,7 +20,7 @@ import UploadPlikDoDruku, { type UploadedFileInfo } from "@/components/UploadPli
 import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { MAX_CART_ITEMS, addCartItem } from "@/lib/cart";
 import { safeCapture } from "@/lib/posthog-client";
-import { MAX_QTY, MIN_QTY, clampQuantity, priceFor } from "@/lib/pricing";
+import { MAX_QTY, MIN_QTY, PRICE_FACTOR, clampQuantity, priceFor } from "@/lib/pricing";
 import { FREE_SHIPPING_THRESHOLD, shippingFeeFor, withShipping } from "@/lib/shipping";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -33,6 +39,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
   const minQty = Math.max(MIN_QTY, product.minQuantity ?? MIN_QTY);
   const [quantity, setQuantity] = useState(Math.max(product.defaultQuantity, minQty));
   const [formatId, setFormatId] = useState<string>(product.defaultFormatId);
+  const [side, setSide] = useState<PrintSide>(DEFAULT_SIDE);
+  // Nadruk na plecach — tylko produkty z opcją (koszulki); `sides` w koszyku
+  // i zamówieniu zostaje puste dla pozostałych.
+  const backPrint = product.backPrint;
+  const sides = backPrint ? side : undefined;
 
   const format = useMemo(
     () => product.formats.find((f) => f.id === formatId) ?? product.formats[0],
@@ -45,8 +56,9 @@ export function ProductConfigurator({ product }: { product: Product }) {
   );
 
   const productTotal = useMemo(
-    () => priceFor(quantity, unitPrice, product.noFees),
-    [quantity, unitPrice, product.noFees],
+    () =>
+      priceFor(quantity, unitPrice, product.noFees, backPrintSurcharge(product, sides, quantity)),
+    [quantity, unitPrice, product, sides],
   );
   const shippingFee = shippingFeeFor(productTotal);
   const totals = withShipping(productTotal);
@@ -73,7 +85,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
   // że w koszyku leży nakład/format, którego tam nie ma.
   const [addedKey, setAddedKey] = useState<string | null>(null);
   const [cartError, setCartError] = useState<string | null>(null);
-  const configKey = `${format.id}:${quantity}`;
+  const configKey = `${format.id}:${quantity}:${side}`;
   const added = addedKey === configKey;
 
   const addToCart = useCallback(() => {
@@ -81,6 +93,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       slug: product.slug,
       formatId: format.id,
       quantity,
+      sides,
       files: uploadedFiles,
     });
     if (!id) {
@@ -92,13 +105,23 @@ export function ProductConfigurator({ product }: { product: Product }) {
       product_slug: product.slug,
       product_name: product.name,
       format: format.label,
+      ...(sides ? { sides } : {}),
       quantity,
       gross_total: totals.total,
       has_files: uploadedFiles.length > 0,
       file_count: uploadedFiles.length,
     });
     return id;
-  }, [product.slug, product.name, format.id, format.label, quantity, uploadedFiles, totals.total]);
+  }, [
+    product.slug,
+    product.name,
+    format.id,
+    format.label,
+    quantity,
+    sides,
+    uploadedFiles,
+    totals.total,
+  ]);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
@@ -223,6 +246,49 @@ export function ProductConfigurator({ product }: { product: Product }) {
             </div>
           </div>
 
+          {backPrint && (
+            <div>
+              <span className="block text-sm font-semibold text-foreground">Nadruk</span>
+              <div className="mt-3 grid border-l border-t border-border sm:grid-cols-2">
+                {(["single", "double"] as PrintSide[]).map((s) => {
+                  const selected = side === s;
+                  const hint =
+                    s === "single"
+                      ? "w cenie"
+                      : `+${formatPLN.format(backPrint.fee * PRICE_FACTOR)}/szt.`;
+                  return (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setSide(s)}
+                      aria-pressed={selected}
+                      className={cn(
+                        "flex items-center justify-between border-r border-b border-border px-4 py-3 text-left transition-colors",
+                        selected ? "bg-primary/5" : "hover:bg-secondary/50",
+                      )}
+                    >
+                      <span className="text-sm font-semibold text-foreground">
+                        {backPrint.labels[s]}
+                        <span className="ml-2 text-xs font-medium text-muted-foreground">
+                          {hint}
+                        </span>
+                      </span>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "grid size-5 place-items-center rounded-lg border",
+                          selected ? "border-primary bg-primary" : "border-input bg-card",
+                        )}
+                      >
+                        {selected && <span className="size-2 rounded-lg bg-primary-foreground" />}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary/70">
               Krok 03
@@ -305,6 +371,14 @@ export function ProductConfigurator({ product }: { product: Product }) {
               </dt>
               <dd className="font-semibold text-foreground">{format.label}</dd>
             </div>
+            {backPrint && (
+              <div className="flex items-baseline justify-between">
+                <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                  Nadruk
+                </dt>
+                <dd className="font-semibold text-foreground">{backPrint.labels[side]}</dd>
+              </div>
+            )}
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 Cena za sztukę

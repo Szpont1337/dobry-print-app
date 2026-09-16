@@ -10,7 +10,13 @@
 
 import type { UploadedFileInfo } from "@/components/UploadPlikDoDruku";
 import { computeCartTotals, type CartTotals, clampQuantity } from "@/lib/pricing";
-import { getProduct, type Product, type ProductFormat } from "@/lib/products";
+import {
+  DEFAULT_SIDE,
+  getProduct,
+  type PrintSide,
+  type Product,
+  type ProductFormat,
+} from "@/lib/products";
 
 /** Wersjonowany klucz — bumpnij sufiks, jeśli kształt koszyka się zmieni. */
 export const CART_KEY = "DobrePrinty:cart:v1";
@@ -24,6 +30,8 @@ export type CartItem = {
   slug: string;
   formatId: string;
   quantity: number;
+  /** nadruk przód / przód + plecy — tylko produkty z `backPrint` */
+  sides?: PrintSide;
   /** pliki wgrane do chmury przy tej pozycji */
   files: UploadedFileInfo[];
   /** alternatywa dla plików — link do projektu */
@@ -179,6 +187,7 @@ export function upsertCartItem(item: Omit<CartItem, "id">): string | null {
     (i) =>
       i.slug === item.slug &&
       i.formatId === item.formatId &&
+      i.sides === item.sides &&
       i.quantity === clampQuantity(item.quantity, minQuantityFor(item.slug)),
   );
   if (!existing) return addCartItem(item);
@@ -203,7 +212,13 @@ export function resolveCart(items: CartItem[]): {
     const product = getProduct(item.slug);
     if (!product) continue; // produkt zniknął z katalogu — pomijamy pozycję
     const format = product.formats.find((f) => f.id === item.formatId) ?? product.formats[0];
-    resolved.push({ ...item, product, format });
+    // Stronność normalizujemy jak serwer: bez opcji → brak, z opcją → domyślna.
+    resolved.push({
+      ...item,
+      product,
+      format,
+      sides: product.backPrint ? (item.sides ?? DEFAULT_SIDE) : undefined,
+    });
   }
 
   const totals = computeCartTotals(
@@ -211,6 +226,7 @@ export function resolveCart(items: CartItem[]): {
       product: r.product,
       format: r.format,
       quantity: r.quantity,
+      sides: r.sides,
     })),
   );
 
