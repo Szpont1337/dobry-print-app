@@ -47,16 +47,6 @@ type OrderStatus =
   | "completed"
   | "cancelled";
 
-const STATUS_LABEL: Record<OrderStatus, string> = {
-  pending: "Oczekujące",
-  in_production: "W produkcji",
-  ready_to_ship: "Przygotowanie do wysyłki",
-  shipped: "Wysłane",
-  awaiting_pickup: "Czeka na odbiór",
-  completed: "Zrealizowane",
-  cancelled: "Anulowane",
-};
-
 const STATUS_TONE: Record<OrderStatus, string> = {
   pending: "bg-accent text-accent-foreground",
   in_production: "bg-chart-3/15 text-chart-3",

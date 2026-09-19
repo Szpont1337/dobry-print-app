@@ -1,0 +1,283 @@
+{
+  "names": {
+    "ulotki": "Ulotki",
+    "skladane-ulotki": "Składane ulotki",
+    "roll-up": "Roll-up",
+    "papier-firmowy": "Papier firmowy",
+    "wizytowki": "Wizytówki",
+    "kartki-pocztowki": "Kartki & Pocztówki",
+    "plakaty": "Plakaty",
+    "baner-reklamowy": "Banery reklamowe",
+    "naklejki": "Naklejki",
+    "tablice-reklamowe": "Tablice reklamowe",
+    "koszulki": "Koszulki",
+    "torby-papierowe": "Torby papierowe",
+    "torby-plocienne": "Torby płócienne",
+    "test-platnosci-internal": "Test płatności (wewnętrzny)"
+  },
+  "taglines": {
+    "ulotki": "Formaty od A7 do A3, druk dwustronny 4/4.",
+    "skladane-ulotki": "Sześciostronicowe ulotki w formacie DL, A5 i A4.",
+    "roll-up": "Roll-up z aluminiowym stelażem i wydrukiem premium.",
+    "papier-firmowy": "Klasyczny papier firmowy w A4 i A5.",
+    "wizytowki": "Wizytówki w klasycznym formacie 85 × 55 mm lub europejskim.",
+    "kartki-pocztowki": "Pocztówki i kartki okolicznościowe w formatach A6, DL i A5.",
+    "plakaty": "Plakaty w formatach od A3 aż po B1. Uwaga gwarantowana.",
+    "baner-reklamowy": "Banery PVC i siatka mesh w dowolnym formacie. Druk solwentowy, gotowe do zawieszenia.",
+    "naklejki": "Naklejki na folii i papierze od 100 sztuk. Kształt prostokąt, koło lub dowolny kontur.",
+    "tablice-reklamowe": "Tablice na piankę forex, dibond i PCV. Sztywne, lekkie, gotowe do montażu.",
+    "koszulki": "Koszulki z własnym nadrukiem od 1 sztuki. Biała bawełna, druk DTG w pełnym kolorze.",
+    "torby-papierowe": "Papierowe torby z własnym nadrukiem. Ekologiczny papier kraft i biały, uchwyt skręcany.",
+    "torby-plocienne": "Bawełniane torby tote z nadrukiem A4. Ekologiczne, wytrzymałe, długie ucho na ramię.",
+    "test-platnosci-internal": "Produkt testowy — nie do publikacji."
+  },
+  "inHeading": {
+    "ulotki": "swoje ulotki",
+    "skladane-ulotki": "swoje składane ulotki",
+    "roll-up": "swój roll-up",
+    "papier-firmowy": "swój papier firmowy",
+    "wizytowki": "swoje wizytówki",
+    "kartki-pocztowki": "swoje pocztówki",
+    "plakaty": "swoje plakaty",
+    "baner-reklamowy": "swój baner reklamowy",
+    "naklejki": "swoje naklejki",
+    "tablice-reklamowe": "swoją tablicę reklamową",
+    "koszulki": "swoje koszulki",
+    "torby-papierowe": "swoje torby papierowe",
+    "torby-plocienne": "swoje torby płócienne",
+    "test-platnosci-internal": "test płatności"
+  },
+  "keywords": {
+    "ulotki": "ulotki",
+    "skladane-ulotki": "składane ulotki",
+    "roll-up": "roll-up",
+    "papier-firmowy": "papier firmowy",
+    "wizytowki": "wizytówki",
+    "kartki-pocztowki": "kartki i pocztówki",
+    "plakaty": "plakaty",
+    "baner-reklamowy": "banery reklamowe",
+    "naklejki": "naklejki",
+    "tablice-reklamowe": "tablice reklamowe",
+    "koszulki": "koszulki z nadrukiem",
+    "torby-papierowe": "torby papierowe",
+    "torby-plocienne": "torby płócienne",
+    "test-platnosci-internal": "test płatności"
+  },
+  "formatNouns": {
+    "koszulki": "Rozmiar"
+  },
+  "formats": {
+    "ulotki": {
+      "a7": "A7 · 74 × 105 mm",
+      "dl": "DL · 100 × 210 mm",
+      "a6": "A6 · 105 × 148 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm",
+      "a3": "A3 · 297 × 420 mm"
+    },
+    "skladane-ulotki": {
+      "dl": "DL · 100 × 210 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "roll-up": {
+      "85x200": "85 × 200 cm",
+      "100x200": "100 × 200 cm",
+      "120x200": "120 × 200 cm"
+    },
+    "papier-firmowy": {
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "wizytowki": {
+      "85x55": "Klasyczny · 85 × 55 mm",
+      "90x50": "Europejski · 90 × 50 mm"
+    },
+    "kartki-pocztowki": {
+      "a6": "A6 · 105 × 148 mm",
+      "dl": "DL · 100 × 210 mm",
+      "a5": "A5 · 148 × 210 mm"
+    },
+    "plakaty": {
+      "a3": "A3 · 297 × 420 mm",
+      "a2": "A2 · 420 × 594 mm",
+      "b2": "B2 · 500 × 707 mm",
+      "a1": "A1 · 594 × 841 mm",
+      "a0": "A0 · 841 × 1189 mm",
+      "b1": "B1 · 707 × 1000 mm"
+    },
+    "baner-reklamowy": {
+      "50x100": "50 × 100 cm",
+      "100x200": "100 × 200 cm",
+      "150x300": "150 × 300 cm",
+      "200x400": "200 × 400 cm"
+    },
+    "naklejki": {
+      "a7": "A7 · 74 × 105 mm",
+      "a6": "A6 · 105 × 148 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "tablice-reklamowe": {
+      "a3": "A3 · 297 × 420 mm",
+      "a2": "A2 · 420 × 594 mm",
+      "a1": "A1 · 594 × 841 mm",
+      "50x70": "50 × 70 cm",
+      "70x100": "70 × 100 cm"
+    },
+    "koszulki": {
+      "s": "S",
+      "m": "M",
+      "l": "L",
+      "xl": "XL",
+      "xxl": "XXL"
+    },
+    "torby-papierowe": {
+      "s": "Mała · 18 × 8 × 22 cm",
+      "m": "Średnia · 26 × 12 × 33 cm",
+      "l": "Duża · 32 × 14 × 42 cm"
+    },
+    "torby-plocienne": {
+      "37x41": "37 × 41 cm",
+      "38x42": "38 × 42 cm (A4)",
+      "40x42": "40 × 42 cm"
+    },
+    "test-platnosci-internal": {
+      "min": "Test · 1 grosz / szt."
+    }
+  },
+  "sides": {
+    "koszulki": {
+      "single": "Nadruk z przodu",
+      "double": "Przód + plecy"
+    }
+  },
+  "filePrep": "Przygotowanie pliku do druku w cenie",
+  "configurator": {
+    "eyebrow": "Konfigurator",
+    "title": "Zamów w 3 krokach",
+    "badge": "Proste jak druk",
+    "step": "Krok {{n}}",
+    "quantity": "Nakład",
+    "minFromOne": "od {{qty}} sztuki",
+    "minFrom": "od {{qty}} szt.",
+    "decrease": "Zmniejsz nakład",
+    "increase": "Zwiększ nakład",
+    "pcs": "{{qty}} szt.",
+    "format": "Format",
+    "backPrint": "Nadruk",
+    "included": "w cenie",
+    "surcharge": "+{{price}}/szt.",
+    "uploadTitle": "Wgraj projekt",
+    "uploadHint": "Dołącz gotowy plik teraz — dane do faktury, dostawę i płatność uzupełnisz w jednym, ostatnim kroku.",
+    "or": "albo",
+    "designTitle": "Zaprojektuj samodzielnie w aplikacji",
+    "designHint": "Wrzuć zdjęcia, dodaj tekst i kształty — przygotujemy plik do druku.",
+    "quoteEyebrow": "Wycena na żywo",
+    "quoteTitle": "Nasza oferta",
+    "quoteHint": "Cena aktualizuje się w czasie rzeczywistym.",
+    "unitPrice": "Cena za sztukę",
+    "printing": "Druk",
+    "shipping": "Wysyłka",
+    "free": "Gratis",
+    "total": "Razem",
+    "shippingNote": "Wysyłka {{fee}}. Dodaj jeszcze <strong>{{missing}}</strong> do darmowej wysyłki (od {{threshold}}).",
+    "freeShippingNote": "<strong>Darmowa wysyłka</strong> — wysyłka w 3 dni robocze.",
+    "filesReadyOne": "{{n}} plik gotowy — zostaje przy zamówieniu",
+    "filesReady": "{{n}} plików gotowych — zostaje przy zamówieniu",
+    "checkoutWithFiles": "Dokończ zamówienie",
+    "checkout": "Przejdź do danych i płatności",
+    "added": "Dodano do koszyka",
+    "addToCart": "Dodaj do koszyka i kupuj dalej",
+    "cartFull": "Koszyk mieści maksymalnie {{max}} pozycji."
+  },
+  "upload": {
+    "errStatus": "B2 odpowiedziało {{status}}",
+    "errNetwork": "Błąd sieci podczas uploadu.",
+    "errAbort": "Upload przerwany.",
+    "errGeneric": "Nie udało się wysłać pliku.",
+    "errFormat": "Niewspierany format. Akceptujemy pliki graficzne (PDF, JPG, PNG, AI, EPS, TIFF i inne).",
+    "errSize": "Plik ma {{size}}. Maksymalny rozmiar to 500 MB.",
+    "errEmpty": "Plik jest pusty.",
+    "dropAria": "Wgraj pliki do druku",
+    "dropTitle": "Przeciągnij plik z projektem lub kliknij, żeby wybrać",
+    "dropHint": "Wymagany przynajmniej jeden plik. Akceptujemy {{extensions}} · maks. 500 MB · do {{max}} plików",
+    "dropNote": "Możesz wgrać kilka projektów naraz. Każdy plik trafia bezpośrednio do magazynu w chmurze.",
+    "progressAria": "Postęp wysyłania {{name}}",
+    "uploaded": "Wgrany · zweryfikowano",
+    "retry": "Spróbuj ponownie.",
+    "removeAria": "Usuń {{name}}",
+    "countOne": "{{done}} z {{total}} plik wgrany · limit {{max}}",
+    "count": "{{done}} z {{total}} plików wgranych · limit {{max}}",
+    "limitReached": "Osiągnięto limit",
+    "addAnother": "Dodaj kolejny plik"
+  },
+  "grid": {
+    "eyebrow": "Katalog produktów",
+    "title": "Wybierz produkt",
+    "description": "Każdy produkt konfigurujesz i wyceniasz na żywo — od jednej sztuki, z ceną finalną od ręki.",
+    "freeShipping": "Darmowa wysyłka od {{threshold}} zł",
+    "from": "od {{price}} zł"
+  },
+  "search": {
+    "label": "Który produkt chcesz wydrukować?",
+    "submit": "Pokaż produkt",
+    "resultsFor": "Wyniki dla „{{query}}\"",
+    "popular": "Popularne kategorie",
+    "empty": "Brak wyników dla „{{query}}”. Spróbuj „ulotki”, „wizytówki” albo „plakaty”.",
+    "navigate": "nawigacja",
+    "open": "otwórz",
+    "close": "zamknij"
+  },
+  "page": {
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbProducts": "Produkty",
+    "eyebrow": "Druk {{keyword}} online",
+    "title": "Wydrukuj <accent>{{inHeading}}</accent>",
+    "why": {
+      "eyebrow": "Dlaczego DobrePrinty",
+      "title": "Dlaczego warto drukować <accent>{{keyword}}</accent> w DobrePrinty"
+    },
+    "specs": {
+      "eyebrow": "Specyfikacja techniczna",
+      "title": "Parametry druku {{keyword}}",
+      "description": "Standardowe ustawienia produktu i dostępne opcje. Wszystko wybierasz w konfiguratorze powyżej.",
+      "param": "Parametr",
+      "standard": "Standard",
+      "options": "Opcje"
+    },
+    "filePrep": {
+      "eyebrow": "Przygotowanie pliku",
+      "title": "Jak przygotować plik do druku <accent>{{name}}</accent>",
+      "step": "Krok {{n}}",
+      "template": "<strong>Plik do pobrania:</strong> darmowy szablon {{name}} (PDF, wszystkie formaty) z liniami cięcia, spadami 3 mm i marginesem bezpiecznym.",
+      "download": "Pobierz szablon →"
+    },
+    "about": {
+      "eyebrow": "Druk {{keyword}} w DobrePrinty",
+      "title": "Co warto wiedzieć o druku <accent>{{keyword}}</accent> online"
+    },
+    "faq": {
+      "eyebrow": "FAQ druk {{keyword}}",
+      "title": "Najczęstsze pytania o <accent>druk {{keyword}}</accent>"
+    },
+    "local": {
+      "eyebrow": "Druk {{keyword}} lokalnie",
+      "title": "Druk {{keyword}} z dostawą do Twojego miasta",
+      "description": "Drukarnia {{name}} z sieci DobrePrinty dostarcza do firm i instytucji w 340 miastach Polski. Najczęściej zamawiają u nas:",
+      "cityEyebrow": "Drukarnia {{city}}",
+      "cityTitle": "Druk {{keyword}} {{city}}",
+      "cityNote": "Dostawa kurierem w 24–48 h. Województwo {{region}}.",
+      "see": "Zobacz"
+    },
+    "related": {
+      "eyebrow": "Powiązane produkty",
+      "title": "Sprawdź inne pozycje w katalogu DobrePrinty"
+    },
+    "cta": {
+      "title": "Gotowy zamówić druk <accent>{{keyword}}</accent>?",
+      "configure": "Skonfiguruj i zamów",
+      "quote": "Wycena indywidualna →"
+    }
+  }
+}

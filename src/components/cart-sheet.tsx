@@ -25,8 +25,8 @@ import {
 import { useCart } from "@/hooks/use-cart";
 import { closeCartSheet, useCartSheetOpen } from "@/hooks/use-cart-sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useProductI18n } from "@/hooks/use-product-i18n";
 import { itemHasDesign, removeCartItem, type ResolvedCartItem, updateCartItem } from "@/lib/cart";
-import { sideLabelFor } from "@/lib/products";
 import { MAX_QTY, MIN_QTY, clampQuantity } from "@/lib/pricing";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -164,6 +164,7 @@ function CartFooter({ totals }: { totals: ReturnType<typeof useCart>["totals"] }
 
 function CartLine({ item }: { item: ResolvedCartItem }) {
   const { t } = useTranslation("order");
+  const { name, formatLabel, sideLabel } = useProductI18n();
 
   return (
     <article className="flex flex-col gap-3 rounded-lg border border-border p-3">
@@ -174,10 +175,12 @@ function CartLine({ item }: { item: ResolvedCartItem }) {
             onClick={closeCartSheet}
             className="text-sm font-bold tracking-tight text-foreground transition-colors hover:text-primary"
           >
-            {item.product.name}
+            {name(item.product)}
           </Link>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {[item.format.label, sideLabelFor(item.product, item.sides)].filter(Boolean).join(" · ")}
+            {[formatLabel(item.product, item.format), sideLabel(item.product, item.sides)]
+              .filter(Boolean)
+              .join(" · ")}
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-2">

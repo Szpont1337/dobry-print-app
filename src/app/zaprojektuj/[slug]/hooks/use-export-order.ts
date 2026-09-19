@@ -3,6 +3,7 @@
 import { useAction, useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { api } from "@convex/_generated/api";
 import { upsertCartItem } from "@/lib/cart";
@@ -42,6 +43,7 @@ export function useExportOrder({
 }) {
   const ed = useEditor();
   const router = useRouter();
+  const { t } = useTranslation("editor");
   const generateUploadUrl = useAction(api.storage.generateUploadUrl);
   const saveFileMetadata = useMutation(api.files.saveFileMetadata);
 
@@ -49,13 +51,13 @@ export function useExportOrder({
   const [error, setError] = useState<string | null>(null);
 
   const buildPdf = useCallback(async () => {
-    if (!engine) throw new Error("Edytor jeszcze się nie wczytał.");
+    if (!engine) throw new Error(t("export.notLoaded"));
     return exportToPdf(format, productSlug, (pxPerMm) => engine.renderToCanvas(pxPerMm));
-  }, [engine, format, productSlug]);
+  }, [engine, format, productSlug, t]);
 
   const download = useCallback(async () => {
     if (ed.doc.nodes.length === 0) {
-      setError("Dodaj coś do projektu przed pobraniem.");
+      setError(t("export.emptyDownload"));
       setPhase("error");
       return;
     }
@@ -74,14 +76,14 @@ export function useExportOrder({
       setTimeout(() => URL.revokeObjectURL(url), 10_000);
       setPhase("idle");
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Eksport nie powiódł się.");
+      setError(e instanceof Error ? e.message : t("export.failed"));
       setPhase("error");
     }
-  }, [buildPdf, ed.doc.nodes.length]);
+  }, [buildPdf, ed.doc.nodes.length, t]);
 
   const exportAndOrder = useCallback(async () => {
     if (ed.doc.nodes.length === 0) {
-      setError("Dodaj coś do projektu przed zamówieniem.");
+      setError(t("export.emptyOrder"));
       setPhase("error");
       return;
     }
@@ -101,7 +103,7 @@ export function useExportOrder({
         headers: { "Content-Type": pdf.mimeType },
         body: blob,
       });
-      if (!res.ok) throw new Error(`Upload nie powiódł się (${res.status}).`);
+      if (!res.ok) throw new Error(t("export.uploadFailed", { status: res.status }));
 
       await saveFileMetadata({
         fileKey,
@@ -126,7 +128,7 @@ export function useExportOrder({
       setPhase("redirecting");
       router.push("/checkout");
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Nie udało się zapisać projektu.");
+      setError(e instanceof Error ? e.message : t("export.saveFailed"));
       setPhase("error");
     }
   }, [
@@ -138,6 +140,7 @@ export function useExportOrder({
     quantity,
     router,
     saveFileMetadata,
+    t,
   ]);
 
   return {

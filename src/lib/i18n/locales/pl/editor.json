@@ -1,0 +1,127 @@
+{
+  "topBar": {
+    "back": "Wróć",
+    "subtitle": "{{format}} · {{quantity}} szt.",
+    "undo": "Cofnij",
+    "redo": "Ponów",
+    "zoomOut": "Pomniejsz",
+    "zoomIn": "Powiększ",
+    "fit": "Dopasuj",
+    "pdf": "PDF",
+    "rendering": "Renderowanie…",
+    "uploading": "Wysyłanie…",
+    "redirecting": "Przekierowanie…",
+    "saveAndOrder": "Zapisz i zamów"
+  },
+  "export": {
+    "notLoaded": "Edytor jeszcze się nie wczytał.",
+    "emptyDownload": "Dodaj coś do projektu przed pobraniem.",
+    "failed": "Eksport nie powiódł się.",
+    "emptyOrder": "Dodaj coś do projektu przed zamówieniem.",
+    "uploadFailed": "Upload nie powiódł się ({{status}}).",
+    "saveFailed": "Nie udało się zapisać projektu."
+  },
+  "canvas": {
+    "loading": "Wczytywanie edytora…"
+  },
+  "nodes": {
+    "text": "Tekst",
+    "rect": "Prostokąt",
+    "ellipse": "Elipsa",
+    "line": "Linia",
+    "image": "Zdjęcie",
+    "defaultText": "Twój tekst",
+    "copyName": "{{name}} kopia"
+  },
+  "tools": {
+    "image": "Zdjęcie",
+    "templates": "Szablony",
+    "imageError": "Nie udało się wczytać obrazu."
+  },
+  "layers": {
+    "title": "Warstwy",
+    "empty": "Brak warstw. Dodaj tekst, kształt lub zdjęcie.",
+    "show": "Pokaż",
+    "hide": "Ukryj",
+    "unlock": "Odblokuj",
+    "lock": "Zablokuj",
+    "up": "Wyżej",
+    "down": "Niżej",
+    "duplicate": "Powiel",
+    "delete": "Usuń"
+  },
+  "templates": {
+    "close": "Zamknij",
+    "dialogLabel": "Szablony startowe",
+    "eyebrow": "Start",
+    "title": "Wybierz szablon",
+    "hint": "Szablon zastąpi obecny projekt. Cofniesz to skrótem Ctrl+Z.",
+    "names": {
+      "blank": "Pusta strona",
+      "headline": "Nagłówek + tekst",
+      "photo-banner": "Zdjęcie + pasek",
+      "framed": "Ramka + akcent"
+    },
+    "nodes": {
+      "bar": "Pasek",
+      "photoPlaceholder": "Miejsce na zdjęcie",
+      "frame": "Ramka",
+      "accent": "Akcent"
+    },
+    "texts": {
+      "headline": "Twój nagłówek",
+      "subline": "Dodaj tu krótki opis, ofertę albo hasło reklamowe.",
+      "brand": "Twoja marka",
+      "invitation": "Zaproszenie",
+      "details": "data · miejsce · godzina"
+    }
+  },
+  "props": {
+    "duplicate": "Powiel",
+    "delete": "Usuń",
+    "lockedNotice": "Warstwa zablokowana — odblokuj, aby ją edytować lub usunąć.",
+    "unlockLayer": "Odblokuj warstwę",
+    "layout": "Układ",
+    "x": "X (mm)",
+    "y": "Y (mm)",
+    "width": "Szer. (mm)",
+    "height": "Wys. (mm)",
+    "rotation": "Obrót (°)",
+    "opacity": "Krycie",
+    "text": "Tekst",
+    "font": "Czcionka",
+    "fontSize": "Rozmiar (pt)",
+    "lineHeight": "Interlinia",
+    "letterSpacing": "Odstęp liter (pt)",
+    "bold": "Pogrubienie",
+    "italic": "Kursywa",
+    "alignLeft": "Do lewej",
+    "alignCenter": "Wyśrodkuj",
+    "alignRight": "Do prawej",
+    "textColor": "Kolor tekstu",
+    "image": "Zdjęcie",
+    "changeImage": "Zmień zdjęcie",
+    "flipH": "Odbij poziomo",
+    "flipV": "Odbij pionowo",
+    "cornerRadius": "Zaokrąglenie rogów (mm)",
+    "appearance": "Wygląd",
+    "fillEnabled": "Wypełnienie",
+    "fillColor": "Kolor wypełnienia",
+    "lineColor": "Kolor linii",
+    "strokeColor": "Kolor obrysu",
+    "strokeWidth": "Grubość (mm)",
+    "radius": "Zaokrąglenie (mm)",
+    "page": "Strona",
+    "artboard": "Pole projektowe {{w}} × {{h}} mm",
+    "bleed": " · spad {{bleed}} mm",
+    "inexactNotice": "Wymiar pola nadruku przyjęty zastępczo — drukarnia dopasuje go do produktu.",
+    "background": "Tło",
+    "showBackground": "Pokaż tło",
+    "backgroundColor": "Kolor tła",
+    "selectHint": "Zaznacz element na stronie, aby edytować jego właściwości."
+  },
+  "color": {
+    "swatch": "Kolor {{color}}",
+    "pick": "Wybierz kolor"
+  }
+}

@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -35,6 +36,7 @@ interface Tool {
 
 export function ToolRail() {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   const fileRef = useRef<HTMLInputElement>(null);
   const [importing, setImporting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,10 +45,22 @@ export function ToolRail() {
   const page = pageSize(ed.doc.format);
 
   const tools: Tool[] = [
-    { label: "Tekst", icon: Type, run: (p) => ed.addNode(createText(p)) },
-    { label: "Prostokąt", icon: Square, run: (p) => ed.addNode(createRect(p)) },
-    { label: "Elipsa", icon: Circle, run: (p) => ed.addNode(createEllipse(p)) },
-    { label: "Linia", icon: Minus, run: (p) => ed.addNode(createLine(p)) },
+    {
+      label: t("nodes.text"),
+      icon: Type,
+      run: (p) => ed.addNode(createText(p, t("nodes.text"), t("nodes.defaultText"))),
+    },
+    {
+      label: t("nodes.rect"),
+      icon: Square,
+      run: (p) => ed.addNode(createRect(p, t("nodes.rect"))),
+    },
+    {
+      label: t("nodes.ellipse"),
+      icon: Circle,
+      run: (p) => ed.addNode(createEllipse(p, t("nodes.ellipse"))),
+    },
+    { label: t("nodes.line"), icon: Minus, run: (p) => ed.addNode(createLine(p, t("nodes.line"))) },
   ];
 
   const onFiles = async (files: FileList | null) => {
@@ -56,10 +70,10 @@ export function ToolRail() {
     try {
       for (const file of Array.from(files)) {
         const result = await importImageFile(file);
-        ed.addNode(createImage(page, result));
+        ed.addNode(createImage(page, result, t("nodes.image")));
       }
     } catch {
-      setError("Nie udało się wczytać obrazu.");
+      setError(t("tools.imageError"));
     } finally {
       setImporting(false);
     }
@@ -81,14 +95,23 @@ export function ToolRail() {
 
       <RailButton
         icon={importing ? Loader2 : ImagePlus}
-        label="Zdjęcie"
+        label={t("tools.image")}
         spinning={importing}
         onClick={() => fileRef.current?.click()}
       />
-      {tools.map((t) => (
-        <RailButton key={t.label} icon={t.icon} label={t.label} onClick={() => t.run(page)} />
+      {tools.map((tool) => (
+        <RailButton
+          key={tool.label}
+          icon={tool.icon}
+          label={tool.label}
+          onClick={() => tool.run(page)}
+        />
       ))}
-      <RailButton icon={LayoutTemplate} label="Szablony" onClick={() => setTemplatesOpen(true)} />
+      <RailButton
+        icon={LayoutTemplate}
+        label={t("tools.templates")}
+        onClick={() => setTemplatesOpen(true)}
+      />
 
       {error && (
         <p className="px-1 text-center text-[11px] font-medium text-destructive">{error}</p>

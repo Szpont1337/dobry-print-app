@@ -22,6 +22,14 @@ import plAccount from "./locales/pl/account.json";
 import enAccount from "./locales/en/account.json";
 import plAdmin from "./locales/pl/admin.json";
 import enAdmin from "./locales/en/admin.json";
+import plEditor from "./locales/pl/editor.json";
+import enEditor from "./locales/en/editor.json";
+import plProduct from "./locales/pl/product.json";
+import enProduct from "./locales/en/product.json";
+import plPages from "./locales/pl/pages.json";
+import enPages from "./locales/en/pages.json";
+import plLegal from "./locales/pl/legal.json";
+import enLegal from "./locales/en/legal.json";
 
 export const NAMESPACES = [
   "common",
@@ -29,6 +37,7 @@ export const NAMESPACES = [
   "order",
   "account",
   "admin",
+  "legal",
 ] as const;
 
 if (!i18n.isInitialized) {
@@ -46,6 +55,10 @@ if (!i18n.isInitialized) {
         order: plOrder,
         account: plAccount,
         admin: plAdmin,
+        editor: plEditor,
+        product: plProduct,
+        pages: plPages,
+        legal: plLegal,
       },
       en: {
         common: enCommon,
@@ -53,6 +66,10 @@ if (!i18n.isInitialized) {
         order: enOrder,
         account: enAccount,
         admin: enAdmin,
+        editor: enEditor,
+        product: enProduct,
+        pages: enPages,
+        legal: enLegal,
       },
     },
   });

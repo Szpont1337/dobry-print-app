@@ -126,5 +126,105 @@
         "date": "11 czerwca 2026"
       }
     ]
+  },
+  "howItWorks": {
+    "eyebrow": "Prosto i szybko",
+    "title": "Jak to działa",
+    "description": "Cztery kroki od pomysłu do gotowego druku pod Twoimi drzwiami.",
+    "steps": {
+      "configure": {
+        "title": "Skonfiguruj",
+        "desc": "Wybierz produkt, format i nakład. Cena finalna liczy się na żywo."
+      },
+      "upload": {
+        "title": "Wgraj plik",
+        "desc": "Dodaj projekt — sprawdzenie i przygotowanie do druku masz w cenie."
+      },
+      "pay": {
+        "title": "Zapłać online",
+        "desc": "BLIK, karta, Przelewy24 lub Apple/Google Pay. Faktura ze Stripe od ręki."
+      },
+      "receive": {
+        "title": "Odbierz",
+        "desc": "Druk i wysyłka kurierem lub do paczkomatu — zwykle w 24–48 h."
+      }
+    }
+  },
+  "cta": {
+    "title": "Gotowy na druk najwyższej jakości?",
+    "description": "Skonfiguruj produkt w 2 minuty i zobacz cenę od razu — bez zakładania konta.",
+    "button": "Rozpocznij wycenę"
+  },
+  "socialProof": {
+    "someone": "Ktoś {{city}}",
+    "ordered": "zamówił(a)",
+    "dismiss": "Zamknij powiadomienie",
+    "timeAgo": {
+      "justNow": "przed chwilą",
+      "minutesAgo": "{{count}} min temu",
+      "fewMinutesAgo": "kilka minut temu"
+    },
+    "cities": {
+      "warsaw": "z Warszawy",
+      "krakow": "z Krakowa",
+      "wroclaw": "z Wrocławia",
+      "poznan": "z Poznania",
+      "gdansk": "z Gdańska",
+      "lodz": "z Łodzi",
+      "szczecin": "ze Szczecina",
+      "lublin": "z Lublina",
+      "katowice": "z Katowic",
+      "bialystok": "z Białegostoku",
+      "bydgoszcz": "z Bydgoszczy",
+      "rzeszow": "z Rzeszowa",
+      "gdynia": "z Gdyni",
+      "torun": "z Torunia",
+      "kielce": "z Kielc",
+      "olsztyn": "z Olsztyna",
+      "czestochowa": "z Częstochowy",
+      "sopot": "z Sopotu"
+    },
+    "noun": {
+      "stack_one": "ulotkę",
+      "stack_few": "ulotki",
+      "stack_many": "ulotek",
+      "stack_other": "ulotek",
+      "cards_one": "wizytówkę",
+      "cards_few": "wizytówki",
+      "cards_many": "wizytówek",
+      "cards_other": "wizytówek",
+      "poster_one": "plakat",
+      "poster_few": "plakaty",
+      "poster_many": "plakatów",
+      "poster_other": "plakatów",
+      "sticker_one": "naklejkę",
+      "sticker_few": "naklejki",
+      "sticker_many": "naklejek",
+      "sticker_other": "naklejek",
+      "rollup_one": "roll-up",
+      "rollup_few": "roll-upy",
+      "rollup_many": "roll-upów",
+      "rollup_other": "roll-upów",
+      "folded_one": "składaną ulotkę",
+      "folded_few": "składane ulotki",
+      "folded_many": "składanych ulotek",
+      "folded_other": "składanych ulotek",
+      "postcards_one": "pocztówkę",
+      "postcards_few": "pocztówki",
+      "postcards_many": "pocztówek",
+      "postcards_other": "pocztówek",
+      "bag_one": "torbę papierową",
+      "bag_few": "torby papierowe",
+      "bag_many": "toreb papierowych",
+      "bag_other": "toreb papierowych",
+      "letterhead_one": "arkusz papieru firmowego",
+      "letterhead_few": "arkusze papieru firmowego",
+      "letterhead_many": "arkuszy papieru firmowego",
+      "letterhead_other": "arkuszy papieru firmowego",
+      "banner_one": "baner reklamowy",
+      "banner_few": "banery reklamowe",
+      "banner_many": "banerów reklamowych",
+      "banner_other": "banerów reklamowych"
+    }
   }
 }

@@ -89,11 +89,11 @@ export default function RootLayout({
             <I18nProvider>
               {children}
               <Footer />
+              <CookieConsentBanner />
             </I18nProvider>
           </AuthProvider>
         </ConvexClientProvider>
         <SchemaMarkup />
-        <CookieConsentBanner />
         <CookieConsentGA />
         <PostHogConsent />
         <AttributionCapture />

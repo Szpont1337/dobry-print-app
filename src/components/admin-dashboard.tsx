@@ -70,13 +70,6 @@ const PAYMENT_TONE: Record<PaymentStatus, string> = {
   refunded: "bg-muted text-muted-foreground",
 };
 
-const PAYMENT_LABEL: Record<PaymentStatus, string> = {
-  unpaid: "Nieopłacone",
-  paid: "Opłacone",
-  failed: "Płatność nieudana",
-  refunded: "Zwrócone",
-};
-
 const STATUSES: OrderStatus[] = [
   "pending",
   "in_production",
@@ -337,13 +330,13 @@ function OrdersSection({ token }: { token: string }) {
 
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Marka
+            {t("brandFilter")}
           </span>
           <FilterChip
             active={brandFilter === "all"}
             onClick={() => setBrandFilter("all")}
           >
-            Wszystkie
+            {t("brandAll")}
           </FilterChip>
           {BRANDS.map((b) => (
             <FilterChip
@@ -526,7 +519,7 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
             <span
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider ${PAYMENT_TONE[order.paymentStatus ?? "unpaid"]}`}
             >
-              {PAYMENT_LABEL[order.paymentStatus ?? "unpaid"]}
+              {t(`payment.${order.paymentStatus ?? "unpaid"}`)}
             </span>
           </div>
           <div className="min-w-0 flex-1">
@@ -534,7 +527,7 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
               #{shortId}
             </p>
             <p className="truncate text-sm font-semibold text-foreground sm:text-base">
-              {order.productName} · {formatQty.format(order.quantity)} szt.
+              {order.productName} · {formatQty.format(order.quantity)} {t("pcs")}
             </p>
             <p className="truncate text-xs text-muted-foreground">
               {order.customerName} · {order.customerEmail}
@@ -553,7 +546,7 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
             <dl className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
               <div>
                 <dt className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Klient
+                  {t("customer")}
                 </dt>
                 <dd className="mt-1 text-foreground">
                   {order.customerName}
@@ -571,8 +564,8 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
               <div>
                 <dt className="text-xs uppercase tracking-wider text-muted-foreground">
                   {order.deliveryMethod === "parcel_locker"
-                    ? "Paczkomat InPost"
-                    : "Adres dostawy"}
+                    ? t("parcelLocker")
+                    : t("shippingAddress")}
                 </dt>
                 <dd className="mt-1 text-foreground">
                   {order.deliveryMethod === "parcel_locker" ? (
@@ -611,13 +604,13 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Specyfikacja
+                  {t("specification")}
                 </dt>
                 <dd className="mt-1 text-foreground">
                   {order.productName}
                   <br />
                   {[
-                    `${formatQty.format(order.quantity)} szt.`,
+                    `${formatQty.format(order.quantity)} ${t("pcs")}`,
                     order.formatLabel,
                     sideLabelForOrder(order.productSlug, order.sides),
                   ]
@@ -629,19 +622,19 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Płatność (Stripe)
+                  {t("paymentLabel")}
                 </dt>
                 <dd className="mt-1 text-foreground">
                   <span
                     className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider ${PAYMENT_TONE[order.paymentStatus ?? "unpaid"]}`}
                   >
-                    {PAYMENT_LABEL[order.paymentStatus ?? "unpaid"]}
+                    {t(`payment.${order.paymentStatus ?? "unpaid"}`)}
                   </span>
                   {order.paidAt && (
                     <>
                       <br />
                       <span className="text-muted-foreground">
-                        Opłacono: {formatDateTime.format(order.paidAt)}
+                        {t("paidAt")}: {formatDateTime.format(order.paidAt)}
                       </span>
                     </>
                   )}
@@ -719,7 +712,7 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
               {order.notes && (
                 <div className="lg:col-span-2">
                   <dt className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Uwagi
+                    {t("notes")}
                   </dt>
                   <dd className="mt-1 text-foreground">{order.notes}</dd>
                 </div>
@@ -883,7 +876,7 @@ function ShipForm({
           name="carrier"
           required
           defaultValue={initialCarrier}
-          placeholder="InPost, DPD, DHL…"
+          placeholder={t("carrierPlaceholder")}
         />
       </label>
       <label className="flex flex-col gap-1.5 text-sm">
@@ -894,7 +887,7 @@ function ShipForm({
           name="trackingNumber"
           required
           defaultValue={initialTracking}
-          placeholder="0012 3456 7890"
+          placeholder={t("trackingPlaceholder")}
         />
       </label>
       <div className="flex items-center gap-2 sm:col-span-1">
@@ -956,7 +949,7 @@ function PickupForm({
           name="pickupPointAddress"
           required
           defaultValue={initialAddress}
-          placeholder="Paczkomat WAW123, ul. Przykładowa 1, Warszawa"
+          placeholder={t("pickupAddressPlaceholder")}
         />
       </label>
       <label className="flex flex-col gap-1.5 text-sm">
@@ -967,7 +960,7 @@ function PickupForm({
           name="pickupCode"
           required
           defaultValue={initialCode}
-          placeholder="856 101"
+          placeholder={t("pickupCodePlaceholder")}
         />
       </label>
       <label className="flex flex-col gap-1.5 text-sm">
@@ -977,7 +970,7 @@ function PickupForm({
         <Input
           name="pickupPhone"
           defaultValue={initialPhone}
-          placeholder="786 164 961"
+          placeholder={t("pickupPhonePlaceholder")}
         />
       </label>
       <div className="flex items-center gap-2 sm:col-span-2">
@@ -1265,6 +1258,7 @@ function SideGrid({ token }: { token: string }) {
 }
 
 function AllegroOffersSection({ token }: { token: string }) {
+  const { t } = useTranslation("admin");
   const offers = useQuery(api.allegro.listOffers, { token });
   const upsert = useMutation(api.allegro.upsertOffer);
   const remove = useMutation(api.allegro.deleteOffer);
@@ -1289,7 +1283,7 @@ function AllegroOffersSection({ token }: { token: string }) {
       setOfferUrl("");
       setVariantNote("");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Nie udało się zapisać.");
+      setError(err instanceof Error ? err.message : t("allegro.errSave"));
     } finally {
       setBusy(false);
     }
@@ -1300,20 +1294,19 @@ function AllegroOffersSection({ token }: { token: string }) {
       <header className="flex items-center justify-between">
         <h2 className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-foreground">
           <ShoppingCart aria-hidden className="size-5 text-primary" />
-          Aukcje Allegro
+          {t("allegro.title")}
         </h2>
         {offers && <Badge variant="secondary">{offers.length}</Badge>}
       </header>
       <p className="mt-1 text-sm text-muted-foreground">
-        Mapowanie produkt (slug) → aukcja, z której odkupujesz. „Kup na Allegro”
-        otwiera tu zmapowaną ofertę.
+        {t("allegro.description")}
       </p>
 
       <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_2fr_1fr_auto]">
         <Input
           value={productSlug}
           onChange={(e) => setProductSlug(e.target.value)}
-          placeholder="productSlug (np. ulotki)"
+          placeholder={t("allegro.slugPlaceholder")}
         />
         <Input
           value={offerUrl}
@@ -1323,7 +1316,7 @@ function AllegroOffersSection({ token }: { token: string }) {
         <Input
           value={variantNote}
           onChange={(e) => setVariantNote(e.target.value)}
-          placeholder="wariant (opc.)"
+          placeholder={t("allegro.variantPlaceholder")}
         />
         <Button
           type="button"
@@ -1332,7 +1325,7 @@ function AllegroOffersSection({ token }: { token: string }) {
           onClick={submit}
         >
           {busy && <Loader2 aria-hidden className="size-4 animate-spin" />}
-          Zapisz
+          {t("allegro.save")}
         </Button>
       </div>
       {error && (
@@ -1347,7 +1340,7 @@ function AllegroOffersSection({ token }: { token: string }) {
         </div>
       ) : offers.length === 0 ? (
         <p className="mt-6 text-sm text-muted-foreground">
-          Brak zmapowanych aukcji.
+          {t("allegro.empty")}
         </p>
       ) : (
         <ul className="mt-4 divide-y divide-border text-sm">
@@ -1376,7 +1369,7 @@ function AllegroOffersSection({ token }: { token: string }) {
                 onClick={() => remove({ token, id: o._id })}
                 className="shrink-0 rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-1 text-xs font-semibold tracking-tight text-destructive hover:bg-destructive/10"
               >
-                Usuń
+                {t("allegro.remove")}
               </button>
             </li>
           ))}

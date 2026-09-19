@@ -1,0 +1,42 @@
+{
+  "success": {
+    "ordersLabel": "Orders: {{ids}}",
+    "orderLabel": "Order #{{id}}",
+    "testBadge": "Test order — no payment and no production",
+    "paid": {
+      "title": "Thank you for your order!",
+      "body": "Payment confirmed. We've sent a confirmation to <strong>{{email}}</strong>. We're checking your file and will start production within 24 hours."
+    },
+    "pending": {
+      "title": "Your payment is being processed.",
+      "body": "We've received confirmation from Stripe, but the payment hasn't been recorded yet. Refresh the page in a moment — as soon as everything is in order, we'll send a confirmation to <strong>{{email}}</strong>."
+    },
+    "qty": "{{qty}} pcs",
+    "total": "Total",
+    "viewPanel": "View in your account",
+    "home": "Home"
+  },
+  "cancelled": {
+    "orderLabel": "Order #{{id}}",
+    "title": "Payment cancelled.",
+    "body": "The order was not accepted — nothing has been charged. If this was a mistake, place it again from the product page.",
+    "amount": "Amount",
+    "backToProduct": "Back to product",
+    "otherProducts": "Other products"
+  },
+  "download": {
+    "eyebrow": "DobrePrinty · print files",
+    "orderLabel": "Order #{{id}}",
+    "product": "Product",
+    "format": "Format",
+    "quantity": "Quantity",
+    "qty": "{{qty}} pcs",
+    "files": "Files",
+    "notes": "Order notes",
+    "downloadZip": "Download all as ZIP ({{count}})",
+    "download": "Download",
+    "noFiles": "No files attached to this order.",
+    "externalLink": "External link to the design:",
+    "privateNote": "Private link — share only with a trusted print shop."
+  }
+}

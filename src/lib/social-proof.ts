@@ -4,18 +4,9 @@
 
 import type { ProductVariant } from "@/components/product-mockup";
 
-type PluralForms = {
-  /** 1 → biernik l. poj., np. „ulotkę" */
-  one: string;
-  /** 2–4 → np. „ulotki" */
-  few: string;
-  /** 5+ → dopełniacz l. mn., np. „ulotek" */
-  many: string;
-};
-
 type SocialProofProduct = {
+  /** klucz i18n nazwy produktu: `home:socialProof.noun.<variant>` (formy liczby mnogiej) */
   variant: ProductVariant;
-  forms: PluralForms;
   /** realistyczne nakłady; nakład × unitPrice mieści się w 40–300 zł */
   quantities: number[];
   /** zł / szt — tylko do wyliczenia kwoty zamówienia */
@@ -31,122 +22,101 @@ const MAX_AMOUNT = 300;
 const PRODUCTS: SocialProofProduct[] = [
   {
     variant: "stack",
-    forms: { one: "ulotkę", few: "ulotki", many: "ulotek" },
     quantities: [500, 1000, 1500, 2000],
     unitPrice: 0.12,
     weight: 6,
   },
   {
     variant: "cards",
-    forms: { one: "wizytówkę", few: "wizytówki", many: "wizytówek" },
     quantities: [300, 500, 700, 1000],
     unitPrice: 0.18,
     weight: 6,
   },
   {
     variant: "poster",
-    forms: { one: "plakat", few: "plakaty", many: "plakatów" },
     quantities: [25, 50, 75, 100],
     unitPrice: 1.8,
     weight: 5,
   },
   {
     variant: "sticker",
-    forms: { one: "naklejkę", few: "naklejki", many: "naklejek" },
     quantities: [100, 200, 250, 300],
     unitPrice: 0.65,
     weight: 5,
   },
   {
     variant: "rollup",
-    forms: { one: "roll-up", few: "roll-upy", many: "roll-upów" },
     quantities: [1],
     unitPrice: 165,
     weight: 2,
   },
   {
     variant: "folded",
-    forms: {
-      one: "składaną ulotkę",
-      few: "składane ulotki",
-      many: "składanych ulotek",
-    },
     quantities: [250, 500, 750, 1000],
     unitPrice: 0.28,
     weight: 2,
   },
   {
     variant: "postcards",
-    forms: { one: "pocztówkę", few: "pocztówki", many: "pocztówek" },
     quantities: [100, 200, 300, 500],
     unitPrice: 0.55,
     weight: 2,
   },
   {
     variant: "bag",
-    forms: {
-      one: "torbę papierową",
-      few: "torby papierowe",
-      many: "toreb papierowych",
-    },
     quantities: [10, 25, 40, 50],
     unitPrice: 5.5,
     weight: 1,
   },
   {
     variant: "letterhead",
-    forms: {
-      one: "arkusz papieru firmowego",
-      few: "arkusze papieru firmowego",
-      many: "arkuszy papieru firmowego",
-    },
     quantities: [500, 1000],
     unitPrice: 0.18,
     weight: 1,
   },
   {
     variant: "banner",
-    forms: {
-      one: "baner reklamowy",
-      few: "banery reklamowe",
-      many: "banerów reklamowych",
-    },
     quantities: [1, 2, 3],
     unitPrice: 79,
     weight: 1,
   },
 ];
 
-// Forma dopełniacza („z/ze …") gotowa do wstawienia po „Ktoś".
+// Klucze i18n miast (`home:socialProof.cities.<key>`) — odmiana („z Warszawy") w JSON.
 const CITIES = [
-  "z Warszawy",
-  "z Krakowa",
-  "z Wrocławia",
-  "z Poznania",
-  "z Gdańska",
-  "z Łodzi",
-  "ze Szczecina",
-  "z Lublina",
-  "z Katowic",
-  "z Białegostoku",
-  "z Bydgoszczy",
-  "z Rzeszowa",
-  "z Gdyni",
-  "z Torunia",
-  "z Kielc",
-  "z Olsztyna",
-  "z Częstochowy",
-  "z Sopotu",
+  "warsaw",
+  "krakow",
+  "wroclaw",
+  "poznan",
+  "gdansk",
+  "lodz",
+  "szczecin",
+  "lublin",
+  "katowice",
+  "bialystok",
+  "bydgoszcz",
+  "rzeszow",
+  "gdynia",
+  "torun",
+  "kielce",
+  "olsztyn",
+  "czestochowa",
+  "sopot",
 ];
 
-const TIMES_AGO = [
-  "przed chwilą",
-  "przed chwilą",
-  "1 min temu",
-  "2 min temu",
-  "3 min temu",
-  "5 min temu",
-  "kilka minut temu",
+export type SocialProofTimeAgo =
+  | { key: "justNow" | "fewMinutesAgo" }
+  | { key: "minutesAgo"; count: number };
+
+// Klucze i18n (`home:socialProof.timeAgo.<key>`).
+const TIMES_AGO: SocialProofTimeAgo[] = [
+  { key: "justNow" },
+  { key: "justNow" },
+  { key: "minutesAgo", count: 1 },
+  { key: "minutesAgo", count: 2 },
+  { key: "minutesAgo", count: 3 },
+  { key: "minutesAgo", count: 5 },
+  { key: "fewMinutesAgo" },
 ];
 
 export type SocialProofOrder = {
@@ -154,25 +124,12 @@ export type SocialProofOrder = {
   id: number;
   variant: ProductVariant;
   quantity: number;
-  /** odmieniona nazwa produktu, np. „ulotek" */
-  noun: string;
   amount: number;
-  /** np. „z Warszawy" */
+  /** klucz i18n miasta, np. „warsaw" */
   city: string;
-  /** np. „przed chwilą" */
-  timeAgo: string;
+  /** klucz i18n czasu, np. „przed chwilą" */
+  timeAgo: SocialProofTimeAgo;
 };
-
-/** Polska odmiana liczebnika: 1 / 2–4 / 5+. */
-function pluralForm(n: number, forms: PluralForms): string {
-  if (n === 1) return forms.one;
-  const mod10 = n % 10;
-  const mod100 = n % 100;
-  if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) {
-    return forms.few;
-  }
-  return forms.many;
-}
 
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -204,7 +161,6 @@ export function pickRandomOrder(): SocialProofOrder {
     id: ++seq,
     variant: product.variant,
     quantity,
-    noun: pluralForm(quantity, product.forms),
     amount,
     city: pickRandom(CITIES),
     timeAgo: pickRandom(TIMES_AGO),

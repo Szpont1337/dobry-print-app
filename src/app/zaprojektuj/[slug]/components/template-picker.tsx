@@ -2,6 +2,7 @@
 
 import { X } from "lucide-react";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,7 @@ import { pageSize } from "../utils/print-format";
 
 export function TemplatePicker({ open, onClose }: { open: boolean; onClose: () => void }) {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
 
   useEffect(() => {
     if (!open) return;
@@ -30,31 +32,29 @@ export function TemplatePicker({ open, onClose }: { open: boolean; onClose: () =
     <div className="fixed inset-0 z-50 grid place-items-center bg-foreground/40 p-5">
       <button
         type="button"
-        aria-label="Zamknij"
+        aria-label={t("templates.close")}
         onClick={onClose}
         className="absolute inset-0 cursor-default bg-transparent"
       />
       <dialog
         open
-        aria-label="Szablony startowe"
+        aria-label={t("templates.dialogLabel")}
         className="relative z-10 m-0 w-full max-w-2xl rounded-lg border border-border bg-card p-5 text-foreground shadow-lg sm:p-8"
       >
         <header className="flex items-start justify-between gap-3 border-b border-border pb-5">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Start
+              {t("templates.eyebrow")}
             </p>
             <h2 className="mt-1 text-xl font-extrabold tracking-tight text-foreground">
-              Wybierz szablon
+              {t("templates.title")}
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Szablon zastąpi obecny projekt. Cofniesz to skrótem Ctrl+Z.
-            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{t("templates.hint")}</p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            aria-label="Zamknij"
+            aria-label={t("templates.close")}
             className="grid size-9 shrink-0 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <X aria-hidden className="size-5" />
@@ -67,7 +67,7 @@ export function TemplatePicker({ open, onClose }: { open: boolean; onClose: () =
               <button
                 type="button"
                 onClick={() => {
-                  ed.replaceNodes(tpl.build(page));
+                  ed.replaceNodes(tpl.build(page, t));
                   onClose();
                 }}
                 className="group flex w-full flex-col gap-2 rounded-lg border border-border bg-background p-2 text-left transition-colors hover:border-primary"
@@ -81,7 +81,7 @@ export function TemplatePicker({ open, onClose }: { open: boolean; onClose: () =
                   <TemplatePreview id={tpl.id} />
                 </span>
                 <span className="text-xs font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                  {tpl.name}
+                  {t(`templates.names.${tpl.id}`)}
                 </span>
               </button>
             </li>

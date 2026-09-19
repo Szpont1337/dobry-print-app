@@ -4,6 +4,7 @@ import { Check, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
+import { Trans } from "react-i18next";
 
 import {
   backPrintSurcharge,
@@ -18,6 +19,7 @@ import { FilePrepBadge } from "@/components/file-prep-badge";
 import { PrintPreview } from "@/components/print-preview";
 import UploadPlikDoDruku, { type UploadedFileInfo } from "@/components/UploadPlikDoDruku";
 import { openCartSheet } from "@/hooks/use-cart-sheet";
+import { useProductI18n } from "@/hooks/use-product-i18n";
 import { MAX_CART_ITEMS, addCartItem } from "@/lib/cart";
 import { safeCapture } from "@/lib/posthog-client";
 import { MAX_QTY, MIN_QTY, PRICE_FACTOR, clampQuantity, priceFor } from "@/lib/pricing";
@@ -34,6 +36,7 @@ const formatQty = new Intl.NumberFormat("pl-PL");
 const QUICK_AMOUNTS = [1, 25, 100, 500, 1000, 5000];
 
 export function ProductConfigurator({ product }: { product: Product }) {
+  const { t, formatNoun, formatLabel, sideLabel } = useProductI18n();
   // Minimum nakładu wynika z technologii druku i jest walidowane server-side —
   // konfigurator nie może pozwolić zejść niżej.
   const minQty = Math.max(MIN_QTY, product.minQuantity ?? MIN_QTY);
@@ -97,7 +100,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       files: uploadedFiles,
     });
     if (!id) {
-      setCartError(`Koszyk mieści maksymalnie ${MAX_CART_ITEMS} pozycji.`);
+      setCartError(t("configurator.cartFull", { max: MAX_CART_ITEMS }));
       return null;
     }
     setCartError(null);
@@ -121,6 +124,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
     sides,
     uploadedFiles,
     totals.total,
+    t,
   ]);
 
   return (
@@ -129,13 +133,13 @@ export function ProductConfigurator({ product }: { product: Product }) {
         <header className="mb-8 flex items-end justify-between gap-3 border-b border-border pb-5">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Konfigurator
+              {t("configurator.eyebrow")}
             </p>
             <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground">
-              Zamów w 3 krokach
+              {t("configurator.title")}
             </h2>
           </div>
-          <Badge variant="accent">Proste jak druk</Badge>
+          <Badge variant="accent">{t("configurator.badge")}</Badge>
         </header>
 
         {product.mockupPreview && (
@@ -150,21 +154,23 @@ export function ProductConfigurator({ product }: { product: Product }) {
         <div className="space-y-8">
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary/70">
-              Krok 01
+              {t("configurator.step", { n: "01" })}
             </p>
             <label
               htmlFor="quantity"
               className="mt-1 flex items-baseline justify-between text-sm font-semibold text-foreground"
             >
-              <span>Nakład</span>
+              <span>{t("configurator.quantity")}</span>
               <span className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                od {formatQty.format(minQty)} {minQty === 1 ? "sztuki" : "szt."}
+                {t(minQty === 1 ? "configurator.minFromOne" : "configurator.minFrom", {
+                  qty: formatQty.format(minQty),
+                })}
               </span>
             </label>
             <div className="mt-3 flex items-stretch gap-2">
               <button
                 type="button"
-                aria-label="Zmniejsz nakład"
+                aria-label={t("configurator.decrease")}
                 onClick={() => setQuantity((q) => clamp(q - 1))}
                 className="grid size-12 place-items-center rounded-lg border border-input bg-card text-lg font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-muted"
               >
@@ -183,7 +189,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
               />
               <button
                 type="button"
-                aria-label="Zwiększ nakład"
+                aria-label={t("configurator.increase")}
                 onClick={() => setQuantity((q) => clamp(q + 1))}
                 className="grid size-12 place-items-center rounded-lg border border-input bg-card text-lg font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-muted"
               >
@@ -203,7 +209,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                       : "border-input bg-card text-foreground hover:border-primary/40 hover:text-primary",
                   )}
                 >
-                  {formatQty.format(n)} szt.
+                  {t("configurator.pcs", { qty: formatQty.format(n) })}
                 </button>
               ))}
             </div>
@@ -211,10 +217,10 @@ export function ProductConfigurator({ product }: { product: Product }) {
 
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary/70">
-              Krok 02
+              {t("configurator.step", { n: "02" })}
             </p>
             <span className="mt-1 block text-sm font-semibold text-foreground">
-              {product.formatNoun ?? "Format"}
+              {formatNoun(product)}
             </span>
             <div className="mt-3 grid border-l border-t border-border sm:grid-cols-2">
               {product.formats.map((f) => {
@@ -230,7 +236,9 @@ export function ProductConfigurator({ product }: { product: Product }) {
                       selected ? "bg-primary/5" : "hover:bg-secondary/50",
                     )}
                   >
-                    <span className="text-sm font-semibold text-foreground">{f.label}</span>
+                    <span className="text-sm font-semibold text-foreground">
+                      {formatLabel(product, f)}
+                    </span>
                     <span
                       aria-hidden
                       className={cn(
@@ -248,14 +256,18 @@ export function ProductConfigurator({ product }: { product: Product }) {
 
           {backPrint && (
             <div>
-              <span className="block text-sm font-semibold text-foreground">Nadruk</span>
+              <span className="block text-sm font-semibold text-foreground">
+                {t("configurator.backPrint")}
+              </span>
               <div className="mt-3 grid border-l border-t border-border sm:grid-cols-2">
                 {(["single", "double"] as PrintSide[]).map((s) => {
                   const selected = side === s;
                   const hint =
                     s === "single"
-                      ? "w cenie"
-                      : `+${formatPLN.format(backPrint.fee * PRICE_FACTOR)}/szt.`;
+                      ? t("configurator.included")
+                      : t("configurator.surcharge", {
+                          price: formatPLN.format(backPrint.fee * PRICE_FACTOR),
+                        });
                   return (
                     <button
                       key={s}
@@ -268,7 +280,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                       )}
                     >
                       <span className="text-sm font-semibold text-foreground">
-                        {backPrint.labels[s]}
+                        {sideLabel(product, s)}
                         <span className="ml-2 text-xs font-medium text-muted-foreground">
                           {hint}
                         </span>
@@ -291,13 +303,12 @@ export function ProductConfigurator({ product }: { product: Product }) {
 
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary/70">
-              Krok 03
+              {t("configurator.step", { n: "03" })}
             </p>
-            <span className="mt-1 block text-sm font-semibold text-foreground">Wgraj projekt</span>
-            <p className="mt-1 text-xs text-muted-foreground">
-              Dołącz gotowy plik teraz — dane do faktury, dostawę i płatność uzupełnisz w jednym,
-              ostatnim kroku.
-            </p>
+            <span className="mt-1 block text-sm font-semibold text-foreground">
+              {t("configurator.uploadTitle")}
+            </span>
+            <p className="mt-1 text-xs text-muted-foreground">{t("configurator.uploadHint")}</p>
             <div className="mt-3">
               <UploadPlikDoDruku onChange={handleFilesChange} />
             </div>
@@ -305,7 +316,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
             <div className="mt-5 flex items-center gap-3">
               <span className="h-px flex-1 bg-border" />
               <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                albo
+                {t("configurator.or")}
               </span>
               <span className="h-px flex-1 bg-border" />
             </div>
@@ -328,10 +339,10 @@ export function ProductConfigurator({ product }: { product: Product }) {
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-bold tracking-tight text-foreground">
-                  Zaprojektuj samodzielnie w aplikacji
+                  {t("configurator.designTitle")}
                 </span>
                 <span className="mt-0.5 block text-xs text-muted-foreground">
-                  Wrzuć zdjęcia, dodaj tekst i kształty — przygotujemy plik do druku.
+                  {t("configurator.designHint")}
                 </span>
               </span>
               <span aria-hidden className="text-primary">
@@ -346,42 +357,40 @@ export function ProductConfigurator({ product }: { product: Product }) {
         <Card className="p-5 sm:p-8 rounded-lg shadow-none">
           <header className="border-b border-border pb-5">
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Wycena na żywo
+              {t("configurator.quoteEyebrow")}
             </p>
             <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground">
-              Nasza oferta
+              {t("configurator.quoteTitle")}
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Cena aktualizuje się w czasie rzeczywistym.
-            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{t("configurator.quoteHint")}</p>
           </header>
 
           <dl className="mt-5 space-y-3 text-sm">
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Nakład
+                {t("configurator.quantity")}
               </dt>
               <dd className="font-semibold text-foreground tabular-nums">
-                {formatQty.format(quantity)} szt.
+                {t("configurator.pcs", { qty: formatQty.format(quantity) })}
               </dd>
             </div>
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                {product.formatNoun ?? "Format"}
+                {formatNoun(product)}
               </dt>
-              <dd className="font-semibold text-foreground">{format.label}</dd>
+              <dd className="font-semibold text-foreground">{formatLabel(product, format)}</dd>
             </div>
             {backPrint && (
               <div className="flex items-baseline justify-between">
                 <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Nadruk
+                  {t("configurator.backPrint")}
                 </dt>
-                <dd className="font-semibold text-foreground">{backPrint.labels[side]}</dd>
+                <dd className="font-semibold text-foreground">{sideLabel(product, side)}</dd>
               </div>
             )}
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Cena za sztukę
+                {t("configurator.unitPrice")}
               </dt>
               <dd className="font-semibold text-foreground tabular-nums">
                 {formatPLN.format(productTotal / quantity)}
@@ -391,7 +400,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
             {shippingFee > 0 && (
               <div className="flex items-baseline justify-between">
                 <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Druk
+                  {t("configurator.printing")}
                 </dt>
                 <dd className="font-semibold text-foreground tabular-nums">
                   {formatPLN.format(productTotal)}
@@ -400,19 +409,19 @@ export function ProductConfigurator({ product }: { product: Product }) {
             )}
             <div className="flex items-baseline justify-between">
               <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                Wysyłka
+                {t("configurator.shipping")}
               </dt>
               <dd className="font-semibold tabular-nums">
                 {shippingFee > 0 ? (
                   <span className="text-foreground">{formatPLN.format(shippingFee)}</span>
                 ) : (
-                  <span className="text-primary">Gratis</span>
+                  <span className="text-primary">{t("configurator.free")}</span>
                 )}
               </dd>
             </div>
             <div className="mt-3 flex items-baseline justify-between rounded-lg bg-accent px-5 py-3">
               <dt className="font-mono text-xs font-bold uppercase tracking-wider text-accent-foreground">
-                Razem
+                {t("configurator.total")}
               </dt>
               <PriceTag
                 amount={formatPLN.format(totals.total)}
@@ -427,27 +436,34 @@ export function ProductConfigurator({ product }: { product: Product }) {
 
           <p className="mt-5 text-xs text-muted-foreground">
             {shippingFee > 0 ? (
-              <>
-                Wysyłka {formatPLN.format(shippingFee)}. Dodaj jeszcze{" "}
-                <span className="font-semibold text-foreground">
-                  {formatPLN.format(amountToFreeShipping)}
-                </span>{" "}
-                do darmowej wysyłki (od {formatPLN.format(FREE_SHIPPING_THRESHOLD)}).
-              </>
+              <Trans
+                t={t}
+                i18nKey="configurator.shippingNote"
+                values={{
+                  fee: formatPLN.format(shippingFee),
+                  missing: formatPLN.format(amountToFreeShipping),
+                  threshold: formatPLN.format(FREE_SHIPPING_THRESHOLD),
+                }}
+                components={{ strong: <span className="font-semibold text-foreground" /> }}
+              />
             ) : (
-              <>
-                <span className="font-semibold text-primary">Darmowa wysyłka</span> — wysyłka w 3
-                dni robocze.
-              </>
+              <Trans
+                t={t}
+                i18nKey="configurator.freeShippingNote"
+                components={{ strong: <span className="font-semibold text-primary" /> }}
+              />
             )}
           </p>
 
           {hasFiles && (
             <p className="mt-5 flex items-center justify-center gap-1.5 rounded-lg bg-primary/8 px-3 py-2 text-xs font-semibold text-primary">
               <span aria-hidden>✓</span>
-              {uploadedFiles.length}{" "}
-              {uploadedFiles.length === 1 ? "plik gotowy" : "plików gotowych"} — zostaje przy
-              zamówieniu
+              {t(
+                uploadedFiles.length === 1
+                  ? "configurator.filesReadyOne"
+                  : "configurator.filesReady",
+                { n: uploadedFiles.length },
+              )}
             </p>
           )}
 
@@ -461,7 +477,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
                 if (addToCart()) router.push("/checkout");
               }}
             >
-              {hasFiles ? "Dokończ zamówienie" : "Przejdź do danych i płatności"}
+              {hasFiles ? t("configurator.checkoutWithFiles") : t("configurator.checkout")}
               <span aria-hidden>→</span>
             </Button>
             <Button
@@ -479,10 +495,10 @@ export function ProductConfigurator({ product }: { product: Product }) {
               {added ? (
                 <>
                   <Check aria-hidden className="size-4" />
-                  Dodano do koszyka
+                  {t("configurator.added")}
                 </>
               ) : (
-                "Dodaj do koszyka i kupuj dalej"
+                t("configurator.addToCart")
               )}
             </Button>
             {cartError && (

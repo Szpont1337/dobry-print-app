@@ -5,7 +5,11 @@
     "logout": "Log out",
     "account": "Account",
     "admin": "Admin panel",
-    "cart": "Cart"
+    "cart": "Cart",
+    "products": "Products",
+    "printshops": "Print shops",
+    "blog": "Blog",
+    "myAccount": "My account"
   },
   "lang": {
     "picker": "Choose language"
@@ -30,12 +34,20 @@
     "switchToRegister": "Don't have an account? Sign up in 30 seconds.",
     "shieldLabel": "DobrePrinty",
     "errSendCode": "We couldn't send the code. Please try again.",
-    "errInvalidCode": "Invalid code. Please try again."
+    "errInvalidCode": "Invalid code. Please try again.",
+    "emailPlaceholder": "you@company.com"
   },
   "common": {
     "cancel": "Cancel",
     "save": "Save",
     "loading": "Loading…",
     "tryAgain": "Try again"
+  },
+  "cookies": {
+    "ariaLabel": "Cookie consent",
+    "text": "We use cookies for traffic analytics (Google Analytics). You can accept or reject tracking.",
+    "privacyLink": "Privacy policy",
+    "reject": "Essential only",
+    "accept": "Accept all"
   }
 }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { visibleProducts as products, type Product } from "@/lib/products";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 import { SectionHeader } from "@/components/ui";
+import { useProductI18n } from "@/hooks/use-product-i18n";
 
 import { finalUnitPrice } from "@/lib/pricing";
 
@@ -27,20 +28,22 @@ function formatPLN(value: number): string {
 }
 
 export function ProductsGrid() {
+  const { t, name } = useProductI18n();
+
   return (
     <section id="produkty" className="scroll-mt-24 bg-background py-13 sm:py-21">
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <FadeIn>
           <SectionHeader
             index="01"
-            eyebrow="Katalog produktów"
-            title="Wybierz produkt"
-            description="Każdy produkt konfigurujesz i wyceniasz na żywo — od jednej sztuki, z ceną finalną od ręki."
+            eyebrow={t("grid.eyebrow")}
+            title={t("grid.title")}
+            description={t("grid.description")}
           />
           <div className="mt-5 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/8 px-3 py-1.5 text-sm font-semibold text-primary">
               <span aria-hidden>🚚</span>
-              Darmowa wysyłka od {FREE_SHIPPING_THRESHOLD} zł
+              {t("grid.freeShipping", { threshold: FREE_SHIPPING_THRESHOLD })}
             </span>
             <FilePrepBadge />
           </div>
@@ -60,10 +63,10 @@ export function ProductsGrid() {
                 <div className="mt-4 flex items-end justify-between gap-2 border-t border-border pt-3">
                   <div className="min-w-0">
                     <span className="block truncate text-base font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                      {product.name}
+                      {name(product)}
                     </span>
                     <span className="font-mono text-xs font-medium text-muted-foreground">
-                      od {formatPLN(fromPrice(product))} zł
+                      {t("grid.from", { price: formatPLN(fromPrice(product)) })}
                     </span>
                   </div>
                   <ArrowUpRight

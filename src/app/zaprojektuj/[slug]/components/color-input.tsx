@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,7 @@ export function ColorInput({
   onStart?: () => void;
   onEnd?: () => void;
 }) {
+  const { t } = useTranslation("editor");
   const [hex, setHex] = useState(value);
   useEffect(() => setHex(value), [value]);
 
@@ -44,7 +46,7 @@ export function ColorInput({
           <button
             key={c}
             type="button"
-            aria-label={`Kolor ${c}`}
+            aria-label={t("color.swatch", { color: c })}
             onClick={() => pick(c)}
             className={cn(
               "size-6 rounded-lg border transition-transform hover:scale-110",
@@ -58,13 +60,13 @@ export function ColorInput({
       </div>
       <div className="flex items-center gap-2">
         <label
-          aria-label="Wybierz kolor"
+          aria-label={t("color.pick")}
           className="relative size-8 shrink-0 cursor-pointer overflow-hidden rounded-lg border border-input"
         >
           <span aria-hidden className="absolute inset-0" style={{ backgroundColor: value }} />
           <input
             type="color"
-            aria-label="Wybierz kolor"
+            aria-label={t("color.pick")}
             value={HEX_RE.test(value) ? value : "#000000"}
             onFocus={() => onStart?.()}
             onBlur={() => onEnd?.()}

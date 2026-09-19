@@ -16,6 +16,7 @@ import {
   Unlock,
   type LucideIcon,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -33,6 +34,7 @@ const KIND_ICON: Record<NodeKind, LucideIcon> = {
 
 export function LayersPanel() {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   // Wyświetlamy od wierzchu do spodu (odwrotnie do kolejności rysowania).
   const ordered = [...ed.doc.nodes].reverse();
 
@@ -40,15 +42,13 @@ export function LayersPanel() {
     <div className="flex flex-col">
       <header className="flex items-center justify-between border-b border-border px-3 py-2">
         <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Warstwy
+          {t("layers.title")}
         </span>
         <span className="font-mono text-[11px] text-muted-foreground">{ed.doc.nodes.length}</span>
       </header>
 
       {ordered.length === 0 ? (
-        <p className="px-3 py-5 text-center text-xs text-muted-foreground">
-          Brak warstw. Dodaj tekst, kształt lub zdjęcie.
-        </p>
+        <p className="px-3 py-5 text-center text-xs text-muted-foreground">{t("layers.empty")}</p>
       ) : (
         <ul className="max-h-[34vh] overflow-y-auto p-1">
           {ordered.map((node) => (
@@ -62,6 +62,7 @@ export function LayersPanel() {
 
 function LayerRow({ node }: { node: SceneNode }) {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   const Icon = KIND_ICON[node.kind];
   const selected = ed.selectedId === node.id;
 
@@ -93,7 +94,7 @@ function LayerRow({ node }: { node: SceneNode }) {
         </button>
 
         <IconBtn
-          label={node.hidden ? "Pokaż" : "Ukryj"}
+          label={node.hidden ? t("layers.show") : t("layers.hide")}
           onClick={() => ed.commitNode(node.id, { hidden: !node.hidden })}
         >
           {node.hidden ? (
@@ -103,7 +104,7 @@ function LayerRow({ node }: { node: SceneNode }) {
           )}
         </IconBtn>
         <IconBtn
-          label={node.locked ? "Odblokuj" : "Zablokuj"}
+          label={node.locked ? t("layers.unlock") : t("layers.lock")}
           onClick={() => ed.commitNode(node.id, { locked: !node.locked })}
         >
           {node.locked ? (
@@ -114,17 +115,22 @@ function LayerRow({ node }: { node: SceneNode }) {
         </IconBtn>
 
         <span className="flex opacity-0 transition-opacity group-hover:opacity-100">
-          <IconBtn label="Wyżej" onClick={() => ed.reorder(node.id, "up")}>
+          <IconBtn label={t("layers.up")} onClick={() => ed.reorder(node.id, "up")}>
             <ChevronUp aria-hidden className="size-3.5" />
           </IconBtn>
-          <IconBtn label="Niżej" onClick={() => ed.reorder(node.id, "down")}>
+          <IconBtn label={t("layers.down")} onClick={() => ed.reorder(node.id, "down")}>
             <ChevronDown aria-hidden className="size-3.5" />
           </IconBtn>
-          <IconBtn label="Powiel" onClick={() => ed.duplicateNode(duplicate(node))}>
+          <IconBtn
+            label={t("layers.duplicate")}
+            onClick={() =>
+              ed.duplicateNode(duplicate(node, t("nodes.copyName", { name: node.name })))
+            }
+          >
             <Copy aria-hidden className="size-3.5" />
           </IconBtn>
           <IconBtn
-            label="Usuń"
+            label={t("layers.delete")}
             destructive
             disabled={node.locked}
             onClick={() => ed.deleteNode(node.id)}

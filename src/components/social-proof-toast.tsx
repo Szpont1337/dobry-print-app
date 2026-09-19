@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { pickRandomOrder, type SocialProofOrder } from "@/lib/social-proof";
 
@@ -19,6 +20,7 @@ const formatPLN = new Intl.NumberFormat("pl-PL", {
 const formatQty = new Intl.NumberFormat("pl-PL");
 
 export function SocialProofToast() {
+  const { t } = useTranslation("home");
   const [order, setOrder] = useState<SocialProofOrder | null>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -67,14 +69,21 @@ export function SocialProofToast() {
 
             <div className="min-w-0 flex-1">
               <p className="flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground">
-                <span className="truncate">Ktoś {order.city}</span>
+                <span className="truncate">
+                  {t("socialProof.someone", { city: t(`socialProof.cities.${order.city}`) })}
+                </span>
                 <span aria-hidden>·</span>
-                <span className="shrink-0">{order.timeAgo}</span>
+                <span className="shrink-0">
+                  {t(`socialProof.timeAgo.${order.timeAgo.key}`, {
+                    count: "count" in order.timeAgo ? order.timeAgo.count : undefined,
+                  })}
+                </span>
               </p>
               <p className="mt-0.5 text-sm leading-snug text-foreground">
-                zamówił(a){" "}
+                {t("socialProof.ordered")}{" "}
                 <span className="font-semibold">
-                  {formatQty.format(order.quantity)} {order.noun}
+                  {formatQty.format(order.quantity)}{" "}
+                  {t(`socialProof.noun.${order.variant}`, { count: order.quantity })}
                 </span>
               </p>
               <span className="mt-1.5 inline-flex items-center rounded-lg bg-secondary px-2 py-0.5 text-xs font-semibold text-secondary-foreground">
@@ -85,7 +94,7 @@ export function SocialProofToast() {
             <button
               type="button"
               onClick={dismiss}
-              aria-label="Zamknij powiadomienie"
+              aria-label={t("socialProof.dismiss")}
               className="-mr-1 -mt-1 shrink-0 rounded-lg p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               <svg

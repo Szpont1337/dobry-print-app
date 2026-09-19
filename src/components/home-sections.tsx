@@ -1,46 +1,34 @@
+"use client";
+
 import { CreditCard, Settings2, Truck, UploadCloud } from "lucide-react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { Button, Container, Section, SectionHeader } from "@/components/ui";
 
-const STEPS: { icon: LucideIcon; title: string; desc: string }[] = [
-  {
-    icon: Settings2,
-    title: "Skonfiguruj",
-    desc: "Wybierz produkt, format i nakład. Cena finalna liczy się na żywo.",
-  },
-  {
-    icon: UploadCloud,
-    title: "Wgraj plik",
-    desc: "Dodaj projekt — sprawdzenie i przygotowanie do druku masz w cenie.",
-  },
-  {
-    icon: CreditCard,
-    title: "Zapłać online",
-    desc: "BLIK, karta, Przelewy24 lub Apple/Google Pay. Faktura ze Stripe od ręki.",
-  },
-  {
-    icon: Truck,
-    title: "Odbierz",
-    desc: "Druk i wysyłka kurierem lub do paczkomatu — zwykle w 24–48 h.",
-  },
+const STEPS: { icon: LucideIcon; key: string }[] = [
+  { icon: Settings2, key: "configure" },
+  { icon: UploadCloud, key: "upload" },
+  { icon: CreditCard, key: "pay" },
+  { icon: Truck, key: "receive" },
 ];
 
 export function HowItWorks() {
+  const { t } = useTranslation("home");
   return (
     <Section spacing="md" alt>
       <SectionHeader
         index="02"
-        eyebrow="Prosto i szybko"
-        title="Jak to działa"
-        description="Cztery kroki od pomysłu do gotowego druku pod Twoimi drzwiami."
+        eyebrow={t("howItWorks.eyebrow")}
+        title={t("howItWorks.title")}
+        description={t("howItWorks.description")}
       />
 
       <ol className="mt-8 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
         {STEPS.map((step, index) => (
           <li
-            key={step.title}
+            key={step.key}
             className="relative flex h-full flex-col gap-4 border-r border-b border-border bg-card p-6"
           >
             <div className="flex items-center justify-between">
@@ -52,8 +40,12 @@ export function HowItWorks() {
               </span>
             </div>
             <div>
-              <h3 className="text-lg font-bold tracking-tight text-foreground">{step.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+              <h3 className="text-lg font-bold tracking-tight text-foreground">
+                {t(`howItWorks.steps.${step.key}.title`)}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {t(`howItWorks.steps.${step.key}.desc`)}
+              </p>
             </div>
           </li>
         ))}
@@ -63,6 +55,7 @@ export function HowItWorks() {
 }
 
 export function CtaBand() {
+  const { t } = useTranslation("home");
   return (
     <Section spacing="sm">
       <Container>
@@ -74,15 +67,15 @@ export function CtaBand() {
           <div className="relative flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
             <div>
               <h2 className="max-w-xl text-2xl font-extrabold tracking-tight sm:text-3xl">
-                Gotowy na druk najwyższej jakości?
+                {t("cta.title")}
               </h2>
               <p className="mt-2 max-w-lg text-footer-foreground/70">
-                Skonfiguruj produkt w 2 minuty i zobacz cenę od razu — bez zakładania konta.
+                {t("cta.description")}
               </p>
             </div>
             <Button asChild variant="accent" size="lg" className="shrink-0">
 <Link href="/#produkty">
-              Rozpocznij wycenę
+              {t("cta.button")}
             </Link>
 </Button>
           </div>

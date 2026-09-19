@@ -1,0 +1,127 @@
+{
+  "topBar": {
+    "back": "Back",
+    "subtitle": "{{format}} · {{quantity}} pcs",
+    "undo": "Undo",
+    "redo": "Redo",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "fit": "Fit to screen",
+    "pdf": "PDF",
+    "rendering": "Rendering…",
+    "uploading": "Uploading…",
+    "redirecting": "Redirecting…",
+    "saveAndOrder": "Save & order"
+  },
+  "export": {
+    "notLoaded": "The editor hasn't finished loading yet.",
+    "emptyDownload": "Add something to your design before downloading.",
+    "failed": "Export failed.",
+    "emptyOrder": "Add something to your design before ordering.",
+    "uploadFailed": "Upload failed ({{status}}).",
+    "saveFailed": "Couldn't save your design."
+  },
+  "canvas": {
+    "loading": "Loading editor…"
+  },
+  "nodes": {
+    "text": "Text",
+    "rect": "Rectangle",
+    "ellipse": "Ellipse",
+    "line": "Line",
+    "image": "Photo",
+    "defaultText": "Your text",
+    "copyName": "{{name}} copy"
+  },
+  "tools": {
+    "image": "Photo",
+    "templates": "Templates",
+    "imageError": "Couldn't load the image."
+  },
+  "layers": {
+    "title": "Layers",
+    "empty": "No layers yet. Add text, a shape or a photo.",
+    "show": "Show",
+    "hide": "Hide",
+    "unlock": "Unlock",
+    "lock": "Lock",
+    "up": "Move up",
+    "down": "Move down",
+    "duplicate": "Duplicate",
+    "delete": "Delete"
+  },
+  "templates": {
+    "close": "Close",
+    "dialogLabel": "Starter templates",
+    "eyebrow": "Start",
+    "title": "Pick a template",
+    "hint": "The template will replace your current design. You can undo it with Ctrl+Z.",
+    "names": {
+      "blank": "Blank page",
+      "headline": "Headline + text",
+      "photo-banner": "Photo + banner",
+      "framed": "Frame + accent"
+    },
+    "nodes": {
+      "bar": "Bar",
+      "photoPlaceholder": "Photo placeholder",
+      "frame": "Frame",
+      "accent": "Accent"
+    },
+    "texts": {
+      "headline": "Your headline",
+      "subline": "Add a short description, offer or tagline here.",
+      "brand": "Your brand",
+      "invitation": "Invitation",
+      "details": "date · venue · time"
+    }
+  },
+  "props": {
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "lockedNotice": "This layer is locked — unlock it to edit or delete it.",
+    "unlockLayer": "Unlock layer",
+    "layout": "Layout",
+    "x": "X (mm)",
+    "y": "Y (mm)",
+    "width": "Width (mm)",
+    "height": "Height (mm)",
+    "rotation": "Rotation (°)",
+    "opacity": "Opacity",
+    "text": "Text",
+    "font": "Font",
+    "fontSize": "Size (pt)",
+    "lineHeight": "Line height",
+    "letterSpacing": "Letter spacing (pt)",
+    "bold": "Bold",
+    "italic": "Italic",
+    "alignLeft": "Align left",
+    "alignCenter": "Center",
+    "alignRight": "Align right",
+    "textColor": "Text color",
+    "image": "Photo",
+    "changeImage": "Change photo",
+    "flipH": "Flip horizontally",
+    "flipV": "Flip vertically",
+    "cornerRadius": "Corner radius (mm)",
+    "appearance": "Appearance",
+    "fillEnabled": "Fill",
+    "fillColor": "Fill color",
+    "lineColor": "Line color",
+    "strokeColor": "Stroke color",
+    "strokeWidth": "Thickness (mm)",
+    "radius": "Corner radius (mm)",
+    "page": "Page",
+    "artboard": "Artboard {{w}} × {{h}} mm",
+    "bleed": " · bleed {{bleed}} mm",
+    "inexactNotice": "The print area size is a placeholder — the print shop will match it to the product.",
+    "background": "Background",
+    "showBackground": "Show background",
+    "backgroundColor": "Background color",
+    "selectHint": "Select an element on the page to edit its properties."
+  },
+  "color": {
+    "swatch": "Color {{color}}",
+    "pick": "Pick a color"
+  }
+}

@@ -10,7 +10,9 @@ import {
   UploadCloud,
   X,
 } from "lucide-react";
+import type { TFunction } from "i18next";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { api } from "@convex/_generated/api";
 
@@ -82,6 +84,7 @@ function uploadViaXhr(
   url: string,
   file: File,
   onProgress: (percent: number) => void,
+  t: TFunction,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -94,12 +97,12 @@ function uploadViaXhr(
     });
     xhr.addEventListener("load", () => {
       if (xhr.status >= 200 && xhr.status < 300) resolve();
-      else reject(new Error(`B2 odpowiedziało ${xhr.status}`));
+      else reject(new Error(t("upload.errStatus", { status: xhr.status })));
     });
     xhr.addEventListener("error", () =>
-      reject(new Error("Błąd sieci podczas uploadu.")),
+      reject(new Error(t("upload.errNetwork"))),
     );
-    xhr.addEventListener("abort", () => reject(new Error("Upload przerwany.")));
+    xhr.addEventListener("abort", () => reject(new Error(t("upload.errAbort"))));
     xhr.send(file);
   });
 }
@@ -123,6 +126,7 @@ export default function UploadPlikDoDruku({
   onUploadingChange,
   initialFiles,
 }: Props = {}) {
+  const { t } = useTranslation("product");
   const generateUploadUrl = useAction(api.storage.generateUploadUrl);
   const saveFileMetadata = useMutation(api.files.saveFileMetadata);
 
@@ -200,8 +204,11 @@ export default function UploadPlikDoDruku({
             fileName: file.name,
             fileType: file.type || "application/octet-stream",
           });
-          await uploadViaXhr(uploadUrl, file, (percent) =>
-            updateItem(id, { progress: percent }),
+          await uploadViaXhr(
+            uploadUrl,
+            file,
+            (percent) => updateItem(id, { progress: percent }),
+            t,
           );
           await saveFileMetadata({
             fileKey,
@@ -218,14 +225,14 @@ export default function UploadPlikDoDruku({
           const message =
             err instanceof Error
               ? err.message
-              : "Nie udało się wysłać pliku.";
+              : t("upload.errGeneric");
           updateItem(id, { stage: "error", error: message });
         }
       }
     } finally {
       runningRef.current = false;
     }
-  }, [generateUploadUrl, saveFileMetadata, updateItem]);
+  }, [generateUploadUrl, saveFileMetadata, updateItem, t]);
 
   const enqueueFiles = useCallback(
     (files: File[]) => {
@@ -251,8 +258,7 @@ export default function UploadPlikDoDruku({
             fileType: file.type,
             stage: "error",
             progress: 0,
-            error:
-              "Niewspierany format. Akceptujemy pliki graficzne (PDF, JPG, PNG, AI, EPS, TIFF i inne).",
+            error: t("upload.errFormat"),
           });
           continue;
         }
@@ -264,7 +270,7 @@ export default function UploadPlikDoDruku({
             fileType: file.type,
             stage: "error",
             progress: 0,
-            error: `Plik ma ${formatMB(file.size)}. Maksymalny rozmiar to 500 MB.`,
+            error: t("upload.errSize", { size: formatMB(file.size) }),
           });
           continue;
         }
@@ -276,7 +282,7 @@ export default function UploadPlikDoDruku({
             fileType: file.type,
             stage: "error",
             progress: 0,
-            error: "Plik jest pusty.",
+            error: t("upload.errEmpty"),
           });
           continue;
         }
@@ -297,7 +303,7 @@ export default function UploadPlikDoDruku({
       queueRef.current.push(...toQueue);
       void processQueue();
     },
-    [items.length, processQueue],
+    [items.length, processQueue, t],
   );
 
   const onPickClick = useCallback(() => {
@@ -361,7 +367,7 @@ export default function UploadPlikDoDruku({
         <div
           role="button"
           tabIndex={0}
-          aria-label="Wgraj pliki do druku"
+          aria-label={t("upload.dropAria")}
           onClick={onPickClick}
           onKeyDown={(event) => {
             if (event.key === "Enter" || event.key === " ") {
@@ -383,19 +389,17 @@ export default function UploadPlikDoDruku({
           </span>
           <div>
             <p className="text-lg font-semibold text-foreground">
-              Przeciągnij plik z projektem lub kliknij, żeby wybrać
+              {t("upload.dropTitle")}
               <span className="ml-1 text-primary">*</span>
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Wymagany przynajmniej jeden plik. Akceptujemy{" "}
-              {ACCEPTED_EXTENSIONS.join(", ")} · maks. 500 MB · do {MAX_FILES}{" "}
-              plików
+              {t("upload.dropHint", {
+                extensions: ACCEPTED_EXTENSIONS.join(", "),
+                max: MAX_FILES,
+              })}
             </p>
           </div>
-          <p className="text-xs text-muted-foreground">
-            Możesz wgrać kilka projektów naraz. Każdy plik trafia bezpośrednio
-            do magazynu w chmurze.
-          </p>
+          <p className="text-xs text-muted-foreground">{t("upload.dropNote")}</p>
         </div>
       ) : (
         <div
@@ -464,7 +468,7 @@ export default function UploadPlikDoDruku({
                         aria-valuenow={it.progress}
                         aria-valuemin={0}
                         aria-valuemax={100}
-                        aria-label={`Postęp wysyłania ${it.fileName}`}
+                        aria-label={t("upload.progressAria", { name: it.fileName })}
                       >
                         <div
                           className="h-full rounded-lg bg-primary transition-[width] duration-200"
@@ -478,12 +482,12 @@ export default function UploadPlikDoDruku({
                   )}
                   {it.stage === "success" && (
                     <p className="mt-1 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                      Wgrany · zweryfikowano
+                      {t("upload.uploaded")}
                     </p>
                   )}
                   {it.stage === "error" && (
                     <p className="mt-1 text-xs text-destructive">
-                      {it.error ?? "Spróbuj ponownie."}
+                      {it.error ?? t("upload.retry")}
                     </p>
                   )}
                 </div>
@@ -491,7 +495,7 @@ export default function UploadPlikDoDruku({
                   type="button"
                   onClick={() => removeItem(it.id)}
                   className="grid size-8 shrink-0 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                  aria-label={`Usuń ${it.fileName}`}
+                  aria-label={t("upload.removeAria", { name: it.fileName })}
                 >
                   <X aria-hidden className="size-4" />
                 </button>
@@ -501,9 +505,11 @@ export default function UploadPlikDoDruku({
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
             <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              {successCount} z {items.length}{" "}
-              {items.length === 1 ? "plik wgrany" : "plików wgranych"} ·
-              limit {MAX_FILES}
+              {t(items.length === 1 ? "upload.countOne" : "upload.count", {
+                done: successCount,
+                total: items.length,
+                max: MAX_FILES,
+              })}
             </p>
             <Button
               type="button"
@@ -513,7 +519,7 @@ export default function UploadPlikDoDruku({
               disabled={atLimit}
             >
               <Plus aria-hidden className="size-4" />
-              {atLimit ? "Osiągnięto limit" : "Dodaj kolejny plik"}
+              {atLimit ? t("upload.limitReached") : t("upload.addAnother")}
             </Button>
           </div>
         </div>

@@ -97,7 +97,7 @@
       },
       {
         "title": "1000 business cards, express",
-        "quote": "Zamówiłem 1000 wizytówek. Nie dość, że chłopaki poprawili mi format za darmo, to jeszcze ekspresowo dostałem moje zamówienie. Super mega polecam z całego serducha!",
+        "quote": "I ordered 1000 business cards. Not only did the guys fix my format for free, I also got my order express. Super mega recommend with all my heart!",
         "name": "Gett Nacjs",
         "date": "15 June 2026"
       },
@@ -109,22 +109,102 @@
       },
       {
         "title": "Everything great",
-        "quote": "Wszystko super",
+        "quote": "Everything great",
         "name": "Teresa",
         "date": "14 June 2026"
       },
       {
         "title": "Professional and fast",
-        "quote": "Profesjonalnie i szybko. Mimo że format wysłanego pliku był inny od tego zamówionego to chłopaki bez problemu go dostosowali, polecam!!!",
+        "quote": "Professional and fast. Even though the file I sent was in a different format than the one ordered, the guys adjusted it without any problem, recommend!!!",
         "name": "Pessi Ronaldo",
         "date": "12 June 2026"
       },
       {
         "title": "Great service",
-        "quote": "Świetna obsługa, dotrzymali terminu. Pełen profesjonalizm.",
+        "quote": "Great service, they met the deadline. Full professionalism.",
         "name": "Cezary Jakub Prusak",
         "date": "11 June 2026"
       }
     ]
+  },
+  "howItWorks": {
+    "eyebrow": "Simple and fast",
+    "title": "How it works",
+    "description": "Four steps from idea to finished print at your door.",
+    "steps": {
+      "configure": {
+        "title": "Configure",
+        "desc": "Pick a product, format and quantity. The final price updates live."
+      },
+      "upload": {
+        "title": "Upload your file",
+        "desc": "Add your artwork — the preflight check and print preparation are included."
+      },
+      "pay": {
+        "title": "Pay online",
+        "desc": "BLIK, card, Przelewy24 or Apple/Google Pay. Stripe invoice issued instantly."
+      },
+      "receive": {
+        "title": "Receive",
+        "desc": "Printed and shipped by courier or to a parcel locker — usually within 24–48 h."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready for top-quality print?",
+    "description": "Configure a product in 2 minutes and see the price right away — no account needed.",
+    "button": "Get a quote"
+  },
+  "socialProof": {
+    "someone": "Someone {{city}}",
+    "ordered": "ordered",
+    "dismiss": "Dismiss notification",
+    "timeAgo": {
+      "justNow": "just now",
+      "minutesAgo": "{{count}} min ago",
+      "fewMinutesAgo": "a few minutes ago"
+    },
+    "cities": {
+      "warsaw": "from Warsaw",
+      "krakow": "from Kraków",
+      "wroclaw": "from Wrocław",
+      "poznan": "from Poznań",
+      "gdansk": "from Gdańsk",
+      "lodz": "from Łódź",
+      "szczecin": "from Szczecin",
+      "lublin": "from Lublin",
+      "katowice": "from Katowice",
+      "bialystok": "from Białystok",
+      "bydgoszcz": "from Bydgoszcz",
+      "rzeszow": "from Rzeszów",
+      "gdynia": "from Gdynia",
+      "torun": "from Toruń",
+      "kielce": "from Kielce",
+      "olsztyn": "from Olsztyn",
+      "czestochowa": "from Częstochowa",
+      "sopot": "from Sopot"
+    },
+    "noun": {
+      "stack_one": "flyer",
+      "stack_other": "flyers",
+      "cards_one": "business card",
+      "cards_other": "business cards",
+      "poster_one": "poster",
+      "poster_other": "posters",
+      "sticker_one": "sticker",
+      "sticker_other": "stickers",
+      "rollup_one": "roll-up banner",
+      "rollup_other": "roll-up banners",
+      "folded_one": "folded leaflet",
+      "folded_other": "folded leaflets",
+      "postcards_one": "postcard",
+      "postcards_other": "postcards",
+      "bag_one": "paper bag",
+      "bag_other": "paper bags",
+      "letterhead_one": "letterhead sheet",
+      "letterhead_other": "letterhead sheets",
+      "banner_one": "advertising banner",
+      "banner_other": "advertising banners"
+    }
   }
 }

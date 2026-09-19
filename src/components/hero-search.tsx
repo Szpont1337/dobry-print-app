@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react"
 import { createPortal } from "react-dom";
 
 import { visibleProducts as products, type Product } from "@/lib/products";
+import { useProductI18n } from "@/hooks/use-product-i18n";
 
 import { ProductMockup } from "./product-mockup";
 
@@ -46,12 +47,13 @@ function ArrowIcon() {
 
 const MAX_RESULTS = 5;
 
-function searchHaystack(p: Product) {
-  return [p.name, p.tagline, ...p.formats.map((f) => f.label)].join(" ").toLowerCase();
+function searchHaystack(p: Product, extra: string[]) {
+  return [p.name, p.tagline, ...extra, ...p.formats.map((f) => f.label)].join(" ").toLowerCase();
 }
 
 export function HeroSearch() {
   const router = useRouter();
+  const { t, name, tagline } = useProductI18n();
   const listboxId = useId();
   const inputId = useId();
 
@@ -76,8 +78,10 @@ export function HeroSearch() {
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return products.slice(0, MAX_RESULTS);
-    return products.filter((p) => searchHaystack(p).includes(q)).slice(0, MAX_RESULTS);
-  }, [query]);
+    return products
+      .filter((p) => searchHaystack(p, [name(p), tagline(p)]).includes(q))
+      .slice(0, MAX_RESULTS);
+  }, [query, name, tagline]);
 
   useEffect(() => {
     if (!open) return;
@@ -161,7 +165,7 @@ export function HeroSearch() {
     <form role="search" className="relative w-full max-w-3xl" onSubmit={onSubmit}>
       <div ref={containerRef} className="relative">
         <label htmlFor={inputId} className="sr-only">
-          Który produkt chcesz wydrukować?
+          {t("search.label")}
         </label>
         <div className="flex items-center gap-1.5 rounded-xl border border-border bg-card p-1.5 shadow-lg sm:gap-2 sm:p-2">
           <input
@@ -185,16 +189,16 @@ export function HeroSearch() {
             aria-activedescendant={
               listboxVisible ? `${listboxId}-${results[activeIndex]?.slug}` : undefined
             }
-            placeholder="Który produkt chcesz wydrukować?"
+            placeholder={t("search.label")}
             className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/80 focus:outline-none sm:px-4 sm:py-3 sm:text-lg"
           />
           <button
             type="submit"
             disabled={!hasResults}
-            aria-label="Pokaż produkt"
+            aria-label={t("search.submit")}
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary p-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60 sm:px-6 sm:py-3 sm:text-base"
           >
-            <span className="hidden sm:inline">Pokaż produkt</span>
+            <span className="hidden sm:inline">{t("search.submit")}</span>
             <SearchIcon />
           </button>
         </div>
@@ -213,7 +217,9 @@ export function HeroSearch() {
               className="fixed z-50 overflow-hidden rounded-2xl border border-border bg-card text-foreground shadow-2xl"
             >
               <div className="border-b border-border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                {trimmedQuery ? `Wyniki dla „${trimmedQuery}"` : "Popularne kategorie"}
+                {trimmedQuery
+                  ? t("search.resultsFor", { query: trimmedQuery })
+                  : t("search.popular")}
               </div>
 
               {hasResults ? (
@@ -240,10 +246,10 @@ export function HeroSearch() {
                           </span>
                           <span className="min-w-0 flex-1">
                             <span className="block truncate text-base font-medium text-foreground">
-                              {product.name}
+                              {name(product)}
                             </span>
                             <span className="block truncate text-sm text-muted-foreground">
-                              {product.tagline}
+                              {tagline(product)}
                             </span>
                           </span>
                           <span
@@ -261,7 +267,7 @@ export function HeroSearch() {
                 </ul>
               ) : (
                 <div className="px-4 py-6 text-center text-sm text-muted-foreground">
-                  Brak wyników dla „{trimmedQuery}”. Spróbuj „ulotki”, „wizytówki” albo „plakaty”.
+                  {t("search.empty", { query: trimmedQuery })}
                 </div>
               )}
 
@@ -273,19 +279,19 @@ export function HeroSearch() {
                   <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
                     ↓
                   </kbd>{" "}
-                  nawigacja
+                  {t("search.navigate")}
                 </span>
                 <span>
                   <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
                     Enter
                   </kbd>{" "}
-                  otwórz
+                  {t("search.open")}
                 </span>
                 <span>
                   <kbd className="rounded border border-border bg-card px-1.5 py-0.5 font-mono">
                     Esc
                   </kbd>{" "}
-                  zamknij
+                  {t("search.close")}
                 </span>
               </div>
             </div>,

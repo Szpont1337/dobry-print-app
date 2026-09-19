@@ -6,8 +6,8 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { itemHasDesign, removeCartItem, type ResolvedCartItem, updateCartItem } from "@/lib/cart";
-import { sideLabelFor } from "@/lib/products";
 import { cn } from "@/lib/utils";
+import { useProductI18n } from "@/hooks/use-product-i18n";
 import { MAX_QTY, MIN_QTY, clampQuantity } from "@/lib/pricing";
 import { Input, Textarea } from "@/components/ui";
 import UploadPlikDoDruku, { type UploadedFileInfo } from "@/components/UploadPlikDoDruku";
@@ -45,6 +45,7 @@ function CartLine({
   onUploadingChange: (itemId: string, uploading: boolean) => void;
 }) {
   const { t } = useTranslation("order");
+  const { name, formatLabel, sideLabel } = useProductI18n();
   const { id } = item;
 
   // Stabilne callbacki: inline arrow tworzyłby nową referencję co render, a
@@ -69,10 +70,12 @@ function CartLine({
             href={`/produkty/${item.slug}`}
             className="text-base font-extrabold tracking-tight text-foreground transition-colors hover:text-primary"
           >
-            {item.product.name}
+            {name(item.product)}
           </Link>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {[item.format.label, sideLabelFor(item.product, item.sides)].filter(Boolean).join(" · ")}
+            {[formatLabel(item.product, item.format), sideLabel(item.product, item.sides)]
+              .filter(Boolean)
+              .join(" · ")}
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-3">

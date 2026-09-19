@@ -71,10 +71,10 @@ function localeFlag(locale: Locale) {
   return locale === "pl" ? <FlagPL /> : <FlagEN />;
 }
 
-const NAV_LINKS: { href: string; label: string }[] = [
-  { href: "/#produkty", label: "Produkty" },
-  { href: "/drukarnie-lokalne", label: "Drukarnie" },
-  { href: "/blog", label: "Blog" },
+const NAV_LINKS: { href: string; labelKey: string }[] = [
+  { href: "/#produkty", labelKey: "nav.products" },
+  { href: "/drukarnie-lokalne", labelKey: "nav.printshops" },
+  { href: "/blog", labelKey: "nav.blog" },
 ];
 
 export function Header() {
@@ -140,7 +140,7 @@ export function Header() {
                 href={link.href}
                 className="text-sm font-bold text-foreground/75 transition-colors hover:text-foreground"
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             ))}
           </nav>
@@ -255,7 +255,7 @@ export function Header() {
                       className="flex w-full items-center gap-2 border-b border-border px-4 py-3 text-left font-medium text-foreground transition-colors hover:bg-muted"
                     >
                       <SquaresFourIcon weight="duotone" aria-hidden className="size-4" />
-                      {locale === "en" ? "My account" : "Moje konto"}
+                      {t("nav.myAccount")}
                     </Link>
                     {isAdmin && (
                       <Link
@@ -264,7 +264,7 @@ export function Header() {
                         className="flex w-full items-center gap-2 border-b border-border bg-secondary/60 px-4 py-3 text-left font-medium text-foreground transition-colors hover:bg-secondary"
                       >
                         <ShieldCheckIcon weight="duotone" aria-hidden className="size-4 text-primary" />
-                        {locale === "en" ? "Admin panel" : "Panel admina"}
+                        {t("nav.admin")}
                       </Link>
                     )}
                     <button

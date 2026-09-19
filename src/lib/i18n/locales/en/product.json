@@ -1,0 +1,283 @@
+{
+  "names": {
+    "ulotki": "Flyers",
+    "skladane-ulotki": "Folded leaflets",
+    "roll-up": "Roll-up",
+    "papier-firmowy": "Letterhead",
+    "wizytowki": "Business cards",
+    "kartki-pocztowki": "Cards & Postcards",
+    "plakaty": "Posters",
+    "baner-reklamowy": "Advertising banners",
+    "naklejki": "Stickers",
+    "tablice-reklamowe": "Signboards",
+    "koszulki": "T-shirts",
+    "torby-papierowe": "Paper bags",
+    "torby-plocienne": "Tote bags",
+    "test-platnosci-internal": "Payment test (internal)"
+  },
+  "taglines": {
+    "ulotki": "Formats from A7 to A3, double-sided 4/4 print.",
+    "skladane-ulotki": "Six-page leaflets in DL, A5 and A4.",
+    "roll-up": "Roll-up with an aluminium stand and premium print.",
+    "papier-firmowy": "Classic letterhead in A4 and A5.",
+    "wizytowki": "Business cards in the classic 85 × 55 mm or European format.",
+    "kartki-pocztowki": "Postcards and greeting cards in A6, DL and A5.",
+    "plakaty": "Posters from A3 all the way to B1. Attention guaranteed.",
+    "baner-reklamowy": "PVC and mesh banners in any size. Solvent print, ready to hang.",
+    "naklejki": "Vinyl and paper stickers from 100 pcs. Rectangle, circle or any custom shape.",
+    "tablice-reklamowe": "Foam board, dibond and PVC signs. Rigid, light, ready to mount.",
+    "koszulki": "Custom-printed T-shirts from 1 piece. White cotton, full-colour DTG print.",
+    "torby-papierowe": "Custom-printed paper bags. Eco kraft or white paper, twisted handles.",
+    "torby-plocienne": "Cotton tote bags with an A4 print. Eco-friendly, durable, long shoulder handles.",
+    "test-platnosci-internal": "Test product — not for publication."
+  },
+  "inHeading": {
+    "ulotki": "your flyers",
+    "skladane-ulotki": "your folded leaflets",
+    "roll-up": "your roll-up",
+    "papier-firmowy": "your letterhead",
+    "wizytowki": "your business cards",
+    "kartki-pocztowki": "your postcards",
+    "plakaty": "your posters",
+    "baner-reklamowy": "your advertising banner",
+    "naklejki": "your stickers",
+    "tablice-reklamowe": "your signboard",
+    "koszulki": "your T-shirts",
+    "torby-papierowe": "your paper bags",
+    "torby-plocienne": "your tote bags",
+    "test-platnosci-internal": "the payment test"
+  },
+  "keywords": {
+    "ulotki": "flyers",
+    "skladane-ulotki": "folded leaflets",
+    "roll-up": "roll-ups",
+    "papier-firmowy": "letterhead",
+    "wizytowki": "business cards",
+    "kartki-pocztowki": "cards and postcards",
+    "plakaty": "posters",
+    "baner-reklamowy": "advertising banners",
+    "naklejki": "stickers",
+    "tablice-reklamowe": "signboards",
+    "koszulki": "custom T-shirts",
+    "torby-papierowe": "paper bags",
+    "torby-plocienne": "tote bags",
+    "test-platnosci-internal": "payment test"
+  },
+  "formatNouns": {
+    "koszulki": "Size"
+  },
+  "formats": {
+    "ulotki": {
+      "a7": "A7 · 74 × 105 mm",
+      "dl": "DL · 100 × 210 mm",
+      "a6": "A6 · 105 × 148 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm",
+      "a3": "A3 · 297 × 420 mm"
+    },
+    "skladane-ulotki": {
+      "dl": "DL · 100 × 210 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "roll-up": {
+      "85x200": "85 × 200 cm",
+      "100x200": "100 × 200 cm",
+      "120x200": "120 × 200 cm"
+    },
+    "papier-firmowy": {
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "wizytowki": {
+      "85x55": "Classic · 85 × 55 mm",
+      "90x50": "European · 90 × 50 mm"
+    },
+    "kartki-pocztowki": {
+      "a6": "A6 · 105 × 148 mm",
+      "dl": "DL · 100 × 210 mm",
+      "a5": "A5 · 148 × 210 mm"
+    },
+    "plakaty": {
+      "a3": "A3 · 297 × 420 mm",
+      "a2": "A2 · 420 × 594 mm",
+      "b2": "B2 · 500 × 707 mm",
+      "a1": "A1 · 594 × 841 mm",
+      "a0": "A0 · 841 × 1189 mm",
+      "b1": "B1 · 707 × 1000 mm"
+    },
+    "baner-reklamowy": {
+      "50x100": "50 × 100 cm",
+      "100x200": "100 × 200 cm",
+      "150x300": "150 × 300 cm",
+      "200x400": "200 × 400 cm"
+    },
+    "naklejki": {
+      "a7": "A7 · 74 × 105 mm",
+      "a6": "A6 · 105 × 148 mm",
+      "a5": "A5 · 148 × 210 mm",
+      "a4": "A4 · 210 × 297 mm"
+    },
+    "tablice-reklamowe": {
+      "a3": "A3 · 297 × 420 mm",
+      "a2": "A2 · 420 × 594 mm",
+      "a1": "A1 · 594 × 841 mm",
+      "50x70": "50 × 70 cm",
+      "70x100": "70 × 100 cm"
+    },
+    "koszulki": {
+      "s": "S",
+      "m": "M",
+      "l": "L",
+      "xl": "XL",
+      "xxl": "XXL"
+    },
+    "torby-papierowe": {
+      "s": "Small · 18 × 8 × 22 cm",
+      "m": "Medium · 26 × 12 × 33 cm",
+      "l": "Large · 32 × 14 × 42 cm"
+    },
+    "torby-plocienne": {
+      "37x41": "37 × 41 cm",
+      "38x42": "38 × 42 cm (A4)",
+      "40x42": "40 × 42 cm"
+    },
+    "test-platnosci-internal": {
+      "min": "Test · 1 grosz / pc"
+    }
+  },
+  "sides": {
+    "koszulki": {
+      "single": "Front print",
+      "double": "Front + back"
+    }
+  },
+  "filePrep": "Print-ready file preparation included",
+  "configurator": {
+    "eyebrow": "Configurator",
+    "title": "Order in 3 steps",
+    "badge": "Simple as print",
+    "step": "Step {{n}}",
+    "quantity": "Quantity",
+    "minFromOne": "from {{qty}} piece",
+    "minFrom": "from {{qty}} pcs",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "pcs": "{{qty}} pcs",
+    "format": "Format",
+    "backPrint": "Print",
+    "included": "included",
+    "surcharge": "+{{price}}/pc",
+    "uploadTitle": "Upload your design",
+    "uploadHint": "Attach your print-ready file now — billing details, delivery and payment come in one final step.",
+    "or": "or",
+    "designTitle": "Design it yourself in our app",
+    "designHint": "Drop in photos, add text and shapes — we'll prepare the file for print.",
+    "quoteEyebrow": "Live quote",
+    "quoteTitle": "Our offer",
+    "quoteHint": "The price updates in real time.",
+    "unitPrice": "Price per piece",
+    "printing": "Printing",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "shippingNote": "Shipping {{fee}}. Add <strong>{{missing}}</strong> more for free shipping (from {{threshold}}).",
+    "freeShippingNote": "<strong>Free shipping</strong> — dispatched in 3 business days.",
+    "filesReadyOne": "{{n}} file ready — it stays with your order",
+    "filesReady": "{{n}} files ready — they stay with your order",
+    "checkoutWithFiles": "Complete your order",
+    "checkout": "Continue to details and payment",
+    "added": "Added to cart",
+    "addToCart": "Add to cart and keep shopping",
+    "cartFull": "The cart holds at most {{max}} items."
+  },
+  "upload": {
+    "errStatus": "Storage responded with {{status}}",
+    "errNetwork": "Network error during upload.",
+    "errAbort": "Upload cancelled.",
+    "errGeneric": "Couldn't upload the file.",
+    "errFormat": "Unsupported format. We accept graphic files (PDF, JPG, PNG, AI, EPS, TIFF and more).",
+    "errSize": "The file is {{size}}. The maximum size is 500 MB.",
+    "errEmpty": "The file is empty.",
+    "dropAria": "Upload print files",
+    "dropTitle": "Drag your design file here or click to browse",
+    "dropHint": "At least one file is required. We accept {{extensions}} · max 500 MB · up to {{max}} files",
+    "dropNote": "You can upload several designs at once. Every file goes straight to cloud storage.",
+    "progressAria": "Upload progress for {{name}}",
+    "uploaded": "Uploaded · verified",
+    "retry": "Please try again.",
+    "removeAria": "Remove {{name}}",
+    "countOne": "{{done}} of {{total}} file uploaded · limit {{max}}",
+    "count": "{{done}} of {{total}} files uploaded · limit {{max}}",
+    "limitReached": "Limit reached",
+    "addAnother": "Add another file"
+  },
+  "grid": {
+    "eyebrow": "Product catalogue",
+    "title": "Pick a product",
+    "description": "Configure and price every product live — from a single piece, with the final price up front.",
+    "freeShipping": "Free shipping from {{threshold}} zł",
+    "from": "from {{price}} zł"
+  },
+  "search": {
+    "label": "Which product do you want to print?",
+    "submit": "Show product",
+    "resultsFor": "Results for \"{{query}}\"",
+    "popular": "Popular categories",
+    "empty": "No results for \"{{query}}\". Try \"flyers\", \"business cards\" or \"posters\".",
+    "navigate": "navigate",
+    "open": "open",
+    "close": "close"
+  },
+  "page": {
+    "breadcrumbHome": "Home",
+    "breadcrumbProducts": "Products",
+    "eyebrow": "Online {{keyword}} printing",
+    "title": "Print <accent>{{inHeading}}</accent>",
+    "why": {
+      "eyebrow": "Why DobrePrinty",
+      "title": "Why print <accent>{{keyword}}</accent> with DobrePrinty"
+    },
+    "specs": {
+      "eyebrow": "Technical specification",
+      "title": "Print specs for {{keyword}}",
+      "description": "Standard product settings and available options. You choose everything in the configurator above.",
+      "param": "Parameter",
+      "standard": "Standard",
+      "options": "Options"
+    },
+    "filePrep": {
+      "eyebrow": "File preparation",
+      "title": "How to prepare a print file for <accent>{{name}}</accent>",
+      "step": "Step {{n}}",
+      "template": "<strong>Download:</strong> free {{name}} template (PDF, all formats) with cut lines, 3 mm bleed and a safe margin.",
+      "download": "Download template →"
+    },
+    "about": {
+      "eyebrow": "{{keyword}} printing at DobrePrinty",
+      "title": "What to know about printing <accent>{{keyword}}</accent> online"
+    },
+    "faq": {
+      "eyebrow": "FAQ: {{keyword}} printing",
+      "title": "Frequently asked questions about <accent>{{keyword}} printing</accent>"
+    },
+    "local": {
+      "eyebrow": "{{keyword}} printing near you",
+      "title": "Get {{keyword}} printed and delivered to your city",
+      "description": "The {{name}} print shop in the DobrePrinty network delivers to businesses and institutions in 340 Polish cities. Most orders come from:",
+      "cityEyebrow": "Print shop {{city}}",
+      "cityTitle": "Print {{keyword}} in {{city}}",
+      "cityNote": "Courier delivery in 24–48 h. {{region}} voivodeship.",
+      "see": "See"
+    },
+    "related": {
+      "eyebrow": "Related products",
+      "title": "Browse more items in the DobrePrinty catalogue"
+    },
+    "cta": {
+      "title": "Ready to order <accent>{{keyword}}</accent>?",
+      "configure": "Configure and order",
+      "quote": "Custom quote →"
+    }
+  }
+}

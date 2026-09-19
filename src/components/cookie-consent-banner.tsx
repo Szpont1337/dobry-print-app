@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
+import { useTranslation } from "react-i18next";
 
 const CONSENT_KEY = "cookie-consent";
 
@@ -23,6 +24,7 @@ function getSnapshot(): string | null {
 const getServerSnapshot = (): string => "ssr";
 
 export function CookieConsentBanner() {
+  const { t } = useTranslation("common");
   const consent = useSyncExternalStore(
     subscribe,
     getSnapshot,
@@ -41,18 +43,17 @@ export function CookieConsentBanner() {
     <div
       role="dialog"
       aria-live="polite"
-      aria-label="Zgoda na pliki cookie"
+      aria-label={t("cookies.ariaLabel")}
       className="fixed inset-x-0 bottom-0 z-50 bg-neutral-900 text-white shadow-lg"
     >
       <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-10">
         <p className="text-sm leading-relaxed sm:max-w-2xl">
-          Używamy plików cookie do analizy ruchu (Google Analytics). Możesz
-          zaakceptować lub odrzucić śledzenie.{" "}
+          {t("cookies.text")}{" "}
           <Link
             href="/polityka-prywatnosci"
             className="underline underline-offset-2 hover:opacity-80"
           >
-            Polityka prywatności
+            {t("cookies.privacyLink")}
           </Link>
         </p>
         <div className="flex flex-col gap-2 sm:flex-row sm:shrink-0">
@@ -61,14 +62,14 @@ export function CookieConsentBanner() {
             onClick={() => save("rejected")}
             className="rounded-full border border-white/30 px-5 py-2 text-sm font-medium transition hover:bg-white/10"
           >
-            Tylko niezbędne
+            {t("cookies.reject")}
           </button>
           <button
             type="button"
             onClick={() => save("accepted")}
             className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-white/90"
           >
-            Akceptuj wszystkie
+            {t("cookies.accept")}
           </button>
         </div>
       </div>

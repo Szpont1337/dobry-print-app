@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { NUDGE_LARGE_MM, NUDGE_MM } from "../constant/editor";
 import type { PixiEngine } from "../engine/pixi-engine";
@@ -17,6 +18,7 @@ function isTyping(target: EventTarget | null): boolean {
 /** Skróty klawiszowe edytora. Silnik potrzebny do zoom/fit. */
 export function useKeyboardShortcuts(engine: PixiEngine | null): void {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -37,7 +39,9 @@ export function useKeyboardShortcuts(engine: PixiEngine | null): void {
       }
       if (meta && e.key.toLowerCase() === "d") {
         e.preventDefault();
-        if (selected) ed.duplicateNode(duplicate(selected));
+        if (selected) {
+          ed.duplicateNode(duplicate(selected, t("nodes.copyName", { name: selected.name })));
+        }
         return;
       }
       if ((meta && e.key === "0") || (meta && e.key === "9")) {
@@ -86,5 +90,5 @@ export function useKeyboardShortcuts(engine: PixiEngine | null): void {
 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [ed, engine]);
+  }, [ed, engine, t]);
 }

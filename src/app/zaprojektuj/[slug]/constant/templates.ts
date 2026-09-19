@@ -6,21 +6,21 @@ import { DEFAULT_ELLIPSE, DEFAULT_RECT, DEFAULT_TEXT, MM_PER_PT } from "./editor
 import type { SceneNode } from "../types";
 import { nodeId } from "../utils/id";
 
+type Tr = (key: string) => string;
+
 export interface StarterTemplate {
   id: string;
-  name: string;
-  build: (page: { wMm: number; hMm: number }) => SceneNode[];
+  build: (page: { wMm: number; hMm: number }, t: Tr) => SceneNode[];
 }
 
 function text(
   page: { wMm: number; hMm: number },
-  over: Partial<SceneNode> & { text: string },
+  over: Partial<SceneNode> & { name: string; text: string },
 ): SceneNode {
   const fontSizePt = (over as { fontSizePt?: number }).fontSizePt ?? 24;
   return {
     ...DEFAULT_TEXT,
     id: nodeId(),
-    name: "Tekst",
     cx: page.wMm / 2,
     cy: page.hMm / 2,
     w: page.wMm * 0.8,
@@ -29,11 +29,10 @@ function text(
   } as SceneNode;
 }
 
-function rect(over: Partial<SceneNode>): SceneNode {
+function rect(over: Partial<SceneNode> & { name: string }): SceneNode {
   return {
     ...DEFAULT_RECT,
     id: nodeId(),
-    name: "Prostokąt",
     cx: 0,
     cy: 0,
     w: 10,
@@ -42,11 +41,10 @@ function rect(over: Partial<SceneNode>): SceneNode {
   } as SceneNode;
 }
 
-function ellipse(over: Partial<SceneNode>): SceneNode {
+function ellipse(over: Partial<SceneNode> & { name: string }): SceneNode {
   return {
     ...DEFAULT_ELLIPSE,
     id: nodeId(),
-    name: "Elipsa",
     cx: 0,
     cy: 0,
     w: 10,
@@ -58,18 +56,16 @@ function ellipse(over: Partial<SceneNode>): SceneNode {
 export const STARTER_TEMPLATES: StarterTemplate[] = [
   {
     id: "blank",
-    name: "Pusta strona",
     build: () => [],
   },
   {
     id: "headline",
-    name: "Nagłówek + tekst",
-    build: (p) => {
+    build: (p, t) => {
       const titlePt = Math.max(18, Math.min(72, p.wMm * 0.16));
       const subPt = Math.max(10, titlePt * 0.34);
       return [
         rect({
-          name: "Pasek",
+          name: t("templates.nodes.bar"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.34,
           w: p.wMm * 0.18,
@@ -78,7 +74,8 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           radius: 1,
         }),
         text(p, {
-          text: "Twój nagłówek",
+          name: t("nodes.text"),
+          text: t("templates.texts.headline"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.45,
           fontSizePt: titlePt,
@@ -86,7 +83,8 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           fill: "#0e6a57",
         }),
         text(p, {
-          text: "Dodaj tu krótki opis, ofertę albo hasło reklamowe.",
+          name: t("nodes.text"),
+          text: t("templates.texts.subline"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.6,
           fontSizePt: subPt,
@@ -98,13 +96,12 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
   },
   {
     id: "photo-banner",
-    name: "Zdjęcie + pasek",
-    build: (p) => {
+    build: (p, t) => {
       const barH = p.hMm * 0.26;
       const titlePt = Math.max(16, Math.min(60, p.wMm * 0.12));
       return [
         rect({
-          name: "Miejsce na zdjęcie",
+          name: t("templates.nodes.photoPlaceholder"),
           cx: p.wMm / 2,
           cy: (p.hMm - barH) / 2,
           w: p.wMm,
@@ -114,7 +111,7 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           strokeWidth: 0,
         }),
         rect({
-          name: "Pasek",
+          name: t("templates.nodes.bar"),
           cx: p.wMm / 2,
           cy: p.hMm - barH / 2,
           w: p.wMm,
@@ -122,7 +119,8 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           fill: "#0e6a57",
         }),
         text(p, {
-          text: "Twoja marka",
+          name: t("nodes.text"),
+          text: t("templates.texts.brand"),
           cx: p.wMm / 2,
           cy: p.hMm - barH / 2,
           w: p.wMm * 0.86,
@@ -135,13 +133,12 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
   },
   {
     id: "framed",
-    name: "Ramka + akcent",
-    build: (p) => {
+    build: (p, t) => {
       const margin = Math.min(p.wMm, p.hMm) * 0.08;
       const titlePt = Math.max(18, Math.min(64, p.wMm * 0.14));
       return [
         rect({
-          name: "Ramka",
+          name: t("templates.nodes.frame"),
           cx: p.wMm / 2,
           cy: p.hMm / 2,
           w: p.wMm - margin * 2,
@@ -151,7 +148,7 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           strokeWidth: Math.max(1, p.wMm * 0.006),
         }),
         ellipse({
-          name: "Akcent",
+          name: t("templates.nodes.accent"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.3,
           w: Math.min(p.wMm, p.hMm) * 0.16,
@@ -159,7 +156,8 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           fill: "#e7a33c",
         }),
         text(p, {
-          text: "Zaproszenie",
+          name: t("nodes.text"),
+          text: t("templates.texts.invitation"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.55,
           fontSizePt: titlePt,
@@ -167,7 +165,8 @@ export const STARTER_TEMPLATES: StarterTemplate[] = [
           fill: "#14241f",
         }),
         text(p, {
-          text: "data · miejsce · godzina",
+          name: t("nodes.text"),
+          text: t("templates.texts.details"),
           cx: p.wMm / 2,
           cy: p.hMm * 0.68,
           fontSizePt: Math.max(9, titlePt * 0.3),

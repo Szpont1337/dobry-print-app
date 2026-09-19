@@ -5,7 +5,11 @@
     "logout": "Wyloguj",
     "account": "Konto",
     "admin": "Panel admina",
-    "cart": "Koszyk"
+    "cart": "Koszyk",
+    "products": "Produkty",
+    "printshops": "Drukarnie",
+    "blog": "Blog",
+    "myAccount": "Moje konto"
   },
   "lang": {
     "picker": "Wybierz język"
@@ -30,12 +34,20 @@
     "switchToRegister": "Nie masz konta? Załóż w 30 sekund.",
     "shieldLabel": "DobrePrinty",
     "errSendCode": "Nie udało się wysłać kodu. Spróbuj ponownie.",
-    "errInvalidCode": "Nieprawidłowy kod. Spróbuj jeszcze raz."
+    "errInvalidCode": "Nieprawidłowy kod. Spróbuj jeszcze raz.",
+    "emailPlaceholder": "ty@firma.pl"
   },
   "common": {
     "cancel": "Anuluj",
     "save": "Zapisz",
     "loading": "Wczytywanie…",
     "tryAgain": "Spróbuj ponownie"
+  },
+  "cookies": {
+    "ariaLabel": "Zgoda na pliki cookie",
+    "text": "Używamy plików cookie do analizy ruchu (Google Analytics). Możesz zaakceptować lub odrzucić śledzenie.",
+    "privacyLink": "Polityka prywatności",
+    "reject": "Tylko niezbędne",
+    "accept": "Akceptuj wszystkie"
   }
 }

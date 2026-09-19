@@ -1,0 +1,42 @@
+{
+  "success": {
+    "ordersLabel": "Zamówienia: {{ids}}",
+    "orderLabel": "Zamówienie #{{id}}",
+    "testBadge": "Zamówienie testowe — bez płatności i bez produkcji",
+    "paid": {
+      "title": "Dziękujemy za zamówienie!",
+      "body": "Płatność potwierdzona. Potwierdzenie wysłaliśmy na <strong>{{email}}</strong>. Sprawdzamy plik i ruszamy z produkcją w ciągu 24 godzin."
+    },
+    "pending": {
+      "title": "Płatność jest przetwarzana.",
+      "body": "Otrzymaliśmy potwierdzenie od Stripe, ale jeszcze nie zaksięgowaliśmy płatności. Odśwież stronę za chwilę — jak tylko wszystko będzie ok, wyślemy Ci potwierdzenie na <strong>{{email}}</strong>."
+    },
+    "qty": "{{qty}} szt.",
+    "total": "Razem",
+    "viewPanel": "Zobacz w panelu",
+    "home": "Strona główna"
+  },
+  "cancelled": {
+    "orderLabel": "Zamówienie #{{id}}",
+    "title": "Płatność anulowana.",
+    "body": "Zamówienie nie zostało przyjęte — nic nie obciążyliśmy. Jeśli to pomyłka, złóż je ponownie z poziomu strony produktu.",
+    "amount": "Kwota",
+    "backToProduct": "Wróć do produktu",
+    "otherProducts": "Inne produkty"
+  },
+  "download": {
+    "eyebrow": "DobrePrinty · pliki do druku",
+    "orderLabel": "Zamówienie #{{id}}",
+    "product": "Produkt",
+    "format": "Format",
+    "quantity": "Nakład",
+    "qty": "{{qty}} szt.",
+    "files": "Pliki",
+    "notes": "Uwagi do zamówienia",
+    "downloadZip": "Pobierz wszystko jako ZIP ({{count}})",
+    "download": "Pobierz",
+    "noFiles": "Brak załączonych plików do tego zamówienia.",
+    "externalLink": "Link zewnętrzny do projektu:",
+    "privateNote": "Link prywatny — udostępniaj tylko zaufanej drukarni."
+  }
+}

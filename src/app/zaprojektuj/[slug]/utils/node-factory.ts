@@ -26,26 +26,26 @@ function baseSize(page: PageBox): number {
   return Math.min(page.wMm, page.hMm) * NEW_NODE_FRACTION;
 }
 
-export function createText(page: PageBox): TextNode {
+export function createText(page: PageBox, name: string, text: string): TextNode {
   const { cx, cy } = center(page);
   const w = page.wMm * 0.7;
   const h = DEFAULT_TEXT.fontSizePt * MM_PER_PT * DEFAULT_TEXT.lineHeight * 1.4;
-  return { ...DEFAULT_TEXT, id: nodeId(), name: "Tekst", cx, cy, w, h };
+  return { ...DEFAULT_TEXT, id: nodeId(), name, text, cx, cy, w, h };
 }
 
-export function createRect(page: PageBox): RectNode {
+export function createRect(page: PageBox, name: string): RectNode {
   const { cx, cy } = center(page);
   const s = baseSize(page);
-  return { ...DEFAULT_RECT, id: nodeId(), name: "Prostokąt", cx, cy, w: s, h: s };
+  return { ...DEFAULT_RECT, id: nodeId(), name, cx, cy, w: s, h: s };
 }
 
-export function createEllipse(page: PageBox): EllipseNode {
+export function createEllipse(page: PageBox, name: string): EllipseNode {
   const { cx, cy } = center(page);
   const s = baseSize(page);
   return {
     ...DEFAULT_ELLIPSE,
     id: nodeId(),
-    name: "Elipsa",
+    name,
     cx,
     cy,
     w: s,
@@ -53,12 +53,12 @@ export function createEllipse(page: PageBox): EllipseNode {
   };
 }
 
-export function createLine(page: PageBox): LineNode {
+export function createLine(page: PageBox, name: string): LineNode {
   const { cx, cy } = center(page);
   return {
     ...DEFAULT_LINE,
     id: nodeId(),
-    name: "Linia",
+    name,
     cx,
     cy,
     w: page.wMm * 0.6,
@@ -69,6 +69,7 @@ export function createLine(page: PageBox): LineNode {
 export function createImage(
   page: PageBox,
   img: { src: string; naturalW: number; naturalH: number },
+  name: string,
 ): ImageNode {
   const { cx, cy } = center(page);
   const ratio = img.naturalW / Math.max(1, img.naturalH);
@@ -83,7 +84,7 @@ export function createImage(
   return {
     kind: "image",
     id: nodeId(),
-    name: "Zdjęcie",
+    name,
     cx,
     cy,
     w,
@@ -101,11 +102,11 @@ export function createImage(
   };
 }
 
-export function duplicate(node: SceneNode): SceneNode {
+export function duplicate(node: SceneNode, name: string): SceneNode {
   return {
     ...node,
     id: nodeId(),
-    name: `${node.name} kopia`,
+    name,
     cx: node.cx + 6,
     cy: node.cy + 6,
   } as SceneNode;

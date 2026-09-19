@@ -2,6 +2,7 @@
 
 import { Loader2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import type { PixiEngine } from "../engine/pixi-engine";
 import { useEditor } from "../store/editor-store";
@@ -14,6 +15,7 @@ export function EditorCanvas({
   onViewChange: (zoomPct: number) => void;
 }) {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   const edRef = useRef(ed);
   edRef.current = ed;
 
@@ -87,7 +89,7 @@ export function EditorCanvas({
         <div className="pointer-events-none absolute inset-0 grid place-items-center text-muted-foreground">
           <span className="inline-flex items-center gap-2 text-sm">
             <Loader2 aria-hidden className="size-5 animate-spin text-primary" />
-            Wczytywanie edytora…
+            {t("canvas.loading")}
           </span>
         </div>
       )}

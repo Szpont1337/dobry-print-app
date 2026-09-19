@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -46,6 +47,7 @@ export function PropertiesPanel() {
 // --- Sekcja per typ węzła ----------------------------------------------------
 function NodeProps({ node }: { node: SceneNode }) {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   const begin = ed.beginInteraction;
   const end = ed.endInteraction;
   const set = (patch: Partial<SceneNode>) => ed.setNode(node.id, patch);
@@ -58,11 +60,17 @@ function NodeProps({ node }: { node: SceneNode }) {
           <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
             {node.name}
           </span>
-          <SmallBtn label="Powiel" icon={Copy} onClick={() => ed.duplicateNode(duplicate(node))} />
+          <SmallBtn
+            label={t("props.duplicate")}
+            icon={Copy}
+            onClick={() =>
+              ed.duplicateNode(duplicate(node, t("nodes.copyName", { name: node.name })))
+            }
+          />
         </header>
         <div className="flex items-start gap-2 rounded-lg border border-border bg-muted/40 p-3 text-xs text-muted-foreground">
           <Lock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
-          <span>Warstwa zablokowana — odblokuj, aby ją edytować lub usunąć.</span>
+          <span>{t("props.lockedNotice")}</span>
         </div>
         <button
           type="button"
@@ -70,7 +78,7 @@ function NodeProps({ node }: { node: SceneNode }) {
           className="inline-flex items-center justify-center gap-2 rounded-lg border border-input bg-card px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
         >
           <Lock aria-hidden className="size-4" />
-          Odblokuj warstwę
+          {t("props.unlockLayer")}
         </button>
       </>
     );
@@ -83,8 +91,19 @@ function NodeProps({ node }: { node: SceneNode }) {
           {node.name}
         </span>
         <div className="flex gap-1">
-          <SmallBtn label="Powiel" icon={Copy} onClick={() => ed.duplicateNode(duplicate(node))} />
-          <SmallBtn label="Usuń" icon={Trash2} destructive onClick={() => ed.deleteNode(node.id)} />
+          <SmallBtn
+            label={t("props.duplicate")}
+            icon={Copy}
+            onClick={() =>
+              ed.duplicateNode(duplicate(node, t("nodes.copyName", { name: node.name })))
+            }
+          />
+          <SmallBtn
+            label={t("props.delete")}
+            icon={Trash2}
+            destructive
+            onClick={() => ed.deleteNode(node.id)}
+          />
         </div>
       </header>
 
@@ -113,20 +132,21 @@ function TransformSection({
   begin: () => void;
   end: () => void;
 }) {
+  const { t } = useTranslation("editor");
   const sizeEditable = node.kind !== "line";
   const heightEditable = node.kind !== "text" && node.kind !== "line";
   return (
-    <Section title="Układ">
+    <Section title={t("props.layout")}>
       <div className="grid grid-cols-2 gap-2">
         <NumberField
-          label="X (mm)"
+          label={t("props.x")}
           value={node.cx}
           begin={begin}
           end={end}
           onChange={(v) => set({ cx: v })}
         />
         <NumberField
-          label="Y (mm)"
+          label={t("props.y")}
           value={node.cy}
           begin={begin}
           end={end}
@@ -134,7 +154,7 @@ function TransformSection({
         />
         {sizeEditable && (
           <NumberField
-            label="Szer. (mm)"
+            label={t("props.width")}
             value={node.w}
             min={1}
             begin={begin}
@@ -144,7 +164,7 @@ function TransformSection({
         )}
         {heightEditable && (
           <NumberField
-            label="Wys. (mm)"
+            label={t("props.height")}
             value={node.h}
             min={1}
             begin={begin}
@@ -153,7 +173,7 @@ function TransformSection({
           />
         )}
         <NumberField
-          label="Obrót (°)"
+          label={t("props.rotation")}
           value={node.rotation}
           step={1}
           begin={begin}
@@ -162,7 +182,7 @@ function TransformSection({
         />
       </div>
       <Slider
-        label="Krycie"
+        label={t("props.opacity")}
         value={Math.round(node.opacity * 100)}
         min={0}
         max={100}
@@ -189,13 +209,14 @@ function TextSection({
   begin: () => void;
   end: () => void;
 }) {
+  const { t } = useTranslation("editor");
   const aligns: { value: TextAlign; icon: LucideIcon; label: string }[] = [
-    { value: "left", icon: AlignLeft, label: "Do lewej" },
-    { value: "center", icon: AlignCenter, label: "Wyśrodkuj" },
-    { value: "right", icon: AlignRight, label: "Do prawej" },
+    { value: "left", icon: AlignLeft, label: t("props.alignLeft") },
+    { value: "center", icon: AlignCenter, label: t("props.alignCenter") },
+    { value: "right", icon: AlignRight, label: t("props.alignRight") },
   ];
   return (
-    <Section title="Tekst">
+    <Section title={t("props.text")}>
       <textarea
         value={node.text}
         rows={3}
@@ -204,7 +225,7 @@ function TextSection({
         onChange={(e) => set({ text: e.target.value })}
         className="w-full resize-y rounded-lg border border-input bg-card px-2 py-1.5 text-sm text-foreground outline-none focus:border-primary"
       />
-      <Labeled label="Czcionka">
+      <Labeled label={t("props.font")}>
         <select
           value={node.fontFamily}
           onChange={(e) => commit({ fontFamily: e.target.value })}
@@ -219,7 +240,7 @@ function TextSection({
       </Labeled>
       <div className="grid grid-cols-2 gap-2">
         <NumberField
-          label="Rozmiar (pt)"
+          label={t("props.fontSize")}
           value={node.fontSizePt}
           min={2}
           step={1}
@@ -228,7 +249,7 @@ function TextSection({
           onChange={(v) => set({ fontSizePt: v })}
         />
         <NumberField
-          label="Interlinia"
+          label={t("props.lineHeight")}
           value={node.lineHeight}
           min={0.5}
           step={0.1}
@@ -237,7 +258,7 @@ function TextSection({
           onChange={(v) => set({ lineHeight: v })}
         />
         <NumberField
-          label="Odstęp liter (pt)"
+          label={t("props.letterSpacing")}
           value={node.letterSpacing}
           step={0.5}
           begin={begin}
@@ -247,13 +268,13 @@ function TextSection({
       </div>
       <div className="flex items-center gap-2">
         <IconToggle
-          label="Pogrubienie"
+          label={t("props.bold")}
           icon={Bold}
           active={node.fontWeight === "700"}
           onClick={() => commit({ fontWeight: node.fontWeight === "700" ? "400" : "700" })}
         />
         <IconToggle
-          label="Kursywa"
+          label={t("props.italic")}
           icon={Italic}
           active={node.italic}
           onClick={() => commit({ italic: !node.italic })}
@@ -270,7 +291,7 @@ function TextSection({
         ))}
       </div>
       <ColorRow
-        label="Kolor tekstu"
+        label={t("props.textColor")}
         value={node.fill}
         set={(c) => set({ fill: c })}
         begin={begin}
@@ -290,8 +311,9 @@ function ImageSection({
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   return (
-    <Section title="Zdjęcie">
+    <Section title={t("props.image")}>
       <input
         ref={fileRef}
         type="file"
@@ -320,24 +342,24 @@ function ImageSection({
         className="inline-flex items-center justify-center gap-2 rounded-lg border border-input bg-card px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
       >
         <RefreshCw aria-hidden className="size-4" />
-        Zmień zdjęcie
+        {t("props.changeImage")}
       </button>
       <div className="flex items-center gap-2">
         <IconToggle
-          label="Odbij poziomo"
+          label={t("props.flipH")}
           icon={FlipHorizontal}
           active={node.flipH}
           onClick={() => commit({ flipH: !node.flipH })}
         />
         <IconToggle
-          label="Odbij pionowo"
+          label={t("props.flipV")}
           icon={FlipVertical}
           active={node.flipV}
           onClick={() => commit({ flipV: !node.flipV })}
         />
       </div>
       <NumberField
-        label="Zaokrąglenie rogów (mm)"
+        label={t("props.cornerRadius")}
         value={node.radius}
         min={0}
         step={1}
@@ -363,13 +385,14 @@ function ShapeSection({
   begin: () => void;
   end: () => void;
 }) {
+  const { t } = useTranslation("editor");
   const hasFill = node.kind === "rect" || node.kind === "ellipse";
   return (
-    <Section title="Wygląd">
+    <Section title={t("props.appearance")}>
       {hasFill && (
         <>
           <label className="flex items-center justify-between text-sm">
-            <span className="font-semibold text-foreground">Wypełnienie</span>
+            <span className="font-semibold text-foreground">{t("props.fillEnabled")}</span>
             <input
               type="checkbox"
               checked={(node as RectNode).fillEnabled}
@@ -379,7 +402,7 @@ function ShapeSection({
           </label>
           {(node as RectNode).fillEnabled && (
             <ColorRow
-              label="Kolor wypełnienia"
+              label={t("props.fillColor")}
               value={(node as RectNode).fill}
               set={(c) => set({ fill: c })}
               begin={begin}
@@ -389,14 +412,14 @@ function ShapeSection({
         </>
       )}
       <ColorRow
-        label={node.kind === "line" ? "Kolor linii" : "Kolor obrysu"}
+        label={node.kind === "line" ? t("props.lineColor") : t("props.strokeColor")}
         value={node.stroke}
         set={(c) => set({ stroke: c })}
         begin={begin}
         end={end}
       />
       <NumberField
-        label="Grubość (mm)"
+        label={t("props.strokeWidth")}
         value={node.strokeWidth}
         min={node.kind === "line" ? 0.1 : 0}
         step={0.5}
@@ -406,7 +429,7 @@ function ShapeSection({
       />
       {node.kind === "rect" && (
         <NumberField
-          label="Zaokrąglenie (mm)"
+          label={t("props.radius")}
           value={(node as RectNode).radius}
           min={0}
           step={1}
@@ -422,27 +445,26 @@ function ShapeSection({
 // --- Strona (nic nie zaznaczone) --------------------------------------------
 function PageProps() {
   const ed = useEditor();
+  const { t } = useTranslation("editor");
   const bg = ed.doc.background;
   const f = ed.doc.format;
   return (
     <>
-      <Section title="Strona">
+      <Section title={t("props.page")}>
         <div className="rounded-lg border border-border bg-background p-3 text-sm">
           <p className="font-semibold text-foreground">{f.label}</p>
           <p className="mt-1 text-xs text-muted-foreground">
-            Pole projektowe {f.wMm} × {f.hMm} mm
-            {f.bleedMm > 0 ? ` · spad ${f.bleedMm} mm` : ""}
+            {t("props.artboard", { w: f.wMm, h: f.hMm })}
+            {f.bleedMm > 0 ? t("props.bleed", { bleed: f.bleedMm }) : ""}
           </p>
           {!f.exact && (
-            <p className="mt-2 text-xs text-accent-foreground">
-              Wymiar pola nadruku przyjęty zastępczo — drukarnia dopasuje go do produktu.
-            </p>
+            <p className="mt-2 text-xs text-accent-foreground">{t("props.inexactNotice")}</p>
           )}
         </div>
       </Section>
-      <Section title="Tło">
+      <Section title={t("props.background")}>
         <label className="flex items-center justify-between text-sm">
-          <span className="font-semibold text-foreground">Pokaż tło</span>
+          <span className="font-semibold text-foreground">{t("props.showBackground")}</span>
           <input
             type="checkbox"
             checked={bg.enabled}
@@ -452,7 +474,7 @@ function PageProps() {
         </label>
         {bg.enabled && (
           <ColorRow
-            label="Kolor tła"
+            label={t("props.backgroundColor")}
             value={bg.color}
             set={(c) => ed.setBackground({ color: c })}
             begin={ed.beginInteraction}
@@ -460,9 +482,7 @@ function PageProps() {
           />
         )}
       </Section>
-      <p className="px-1 text-xs text-muted-foreground">
-        Zaznacz element na stronie, aby edytować jego właściwości.
-      </p>
+      <p className="px-1 text-xs text-muted-foreground">{t("props.selectHint")}</p>
     </>
   );
 }

@@ -68,5 +68,36 @@
     "cancel": "Anuluj",
     "backToProduction": "Cofnij do produkcji",
     "buyOnAllegro": "Kup na Allegro"
+  },
+  "payment": {
+    "unpaid": "Nieopłacone",
+    "paid": "Opłacone",
+    "failed": "Płatność nieudana",
+    "refunded": "Zwrócone"
+  },
+  "brandFilter": "Marka",
+  "brandAll": "Wszystkie",
+  "pcs": "szt.",
+  "customer": "Klient",
+  "parcelLocker": "Paczkomat InPost",
+  "shippingAddress": "Adres dostawy",
+  "specification": "Specyfikacja",
+  "paymentLabel": "Płatność (Stripe)",
+  "paidAt": "Opłacono",
+  "notes": "Uwagi",
+  "carrierPlaceholder": "InPost, DPD, DHL…",
+  "trackingPlaceholder": "0012 3456 7890",
+  "pickupAddressPlaceholder": "Paczkomat WAW123, ul. Przykładowa 1, Warszawa",
+  "pickupCodePlaceholder": "856 101",
+  "pickupPhonePlaceholder": "786 164 961",
+  "allegro": {
+    "title": "Aukcje Allegro",
+    "description": "Mapowanie produkt (slug) → aukcja, z której odkupujesz. „Kup na Allegro” otwiera tu zmapowaną ofertę.",
+    "slugPlaceholder": "productSlug (np. ulotki)",
+    "variantPlaceholder": "wariant (opc.)",
+    "save": "Zapisz",
+    "empty": "Brak zmapowanych aukcji.",
+    "remove": "Usuń",
+    "errSave": "Nie udało się zapisać."
   }
 }

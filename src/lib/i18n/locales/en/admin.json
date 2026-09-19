@@ -68,5 +68,36 @@
     "cancel": "Cancel",
     "backToProduction": "Back to production",
     "buyOnAllegro": "Buy on Allegro"
+  },
+  "payment": {
+    "unpaid": "Unpaid",
+    "paid": "Paid",
+    "failed": "Payment failed",
+    "refunded": "Refunded"
+  },
+  "brandFilter": "Brand",
+  "brandAll": "All",
+  "pcs": "pcs",
+  "customer": "Customer",
+  "parcelLocker": "InPost parcel locker",
+  "shippingAddress": "Shipping address",
+  "specification": "Specification",
+  "paymentLabel": "Payment (Stripe)",
+  "paidAt": "Paid on",
+  "notes": "Notes",
+  "carrierPlaceholder": "InPost, DPD, DHL…",
+  "trackingPlaceholder": "0012 3456 7890",
+  "pickupAddressPlaceholder": "Parcel locker WAW123, 1 Example St, Warsaw",
+  "pickupCodePlaceholder": "856 101",
+  "pickupPhonePlaceholder": "786 164 961",
+  "allegro": {
+    "title": "Allegro listings",
+    "description": "Maps a product (slug) to the listing you re-buy from. “Buy on Allegro” opens the mapped offer here.",
+    "slugPlaceholder": "productSlug (e.g. ulotki)",
+    "variantPlaceholder": "variant (optional)",
+    "save": "Save",
+    "empty": "No mapped listings.",
+    "remove": "Remove",
+    "errSave": "Couldn't save."
   }
 }
