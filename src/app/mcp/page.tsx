@@ -14,7 +14,8 @@ import { Button } from "@/components/ui/button";
 const BASE_URL = "https://www.dobreprinty.pl";
 const URL = `${BASE_URL}/mcp`;
 const MCP_URL = "https://drukalo.pl/api/mcp";
-const CHATGPT_URL = "https://chatgpt.com/";
+// Deep-link do zakładki konektorów/aplikacji w ustawieniach ChatGPT (hash otwiera modal ustawień).
+const CHATGPT_URL = "https://chatgpt.com/#settings/Connectors";
 /**
  * Deep-link claude.ai: otwiera okno „Dodaj własny konektor" z wpisaną nazwą
  * i adresem (użytkownik tylko zatwierdza). Parametry występują w dwóch
@@ -75,7 +76,7 @@ const EXAMPLES = [
 ];
 
 const CHATGPT_STEPS = [
-  "Otwórz Ustawienia → Aplikacje → Ustawienia zaawansowane i włącz Tryb dewelopera (wymaga planu Plus lub Pro).",
+  "Kliknij „Otwórz ustawienia ChatGPT” (albo Ustawienia → Aplikacje) → Ustawienia zaawansowane → włącz Tryb dewelopera (wymaga planu Plus lub Pro).",
   "Utwórz konektor: nazwa drukalo, adres serwera MCP, uwierzytelnianie: OAuth (zalogujesz się kodem z e-maila).",
   "W nowym czacie wybierz drukalo w narzędziach i opisz, co chcesz wydrukować.",
 ];
@@ -247,7 +248,7 @@ export default function McpPage() {
             />
             <Button asChild variant="outline">
               <a href={CHATGPT_URL} target="_blank" rel="noreferrer">
-                Otwórz ChatGPT
+                Otwórz ustawienia ChatGPT
               </a>
             </Button>
             <Button asChild variant="outline">
@@ -284,7 +285,7 @@ export default function McpPage() {
               <CopyButton text={MCP_URL} label="Kopiuj adres serwera" copiedLabel="Skopiowano" />
               <Button asChild variant="outline">
                 <a href={CHATGPT_URL} target="_blank" rel="noreferrer">
-                  Otwórz ChatGPT
+                  Otwórz ustawienia ChatGPT
                 </a>
               </Button>
             </div>
