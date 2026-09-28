@@ -38,6 +38,9 @@ export const NAMESPACES = [
   "account",
   "admin",
   "legal",
+  "pages",
+  "product",
+  "editor",
 ] as const;
 
 if (!i18n.isInitialized) {
