@@ -18,7 +18,9 @@
     "cardLabel": "Live preview",
     "cardPrice": "from 0.18 zł / pc.",
     "cardCta": "Configure",
-    "cardBadge": "Print in 24 h"
+    "cardBadge": "Print in 24 h",
+    "mcpBadge": "New",
+    "mcpPill": "Order print through ChatGPT and Claude"
   },
   "faq": {
     "eyebrow": "Frequently asked",
@@ -29,6 +31,10 @@
     "helpSub": "Support replies within 2 business hours. No chat-bots.",
     "helpCta": "Write to us",
     "items": [
+      {
+        "question": "Can I order print through ChatGPT or Claude?",
+        "answer": "Yes. DobrePrinty runs a free MCP (Model Context Protocol) server at www.dobreprinty.pl/api/mcp. Connect it in ChatGPT (Developer mode) or Claude (Connectors) and the assistant provides the file spec, generates bleed-ready 300 dpi artwork, quotes the run and builds an order link. You upload the file and pay on the site yourself. Guide: www.dobreprinty.pl/mcp."
+      },
       {
         "question": "How long does an order take?",
         "answer": "Standard production is 2–5 business days depending on the product and quantity. You see the exact time in the configurator after choosing a format, and courier delivery adds another 24 hours after dispatch."
@@ -74,7 +80,8 @@
     "terms": "Terms of service",
     "backToTop": "back to top ↑",
     "copyright": "© {{year}} DobrePrinty",
-    "logoLabel": "DobrePrinty"
+    "logoLabel": "DobrePrinty",
+    "mcp": "DobrePrinty in ChatGPT & Claude"
   },
   "testimonials": {
     "eyebrow": "Trustpilot reviews",
@@ -206,5 +213,13 @@
       "banner_one": "advertising banner",
       "banner_other": "advertising banners"
     }
+  },
+  "mcp": {
+    "eyebrow": "New",
+    "title": "Design and order print in ChatGPT and Claude",
+    "description": "Connect DobrePrinty to your AI assistant. It generates print-ready artwork (bleed, ratio, 300 dpi), previews the printed product, quotes a price and hands you an order link.",
+    "how": "See how to connect",
+    "copy": "Copy MCP address",
+    "copied": "Copied"
   }
 }

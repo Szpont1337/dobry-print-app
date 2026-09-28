@@ -33,14 +33,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   };
 
-  const blogArticles: MetadataRoute.Sitemap = getPublishedArticles().map(
-    (article) => ({
-      url: `${BASE_URL}/blog/${article.slug}`,
-      lastModified: new Date(article.updatedAt ?? article.publishedAt),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }),
-  );
+  const ai: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/mcp`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  };
+
+  const blogArticles: MetadataRoute.Sitemap = getPublishedArticles().map((article) => ({
+    url: `${BASE_URL}/blog/${article.slug}`,
+    lastModified: new Date(article.updatedAt ?? article.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   const productPages: MetadataRoute.Sitemap = produkty.map((p) => ({
     url: `${BASE_URL}/produkty/${p.slug}`,
@@ -70,20 +75,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Podstrony miasto×produkt zgłaszamy tylko dla miast z listy statycznej
   // (ostrzejsza reguła niż dla stron miast) — patrz isIndexableCityProduct.
-  const cityProductPages: MetadataRoute.Sitemap = getCityProductMiasta().flatMap(
-    (m) =>
-      produkty.map((p) => ({
-        url: `${BASE_URL}/drukarnia-${m.slug}/${p.slug}`,
-        lastModified,
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      })),
+  const cityProductPages: MetadataRoute.Sitemap = getCityProductMiasta().flatMap((m) =>
+    produkty.map((p) => ({
+      url: `${BASE_URL}/drukarnia-${m.slug}/${p.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   );
 
   return [
     home,
     blogIndex,
     drukarnieLokalne,
+    ai,
     ...blogArticles,
     ...productPages,
     ...tematPages,

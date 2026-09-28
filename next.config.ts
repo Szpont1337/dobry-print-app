@@ -2,11 +2,7 @@ import type { NextConfig } from "next";
 
 // Broszury wycofane z oferty — slugi zostają zaindeksowane, więc ich strony
 // produktowe przekierowujemy na katalog zamiast zwracać 404.
-const DISCONTINUED_PRODUCT_SLUGS = [
-  "broszury-szyte",
-  "broszury-klejone",
-  "broszury-szyte-nicia",
-];
+const DISCONTINUED_PRODUCT_SLUGS = ["broszury-szyte", "broszury-klejone", "broszury-szyte-nicia"];
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
@@ -37,6 +33,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Pierwotny adres strony o MCP (pierwsze linki w czatach / stopce).
+      { source: "/ai", destination: "/mcp", permanent: true },
       {
         // No /produkty index page — canonical product listing is the
         // #produkty section on the home page.

@@ -42,8 +42,10 @@ import { article as papierKredaMatBlysk } from "./artykuly/papier-kreda-mat-czy-
 import { article as etykietySloikiButelki } from "./artykuly/etykiety-na-sloiki-i-butelki";
 import { article as plakatNaEvent } from "./artykuly/plakat-na-event-jak-zaprojektowac";
 import { article as formatyPapieruAbc } from "./artykuly/formaty-papieru-seria-a-b-c";
+import { article as grafikaZChatgpt } from "./artykuly/jak-wydrukowac-grafike-z-chatgpt";
 
 export const articles: Article[] = [
+  grafikaZChatgpt,
   pdfDoDruku,
   gramaturaPapieru,
   wizytowkiWymiary,
@@ -161,9 +163,7 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);
 }
 
-export function getArticleMetaBySlug(
-  slug: string,
-): Article | ArticleMeta | undefined {
+export function getArticleMetaBySlug(slug: string): Article | ArticleMeta | undefined {
   return getAllArticles().find((a) => a.slug === slug);
 }
 
@@ -171,12 +171,6 @@ export function getAllArticleSlugs(): string[] {
   return articles.map((a) => a.slug);
 }
 
-export function getRelatedArticles(
-  currentSlug: string,
-  category: string,
-  limit = 3,
-): Article[] {
-  return articles
-    .filter((a) => a.slug !== currentSlug && a.category === category)
-    .slice(0, limit);
+export function getRelatedArticles(currentSlug: string, category: string, limit = 3): Article[] {
+  return articles.filter((a) => a.slug !== currentSlug && a.category === category).slice(0, limit);
 }

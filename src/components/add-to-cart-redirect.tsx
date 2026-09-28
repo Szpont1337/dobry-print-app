@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 
 import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { upsertCartItem } from "@/lib/cart";
+import type { PrintSide } from "@/lib/products";
 
 /**
  * Stary link „/zamowienie/<produkt>" (zakładki klientów, linki z maili) wrzuca
@@ -17,10 +18,12 @@ export function AddToCartRedirect({
   slug,
   formatId,
   quantity,
+  sides,
 }: {
   slug: string;
   formatId: string;
   quantity: number;
+  sides?: PrintSide;
 }) {
   const router = useRouter();
   const { t } = useTranslation("order");
@@ -29,10 +32,10 @@ export function AddToCartRedirect({
   useEffect(() => {
     if (doneRef.current) return;
     doneRef.current = true;
-    upsertCartItem({ slug, formatId, quantity, files: [] });
+    upsertCartItem({ slug, formatId, quantity, sides, files: [] });
     router.replace(`/produkty/${slug}`);
     openCartSheet();
-  }, [slug, formatId, quantity, router]);
+  }, [slug, formatId, quantity, sides, router]);
 
   return (
     <div className="mx-auto flex w-full max-w-[1200px] items-center justify-center gap-3 px-5 py-21 text-sm text-muted-foreground sm:px-8">

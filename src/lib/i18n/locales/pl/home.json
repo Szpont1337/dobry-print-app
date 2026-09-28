@@ -18,7 +18,9 @@
     "cardLabel": "Podgląd na żywo",
     "cardPrice": "od 0,18 zł / szt.",
     "cardCta": "Konfiguruj",
-    "cardBadge": "Druk za 24 h"
+    "cardBadge": "Druk za 24 h",
+    "mcpBadge": "Nowość",
+    "mcpPill": "Zamawiaj druk przez ChatGPT i Claude"
   },
   "faq": {
     "eyebrow": "Najczęstsze pytania",
@@ -29,6 +31,10 @@
     "helpSub": "Biuro obsługi odpowiada w 2 godziny robocze. Bez czat-botów.",
     "helpCta": "Napisz do nas",
     "items": [
+      {
+        "question": "Czy mogę zamówić druk przez ChatGPT lub Claude?",
+        "answer": "Tak. DobrePrinty ma bezpłatny serwer MCP (Model Context Protocol) pod adresem www.dobreprinty.pl/api/mcp. Po podłączeniu go w ChatGPT (Tryb dewelopera) lub Claude (Konektory) asystent podaje specyfikację pliku, generuje grafikę ze spadami i w 300 dpi, wycenia nakład i tworzy link do zamówienia. Plik wgrywasz i płacisz sam na stronie. Instrukcja: www.dobreprinty.pl/mcp."
+      },
       {
         "question": "Jak długo trwa realizacja zamówienia?",
         "answer": "Standardowy czas produkcji to 2–5 dni roboczych w zależności od produktu i nakładu. Czas widać w konfiguratorze po wyborze formatu, a wysyłka kurierem trwa kolejne 24 godziny po nadaniu."
@@ -74,7 +80,8 @@
     "terms": "Regulamin",
     "backToTop": "wróć na górę ↑",
     "copyright": "© {{year}} DobrePrinty",
-    "logoLabel": "DobrePrinty"
+    "logoLabel": "DobrePrinty",
+    "mcp": "DobrePrinty w ChatGPT i Claude"
   },
   "testimonials": {
     "eyebrow": "Opinie z Trustpilot",
@@ -226,5 +233,13 @@
       "banner_many": "banerów reklamowych",
       "banner_other": "banerów reklamowych"
     }
+  },
+  "mcp": {
+    "eyebrow": "Nowość",
+    "title": "Projektuj i zamawiaj druk w ChatGPT i Claude",
+    "description": "Podłącz DobrePrinty do swojego asystenta AI. Wygeneruje grafikę pod nasz druk (spady, proporcje, 300 dpi), pokaże podgląd wydruku, poda cenę i link do zamówienia.",
+    "how": "Zobacz, jak podłączyć",
+    "copy": "Kopiuj adres MCP",
+    "copied": "Skopiowano"
   }
 }

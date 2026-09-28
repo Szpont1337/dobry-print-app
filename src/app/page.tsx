@@ -3,6 +3,7 @@ import { Faq } from "@/components/faq";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { CtaBand, HowItWorks } from "@/components/home-sections";
+import { McpTeaser } from "@/components/mcp-teaser";
 import { ProductsGrid } from "@/components/products-grid";
 import { SocialProofToast } from "@/components/social-proof-toast";
 import homePl from "@/lib/i18n/locales/pl/home.json";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     absolute: "Drukarnia online — druk ulotek, wizytówek, plakatów | DobrePrinty",
   },
   description:
-    "Drukarnia internetowa DobrePrinty: druk ulotek, wizytówek, plakatów i roll-upów online. Konfigurator 24/7, wycena finalna od ręki, dostawa kurierem w całej Polsce.",
+    "Drukarnia internetowa DobrePrinty: druk ulotek, wizytówek, plakatów i roll-upów online. Konfigurator 24/7, wycena finalna od ręki, dostawa kurierem w całej Polsce. Zamawiaj też przez ChatGPT i Claude (serwer MCP).",
   alternates: { canonical: "https://www.dobreprinty.pl" },
   openGraph: {
     title: "Drukarnia online — druk ulotek, wizytówek, plakatów | DobrePrinty",
@@ -47,6 +48,7 @@ export default function Home() {
       />
       <Header />
       <Hero />
+      <McpTeaser />
       <ProductsGrid />
       <HowItWorks />
       <Faq />

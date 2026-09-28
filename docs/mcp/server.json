@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "pl.dobreprinty/print",
+  "description": "Drukarnia online drukalo.pl / dobreprinty.pl: specyfikacja pliku do druku (spady, 300 dpi, CMYK), prompt do grafiki i mockupu, wycena w PLN i link do zamówienia wizytówek, ulotek, plakatów, roll-upów, banerów, naklejek, koszulek i toreb.",
+  "version": "0.1.0",
+  "websiteUrl": "https://www.dobreprinty.pl/mcp",
+  "remotes": [
+    { "type": "streamable-http", "url": "https://www.dobreprinty.pl/api/mcp" }
+  ]
+}

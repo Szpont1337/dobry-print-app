@@ -15,6 +15,7 @@ export function Footer() {
     { href: "/#produkty", label: t("footer.products") },
     { href: "/drukarnie-lokalne", label: t("footer.localPrintshops") },
     { href: "/blog", label: t("footer.blog") },
+    { href: "/mcp", label: t("footer.mcp") },
     { href: "/polityka-prywatnosci", label: t("footer.privacy") },
     { href: "/regulamin", label: t("footer.terms") },
   ];
@@ -24,10 +25,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 px-5 py-13 sm:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <Logo onDark />
-          <nav
-            aria-label={t("footer.navLabel")}
-            className="flex flex-wrap gap-x-8 gap-y-3 text-sm"
-          >
+          <nav aria-label={t("footer.navLabel")} className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
             {links.map((link) => (
               <Link
                 key={link.href}
