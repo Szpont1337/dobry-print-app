@@ -33,7 +33,7 @@
     "items": [
       {
         "question": "Czy mogę zamówić druk przez ChatGPT lub Claude?",
-        "answer": "Tak. DobrePrinty ma bezpłatny serwer MCP (Model Context Protocol) pod adresem www.dobreprinty.pl/api/mcp. Po podłączeniu go w ChatGPT (Tryb dewelopera) lub Claude (Konektory) asystent podaje specyfikację pliku, generuje grafikę ze spadami i w 300 dpi, wycenia nakład i tworzy link do zamówienia. Plik wgrywasz i płacisz sam na stronie. Instrukcja: www.dobreprinty.pl/mcp."
+        "answer": "Tak. DobrePrinty i drukalo to jedna firma, więc używamy wspólnego serwera MCP (Model Context Protocol) pod adresem drukalo.pl/api/mcp. Po podłączeniu go w ChatGPT (Tryb dewelopera, logowanie kodem z e-maila) lub Claude (Konektory) asystent podaje specyfikację pliku, generuje grafikę ze spadami i w 300 dpi, wycenia nakład i tworzy link do zamówienia w drukalo.pl. Instrukcja: www.dobreprinty.pl/mcp."
       },
       {
         "question": "Jak długo trwa realizacja zamówienia?",
@@ -237,7 +237,7 @@
   "mcp": {
     "eyebrow": "Nowość",
     "title": "Projektuj i zamawiaj druk w ChatGPT i Claude",
-    "description": "Podłącz DobrePrinty do swojego asystenta AI. Wygeneruje grafikę pod nasz druk (spady, proporcje, 300 dpi), pokaże podgląd wydruku, poda cenę i link do zamówienia.",
+    "description": "DobrePrinty i drukalo to jedna firma — podłącz nasz wspólny konektor do asystenta AI. Wygeneruje grafikę pod druk (spady, proporcje, 300 dpi), pokaże podgląd wydruku, poda cenę i link do zamówienia.",
     "how": "Zobacz, jak podłączyć",
     "copy": "Kopiuj adres MCP",
     "copied": "Skopiowano"

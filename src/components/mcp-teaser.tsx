@@ -1,24 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
-import { currentBrand } from "@/lib/brands";
-import { BRAND_ORIGIN } from "@/lib/mcp/orderLink";
 
 import { CopyButton } from "./copy-button";
 import { FadeIn } from "./fade-in";
 
-const noop = () => () => {};
-
 /** Pasek na stronie głównej: DobrePrinty dostępne w ChatGPT / Claude przez MCP. */
 export function McpTeaser() {
   const { t } = useTranslation("home");
-  // Marka po hoście — na serwerze domyślna, po hydracji prawdziwa (bez mismatchu).
-  const brand = useSyncExternalStore(noop, currentBrand, () => "dobreprinty" as const);
-  const mcpUrl = `${BRAND_ORIGIN[brand]}/api/mcp`;
+  // Wspólny serwer MCP stoi na drukalo.pl (jedna firma, jedna produkcja).
+  const mcpUrl = "https://drukalo.pl/api/mcp";
 
   return (
     <section className="bg-background pt-16 sm:pt-20">

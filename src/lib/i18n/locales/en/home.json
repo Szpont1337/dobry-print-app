@@ -33,7 +33,7 @@
     "items": [
       {
         "question": "Can I order print through ChatGPT or Claude?",
-        "answer": "Yes. DobrePrinty runs a free MCP (Model Context Protocol) server at www.dobreprinty.pl/api/mcp. Connect it in ChatGPT (Developer mode) or Claude (Connectors) and the assistant provides the file spec, generates bleed-ready 300 dpi artwork, quotes the run and builds an order link. You upload the file and pay on the site yourself. Guide: www.dobreprinty.pl/mcp."
+        "answer": "Yes. DobrePrinty and drukalo are one company, so we share one MCP (Model Context Protocol) server at drukalo.pl/api/mcp. Connect it in ChatGPT (Developer mode, e-mail code sign-in) or Claude (Connectors) and the assistant provides the file spec, generates bleed-ready 300 dpi artwork, quotes the run and builds an order link on drukalo.pl. Guide: www.dobreprinty.pl/mcp."
       },
       {
         "question": "How long does an order take?",
@@ -217,7 +217,7 @@
   "mcp": {
     "eyebrow": "New",
     "title": "Design and order print in ChatGPT and Claude",
-    "description": "Connect DobrePrinty to your AI assistant. It generates print-ready artwork (bleed, ratio, 300 dpi), previews the printed product, quotes a price and hands you an order link.",
+    "description": "DobrePrinty and drukalo are one company — connect our shared connector to your AI assistant. It generates print-ready artwork (bleed, ratio, 300 dpi), previews the printed product, quotes a price and hands you an order link.",
     "how": "See how to connect",
     "copy": "Copy MCP address",
     "copied": "Copied"

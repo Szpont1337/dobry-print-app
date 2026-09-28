@@ -4,7 +4,7 @@ export const article: Article = {
   slug: "jak-wydrukowac-grafike-z-chatgpt",
   title: "Jak wydrukować grafikę z ChatGPT: od promptu do wizytówki w paczce",
   excerpt:
-    "Obraz z ChatGPT, Gemini czy Midjourney nie nadaje się do druku prosto z czatu: ma 1024 px, RGB i zero spadów. Pokazujemy, jak w kilka minut zamienić go w plik do druku — ręcznie albo automatycznie przez serwer MCP DobrePrinty, który podaje asystentowi wymiary, spady i link do zamówienia.",
+    "Obraz z ChatGPT, Gemini czy Midjourney nie nadaje się do druku prosto z czatu: ma 1024 px, RGB i zero spadów. Pokazujemy, jak w kilka minut zamienić go w plik do druku — ręcznie albo automatycznie przez serwer MCP drukalo, który podaje asystentowi wymiary, spady i link do zamówienia.",
   category: "poradniki",
   tags: ["ChatGPT", "AI", "MCP", "wizytówki", "pliki do druku", "spady", "300 dpi"],
   publishedAt: "2026-09-28",
@@ -36,17 +36,17 @@ export const article: Article = {
     {
       type: "h2",
       id: "sposob-automatyczny-mcp",
-      text: "Sposób 1: asystent pilnuje specyfikacji sam (serwer MCP DobrePrinty)",
+      text: "Sposób 1: asystent pilnuje specyfikacji sam (serwer MCP drukalo)",
     },
     {
       type: "p",
-      text: "DobrePrinty udostępnia bezpłatny serwer MCP (Model Context Protocol) pod adresem www.dobreprinty.pl/api/mcp. Po podłączeniu go do ChatGPT lub Claude asystent dostaje sześć narzędzi: katalog produktów, specyfikację pliku do druku, prompt do grafiki, prompt do podglądu wydruku, wycenę i link do zamówienia. Nie trzeba konta ani klucza API.",
+      text: "DobrePrinty i drukalo to jedna firma — wspólny, bezpłatny serwer MCP (Model Context Protocol) stoi pod adresem drukalo.pl/api/mcp. Po podłączeniu go do ChatGPT lub Claude asystent dostaje sześć narzędzi: katalog produktów, specyfikację pliku do druku, prompt do grafiki, prompt do podglądu wydruku, wycenę i link do zamówienia. ChatGPT loguje Cię kodem z e-maila, Claude działa bez logowania; klucz API nie jest potrzebny.",
     },
     {
       type: "list",
       ordered: true,
       items: [
-        "Podłącz serwer: w ChatGPT Ustawienia → Aplikacje i konektory → Tryb dewelopera → nowy konektor z adresem www.dobreprinty.pl/api/mcp; w Claude Ustawienia → Konektory → Dodaj własny konektor. Instrukcja z przyciskami: www.dobreprinty.pl/mcp.",
+        "Podłącz serwer: w ChatGPT Ustawienia → Aplikacje i konektory → Tryb dewelopera → nowy konektor z adresem drukalo.pl/api/mcp; w Claude Ustawienia → Konektory → Dodaj własny konektor. Instrukcja z przyciskami: www.dobreprinty.pl/mcp.",
         "Napisz, co drukujesz: „Zaprojektuj wizytówkę dla kancelarii Jan Kowalski, tel. 600 000 000, 500 sztuk”. Asystent pobierze specyfikację (85 × 55 mm + 3 mm spadu, 1075 × 720 px, CMYK) i zbuduje prompt, który trzyma tekst w strefie bezpiecznej.",
         "Sprawdź wygenerowaną grafikę: pisownię, telefon, adres www. Poproś o poprawki, dopóki nie jest idealnie.",
         "Poproś o podgląd: narzędzie mockup_prompt generuje fotorealistyczny obraz wizytówek na kartonie 350 g, plakatu na ścianie albo roll-upu w lobby — z Twoim projektem.",
@@ -112,7 +112,7 @@ export const article: Article = {
       items: [
         {
           q: "Czy ChatGPT może zamówić druk za mnie?",
-          a: "Nie. Może przygotować grafikę, podać cenę i link do zamówienia przez serwer MCP DobrePrinty, ale plik wgrywasz i płacisz sam na stronie. To celowe — asystent nie ma dostępu do Twoich danych.",
+          a: "Nie. Może przygotować grafikę, podać cenę i link do zamówienia przez serwer MCP drukalo, ale plik wgrywasz i płacisz sam na stronie. To celowe — asystent nie ma dostępu do Twoich danych.",
         },
         {
           q: "Jaki plik wgrać do drukarni: PNG czy PDF?",

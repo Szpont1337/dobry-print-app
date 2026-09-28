@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import Link from "next/link";
 
 import { CopyButton } from "@/components/copy-button";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
-import { matchBrand } from "@/lib/brands";
-import { BRAND_ORIGIN } from "@/lib/mcp/orderLink";
-import { visibleProducts } from "@/lib/products";
 
 /**
  * Strona docelowa serwera MCP: SEO (drukarnia w ChatGPT/Claude), GEO (fakty,
@@ -17,6 +13,7 @@ import { visibleProducts } from "@/lib/products";
  */
 const BASE_URL = "https://www.dobreprinty.pl";
 const URL = `${BASE_URL}/mcp`;
+const MCP_URL = "https://drukalo.pl/api/mcp";
 const CHATGPT_URL = "https://chatgpt.com/";
 const CLAUDE_CONNECTORS_URL = "https://claude.ai/settings/connectors";
 
@@ -65,8 +62,8 @@ const EXAMPLES = [
 
 const CHATGPT_STEPS = [
   "Otwórz Ustawienia → Aplikacje i konektory → Zaawansowane i włącz Tryb dewelopera.",
-  "Utwórz konektor: nazwa dobreprinty, adres serwera MCP, uwierzytelnianie: brak.",
-  "W nowym czacie wybierz dobreprinty w narzędziach i opisz, co chcesz wydrukować.",
+  "Utwórz konektor: nazwa drukalo, adres serwera MCP, uwierzytelnianie: OAuth (zalogujesz się kodem z e-maila).",
+  "W nowym czacie wybierz drukalo w narzędziach i opisz, co chcesz wydrukować.",
 ];
 
 const CLAUDE_STEPS = [
@@ -82,16 +79,14 @@ const PROCESS = [
   "Dostajesz link, otwierasz go, wgrywasz grafikę i płacisz. Produkcja 24–48 h, dostawa kurierem.",
 ];
 
-const productNames = visibleProducts.map((p) => p.name.toLowerCase()).join(", ");
-
 const FAQ: { q: string; a: string }[] = [
   {
     q: "Czy ChatGPT może zaprojektować i zamówić wizytówki?",
     a: "Tak. Po podłączeniu serwera MCP DobrePrinty ChatGPT pobiera specyfikację wizytówki (85 × 55 mm, 3 mm spadu, 300 dpi), generuje grafikę o właściwych proporcjach, wycenia nakład i tworzy link do zamówienia. Samo zamówienie i płatność wykonujesz na stronie DobrePrinty — asystent nie ma dostępu do Twoich danych ani karty.",
   },
   {
-    q: "Co to jest serwer MCP DobrePrinty?",
-    a: "MCP (Model Context Protocol) to otwarty standard, przez który asystenci AI korzystają z zewnętrznych narzędzi. Serwer MCP DobrePrinty pod adresem www.dobreprinty.pl/api/mcp udostępnia sześć narzędzi: katalog produktów, specyfikację pliku do druku, prompt do grafiki, prompt do podglądu wydruku, wycenę i link do zamówienia.",
+    q: "Czym jest konektor drukalo i dlaczego DobrePrinty go używa?",
+    a: "DobrePrinty i drukalo to jedna firma z jedną produkcją. Serwer MCP (Model Context Protocol) stoi pod adresem drukalo.pl/api/mcp i udostępnia sześć narzędzi: katalog produktów, specyfikację pliku do druku, prompt do grafiki, prompt do podglądu wydruku, wycenę i link do zamówienia. Zamówienie z czatu realizujesz w drukalo.pl — tak samo pakujemy i wysyłamy.",
   },
   {
     q: "Czy serwer MCP DobrePrinty działa z Claude?",
@@ -99,7 +94,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Czy potrzebuję konta, logowania albo klucza API?",
-    a: "Nie. Serwer jest publiczny i nie wymaga uwierzytelniania. Konto nie jest potrzebne ani do rozmowy z asystentem, ani do złożenia zamówienia.",
+    a: "ChatGPT loguje Cię kodem z e-maila (konto drukalo powstaje automatycznie). Claude i inne klienty MCP działają bez logowania. Klucz API nie jest potrzebny.",
   },
   {
     q: "Ile kosztuje korzystanie z MCP DobrePrinty?",
@@ -115,11 +110,11 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Jakie produkty można zamówić przez MCP?",
-    a: `Wszystkie z oferty DobrePrinty: ${productNames}. Katalog w narzędziu list_products jest zawsze zgodny ze sklepem.`,
+    a: "Wszystkie z oferty drukalo: wizytówki, ulotki, składane ulotki, plakaty, roll-upy, banery, naklejki, tablice, papier firmowy, kartki, broszury, koszulki i torby. Katalog w narzędziu list_products jest zawsze zgodny ze sklepem.",
   },
   {
     q: "Czy serwer zapisuje moje rozmowy lub projekty?",
-    a: "Nie. Serwer jest bezstanowy: odpowiada na pytanie o specyfikację, cenę lub link i niczego nie przechowuje. Plik z grafiką trafia do DobrePrinty dopiero, gdy sam wgrasz go na stronie zamówienia.",
+    a: "Nie. Serwer jest bezstanowy: odpowiada na pytanie o specyfikację, cenę lub link i niczego nie przechowuje. Plik z grafiką trafia do drukarni dopiero, gdy sam wgrasz go na stronie zamówienia.",
   },
 ];
 
@@ -144,12 +139,9 @@ function howTo(id: string, name: string, steps: string[], mcpUrl: string) {
   };
 }
 
-export default async function McpPage() {
-  // Ta sama strona na drukalo.pl i dobreprinty.pl — adres serwera po hoście.
-  const brand = matchBrand((await headers()).get("host")) ?? "dobreprinty";
-  const origin = BRAND_ORIGIN[brand];
-  const MCP_URL = `${origin}/api/mcp`;
-  const claudeCodeCmd = `claude mcp add --transport http ${brand} ${MCP_URL}`;
+export default function McpPage() {
+  // DobrePrinty i drukalo to jedna firma: wspólny serwer MCP stoi na drukalo.pl.
+  const claudeCodeCmd = `claude mcp add --transport http drukalo ${MCP_URL}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -222,9 +214,10 @@ export default async function McpPage() {
             Drukarnia w ChatGPT i Claude: projektuj i zamawiaj druk z czatu
           </h1>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            DobrePrinty ma darmowy serwer MCP. Podłącz go do swojego asystenta AI, a ten dobierze
-            format, wygeneruje grafikę ze spadami pod nasz druk, pokaże podgląd wydruku, poda cenę i
-            link do zamówienia. Bez konta, bez logowania, bez klucza API.
+            DobrePrinty korzysta z konektora drukalo (jedna firma, jedna produkcja). Podłącz go do
+            swojego asystenta AI, a ten dobierze format, wygeneruje grafikę ze spadami pod nasz
+            druk, pokaże podgląd wydruku, poda cenę i link do zamówienia. Bez konta, bez logowania,
+            bez klucza API.
           </p>
           <p className="mt-6">
             <span className="text-sm text-muted-foreground">Adres serwera MCP:</span>{" "}
@@ -254,13 +247,14 @@ export default async function McpPage() {
       <section className="bg-background pb-12">
         <div className="mx-auto max-w-3xl space-y-12 px-6 lg:px-10">
           <div>
-            <h2 className={h2}>Co to jest MCP DobrePrinty</h2>
+            <h2 className={h2}>Co to jest konektor drukalo</h2>
             <p className={p}>
               MCP (Model Context Protocol) to otwarty standard, przez który ChatGPT, Claude i inne
-              asystenty korzystają z zewnętrznych narzędzi. Serwer MCP DobrePrinty daje asystentowi
-              dostęp do katalogu, specyfikacji plików, wyceny i linku do zamówienia. Grafikę
-              generujesz w swoim asystencie, a my pilnujemy, żeby nadawała się do druku: właściwe
-              proporcje, 3 mm spadu, 300 dpi, kolory bezpieczne dla CMYK.
+              asystenty korzystają z zewnętrznych narzędzi. DobrePrinty i drukalo to jedna firma,
+              więc używamy wspólnego serwera na drukalo.pl. Daje on asystentowi dostęp do katalogu,
+              specyfikacji plików, wyceny i linku do zamówienia. Grafikę generujesz w swoim
+              asystencie, a my pilnujemy, żeby nadawała się do druku: właściwe proporcje, 3 mm
+              spadu, 300 dpi, kolory bezpieczne dla CMYK.
             </p>
           </div>
 
