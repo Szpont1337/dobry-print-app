@@ -15,7 +15,21 @@ const BASE_URL = "https://www.dobreprinty.pl";
 const URL = `${BASE_URL}/mcp`;
 const MCP_URL = "https://drukalo.pl/api/mcp";
 const CHATGPT_URL = "https://chatgpt.com/";
-const CLAUDE_CONNECTORS_URL = "https://claude.ai/settings/connectors";
+/**
+ * Deep-link claude.ai: otwiera okno „Dodaj własny konektor" z wpisaną nazwą
+ * i adresem (użytkownik tylko zatwierdza). Parametry występują w dwóch
+ * wersjach w dokumentacji/społeczności — podajemy obie, nieznane są ignorowane.
+ */
+function claudeAddConnectorUrl(name: string, mcpUrl: string): string {
+  const q = new URLSearchParams({
+    modal: "add-custom-connector",
+    connectorName: name,
+    connectorUrl: mcpUrl,
+    mcpName: name,
+    mcpServerUrl: mcpUrl,
+  });
+  return `https://claude.ai/customize/connectors?${q.toString()}`;
+}
 
 export const metadata: Metadata = {
   title: "Drukarnia w ChatGPT i Claude (serwer MCP) — drukuj grafiki z AI | DobrePrinty",
@@ -67,8 +81,8 @@ const CHATGPT_STEPS = [
 ];
 
 const CLAUDE_STEPS = [
-  "Otwórz Ustawienia → Konektory → Dodaj własny konektor.",
-  "Wklej adres serwera MCP i zapisz.",
+  "Kliknij „Dodaj do Claude” (plan Pro lub Max) — claude.ai otworzy okno z wpisaną nazwą i adresem konektora; zatwierdź.",
+  "Ręcznie: Dostosuj → Konektory → Dodaj własny konektor → wklej adres serwera MCP.",
   "W czacie użyj polecenia /zaprojektuj-i-zamow albo napisz, co drukujesz.",
 ];
 
@@ -90,7 +104,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Czy serwer MCP DobrePrinty działa z Claude?",
-    a: "Tak. W Claude dodajesz go jako własny konektor (Ustawienia → Konektory), a w Claude Code jednym poleceniem claude mcp add. Działa też w każdym innym kliencie MCP: Cursor, VS Code, Windsurf, Zed.",
+    a: "Tak. Przycisk „Dodaj do Claude” na tej stronie otwiera claude.ai z wpisanym adresem konektora (plan Pro lub Max); w Claude Code wystarczy jedno polecenie claude mcp add. Działa też w każdym innym kliencie MCP: Cursor, VS Code, Windsurf, Zed.",
   },
   {
     q: "Czy potrzebuję konta, logowania albo klucza API?",
@@ -142,6 +156,7 @@ function howTo(id: string, name: string, steps: string[], mcpUrl: string) {
 export default function McpPage() {
   // DobrePrinty i drukalo to jedna firma: wspólny serwer MCP stoi na drukalo.pl.
   const claudeCodeCmd = `claude mcp add --transport http drukalo ${MCP_URL}`;
+  const claudeAddUrl = claudeAddConnectorUrl("drukalo", MCP_URL);
 
   const schema = {
     "@context": "https://schema.org",
@@ -236,8 +251,8 @@ export default function McpPage() {
               </a>
             </Button>
             <Button asChild variant="outline">
-              <a href={CLAUDE_CONNECTORS_URL} target="_blank" rel="noreferrer">
-                Otwórz Claude
+              <a href={claudeAddUrl} target="_blank" rel="noreferrer">
+                Dodaj do Claude
               </a>
             </Button>
           </div>
@@ -283,12 +298,12 @@ export default function McpPage() {
               ))}
             </ol>
             <div className="mt-5 flex flex-wrap gap-3">
-              <CopyButton text={MCP_URL} label="Kopiuj adres serwera" copiedLabel="Skopiowano" />
-              <Button asChild variant="outline">
-                <a href={CLAUDE_CONNECTORS_URL} target="_blank" rel="noreferrer">
-                  Otwórz konektory Claude
+              <Button asChild variant="default">
+                <a href={claudeAddUrl} target="_blank" rel="noreferrer">
+                  Dodaj do Claude
                 </a>
               </Button>
+              <CopyButton text={MCP_URL} label="Kopiuj adres serwera" copiedLabel="Skopiowano" />
             </div>
             <p className={p}>
               Claude Code: <code className={code}>{claudeCodeCmd}</code>
