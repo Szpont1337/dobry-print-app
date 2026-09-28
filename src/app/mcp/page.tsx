@@ -61,7 +61,7 @@ const EXAMPLES = [
 ];
 
 const CHATGPT_STEPS = [
-  "Otwórz Ustawienia → Aplikacje i konektory → Zaawansowane i włącz Tryb dewelopera.",
+  "Otwórz Ustawienia → Aplikacje → Ustawienia zaawansowane i włącz Tryb dewelopera (wymaga planu Plus lub Pro).",
   "Utwórz konektor: nazwa drukalo, adres serwera MCP, uwierzytelnianie: OAuth (zalogujesz się kodem z e-maila).",
   "W nowym czacie wybierz drukalo w narzędziach i opisz, co chcesz wydrukować.",
 ];
