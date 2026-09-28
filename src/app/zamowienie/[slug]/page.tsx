@@ -13,7 +13,16 @@ export const metadata: Metadata = {
 };
 
 type Params = { slug: string };
-type Search = { qty?: string; format?: string; sides?: string };
+type Search = {
+  qty?: string;
+  format?: string;
+  sides?: string;
+  /** grafika zaimportowana z asystenta AI (wspolny B2 z drukalo) */
+  file?: string;
+  fname?: string;
+  fsize?: string;
+  ftype?: string;
+};
 
 export default async function OrderPage({
   params,
@@ -23,7 +32,7 @@ export default async function OrderPage({
   searchParams: Promise<Search>;
 }) {
   const { slug } = await params;
-  const { qty, format, sides } = await searchParams;
+  const { qty, format, sides, file, fname, fsize, ftype } = await searchParams;
 
   const product = getProduct(slug);
   if (!product) notFound();
@@ -40,6 +49,12 @@ export default async function OrderPage({
       : DEFAULT_SIDE
     : undefined;
 
+  // Plik z importu AI (konektor drukalo, /podglad → „Zamów"): tylko prefiks ai-.
+  const files =
+    file && file.startsWith("zamowienia/ai-") && fname
+      ? [{ fileKey: file, fileName: fname, fileSize: Number(fsize) || 0, fileType: ftype ?? "" }]
+      : undefined;
+
   return (
     <main className="relative flex flex-1 flex-col bg-background">
       <Header />
@@ -48,6 +63,7 @@ export default async function OrderPage({
         formatId={formatId}
         quantity={quantity}
         sides={initialSides}
+        files={files}
       />
     </main>
   );

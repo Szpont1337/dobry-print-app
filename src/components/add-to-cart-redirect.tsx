@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { upsertCartItem } from "@/lib/cart";
 import type { PrintSide } from "@/lib/products";
+import type { UploadedFileInfo } from "@/components/UploadPlikDoDruku";
 
 /**
  * Stary link „/zamowienie/<produkt>" (zakładki klientów, linki z maili) wrzuca
@@ -19,11 +20,14 @@ export function AddToCartRedirect({
   formatId,
   quantity,
   sides,
+  files,
 }: {
   slug: string;
   formatId: string;
   quantity: number;
   sides?: PrintSide;
+  /** pliki juz wgrane (import z asystenta AI) */
+  files?: UploadedFileInfo[];
 }) {
   const router = useRouter();
   const { t } = useTranslation("order");
@@ -32,10 +36,10 @@ export function AddToCartRedirect({
   useEffect(() => {
     if (doneRef.current) return;
     doneRef.current = true;
-    upsertCartItem({ slug, formatId, quantity, sides, files: [] });
+    upsertCartItem({ slug, formatId, quantity, sides, files: files ?? [] });
     router.replace(`/produkty/${slug}`);
     openCartSheet();
-  }, [slug, formatId, quantity, sides, router]);
+  }, [slug, formatId, quantity, sides, files, router]);
 
   return (
     <div className="mx-auto flex w-full max-w-[1200px] items-center justify-center gap-3 px-5 py-21 text-sm text-muted-foreground sm:px-8">
