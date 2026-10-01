@@ -4,6 +4,6 @@
 export const COMPANY = {
   name: "DobrePrinty",
   email: "hej@dobreprinty.pl",
-  owner: "Cezarego Prusaka",
-  address: "ul. Komisji Edukacji Narodowej, Łuków",
+  owner: "Piotr Pręciuk",
+  address: "ul. Jagiellońska, 20-806 Lublin",
 } as const;

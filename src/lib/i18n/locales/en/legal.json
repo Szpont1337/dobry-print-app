@@ -5,186 +5,147 @@
   },
   "terms": {
     "title": "Terms of Service",
-    "intro": "Rules for using dobreprinty.pl, placing and fulfilling orders, and the liability of the parties.",
-    "updatedAt": "11 September 2026",
+    "intro": "Rules for using dobreprinty.pl and for placing and fulfilling orders.",
+    "updatedAt": "1 October 2026",
     "sections": [
       {
-        "heading": "1. Definitions",
+        "heading": "1. Seller",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The dobreprinty.pl service (\"DobrePrinty\", \"Seller\") is operated by {{owner}}, {{address}}, as an unregistered business activity (Art. 5 of the Polish Entrepreneurs' Law). Contact: <strong>{{email}}</strong>. The Seller is not a VAT payer."
+          }
+        ]
+      },
+      {
+        "heading": "2. Definitions",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "<strong>DobrePrinty</strong> – the dobreprinty.pl service operated by {{owner}}, {{address}} (personal data controller), as unregistered business activity within the meaning of Art. 5 of the Act of 6 March 2018 – Entrepreneurs' Law. DobrePrinty is not a registered VAT payer (section 7).",
-              "<strong>Customer</strong> – a natural person, legal person or organisational unit placing an order.",
-              "<strong>Consumer</strong> – a Customer who is a natural person concluding a contract not directly related to their business or professional activity.",
-              "<strong>Partner print shop</strong> – an independent entity that carries out the physical printing after DobrePrinty hands over the job."
+              "<strong>Customer</strong> – a person or business placing an order.",
+              "<strong>Consumer</strong> – a Customer who is a natural person ordering for purposes unrelated to their business or profession.",
+              "<strong>Order</strong> – a print job placed on the site and paid for by the Customer."
             ]
           }
         ]
       },
       {
-        "heading": "2. Intermediary model",
+        "heading": "3. Orders and prices",
         "blocks": [
-          {
-            "type": "p",
-            "text": "<strong>DobrePrinty acts as an intermediary between the Customer and partner print shops.</strong> We receive the order, check the file technically, select a print shop from our network of verified partners and hand the job over to production. The Customer enters into a service contract with DobrePrinty; all complaints are handled by us, not by the print shop."
-          }
-        ]
-      },
-      {
-        "heading": "3. Print shop verification",
-        "blocks": [
-          { "type": "p", "text": "Before being admitted to the network, every partner print shop goes through:" },
           {
             "type": "ul",
             "items": [
-              "a print quality audit (test prints in 12 formats)",
-              "an on-time delivery check (a test series of 30 orders)",
-              "a GDPR and data security audit",
-              "quarterly re-audits to keep partner status"
+              "You place an order in the product configurator. The contract is concluded once the payment is received.",
+              "Prices are in Polish złoty (PLN) and are final. The delivery cost is shown before payment.",
+              "Printing may be done by a subcontractor (partner print shop). The Seller is responsible to the Customer for fulfilling the order."
             ]
           }
         ]
       },
       {
-        "heading": "4. Orders",
+        "heading": "4. Files and content",
         "blocks": [
-          {
-            "type": "p",
-            "text": "You place an order in the product configurator by choosing the quantity and format. The price shown is the final amount payable (DobrePrinty does not add VAT – section 7); it does not include delivery costs, which are selected at the summary step."
-          }
-        ]
-      },
-      {
-        "heading": "5. Print files and responsibility for content",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "DobrePrinty does not create graphic designs. Our service covers only the technical preparation (adjustment) for printing of the file supplied by the Customer. We therefore expect files prepared in line with the specification."
-          },
           {
             "type": "ul",
             "items": [
-              "The Customer supplies the print files and bears sole responsibility for their content and correctness – including spelling, data, prices, layout, resolution, bleed and safe margins, and colour space (CMYK).",
-              "File verification on DobrePrinty's side is purely technical (e.g. format, resolution, bleed). We do not check or correct the substantive content, spelling or accuracy of data.",
-              "We print according to the file approved by the Customer. Approval of the design or preview by the Customer constitutes acceptance of its content – DobrePrinty is not liable for defects resulting from errors in the materials supplied by the Customer.",
-              "If a file does not meet the technical requirements, we may put the order on hold until a correct file is supplied; this extends the lead time."
+              "The Customer provides the print file and is responsible for its content: text, data, spelling and layout.",
+              "The Customer confirms they have the right to use the content (including copyright and trademarks) and that the content is lawful.",
+              "We check files only technically (format, resolution, bleed). We do not correct content.",
+              "We print according to the file approved by the Customer.",
+              "We may refuse to print unlawful content. In that case we refund the full payment."
             ]
           }
         ]
       },
       {
-        "heading": "6. Additional services (optional)",
+        "heading": "5. Additional services",
         "blocks": [
           {
             "type": "p",
-            "text": "When ordering, the Customer may add paid additional services. Choosing them is voluntary – declining them means sections 5 and 9 apply."
-          },
+            "text": "The Customer may order a paid test print (proof) or technical file preparation. Only a test print guarantees accurate colour reproduction."
+          }
+        ]
+      },
+      {
+        "heading": "6. Payments",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Payments are processed by Stripe (including BLIK, card, Przelewy24, Apple Pay, Google Pay). Stripe sends the proof of purchase to the email address given in the order."
+          }
+        ]
+      },
+      {
+        "heading": "7. Fulfilment and delivery",
+        "blocks": [
           {
             "type": "ul",
             "items": [
-              "<strong>Proof print</strong> – a physical test print for approving colours and content before the full run is produced. We guarantee faithful colour reproduction only on the basis of an ordered proof; without it the CMYK tolerance applies (section 9) and complaints concerning colour alone are excluded.",
-              "<strong>Technical preparation / correction of the print file</strong> – paid adjustment of the Customer's file to print requirements (bleed, format, resolution, colour conversion). The service does not include graphic design, editing or proofreading of content."
+              "The production time shown for a product is approximate. It starts when the payment is received and the file is approved. It does not include delivery time.",
+              "We ship by courier or to a parcel locker.",
+              "Check the parcel on receipt. Report visible damage to the carrier and take photos."
             ]
           }
         ]
       },
       {
-        "heading": "7. Payments and sales documents",
+        "heading": "8. Print tolerances",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The following differences are standard in printing and are not defects:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "colour differences between the screen and the print, and between print runs,",
+              "cutting shift of up to ±2 mm,",
+              "slight differences in paper shade and texture,",
+              "for large runs, a quantity difference of up to 5%; we charge for the quantity actually delivered."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "9. Complaints",
         "blocks": [
           {
             "type": "ul",
             "items": [
-              "BLIK, payment card, Przelewy24, Apple Pay, Google Pay",
-              "A non-VAT invoice (payment confirmation) generated automatically by the Stripe payment platform and sent to the Customer's e-mail address once the payment is recorded"
+              "Send complaints to <strong>{{email}}</strong>. Describe the problem and attach photos.",
+              "We reply within 14 days.",
+              "We resolve an accepted complaint by reprinting the defective part. If that is not possible, we refund proportionally via Stripe.",
+              "Complaints do not cover the tolerances in section 8 or errors in the Customer's file (section 4).",
+              "Consumers keep all rights granted by law. These terms do not limit them."
             ]
-          },
-          {
-            "type": "p",
-            "text": "DobrePrinty operates as unregistered business activity and is not a registered VAT payer. We do not issue VAT invoices. The only document confirming a purchase is the non-VAT invoice issued via the Stripe platform (the payment operator), which contains the seller's and Customer's details, the order description and the amount paid. Prices on the site do not include VAT – there is no tax to deduct. The invoice is sent to the e-mail address given in the order; if you need it resent, write to <strong>{{email}}</strong>."
           }
         ]
       },
       {
-        "heading": "8. Fulfilment and delivery",
+        "heading": "10. Withdrawal from the contract",
         "blocks": [
           {
             "type": "p",
-            "text": "The production time shown for a product is indicative and counted from the moment the payment is recorded and the print file is approved; it does not include delivery time. Shipping is by courier or to a parcel locker (DPD, InPost, DHL). The waybill is issued in the name of DobrePrinty, not the partner print shop."
-          },
-          {
-            "type": "p",
-            "text": "DobrePrinty is not liable for delays and events on the carrier's side (courier, parcel locker) or for circumstances beyond DobrePrinty's control, including force majeure (e.g. breakdowns, random events, actions of public authorities). In such cases the lead time is extended accordingly."
+            "text": "Prints are made to the Customer's individual order. Therefore Consumers have no right to withdraw from the contract (Art. 38(3) of the Polish Consumer Rights Act). An order can be cancelled free of charge until production starts – write to {{email}}."
           }
         ]
       },
       {
-        "heading": "9. Printing tolerances",
+        "heading": "11. Liability",
         "blocks": [
-          { "type": "p", "text": "The following differences fall within printing industry standards and do not constitute a defect:" },
-          {
-            "type": "ul",
-            "items": [
-              "colour differences between the on-screen preview (RGB) and the print (CMYK), and between successive runs and production batches;",
-              "cutting and positioning tolerance of up to ±2 mm;",
-              "slight differences in paper shade, weight and texture resulting from stock availability at the partner print shop;",
-              "for bulk runs – overs or unders of up to 5% of the ordered quantity (printing industry standard); we bill the quantity actually delivered."
-            ]
-          },
           {
             "type": "p",
-            "text": "Faithful colour reproduction is guaranteed only by an ordered proof print (section 6). Without a proof the CMYK tolerance applies and complaints concerning colour alone are excluded. We recommend supplying files in CMYK with a colour profile; colours outside the CMYK gamut may be reproduced with a deviation."
+            "text": "Towards Customers who are not Consumers: the Seller's liability is limited to the amount paid for the given order and does not cover lost profits; statutory warranty is excluded. This does not apply to damage caused intentionally."
           }
         ]
       },
       {
-        "heading": "10. Complaints",
+        "heading": "12. Personal data",
         "blocks": [
           {
             "type": "p",
-            "text": "Complaints are accepted within 14 days of receiving the order at <strong>{{email}}</strong>. We handle them within 7 business days. A complaint must be supported by documentation of the defect (e.g. photos) and – where possible – by making the affected run available."
-          },
-          {
-            "type": "p",
-            "text": "The primary remedy for an accepted complaint is a reprint (replacement) of the defective part. A refund is granted only when a reprint is impossible or ineffective. A complaint covers only the copies that are actually defective, not the whole run – reprints or refunds are settled proportionally. If the fault lies with the partner print shop, we cover the cost; that is our arrangement with the partner."
-          },
-          {
-            "type": "p",
-            "text": "<strong>Transport damage:</strong> the Customer inspects the parcel on receipt. A transport complaint must be supported by documentation of the damage (photos of the packaging and contents) and, for visible damage, a damage report drawn up with the courier."
-          },
-          {
-            "type": "p",
-            "text": "The following are not subject to complaint: differences within printing tolerances (section 9) and defects resulting from errors in files or materials supplied by the Customer (section 5)."
-          },
-          {
-            "type": "p",
-            "text": "<strong>Refunds:</strong> if a complaint ends in a refund of the price (in full or proportionally), we refund it via the Stripe platform to the payment method used for the order, within 14 days of accepting the complaint. The refund is confirmed by a document generated by Stripe. Because DobrePrinty operates as unregistered business activity and does not issue VAT invoices (section 7), we do not issue corrective invoices either."
-          },
-          {
-            "type": "p",
-            "text": "For Customers who are not consumers (businesses), DobrePrinty's liability under statutory warranty is excluded (Art. 558 § 1 of the Civil Code). The above exclusions and limitations do not affect consumer rights arising from mandatory provisions of law."
-          }
-        ]
-      },
-      {
-        "heading": "11. Limitation of liability",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "To the extent permitted by law, DobrePrinty's liability towards Customers who are not consumers is limited to the value of the order (the amount actually paid for the order in question) and does not cover lost profits or indirect losses (e.g. downtime, loss of contracts, third-party claims). The limitation does not apply to damage caused intentionally."
-          },
-          {
-            "type": "p",
-            "text": "The provisions of this section do not limit DobrePrinty's liability towards consumers to the extent arising from mandatory provisions of law."
-          }
-        ]
-      },
-      {
-        "heading": "12. Withdrawal from the contract",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "Prints are personalised products made to individual order, so under Art. 38 of the Consumer Rights Act they are not subject to the standard 14-day right of withdrawal. An order can be cancelled free of charge until the print data is uploaded; funds paid are refunded via the Stripe platform to the original payment method."
+            "text": "The Privacy Policy describes how we process personal data."
           }
         ]
       },
@@ -193,7 +154,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Matters not covered here are governed by Polish law. Disputes with Customers who are not consumers are settled by the court competent for DobrePrinty's registered office; for consumers, jurisdiction is determined in accordance with the applicable provisions. DobrePrinty may amend these terms for important reasons; orders placed before an amendment are governed by the terms in force on the day the order was placed."
+            "text": "Polish law applies. This does not deprive Consumers of the protection granted by the law of their country. The Seller may change these terms; orders placed earlier are governed by the terms in force on the day of the order."
           }
         ]
       }
@@ -202,14 +163,14 @@
   "privacy": {
     "title": "Privacy Policy",
     "intro": "We explain what personal data we collect, why we need it and what rights you have.",
-    "updatedAt": "11 September 2026",
+    "updatedAt": "1 October 2026",
     "sections": [
       {
         "heading": "1. Data controller",
         "blocks": [
           {
             "type": "p",
-            "text": "The controller of your personal data is <strong>{{name}}</strong>, operator of the dobreprinty.pl service. Contact: {{email}}."
+            "text": "The controller of your personal data is <strong>{{owner}}</strong>, operator of the dobreprinty.pl service. Contact: {{email}}."
           }
         ]
       },
@@ -249,7 +210,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "DobrePrinty acts as an intermediary. Your print files and delivery address are passed on to the selected partner print shop <strong>only to the extent necessary to fulfil the order</strong>. All our print shops have signed a GDPR-compliant data processing agreement and are audited once a quarter."
+            "text": "To fulfil an order, we share print files and the delivery address with the partner print shop and the carrier – only as far as necessary. Payments are processed by Stripe."
           }
         ]
       },
@@ -272,7 +233,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "We use essential cookies (login, cart) and statistical cookies (Plausible, with no personal identifiers). We do not use marketing cookies without your consent."
+            "text": "We use essential cookies (login, cart). Analytics cookies (PostHog) are enabled only with your consent."
           }
         ]
       },
@@ -281,7 +242,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "For privacy matters, write to <strong>privacy@dobreprinty.pl</strong>. We reply within 72 hours."
+            "text": "For privacy matters, write to <strong>{{email}}</strong>."
           }
         ]
       }
