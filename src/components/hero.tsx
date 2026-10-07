@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -74,6 +74,17 @@ export function Hero() {
                   {product.name}
                 </Link>
               ))}
+              <a
+                href="#produkty"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("produkty")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                {t("hero.browseProducts")}
+                <ArrowDown aria-hidden className="size-4 transition-transform group-hover:translate-y-0.5" />
+              </a>
             </div>
           </div>
 

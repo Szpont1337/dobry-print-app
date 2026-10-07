@@ -20,7 +20,8 @@
     "cardCta": "Configure",
     "cardBadge": "Print in 24 h",
     "mcpBadge": "New",
-    "mcpPill": "Order print through ChatGPT and Claude"
+    "mcpPill": "Order print through ChatGPT and Claude",
+    "browseProducts": "All products"
   },
   "faq": {
     "eyebrow": "Frequently asked",
