@@ -36,11 +36,11 @@ export const productContent: Record<string, ProductContent> = {
   ulotki: {
     keyword: "ulotki",
     heroLead:
-      "Druk ulotek online to najszybszy sposób, w jaki firma może dotrzeć do klienta w okolicy. Drukujemy ulotki reklamowe od jednej sztuki, w formatach od A7 aż po A3, dwustronnie 4/4, z dostawą w 24–48 h. Cena finalna widoczna od razu w konfiguratorze. Bez gwiazdek, bez dopłat za spady, bez czekania na ofertę handlowca.",
+      "Druk ulotek online to najszybszy sposób, w jaki firma może dotrzeć do klienta w okolicy. Drukujemy ulotki reklamowe od 50 sztuk, w formatach od A7 aż po A3, dwustronnie 4/4, z dostawą w 24–48 h. Cena finalna widoczna od razu w konfiguratorze. Bez gwiazdek, bez dopłat za spady, bez czekania na ofertę handlowca.",
     whyBlocks: [
       {
-        tytul: "Tani druk ulotek od 1 sztuki",
-        opis: "Brak minimalnego nakładu i progowych dopłat. Drukujemy zarówno 50 ulotek dla małej kawiarni, jak i 100 000 ulotek na kampanię ogólnopolską. Cena jednostkowa spada wraz z nakładem, ale i przy mikroseriach mamy konkurencyjne stawki.",
+        tytul: "Tani druk ulotek od 50 sztuk",
+        opis: "Minimum 50 sztuk we wszystkich formatach, bez progowych dopłat. Drukujemy zarówno 50 ulotek dla małej kawiarni, jak i 100 000 ulotek na kampanię ogólnopolską. Cena jednostkowa spada wraz z nakładem, ale i przy mikroseriach mamy konkurencyjne stawki.",
       },
       {
         tytul: "6 formatów od A7 do A3",
@@ -78,7 +78,7 @@ export const productContent: Record<string, ProductContent> = {
         opcje: "folia mat, folia błysk, lakier UV punktowy",
       },
       { parametr: "Czas realizacji", wartosc: "24–72 h" },
-      { parametr: "Nakład", wartosc: "od 1 sztuki" },
+      { parametr: "Nakład", wartosc: "od 50 sztuk" },
     ],
     filePrepIntro:
       "Plik do druku ulotek przygotowujesz raz, a działa we wszystkich naszych formatach. Poniżej krok po kroku, jak zrobić to dobrze — niezależnie od tego, czy używasz Adobe Illustrator, InDesign, Canva czy Affinity Publisher.",
@@ -116,13 +116,13 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Jaka jest minimalna ilość ulotek, którą mogę zamówić?",
         answer:
-          "Minimum to 1 sztuka. Drukujemy ulotki od pojedynczych egzemplarzy (np. na próbę przed zamówieniem dużego nakładu) aż po 100 000+ sztuk na kampanie ogólnopolskie. Cena jednostkowa spada wraz z nakładem, ale i przy mikroseriach utrzymujemy konkurencyjne stawki dzięki cyfrowej technologii druku.",
+          "Minimum to 50 sztuk we wszystkich formatach. Drukujemy od małych serii próbnych (np. przed zamówieniem dużego nakładu) aż po 100 000+ sztuk na kampanie ogólnopolskie. Cena jednostkowa spada wraz z nakładem, ale i przy mikroseriach utrzymujemy konkurencyjne stawki dzięki cyfrowej technologii druku.",
       },
       {
         question:
           "Czy mogę zobaczyć ulotki przed zatwierdzeniem dużego nakładu?",
         answer:
-          "Tak. Wystarczy zamówić najpierw 10–50 sztuk próbnych w identycznej specyfikacji, ocenić wydruk i dopiero potem zatwierdzić docelowy nakład. Cena próbki to zwykle 8–25 zł, dostawa kurierem 1–2 dni robocze. Ten sam plik PDF używamy potem do nakładu produkcyjnego, więc kolor i ułożenie są identyczne.",
+          "Tak. Wystarczy zamówić najpierw 50 sztuk próbnych w identycznej specyfikacji, ocenić wydruk i dopiero potem zatwierdzić docelowy nakład. Cena próbki to zwykle 8–25 zł, dostawa kurierem 1–2 dni robocze. Ten sam plik PDF używamy potem do nakładu produkcyjnego, więc kolor i ułożenie są identyczne.",
       },
       {
         question: "Jaki papier wybrać do ulotek reklamowych?",

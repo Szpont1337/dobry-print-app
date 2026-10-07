@@ -82,7 +82,10 @@ function readStored(): CartItem[] {
     if (!raw) return [];
     const parsed = JSON.parse(raw) as { items?: unknown };
     if (!Array.isArray(parsed?.items)) return [];
-    return parsed.items.filter(isCartItem);
+    // Minimum mogło wzrosnąć od dodania pozycji — podnosimy nakład do progu.
+    return parsed.items
+      .filter(isCartItem)
+      .map((item) => ({ ...item, quantity: clampQuantity(item.quantity, minQuantityFor(item.slug)) }));
   } catch {
     // uszkodzony koszyk ignorujemy — startujemy z pustego
     return [];

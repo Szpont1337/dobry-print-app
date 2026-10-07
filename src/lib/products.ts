@@ -124,7 +124,7 @@ export const products: Product[] = [
     print3d: { shape: "folded", aspect: 0.707 },
     defaultFormatId: "a5",
     defaultQuantity: 500,
-    minQuantity: 40,
+    minQuantity: 50,
     highlights: [
       { value: "3", label: "formaty finalne" },
       { value: "6", label: "stron treści" },

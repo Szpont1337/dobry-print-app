@@ -282,7 +282,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Gotowy zaprojektować skuteczną ulotkę?",
-      body: "Zamów druk ulotek w DobrePrinty — od 1 sztuki, dostawa w 24-48 h. Ulotka po projekcie wymaga już tylko pliku PDF i nakładu.",
+      body: "Zamów druk ulotek w DobrePrinty — od 50 sztuk, dostawa w 24-48 h. Ulotka po projekcie wymaga już tylko pliku PDF i nakładu.",
       href: "/produkty/ulotki",
       label: "Zamów druk ulotek →",
     },
