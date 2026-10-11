@@ -21,6 +21,12 @@ export default function SchemaMarkup() {
         "@type": "WebSite",
         name: "DobrePrinty",
         url: "https://www.dobreprinty.pl",
+        // Agencja, która zaprojektowała i rozwija stronę (link też w stopce).
+        creator: {
+          "@type": "Organization",
+          name: "BREYDAQS",
+          url: "https://www.breydaqs.com/",
+        },
       },
     ],
   };
