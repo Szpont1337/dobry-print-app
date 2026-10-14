@@ -164,7 +164,7 @@ function CartFooter({ totals }: { totals: ReturnType<typeof useCart>["totals"] }
 
 function CartLine({ item }: { item: ResolvedCartItem }) {
   const { t } = useTranslation("order");
-  const { name, formatLabel, sideLabel } = useProductI18n();
+  const { name, formatLabel, sideLabel, addonsLabel } = useProductI18n();
 
   return (
     <article className="flex flex-col gap-3 rounded-lg border border-border p-3">
@@ -178,7 +178,11 @@ function CartLine({ item }: { item: ResolvedCartItem }) {
             {name(item.product)}
           </Link>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {[formatLabel(item.product, item.format), sideLabel(item.product, item.sides)]
+            {[
+              formatLabel(item.product, item.format),
+              sideLabel(item.product, item.sides),
+              addonsLabel(item.product, item.addonIds),
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>

@@ -282,6 +282,7 @@ export function CheckoutForm({
           formatId: item.format.id,
           quantity: item.quantity,
           sides: item.sides,
+          addons: item.addonIds && item.addonIds.length > 0 ? item.addonIds : undefined,
           fileKeys: item.files.length > 0 ? item.files.map((f) => f.fileKey) : undefined,
           fileUrl: optional(item.fileUrl ?? ""),
           notes: optional(item.notes ?? ""),

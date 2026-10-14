@@ -45,7 +45,7 @@ function CartLine({
   onUploadingChange: (itemId: string, uploading: boolean) => void;
 }) {
   const { t } = useTranslation("order");
-  const { name, formatLabel, sideLabel } = useProductI18n();
+  const { name, formatLabel, sideLabel, addonsLabel } = useProductI18n();
   const { id } = item;
 
   // Stabilne callbacki: inline arrow tworzyłby nową referencję co render, a
@@ -73,7 +73,11 @@ function CartLine({
             {name(item.product)}
           </Link>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {[formatLabel(item.product, item.format), sideLabel(item.product, item.sides)]
+            {[
+              formatLabel(item.product, item.format),
+              sideLabel(item.product, item.sides),
+              addonsLabel(item.product, item.addonIds),
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>

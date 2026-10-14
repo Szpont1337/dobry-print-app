@@ -1,8 +1,11 @@
 import {
+  addonSurchargeFor,
   backPrintSurcharge,
+  type PriceFloorTier,
   type PrintSide,
   type Product,
   type ProductFormat,
+  SMALL_RUN_LIMIT,
   unitPriceForQuantity,
 } from "@/lib/products";
 import { shippingFeeFor, withShipping } from "@/lib/shipping";
@@ -34,15 +37,91 @@ export function clampQuantity(n: number, minQuantity?: number): number {
   return Math.max(min, Math.min(MAX_QTY, Math.round(n)));
 }
 
+const SCALE_TIERS: { minQty: number; scale: number }[] = [
+  { minQty: 1, scale: 3 },
+  { minQty: 25, scale: 2.2 },
+  { minQty: 250, scale: 1.4 },
+  { minQty: 1000, scale: 1 },
+];
+
+function basePriceFor(quantity: number, unitPrice: number, noFees: boolean): number {
+  if (noFees) return quantity * unitPrice;
+  let scale = SCALE_TIERS[0].scale;
+  for (const t of SCALE_TIERS) {
+    if (quantity >= t.minQty) scale = t.scale;
+  }
+  return SETUP_FEE + quantity * unitPrice * scale;
+}
+
+/** Nakłady, przy których cena za sztukę spada skokowo (progi skali lub `priceTiers`). */
+function priceBreakpoints(product: Product): number[] {
+  if (product.priceTiers && product.priceTiers.length > 0) {
+    return product.priceTiers.map((t) => t.minQty);
+  }
+  if (product.noFees) return [];
+  return SCALE_TIERS.map((t) => t.minQty);
+}
+
 /**
- * Cena produktu (bez wysyłki) dla danego nakładu i ceny jednostkowej.
- * `surcharge` — stała dopłata (zł, przed narzutem), np. nadruk na plecach;
- * dolicza się PRZED mnożnikiem, żeby wszystko było nim objęte.
+ * Kwota bazowa za sam druk (bez dopłat i narzutu), monotoniczna względem
+ * nakładu: tuż pod progiem większy nakład wychodziłby taniej, więc bierzemy
+ * minimum z ceny przy każdym wyższym progu. Z dopłatą za mały nakład.
  */
-export function priceFor(quantity: number, unitPrice: number, noFees = false, surcharge = 0) {
-  const scale = quantity < 25 ? 3 : quantity < 250 ? 2.2 : quantity < 1000 ? 1.4 : 1;
-  const base = noFees ? quantity * unitPrice : SETUP_FEE + quantity * unitPrice * scale;
-  return (base + surcharge) * PRICE_FACTOR;
+function printBaseFor(product: Product, format: ProductFormat, quantity: number): number {
+  const noFees = product.noFees ?? false;
+  const smallRun = 1 + (product.smallRunSurcharge ?? 0);
+  const at = (q: number) =>
+    basePriceFor(q, unitPriceForQuantity(product, format, q), noFees) *
+    (q < SMALL_RUN_LIMIT ? smallRun : 1);
+  let base = at(quantity);
+  for (const minQty of priceBreakpoints(product)) {
+    if (minQty > quantity) base = Math.min(base, at(minQty));
+  }
+  return base;
+}
+
+/**
+ * Cena produktu (bez wysyłki). Ta sama formuła co `productPriceFor` w drukalo,
+ * którą Convex liczy kwotę do zapłaty: druk + nadruk na plecach (z minimalną
+ * ceną formatu) → dodatki (stała kwota/szt, poza skalą nakładu) → narzut.
+ */
+export function productPriceFor(
+  product: Product,
+  format: ProductFormat,
+  quantity: number,
+  opts: { sides?: PrintSide; addonIds?: readonly string[] } = {},
+): number {
+  // Nadruk na plecach to część druku - minimalna cena obejmuje go razem z nim.
+  const print =
+    printBaseFor(product, format, quantity) + backPrintSurcharge(product, opts.sides, quantity);
+  const addons = Math.max(0, quantity) * addonSurchargeFor(product, opts.addonIds);
+  const printFinal = Math.max(
+    print * PRICE_FACTOR,
+    priceFloorFor(format, quantity, opts.sides),
+  );
+  return printFinal + addons * PRICE_FACTOR;
+}
+
+/**
+ * Minimalna cena druku (z narzutem) dla nakładu - 0, gdy format nie ma progów.
+ * Nakład q pokrywa najtańszy próg z `upTo >= q`; po przekroczeniu progu jego
+ * cena przy `upTo` zostaje granicą, więc cena nie spada przy większym nakładzie.
+ * Progi `sides: "single"` tylko przy jawnie jednostronnym druku - papierowe
+ * produkty nie wysyłają stronności, a Convex przyjmuje wtedy dwustronny.
+ */
+function priceFloorFor(format: ProductFormat, quantity: number, sides?: PrintSide): number {
+  const tiers = (format.priceFloor ?? []).filter((t) => !t.sides || t.sides === sides);
+  const at = (t: PriceFloorTier, q: number) => t.fixed + (t.perUnit ?? 0) * q;
+  let cover = Infinity;
+  let passed = 0;
+  for (const t of tiers) {
+    if (t.upTo == null || quantity <= t.upTo) {
+      cover = Math.min(cover, at(t, quantity));
+    } else {
+      passed = Math.max(passed, at(t, t.upTo));
+    }
+  }
+  return Math.max(passed, cover === Infinity ? 0 : cover);
 }
 
 export type OrderTotals = {
@@ -60,14 +139,9 @@ export function computeTotals(
   format: ProductFormat,
   quantity: number,
   sides?: PrintSide,
+  addonIds?: readonly string[],
 ): OrderTotals {
-  const unitPrice = unitPriceForQuantity(product, format, quantity);
-  const productTotal = priceFor(
-    quantity,
-    unitPrice,
-    product.noFees,
-    backPrintSurcharge(product, sides, quantity),
-  );
+  const productTotal = productPriceFor(product, format, quantity, { sides, addonIds });
   const totals = withShipping(productTotal);
   return {
     productTotal,
@@ -82,6 +156,7 @@ export type CartLine = {
   format: ProductFormat;
   quantity: number;
   sides?: PrintSide;
+  addonIds?: string[];
 };
 
 export type CartTotals = OrderTotals & {
@@ -99,13 +174,10 @@ export function computeCartTotals(lines: CartLine[]): CartTotals {
   let productTotal = 0;
 
   for (const line of lines) {
-    const unitPrice = unitPriceForQuantity(line.product, line.format, line.quantity);
-    const price = priceFor(
-      line.quantity,
-      unitPrice,
-      line.product.noFees,
-      backPrintSurcharge(line.product, line.sides, line.quantity),
-    );
+    const price = productPriceFor(line.product, line.format, line.quantity, {
+      sides: line.sides,
+      addonIds: line.addonIds,
+    });
     productTotal += price;
     // Grosze zaokrąglamy per pozycja — dokładnie tak, jak serwer zapisuje
     // kwotę każdego zamówienia (convex/orderPricing splitCartTotals).

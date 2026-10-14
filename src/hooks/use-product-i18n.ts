@@ -3,7 +3,14 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { DEFAULT_SIDE, type PrintSide, type Product, type ProductFormat } from "@/lib/products";
+import {
+  DEFAULT_SIDE,
+  type PrintSide,
+  type Product,
+  type ProductAddon,
+  type ProductFormat,
+  selectedAddons,
+} from "@/lib/products";
 
 /**
  * Tłumaczenia danych produktowych z `lib/products.ts` (nazwy, taglines,
@@ -31,6 +38,15 @@ export function useProductI18n() {
         if (!p.backPrint) return null;
         const side = sides ?? DEFAULT_SIDE;
         return t(`sides.${p.slug}.${side}`, { defaultValue: p.backPrint.labels[side] });
+      },
+      addonLabel: (a: ProductAddon) => t(`addons.${a.id}.label`, { defaultValue: a.label }),
+      addonNote: (a: ProductAddon) =>
+        a.note ? t(`addons.${a.id}.note`, { defaultValue: a.note }) : undefined,
+      /** Wybrane dodatki pozycji jako jeden tekst, np. „Łamanie w C"; null, gdy brak. */
+      addonsLabel: (p: Product, ids: readonly string[] | undefined): string | null => {
+        const list = selectedAddons(p, ids);
+        if (list.length === 0) return null;
+        return list.map((a) => t(`addons.${a.id}.label`, { defaultValue: a.label })).join(", ");
       },
     }),
     [t],

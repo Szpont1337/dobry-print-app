@@ -6,6 +6,21 @@ export type ProductFormat = {
   label: string;
   /** zł za sztukę */
   unitPrice: number;
+  /** Dolna granica ceny druku - patrz `priceFloorFor` w pricing.ts. */
+  priceFloor?: PriceFloorTier[];
+};
+
+/**
+ * Próg minimalnej ceny (zł, już z narzutem): `fixed + perUnit × nakład`,
+ * ważny do nakładu `upTo` (brak = bez limitu). `sides: "single"` - próg tylko
+ * dla druku jednostronnego. Te same progi co w katalogu drukalo, z którego
+ * Convex liczy kwotę do zapłaty - zmieniaj je w obu repo naraz.
+ */
+export type PriceFloorTier = {
+  upTo?: number;
+  fixed: number;
+  perUnit?: number;
+  sides?: "single";
 };
 
 /**
@@ -78,7 +93,65 @@ export type Product = {
    * wybrać `single` (przód, w cenie) albo `double` (przód + plecy, +`fee`/szt).
    */
   backPrint?: BackPrint;
+  /**
+   * Opcjonalne dodatki (checkboxy w konfiguratorze), np. łamanie ulotek. Każdy
+   * to STAŁA dopłata za sztukę, doliczana po skali nakładu (patrz
+   * `productPriceFor` w pricing.ts). Wybrane id idą do zamówienia (`addons`).
+   */
+  addons?: ProductAddon[];
+  /**
+   * Ułamkowa dopłata do druku przy nakładzie poniżej {@link SMALL_RUN_LIMIT}
+   * (np. 0.1 = +10%). Od progu cena bez zmian.
+   */
+  smallRunSurcharge?: number;
 };
+
+/** Dopłata (checkbox) do produktu - np. łamanie ulotek. */
+export type ProductAddon = {
+  id: string;
+  label: string;
+  /** krótki opis pod etykietą w konfiguratorze */
+  note?: string;
+  /** dopłata za sztukę (przed narzutem) */
+  surcharge: number;
+  /**
+   * Dodatki z tą samą grupą wykluczają się (łamanie w C / w Z) - z grupy
+   * liczy się tylko pierwszy wybrany w kolejności katalogu.
+   */
+  group?: string;
+};
+
+const TSHIRT_PRICE_FLOOR: PriceFloorTier[] = [{ fixed: 21.9, perUnit: 79 }];
+const A6_FLYER_PRICE_FLOOR: PriceFloorTier[] = [
+  { upTo: 100, fixed: 63.9 },
+  { upTo: 250, fixed: 75.9, sides: "single" },
+];
+
+/** Nakład, od którego nie działa {@link Product.smallRunSurcharge}. */
+export const SMALL_RUN_LIMIT = 1000;
+
+/**
+ * Łamanie ulotek (falcowanie) - w C albo w Z. Klient płaci +200 zł za 1000
+ * szt., czyli 0,20 zł/szt. po narzucie (1.23 = PRICE_FACTOR z pricing.ts).
+ * Ten sam katalog co w drukalo - Convex wycenia zamówienie po tamtej stronie.
+ */
+const FOLD_SURCHARGE = 0.2 / 1.23;
+const FOLD_ADDONS: ProductAddon[] = [
+  {
+    id: "lamanie-c",
+    label: "Łamanie w C",
+    note: "dwa bigi, oba skrzydła zakładane do środka",
+    surcharge: FOLD_SURCHARGE,
+    group: "lamanie",
+  },
+  {
+    id: "lamanie-z",
+    label: "Łamanie w Z",
+    note: "harmonijka - skrzydła składane naprzemiennie",
+    surcharge: FOLD_SURCHARGE,
+    group: "lamanie",
+  },
+];
 
 export const products: Product[] = [
   {
@@ -93,6 +166,8 @@ export const products: Product[] = [
       "Domyślnie drukujemy 4/4 dwustronnie na papierze 135 g kreda mat, w orientacji pionowej. Wybierasz tylko nakład i format, resztą zajmujemy się my.",
     variant: "stack",
     print3d: { shape: "sheet", aspect: 0.707 },
+    // Małe nakłady droższe w zakupie - +10% poniżej 1000 szt. (jak drukalo).
+    smallRunSurcharge: 0.1,
     defaultFormatId: "dl",
     defaultQuantity: 1000,
     minQuantity: 50,
@@ -102,13 +177,25 @@ export const products: Product[] = [
       { value: "3 dni", label: "do wysyłki" },
     ],
     formats: [
-      { id: "a7", label: "A7 · 74 × 105 mm", unitPrice: 0.06 },
-      { id: "dl", label: "DL · 100 × 210 mm", unitPrice: 0.12 },
-      { id: "a6", label: "A6 · 105 × 148 mm", unitPrice: 0.15 },
-      { id: "a5", label: "A5 · 148 × 210 mm", unitPrice: 0.22 },
+      // A7 kosztuje tyle samo co A6 - ta sama cena i te same progi.
+      { id: "a7", label: "A7 · 74 × 105 mm", unitPrice: 0.15, priceFloor: A6_FLYER_PRICE_FLOOR },
+      { id: "dl", label: "DL · 100 × 210 mm", unitPrice: 0.144 },
+      { id: "a6", label: "A6 · 105 × 148 mm", unitPrice: 0.15, priceFloor: A6_FLYER_PRICE_FLOOR },
+      {
+        id: "a5",
+        label: "A5 · 148 × 210 mm",
+        unitPrice: 0.22,
+        priceFloor: [
+          { upTo: 50, fixed: 71.9, sides: "single" },
+          { upTo: 100, fixed: 75.98, sides: "single" },
+          { upTo: 100, fixed: 95.98 },
+          { upTo: 500, fixed: 159.96, sides: "single" },
+        ],
+      },
       { id: "a4", label: "A4 · 210 × 297 mm", unitPrice: 0.4 },
       { id: "a3", label: "A3 · 297 × 420 mm", unitPrice: 0.75 },
     ],
+    addons: FOLD_ADDONS,
   },
   {
     slug: "skladane-ulotki",
@@ -175,14 +262,15 @@ export const products: Product[] = [
     print3d: { shape: "sheet", aspect: 0.707 },
     defaultFormatId: "a4",
     defaultQuantity: 500,
+    minQuantity: 500,
     highlights: [
       { value: "2", label: "formaty A5 / A4" },
       { value: "90 g", label: "offset biały" },
       { value: "2 dni", label: "do wysyłki" },
     ],
     formats: [
-      { id: "a5", label: "A5 · 148 × 210 mm", unitPrice: 0.1 },
-      { id: "a4", label: "A4 · 210 × 297 mm", unitPrice: 0.18 },
+      { id: "a5", label: "A5 · 148 × 210 mm", unitPrice: 0.1, priceFloor: [{ fixed: 199.98 }] },
+      { id: "a4", label: "A4 · 210 × 297 mm", unitPrice: 0.18, priceFloor: [{ fixed: 199.98 }] },
     ],
   },
   {
@@ -256,11 +344,31 @@ export const products: Product[] = [
       { value: "3 dni", label: "do wysyłki" },
     ],
     formats: [
-      { id: "a3", label: "A3 · 297 × 420 mm", unitPrice: 1.8 },
-      { id: "a2", label: "A2 · 420 × 594 mm", unitPrice: 3.4 },
-      { id: "b2", label: "B2 · 500 × 707 mm", unitPrice: 4.4 },
+      {
+        id: "a3",
+        label: "A3 · 297 × 420 mm",
+        unitPrice: 1.8,
+        priceFloor: [{ fixed: 21.9, perUnit: 10 }],
+      },
+      {
+        id: "a2",
+        label: "A2 · 420 × 594 mm",
+        unitPrice: 3.4,
+        priceFloor: [{ fixed: 21.9, perUnit: 11 }],
+      },
+      {
+        id: "b2",
+        label: "B2 · 500 × 707 mm",
+        unitPrice: 4.4,
+        priceFloor: [{ fixed: 21.9, perUnit: 15 }],
+      },
       { id: "a1", label: "A1 · 594 × 841 mm", unitPrice: 5.6 },
-      { id: "a0", label: "A0 · 841 × 1189 mm", unitPrice: 9.2 },
+      {
+        id: "a0",
+        label: "A0 · 841 × 1189 mm",
+        unitPrice: 9.2,
+        priceFloor: [{ fixed: 24.98, perUnit: 38.4 }],
+      },
       { id: "b1", label: "B1 · 707 × 1000 mm", unitPrice: 7.4 },
     ],
   },
@@ -380,11 +488,11 @@ export const products: Product[] = [
       { value: "3 dni", label: "do wysyłki" },
     ],
     formats: [
-      { id: "s", label: "S", unitPrice: 39 },
-      { id: "m", label: "M", unitPrice: 39 },
-      { id: "l", label: "L", unitPrice: 39 },
-      { id: "xl", label: "XL", unitPrice: 42 },
-      { id: "xxl", label: "XXL", unitPrice: 45 },
+      { id: "s", label: "S", unitPrice: 39, priceFloor: TSHIRT_PRICE_FLOOR },
+      { id: "m", label: "M", unitPrice: 39, priceFloor: TSHIRT_PRICE_FLOOR },
+      { id: "l", label: "L", unitPrice: 39, priceFloor: TSHIRT_PRICE_FLOOR },
+      { id: "xl", label: "XL", unitPrice: 42, priceFloor: TSHIRT_PRICE_FLOOR },
+      { id: "xxl", label: "XXL", unitPrice: 45, priceFloor: TSHIRT_PRICE_FLOOR },
     ],
   },
   {
@@ -542,4 +650,40 @@ export function getAllProductSlugs(): string[] {
 
 export function getAllProductSlugsIncludingHidden(): string[] {
   return products.map((p) => p.slug);
+}
+
+/**
+ * Wybrane dodatki produktu (obiekty katalogu) dla listy id - w kolejności
+ * katalogu, bez duplikatów, max jeden z grupy. Nieznane id po prostu znikają,
+ * więc stary koszyk nie wysypie zamówienia. Tak samo liczy Convex.
+ */
+export function selectedAddons(
+  product: Product,
+  ids: readonly string[] | undefined,
+): ProductAddon[] {
+  if (!ids || ids.length === 0 || !product.addons) return [];
+  const groups = new Set<string>();
+  return product.addons.filter((a) => {
+    if (!ids.includes(a.id)) return false;
+    if (!a.group) return true;
+    if (groups.has(a.group)) return false;
+    groups.add(a.group);
+    return true;
+  });
+}
+
+/** Jak {@link selectedAddons}, ale same id - do koszyka i zamówienia. */
+export function resolveAddons(
+  product: Product,
+  ids: readonly string[] | undefined,
+): string[] {
+  return selectedAddons(product, ids).map((a) => a.id);
+}
+
+/** Suma dopłat za sztukę (przed narzutem) za wybrane dodatki. */
+export function addonSurchargeFor(
+  product: Product,
+  ids: readonly string[] | undefined,
+): number {
+  return selectedAddons(product, ids).reduce((sum, a) => sum + a.surcharge, 0);
 }

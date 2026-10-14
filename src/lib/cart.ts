@@ -16,6 +16,7 @@ import {
   type PrintSide,
   type Product,
   type ProductFormat,
+  resolveAddons,
 } from "@/lib/products";
 
 /** Wersjonowany klucz — bumpnij sufiks, jeśli kształt koszyka się zmieni. */
@@ -32,6 +33,8 @@ export type CartItem = {
   quantity: number;
   /** nadruk przód / przód + plecy — tylko produkty z `backPrint` */
   sides?: PrintSide;
+  /** id wybranych dodatków (`Product.addons`), np. łamanie w C */
+  addonIds?: string[];
   /** pliki wgrane do chmury przy tej pozycji */
   files: UploadedFileInfo[];
   /** alternatywa dla plików — link do projektu */
@@ -191,6 +194,7 @@ export function upsertCartItem(item: Omit<CartItem, "id">): string | null {
       i.slug === item.slug &&
       i.formatId === item.formatId &&
       i.sides === item.sides &&
+      (i.addonIds ?? []).join(",") === (item.addonIds ?? []).join(",") &&
       i.quantity === clampQuantity(item.quantity, minQuantityFor(item.slug)),
   );
   if (!existing) return addCartItem(item);
@@ -221,6 +225,7 @@ export function resolveCart(items: CartItem[]): {
       product,
       format,
       sides: product.backPrint ? (item.sides ?? DEFAULT_SIDE) : undefined,
+      addonIds: product.addons ? resolveAddons(product, item.addonIds) : undefined,
     });
   }
 
@@ -230,6 +235,7 @@ export function resolveCart(items: CartItem[]): {
       format: r.format,
       quantity: r.quantity,
       sides: r.sides,
+      addonIds: r.addonIds,
     })),
   );
 

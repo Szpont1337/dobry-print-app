@@ -6,13 +6,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { Trans } from "react-i18next";
 
-import {
-  backPrintSurcharge,
-  DEFAULT_SIDE,
-  type PrintSide,
-  type Product,
-  unitPriceForQuantity,
-} from "@/lib/products";
+import { DEFAULT_SIDE, type PrintSide, type Product, type ProductAddon } from "@/lib/products";
 import { Badge, Button, Card, PriceTag } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { FilePrepBadge } from "@/components/file-prep-badge";
@@ -22,7 +16,7 @@ import { openCartSheet } from "@/hooks/use-cart-sheet";
 import { useProductI18n } from "@/hooks/use-product-i18n";
 import { MAX_CART_ITEMS, addCartItem } from "@/lib/cart";
 import { safeCapture } from "@/lib/posthog-client";
-import { MAX_QTY, MIN_QTY, PRICE_FACTOR, clampQuantity, priceFor } from "@/lib/pricing";
+import { MAX_QTY, MIN_QTY, PRICE_FACTOR, clampQuantity, productPriceFor } from "@/lib/pricing";
 import { FREE_SHIPPING_THRESHOLD, shippingFeeFor, withShipping } from "@/lib/shipping";
 
 const formatPLN = new Intl.NumberFormat("pl-PL", {
@@ -36,7 +30,8 @@ const formatQty = new Intl.NumberFormat("pl-PL");
 const QUICK_AMOUNTS = [1, 25, 100, 500, 1000, 5000];
 
 export function ProductConfigurator({ product }: { product: Product }) {
-  const { t, formatNoun, formatLabel, sideLabel } = useProductI18n();
+  const { t, formatNoun, formatLabel, sideLabel, addonLabel, addonNote, addonsLabel } =
+    useProductI18n();
   // Minimum nakładu wynika z technologii druku i jest walidowane server-side —
   // konfigurator nie może pozwolić zejść niżej.
   const minQty = Math.max(MIN_QTY, product.minQuantity ?? MIN_QTY);
@@ -47,21 +42,28 @@ export function ProductConfigurator({ product }: { product: Product }) {
   // i zamówieniu zostaje puste dla pozostałych.
   const backPrint = product.backPrint;
   const sides = backPrint ? side : undefined;
+  // Dodatki (łamanie ulotek) - checkboxy; z jednej grupy tylko jeden naraz.
+  const [addonIds, setAddonIds] = useState<string[]>([]);
+  const toggleAddon = (a: ProductAddon) =>
+    setAddonIds((cur) =>
+      cur.includes(a.id)
+        ? cur.filter((x) => x !== a.id)
+        : [
+            ...cur.filter(
+              (x) => !a.group || product.addons?.find((o) => o.id === x)?.group !== a.group,
+            ),
+            a.id,
+          ],
+    );
 
   const format = useMemo(
     () => product.formats.find((f) => f.id === formatId) ?? product.formats[0],
     [formatId, product.formats],
   );
 
-  const unitPrice = useMemo(
-    () => unitPriceForQuantity(product, format, quantity),
-    [product, format, quantity],
-  );
-
   const productTotal = useMemo(
-    () =>
-      priceFor(quantity, unitPrice, product.noFees, backPrintSurcharge(product, sides, quantity)),
-    [quantity, unitPrice, product, sides],
+    () => productPriceFor(product, format, quantity, { sides, addonIds }),
+    [product, format, quantity, sides, addonIds],
   );
   const shippingFee = shippingFeeFor(productTotal);
   const totals = withShipping(productTotal);
@@ -88,7 +90,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
   // że w koszyku leży nakład/format, którego tam nie ma.
   const [addedKey, setAddedKey] = useState<string | null>(null);
   const [cartError, setCartError] = useState<string | null>(null);
-  const configKey = `${format.id}:${quantity}:${side}`;
+  const configKey = `${format.id}:${quantity}:${side}:${addonIds.join(",")}`;
   const added = addedKey === configKey;
 
   const addToCart = useCallback(() => {
@@ -97,6 +99,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       formatId: format.id,
       quantity,
       sides,
+      ...(addonIds.length > 0 ? { addonIds } : {}),
       files: uploadedFiles,
     });
     if (!id) {
@@ -109,6 +112,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
       product_name: product.name,
       format: format.label,
       ...(sides ? { sides } : {}),
+      ...(addonIds.length > 0 ? { addons: addonIds } : {}),
       quantity,
       gross_total: totals.total,
       has_files: uploadedFiles.length > 0,
@@ -122,6 +126,7 @@ export function ProductConfigurator({ product }: { product: Product }) {
     format.label,
     quantity,
     sides,
+    addonIds,
     uploadedFiles,
     totals.total,
     t,
@@ -301,6 +306,56 @@ export function ProductConfigurator({ product }: { product: Product }) {
             </div>
           )}
 
+          {product.addons && product.addons.length > 0 && (
+            <div>
+              <span className="block text-sm font-semibold text-foreground">
+                {t("configurator.finishing")}
+              </span>
+              <div className="mt-3 grid border-l border-t border-border">
+                {product.addons.map((a) => {
+                  const checked = addonIds.includes(a.id);
+                  const note = addonNote(a);
+                  return (
+                    <button
+                      key={a.id}
+                      type="button"
+                      role="checkbox"
+                      aria-checked={checked}
+                      onClick={() => toggleAddon(a)}
+                      className={cn(
+                        "flex items-center justify-between gap-3 border-r border-b border-border px-4 py-3 text-left transition-colors",
+                        checked ? "bg-primary/5" : "hover:bg-secondary/50",
+                      )}
+                    >
+                      <span>
+                        <span className="block text-sm font-semibold text-foreground">
+                          {addonLabel(a)}
+                          <span className="ml-2 text-xs font-medium text-muted-foreground">
+                            {t("configurator.surcharge", {
+                              price: formatPLN.format(a.surcharge * PRICE_FACTOR),
+                            })}
+                          </span>
+                        </span>
+                        {note && (
+                          <span className="mt-0.5 block text-xs text-muted-foreground">{note}</span>
+                        )}
+                      </span>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "grid size-5 shrink-0 place-items-center rounded-lg border",
+                          checked ? "border-primary bg-primary" : "border-input bg-card",
+                        )}
+                      >
+                        {checked && <Check className="size-3.5 text-primary-foreground" />}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary/70">
               {t("configurator.step", { n: "03" })}
@@ -386,6 +441,16 @@ export function ProductConfigurator({ product }: { product: Product }) {
                   {t("configurator.backPrint")}
                 </dt>
                 <dd className="font-semibold text-foreground">{sideLabel(product, side)}</dd>
+              </div>
+            )}
+            {addonIds.length > 0 && (
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                  {t("configurator.finishing")}
+                </dt>
+                <dd className="text-right font-semibold text-foreground">
+                  {addonsLabel(product, addonIds)}
+                </dd>
               </div>
             )}
             <div className="flex items-baseline justify-between">

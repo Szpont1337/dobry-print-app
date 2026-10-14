@@ -194,6 +194,8 @@ export const submitCart = mutation({
         formatId: v.string(),
         quantity: v.number(),
         sides: v.optional(v.union(v.literal("single"), v.literal("double"))),
+        /** id dodatków (łamanie ulotek) - wycenia je Convex z drukalo */
+        addons: v.optional(v.array(v.string())),
         fileKeys: v.optional(v.array(v.string())),
         fileUrl: v.optional(v.string()),
         notes: v.optional(v.string()),
