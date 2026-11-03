@@ -62,13 +62,6 @@ function SchemaMarkup({
     Math.min(...product.formats.map((f) => f.unitPrice)),
   ).toFixed(2);
 
-  // Only emit aggregateRating when there is a real rating to report. A
-  // ratingCount of 0 is invalid in schema.org and triggers a hard error in
-  // Google Rich Results, so products without ratings simply omit the field.
-  const ratingValue = Number(content.aggregateRating.value);
-  const ratingCount = Number(content.aggregateRating.count);
-  const hasRating = ratingCount > 0 && ratingValue > 0;
-
   const json = {
     "@context": "https://schema.org",
     "@graph": [
@@ -81,17 +74,6 @@ function SchemaMarkup({
         image: `${BASE_URL}/og/produkt-${product.slug}.jpg`,
         brand: { "@type": "Brand", name: "DobrePrinty" },
         category: "Print on demand / online printing",
-        ...(hasRating
-          ? {
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: content.aggregateRating.value,
-                reviewCount: content.aggregateRating.count,
-                bestRating: "5",
-                worstRating: "1",
-              },
-            }
-          : {}),
         offers: {
           "@type": "AggregateOffer",
           priceCurrency: "PLN",

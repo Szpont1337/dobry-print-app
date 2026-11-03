@@ -85,51 +85,6 @@
     "logoLabel": "DobrePrinty",
     "mcp": "DobrePrinty in ChatGPT & Claude"
   },
-  "testimonials": {
-    "eyebrow": "Trustpilot reviews",
-    "headlinePart1": "Real customer reviews,",
-    "headlinePart2": "verified on Trustpilot",
-    "sub": "Every review below comes from Trustpilot and reflects a real order. No staging, no hidden comments.",
-    "starsLabel": "Rated 5 out of 5 on Trustpilot",
-    "marqueeLabel": "Trustpilot customer reviews carousel",
-    "logoAlt": "Trustpilot",
-    "verifiedLabel": "Verified review",
-    "ctaLabel": "See all reviews on Trustpilot",
-    "statOrders": "orders / month",
-    "statRetention": "customers return",
-    "items": [
-      {
-        "title": "Fast turnaround, recommend",
-        "quote": "",
-        "name": "barbara Botin",
-        "date": "17 June 2026"
-      },
-      {
-        "title": "1000 business cards, express",
-        "quote": "I ordered 1000 business cards. Not only did the guys fix my format for free, I also got my order express. Super mega recommend with all my heart!",
-        "name": "Gett Nacjs",
-        "date": "15 June 2026"
-      },
-      {
-        "title": "Everything great",
-        "quote": "",
-        "name": "Kitts Nevis",
-        "date": "14 June 2026"
-      },
-      {
-        "title": "Everything great",
-        "quote": "Everything great",
-        "name": "Teresa",
-        "date": "14 June 2026"
-      },
-      {
-        "title": "Professional and fast",
-        "quote": "Professional and fast. Even though the file I sent was in a different format than the one ordered, the guys adjusted it without any problem, recommend!!!",
-        "name": "Pessi Ronaldo",
-        "date": "12 June 2026"
-      }
-    ]
-  },
   "howItWorks": {
     "eyebrow": "Simple and fast",
     "title": "How it works",

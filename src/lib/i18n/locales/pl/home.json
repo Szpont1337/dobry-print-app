@@ -85,51 +85,6 @@
     "logoLabel": "DobrePrinty",
     "mcp": "DobrePrinty w ChatGPT i Claude"
   },
-  "testimonials": {
-    "eyebrow": "Opinie z Trustpilot",
-    "headlinePart1": "Prawdziwe opinie klientów,",
-    "headlinePart2": "zweryfikowane na Trustpilot",
-    "sub": "Każda opinia poniżej pochodzi z Trustpilot i dotyczy prawdziwego zamówienia. Bez ustawek i ukrytych komentarzy.",
-    "starsLabel": "Ocena 5 na 5 w serwisie Trustpilot",
-    "marqueeLabel": "Karuzela opinii klientów z Trustpilot",
-    "logoAlt": "Trustpilot",
-    "verifiedLabel": "Zweryfikowana opinia",
-    "ctaLabel": "Zobacz wszystkie opinie na Trustpilot",
-    "statOrders": "zamówień / miesiąc",
-    "statRetention": "klientów wraca",
-    "items": [
-      {
-        "title": "Szybkie wykonanie polecam",
-        "quote": "",
-        "name": "barbara Botin",
-        "date": "17 czerwca 2026"
-      },
-      {
-        "title": "1000 wizytówek ekspresowo",
-        "quote": "Zamówiłem 1000 wizytówek. Nie dość, że chłopaki poprawili mi format za darmo, to jeszcze ekspresowo dostałem moje zamówienie. Super mega polecam z całego serducha!",
-        "name": "Gett Nacjs",
-        "date": "15 czerwca 2026"
-      },
-      {
-        "title": "Wszystko super",
-        "quote": "",
-        "name": "Kitts Nevis",
-        "date": "14 czerwca 2026"
-      },
-      {
-        "title": "Wszystko super",
-        "quote": "Wszystko super",
-        "name": "Teresa",
-        "date": "14 czerwca 2026"
-      },
-      {
-        "title": "Profesjonalnie i szybko",
-        "quote": "Profesjonalnie i szybko. Mimo że format wysłanego pliku był inny od tego zamówionego to chłopaki bez problemu go dostosowali, polecam!!!",
-        "name": "Pessi Ronaldo",
-        "date": "12 czerwca 2026"
-      }
-    ]
-  },
   "howItWorks": {
     "eyebrow": "Prosto i szybko",
     "title": "Jak to działa",

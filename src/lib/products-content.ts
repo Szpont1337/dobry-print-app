@@ -28,7 +28,6 @@ export type ProductContent = {
   filePrepSteps: FilePrepStep[];
   faqs: ProductFaq[];
   seoParagraph: string[];
-  aggregateRating: { value: string; count: string };
   ctaCopy: string;
 };
 
@@ -155,7 +154,6 @@ export const productContent: Record<string, ProductContent> = {
       "Ulotki reklamowe nadal działają, mimo cyfrowych alternatyw. W badaniach efektywności reklamy lokalnej ulotka DL trafiająca do skrzynki konwertuje 2–4× lepiej niż reklama display w tej samej okolicy — bo jest namacalna, zostaje pod ręką, a użytkownik kontroluje moment kontaktu. Druk ulotek z konfiguratora DobrePrinty jest tani również dlatego, że nie obciążamy klienta marżą handlowca: konfigurujesz produkt sam, my dobieramy drukarnię partnerską, kurier startuje zaraz po produkcji.",
       "Format ulotek warto dopasować do kanału dystrybucji. DL (100 × 210 mm) najlepiej sprawdza się w bramie do skrzynek pocztowych i na ladzie w restauracji. A6 to klasyk dla flyerów eventowych. A5 — wszechstronny format dla salonów piękności i sklepów osiedlowych. A4 to format na menu i większe ulotki promocyjne. Druk ulotek A3 jest rzadziej zamawiany, ale sprawdza się np. jako plakat-ulotka rozdawany przy stoiskach targowych.",
     ],
-    aggregateRating: { value: "4.9", count: "1850" },
     ctaCopy:
       "Wgraj plik PDF, wybierz nakład i format — wycenę widzisz od razu, ulotki dostarczamy w 24–48 h. Zamów druk ulotek online bez gwiazdek i ukrytych kosztów.",
   },
@@ -273,7 +271,6 @@ export const productContent: Record<string, ProductContent> = {
       "Najczęstsze zastosowania to menu restauracyjne, programy konferencji, oferty wycieczek, foldery promocyjne deweloperów i mini-katalogi produktów. Składane ulotki sprawdzają się tam, gdzie standardowa ulotka jest zbyt mała, ale broszura zbyt duża i zbyt droga. Tania drukarnia składanych ulotek to dla naszych klientów najczęściej oszczędność rzędu 40–60% w stosunku do broszury szytej przy podobnej zawartości treściowej.",
       "Bigowanie i falcowanie to procesy, które rozróżniają profesjonalny druk składanych ulotek od próby zagięcia papieru ręcznie. Bigowanie wgniata linię złożenia, zanim papier zostanie złożony — chroni to powłokę kredy przed pęknięciem. Falcowanie to mechaniczne złożenie. Bez obu tych procesów ulotka 170 g po kilku użyciach pęka i wygląda nieprofesjonalnie. W konfiguratorze automatycznie dobieramy bigowanie dla wszystkich gramatur ≥150 g.",
     ],
-    aggregateRating: { value: "4.9", count: "920" },
     ctaCopy:
       "Wybierz format i typ falcowania, wgraj plik — składane ulotki dostarczamy w 2–4 dni robocze z bigowaniem w cenie.",
   },
@@ -395,7 +392,6 @@ export const productContent: Record<string, ProductContent> = {
       "Broszury szyte drutem są lekkie i tanie w produkcji, ale mają limit grubości — powyżej 48 stron drut przestaje trzymać blok stabilnie. Dla grubszych publikacji polecamy oprawę klejoną (do 200 stron) lub szytą nicią (do 400+). Druk broszur szytych w naszej sieci kosztuje od 2,1 zł za sztukę dla 16-stronicowej A5 przy nakładach 250+, co jest cenowo niedoścignione przez oprawę klejoną i szytą nicią.",
       "Tania drukarnia broszur szytych nie musi oznaczać kompromisu jakościowego. Kontrolujemy plik PDF przed drukiem (spady, rozdzielczość, CMYK), używamy maszyn cyfrowych Konica Minolta i HP Indigo dla mniejszych nakładów, offsetowych dla 500+. Każda drukarnia partnerska przechodzi kwartalny audyt jakości, a klient w razie reklamacji ma kontakt z DobrePrinty, nie z drukarnią — my przejmujemy proces reklamacyjny.",
     ],
-    aggregateRating: { value: "4.8", count: "640" },
     ctaCopy:
       "Wybierz format, liczbę stron i papier okładki — broszury szyte drukujemy w 3–5 dni roboczych, dostawa kurierem w cenie.",
   },
@@ -523,7 +519,6 @@ export const productContent: Record<string, ProductContent> = {
       "Klejenie hotmelt to standard dla broszur klejonych — klej termiczny po stwardnieniu trzyma blok stabilnie przez lata. Tania drukarnia broszur klejonych nie może oszczędzać na jakości kleju, bo skutek widać dopiero po kilku miesiącach — pęknięty grzbiet w bibliotekach klientów. W DobrePrinty testujemy każdą partię klejów u partnerów: 5 kg obciążenia na otwartą broszurę przez 30 sekund. Klej, który pęka, nie wchodzi do produkcji.",
       "Druk broszur klejonych w 28-osobowej sieci drukarni partnerskich pozwala obsłużyć zarówno mikronakłady (25–100 sztuk, druk cyfrowy Konica Minolta), jak i większe (500+, offset). Dla nakładów premium polecamy klejenie PUR (klej poliuretanowy), które jest bardziej elastyczne i wytrzymuje skrajne temperatury. PUR rekomendujemy dla broszur używanych w terenie (instrukcje techniczne) i regularnie otwieranych (książki kucharskie, podręczniki).",
     ],
-    aggregateRating: { value: "4.9", count: "420" },
     ctaCopy:
       "Wybierz liczbę stron, format i opcje okładki — broszury klejone drukujemy w 5–7 dni, folia matowa na okładce gratis.",
   },
@@ -646,7 +641,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tania drukarnia książek szytych nicią nie istnieje — ten format wymaga ręcznego lub półautomatycznego nadzoru przy nakładach do 200 sztuk. Cena jednostkowa jest 2–3× wyższa od klejonej, ale uzasadniona dla treści, które mają żyć dziesięciolecia: monografii naukowych, albumów rodzinnych, książek jubileuszowych firm, publikacji muzeów i galerii sztuki. W DobrePrinty dobieramy partnera, który specjalizuje się w szyciu nicią — nie każda drukarnia ma do tego maszyny i operatorów.",
       "Książki szyte nicią mają jeszcze jedną zaletę nieoczywistą dla osób przyzwyczajonych do klejonych: otwierają się idealnie na płasko, bez „garba” na grzbiecie. To kluczowe dla albumów galeryjnych z dużymi zdjęciami przechodzącymi przez środek, dla książek kucharskich (które leżą otwarte na stole roboczym), dla publikacji dla seniorów (którzy nie muszą trzymać stron palcami) i dla nauk technicznych z mapami i schematami przekraczającymi pojedynczą stronę.",
     ],
-    aggregateRating: { value: "5.0", count: "180" },
     ctaCopy:
       "Wybierz format, liczbę stron i okładkę — książki szyte nicią to oprawa, która przetrwa dekady. Czas realizacji 7–14 dni.",
   },
@@ -767,7 +761,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tania drukarnia roll-upów nie musi oszczędzać na blockoucie ani na druku. Standardem rynkowym jest często blockout 150 g z drukiem wodnym, który po 3–6 miesiącach pod oświetleniem konferencyjnym widocznie blaknie. W DobrePrinty zawsze blockout 200 g (z czarnym rdzeniem, nie prześwieca) i druk ekosolwentowy z gwarancją intensywności kolorów przez 12+ miesięcy. Stelaż aluminiowy ma 12-miesięczną gwarancję na mechanizm.",
       "Druk roll-upów w 24–48 h pozwala obsłużyć pilne zamówienia: konferencje w przyszłym tygodniu, premiery produktowe, eventy okolicznościowe. Dla naprawdę pilnych terminów dostępna jest opcja express 12 h (dopłata 50%). Roll-up zamówiony w środę rano jest u Ciebie w czwartek po południu — wystarczy do prezentacji w piątek. Dla nakładów 10+ roll-upów polecamy z wyprzedzeniem 72 h, żeby zoptymalizować druk na laserze i nie wstrzymywać innych zamówień.",
     ],
-    aggregateRating: { value: "4.8", count: "1320" },
     ctaCopy:
       "Wybierz format, wgraj plik — roll-up dostarczamy w 24–48 h z stelażem, blockoutem i pokrowcem w komplecie.",
   },
@@ -894,7 +887,6 @@ export const productContent: Record<string, ProductContent> = {
       "Papier firmowy to nadal podstawowe narzędzie korespondencji, mimo digitalizacji wielu procesów. Faktury, oferty wstępne, listy intencyjne, pisma urzędowe i korespondencja z klientami — wszystko to nadal wymaga papieru z firmowym logo i danymi rejestrowymi. Tania drukarnia papieru firmowego pozwala obsłużyć zarówno mikroprzedsiębiorców (nakład 100–250 sztuk dla freelancera), jak i większe nakłady (1000–5000 sztuk dla całego działu sprzedaży).",
       "Druk papieru firmowego musi spełniać wymogi prawne: każdy egzemplarz musi zawierać dane obowiązkowe zgodnie z KSH (pełna nazwa firmy, forma prawna, adres siedziby, NIP, REGON, KRS, kapitał zakładowy). Klient odpowiada za poprawność tych danych, ale my przy preflight sprawdzamy, czy stopka zawiera minimalny zestaw informacji — jeśli brakuje istotnego elementu (np. NIP-u), zwracamy uwagę przed drukiem. Drobiazg, który chroni Klienta przed karami administracyjnymi.",
     ],
-    aggregateRating: { value: "4.8", count: "780" },
     ctaCopy:
       "Wgraj plik z nagłówkiem i stopką — papier firmowy drukujemy w 48 h, pakowane po 100 sztuk w opaskę papierową.",
   },
@@ -1021,7 +1013,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tania drukarnia wizytówek nie musi oznaczać kompromisu jakości. Standardem jest dla nas karton 350 g kreda mat — sztywne, premium, ale jeszcze mieści się w szczelinkach portfela. Dla wizytówek noszonych długo polecamy folię matową na okładce (chroni przed zarysowaniem). Dla branży premium (kancelarie prawne, hotele, marki luksusowe) — tłoczenie folią złotą lub srebrną. Opcje są szerokie, ale standard jest na tyle dobry, że większość zamówień nie wymaga dodatków.",
       "Druk wizytówek w 24 h to nasz produkt „awaryjny”. Jeśli rano w środę dowiedziałeś się, że masz prezentację u klienta w piątek i potrzebujesz wizytówek — wgrywasz plik do 12:00 w środę, paczka jest u Ciebie w czwartek po południu lub piątek rano. Express 12 h dla pilnych zamówień. Wizytówki to też produkt, w którym największe znaczenie ma jakość pliku — fonty na krzywe, CMYK, spady. Sprawdzamy każdy plik przed drukiem i jeśli coś jest nie tak, dzwonimy w ciągu 2 godzin roboczych.",
     ],
-    aggregateRating: { value: "4.9", count: "2890" },
     ctaCopy:
       "Wgraj plik PDF — wizytówki drukujemy w 24 h, dostawa kurierem w 1–2 dni robocze. Pakowanie po 100 sztuk w pudełku z gumką.",
   },
@@ -1141,7 +1132,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tania drukarnia kartek i pocztówek musi obsłużyć zarówno mikronakłady (50 sztuk dla małej firmy wysyłającej kartki świąteczne do kluczowych klientów), jak i duże (5000+ dla sieci hotelowej zamawiającej pocztówki promocyjne). Konfigurator pokazuje cenę finalną od razu po wybraniu nakładu, a 28 drukarni partnerskich pozwala dobrać partnera pod konkretne wymagania. Standardowy nakład dla kartek świątecznych to 250–500 sztuk.",
       "Pocztówki nadawane pocztą są w polskim biznesie nadal popularnym narzędziem marketingowym — szczególnie dla branży hotelowej i turystycznej (pocztówki z miejscami pobytu wysyłane do byłych gości jako forma reaktywacji), dla branży eventowej (kartki z podziękowaniami po wydarzeniu), dla branży edukacyjnej (kartki z gratulacjami po ukończeniu kursu). Druk pocztówek z polem adresowym i ramką znaczka pozwala bezpośrednio nadać przesyłkę bez dodatkowego pakowania.",
     ],
-    aggregateRating: { value: "4.8", count: "560" },
     ctaCopy:
       "Wybierz format i nakład — kartki i pocztówki drukujemy w 72 h, gotowe do nadania pocztą lub do wręczenia osobiście.",
   },
@@ -1258,7 +1248,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tania drukarnia plakatów dla nakładów 1–10 sztuk to druk cyfrowy laserowy — bez rozruchu maszyny, bez dopłaty za małą partię. Powyżej 25 sztuk plakatów A1/B1/A0 uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%. Dla plakatów outdoor (papier blueback) i premium (papier fotograficzny 200 g) dostępne są opcje dodatkowe. Laminowanie (mat lub błysk) wydłuża żywotność plakatu do 24+ miesięcy.",
       "Druk plakatów obsługujemy dla wszystkich branż: koncerty i festiwale (B1 na słupach), wystawy muzealne (A0 i A1 w gablotach), kampanie reklamowe sklepów (A2 w witrynach), promocje hotelowe (A1/A2 w lobby), wystawy uczelniane (A0 i A1 na korytarzach). Każdy plakat pakujemy w sztywną tubę kartonową — bez ryzyka zagnieceń w transporcie. Czas realizacji 72 h dla standardów, express 24 h za dopłatą 40% dla pilnych zamówień.",
     ],
-    aggregateRating: { value: "4.9", count: "1450" },
     ctaCopy:
       "Wybierz format, wgraj plik — plakaty drukujemy w 72 h, pakowane w sztywne tuby kartonowe. Express 24 h dostępny.",
   },
@@ -1364,7 +1353,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tani baner reklamowy nie musi oznaczać kompromisu na jakości. Standardem rynkowym bywa cienki PVC 440 g z drukiem wodnym, który po jednym sezonie pęka na zgięciach i blaknie na słońcu. W DobrePrinty zawsze drukujemy na PVC 510 g drukiem solwentowym z gwarancją intensywności kolorów przez 24+ miesiące ekspozycji zewnętrznej. Zgrzew na gorąco i aluminiowe oczka sprawiają, że baner nie rwie się na wietrze i przychodzi gotowy do natychmiastowego zawieszenia na płocie, elewacji czy rusztowaniu.",
       "Druk banerów online sprawdza się dla wszystkich branż: handlu (otwarcia sklepów, wyprzedaże w witrynach), budownictwa (banery na rusztowaniach i ogrodzeniach), eventów (sceny, mecze, festyny), gastronomii (menu i promocje na elewacji) oraz polityki i sportu. Dla dużych powierzchni i ogrodzeń narażonych na silny wiatr polecamy siatkę mesh 370 g, która przepuszcza podmuchy i odciąża konstrukcję. Baner standardowy dostarczamy w 3 dni robocze, a dzięki drukowi solwentowemu bez rozruchu maszyny opłaca się już od pojedynczej sztuki.",
     ],
-    aggregateRating: { value: "4.9", count: "0" },
     ctaCopy:
       "Wybierz format, wgraj plik — baner dostarczamy w 3 dni robocze ze zgrzewanymi krawędziami i oczkami co 50 cm w cenie.",
   },
@@ -1476,7 +1464,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tanie naklejki nie muszą oznaczać kompromisu na trwałości — wszystko zależy od dobrania podłoża i kleju do zastosowania. Etykiety produktowe na słoiki i butelki najlepiej drukować na folii transparentnej lub białej z klejem trwałym. Ceny i oznaczenia sklepowe — na papierze z klejem zmywalnym, który odchodzi bez śladu. Naklejki na samochody i witryny wymagają folii vinyl z laminatem UV, odpornej na deszcz i słońce przez kilka lat. Druk naklejek z konfiguratora DobrePrinty jest tani również dlatego, że nie obciążamy klienta marżą handlowca: konfigurujesz produkt sam, my dobieramy drukarnię.",
       "Naklejki sprawdzają się w zastosowaniach produktowych, promocyjnych i logistycznych. Etykiety na kosmetyki i żywność, naklejki promocyjne na gadżety eventowe (folia biała z laminatem, arkusze kiss-cut), oznaczenia logistyczne na kartony (papier, klej trwały lub mrozoodporny), naklejki dekoracyjne na laptopy i telefony. Druk naklejek online obsługujemy od pojedynczych sztuk testowych po nakłady kilku tysięcy sztuk na rolce do automatów etykietujących. Plik przygotowujesz raz — z linią cięcia na osobnej warstwie i, dla folii transparentnej, warstwą białego poddruku — a działa na każdym podłożu z naszej oferty.",
     ],
-    aggregateRating: { value: "4.9", count: "0" },
     ctaCopy:
       "Wybierz podłoże, klej i kształt, wgraj plik — naklejki drukujemy od 1 sztuki, z cięciem ploterowym do dowolnego konturu, dostawa w 48 h.",
   },
@@ -1578,7 +1565,6 @@ export const productContent: Record<string, ProductContent> = {
       "Tablice forex to najpopularniejszy wybór do wnętrz: lekkie, sztywne i tanie, świetnie sprawdzają się jako tablice informacyjne w gabinetach lekarskich, oznaczenia sal, menu i cenniki w restauracjach oraz szyldy w recepcjach. Tam, gdzie reklama ma stać na zewnątrz przez lata — szyldy na elewacjach, tablice firmowe przy wjazdach, oznaczenia parkingów — polecamy dibond aluminiowy, w pełni odporny na deszcz, słońce i mróz. Druk UV wtapia atrament w powierzchnię materiału, dzięki czemu tablica nie odkleja się ani nie blaknie jak nośniki oklejane folią.",
       "Druk tablic reklamowych w 28-osobowej sieci drukarni partnerskich pozwala obsłużyć zarówno pojedyncze sztuki (oznaczenie jednego gabinetu), jak i serie kilkudziesięciu tablic na sieć placówek. Cięcie CNC umożliwia dowolny kontur bez kosztu wykrojnika, a szlifowane krawędzie i otwory montażowe sprawiają, że tablica przychodzi gotowa do powieszenia. Tania tablica reklamowa nie musi oznaczać kompromisu na jakości — kontrolujemy plik przed drukiem (spady, rozdzielczość, CMYK), a każda drukarnia partnerska przechodzi kwartalny audyt jakości druku i terminowości.",
     ],
-    aggregateRating: { value: "4.9", count: "0" },
     ctaCopy:
       "Wybierz materiał i format, wgraj plik — tablice reklamowe drukujemy UV z cięciem CNC, gotowe do montażu w 4 dni robocze.",
   },
@@ -1659,7 +1645,6 @@ export const productContent: Record<string, ProductContent> = {
       "Koszulki z własnym nadrukiem to jeden z najpopularniejszych nośników reklamy i odzieży eventowej: koszulki firmowe dla zespołu, gadżety na konferencje i targi, koszulki na wieczory kawalerskie i panieńskie, prezenty z autorską grafiką. Druk DTG na białej bawełnie pozwala odtworzyć dowolnie kolorowy projekt — zdjęcie, ilustrację, logo z gradientem — bez dopłat za liczbę kolorów, które obowiązują w klasycznym sitodruku.",
       "Zamawianie koszulek online w DobrePrinty jest proste: wgrywasz grafikę, w podglądzie widzisz nadruk na koszulce, dopasowujesz jego rozmiar, wybierasz rozmiar koszulki i nakład, a cenę finalną widzisz od razu. Drukujemy od pojedynczych sztuk po serie na cały zespół, z dostawą kurierem w 3 dni robocze w całej Polsce.",
     ],
-    aggregateRating: { value: "4.9", count: "210" },
     ctaCopy:
       "Wgraj grafikę, dopasuj nadruk w podglądzie i zamów — koszulki drukujemy od 1 sztuki, DTG w pełnym kolorze, dostawa w 3 dni.",
   },
@@ -1735,7 +1720,6 @@ export const productContent: Record<string, ProductContent> = {
       "Papierowe torby z nadrukiem to ekologiczne opakowanie, które jednocześnie pełni funkcję nośnika reklamy. Sprawdzają się w sklepach odzieżowych i obuwniczych, cukierniach i piekarniach, kawiarniach z daniami na wynos, butikach i na stoiskach targowych. Klient, który wychodzi z Twoją torbą, nieświadomie reklamuje markę wszędzie, gdzie się pojawi — to jeden z najtańszych sposobów na budowanie rozpoznawalności.",
       "W DobrePrinty zamawiasz torby papierowe online: wybierasz papier (biały lub kraft), rozmiar i nakład, wgrywasz grafikę i w podglądzie widzisz nadruk na torbie. Cena finalna widoczna od razu, bez czekania na ofertę handlowca. Drukujemy z dostawą kurierem w całej Polsce w 4 dni robocze.",
     ],
-    aggregateRating: { value: "4.8", count: "96" },
     ctaCopy:
       "Wybierz papier i rozmiar, wgraj logo i zobacz podgląd — torby papierowe drukujemy od 25 sztuk, z dostawą w 4 dni.",
   },
@@ -1824,7 +1808,6 @@ export const productContent: Record<string, ProductContent> = {
       "Płócienne torby bawełniane (tote bag) to ekologiczny nośnik reklamy wielokrotnego użytku, który zastępuje jednorazowe foliówki. Sprawdzają się jako torby firmowe, gadżety na konferencje, targi i festiwale, opakowania w sklepach ekologicznych i butikach, a także jako prezenty z autorską grafiką. W przeciwieństwie do papierowych toreb, płócienna służy latami — a wraz z nią Twoje logo krąży po mieście każdego dnia.",
       "W DobrePrinty zamawiasz torby płócienne online: wgrywasz grafikę, w podglądzie widzisz nadruk A4 na torbie, dopasowujesz jego rozmiar i wybierasz nakład. Cennik jest ilościowy — od 16 zł za pojedynczą sztukę do 10 zł przy większych nakładach — więc im więcej zamówisz, tym taniej wychodzi każda torba. Drukujemy pełnym kolorem na naturalnej bawełnie, z dostawą kurierem w całej Polsce w 3 dni robocze.",
     ],
-    aggregateRating: { value: "4.92", count: "371" },
     ctaCopy:
       "Wgraj grafikę, zobacz podgląd na torbie i wybierz nakład — płócienne torby od 16 zł, taniej z każdą kolejną sztuką, dostawa w 3 dni.",
   },
@@ -1891,7 +1874,6 @@ export const productContent: Record<string, ProductContent> = {
       },
     ],
     seoParagraph: ["Strona testowa, nieprzeznaczona do indeksacji."],
-    aggregateRating: { value: "0", count: "0" },
     ctaCopy: "Tylko do testów wewnętrznych. Nie udostępniaj URL-a publicznie.",
   },
 };
