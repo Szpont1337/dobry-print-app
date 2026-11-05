@@ -15,12 +15,17 @@ export const MAX_QTY = 100_000;
 const SETUP_FEE = 4.5;
 
 /**
- * Mnożnik ceny katalogowej do ceny finalnej. Historycznie była to stawka VAT,
- * ale DobrePrinty prowadzi działalność nierejestrowaną i nie jest podatnikiem
- * VAT — nie ma podziału na netto/brutto, jest jedna kwota do zapłaty. Mnożnik
- * został, żeby ceny dla klienta pozostały takie same jak dotąd.
+ * Podwyżka wszystkich cen towaru o 23% przy przejściu na sprzedawcę będącego
+ * czynnym podatnikiem VAT (DMS Polska). Ceny w sklepie są cenami brutto.
  */
-export const PRICE_FACTOR = 1.23;
+const VAT_PRICE_RISE = 1.23;
+
+/**
+ * Mnożnik ceny katalogowej do ceny brutto: dotychczasowy narzut 1,23 razy
+ * VAT_PRICE_RISE. Musi być ten sam co w backendzie (PRICE_MARKUP w drukalo-poc),
+ * bo to backend liczy kwotę do zapłaty.
+ */
+export const PRICE_FACTOR = 1.23 * VAT_PRICE_RISE;
 
 /** Cena katalogowa jednej sztuki przeliczona na kwotę, którą płaci klient. */
 export function finalUnitPrice(unitPrice: number): number {
@@ -111,7 +116,7 @@ export function productPriceFor(
  */
 function priceFloorFor(format: ProductFormat, quantity: number, sides?: PrintSide): number {
   const tiers = (format.priceFloor ?? []).filter((t) => !t.sides || t.sides === sides);
-  const at = (t: PriceFloorTier, q: number) => t.fixed + (t.perUnit ?? 0) * q;
+  const at = (t: PriceFloorTier, q: number) => (t.fixed + (t.perUnit ?? 0) * q) * VAT_PRICE_RISE;
   let cover = Infinity;
   let passed = 0;
   for (const t of tiers) {

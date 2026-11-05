@@ -131,8 +131,8 @@ const A6_FLYER_PRICE_FLOOR: PriceFloorTier[] = [
 export const SMALL_RUN_LIMIT = 1000;
 
 /**
- * Łamanie ulotek (falcowanie) - w C albo w Z. Klient płaci +200 zł za 1000
- * szt., czyli 0,20 zł/szt. po narzucie (1.23 = PRICE_FACTOR z pricing.ts).
+ * Łamanie ulotek (falcowanie) - w C albo w Z. Klient płaci +246 zł za 1000
+ * szt., czyli 0,246 zł/szt. brutto (PRICE_FACTOR z pricing.ts to 1,23 × 1,23).
  * Ten sam katalog co w drukalo - Convex wycenia zamówienie po tamtej stronie.
  */
 const FOLD_SURCHARGE = 0.2 / 1.23;
