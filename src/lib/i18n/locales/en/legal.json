@@ -72,7 +72,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Payments are processed by Stripe (including BLIK, card, Przelewy24, Apple Pay, Google Pay). Stripe sends a payment confirmation to the email address given in the order. Giving a tax ID (NIP) with the order counts as a request for a VAT invoice: we issue it after payment and send it by email. Without a tax ID we issue one on request."
+            "text": "Payments are processed by Stripe (including BLIK, card, Przelewy24, Apple Pay, Google Pay). Stripe sends a payment confirmation to the email address given in the order. Giving a tax ID (NIP) with the order counts as a request for a VAT invoice: we issue it and send it by email within 14 days of payment. Without a tax ID we issue one on request, within 14 days of the request."
           }
         ]
       },

@@ -42,8 +42,8 @@ export function GET() {
 ## Dokument sprzedaży — odpowiedź wprost
 
 - **Wystawiamy faktury VAT.** Sprzedawca, DMS Polska Artur Pręciuk (NIP 9461505843, REGON 061623251), jest czynnym podatnikiem VAT.
-- **Podanie NIP-u to żądanie faktury:** nazwę firmy i NIP podajesz w checkoucie (sekcja „Dane do faktury", pola opcjonalne) albo przy płatności w Stripe. Fakturę VAT wystawiamy po opłaceniu i wysyłamy e-mailem.
-- **Bez NIP-u** fakturę wystawiamy na żądanie.
+- **Podanie NIP-u to żądanie faktury:** nazwę firmy i NIP podajesz w checkoucie (sekcja „Dane do faktury", pola opcjonalne) albo przy płatności w Stripe. Fakturę VAT wystawiamy i wysyłamy e-mailem w ciągu 14 dni od opłacenia.
+- **Bez NIP-u** fakturę wystawiamy na żądanie, w ciągu 14 dni od zgłoszenia.
 - **Ceny są cenami brutto** i zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych.
 
 ## Kluczowe fakty (weryfikowalne)

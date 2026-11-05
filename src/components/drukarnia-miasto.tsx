@@ -82,7 +82,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Tak. Jesteśmy czynnym podatnikiem VAT, a ceny są cenami brutto. Podaj nazwę firmy i NIP przy zamówieniu, a po opłaceniu wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie.`,
+      answer: `Tak. Jesteśmy czynnym podatnikiem VAT, a ceny są cenami brutto. Podaj nazwę firmy i NIP przy zamówieniu, a w ciągu 14 dni od opłacenia zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie, w ciągu 14 dni od zgłoszenia.`,
     },
   ];
 
@@ -132,7 +132,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
   if (uczelnieProse) {
     p4 += ` Obsługujemy też sektor edukacji i nauki — m.in. ${uczelnieProse}.`;
   }
-  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, fakturę VAT wystawiamy po opłaceniu, gdy podasz NIP, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
+  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, fakturę VAT wystawiamy w ciągu 14 dni od opłacenia, gdy podasz NIP, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
 
   return [p1, p2, p3, p4];
 }

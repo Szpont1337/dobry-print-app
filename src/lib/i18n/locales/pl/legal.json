@@ -72,7 +72,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Płatności obsługuje Stripe (m.in. BLIK, karta, Przelewy24, Apple Pay, Google Pay). Potwierdzenie płatności Stripe wysyła na adres e-mail podany w zamówieniu. Podanie NIP-u przy zamówieniu traktujemy jako żądanie wystawienia faktury VAT – wystawiamy ją po opłaceniu i wysyłamy e-mailem. Bez NIP-u fakturę wystawimy na żądanie."
+            "text": "Płatności obsługuje Stripe (m.in. BLIK, karta, Przelewy24, Apple Pay, Google Pay). Potwierdzenie płatności Stripe wysyła na adres e-mail podany w zamówieniu. Podanie NIP-u przy zamówieniu traktujemy jako żądanie wystawienia faktury VAT – wystawiamy ją i wysyłamy e-mailem w ciągu 14 dni od opłacenia zamówienia. Bez NIP-u fakturę wystawimy na żądanie, w ciągu 14 dni od zgłoszenia."
           }
         ]
       },

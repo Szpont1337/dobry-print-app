@@ -66,7 +66,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       },
       {
         title: "Faktura i historia zamówień",
-        body: "Z NIP-em wystawiamy fakturę VAT i wysyłamy ją e-mailem po opłaceniu, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
+        body: "Z NIP-em wystawiamy fakturę VAT i wysyłamy ją e-mailem w ciągu 14 dni od opłacenia, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
       },
     ],
     bodyHeading: "Jak działa drukarnia online",
@@ -104,7 +104,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Tak. Jesteśmy czynnym podatnikiem VAT. Podaj nazwę firmy i NIP przy zamówieniu, a po opłaceniu wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie.",
+          "Tak. Jesteśmy czynnym podatnikiem VAT. Podaj nazwę firmy i NIP przy zamówieniu, a w ciągu 14 dni od opłacenia zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie, w ciągu 14 dni od zgłoszenia.",
       },
     ],
     cta: {

@@ -104,8 +104,8 @@
     "testBanner": "Test mode — you'll go through the whole order, but no payment is taken and nothing goes to production.",
     "testSubmit": "Place a test order"
   },
-  "invoiceNote": "Enter your company name and tax ID (NIP) and after payment we issue a VAT invoice and send it by email. Prices include VAT, which a VAT-registered buyer can reclaim under the general rules.",
-  "fieldsetInvoiceNote": "Enter your company name and tax ID (NIP) and after payment we issue a VAT invoice and send it by email. Prices include VAT, which a VAT-registered buyer can reclaim under the general rules. Without a tax ID we issue an invoice on request.",
+  "invoiceNote": "Enter your company name and tax ID (NIP) and we issue a VAT invoice and send it by email within 14 days of payment. Prices include VAT, which a VAT-registered buyer can reclaim under the general rules.",
+  "fieldsetInvoiceNote": "Enter your company name and tax ID (NIP) and we issue a VAT invoice and send it by email within 14 days of payment. Prices include VAT, which a VAT-registered buyer can reclaim under the general rules. Without a tax ID we issue an invoice on request, within 14 days of the request.",
   "page": {
     "breadcrumbProducts": "Products",
     "title": "Order"

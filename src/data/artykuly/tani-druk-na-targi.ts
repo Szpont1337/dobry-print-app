@@ -307,7 +307,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Skompletuj materiały na targi w DobrePrinty",
-      body: "Wszystkie kategorie (roll-upy, ulotki, wizytówki, broszury) w jednym konfiguratorze. Cena finalna od razu, dostawa kurierem 24-48 h, faktura na maila.",
+      body: "Wszystkie kategorie (roll-upy, ulotki, wizytówki, broszury) w jednym konfiguratorze. Cena finalna od razu, dostawa kurierem 24-48 h, faktura VAT na maila w ciągu 14 dni.",
       href: "/produkty/roll-up",
       label: "Zamów materiały targowe →",
     },

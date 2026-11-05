@@ -54,7 +54,7 @@
       },
       {
         "question": "Which payment methods do you accept?",
-        "answer": "BLIK, cards (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Payment upfront when you place the order. Buying for a company? Enter its name and tax ID and we issue a VAT invoice after payment."
+        "answer": "BLIK, cards (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Payment upfront when you place the order. Buying for a company? Enter its name and tax ID and we issue a VAT invoice within 14 days of payment."
       },
       {
         "question": "What if colors don't match my monitor?",
@@ -62,7 +62,7 @@
       },
       {
         "question": "Will I get a VAT invoice?",
-        "answer": "Yes. We are VAT-registered and shop prices are gross. Enter your company name and tax ID (NIP) with the order and after payment we issue a VAT invoice and send it by email. Without a tax ID we issue one on request."
+        "answer": "Yes. We are VAT-registered and shop prices are gross. Enter your company name and tax ID (NIP) with the order and we issue a VAT invoice and send it by email within 14 days of payment. Without a tax ID we issue one on request, within 14 days of the request."
       },
       {
         "question": "Can I cancel or return an order?",
@@ -100,7 +100,7 @@
       },
       "pay": {
         "title": "Pay online",
-        "desc": "BLIK, card, Przelewy24 or Apple/Google Pay. VAT invoice issued when you give a tax ID."
+        "desc": "BLIK, card, Przelewy24 or Apple/Google Pay. VAT invoice within 14 days of payment when you give a tax ID."
       },
       "receive": {
         "title": "Receive",

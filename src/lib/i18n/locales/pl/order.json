@@ -104,8 +104,8 @@
     "testBanner": "Tryb testowy — przejdziesz całe zamówienie, ale nie pobierzemy płatności i nie ruszymy produkcji.",
     "testSubmit": "Złóż zamówienie testowe"
   },
-  "invoiceNote": "Podaj nazwę firmy i NIP, a po opłaceniu zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Ceny zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych.",
-  "fieldsetInvoiceNote": "Podaj nazwę firmy i NIP, a po opłaceniu zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Ceny zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych. Bez NIP-u fakturę wystawimy na żądanie.",
+  "invoiceNote": "Podaj nazwę firmy i NIP, a w ciągu 14 dni od opłacenia zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Ceny zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych.",
+  "fieldsetInvoiceNote": "Podaj nazwę firmy i NIP, a w ciągu 14 dni od opłacenia zamówienia wystawimy fakturę VAT i wyślemy ją e-mailem. Ceny zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych. Bez NIP-u fakturę wystawimy na żądanie, w ciągu 14 dni od zgłoszenia.",
   "page": {
     "breadcrumbProducts": "Produkty",
     "title": "Zamówienie"
