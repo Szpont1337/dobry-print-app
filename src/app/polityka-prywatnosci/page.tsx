@@ -13,7 +13,13 @@ export default function PolitykaPrywatnosciPage() {
   return (
     <LegalPage
       doc="privacy"
-      values={{ owner: COMPANY.owner, email: COMPANY.email }}
+      values={{
+        owner: COMPANY.legalName,
+        address: COMPANY.address,
+        nip: COMPANY.nip,
+        regon: COMPANY.regon,
+        email: COMPANY.email,
+      }}
     />
   );
 }

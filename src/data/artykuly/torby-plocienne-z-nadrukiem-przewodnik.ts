@@ -5,7 +5,7 @@ export const article: Article = {
   title:
     "Torby płócienne z nadrukiem — kompletny przewodnik po bawełnianych tote",
   excerpt:
-    "Bawełniane torby tote z pełnokolorowym nadrukiem do A4. Materiał 140 g/m², trzy rozmiary, ceny od 10 zł/szt., pranie i trwałość — wszystko w jednym miejscu.",
+    "Bawełniane torby tote z pełnokolorowym nadrukiem do A4. Materiał 140 g/m², trzy rozmiary, ceny od 15,13 zł/szt., pranie i trwałość — wszystko w jednym miejscu.",
   category: "produkty",
   tags: ["torby płócienne", "tote", "bawełna", "nadruk", "gadżety"],
   publishedAt: "2026-06-11",
@@ -92,7 +92,7 @@ export const article: Article = {
     {
       type: "h2",
       id: "cennik-progowy",
-      text: "Cennik progowy — od 16 zł do 10 zł za sztukę",
+      text: "Cennik progowy — od 24,21 zł do 15,13 zł za sztukę",
     },
     {
       type: "p",
@@ -103,17 +103,17 @@ export const article: Article = {
       caption: "Cennik toreb płóciennych z nadrukiem (cena finalna za sztukę)",
       headers: ["Nakład", "Cena za sztukę"],
       rows: [
-        ["1 szt.", "16 zł"],
-        ["od 10 szt.", "14 zł"],
-        ["od 25 szt.", "13 zł"],
-        ["od 50 szt.", "12 zł"],
-        ["od 100 szt.", "11 zł"],
-        ["od 250 szt.", "10 zł"],
+        ["1 szt.", "24,21 zł"],
+        ["od 10 szt.", "21,18 zł"],
+        ["od 25 szt.", "19,67 zł"],
+        ["od 50 szt.", "18,15 zł"],
+        ["od 100 szt.", "16,64 zł"],
+        ["od 250 szt.", "15,13 zł"],
       ],
     },
     {
       type: "p",
-      text: "W praktyce oznacza to, że warto patrzeć na progi przy planowaniu nakładu. Przykład: 24 torby kosztują 24 × 13 zł… nie — kosztują 24 × 14 zł = 336 zł, bo próg 13 zł zaczyna się od 25 sztuk. Dorzucenie jednej torby (25 × 13 zł = 325 zł) daje zamówienie tańsze o 11 zł i z jedną torbą więcej. Podobne „magiczne punkty” występują przy 50, 100 i 250 sztukach. Szczegółową kalkulację kosztu dotarcia i porównanie z innymi gadżetami znajdziesz w artykule o [torbach jako gadżecie reklamowym](/blog/torba-bawelniana-gadzet-reklamowy).",
+      text: "W praktyce oznacza to, że warto patrzeć na progi przy planowaniu nakładu. Przykład: 24 torby kosztują 24 × 19,67 zł… nie — kosztują 24 × 21,18 zł = 508,33 zł, bo próg 19,67 zł zaczyna się od 25 sztuk. Dorzucenie jednej torby (25 × 19,67 zł = 491,69 zł) daje zamówienie tańsze o 16,64 zł i z jedną torbą więcej. Podobne „magiczne punkty” występują przy 50, 100 i 250 sztukach. Szczegółową kalkulację kosztu dotarcia i porównanie z innymi gadżetami znajdziesz w artykule o [torbach jako gadżecie reklamowym](/blog/torba-bawelniana-gadzet-reklamowy).",
     },
     {
       type: "p",
@@ -165,14 +165,14 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Średnie i duże nakłady (50–250+ sztuk) to domena firm i instytucji: torby konferencyjne z programem wydarzenia, pakiety powitalne dla nowych pracowników, gadżety targowe, torby dla uczestników biegów i festiwali, materiały promocyjne uczelni na dni otwarte. Przy cenie 10–12 zł za sztukę torba bawełniana konkuruje cenowo z dużo mniej trwałymi gadżetami, a służy nieporównywalnie dłużej. Firmy często łączą torby z [koszulkami firmowymi z nadrukiem](/blog/koszulki-firmowe-z-nadrukiem) w spójny zestaw brandingowy. A jeśli potrzebujesz opakowania jednorazowego do sklepu, sprawdź raczej [torby papierowe](/blog/torby-papierowe-rozmiary-i-gramatury) — to inny produkt do innych zadań.",
+      text: "Średnie i duże nakłady (50–250+ sztuk) to domena firm i instytucji: torby konferencyjne z programem wydarzenia, pakiety powitalne dla nowych pracowników, gadżety targowe, torby dla uczestników biegów i festiwali, materiały promocyjne uczelni na dni otwarte. Przy cenie 15,13–18,15 zł za sztukę torba bawełniana konkuruje cenowo z dużo mniej trwałymi gadżetami, a służy nieporównywalnie dłużej. Firmy często łączą torby z [koszulkami firmowymi z nadrukiem](/blog/koszulki-firmowe-z-nadrukiem) w spójny zestaw brandingowy. A jeśli potrzebujesz opakowania jednorazowego do sklepu, sprawdź raczej [torby papierowe](/blog/torby-papierowe-rozmiary-i-gramatury) — to inny produkt do innych zadań.",
     },
     {
       type: "faq",
       items: [
         {
           q: "Czy mogę zamówić jedną torbę z własnym nadrukiem?",
-          a: "Tak. Drukujemy od 1 sztuki — pojedyncza torba kosztuje 16 zł. Wgrywasz grafikę w konfiguratorze, sprawdzasz podgląd 2D i 3D, zamawiasz. Wysyłka w 3 dni robocze.",
+          a: "Tak. Drukujemy od 1 sztuki — pojedyncza torba kosztuje 24,21 zł. Wgrywasz grafikę w konfiguratorze, sprawdzasz podgląd 2D i 3D, zamawiasz. Wysyłka w 3 dni robocze.",
         },
         {
           q: "Jaki jest maksymalny rozmiar nadruku?",
@@ -192,7 +192,7 @@ export const article: Article = {
         },
         {
           q: "Ile kosztują torby przy większym nakładzie?",
-          a: "Cena spada progowo: 14 zł/szt. od 10 sztuk, 13 zł od 25, 12 zł od 50, 11 zł od 100 i 10 zł od 250 sztuk. Niższa cena obowiązuje dla całego zamówienia po przekroczeniu progu.",
+          a: "Cena spada progowo: 21,18 zł/szt. od 10 sztuk, 19,67 zł od 25, 18,15 zł od 50, 16,64 zł od 100 i 15,13 zł od 250 sztuk. Niższa cena obowiązuje dla całego zamówienia po przekroczeniu progu.",
         },
         {
           q: "Jak szybko otrzymam zamówienie?",
@@ -207,7 +207,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Zamów torby płócienne z własnym nadrukiem",
-      body: "Wybierz rozmiar, wgraj grafikę i zobacz podgląd 3D w konfiguratorze. Od 1 sztuki, pełny kolor do A4, wysyłka w 3 dni robocze. Ceny od 10 zł/szt. przy 250 sztukach.",
+      body: "Wybierz rozmiar, wgraj grafikę i zobacz podgląd 3D w konfiguratorze. Od 1 sztuki, pełny kolor do A4, wysyłka w 3 dni robocze. Ceny od 15,13 zł/szt. przy 250 sztukach.",
       href: "/produkty/torby-plocienne",
       label: "Zamów torby płócienne →",
     },

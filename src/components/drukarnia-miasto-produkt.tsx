@@ -187,7 +187,7 @@ export function CityProductPageContent({
         description: `${product.name} z dostawą do ${miasto.nazwa}. Druk online w 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
         url,
         email: COMPANY.email,
-        priceRange: "29 zł – 4 500 zł",
+        priceRange: "36 zł – 5 535 zł",
         areaServed: {
           "@type": "City",
           name: miasto.nazwa,

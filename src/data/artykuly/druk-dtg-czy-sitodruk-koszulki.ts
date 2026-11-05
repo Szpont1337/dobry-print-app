@@ -24,7 +24,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "DTG (Direct To Garment) to druk cyfrowy bezpośrednio na tkaninie — drukarka nakłada tusze pigmentowe na bawełnę podobnie jak drukarka biurowa na papier, tylko precyzyjniej i trwalej. Nie ma matryc ani form: plik graficzny trafia z komputera prosto na koszulkę. Dzięki temu DTG drukuje pełny kolor (4/0) bez dopłat za liczbę barw i opłaca się już od 1 sztuki. To właśnie ta technologia pracuje w DobrePrinty: biała koszulka z bawełny 100% o gramaturze 180 g/m², nadruk do formatu A4 (21×29 cm) na przodzie, od 39 zł za sztukę.",
+      text: "DTG (Direct To Garment) to druk cyfrowy bezpośrednio na tkaninie — drukarka nakłada tusze pigmentowe na bawełnę podobnie jak drukarka biurowa na papier, tylko precyzyjniej i trwalej. Nie ma matryc ani form: plik graficzny trafia z komputera prosto na koszulkę. Dzięki temu DTG drukuje pełny kolor (4/0) bez dopłat za liczbę barw i opłaca się już od 1 sztuki. To właśnie ta technologia pracuje w DobrePrinty: biała koszulka z bawełny 100% o gramaturze 180 g/m², nadruk do formatu A4 (21×29 cm) na przodzie, od ok. 97 zł za sztukę przy większym nakładzie.",
     },
     {
       type: "p",
@@ -119,7 +119,7 @@ export const article: Article = {
     {
       type: "callout",
       variant: "info",
-      text: "W DobrePrinty drukujemy koszulki w technologii DTG: pełny kolor na przodzie, pole nadruku ~A4, biała bawełna 100% (180 g/m²), od 1 sztuki, z wysyłką w 3 dni robocze. Ceny: S/M/L — 39 zł, XL — 42 zł, XXL — 45 zł za sztukę.",
+      text: "W DobrePrinty drukujemy koszulki w technologii DTG: pełny kolor na przodzie, pole nadruku ~A4, biała bawełna 100% (180 g/m²), od 1 sztuki, z wysyłką w 3 dni robocze. Ceny: 124,11 zł za pojedynczą koszulkę, ok. 100 zł za sztukę przy 10 sztukach.",
     },
     {
       type: "h2",
@@ -182,7 +182,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Jest jeszcze jeden scenariusz, o którym warto wspomnieć: testowanie projektu przed dużą produkcją. Nawet jeśli docelowo planujesz 500 koszulek w sitodruku, wydrukuj najpierw jedną lub dwie sztuki w DTG. Za 39–45 zł zobaczysz grafikę na prawdziwej tkaninie, sprawdzisz proporcje nadruku na sylwetce i pokażesz fizyczny egzemplarz decydentom — zanim zainwestujesz w przygotowanie sit. To samo podejście sprawdza się przy projektach na inne tekstylia z bawełny, na przykład torby, o których piszemy w osobnym poradniku projektowym.",
+      text: "Jest jeszcze jeden scenariusz, o którym warto wspomnieć: testowanie projektu przed dużą produkcją. Nawet jeśli docelowo planujesz 500 koszulek w sitodruku, wydrukuj najpierw jedną lub dwie sztuki w DTG. Za 124,11 zł zobaczysz grafikę na prawdziwej tkaninie, sprawdzisz proporcje nadruku na sylwetce i pokażesz fizyczny egzemplarz decydentom — zanim zainwestujesz w przygotowanie sit. To samo podejście sprawdza się przy projektach na inne tekstylia z bawełny, na przykład torby, o których piszemy w osobnym poradniku projektowym.",
     },
     {
       type: "table",
@@ -238,7 +238,7 @@ export const article: Article = {
         },
         {
           q: "Jaka jest minimalna liczba koszulek w druku DTG?",
-          a: "Jedna sztuka. DTG nie wymaga matryc ani przygotowalni, więc nie ma minimum nakładu. W DobrePrinty zamówisz pojedynczą koszulkę od 39 zł (S/M/L), z wysyłką w 3 dni robocze.",
+          a: "Jedna sztuka. DTG nie wymaga matryc ani przygotowalni, więc nie ma minimum nakładu. W DobrePrinty zamówisz pojedynczą koszulkę za 124,11 zł, z wysyłką w 3 dni robocze.",
         },
         {
           q: "Czy mogę wydrukować nadruk DTG na czarnej koszulce?",
@@ -257,7 +257,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Wypróbuj druk DTG na koszulce",
-      body: "Pełny kolor, pole nadruku A4, bawełna 100% (180 g/m²). Wgraj grafikę, obejrzyj podgląd 3D i zamów od 1 sztuki — od 39 zł, wysyłka w 3 dni robocze.",
+      body: "Pełny kolor, pole nadruku A4, bawełna 100% (180 g/m²). Wgraj grafikę, obejrzyj podgląd 3D i zamów od 1 sztuki — od 97 zł za sztukę przy większym nakładzie, wysyłka w 3 dni robocze.",
       href: "/produkty/koszulki",
       label: "Zamów koszulki →",
     },

@@ -465,7 +465,7 @@ export const products: Product[] = [
       "Koszulka z nadrukiem to chodząca reklama, gadżet na event i odzież firmowa w jednym. Drukujemy bezpośrednio na tkaninie (DTG) na białej bawełnie 100% 180 g — pełny kolor, miękki w dotyku nadruk, który nie pęka w praniu. Wgraj grafikę i zobacz podgląd na koszulce przed zamówieniem.",
     footerHeadline: "Koszulki z nadrukiem. Twoja marka na ludziach.",
     footerNote:
-      "Biała bawełna 100% 180 g, druk DTG w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie, plecy +25 zł/szt.",
+      "Biała bawełna 100% 180 g, druk DTG w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie, plecy +37,82 zł/szt.",
     variant: "tshirt",
     formatNoun: "Rozmiar",
     mockupPreview: {
@@ -532,10 +532,10 @@ export const products: Product[] = [
     tagline:
       "Bawełniane torby tote z nadrukiem A4. Ekologiczne, wytrzymałe, długie ucho na ramię.",
     intro:
-      "Płócienna torba bawełniana to ekologiczny nośnik reklamy, który klient nosi codziennie. Drukujemy pełnokolorowy nadruk A4 na naturalnej bawełnie, z długimi uchami na ramię. Im więcej zamówisz, tym taniej — od 16 zł za sztukę do 10 zł przy większych nakładach. Wgraj grafikę i zobacz podgląd na torbie przed zamówieniem.",
+      "Płócienna torba bawełniana to ekologiczny nośnik reklamy, który klient nosi codziennie. Drukujemy pełnokolorowy nadruk A4 na naturalnej bawełnie, z długimi uchami na ramię. Im więcej zamówisz, tym taniej — od 24,21 zł za sztukę do 15,13 zł przy większych nakładach. Wgraj grafikę i zobacz podgląd na torbie przed zamówieniem.",
     footerHeadline: "Torby płócienne. Ekologiczna reklama, którą się nosi.",
     footerNote:
-      "Bawełna naturalna ~140 g/m², nadruk A4 w pełnym kolorze, długie ucha na ramię, cena od 10 zł/szt. przy większych nakładach.",
+      "Bawełna naturalna ~140 g/m², nadruk A4 w pełnym kolorze, długie ucha na ramię, cena od 15,13 zł/szt. przy większych nakładach.",
     variant: "tote",
     mockupPreview: {
       surface: "tote",
@@ -553,7 +553,7 @@ export const products: Product[] = [
       { minQty: 250, unitPrice: 10 },
     ],
     highlights: [
-      { value: "od 10 zł", label: "przy nakładzie" },
+      { value: "od 15,13 zł", label: "przy nakładzie" },
       { value: "A4", label: "pole nadruku" },
       { value: "3 dni", label: "do wysyłki" },
     ],

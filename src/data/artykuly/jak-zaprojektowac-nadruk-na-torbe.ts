@@ -125,12 +125,12 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Dobra praktyka: po ustawieniu grafiki odsuń się od ekranu na dwa–trzy metry albo pomniejsz okno przeglądarki i spójrz na podgląd 3D świeżym okiem. Czy wiadomo, co jest na torbie? Czy tekst da się przeczytać? Jeśli musisz mrużyć oczy — grafika jest za mała albo kontrast za niski. Warto też zamówić jedną sztukę próbną (16 zł) przed większym nakładem: ekran nigdy w stu procentach nie odda kolorów na tkaninie, a próbka kosztuje mniej niż poprawka całego nakładu. Tym bardziej że wysyłka w 3 dni robocze nie wydłuży istotnie harmonogramu.",
+      text: "Dobra praktyka: po ustawieniu grafiki odsuń się od ekranu na dwa–trzy metry albo pomniejsz okno przeglądarki i spójrz na podgląd 3D świeżym okiem. Czy wiadomo, co jest na torbie? Czy tekst da się przeczytać? Jeśli musisz mrużyć oczy — grafika jest za mała albo kontrast za niski. Warto też zamówić jedną sztukę próbną (24,21 zł) przed większym nakładem: ekran nigdy w stu procentach nie odda kolorów na tkaninie, a próbka kosztuje mniej niż poprawka całego nakładu. Tym bardziej że wysyłka w 3 dni robocze nie wydłuży istotnie harmonogramu.",
     },
     {
       type: "callout",
       variant: "tip",
-      text: "Planujesz nakład 50+ sztuk? Zamów najpierw 1 torbę próbną za 16 zł. Zobaczysz kolory na żywo, sprawdzisz rozmiar grafiki w realu i dopiero wtedy uruchomisz pełny nakład — przy progach cenowych (np. 11 zł/szt. od 100 sztuk) próbka to ułamek wartości zamówienia.",
+      text: "Planujesz nakład 50+ sztuk? Zamów najpierw 1 torbę próbną za 24,21 zł. Zobaczysz kolory na żywo, sprawdzisz rozmiar grafiki w realu i dopiero wtedy uruchomisz pełny nakład — przy progach cenowych (np. 16,64 zł/szt. od 100 sztuk) próbka to ułamek wartości zamówienia.",
     },
     {
       type: "h2",
@@ -150,12 +150,12 @@ export const article: Article = {
         "Białe obwódki po usuwaniu tła — automatyczne narzędzia zostawiają halo wokół krawędzi; powiększ plik i obejrzyj krawędzie",
         "Grafika za mała względem torby — czytelna na ekranie, niewidoczna z 3 metrów; sprawdź w podglądzie 3D",
         "Tekst zbyt drobny lub cienki — litery poniżej ~5 mm wysokości i linie cieńsze niż 1 mm giną na fakturze tkaniny",
-        "Pominięcie próbki przy dużym nakładzie — jedna torba testowa za 16 zł eliminuje ryzyko kosztownej pomyłki",
+        "Pominięcie próbki przy dużym nakładzie — jedna torba testowa za 24,21 zł eliminuje ryzyko kosztownej pomyłki",
       ],
     },
     {
       type: "p",
-      text: "Jeśli plik przechodzi całą checklistę, jesteś gotowy. Cały proces — od wgrania grafiki, przez podgląd 3D, po zamówienie — odbywa się online, a torby wysyłamy w 3 dni robocze. Zastanawiasz się jeszcze nad nakładem i budżetem? Kalkulacje przy progach cenowych (od 16 zł za sztukę do 10 zł przy 250+) rozkładamy na czynniki pierwsze w artykule o [torbie bawełnianej jako gadżecie reklamowym](/blog/torba-bawelniana-gadzet-reklamowy).",
+      text: "Jeśli plik przechodzi całą checklistę, jesteś gotowy. Cały proces — od wgrania grafiki, przez podgląd 3D, po zamówienie — odbywa się online, a torby wysyłamy w 3 dni robocze. Zastanawiasz się jeszcze nad nakładem i budżetem? Kalkulacje przy progach cenowych (od 24,21 zł za sztukę do 15,13 zł przy 250+) rozkładamy na czynniki pierwsze w artykule o [torbie bawełnianej jako gadżecie reklamowym](/blog/torba-bawelniana-gadzet-reklamowy).",
     },
     {
       type: "faq",

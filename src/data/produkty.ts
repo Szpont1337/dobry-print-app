@@ -81,7 +81,7 @@ export const produkty: Produkt[] = [
     nazwa: "Torby płócienne",
     slug: "torby-plocienne",
     opis_krotki:
-      "Bawełniane torby tote z nadrukiem A4 — od 16 zł, taniej przy nakładzie do 10 zł/szt., podgląd na torbie, dostawa 3 dni.",
+      "Bawełniane torby tote z nadrukiem A4 — od 24,21 zł, taniej przy nakładzie do 15,13 zł/szt., podgląd na torbie, dostawa 3 dni.",
   },
 ];
 

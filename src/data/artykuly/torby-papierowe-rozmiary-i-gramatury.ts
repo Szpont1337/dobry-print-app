@@ -39,19 +39,19 @@ export const article: Article = {
         [
           "Mała",
           "18 × 8 × 22 cm",
-          "3,90 zł/szt.",
+          "5,90 zł/szt.",
           "Biżuteria, kosmetyki, świece, drobne upominki, wypieki",
         ],
         [
           "Średnia",
           "26 × 12 × 33 cm",
-          "5,50 zł/szt.",
+          "8,32 zł/szt.",
           "Odzież (T-shirty, bluzki), książki, wino, kosmetyki w zestawach",
         ],
         [
           "Duża",
           "32 × 14 × 42 cm",
-          "7,50 zł/szt.",
+          "11,35 zł/szt.",
           "Obuwie w pudełkach, swetry i kurtki, większe zakupy, prezenty",
         ],
       ],
@@ -153,7 +153,7 @@ export const article: Article = {
       items: [
         {
           q: "Jakie rozmiary toreb papierowych są dostępne?",
-          a: "Trzy rozmiary: Mała 18×8×22 cm (3,90 zł/szt.), Średnia 26×12×33 cm (5,50 zł/szt.) i Duża 32×14×42 cm (7,50 zł/szt.). Wymiary podane są jako szerokość × głębokość × wysokość. Każdy rozmiar dostępny jest w wersji białej i kraftowej.",
+          a: "Trzy rozmiary: Mała 18×8×22 cm (5,90 zł/szt.), Średnia 26×12×33 cm (8,32 zł/szt.) i Duża 32×14×42 cm (11,35 zł/szt.). Wymiary podane są jako szerokość × głębokość × wysokość. Każdy rozmiar dostępny jest w wersji białej i kraftowej.",
         },
         {
           q: "Ile waży zakup, który bezpiecznie uniesie torba papierowa 120 g/m²?",

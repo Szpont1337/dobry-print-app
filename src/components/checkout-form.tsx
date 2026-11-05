@@ -28,7 +28,7 @@ type Fields = {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
-  /** opcjonalne dane firmy — trafiają na fakturę wystawianą przez Stripe */
+  /** opcjonalne dane firmy — do faktury VAT */
   companyName: string;
   taxId: string;
   shippingStreet: string;

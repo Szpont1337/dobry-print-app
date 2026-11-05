@@ -43,7 +43,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Marketerzy liczą koszt gadżetu „za sztukę”, a powinni liczyć koszt za ekspozycję. Długopis za 3 zł, który ginie po tygodniu i jest widziany tylko przez właściciela, ma wysoki koszt kontaktu z marką. Torba za 11–12 zł, noszona publicznie przez dwa–trzy lata, generuje setki, a realnie tysiące ekspozycji — w sklepie, w autobusie, na ulicy. Nawet przy ostrożnym założeniu, że torba jest używana raz w tygodniu przez dwa lata i każdorazowo widzi ją kilkanaście osób, koszt pojedynczej ekspozycji spada do groszy.",
+      text: "Marketerzy liczą koszt gadżetu „za sztukę”, a powinni liczyć koszt za ekspozycję. Długopis za 3 zł, który ginie po tygodniu i jest widziany tylko przez właściciela, ma wysoki koszt kontaktu z marką. Torba za 16,64–18,15 zł, noszona publicznie przez dwa–trzy lata, generuje setki, a realnie tysiące ekspozycji — w sklepie, w autobusie, na ulicy. Nawet przy ostrożnym założeniu, że torba jest używana raz w tygodniu przez dwa lata i każdorazowo widzi ją kilkanaście osób, koszt pojedynczej ekspozycji spada do groszy.",
     },
     {
       type: "list",
@@ -67,24 +67,24 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "W DobrePrinty cena torby spada progowo wraz z nakładem: od 16 zł za pojedynczą sztukę do 10 zł przy 250 i więcej. Niższa stawka obowiązuje dla całego zamówienia po przekroczeniu progu, dlatego planując kampanię, warto celować dokładnie w progi — czasem dołożenie kilku sztuk obniża łączny rachunek. Poniższa tabela pokazuje koszt łączny przy typowych nakładach eventowych.",
+      text: "W DobrePrinty cena torby spada progowo wraz z nakładem: od 24,21 zł za pojedynczą sztukę do 15,13 zł przy 250 i więcej. Niższa stawka obowiązuje dla całego zamówienia po przekroczeniu progu, dlatego planując kampanię, warto celować dokładnie w progi — czasem dołożenie kilku sztuk obniża łączny rachunek. Poniższa tabela pokazuje koszt łączny przy typowych nakładach eventowych.",
     },
     {
       type: "table",
       caption: "Koszt toreb płóciennych z nadrukiem przy różnych nakładach",
       headers: ["Nakład", "Cena za sztukę", "Koszt łączny"],
       rows: [
-        ["1 szt.", "16 zł", "16 zł"],
-        ["10 szt.", "14 zł", "140 zł"],
-        ["25 szt.", "13 zł", "325 zł"],
-        ["50 szt.", "12 zł", "600 zł"],
-        ["100 szt.", "11 zł", "1 100 zł"],
-        ["250 szt.", "10 zł", "2 500 zł"],
+        ["1 szt.", "24,21 zł", "24,21 zł"],
+        ["10 szt.", "21,18 zł", "211,81 zł"],
+        ["25 szt.", "19,67 zł", "491,69 zł"],
+        ["50 szt.", "18,15 zł", "907,74 zł"],
+        ["100 szt.", "16,64 zł", "1 664,19 zł"],
+        ["250 szt.", "15,13 zł", "3 782,25 zł"],
       ],
     },
     {
       type: "p",
-      text: "Zwróć uwagę na okolice progów. Zamówienie 45 toreb kosztuje 45 × 13 zł = 585 zł, a 50 toreb — 50 × 12 zł = 600 zł. Za 15 zł więcej dostajesz 5 dodatkowych toreb. Jeszcze wyraźniej widać to przy setce: 90 sztuk to 90 × 12 zł = 1 080 zł, a 100 sztuk — 1 100 zł. Dziesięć dodatkowych toreb za 20 zł, czyli po 2 zł za sztukę „na marginesie”. Jeśli budżet pozwala, zaokrąglaj nakład w górę do najbliższego progu — zapas toreb zawsze się przyda na kolejny event.",
+      text: "Zwróć uwagę na okolice progów. Zamówienie 45 toreb kosztuje 45 × 19,67 zł = 885,05 zł, a 50 toreb — 50 × 18,15 zł = 907,74 zł. Za 22,69 zł więcej dostajesz 5 dodatkowych toreb. Jeszcze wyraźniej widać to przy setce: 90 sztuk to 90 × 18,15 zł = 1 633,93 zł, a 100 sztuk — 1 664,19 zł. Dziesięć dodatkowych toreb za 30,26 zł, czyli po 3,03 zł za sztukę „na marginesie”. Jeśli budżet pozwala, zaokrąglaj nakład w górę do najbliższego progu — zapas toreb zawsze się przyda na kolejny event.",
     },
     {
       type: "callout",
@@ -102,7 +102,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Festiwale, biegi i wydarzenia plenerowe to drugi mocny obszar. Torba z grafiką nawiązującą do edycji wydarzenia staje się pamiątką, którą uczestnicy chętnie noszą długo po imprezie — zwłaszcza jeśli projekt jest atrakcyjny sam w sobie, a nie tylko „logo sponsora na środku”. Uczelnie wykorzystują torby na dni otwarte, w pakietach powitalnych dla studentów pierwszego roku i jako merch w kampusowych sklepikach. Księgarnie, kawiarnie i marki lokalne sprzedają torby jako pełnoprawny produkt — przy koszcie 10–13 zł za sztukę i cenie półkowej 30–50 zł marża jest bardzo przyzwoita.",
+      text: "Festiwale, biegi i wydarzenia plenerowe to drugi mocny obszar. Torba z grafiką nawiązującą do edycji wydarzenia staje się pamiątką, którą uczestnicy chętnie noszą długo po imprezie — zwłaszcza jeśli projekt jest atrakcyjny sam w sobie, a nie tylko „logo sponsora na środku”. Uczelnie wykorzystują torby na dni otwarte, w pakietach powitalnych dla studentów pierwszego roku i jako merch w kampusowych sklepikach. Księgarnie, kawiarnie i marki lokalne sprzedają torby jako pełnoprawny produkt — przy koszcie 15,13–19,67 zł za sztukę i cenie półkowej 30–50 zł marża jest bardzo przyzwoita.",
     },
     {
       type: "list",
@@ -155,7 +155,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje 100 toreb bawełnianych z logo?",
-          a: "Przy nakładzie 100 sztuk cena wynosi 11 zł za sztukę, czyli 1 100 zł łącznie. Nadruk pełnokolorowy do formatu A4 jest wliczony w cenę — bez dopłat za liczbę kolorów i bez kosztów przygotowalni.",
+          a: "Przy nakładzie 100 sztuk cena wynosi 16,64 zł za sztukę, czyli 1 664,19 zł łącznie. Nadruk pełnokolorowy do formatu A4 jest wliczony w cenę — bez dopłat za liczbę kolorów i bez kosztów przygotowalni.",
         },
         {
           q: "Jaki nakład toreb wybrać na targi?",
@@ -163,7 +163,7 @@ export const article: Article = {
         },
         {
           q: "Czy mogę najpierw zamówić jedną torbę na próbę?",
-          a: "Tak — drukujemy od 1 sztuki (16 zł). Zamówienie próbnej torby przed dużym nakładem to dobra praktyka: ocenisz kolory nadruku, rozmiar grafiki i jakość materiału na żywo.",
+          a: "Tak — drukujemy od 1 sztuki (24,21 zł). Zamówienie próbnej torby przed dużym nakładem to dobra praktyka: ocenisz kolory nadruku, rozmiar grafiki i jakość materiału na żywo.",
         },
         {
           q: "Czy torba bawełniana jest lepsza od koszulki jako gadżet?",
@@ -186,7 +186,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Zamów torby z logo na swój event",
-      body: "Wgraj grafikę, zobacz podgląd 3D i zamów dokładnie tyle, ile potrzebujesz — od 1 do setek sztuk. Przy 250 sztukach tylko 10 zł za torbę. Wysyłka w 3 dni robocze.",
+      body: "Wgraj grafikę, zobacz podgląd 3D i zamów dokładnie tyle, ile potrzebujesz — od 1 do setek sztuk. Przy 250 sztukach tylko 15,13 zł za torbę. Wysyłka w 3 dni robocze.",
       href: "/produkty/torby-plocienne",
       label: "Zamów torby płócienne →",
     },

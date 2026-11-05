@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 // FAQ w JSON-LD renderowane SERWEROWO. Komponent <Faq /> jest kliencki i
 // czyta treść z i18n, więc crawlery (Google, ChatGPT, Perplexity) nie mają się
-// z czego uczyć — a to tam stoi odpowiedź „nie wystawiamy faktur VAT".
+// z czego uczyć — a to tam stoi odpowiedź o fakturze VAT.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

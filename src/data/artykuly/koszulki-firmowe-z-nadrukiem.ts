@@ -15,7 +15,7 @@ export const article: Article = {
   sections: [
     {
       type: "p",
-      text: "Koszulka z logo to jeden z najtańszych nośników marki w przeliczeniu na liczbę kontaktów z odbiorcą. Zespół w jednolitych koszulkach na targach jest widoczny z drugiego końca hali, wolontariusze na evencie nie giną w tłumie, a koszulka wręczona jako prezent pracuje na markę przez lata — w siłowni, na zakupach, na zdjęciach z wakacji. W tym artykule pokazujemy, jak sprawnie zamówić koszulki firmowe: od zebrania rozmiarów od zespołu, przez ustalenie liczby sztuk, po spójność brandingu na koszulce i pozostałych gadżetach. Wszystko na przykładzie naszych koszulek: biała bawełna 100% (180 g/m²), pełnokolorowy nadruk DTG do formatu A4, od 39 zł za sztukę i od 1 sztuki.",
+      text: "Koszulka z logo to jeden z najtańszych nośników marki w przeliczeniu na liczbę kontaktów z odbiorcą. Zespół w jednolitych koszulkach na targach jest widoczny z drugiego końca hali, wolontariusze na evencie nie giną w tłumie, a koszulka wręczona jako prezent pracuje na markę przez lata — w siłowni, na zakupach, na zdjęciach z wakacji. W tym artykule pokazujemy, jak sprawnie zamówić koszulki firmowe: od zebrania rozmiarów od zespołu, przez ustalenie liczby sztuk, po spójność brandingu na koszulce i pozostałych gadżetach. Wszystko na przykładzie naszych koszulek: biała bawełna 100% (180 g/m²), pełnokolorowy nadruk DTG do formatu A4, od ok. 97 zł za sztukę przy większym nakładzie, a pojedyncza koszulka kosztuje 124,11 zł.",
     },
     {
       type: "h2",
@@ -56,11 +56,11 @@ export const article: Article = {
         "Cena za sztukę",
       ],
       rows: [
-        ["S", "ok. 48 cm", "ok. 69 cm", "39 zł"],
-        ["M", "ok. 51 cm", "ok. 72 cm", "39 zł"],
-        ["L", "ok. 54 cm", "ok. 74 cm", "39 zł"],
-        ["XL", "ok. 57 cm", "ok. 76 cm", "42 zł"],
-        ["XXL", "ok. 60 cm", "ok. 78 cm", "45 zł"],
+        ["S", "ok. 48 cm", "ok. 69 cm", "124,11 zł"],
+        ["M", "ok. 51 cm", "ok. 72 cm", "124,11 zł"],
+        ["L", "ok. 54 cm", "ok. 74 cm", "124,11 zł"],
+        ["XL", "ok. 57 cm", "ok. 76 cm", "124,11 zł"],
+        ["XXL", "ok. 60 cm", "ok. 78 cm", "124,11 zł"],
       ],
     },
     {
@@ -70,7 +70,7 @@ export const article: Article = {
     {
       type: "callout",
       variant: "tip",
-      text: "Zanim ruszysz ze zbiórką rozmiarów, zamów jedną koszulkę próbną (39 zł, wysyłka w 3 dni robocze). Zespół przymierzy fizyczny egzemplarz, a Ty zweryfikujesz kolory logo na tkaninie — taniej nie da się przetestować całego zamówienia.",
+      text: "Zanim ruszysz ze zbiórką rozmiarów, zamów jedną koszulkę próbną (124,11 zł, wysyłka w 3 dni robocze). Zespół przymierzy fizyczny egzemplarz, a Ty zweryfikujesz kolory logo na tkaninie — taniej nie da się przetestować całego zamówienia.",
     },
     {
       type: "h2",
@@ -123,7 +123,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Policzmy typowe zamówienie. Zespół 12 osób na targi: 2×S, 4×M, 4×L, 1×XL, 1×XXL plus zapas 2×M i 1×L. Razem 15 koszulek: 13 sztuk w rozmiarach S–L po 39 zł i po jednej XL (42 zł) i XXL (45 zł) — łącznie 594 zł, czyli niecałe 40 zł na osobę z zapasem. Dla porównania: jeden rollup kosztuje podobnie, a widzi go tylko ten, kto podejdzie do stoiska. Harmonogram też jest krótki: wysyłka w 3 dni robocze oznacza, że nawet tydzień przed eventem nie jest za późno — choć rozsądnie jest doliczyć czas na zbiórkę rozmiarów i zostawić sobie margines na domówienie.",
+      text: "Policzmy typowe zamówienie. Zespół 12 osób na targi: 2×S, 4×M, 4×L, 1×XL, 1×XXL plus zapas 2×M i 1×L. Razem 15 koszulek: 13 sztuk w rozmiarach S–L i po jednej XL i XXL — łącznie ok. 1 484 zł, czyli ok. 99 zł na koszulkę. Dla porównania: dwa rollupy kosztują podobnie, a widzi go tylko ten, kto podejdzie do stoiska. Harmonogram też jest krótki: wysyłka w 3 dni robocze oznacza, że nawet tydzień przed eventem nie jest za późno — choć rozsądnie jest doliczyć czas na zbiórkę rozmiarów i zostawić sobie margines na domówienie.",
     },
     {
       type: "table",
@@ -162,7 +162,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztują koszulki firmowe z nadrukiem?",
-          a: "W DobrePrinty: 39 zł za sztukę w rozmiarach S, M i L, 42 zł za XL i 45 zł za XXL. Cena obejmuje pełnokolorowy nadruk DTG na przodzie (pole do formatu A4) na białej koszulce z bawełny 100% o gramaturze 180 g/m². Bez kosztów przygotowania i bez minimum nakładu.",
+          a: "W DobrePrinty: 124,11 zł za pojedynczą koszulkę, ok. 100 zł za sztukę przy 10 sztukach i ok. 97 zł przy 100 sztukach, w każdym rozmiarze. Cena obejmuje pełnokolorowy nadruk DTG na przodzie (pole do formatu A4) na białej koszulce z bawełny 100% o gramaturze 180 g/m². Bez kosztów przygotowania i bez minimum nakładu.",
         },
         {
           q: "Czy jest minimalna liczba sztuk przy zamówieniu firmowym?",
@@ -197,7 +197,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Zamów koszulki firmowe z logo",
-      body: "Wgraj logo do konfiguratora, sprawdź podgląd 3D i zamów dokładnie tyle sztuk, ile potrzebujesz — od 1 koszulki. Bawełna 100% (180 g/m²), pełny kolor DTG, od 39 zł, wysyłka w 3 dni robocze.",
+      body: "Wgraj logo do konfiguratora, sprawdź podgląd 3D i zamów dokładnie tyle sztuk, ile potrzebujesz — od 1 koszulki. Bawełna 100% (180 g/m²), pełny kolor DTG, od 97 zł za sztukę przy większym nakładzie, wysyłka w 3 dni robocze.",
       href: "/produkty/koszulki",
       label: "Zamów koszulki →",
     },

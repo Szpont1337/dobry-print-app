@@ -161,7 +161,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Tłoczenie folią złotą lub srebrną to opcja najbardziej luksusowa — używana przez kancelarie prawne z 100-letnią tradycją, hotele 5-gwiazdkowe, marki biżuteryjne. Folia jest fizycznie tłoczona w karton, daje efekt 3D i blasku. Wymaga osobnego pliku z maską tłoczenia. Cena: +120 zł za 100 sztuk.",
+      text: "Tłoczenie folią złotą lub srebrną to opcja najbardziej luksusowa — używana przez kancelarie prawne z 100-letnią tradycją, hotele 5-gwiazdkowe, marki biżuteryjne. Folia jest fizycznie tłoczona w karton, daje efekt 3D i blasku. Wymaga osobnego pliku z maską tłoczenia. Cena: +148 zł za 100 sztuk.",
     },
     {
       type: "h2",
@@ -211,7 +211,7 @@ export const article: Article = {
         },
         {
           q: "Ile kosztują wizytówki w 2026?",
-          a: "Standardowe wizytówki klasyczne 85×55 mm na 350g kreda mat z drukiem 4/4: 100 sztuk ok. 25 zł, 250 sztuk ok. 38 zł, 500 sztuk 65 zł, 1000 sztuk 115 zł. Wykończenia (folia, UV, tłoczenie) dodają 30-70% do ceny. Premium 400g + folia matowa + UV punktowy: 100 sztuk ok. 95 zł.",
+          a: "Standardowe wizytówki klasyczne 85×55 mm na 350g kreda mat z drukiem 4/4: 100 sztuk 66,72 zł, 250 sztuk 102,12 zł, 500 sztuk 197,43 zł, 1000 sztuk 279,13 zł. Wykończenia (folia, UV, tłoczenie) dodają 30-70% do ceny. Premium 400g + folia matowa + UV punktowy: 100 sztuk ok. 117 zł.",
         },
         {
           q: "Czy można zamówić wizytówki w nakładzie 25 sztuk?",
@@ -219,11 +219,11 @@ export const article: Article = {
         },
         {
           q: "Czy wizytówki z NFC chipem to dobry pomysł?",
-          a: "Dla branży tech, startupów i innowatorów — tak. Klient dotyka wizytówki telefonem, otwiera się Twój profil LinkedIn lub strona kontaktowa. Cena: ok. 25-40 zł za sztukę (vs 0,25 zł za standardową), więc to opcja dla wybranych spotkań — nie do masowej dystrybucji. NFC działa z 95% nowoczesnych smartfonów (iOS 14+, Android 8+).",
+          a: "Dla branży tech, startupów i innowatorów — tak. Klient dotyka wizytówki telefonem, otwiera się Twój profil LinkedIn lub strona kontaktowa. Cena: ok. 25-40 zł za sztukę (vs 0,28 zł za standardową), więc to opcja dla wybranych spotkań — nie do masowej dystrybucji. NFC działa z 95% nowoczesnych smartfonów (iOS 14+, Android 8+).",
         },
         {
           q: "Czy mogę zamówić wizytówki spersonalizowane (różne imiona)?",
-          a: "Tak. Personalizacja działa tak: jeden szablon graficzny + tabela Excel z imionami, nazwiskami, telefonami i e-mailami pracowników. Drukarnia generuje wariant dla każdej osoby. Cena: nakład × 1,4 (dopłata 40% za personalizację). Dla zespołu 10 osób × 100 wizytówek każda: ok. 350 zł zamiast 250 zł za 1000 identycznych.",
+          a: "Tak. Personalizacja działa tak: jeden szablon graficzny + tabela Excel z imionami, nazwiskami, telefonami i e-mailami pracowników. Drukarnia generuje wariant dla każdej osoby. Cena: nakład × 1,4 (dopłata 40% za personalizację). Dla zespołu 10 osób × 100 wizytówek każda: ok. 391 zł zamiast 279 zł za 1000 identycznych.",
         },
       ],
     },

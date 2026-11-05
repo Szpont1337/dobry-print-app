@@ -83,23 +83,17 @@ export async function GET(request: Request) {
         orderIds: orderIdList,
       },
       payment_intent_data: {
+        // Potwierdzenie płatności; fakturę VAT wystawia DMS Polska (KSeF).
+        receipt_email: order.customerEmail,
         metadata: {
           orderId: String(order._id),
           orderIds: orderIdList,
         },
       },
-      // Adres na fakturę zbiera Stripe; `tax_id_collection` pozwala podać NIP
+      // Adres rozliczeniowy zbiera Stripe; `tax_id_collection` pozwala podać NIP
       // i nazwę firmy przy płatności.
       billing_address_collection: "required",
       tax_id_collection: { enabled: true },
-      invoice_creation: {
-        enabled: true,
-        // Webhook `invoice.paid` dostaje sam obiekt faktury — bez metadanych
-        // nie wie, do którego zamówienia ją dopiąć.
-        invoice_data: {
-          metadata: { orderId: String(order._id), orderIds: orderIdList },
-        },
-      },
       success_url: `${site}/zamowienia/${order._id}/sukces?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${site}/zamowienia/${order._id}/anulowane?session_id={CHECKOUT_SESSION_ID}`,
     });

@@ -71,7 +71,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Pamiętaj o ogólnej zasadzie znanej z każdego druku: ekran świeci, tkanina odbija światło. Bardzo jaskrawe, neonowe kolory RGB na bawełnie będą o ton spokojniejsze. Bardzo ciemne przejścia tonalne (np. grafika utrzymana w odcieniach grafitu na czarnym tle gradientu) mogą się zlewać. Jeśli kolory są krytyczne — np. firmowy odcień z księgi znaku — warto najpierw zamówić jedną sztukę próbną. Przy druku [od 1 sztuki](/produkty/koszulki) to tani sposób na weryfikację: koszulka próbna kosztuje 39 zł i dociera w 3 dni robocze.",
+      text: "Pamiętaj o ogólnej zasadzie znanej z każdego druku: ekran świeci, tkanina odbija światło. Bardzo jaskrawe, neonowe kolory RGB na bawełnie będą o ton spokojniejsze. Bardzo ciemne przejścia tonalne (np. grafika utrzymana w odcieniach grafitu na czarnym tle gradientu) mogą się zlewać. Jeśli kolory są krytyczne — np. firmowy odcień z księgi znaku — warto najpierw zamówić jedną sztukę próbną. Przy druku [od 1 sztuki](/produkty/koszulki) to tani sposób na weryfikację: koszulka próbna kosztuje 124,11 zł i dociera w 3 dni robocze.",
     },
     {
       type: "h2",
@@ -200,7 +200,7 @@ export const article: Article = {
     {
       type: "cta",
       heading: "Masz gotowy plik? Sprawdź go w konfiguratorze",
-      body: "Wgraj grafikę, obejrzyj podgląd 2D i 3D, wybierz rozmiar. Biała bawełna 100% (180 g/m²), pełny kolor DTG, od 39 zł za sztukę — już od 1 koszulki, wysyłka w 3 dni robocze.",
+      body: "Wgraj grafikę, obejrzyj podgląd 2D i 3D, wybierz rozmiar. Biała bawełna 100% (180 g/m²), pełny kolor DTG, od ok. 97 zł za sztukę przy większym nakładzie — już od 1 koszulki, wysyłka w 3 dni robocze.",
       href: "/produkty/koszulki",
       label: "Zamów koszulki →",
     },

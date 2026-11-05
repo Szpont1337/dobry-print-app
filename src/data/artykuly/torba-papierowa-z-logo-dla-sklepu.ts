@@ -30,7 +30,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Policzmy. Mała torba z pełnokolorowym nadrukiem kosztuje w DobrePrinty 3,90 zł, średnia 5,50 zł, duża 7,50 zł za sztukę. Załóżmy ostrożnie, że jedna torba „pracuje” przez 30 minut drogi klienta do domu i jest widziana przez kilkadziesiąt osób — a badania zachowań konsumenckich pokazują, że torby papierowe dobrej jakości są używane ponownie średnio kilka razy. Jedna torba generuje więc realnie od kilkudziesięciu do kilkuset kontaktów z marką. Koszt pojedynczego kontaktu spada do groszy lub ich ułamków — to poziom nieosiągalny dla reklamy w social mediach, gdzie za tysiąc wyświetleń (często przewijanych bezrefleksyjnie) płaci się kilka do kilkunastu złotych.",
+      text: "Policzmy. Mała torba z pełnokolorowym nadrukiem kosztuje w DobrePrinty 5,90 zł, średnia 8,32 zł, duża 11,35 zł za sztukę. Załóżmy ostrożnie, że jedna torba „pracuje” przez 30 minut drogi klienta do domu i jest widziana przez kilkadziesiąt osób — a badania zachowań konsumenckich pokazują, że torby papierowe dobrej jakości są używane ponownie średnio kilka razy. Jedna torba generuje więc realnie od kilkudziesięciu do kilkuset kontaktów z marką. Koszt pojedynczego kontaktu spada do groszy lub ich ułamków — to poziom nieosiągalny dla reklamy w social mediach, gdzie za tysiąc wyświetleń (często przewijanych bezrefleksyjnie) płaci się kilka do kilkunastu złotych.",
     },
     {
       type: "p",
@@ -63,31 +63,31 @@ export const article: Article = {
           "Jubiler, kosmetyki naturalne, świece",
           "Małe pudełka, słoiczki, drobiazgi",
           "Mała 18×8×22 cm",
-          "3,90 zł/szt.",
+          "5,90 zł/szt.",
         ],
         [
           "Cukiernia, kawiarnia, piekarnia rzemieślnicza",
           "Wypieki, pudełka na ciastka, kawa na prezent",
           "Mała lub Średnia",
-          "3,90–5,50 zł/szt.",
+          "5,90–8,32 zł/szt.",
         ],
         [
           "Butik odzieżowy, księgarnia, winoteka",
           "Złożona odzież, książki, butelki",
           "Średnia 26×12×33 cm",
-          "5,50 zł/szt.",
+          "8,32 zł/szt.",
         ],
         [
           "Sklep obuwniczy, concept store, prezenty",
           "Pudełka z butami, większe zestawy",
           "Duża 32×14×42 cm",
-          "7,50 zł/szt.",
+          "11,35 zł/szt.",
         ],
         [
           "Gastronomia na wynos",
           "Pojemniki, zestawy lunchowe",
           "Średnia lub Duża",
-          "5,50–7,50 zł/szt.",
+          "8,32–11,35 zł/szt.",
         ],
       ],
     },
@@ -169,7 +169,7 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje torba papierowa z logo?",
-          a: "W DobrePrinty: Mała (18×8×22 cm) 3,90 zł/szt., Średnia (26×12×33 cm) 5,50 zł/szt., Duża (32×14×42 cm) 7,50 zł/szt. Cena obejmuje pełnokolorowy nadruk 4/0 na przedniej ściance, papier 120 g/m², uchwyt skręcany i wzmacniane dno.",
+          a: "W DobrePrinty: Mała (18×8×22 cm) 5,90 zł/szt., Średnia (26×12×33 cm) 8,32 zł/szt., Duża (32×14×42 cm) 11,35 zł/szt. Cena obejmuje pełnokolorowy nadruk 4/0 na przedniej ściance, papier 120 g/m², uchwyt skręcany i wzmacniane dno.",
         },
         {
           q: "Czy 25 sztuk to nie za mało, żeby się opłacało?",

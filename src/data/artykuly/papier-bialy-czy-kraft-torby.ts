@@ -64,8 +64,8 @@ export const article: Article = {
         ],
         [
           "Gramatura i cena",
-          "120 g/m², od 3,90 zł/szt.",
-          "120 g/m², od 3,90 zł/szt.",
+          "120 g/m², od 5,90 zł/szt.",
+          "120 g/m², od 5,90 zł/szt.",
         ],
       ],
     },
@@ -205,7 +205,7 @@ export const article: Article = {
       items: [
         {
           q: "Czy torba kraftowa jest tańsza od białej?",
-          a: "Nie — w DobrePrinty oba podłoża kosztują tyle samo: Mała 3,90 zł/szt., Średnia 5,50 zł/szt., Duża 7,50 zł/szt. Oba mają papier 120 g/m², uchwyt skręcany i wzmacniane dno. Wybór jest czysto wizerunkowy i projektowy, nie cenowy.",
+          a: "Nie — w DobrePrinty oba podłoża kosztują tyle samo: Mała 5,90 zł/szt., Średnia 8,32 zł/szt., Duża 11,35 zł/szt. Oba mają papier 120 g/m², uchwyt skręcany i wzmacniane dno. Wybór jest czysto wizerunkowy i projektowy, nie cenowy.",
         },
         {
           q: "Dlaczego kolory na krafcie wyglądają inaczej niż w projekcie?",

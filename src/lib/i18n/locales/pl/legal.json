@@ -13,7 +13,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Serwis dobreprinty.pl („DobrePrinty”, „Sprzedawca”) prowadzi {{owner}}, {{address}}, w ramach działalności nierejestrowanej (art. 5 ustawy – Prawo przedsiębiorców). Kontakt: <strong>{{email}}</strong>. Sprzedawca nie jest podatnikiem VAT."
+            "text": "Serwis dobreprinty.pl („DobrePrinty”, „Sprzedawca”) prowadzi <strong>{{owner}}</strong>, {{address}}, NIP {{nip}}, REGON {{regon}}, przedsiębiorca wpisany do CEIDG. Sprzedawca jest czynnym podatnikiem VAT. Kontakt: <strong>{{email}}</strong>."
           }
         ]
       },
@@ -37,7 +37,7 @@
             "type": "ul",
             "items": [
               "Zamówienie składasz w konfiguratorze produktu. Umowa zostaje zawarta po zaksięgowaniu płatności.",
-              "Ceny podane są w złotych (PLN) i są cenami końcowymi. Koszt dostawy jest widoczny przed zapłatą.",
+              "Ceny podane są w złotych (PLN) i są cenami brutto, zawierają VAT. Koszt dostawy jest widoczny przed zapłatą.",
               "Druk może wykonać podwykonawca (drukarnia partnerska). Za realizację zamówienia wobec Klienta odpowiada Sprzedawca."
             ]
           }
@@ -72,7 +72,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Płatności obsługuje Stripe (m.in. BLIK, karta, Przelewy24, Apple Pay, Google Pay). Potwierdzenie zakupu Stripe wysyła na adres e-mail podany w zamówieniu."
+            "text": "Płatności obsługuje Stripe (m.in. BLIK, karta, Przelewy24, Apple Pay, Google Pay). Potwierdzenie płatności Stripe wysyła na adres e-mail podany w zamówieniu. Podanie NIP-u przy zamówieniu traktujemy jako żądanie wystawienia faktury VAT – wystawiamy ją po opłaceniu i wysyłamy e-mailem. Bez NIP-u fakturę wystawimy na żądanie."
           }
         ]
       },
@@ -170,7 +170,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Administratorem Twoich danych osobowych jest <strong>{{owner}}</strong>, prowadzący serwis dobreprinty.pl. Kontakt: {{email}}."
+            "text": "Administratorem Twoich danych osobowych jest <strong>{{owner}}</strong>, {{address}}, NIP {{nip}}, REGON {{regon}}, prowadzący serwis dobreprinty.pl. Kontakt: {{email}}."
           }
         ]
       },

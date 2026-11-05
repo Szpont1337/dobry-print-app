@@ -66,7 +66,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       },
       {
         title: "Faktura i historia zamówień",
-        body: "Faktura ze Stripe przychodzi na maila razem z potwierdzeniem, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
+        body: "Z NIP-em wystawiamy fakturę VAT i wysyłamy ją e-mailem po opłaceniu, a wszystkie zamówienia masz w panelu — łatwo ponowić poprzedni druk jednym kliknięciem.",
       },
     ],
     bodyHeading: "Jak działa drukarnia online",
@@ -104,7 +104,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Nie. Prowadzimy działalność nierejestrowaną i nie jesteśmy podatnikiem VAT, więc nie wystawiamy faktur VAT — po opłaceniu zamówienia dostajesz na maila zwykłą fakturę bez VAT, wystawioną przez Stripe.",
+          "Tak. Jesteśmy czynnym podatnikiem VAT. Podaj nazwę firmy i NIP przy zamówieniu, a po opłaceniu wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie.",
       },
     ],
     cta: {

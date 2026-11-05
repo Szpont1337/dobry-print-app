@@ -121,7 +121,7 @@ export const productContent: Record<string, ProductContent> = {
         question:
           "Czy mogę zobaczyć ulotki przed zatwierdzeniem dużego nakładu?",
         answer:
-          "Tak. Wystarczy zamówić najpierw 50 sztuk próbnych w identycznej specyfikacji, ocenić wydruk i dopiero potem zatwierdzić docelowy nakład. Cena próbki to zwykle 8–25 zł, dostawa kurierem 1–2 dni robocze. Ten sam plik PDF używamy potem do nakładu produkcyjnego, więc kolor i ułożenie są identyczne.",
+          "Tak. Wystarczy zamówić najpierw 50 sztuk próbnych w identycznej specyfikacji, ocenić wydruk i dopiero potem zatwierdzić docelowy nakład. Cena próbki to zwykle 34–118 zł, dostawa kurierem 1–2 dni robocze. Ten sam plik PDF używamy potem do nakładu produkcyjnego, więc kolor i ułożenie są identyczne.",
       },
       {
         question: "Jaki papier wybrać do ulotek reklamowych?",
@@ -238,7 +238,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić składane ulotki w nakładzie 100 sztuk?",
         answer:
-          "Tak, minimum to 1 sztuka, ale cena jednostkowa znacząco spada od 250 sztuk. Przy 100 sztukach cena za ulotkę DL falcowaną w C to ok. 1,8 zł, przy 500 sztukach — 0,45 zł, przy 2 000 — 0,28 zł. Konfigurator pokazuje pełen breakdown ceny od razu po wybraniu nakładu.",
+          "Tak, minimum to 50 sztuk, a cena jednostkowa znacząco spada od 250 sztuk. Przy 100 sztukach cena za ulotkę DL falcowaną w C to ok. 0,67 zł, przy 500 sztukach — 0,39 zł, przy 2 000 — 0,28 zł. Konfigurator pokazuje pełen breakdown ceny od razu po wybraniu nakładu.",
       },
       {
         question: "Czym różni się bigowanie od samego falcowania?",
@@ -286,7 +286,7 @@ export const productContent: Record<string, ProductContent> = {
       },
       {
         tytul: "Niski koszt jednostkowy",
-        opis: "Koszt broszury 16-stronicowej A5 zaczyna się od ok. 2,1 zł przy nakładach 250+. Dla porównania: oprawa klejona w tym formacie to ok. 5,8 zł, szyta nicią — 12,4 zł. Broszury szyte to ekonomiczna oprawa dla treści, które nie muszą trwać dekadami.",
+        opis: "Koszt broszury 16-stronicowej A5 zaczyna się od ok. 2,60 zł przy nakładach 250+. Dla porównania: oprawa klejona w tym formacie to ok. 7,10 zł, szyta nicią — 15,30 zł. Broszury szyte to ekonomiczna oprawa dla treści, które nie muszą trwać dekadami.",
       },
       {
         tytul: "Do 48 stron",
@@ -354,7 +354,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Jaki jest minimalny nakład broszur szytych?",
         answer:
-          "Minimum to 25 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. Przy 25 sztukach koszt jednostkowy 16-stronicowej broszury A5 to ok. 8 zł, przy 250 sztukach — 2,1 zł. Cyfrowa technologia druku pozwala nam realizować mikronakłady, ale ekonomicznie sens ma to dopiero od 100+.",
+          "Minimum to 25 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. Przy 25 sztukach koszt jednostkowy 16-stronicowej broszury A5 to ok. 10 zł, przy 250 sztukach — 2,60 zł. Cyfrowa technologia druku pozwala nam realizować mikronakłady, ale ekonomicznie sens ma to dopiero od 100+.",
       },
       {
         question: "Czy mogę połączyć kolorowy środek z czarno-białym?",
@@ -389,7 +389,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Druk broszur szytych drutem to najczęstsza oprawa wybierana dla materiałów konferencyjnych, programów wydarzeń, cenników i katalogów produktowych do 48 stron. DobrePrinty realizuje druk broszur szytych w trzech formatach (A6, A5, A4), z różnymi liczbami stron i opcjami okładki. Konfigurator pokazuje cenę finalną przy każdej zmianie parametrów, a 28 drukarni partnerskich pozwala dobrać najlepszego partnera dla konkretnego zamówienia.",
-      "Broszury szyte drutem są lekkie i tanie w produkcji, ale mają limit grubości — powyżej 48 stron drut przestaje trzymać blok stabilnie. Dla grubszych publikacji polecamy oprawę klejoną (do 200 stron) lub szytą nicią (do 400+). Druk broszur szytych w naszej sieci kosztuje od 2,1 zł za sztukę dla 16-stronicowej A5 przy nakładach 250+, co jest cenowo niedoścignione przez oprawę klejoną i szytą nicią.",
+      "Broszury szyte drutem są lekkie i tanie w produkcji, ale mają limit grubości — powyżej 48 stron drut przestaje trzymać blok stabilnie. Dla grubszych publikacji polecamy oprawę klejoną (do 200 stron) lub szytą nicią (do 400+). Druk broszur szytych w naszej sieci kosztuje od 2,60 zł za sztukę dla 16-stronicowej A5 przy nakładach 250+, co jest cenowo niedoścignione przez oprawę klejoną i szytą nicią.",
       "Tania drukarnia broszur szytych nie musi oznaczać kompromisu jakościowego. Kontrolujemy plik PDF przed drukiem (spady, rozdzielczość, CMYK), używamy maszyn cyfrowych Konica Minolta i HP Indigo dla mniejszych nakładów, offsetowych dla 500+. Każda drukarnia partnerska przechodzi kwartalny audyt jakości, a klient w razie reklamacji ma kontakt z DobrePrinty, nie z drukarnią — my przejmujemy proces reklamacyjny.",
     ],
     ctaCopy:
@@ -485,7 +485,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić broszurę klejoną w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 25 sztuk, ale cena jednostkowa zaczyna sens ekonomiczny od 100+. Przy 25 sztukach A5 100-stronicowej koszt to ok. 18 zł, przy 100 sztukach — 8 zł, przy 500 — 4,5 zł. Klejenie wymaga rozruchu maszyny, który amortyzuje się dopiero przy większych nakładach.",
+          "Tak, minimum to 25 sztuk, ale cena jednostkowa zaczyna sens ekonomiczny od 100+. Przy 25 sztukach A5 100-stronicowej koszt to ok. 22 zł, przy 100 sztukach — 10 zł, przy 500 — 5,50 zł. Klejenie wymaga rozruchu maszyny, który amortyzuje się dopiero przy większych nakładach.",
       },
       {
         question: "Jaki papier wybrać na środek katalogu produktowego?",
@@ -505,7 +505,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie wydruk próbny przed nakładem?",
         answer:
-          "Tak. Dla nakładów 250+ rekomendujemy zamówienie 1 egzemplarza próbnego (proof) w identycznej specyfikacji za ok. 60–120 zł. Sprawdzasz kolory, jakość klejenia, wygląd okładki z folią — i dopiero potem zatwierdzasz cały nakład. Bez proofa ryzykujesz, że nakład 1000 sztuk nie będzie wyglądał tak, jak na monitorze.",
+          "Tak. Dla nakładów 250+ rekomendujemy zamówienie 1 egzemplarza próbnego (proof) w identycznej specyfikacji za ok. 75–150 zł. Sprawdzasz kolory, jakość klejenia, wygląd okładki z folią — i dopiero potem zatwierdzasz cały nakład. Bez proofa ryzykujesz, że nakład 1000 sztuk nie będzie wyglądał tak, jak na monitorze.",
       },
       {
         question:
@@ -608,7 +608,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić książkę szytą nicią w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 25 sztuk. Przy 25 sztukach A5 144-stronicowej z miękką okładką koszt to ok. 32 zł za sztukę, przy 100 sztukach — 18 zł, przy 500 — 10 zł. Twarda okładka dodaje ok. 60% do ceny. Szycie nicią to oprawa wymagająca ręcznego nadzoru przy nakładach do 100 sztuk, dlatego koszt jednostkowy jest wyższy niż w innych oprawach.",
+          "Tak, minimum to 25 sztuk. Przy 25 sztukach A5 144-stronicowej z miękką okładką koszt to ok. 39 zł za sztukę, przy 100 sztukach — 22 zł, przy 500 — 12 zł. Twarda okładka dodaje ok. 60% do ceny. Szycie nicią to oprawa wymagająca ręcznego nadzoru przy nakładach do 100 sztuk, dlatego koszt jednostkowy jest wyższy niż w innych oprawach.",
       },
       {
         question: "Jakie kolory kapitałek macie do wyboru?",
@@ -618,7 +618,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie okładki płócienne lub z ekoskóry?",
         answer:
-          "Tak, ale tylko dla nakładów 50+ z minimalnym wyprzedzeniem 14 dni. Płótno (5 kolorów: granat, bordo, zielony, szary, czarny) i ekoskóra (4 kolory: czarna, brązowa, bordo, granat) to opcje premium do książek jubileuszowych i firmowych. Cena za jednostkę: +35 zł vs standardowa twarda okładka. Tłoczenie złotem dostępne za dopłatą.",
+          "Tak, ale tylko dla nakładów 50+ z minimalnym wyprzedzeniem 14 dni. Płótno (5 kolorów: granat, bordo, zielony, szary, czarny) i ekoskóra (4 kolory: czarna, brązowa, bordo, granat) to opcje premium do książek jubileuszowych i firmowych. Cena za jednostkę: +43 zł vs standardowa twarda okładka. Tłoczenie złotem dostępne za dopłatą.",
       },
       {
         question: "Ile czasu zajmuje druk książki szytej nicią?",
@@ -628,7 +628,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę dostać próbny egzemplarz przed nakładem?",
         answer:
-          "Tak — przy nakładach 100+ rekomendujemy zamówienie 1 sztuki próbnej w docelowej specyfikacji za ok. 80–200 zł (zależnie od formatu i okładki). Sprawdzasz kolory, jakość szycia, papier, okładkę — i dopiero potem zatwierdzasz nakład. Dla wydań premium (twarda okładka, płótno) próbny egzemplarz jest praktycznie obowiązkowy.",
+          "Tak — przy nakładach 100+ rekomendujemy zamówienie 1 sztuki próbnej w docelowej specyfikacji za ok. 100–250 zł (zależnie od formatu i okładki). Sprawdzasz kolory, jakość szycia, papier, okładkę — i dopiero potem zatwierdzasz nakład. Dla wydań premium (twarda okładka, płótno) próbny egzemplarz jest praktycznie obowiązkowy.",
       },
       {
         question: "Jakie są zastosowania książek szytych nicią w biznesie?",
@@ -738,7 +738,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę wymienić grafikę bez kupowania nowego stelaża?",
         answer:
-          "Tak. Standardem jest sprzedaż blockoutu z grafiką oddzielnie od stelaża. Cena samej grafiki 85 × 200 cm to ok. 85–110 zł, podczas gdy zestaw stelaż + grafika to 165 zł. Wymiana wymaga wyciągnięcia starego blockoutu z kasety zwijającej (5 minut) i wsunięcia nowego. Trzymaj stelaż, wymieniaj grafikę co kampanię.",
+          "Tak. Standardem jest sprzedaż blockoutu z grafiką oddzielnie od stelaża. Cena samej grafiki 85 × 200 cm to ok. 105–135 zł, podczas gdy zestaw stelaż + grafika to 755,69 zł. Wymiana wymaga wyciągnięcia starego blockoutu z kasety zwijającej (5 minut) i wsunięcia nowego. Trzymaj stelaż, wymieniaj grafikę co kampanię.",
       },
       {
         question: "Ile czasu zajmuje druk roll-upa?",
@@ -748,7 +748,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie roll-upy ze podświetleniem LED?",
         answer:
-          "Tak, jako opcja premium. Stelaż z taśmą LED wbudowaną w boczne ramiona kasety zwijającej — daje równomierne podświetlenie grafiki, idealne dla stoisk konferencyjnych w słabym oświetleniu. Cena: 380 zł vs 165 zł za standardowy zestaw. Bateria akumulatorowa działa 6 h ciągłego świecenia.",
+          "Tak, jako opcja premium. Stelaż z taśmą LED wbudowaną w boczne ramiona kasety zwijającej — daje równomierne podświetlenie grafiki, idealne dla stoisk konferencyjnych w słabym oświetleniu. Cena: ponad 2× więcej niż standardowy zestaw za 755,69 zł. Bateria akumulatorowa działa 6 h ciągłego świecenia.",
       },
       {
         question: "Czy zwroty są możliwe?",
@@ -868,7 +868,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić papier firmowy w nakładzie 100 sztuk?",
         answer:
-          "Tak, minimum to 100 sztuk. Cena za 100 sztuk A4 z drukiem 4/0 to ok. 75 zł (0,75 zł za sztukę), 250 sztuk — 110 zł (0,44 zł), 500 sztuk — 145 zł (0,29 zł), 1000 sztuk — 215 zł (0,22 zł). Spadek ceny jednostkowej z nakładem jest znaczący — większe nakłady są zdecydowanie ekonomiczniejsze.",
+          "Tak, minimum to 500 sztuk. Cena za 500 sztuk A4 z drukiem 4/0 to 245,98 zł (0,49 zł za sztukę), 1000 sztuk — 279,13 zł (0,28 zł), 2000 sztuk — 551,45 zł (0,28 zł). Spadek ceny jednostkowej z nakładem jest znaczący — większe nakłady są zdecydowanie ekonomiczniejsze.",
       },
       {
         question:
@@ -990,12 +990,12 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić wizytówki z tłoczeniem folią złotą?",
         answer:
-          "Tak. Tłoczenie folią złotą lub srebrną to opcja premium, używana dla logo lub inicjałów. Wymaga osobnego pliku z maską tłoczenia (warstwa wskazująca obszar tłoczenia) i wydłuża czas realizacji o 72 h. Cena: +120 zł za 100 sztuk. Efekt premium, ale tylko jeśli pasuje do brand identity firmy (kancelarie prawne, hotele, marki luksusowe).",
+          "Tak. Tłoczenie folią złotą lub srebrną to opcja premium, używana dla logo lub inicjałów. Wymaga osobnego pliku z maską tłoczenia (warstwa wskazująca obszar tłoczenia) i wydłuża czas realizacji o 72 h. Cena: +148 zł za 100 sztuk. Efekt premium, ale tylko jeśli pasuje do brand identity firmy (kancelarie prawne, hotele, marki luksusowe).",
       },
       {
         question: "Czy mogę zamówić wizytówki w nakładzie 50 sztuk?",
         answer:
-          "Tak, minimum to 50 sztuk, ale rekomendujemy 100+ dla optymalnej ceny jednostkowej. 50 sztuk = ok. 18 zł (0,36 zł/szt.), 100 sztuk = 25 zł (0,25 zł/szt.), 500 sztuk = 65 zł (0,13 zł/szt.). Wizytówki są tanie w produkcji niezależnie od nakładu — w masowym zamówieniu znaczna jest oszczędność jednostkowa.",
+          "Tak, minimum to 100 sztuk. 100 sztuk = 66,72 zł (0,67 zł/szt.), 500 sztuk = 197,43 zł (0,39 zł/szt.), 1000 sztuk = 279,13 zł (0,28 zł/szt.). Wizytówki są tanie w produkcji niezależnie od nakładu — w masowym zamówieniu znaczna jest oszczędność jednostkowa.",
       },
       {
         question: "Czy oferujecie wizytówki personalizowane (różne imiona)?",
@@ -1103,7 +1103,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy oferujecie kartki świąteczne z kopertami?",
         answer:
-          "Koperty A6, DL i C5 (dla A5) nie są w standardowej ofercie, ale możemy je zrealizować jako zamówienie specjalne (z wyprzedzeniem 5–7 dni). Koperty białe lub kolorowe (kreda mat 100 g), bez nadruku lub z prostym nadrukiem 1/0. Typowy zestaw: 100 kartek A5 + 100 kopert C5 z białego papieru = ok. 195 zł.",
+          "Koperty A6, DL i C5 (dla A5) nie są w standardowej ofercie, ale możemy je zrealizować jako zamówienie specjalne (z wyprzedzeniem 5–7 dni). Koperty białe lub kolorowe (kreda mat 100 g), bez nadruku lub z prostym nadrukiem 1/0. Typowy zestaw: 100 kartek A5 + 100 kopert C5 z białego papieru = ok. 240 zł.",
       },
       {
         question: "Ile czasu zajmuje druk pocztówek?",
@@ -1124,7 +1124,7 @@ export const productContent: Record<string, ProductContent> = {
         question:
           "Czy oferujecie tłoczenie folią złotą na kartkach świątecznych?",
         answer:
-          "Tak — opcja premium dla kartek świątecznych. Tłoczenie złotą lub srebrną folią na elementach świątecznych (gwiazda, choinka, śnieżynka, monogram firmy). Wymaga osobnego pliku z maską tłoczenia i wydłuża czas realizacji o 72 h. Cena: +95 zł za 100 sztuk A5. Efekt premium, idealny dla kartek do najważniejszych klientów.",
+          "Tak — opcja premium dla kartek świątecznych. Tłoczenie złotą lub srebrną folią na elementach świątecznych (gwiazda, choinka, śnieżynka, monogram firmy). Wymaga osobnego pliku z maską tłoczenia i wydłuża czas realizacji o 72 h. Cena: +117 zł za 100 sztuk A5. Efekt premium, idealny dla kartek do najważniejszych klientów.",
       },
     ],
     seoParagraph: [
@@ -1225,7 +1225,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić jeden plakat?",
         answer:
-          "Tak, minimum to 1 sztuka. Cena 1 sztuki A2 to ok. 12 zł, A1 — 22 zł, B1 — 38 zł, A0 — 65 zł. Druk cyfrowy laserowy nie wymaga rozruchu maszyny, więc 1 sztuka kosztuje liniowo. Dla nakładów 10+ uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%.",
+          "Tak, minimum to 1 sztuka. Cena 1 sztuki A2 to 40,47 zł, A1 — 32,22 zł, B1 — 40,39 zł, A0 — 77,96 zł. Druk cyfrowy laserowy nie wymaga rozruchu maszyny, więc 1 sztuka kosztuje liniowo. Dla nakładów 10+ uruchamiamy offset wielkoformatowy, który obniża cenę jednostkową o 30–50%.",
       },
       {
         question: "Czy plakat zmieści się w typowej ramce na ścianie?",
@@ -1726,15 +1726,15 @@ export const productContent: Record<string, ProductContent> = {
   "torby-plocienne": {
     keyword: "torby płócienne",
     heroLead:
-      "Druk płóciennych toreb bawełnianych z własnym nadrukiem A4. Ekologiczne torby tote z naturalnej bawełny, z długimi uchami na ramię. Im większy nakład, tym taniej — od 16 zł za sztukę do 10 zł przy większych ilościach. Wgraj grafikę i zobacz podgląd na torbie przed zamówieniem.",
+      "Druk płóciennych toreb bawełnianych z własnym nadrukiem A4. Ekologiczne torby tote z naturalnej bawełny, z długimi uchami na ramię. Im większy nakład, tym taniej — od 24,21 zł za sztukę do 15,13 zł przy większych ilościach. Wgraj grafikę i zobacz podgląd na torbie przed zamówieniem.",
     whyBlocks: [
       {
         tytul: "Ekologiczna reklama, którą się nosi",
         opis: "Płócienna torba bawełniana to nośnik reklamy wielokrotnego użytku — klient nosi ją na zakupy, na uczelnię i do pracy przez lata. Naturalna bawełna zamiast plastiku, a Twoje logo w obiegu każdego dnia.",
       },
       {
-        tytul: "Cena maleje z nakładem: od 16 do 10 zł",
-        opis: "Pojedyncza torba kosztuje 16 zł, a przy większych nakładach cena jednostkowa sukcesywnie spada aż do 10 zł za sztukę. Im więcej zamówisz — na event, dla zespołu czy do sklepu — tym mniej płacisz za każdą torbę.",
+        tytul: "Cena maleje z nakładem: od 24,21 do 15,13 zł",
+        opis: "Pojedyncza torba kosztuje 24,21 zł, a przy większych nakładach cena jednostkowa sukcesywnie spada aż do 15,13 zł za sztukę. Im więcej zamówisz — na event, dla zespołu czy do sklepu — tym mniej płacisz za każdą torbę.",
       },
       {
         tytul: "Pełnokolorowy nadruk A4",
@@ -1756,8 +1756,8 @@ export const productContent: Record<string, ProductContent> = {
       { parametr: "Rozmiary", wartosc: "37×41, 38×42, 40×42 cm" },
       {
         parametr: "Cena",
-        wartosc: "od 16 zł/szt.",
-        opcje: "do 10 zł przy nakładzie",
+        wartosc: "od 24,21 zł/szt.",
+        opcje: "do 15,13 zł przy nakładzie",
       },
       { parametr: "Czas realizacji", wartosc: "24–72 h" },
       { parametr: "Nakład", wartosc: "od 1 sztuki" },
@@ -1786,12 +1786,12 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Ile kosztuje płócienna torba z nadrukiem?",
         answer:
-          "Pojedyncza torba kosztuje 16 zł, a cena jednostkowa maleje wraz z nakładem — przy 10 sztukach to 14 zł, przy 50 sztukach 12 zł, a od 250 sztuk już 10 zł za torbę. Pełną cenę finalną dla wybranego nakładu widzisz od razu w konfiguratorze.",
+          "Pojedyncza torba kosztuje 24,21 zł, a cena jednostkowa maleje wraz z nakładem — przy 10 sztukach to 21,18 zł, przy 50 sztukach 18,15 zł, a od 250 sztuk już 15,13 zł za torbę. Pełną cenę finalną dla wybranego nakładu widzisz od razu w konfiguratorze.",
       },
       {
         question: "Czy mogę zamówić jedną płócienną torbę?",
         answer:
-          "Tak, minimum to 1 sztuka. Druk nie wymaga matryc, więc możesz zamówić pojedynczą torbę na próbę albo na prezent. Pamiętaj jednak, że im większy nakład, tym niższa cena za sztukę — od 16 zł przy jednej do 10 zł przy większych ilościach.",
+          "Tak, minimum to 1 sztuka. Druk nie wymaga matryc, więc możesz zamówić pojedynczą torbę na próbę albo na prezent. Pamiętaj jednak, że im większy nakład, tym niższa cena za sztukę — od 24,21 zł przy jednej do 15,13 zł przy większych ilościach.",
       },
       {
         question: "Jak duży jest nadruk na torbie?",
@@ -1806,10 +1806,10 @@ export const productContent: Record<string, ProductContent> = {
     ],
     seoParagraph: [
       "Płócienne torby bawełniane (tote bag) to ekologiczny nośnik reklamy wielokrotnego użytku, który zastępuje jednorazowe foliówki. Sprawdzają się jako torby firmowe, gadżety na konferencje, targi i festiwale, opakowania w sklepach ekologicznych i butikach, a także jako prezenty z autorską grafiką. W przeciwieństwie do papierowych toreb, płócienna służy latami — a wraz z nią Twoje logo krąży po mieście każdego dnia.",
-      "W DobrePrinty zamawiasz torby płócienne online: wgrywasz grafikę, w podglądzie widzisz nadruk A4 na torbie, dopasowujesz jego rozmiar i wybierasz nakład. Cennik jest ilościowy — od 16 zł za pojedynczą sztukę do 10 zł przy większych nakładach — więc im więcej zamówisz, tym taniej wychodzi każda torba. Drukujemy pełnym kolorem na naturalnej bawełnie, z dostawą kurierem w całej Polsce w 3 dni robocze.",
+      "W DobrePrinty zamawiasz torby płócienne online: wgrywasz grafikę, w podglądzie widzisz nadruk A4 na torbie, dopasowujesz jego rozmiar i wybierasz nakład. Cennik jest ilościowy — od 24,21 zł za pojedynczą sztukę do 15,13 zł przy większych nakładach — więc im więcej zamówisz, tym taniej wychodzi każda torba. Drukujemy pełnym kolorem na naturalnej bawełnie, z dostawą kurierem w całej Polsce w 3 dni robocze.",
     ],
     ctaCopy:
-      "Wgraj grafikę, zobacz podgląd na torbie i wybierz nakład — płócienne torby od 16 zł, taniej z każdą kolejną sztuką, dostawa w 3 dni.",
+      "Wgraj grafikę, zobacz podgląd na torbie i wybierz nakład — płócienne torby od 24,21 zł, taniej z każdą kolejną sztuką, dostawa w 3 dni.",
   },
   "test-platnosci-internal": {
     keyword: "test płatności",

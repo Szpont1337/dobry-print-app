@@ -44,11 +44,10 @@ type BillingOrder = {
 };
 
 /**
- * Składa część sesji Checkout odpowiadającą za payera i dane na fakturze.
+ * Składa część sesji Checkout odpowiadającą za payera i dane firmy.
  *
  * Gdy znamy NIP, zakładamy (albo odzyskujemy) Customera z nazwą firmy i tax id
- * `pl_nip` — Stripe renderuje z niego fakturę. Typ `pl_nip`, nie `eu_vat`: to
- * numer NIP, nie numer VAT-UE, a DobrePrinty nie jest podatnikiem VAT. Bez
+ * `pl_nip`. Typ `pl_nip`, nie `eu_vat`: to numer NIP, nie numer VAT-UE. Bez
  * NIP-u zostaje zwykła ścieżka z `customer_creation` — NIP i firmę zbiera
  * wtedy Stripe przez `tax_id_collection` na sesji.
  *
@@ -75,7 +74,7 @@ export async function billingParamsFor(order: BillingOrder): Promise<{
         // `name: "auto"` jest WYMAGANE przez Stripe, gdy `tax_id_collection`
         // działa na istniejącym Customerze. Przy włączonym zbieraniu NIP-u
         // pole „name" w Checkout to nazwa FIRMY (prefill z Customera), nie
-        // imię z karty — więc nazwa firmy na fakturze zostaje.
+        // imię z karty — więc nazwa firmy zostaje.
         customer_update: { address: "auto", name: "auto" },
       },
     };

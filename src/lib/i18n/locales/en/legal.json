@@ -13,7 +13,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The dobreprinty.pl service (\"DobrePrinty\", \"Seller\") is operated by {{owner}}, {{address}}, as an unregistered business activity (Art. 5 of the Polish Entrepreneurs' Law). Contact: <strong>{{email}}</strong>. The Seller is not a VAT payer."
+            "text": "The dobreprinty.pl service (\"DobrePrinty\", \"Seller\") is operated by <strong>{{owner}}</strong>, {{address}}, Poland, tax ID (NIP) {{nip}}, REGON {{regon}}, a business entered in the Polish CEIDG register. The Seller is VAT-registered. Contact: <strong>{{email}}</strong>."
           }
         ]
       },
@@ -37,7 +37,7 @@
             "type": "ul",
             "items": [
               "You place an order in the product configurator. The contract is concluded once the payment is received.",
-              "Prices are in Polish złoty (PLN) and are final. The delivery cost is shown before payment.",
+              "Prices are in Polish złoty (PLN) and are gross, VAT included. The delivery cost is shown before payment.",
               "Printing may be done by a subcontractor (partner print shop). The Seller is responsible to the Customer for fulfilling the order."
             ]
           }
@@ -72,7 +72,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "Payments are processed by Stripe (including BLIK, card, Przelewy24, Apple Pay, Google Pay). Stripe sends the proof of purchase to the email address given in the order."
+            "text": "Payments are processed by Stripe (including BLIK, card, Przelewy24, Apple Pay, Google Pay). Stripe sends a payment confirmation to the email address given in the order. Giving a tax ID (NIP) with the order counts as a request for a VAT invoice: we issue it after payment and send it by email. Without a tax ID we issue one on request."
           }
         ]
       },
@@ -170,7 +170,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "The controller of your personal data is <strong>{{owner}}</strong>, operator of the dobreprinty.pl service. Contact: {{email}}."
+            "text": "The controller of your personal data is <strong>{{owner}}</strong>, {{address}}, Poland, tax ID (NIP) {{nip}}, REGON {{regon}}, operator of the dobreprinty.pl service. Contact: {{email}}."
           }
         ]
       },

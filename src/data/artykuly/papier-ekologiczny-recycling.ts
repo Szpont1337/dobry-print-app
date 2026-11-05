@@ -209,7 +209,7 @@ export const article: Article = {
         },
         {
           q: "Ile więcej kosztuje druk na papierze FSC?",
-          a: "FSC Mix: +5-10% do ceny standardowego druku. FSC 100%: +10-20%. Recycling 100%: +10-30%. Przy nakładzie 1000 ulotek A5 na kredzie 170g: standardowy papier ~180 zł, FSC Mix ~195 zł, recycling 100% ~210 zł. Różnica jest niewielka, zwłaszcza przy większych nakładach.",
+          a: "FSC Mix: +5-10% do ceny standardowego druku. FSC 100%: +10-20%. Recycling 100%: +10-30%. Przy nakładzie 1000 ulotek A5 na kredzie 170g: standardowy papier ~340 zł, FSC Mix ~368 zł, recycling 100% ~397 zł. Różnica jest niewielka, zwłaszcza przy większych nakładach.",
         },
         {
           q: "Czy mogę umieścić logo FSC na mojej ulotce?",

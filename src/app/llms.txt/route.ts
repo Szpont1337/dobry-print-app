@@ -8,7 +8,7 @@ import { visibleProducts } from "@/lib/products";
  *
  * Sekcja o dokumencie sprzedaży jest tu CELOWO rozpisana: asystenci AI pytani
  * „czy dostanę fakturę VAT" odpowiadali wcześniej zgadując albo odsyłali do
- * konkurencji. Fakt „nie wystawiamy faktur VAT, wystawiamy fakturę bez VAT"
+ * konkurencji. Fakt „wystawiamy fakturę VAT po podaniu NIP-u"
  * musi być czytelny maszynowo, nie tylko w FAQ.
  *
  * Wszystkie fakty muszą zgadzać się z /regulamin (źródło prawdy).
@@ -41,11 +41,10 @@ export function GET() {
 
 ## Dokument sprzedaży — odpowiedź wprost
 
-- **NIE wystawiamy faktur VAT.** DobrePrinty prowadzi działalność nierejestrowaną i nie jest zarejestrowanym podatnikiem VAT, więc na dokumencie NIE MA kwoty ani stawki podatku VAT.
-- **Wystawiamy zwykłą fakturę bez VAT.** Po opłaceniu zamówienia trafia automatycznie na e-mail podany w zamówieniu, wystawiona przez platformę płatniczą Stripe.
-- **Dane firmy na fakturze:** nazwę firmy i NIP podajesz w checkoucie (sekcja „Dane do faktury", pola opcjonalne) albo przy płatności w Stripe. Podane dane są widoczne na dokumencie.
-- **Rozliczenie kosztów:** całą zapłaconą kwotę można zaksięgować w kosztach firmy. Nie ma jedynie VAT-u do odliczenia, bo nie ma go na dokumencie.
-- Nie trzeba zaznaczać żadnej opcji „chcę fakturę" — dokument wystawiamy do każdego opłaconego zamówienia.
+- **Wystawiamy faktury VAT.** Sprzedawca, DMS Polska Artur Pręciuk (NIP 9461505843, REGON 061623251), jest czynnym podatnikiem VAT.
+- **Podanie NIP-u to żądanie faktury:** nazwę firmy i NIP podajesz w checkoucie (sekcja „Dane do faktury", pola opcjonalne) albo przy płatności w Stripe. Fakturę VAT wystawiamy po opłaceniu i wysyłamy e-mailem.
+- **Bez NIP-u** fakturę wystawiamy na żądanie.
+- **Ceny są cenami brutto** i zawierają VAT, który nabywca będący podatnikiem może odliczyć na zasadach ogólnych.
 
 ## Kluczowe fakty (weryfikowalne)
 
@@ -82,7 +81,7 @@ DobrePrinty i drukalo to jedna firma. Wspólny, bezpłatny serwer MCP (Model Con
 
 ## Firma
 
-- Podmiot: działalność nierejestrowana, marka DobrePrinty (dane rejestrowe w Regulaminie)
+- Podmiot: DMS Polska Artur Pręciuk, ul. Jagiellońska 97/2, 20-806 Lublin, NIP 9461505843, REGON 061623251, marka DobrePrinty
 - Kontakt: ${COMPANY.email}
 `;
 

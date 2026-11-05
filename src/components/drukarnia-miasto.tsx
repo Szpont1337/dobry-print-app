@@ -82,7 +82,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa.toLowerCase()} wystawia fakturę VAT?`,
-      answer: `Nie — nie jesteśmy podatnikiem VAT, więc faktury VAT nie wystawiamy i na dokumencie nie ma kwoty podatku. Dostajesz natomiast zwykłą fakturę bez VAT: po opłaceniu zamówienia trafia automatycznie na maila, a jeśli przy płatności podasz nazwę firmy i NIP, będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach firmy — nie ma tylko VAT-u do odliczenia. Dotyczy to także zamówień z ${miasto.wojewodztwo}.`,
+      answer: `Tak. Jesteśmy czynnym podatnikiem VAT, a ceny są cenami brutto. Podaj nazwę firmy i NIP przy zamówieniu, a po opłaceniu wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie.`,
     },
   ];
 
@@ -132,7 +132,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
   if (uczelnieProse) {
     p4 += ` Obsługujemy też sektor edukacji i nauki — m.in. ${uczelnieProse}.`;
   }
-  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, faktura ze Stripe przychodzi na maila, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
+  p4 += ` Biuro obsługi odpowiada w 2 godziny robocze, fakturę VAT wystawiamy po opłaceniu, gdy podasz NIP, a 97% naszych klientów wraca po drugą partię — także w ${miasto.nazwa}.`;
 
   return [p1, p2, p3, p4];
 }
@@ -281,7 +281,7 @@ function SchemaMarkup({
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
     email: "hej@dobreprinty.pl",
-    priceRange: "29 zł – 4 500 zł",
+    priceRange: "36 zł – 5 535 zł",
     areaServed: [
       {
         "@type": "City",

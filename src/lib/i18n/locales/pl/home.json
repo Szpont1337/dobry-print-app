@@ -16,7 +16,7 @@
     "stat2": "zadowolonych klientów",
     "stat3": "średnia ocen",
     "cardLabel": "Podgląd na żywo",
-    "cardPrice": "od 0,18 zł / szt.",
+    "cardPrice": "od 0,22 zł / szt.",
     "cardCta": "Konfiguruj",
     "cardBadge": "Druk za 24 h",
     "mcpBadge": "Nowość",
@@ -54,15 +54,15 @@
       },
       {
         "question": "Jakie metody płatności akceptujecie?",
-        "answer": "BLIK, karta (Visa/Mastercard), Przelewy24, Apple Pay i Google Pay. Płatność z góry przy składaniu zamówienia — fakturę za nią dostajesz automatycznie na maila."
+        "answer": "BLIK, karta (Visa/Mastercard), Przelewy24, Apple Pay i Google Pay. Płatność z góry przy składaniu zamówienia. Kupując na firmę, podajesz nazwę i NIP, a po opłaceniu wystawiamy fakturę VAT."
       },
       {
         "question": "Co jeśli kolory nie odpowiadają tym z monitora?",
-        "answer": "Drukujemy w profilu FOGRA39 / ISO Coated v2, czyli standardzie branżowym dla druku offsetowego i cyfrowego. Monitor pokazuje RGB, druk to CMYK, więc różnice są naturalne. Jeśli zależy Ci na precyzji, zamów próbny wydruk (proof) za 19 zł."
+        "answer": "Drukujemy w profilu FOGRA39 / ISO Coated v2, czyli standardzie branżowym dla druku offsetowego i cyfrowego. Monitor pokazuje RGB, druk to CMYK, więc różnice są naturalne. Jeśli zależy Ci na precyzji, zamów próbny wydruk (proof) za 28,75 zł."
       },
       {
         "question": "Czy dostanę fakturę VAT?",
-        "answer": "Nie — nie jesteśmy podatnikiem VAT, więc faktury VAT nie wystawiamy i na dokumencie nie ma kwoty podatku. Dostajesz natomiast zwykłą fakturę bez VAT: po opłaceniu zamówienia trafia automatycznie na maila, a jeśli przy płatności podasz nazwę firmy i NIP, będą na niej widoczne. Całą kwotę zaksięgujesz w kosztach firmy — nie ma tylko VAT-u do odliczenia."
+        "answer": "Tak. Jesteśmy czynnym podatnikiem VAT, a ceny w sklepie są cenami brutto. Podaj nazwę firmy i NIP przy zamówieniu, a po opłaceniu wystawimy fakturę VAT i wyślemy ją e-mailem. Bez NIP-u fakturę wystawimy na żądanie."
       },
       {
         "question": "Czy mogę anulować lub zwrócić zamówienie?",
@@ -100,7 +100,7 @@
       },
       "pay": {
         "title": "Zapłać online",
-        "desc": "BLIK, karta, Przelewy24 lub Apple/Google Pay. Faktura ze Stripe od ręki."
+        "desc": "BLIK, karta, Przelewy24 lub Apple/Google Pay. Z NIP-em wystawiamy fakturę VAT."
       },
       "receive": {
         "title": "Odbierz",

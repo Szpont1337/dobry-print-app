@@ -16,7 +16,7 @@
     "stat2": "happy customers",
     "stat3": "average rating",
     "cardLabel": "Live preview",
-    "cardPrice": "from 0.18 zł / pc.",
+    "cardPrice": "from 0.22 zł / pc.",
     "cardCta": "Configure",
     "cardBadge": "Print in 24 h",
     "mcpBadge": "New",
@@ -54,15 +54,15 @@
       },
       {
         "question": "Which payment methods do you accept?",
-        "answer": "BLIK, cards (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Payment upfront when you place the order — the receipt lands in your inbox automatically."
+        "answer": "BLIK, cards (Visa/Mastercard), Przelewy24, Apple Pay and Google Pay. Payment upfront when you place the order. Buying for a company? Enter its name and tax ID and we issue a VAT invoice after payment."
       },
       {
         "question": "What if colors don't match my monitor?",
-        "answer": "We print in the FOGRA39 / ISO Coated v2 profile, the industry standard for offset and digital print. Monitors show RGB while print is CMYK, so differences are natural. For exact color, order a proof print for 19 PLN."
+        "answer": "We print in the FOGRA39 / ISO Coated v2 profile, the industry standard for offset and digital print. Monitors show RGB while print is CMYK, so differences are natural. For exact color, order a proof print for 28.75 PLN."
       },
       {
         "question": "Will I get a VAT invoice?",
-        "answer": "No — we are not a VAT payer, so we do not issue VAT invoices and the document carries no tax amount. You do get a regular non-VAT invoice: it lands in your inbox automatically once the order is paid, and if you enter your company name and tax ID at payment, they appear on it. The full amount is a deductible business expense — there is simply no VAT to reclaim."
+        "answer": "Yes. We are VAT-registered and shop prices are gross. Enter your company name and tax ID (NIP) with the order and after payment we issue a VAT invoice and send it by email. Without a tax ID we issue one on request."
       },
       {
         "question": "Can I cancel or return an order?",
@@ -100,7 +100,7 @@
       },
       "pay": {
         "title": "Pay online",
-        "desc": "BLIK, card, Przelewy24 or Apple/Google Pay. Stripe invoice issued instantly."
+        "desc": "BLIK, card, Przelewy24 or Apple/Google Pay. VAT invoice issued when you give a tax ID."
       },
       "receive": {
         "title": "Receive",

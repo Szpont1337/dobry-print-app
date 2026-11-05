@@ -16,7 +16,7 @@ export const article: Article = {
   sections: [
     {
       type: "p",
-      text: "Budżet materiałów drukowanych na targi może wynieść od 800 zł do 15 000 zł zależnie od stoiska i kompletu. Tani komplet to nie kompromis jakościowy — to świadomy wybór formatów, gramatury i nakładów dopasowanych do realnej potrzeby. W tym poradniku rozkładamy budżet typowego stoiska targowego i pokazujemy, gdzie zaoszczędzić, a gdzie nie ma sensu.",
+      text: "Budżet materiałów drukowanych na targi może wynieść od 1000 zł do 15 000 zł zależnie od stoiska i kompletu. Tani komplet to nie kompromis jakościowy — to świadomy wybór formatów, gramatury i nakładów dopasowanych do realnej potrzeby. W tym poradniku rozkładamy budżet typowego stoiska targowego i pokazujemy, gdzie zaoszczędzić, a gdzie nie ma sensu.",
     },
     {
       type: "callout",
@@ -30,25 +30,25 @@ export const article: Article = {
     },
     {
       type: "table",
-      caption: "Komplet startera: budżet ok. 800-1500 zł",
+      caption: "Komplet startera: budżet ok. 1500-1850 zł",
       headers: ["Materiał", "Specyfikacja", "Nakład", "Cena ok."],
       rows: [
         [
           "Roll-up 85×200",
           "Blockout 200g + stelaż aluminiowy",
           "1 szt.",
-          "165 zł",
+          "755,69 zł",
         ],
-        ["Ulotki A5", "Kreda mat 170g, druk 4/4", "1000 szt.", "210 zł"],
-        ["Wizytówki", "Karton 350g kreda mat, 4/4", "500 szt.", "65 zł"],
+        ["Ulotki A5", "Kreda mat 170g, druk 4/4", "1000 szt.", "339,65 zł"],
+        ["Wizytówki", "Karton 350g kreda mat, 4/4", "500 szt.", "197,43 zł"],
         [
           "Broszura A5 (8 stron)",
           "Środek 135g, okładka 250g, szyte drutem",
           "100 szt.",
-          "320 zł",
+          "394 zł",
         ],
-        ["Plakaty A2 (do stoiska)", "Satynowy 170g, 4/0", "5 szt.", "60 zł"],
-        ["", "", "RAZEM", "ok. 820 zł"],
+        ["Plakaty A2 (do stoiska)", "Satynowy 170g, 4/0", "5 szt.", "94,59 zł"],
+        ["", "", "RAZEM", "ok. 1780 zł"],
       ],
     },
     {
@@ -62,40 +62,40 @@ export const article: Article = {
     },
     {
       type: "table",
-      caption: "Komplet rozszerzony: budżet ok. 3000-5000 zł",
+      caption: "Komplet rozszerzony: budżet ok. 5100-6400 zł",
       headers: ["Materiał", "Specyfikacja", "Nakład", "Cena ok."],
       rows: [
         [
           "Roll-up 100×200",
           "Blockout 200g + stelaż srebrny",
           "2 szt.",
-          "390 zł",
+          "1776,90 zł",
         ],
-        ["Ulotki A5", "Kreda mat 170g + folia mat", "2000 szt.", "580 zł"],
+        ["Ulotki A5", "Kreda mat 170g + folia mat", "2000 szt.", "672,48 zł"],
         [
           "Wizytówki",
           "Karton 400g + folia mat + UV punktowy",
           "1000 szt.",
-          "180 zł",
+          "440 zł",
         ],
         [
           "Broszura A4 klejona (24 stron)",
           "Środek 135g, okładka 300g + folia mat",
           "250 szt.",
-          "950 zł",
+          "1169 zł",
         ],
         [
           "Plakat A1 (centralna grafika)",
           "Satynowy 170g, 4/0",
           "1 szt.",
-          "22 zł",
+          "32,22 zł",
         ],
-        ["Plakaty A2 (boczne)", "Satynowy 170g, 4/0", "4 szt.", "48 zł"],
+        ["Plakaty A2 (boczne)", "Satynowy 170g, 4/0", "4 szt.", "81,06 zł"],
         [
           "Składane ulotki DL (menu)",
           "Kreda mat 170g + bigowanie",
           "500 szt.",
-          "210 zł",
+          "197,43 zł",
         ],
         [
           "Notes firmowy A5",
@@ -104,7 +104,7 @@ export const article: Article = {
           "780 zł",
         ],
         ["Długopisy z logo", "Plastik + nadruk 1 kolor", "300 szt.", "450 zł"],
-        ["", "", "RAZEM", "ok. 3600 zł"],
+        ["", "", "RAZEM", "ok. 5600 zł"],
       ],
     },
     {
@@ -219,10 +219,10 @@ export const article: Article = {
         [
           "Standardowe",
           "2-3 m²",
-          "800-1500 zł",
+          "1500-1850 zł",
           "Komplet startera (zob. wyżej)",
         ],
-        ["Rozszerzone", "3×3 m", "3000-5000 zł", "Komplet rozszerzony"],
+        ["Rozszerzone", "3×3 m", "5100-6400 zł", "Komplet rozszerzony"],
         [
           "Premium",
           "5×5 m",
@@ -276,11 +276,11 @@ export const article: Article = {
       items: [
         {
           q: "Ile kosztuje minimalny komplet materiałów na pierwsze targi?",
-          a: "Minimum: roll-up 85×200 (165 zł) + 500 ulotek A5 (115 zł) + 200 wizytówek (35 zł) = ok. 315 zł. To bardzo skromny komplet — wystarczy na 1-dniowe targi lokalne dla mikrofirmy. Dla 3-dniowych targów branżowych realistyczny budżet to 800-1500 zł (komplet startera w tabeli wyżej).",
+          a: "Minimum: roll-up 85×200 (755,69 zł) + 500 ulotek A5 (263,77 zł) + 200 wizytówek (102,12 zł) = ok. 1120 zł. To bardzo skromny komplet — wystarczy na 1-dniowe targi lokalne dla mikrofirmy. Dla 3-dniowych targów branżowych realistyczny budżet to 1500-1850 zł (komplet startera w tabeli wyżej).",
         },
         {
           q: "Czy warto wydać więcej na premium roll-up z LED?",
-          a: "W większości przypadków nie. Standardowy roll-up z blockoutem 200g w dobrze oświetlonej hali targowej wygląda profesjonalnie. LED ma sens tylko jeśli stoisko jest w słabo oświetlonej hali (np. hala w pawilonie sąsiednim, słabe oświetlenie ogólne) lub jeśli chcesz roll-upem zwracać uwagę z odległości 10+ metrów. Cena: standard 165 zł, LED 380 zł — ponad 2× droższy.",
+          a: "W większości przypadków nie. Standardowy roll-up z blockoutem 200g w dobrze oświetlonej hali targowej wygląda profesjonalnie. LED ma sens tylko jeśli stoisko jest w słabo oświetlonej hali (np. hala w pawilonie sąsiednim, słabe oświetlenie ogólne) lub jeśli chcesz roll-upem zwracać uwagę z odległości 10+ metrów. Cena: standard 755,69 zł, LED ponad 2× droższy.",
         },
         {
           q: "Czy mogę używać materiałów z poprzednich targów?",

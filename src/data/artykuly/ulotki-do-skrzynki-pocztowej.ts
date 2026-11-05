@@ -131,7 +131,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Dla mikrofirm (salon, restauracja, gabinet): samodzielna dystrybucja 500-1000 [ulotek](/produkty/ulotki) w okolicy 1-2 km to najlepsza metoda na start. Koszt: tylko druk (ok. 200-350 zł za 1000 DL). Czas: 3-5 godzin spaceru. Dla firm z większym budżetem: kolportaż z raportowaniem GPS gwarantuje zasięg 5000-10000 skrzynek.",
+      text: "Dla mikrofirm (salon, restauracja, gabinet): samodzielna dystrybucja 500-1000 [ulotek](/produkty/ulotki) w okolicy 1-2 km to najlepsza metoda na start. Koszt: tylko druk (ok. 225 zł za 1000 DL). Czas: 3-5 godzin spaceru. Dla firm z większym budżetem: kolportaż z raportowaniem GPS gwarantuje zasięg 5000-10000 skrzynek.",
     },
     {
       type: "h2",
@@ -140,7 +140,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Średnia konwersja ulotek do skrzynek: 0,5-2% (5-20 reakcji na 1000 ulotek). To wydaje się mało, ale przy niskim koszcie ulotki (0,25-0,40 zł/szt.) i wartości klienta (np. obiad w restauracji za 80 zł) ekonomia się zgadza: 1000 ulotek za 300 zł + dystrybucja 200 zł = 500 zł. 10 nowych klientów × 80 zł = 800 zł przychodu. ROI: 60%.",
+      text: "Średnia konwersja ulotek do skrzynek: 0,5-2% (5-20 reakcji na 1000 ulotek). To wydaje się mało, ale przy niskim koszcie ulotki (ok. 0,22 zł/szt.) i wartości klienta (np. obiad w restauracji za 80 zł) ekonomia się zgadza: 1000 ulotek za 225 zł + dystrybucja 200 zł = 425 zł. 10 nowych klientów × 80 zł = 800 zł przychodu. ROI: 88%.",
     },
     {
       type: "table",
@@ -221,7 +221,7 @@ export const article: Article = {
         },
         {
           q: "Czy ulotka dwustronna jest warta dopłaty?",
-          a: "Tak. Awers to hak (headline + CTA + kupon), rewers to argumenty (lista usług, zdjęcia, mapa). Ulotka jednostronna marnuje 50% powierzchni. Koszt 4/4 vs 4/0: +30-40%. Przy 1000 DL: różnica to ok. 50-80 zł — niewielki koszt wobec wartości kampanii.",
+          a: "Tak. Awers to hak (headline + CTA + kupon), rewers to argumenty (lista usług, zdjęcia, mapa). Ulotka jednostronna marnuje 50% powierzchni. Koszt 4/4 vs 4/0: +30-40%. Przy 1000 DL: różnica to ok. 60-100 zł — niewielki koszt wobec wartości kampanii.",
         },
         {
           q: "Jak uniknąć wyrzucenia ulotki od razu?",

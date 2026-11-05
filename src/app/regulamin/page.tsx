@@ -14,8 +14,10 @@ export default function RegulaminPage() {
     <LegalPage
       doc="terms"
       values={{
-        owner: COMPANY.owner,
+        owner: COMPANY.legalName,
         address: COMPANY.address,
+        nip: COMPANY.nip,
+        regon: COMPANY.regon,
         email: COMPANY.email,
       }}
     />
