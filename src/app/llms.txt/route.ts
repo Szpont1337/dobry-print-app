@@ -52,7 +52,7 @@ export function GET() {
 - Zasięg: cała Polska, dostawa kurierem lub do paczkomatu InPost.
 - Czas realizacji: produkcja 24–48 h + doba na kuriera.
 - Ceny: finalne, widoczne w konfiguratorze przed zamówieniem.
-- Dostawa: 10 zł, od 50 zł wartości zamówienia gratis.
+- Dostawa: 12 zł do paczkomatu, 15 zł kurierem, od 50 zł wartości zamówienia gratis.
 - Płatność: BLIK, karta, Przelewy24, Apple Pay, Google Pay — z góry przy składaniu zamówienia.
 
 ## Katalog produktów

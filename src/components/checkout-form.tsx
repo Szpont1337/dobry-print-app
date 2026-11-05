@@ -14,7 +14,7 @@ import { getOrderAttribution } from "@/lib/attribution";
 import { itemHasDesign, type ResolvedCartItem } from "@/lib/cart";
 import type { CartTotals } from "@/lib/pricing";
 import { safeCapture } from "@/lib/posthog-client";
-import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
+import { FREE_SHIPPING_THRESHOLD, shippingFeeFor } from "@/lib/shipping";
 import { Button, Input, Textarea } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
@@ -94,6 +94,9 @@ export function CheckoutForm({
   const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - totals.productTotal);
 
   const [deliveryMethod, setDeliveryMethod] = useState<DeliveryMethod>("courier");
+  // Koszyk zna tylko najtańszą dostawę; kwota do zapłaty zależy od wybranej.
+  const shippingFee = shippingFeeFor(totals.productTotal, deliveryMethod);
+  const payable = totals.total - totals.shippingFee + shippingFee;
   const [parcelLocker, setParcelLocker] = useState<ParcelLocker | null>(null);
   const [mode, setMode] = useState<Mode>("form");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -290,6 +293,8 @@ export function CheckoutForm({
         customerName: values.customerName.trim(),
         customerEmail: values.customerEmail.trim(),
         customerPhone: values.customerPhone.trim(),
+        companyName: optional(values.companyName ?? ""),
+        taxId: optional(values.taxId ?? ""),
         deliveryMethod,
         shippingStreet: deliveryMethod === "courier" ? values.shippingStreet.trim() : undefined,
         shippingCity: deliveryMethod === "courier" ? values.shippingCity.trim() : undefined,
@@ -311,7 +316,7 @@ export function CheckoutForm({
       safeCapture("order_submitted", {
         item_count: items.length,
         product_slugs: items.map((i) => i.slug),
-        gross_total: totals.total,
+        gross_total: payable,
         delivery_method: deliveryMethod,
       });
 
@@ -326,8 +331,7 @@ export function CheckoutForm({
           orderIds: orderIds.map(String),
           locale: i18n.language,
           test: testMode,
-          // Dane firmy idą prosto do Stripe (Customer + tax id `pl_nip`) —
-          // nie przechowujemy NIP-u u siebie, ląduje tylko na fakturze.
+          // Te same dane firmy dla Stripe (Customer + tax id `pl_nip`).
           companyName: optional(values.companyName ?? ""),
           taxId: optional(values.taxId ?? ""),
         }),
@@ -514,8 +518,8 @@ export function CheckoutForm({
                   {t("cart.shipping")}
                 </dt>
                 <dd className="text-right font-semibold text-foreground">
-                  {totals.shippingFee > 0
-                    ? formatPLN.format(totals.shippingFee)
+                  {shippingFee > 0
+                    ? formatPLN.format(shippingFee)
                     : t("cart.shippingFree")}
                 </dd>
               </div>
@@ -524,7 +528,7 @@ export function CheckoutForm({
                   {t("cart.total")}
                 </dt>
                 <dd className="text-right text-lg font-extrabold tracking-tight text-foreground tabular-nums">
-                  {formatPLN.format(totals.total)}
+                  {formatPLN.format(payable)}
                 </dd>
               </div>
             </dl>
@@ -576,7 +580,7 @@ export function CheckoutForm({
         </div>
 
         <p className="px-1 text-center text-xs text-muted-foreground">
-          {totals.shippingFee > 0
+          {shippingFee > 0
             ? t("cart.freeShippingHint", {
                 missing: formatPLN.format(amountToFreeShipping),
               })

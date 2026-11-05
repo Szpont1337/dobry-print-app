@@ -204,6 +204,8 @@ export const submitCart = mutation({
     customerName: v.string(),
     customerEmail: v.string(),
     customerPhone: v.string(),
+    companyName: v.optional(v.string()),
+    taxId: v.optional(v.string()),
     deliveryMethod: v.optional(
       v.union(v.literal("courier"), v.literal("parcel_locker")),
     ),
