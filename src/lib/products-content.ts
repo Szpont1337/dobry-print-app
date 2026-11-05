@@ -1623,7 +1623,7 @@ export const productContent: Record<string, ProductContent> = {
       {
         question: "Czy mogę zamówić jedną koszulkę z własnym nadrukiem?",
         answer:
-          "Tak, minimum to 1 sztuka. Druk DTG nie wymaga sit ani matryc, więc pojedyncza koszulka kosztuje tyle samo za sztukę co kilka — bez dopłat za przygotowanie. To idealne rozwiązanie na prezent albo próbkę przed większym zamówieniem.",
+          "Tak, minimum to 1 sztuka. Druk DTG nie wymaga sit ani matryc, więc zamówisz nawet jedną koszulkę: 124,11 zł za sztukę, a przy większym nakładzie cena spada do ok. 97 zł za sztukę. To idealne rozwiązanie na prezent albo próbkę przed większym zamówieniem.",
       },
       {
         question: "Czy nadruk nie spierze się po praniu?",

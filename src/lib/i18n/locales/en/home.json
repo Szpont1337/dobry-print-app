@@ -114,33 +114,15 @@
     "button": "Get a quote"
   },
   "socialProof": {
-    "someone": "Someone {{city}}",
+    "someone": "Someone",
     "ordered": "ordered",
     "dismiss": "Dismiss notification",
     "timeAgo": {
       "justNow": "just now",
       "minutesAgo": "{{count}} min ago",
-      "fewMinutesAgo": "a few minutes ago"
-    },
-    "cities": {
-      "warsaw": "from Warsaw",
-      "krakow": "from Kraków",
-      "wroclaw": "from Wrocław",
-      "poznan": "from Poznań",
-      "gdansk": "from Gdańsk",
-      "lodz": "from Łódź",
-      "szczecin": "from Szczecin",
-      "lublin": "from Lublin",
-      "katowice": "from Katowice",
-      "bialystok": "from Białystok",
-      "bydgoszcz": "from Bydgoszcz",
-      "rzeszow": "from Rzeszów",
-      "gdynia": "from Gdynia",
-      "torun": "from Toruń",
-      "kielce": "from Kielce",
-      "olsztyn": "from Olsztyn",
-      "czestochowa": "from Częstochowa",
-      "sopot": "from Sopot"
+      "hoursAgo": "{{count}} h ago",
+      "yesterday": "yesterday",
+      "daysAgo": "{{count}} days ago"
     },
     "noun": {
       "stack_one": "flyer",

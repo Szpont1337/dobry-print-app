@@ -114,33 +114,15 @@
     "button": "Rozpocznij wycenę"
   },
   "socialProof": {
-    "someone": "Ktoś {{city}}",
+    "someone": "Ktoś",
     "ordered": "zamówił(a)",
     "dismiss": "Zamknij powiadomienie",
     "timeAgo": {
       "justNow": "przed chwilą",
       "minutesAgo": "{{count}} min temu",
-      "fewMinutesAgo": "kilka minut temu"
-    },
-    "cities": {
-      "warsaw": "z Warszawy",
-      "krakow": "z Krakowa",
-      "wroclaw": "z Wrocławia",
-      "poznan": "z Poznania",
-      "gdansk": "z Gdańska",
-      "lodz": "z Łodzi",
-      "szczecin": "ze Szczecina",
-      "lublin": "z Lublina",
-      "katowice": "z Katowic",
-      "bialystok": "z Białegostoku",
-      "bydgoszcz": "z Bydgoszczy",
-      "rzeszow": "z Rzeszowa",
-      "gdynia": "z Gdyni",
-      "torun": "z Torunia",
-      "kielce": "z Kielc",
-      "olsztyn": "z Olsztyna",
-      "czestochowa": "z Częstochowy",
-      "sopot": "z Sopotu"
+      "hoursAgo": "{{count}} godz. temu",
+      "yesterday": "wczoraj",
+      "daysAgo": "{{count}} dni temu"
     },
     "noun": {
       "stack_one": "ulotkę",

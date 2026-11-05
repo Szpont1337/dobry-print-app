@@ -83,7 +83,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Co z nowymi pracownikami i kolejnymi eventami? Tu druk cyfrowy DTG zmienia reguły gry. W technologii sitodruku domówienie pięciu koszulek bywa droższe niż pierwotne pięćdziesiąt, bo koszty przygotowania matryc wracają przy każdym zleceniu — pisaliśmy o tym w porównaniu [DTG vs sitodruk](/blog/druk-dtg-czy-sitodruk-koszulki). W DTG nie ma minimum nakładu ani kosztów przygotowania: domówisz jedną koszulkę dla nowej osoby w zespole w tej samej cenie jednostkowej co przy pierwszym zamówieniu. Nie musisz więc magazynować zapasów „na lata” — zamawiasz tyle, ile potrzeba teraz, a uzupełniasz na bieżąco, z wysyłką w 3 dni robocze.",
+      text: "Co z nowymi pracownikami i kolejnymi eventami? Tu druk cyfrowy DTG zmienia reguły gry. W technologii sitodruku domówienie pięciu koszulek bywa droższe niż pierwotne pięćdziesiąt, bo koszty przygotowania matryc wracają przy każdym zleceniu — pisaliśmy o tym w porównaniu [DTG vs sitodruk](/blog/druk-dtg-czy-sitodruk-koszulki). W DTG nie ma minimum nakładu ani sit: domówisz jedną koszulkę dla nowej osoby w zespole za 124,11 zł. Nie musisz więc magazynować zapasów „na lata” — zamawiasz tyle, ile potrzeba teraz, a uzupełniasz na bieżąco, z wysyłką w 3 dni robocze.",
     },
     {
       type: "h2",
@@ -166,7 +166,7 @@ export const article: Article = {
         },
         {
           q: "Czy jest minimalna liczba sztuk przy zamówieniu firmowym?",
-          a: "Nie — drukujemy od 1 sztuki. To duża zaleta przy zamówieniach firmowych: możesz zamówić koszulkę próbną przed większym zleceniem, a później domawiać pojedyncze sztuki dla nowych pracowników w tej samej cenie jednostkowej.",
+          a: "Nie — drukujemy od 1 sztuki. To duża zaleta przy zamówieniach firmowych: możesz zamówić koszulkę próbną przed większym zleceniem, a później domawiać pojedyncze sztuki dla nowych pracowników (124,11 zł za sztukę).",
         },
         {
           q: "Jak zebrać rozmiary od pracowników?",

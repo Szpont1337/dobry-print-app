@@ -65,6 +65,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
     () => productPriceFor(product, format, quantity, { sides, addonIds }),
     [product, format, quantity, sides, addonIds],
   );
+  // Dopłata za plecy z silnika przy tym nakładzie: cena minimalna może ją przykrywać.
+  const backPrintPerPiece =
+    (productPriceFor(product, format, quantity, { sides: "double", addonIds }) -
+      productPriceFor(product, format, quantity, { sides: "single", addonIds })) /
+    quantity;
   const shippingFee = shippingFeeFor(productTotal);
   const totals = withShipping(productTotal);
   const amountToFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - productTotal);
@@ -270,9 +275,11 @@ export function ProductConfigurator({ product }: { product: Product }) {
                   const hint =
                     s === "single"
                       ? t("configurator.included")
-                      : t("configurator.surcharge", {
-                          price: formatPLN.format(backPrint.fee * PRICE_FACTOR),
-                        });
+                      : backPrintPerPiece >= 0.01
+                        ? t("configurator.surcharge", {
+                            price: formatPLN.format(backPrintPerPiece),
+                          })
+                        : t("configurator.included");
                   return (
                     <button
                       key={s}

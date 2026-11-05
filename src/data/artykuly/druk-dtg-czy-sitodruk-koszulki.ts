@@ -128,7 +128,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: "Najważniejsza zmienna w wyborze technologii to nakład. W sitodruku płacisz za przygotowanie sit niezależnie od tego, czy wydrukujesz 10 czy 1000 koszulek — przy trzykolorowym projekcie to 240–450 zł samego przygotowania, zanim powstanie pierwsza koszulka. Przy 10 sztukach samo przygotowanie dokłada 24–45 zł do każdej koszulki. Przy 1000 sztuk ten sam koszt rozkłada się na 24–45 groszy — i wtedy sitodruk staje się bezkonkurencyjny cenowo. DTG nie ma kosztów przygotowania, więc cena za sztukę jest stała: pierwsza koszulka kosztuje tyle samo co setna.",
+      text: "Najważniejsza zmienna w wyborze technologii to nakład. W sitodruku płacisz za przygotowanie sit niezależnie od tego, czy wydrukujesz 10 czy 1000 koszulek — przy trzykolorowym projekcie to 240–450 zł samego przygotowania, zanim powstanie pierwsza koszulka. Przy 10 sztukach samo przygotowanie dokłada 24–45 zł do każdej koszulki. Przy 1000 sztuk ten sam koszt rozkłada się na 24–45 groszy — i wtedy sitodruk staje się bezkonkurencyjny cenowo. DTG nie wymaga sit, a u nas pojedyncza koszulka kosztuje 124,11 zł, przy 100 sztukach ok. 97 zł za sztukę.",
     },
     {
       type: "p",

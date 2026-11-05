@@ -465,7 +465,7 @@ export const products: Product[] = [
       "Koszulka z nadrukiem to chodząca reklama, gadżet na event i odzież firmowa w jednym. Drukujemy bezpośrednio na tkaninie (DTG) na białej bawełnie 100% 180 g — pełny kolor, miękki w dotyku nadruk, który nie pęka w praniu. Wgraj grafikę i zobacz podgląd na koszulce przed zamówieniem.",
     footerHeadline: "Koszulki z nadrukiem. Twoja marka na ludziach.",
     footerNote:
-      "Biała bawełna 100% 180 g, druk DTG w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie, plecy +37,82 zł/szt.",
+      "Biała bawełna 100% 180 g, druk DTG w pełnym kolorze, rozmiary S–XXL, nadruk na przodzie w cenie, dopłatę za plecy pokazuje konfigurator.",
     variant: "tshirt",
     formatNoun: "Rozmiar",
     mockupPreview: {
