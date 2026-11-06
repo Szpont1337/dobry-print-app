@@ -14,6 +14,19 @@
   "errShipment": "Nie udało się zapisać wysyłki.",
   "carrier": "Przewoźnik",
   "saveShipment": "Zapisz wysyłkę",
+  "hubInvoice": {
+    "title": "Faktura do zamówienia",
+    "waiting": "Czeka na fakturę. Hub to śledzi.",
+    "queued": "Faktura {{number}} wgrana, mail do klienta wyjdzie w ciągu kilku minut.",
+    "sent": "Faktura {{number}} wysłana klientowi {{date}}.",
+    "dismissed": "W hubie oznaczone: bez faktury.",
+    "issuedNoFile": "Faktura wystawiona, ale bez PDF-a w hubie. Wgraj go, żeby wysłać klientowi.",
+    "number": "Numer faktury",
+    "file": "Plik PDF (do 4 MB)",
+    "submit": "Wgraj i wyślij",
+    "tooBig": "Plik jest większy niż 4 MB.",
+    "error": "Nie udało się wgrać faktury."
+  },
   "tracked": {
     "open": "Własne zamówienie do śledzenia",
     "hint": "Towar domówiony klientowi poza sklepem. Zamówienie ma 0 zł, a klient dostaje maile o przesyłce: pierwszy od razu po zapisaniu.",

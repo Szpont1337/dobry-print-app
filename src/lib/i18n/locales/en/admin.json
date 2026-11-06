@@ -14,6 +14,19 @@
   "errShipment": "Couldn't save shipment details.",
   "carrier": "Carrier",
   "saveShipment": "Save shipment",
+  "hubInvoice": {
+    "title": "Order invoice",
+    "waiting": "Waiting for an invoice. The hub is tracking it.",
+    "queued": "Invoice {{number}} uploaded, the customer gets it within minutes.",
+    "sent": "Invoice {{number}} sent to the customer on {{date}}.",
+    "dismissed": "Marked in the hub: no invoice needed.",
+    "issuedNoFile": "Invoice issued, but the hub has no PDF. Upload it to send it to the customer.",
+    "number": "Invoice number",
+    "file": "PDF file (up to 4 MB)",
+    "submit": "Upload and send",
+    "tooBig": "The file is over 4 MB.",
+    "error": "Could not upload the invoice."
+  },
   "tracked": {
     "open": "Own order to track",
     "hint": "Goods ordered for a customer outside the shop. The order is 0 PLN and the customer gets the parcel e-mails: the first one right after saving.",

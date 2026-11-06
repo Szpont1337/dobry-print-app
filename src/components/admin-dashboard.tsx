@@ -41,6 +41,7 @@ import { type PrintSide, sideLabelForOrder } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
+import { HubInvoice } from "./hub-invoice";
 import { TrackedOrderForm } from "./tracked-order-form";
 
 type OrderStatus =
@@ -652,6 +653,13 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                   )}
                 </dd>
               </div>
+              {order.paymentStatus === "paid" && (
+                <div>
+                  <dd>
+                    <HubInvoice token={token} orderId={order._id} />
+                  </dd>
+                </div>
+              )}
               <QueryErrorBoundary>
                 <OrderFiles token={token} orderId={order._id} />
               </QueryErrorBoundary>
