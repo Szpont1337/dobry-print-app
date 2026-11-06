@@ -41,6 +41,7 @@ import { type PrintSide, sideLabelForOrder } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 import { useAuth } from "./auth-provider";
+import { TrackedOrderForm } from "./tracked-order-form";
 
 type OrderStatus =
   | "pending"
@@ -310,6 +311,9 @@ function OrdersSection({ token }: { token: string }) {
           title={t("ordersTitle")}
           description={t("ordersSub")}
         />
+        <div className="mt-5">
+          <TrackedOrderForm token={token} />
+        </div>
         <div className="mt-5 flex flex-wrap items-center gap-2">
           <FilterChip
             active={filter === "all"}
