@@ -15,6 +15,7 @@
   "carrier": "Przewoźnik",
   "saveShipment": "Zapisz wysyłkę",
   "hubInvoice": {
+    "copy": "Kopiuj dane do faktury",
     "title": "Faktura do zamówienia",
     "waiting": "Czeka na fakturę. Hub to śledzi.",
     "queued": "Faktura {{number}} wgrana, mail do klienta wyjdzie w ciągu kilku minut.",

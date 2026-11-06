@@ -15,6 +15,7 @@
   "carrier": "Carrier",
   "saveShipment": "Save shipment",
   "hubInvoice": {
+    "copy": "Copy the invoice data",
     "title": "Order invoice",
     "waiting": "Waiting for an invoice. The hub is tracking it.",
     "queued": "Invoice {{number}} uploaded, the customer gets it within minutes.",

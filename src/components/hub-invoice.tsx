@@ -33,6 +33,7 @@ type Stan =
       status: string | null;
       numer: string | null;
       wyslanoAt: number | null;
+      dane: string | null;
     };
 
 /**
@@ -105,6 +106,22 @@ export function HubInvoice({ token, orderId }: { token: string; orderId: Id<"ord
     <section className="rounded-2xl border border-border bg-muted/30 p-4">
       <h4 className="text-sm font-medium text-foreground">{t("hubInvoice.title")}</h4>
       <p className="mt-1 text-sm text-muted-foreground">{opis}</p>
+      {stan.dane && (
+        <>
+          <pre className="mt-3 whitespace-pre-wrap break-words rounded-xl border border-border p-3 text-xs">
+            {stan.dane}
+          </pre>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="mt-2 h-9 px-4"
+            onClick={() => void navigator.clipboard.writeText(stan.dane ?? "")}
+          >
+            {t("hubInvoice.copy")}
+          </Button>
+        </>
+      )}
       <form
         onSubmit={(event) => void submit(event)}
         className="mt-3 flex flex-wrap items-end gap-3"
