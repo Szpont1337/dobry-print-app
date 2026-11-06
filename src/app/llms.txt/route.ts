@@ -61,6 +61,7 @@ ${produkty}
 
 ## Kluczowe strony
 
+- Pełne fakty, ceny formatów i FAQ: ${BASE_URL}/llms-full.txt
 - Katalog produktów: ${BASE_URL}/#produkty
 - Regulamin i zasady reklamacji: ${BASE_URL}/regulamin
 - Polityka prywatności: ${BASE_URL}/polityka-prywatnosci

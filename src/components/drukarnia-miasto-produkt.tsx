@@ -13,7 +13,6 @@ import {
   SectionHeader,
 } from "@/components/ui";
 import type { Miasto } from "@/data/miasta";
-import { COMPANY } from "@/lib/company";
 import { robotsForCityProduct } from "@/lib/miasta-seo";
 import { finalUnitPrice } from "@/lib/pricing";
 import type { Product } from "@/lib/products";
@@ -181,13 +180,13 @@ export function CityProductPageContent({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": `${url}#localbusiness`,
+        // Service, nie LocalBusiness: nie mamy punktu w tym mieście, tylko dostawę.
+        "@type": "Service",
+        "@id": `${url}#service`,
+        provider: { "@id": `${BASE_URL}/#organization` },
         name: `DobrePrinty, ${product.name} ${miasto.nazwa}`,
         description: `${product.name} z dostawą do ${miasto.nazwa}. Druk online w 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
         url,
-        email: COMPANY.email,
-        priceRange: "36 zł – 5 535 zł",
         areaServed: {
           "@type": "City",
           name: miasto.nazwa,
@@ -195,26 +194,6 @@ export function CityProductPageContent({
             "@type": "AdministrativeArea",
             name: `województwo ${miasto.wojewodztwo}`,
           },
-        },
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "PL",
-          addressRegion: miasto.wojewodztwo,
-          addressLocality: miasto.nazwa,
-        },
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
-          opens: "00:00",
-          closes: "23:59",
         },
       },
       {

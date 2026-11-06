@@ -272,16 +272,16 @@ function SchemaMarkup({
   resolved: ResolvedCity;
   url: string;
 }) {
+  // Service, nie LocalBusiness: nie mamy punktu w tym mieście, tylko dostawę.
   const localBusiness: Record<string, unknown> = {
-    "@type": "LocalBusiness",
-    "@id": `${url}#localbusiness`,
+    "@type": "Service",
+    "@id": `${url}#service`,
+    provider: { "@id": `${BASE_URL}/#organization` },
     name: `DobrePrinty, drukarnia ${miasto.nazwa} online`,
     alternateName: `DobrePrinty ${miasto.nazwa}`,
     description: `Drukarnia online z dostawą do ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena finalna widoczna od razu.`,
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
-    email: "hej@dobreprinty.pl",
-    priceRange: "36 zł – 5 535 zł",
     areaServed: [
       {
         "@type": "City",
@@ -292,28 +292,6 @@ function SchemaMarkup({
         },
       },
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "PL",
-      addressRegion: miasto.wojewodztwo,
-      addressLocality: miasto.nazwa,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "00:00",
-      closes: "23:59",
-      description:
-        "Konfigurator online dostępny 24/7. Biuro obsługi odpowiada pn–pt 9:00–17:00 w 2 godziny robocze.",
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: `Katalog produktów DobrePrinty dla ${miasto.nazwa}`,

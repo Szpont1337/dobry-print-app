@@ -4,6 +4,7 @@ export default function SchemaMarkup() {
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://www.dobreprinty.pl/#organization",
         name: "DobrePrinty",
         url: "https://www.dobreprinty.pl",
         logo: "https://www.dobreprinty.pl/logo.png",
