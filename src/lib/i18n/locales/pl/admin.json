@@ -14,6 +14,14 @@
   "errShipment": "Nie udało się zapisać wysyłki.",
   "carrier": "Przewoźnik",
   "saveShipment": "Zapisz wysyłkę",
+  "allegroLink": {
+    "label": "Kupione ręcznie na Allegro? Wklej adres zakupu",
+    "change": "Zmień podpięty zakup Allegro",
+    "open": "Otwórz zakup na Allegro",
+    "save": "Zapisz zakup",
+    "saved": "Zapisano zakup.",
+    "error": "Nie udało się zapisać zakupu."
+  },
   "hubInvoice": {
     "copy": "Kopiuj dane do faktury",
     "title": "Faktura do zamówienia",

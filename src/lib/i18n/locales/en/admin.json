@@ -14,6 +14,14 @@
   "errShipment": "Couldn't save shipment details.",
   "carrier": "Carrier",
   "saveShipment": "Save shipment",
+  "allegroLink": {
+    "label": "Bought by hand on Allegro? Paste the purchase address",
+    "change": "Change the linked Allegro purchase",
+    "open": "Open the purchase on Allegro",
+    "save": "Save the purchase",
+    "saved": "Purchase saved.",
+    "error": "Could not save the purchase."
+  },
   "hubInvoice": {
     "copy": "Copy the invoice data",
     "title": "Order invoice",

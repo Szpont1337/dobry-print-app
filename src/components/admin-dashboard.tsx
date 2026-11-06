@@ -40,6 +40,7 @@ import { BRANDS, type BrandKey, normalizeBrand } from "@/lib/brands";
 import { type PrintSide, sideLabelForOrder } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
+import { AllegroPurchaseLink } from "./allegro-purchase-link";
 import { useAuth } from "./auth-provider";
 import { HubInvoice } from "./hub-invoice";
 import { TrackedOrderForm } from "./tracked-order-form";
@@ -409,6 +410,7 @@ type AdminOrder = {
   grossTotal: number;
   status: OrderStatus;
   paymentStatus?: "unpaid" | "paid" | "failed" | "refunded";
+  allegroPurchaseId?: string;
   paidAt?: number;
   stripeSessionId?: string;
   stripePaymentIntentId?: string;
@@ -660,6 +662,18 @@ function AdminOrderRow({ token, order }: { token: string; order: AdminOrder }) {
                   </dd>
                 </div>
               )}
+              {order.paymentStatus === "paid" &&
+                order.status !== "cancelled" && (
+                  <div>
+                    <dd>
+                      <AllegroPurchaseLink
+                        token={token}
+                        orderId={order._id}
+                        purchaseId={order.allegroPurchaseId}
+                      />
+                    </dd>
+                  </div>
+                )}
               <QueryErrorBoundary>
                 <OrderFiles token={token} orderId={order._id} />
               </QueryErrorBoundary>
