@@ -485,7 +485,7 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "skladane-ulotki":
         "Falcowanie typu C, papier 170 g.",
       "broszury-szyte":
-        "Programy konferencji morskich i portowych, materiały szkoleń software house’ów z Olivia Centre i kół naukowych Politechniki Gdańskiej. Spinanie drutem, do 48 stron.",
+        "Programy konferencji morskich i portowych, materiały szkoleń software house’ów i kół naukowych Politechniki Gdańskiej. Spinanie drutem, do 48 stron.",
       "broszury-klejone":
         "Twarda okładka 300 g, środek 135 g.",
       "broszury-szyte-nicia":
@@ -503,13 +503,13 @@ export const miastaTresc: Record<string, MiastoTresc> = {
       "baner-reklamowy":
         "Banery na otwarcia lokali ze Starego Miasta, ogrodzenia inwestycji deweloperskich na Przymorzu i sceny koncertów w Polsat Plus Arena. PVC 510 g, druk solwentowy, zgrzewane krawędzie i oczka co 50 cm w cenie.",
       "tablice-reklamowe":
-        "Szyldy na elewacje sklepów z Oliwy, tablice informacyjne biur portowych z terminala DCT i oznaczenia software house’ów z Olivia Centre. Forex 3 mm lub dibond, druk UV, cięcie CNC, gotowe do montażu.",
+        "Szyldy na elewacje sklepów z Oliwy, tablice informacyjne biur portowych i oznaczenia software house’ów. Forex 3 mm lub dibond, druk UV, cięcie CNC, gotowe do montażu.",
       koszulki:
         "Dominika i drużyn firmowych trójmiejskich biegów. Biała bawełna 180 g, druk DTG od 1 sztuki, rozmiary S–XXL.",
       "torby-papierowe":
         "Torby dla butików z Mariackiej, kawiarni z Długiego Targu i cukierni ze Starego Miasta. Papier biały lub kraft 120 g, uchwyt skręcany, wzmacniane dno, od 25 sztuk.",
       "torby-plocienne":
-        "Bawełniane tote na Jarmark św. Dominika, konferencje branży morskiej w AmberExpo i gadżety rekrutacyjne software house’ów z Olivia Centre. Nadruk A4, od 24,21 zł za sztukę — przy większym nakładzie 15,13 zł.",
+        "Bawełniane tote na Jarmark św. Dominika, konferencje branży morskiej w AmberExpo i gadżety rekrutacyjne software house’ów. Nadruk A4, od 24,21 zł za sztukę — przy większym nakładzie 15,13 zł.",
     },
     paragraphs: [
       "Gdańsk to gospodarcze serce Pomorza i część aglomeracji trójmiejskiej. Pracują tu silna gospodarka morska i sektor portowy (terminal kontenerowy DCT, jeden z największych na Bałtyku), petrochemia spod znaku Grupy Lotos i Orlenu oraz dynamiczny sektor IT skupiony wokół Olivia Centre. Do tego Uniwersytet Gdański i Politechnika Gdańska z dziesiątkami tysięcy studentów, restauracje z Długiego Targu i Mariackiej oraz eventy, które ściągają tłumy. Dominika.",
