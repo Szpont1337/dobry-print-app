@@ -28,7 +28,7 @@ export function GET() {
 
 > Druk online z dostawą kurierem w całej Polsce. DobrePrinty to broker druku:
 > przyjmujemy zamówienie, weryfikujemy plik i przekazujemy produkcję jednej
-> z sieci zweryfikowanych drukarni partnerskich. Nie mamy punktu stacjonarnego
+> z drukarni partnerskich. Nie mamy punktu stacjonarnego
 > — realizacja jest w pełni zdalna, a dostawa odbywa się kurierem.
 
 ## Jak to działa
@@ -48,7 +48,7 @@ export function GET() {
 
 ## Kluczowe fakty (weryfikowalne)
 
-- Model: broker druku (sieć 28 zweryfikowanych drukarni partnerskich, audytowanych co kwartał).
+- Model: broker druku (sieć drukarni partnerskich).
 - Zasięg: cała Polska, dostawa kurierem lub do paczkomatu InPost.
 - Czas realizacji: produkcja 24–48 h + doba na kuriera.
 - Ceny: finalne, widoczne w konfiguratorze przed zamówieniem.

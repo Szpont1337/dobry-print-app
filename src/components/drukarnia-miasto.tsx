@@ -70,7 +70,7 @@ function fallbackFaqs(miasto: Miasto): { question: string; answer: string }[] {
     },
     {
       question: `Czy ${drukarniaNazwa} obsługuje większe nakłady?`,
-      answer: `Tak. ${drukarniaNazwa} w naszej sieci realizuje nakłady 10 000+ ulotek, materiały targowe i serie wizytówek. Nakład wybierasz w konfiguratorze, a cena jednostkowa spada wraz z jego wielkością.`,
+      answer: `Tak. Cenę dużego nakładu sprawdzisz w konfiguratorze, a przy nietypowym zamówieniu napisz do nas, przygotujemy wycenę.`,
     },
     {
       question: `Czy mogę odebrać zamówienie osobiście w ${miasto.nazwa}?`,
@@ -117,7 +117,7 @@ function fallbackParagraphs(miasto: Miasto): string[] {
     p1 += ` Najczęściej drukują u nas ${branzeProse}.`;
   }
 
-  let p2 = `Druk ${miasto.nazwa} sprawdza się tam, gdzie liczy się czas reakcji. Restauracja zamawia 2 000 menu na sezon, agencja kreatywna potrzebuje 200 broszur klejonych na piątkową prezentację, organizator wydarzenia wymaga roll-upów na sobotnie otwarcie. ${drukarnia} online z DobrePrinty dobiera jedną z 28 zweryfikowanych drukarni partnerskich, która dla konkretnego produktu zrobi to najszybciej i najbardziej opłacalnie.`;
+  let p2 = `Druk ${miasto.nazwa} sprawdza się tam, gdzie liczy się czas reakcji. Restauracja zamawia 2 000 menu na sezon, agencja kreatywna potrzebuje 200 broszur klejonych na piątkową prezentację, organizator wydarzenia wymaga roll-upów na sobotnie otwarcie. ${drukarnia} online z DobrePrinty dobiera jedną z drukarni partnerskich, która dla konkretnego produktu zrobi to najszybciej i najbardziej opłacalnie.`;
   if (landmarkiProse) {
     p2 += ` Nasze materiały trafiają w okolice rozpoznawalnych miejsc, takich jak ${landmarkiProse}.`;
   }
@@ -177,8 +177,8 @@ function resolveCity(miasto: Miasto, t: MiastoTresc): ResolvedCity {
       },
       {
         icon: ShieldCheck,
-        title: "Jakość sprawdzona przez 28 drukarni partnerskich",
-        body: `Każdy partner przechodzi kwartalny audyt jakości druku i terminowości. Drukarnia ${miasto.nazwa} z sieci DobrePrinty to ten partner, który dla Twojego produktu zrobi to najlepiej.`,
+        title: "Plik sprawdzony, reklamacje po naszej stronie",
+        body: `Plik sprawdzamy przed produkcją, a reklamacje obsługujemy sami. Drukarnia ${miasto.nazwa} z sieci DobrePrinty to partner, który dla Twojego produktu zrobi to najlepiej.`,
       },
     ],
     katalogHeading:
@@ -228,7 +228,7 @@ export function buildCityMetadata(miasto: Miasto): Metadata {
   const title = `Drukarnia ${miasto.nazwa} online. Druk 24h z dostawą`;
   const description = (
     t.metaDescription ??
-    `Drukarnia ${miasto.nazwa} online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, 28 zweryfikowanych drukarni partnerskich. Wyceń teraz.`
+    `Drukarnia ${miasto.nazwa} online. Ulotki, wizytówki i plakaty z dostawą w 24–48 h. Cena finalna widoczna od razu, sieć drukarni partnerskich. Wyceń teraz.`
   ).slice(0, 200);
   return {
     title,
@@ -279,7 +279,7 @@ function SchemaMarkup({
     provider: { "@id": `${BASE_URL}/#organization` },
     name: `DobrePrinty, drukarnia ${miasto.nazwa} online`,
     alternateName: `DobrePrinty ${miasto.nazwa}`,
-    description: `Drukarnia online z dostawą do ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć 28 zweryfikowanych drukarni partnerskich, cena finalna widoczna od razu.`,
+    description: `Drukarnia online z dostawą do ${miasto.nazwa}. Ulotki, wizytówki, plakaty, roll-upy, broszury z dostawą w 24–48 h. Sieć drukarni partnerskich, cena finalna widoczna od razu.`,
     url,
     image: `${BASE_URL}/og/dobreprinty.jpg`,
     areaServed: [
@@ -457,21 +457,13 @@ export function CityPageContent({ miasto }: { miasto: Miasto }) {
             </div>
           </div>
 
-          <ul className="mt-13 grid grid-cols-3 border-l border-t border-border">
+          <ul className="mt-13 grid grid-cols-2 border-l border-t border-border">
             <li className="border-r border-b border-border px-4 py-5">
               <p className="whitespace-nowrap text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
                 24–48 h
               </p>
               <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
                 do dostawy w {miasto.nazwa}
-              </p>
-            </li>
-            <li className="border-r border-b border-border px-4 py-5">
-              <p className="whitespace-nowrap text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-                28
-              </p>
-              <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
-                drukarni partnerskich
               </p>
             </li>
             <li className="border-r border-b border-border px-4 py-5">

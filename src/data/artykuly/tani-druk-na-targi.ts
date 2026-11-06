@@ -288,7 +288,7 @@ export const article: Article = {
         },
         {
           q: "Czy warto zamawiać u drukarni-cebularni za pół ceny?",
-          a: "Bardzo rzadko. Tania konkurencja oszczędza najczęściej na: blockoucie roll-upa (prześwituje), gramaturze wizytówek (cienkie), wykończeniach (folia odpada po dwóch dniach), czasie realizacji (deklarują 24 h, robią 5 dni). Sprawdzaj recenzje, gwarancje, czy drukarnia ma fizyczne miejsce i podane kontakty. DobrePrinty to model agencyjny — 28 zweryfikowanych partnerów, każdy z audytem jakości.",
+          a: "Bardzo rzadko. Tania konkurencja oszczędza najczęściej na: blockoucie roll-upa (prześwituje), gramaturze wizytówek (cienkie), wykończeniach (folia odpada po dwóch dniach), czasie realizacji (deklarują 24 h, robią 5 dni). Sprawdzaj recenzje, gwarancje, czy drukarnia ma fizyczne miejsce i podane kontakty. DobrePrinty to model agencyjny — zamówienia realizują drukarnie partnerskie, plik sprawdzamy przed drukiem, a reklamacje obsługujemy sami.",
         },
         {
           q: "Ile ulotek rozdam na 1 dniu targów?",

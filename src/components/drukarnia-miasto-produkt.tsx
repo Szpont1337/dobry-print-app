@@ -121,7 +121,7 @@ function buildLocalFaqs(miasto: Miasto, product: Product) {
     },
     {
       question: `Czy mogę odebrać ${keyword} osobiście w ${miasto.nazwa}?`,
-      answer: `Nie. DobrePrinty nie ma stacjonarnego punktu w ${miasto.nazwa} — pracujemy w modelu online z 28 zweryfikowanymi drukarniami partnerskimi. Druk realizuje wybrany partner, a kurier dostarcza paczkę pod podany adres zwykle następnego dnia po wysyłce. Dla firm z ${miasto.nazwa} dostępna jest dostawa pod konkretną godzinę za dopłatą 25 zł.`,
+      answer: `Nie. DobrePrinty nie ma stacjonarnego punktu w ${miasto.nazwa} — pracujemy w modelu online z drukarniami partnerskimi. Druk realizuje wybrany partner, a kurier dostarcza paczkę pod podany adres zwykle następnego dnia po wysyłce. Dla firm z ${miasto.nazwa} dostępna jest dostawa pod konkretną godzinę za dopłatą 25 zł.`,
     },
   ];
 }
@@ -132,7 +132,7 @@ function buildLeadSentences(miasto: Miasto, product: Product): string {
   const dzielniceZdanie = dzielniceProse
     ? ` Dowozimy do wszystkich dzielnic — od ${dzielniceProse}.`
     : "";
-  return `${product.name} z dostawą do ${miasto.nazwa} drukujemy w pełnym katalogu DobrePrinty: od mikronakładów po duże nakłady. ${miasto.opis_krotki}${dzielniceZdanie} Sieć 28 drukarni partnerskich pozwala dobrać partnera, który dla Twojego zamówienia ${keyword} zrobi to najszybciej i najbardziej opłacalnie — z dostawą kurierem do ${miasto.wojewodztwo} w 24–48 h.`;
+  return `${product.name} z dostawą do ${miasto.nazwa} drukujemy w pełnym katalogu DobrePrinty: od mikronakładów po duże nakłady. ${miasto.opis_krotki}${dzielniceZdanie} Sieć drukarni partnerskich pozwala dobrać partnera, który dla Twojego zamówienia ${keyword} zrobi to najszybciej i najbardziej opłacalnie — z dostawą kurierem do ${miasto.wojewodztwo} w 24–48 h.`;
 }
 
 function buildSeoParagraph(miasto: Miasto, product: Product): string {
@@ -150,7 +150,7 @@ function buildSeoParagraph(miasto: Miasto, product: Product): string {
   const uczelnieZdanie = uczelnieProse
     ? ` Stałą grupą zamawiających są też uczelnie i koła naukowe (${uczelnieProse}), dla których drukujemy materiały konferencyjne, dydaktyczne i promocyjne.`
     : "";
-  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród osób szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a ${keyword} zamawia się tu regularnie na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną finalną, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — każdy partner z naszej sieci przechodzi kwartalny audyt jakości druku i terminowości. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
+  return `Druk ${keyword} ${miasto.nazwa} to popularne zapytanie wśród osób szukających lokalnej drukarni online. ${miasto.nazwa} liczy ok. ${populacjaTekst} mieszkańców, a ${keyword} zamawia się tu regularnie na potrzeby marketingu, sprzedaży i obsługi klientów.${branzeZdanie}${landmarkiZdanie}${uczelnieZdanie} DobrePrinty realizuje druk ${keyword} dla ${miasto.nazwa} w modelu online: konfigurator z ceną finalną, przygotowanie pliku do druku i kontrola techniczna w cenie (drobne poprawki bez dopłat), produkcja w 24–48 h, dostawa kurierem pod wskazany adres. Tania drukarnia ${keyword} ${miasto.nazwa} nie musi oznaczać kompromisu jakościowego — plik sprawdzamy przed drukiem. ${product.name} z DobrePrinty trafiają do firm z ${miasto.nazwa} z gwarancją reklamacji obsługiwanej przez nas, nie odsyłanej do drukarni.`;
 }
 
 export function CityProductPageContent({
@@ -185,7 +185,7 @@ export function CityProductPageContent({
         "@id": `${url}#service`,
         provider: { "@id": `${BASE_URL}/#organization` },
         name: `DobrePrinty, ${product.name} ${miasto.nazwa}`,
-        description: `${product.name} z dostawą do ${miasto.nazwa}. Druk online w 24–48 h, cena finalna od razu, 28 drukarni partnerskich w sieci DobrePrinty.`,
+        description: `${product.name} z dostawą do ${miasto.nazwa}. Druk online w 24–48 h, cena finalna od razu, sieć drukarni partnerskich DobrePrinty.`,
         url,
         areaServed: {
           "@type": "City",

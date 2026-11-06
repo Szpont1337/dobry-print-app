@@ -61,7 +61,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
         body: "Po wgraniu projektu preflight weryfikuje spady, rozdzielczość i kolory. Jeśli czegoś brakuje, wracamy z konkretną listą poprawek, zanim cokolwiek pójdzie do druku.",
       },
       {
-        title: "28 drukarni partnerskich",
+        title: "Sieć drukarni partnerskich",
         body: "Do każdego produktu dobieramy partnera, który zrobi go najszybciej i najtaniej. Ty zamawiasz w jednym miejscu, my zarządzamy produkcją w tle.",
       },
       {
@@ -73,7 +73,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     body: [
       "Drukarnia internetowa to model, w którym zamiast jeździć do punktu ksero i dogadywać szczegóły z handlowcem, konfigurujesz zamówienie samodzielnie w przeglądarce. W DobrePrinty wygląda to tak: wybierasz produkt z katalogu, ustawiasz nakład i format, a kalkulator od razu pokazuje cenę finalną. Potem wgrywasz plik PDF, wybierasz dostawę i płacisz online — gotowe.",
       "Największą zaletą jest przewidywalność. Konfigurator działa tak samo o 9:00, jak o 22:00, więc zamówienie złożysz wtedy, kiedy masz na to czas, a nie w godzinach pracy biura. Cena nie zmienia się „po wycenie” — to, co widzisz w koszyku, płacisz. Nie ma dopłat za spady, gwiazdek ani ukrytych kosztów obsługi zamówienia.",
-      "Druk internetowy nie oznacza kompromisu jakościowego. Produkcję realizuje jedna z 28 zweryfikowanych drukarni partnerskich, każda po kwartalnym audycie jakości i terminowości. Reklamacje rozpatrujemy my — nie odsyłamy Cię do drukarni, która fizycznie wykonała zlecenie.",
+      "Druk internetowy nie oznacza kompromisu jakościowego. Produkcję realizuje jedna z drukarni partnerskich. Reklamacje rozpatrujemy my — nie odsyłamy Cię do drukarni, która fizycznie wykonała zlecenie.",
     ],
     relatedProducts: [
       "ulotki",
@@ -375,7 +375,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       },
       {
         title: "Model agencyjny obniża koszt",
-        body: "Zlecenie trafia do partnera, który dla danego produktu ma najlepszą cenę i obłożenie. Konkurencja 28 drukarni pracuje na Twoją korzyść.",
+        body: "Zlecenie trafia do partnera, który dla danego produktu ma najlepszą cenę i obłożenie. Konkurencja między drukarniami pracuje na Twoją korzyść.",
       },
       {
         title: "Niższy koszt przy większym nakładzie",
@@ -407,7 +407,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
       {
         question: "Czy tani druk oznacza gorszą jakość?",
         answer:
-          "Nie musi. Nasza niska cena wynika z modelu agencyjnego i konfiguratora online, a nie z oszczędzania na materiałach. Każda drukarnia partnerska przechodzi audyt jakości, a reklamacje obsługujemy my.",
+          "Nie musi. Nasza niska cena wynika z modelu agencyjnego i konfiguratora online, a nie z oszczędzania na materiałach. Plik sprawdzamy przed produkcją, a reklamacje obsługujemy my.",
       },
       {
         question: "Czy do ceny dochodzą jakieś dopłaty?",
@@ -713,7 +713,7 @@ export const tematyDrukarnie: TematDrukarnia[] = [
     body: [
       "Wybór drukarni internetowej sprowadza się do kilku pytań, które warto zadać przed pierwszym zamówieniem. Pierwsze: czy cena, którą widzę, jest pełna? Kwota finalna, bez dopłat pojawiających się w koszyku, pozwala uczciwie porównać oferty. Druga sprawa to termin — i to, czy obejmuje produkcję, dostawę, czy obie rzeczy razem.",
       "Trzeci punkt to obsługa pliku. Drukarnia, która tylko „przyjmuje PDF i drukuje”, przerzuca całe ryzyko na Ciebie. Taka z preflightem sprawdzi spady, rozdzielczość i czerń tekstu, i odezwie się, zanim coś pójdzie nie tak. Czwarty: kto odpowiada za reklamacje — jeden partner czy łańcuszek podwykonawców. Piąty: wybór materiałów i wykończeń pod Twój konkretny produkt. Szósty: dostępność i czas reakcji obsługi, gdy pojawi się pytanie.",
-      "Najprostszy test w praktyce: zamów mały nakład jednego produktu i zobacz, jak przebiega proces — od jasności ceny, przez kontakt przy pliku, po jakość i termin dostawy. Tak sprawdzisz drukarnię taniej niż na dużym, ważnym zleceniu. W DobrePrinty każdy z tych punktów jest wpisany w sam model: cena finalna od razu, preflight w standardzie, reklamacje po naszej stronie i 28 drukarni partnerskich dobieranych pod produkt.",
+      "Najprostszy test w praktyce: zamów mały nakład jednego produktu i zobacz, jak przebiega proces — od jasności ceny, przez kontakt przy pliku, po jakość i termin dostawy. Tak sprawdzisz drukarnię taniej niż na dużym, ważnym zleceniu. W DobrePrinty każdy z tych punktów jest wpisany w sam model: cena finalna od razu, preflight w standardzie, reklamacje po naszej stronie i drukarnie partnerskie dobierane pod produkt.",
     ],
     relatedProducts: ["wizytowki", "ulotki", "plakaty", "roll-up"],
     productsHeading: "Przetestuj nas na małym zamówieniu",
